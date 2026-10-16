@@ -2,7 +2,7 @@
 
 **From engineering intent to working systems.**
 
-A practical learning site built around a fictional Distributed Monitoring System (DMS). This first PR establishes the V0 engineering core and a minimal static Astro foundation. It does **not** complete Milestone 1: the interactive lab and final Chapter 1 are subsequent increments.
+A practical learning site built around a fictional Distributed Monitoring System (DMS). This reviewable vertical slice establishes the V0 engineering core, an interactive single-sensor lab, source views and a static Astro foundation. It does **not** complete Milestone 1: final Chapter 1 writing and full release review remain.
 
 ## Reproduce locally
 
@@ -23,7 +23,7 @@ The reference scenario returns approximately **38.5% estimated geometric coverag
 
 `npm run evidence` writes ignored `artifacts/reference-evidence.json`. It contains test/requirement/scenario/model IDs, model version, inputs, threshold, method, grid, result, margin, source commit, working-tree status, timestamp and execution context. Run it from a clean committed checkout for revision-bound local evidence. CI produces and retains this file as a workflow artifact for 30 days after successful checks. This is calculation evidence, not a certificate or operational assurance claim.
 
-For reproducibility compare `definition` and `calculation`; `id` and `execution` contain run-dependent metadata. Local execution is labeled `local-cli`, CI `github-actions`. No saved CI result or browser what-if run is presented on the landing page.
+For reproducibility compare `definition` and `calculation`; `id` and `execution` contain run-dependent metadata. Local execution is labeled `local-cli`, CI `github-actions`. No saved CI result is presented on the site. The lab labels browser what-if runs as temporary; they neither edit YAML nor create retained verification artifacts.
 
 ## Engineering intent, definition and evidence
 
@@ -32,6 +32,14 @@ For reproducibility compare `definition` and `calculation`; `id` and `execution`
 - **Evidence:** An execution of `TEST-COV-001` evaluates the model output against the requirement. Its result is meaningful only with the specified inputs, assumptions and source revision.
 
 The trace chain is `NEED-001 → REQ-COV-001 → SCN-001 → MODEL-COV-001 → TEST-COV-001 → RESULT-*`. The arrows are a teaching sequence; actual source fields distinguish need origin, reference scenario, implemented model and verification test relationships.
+
+## Interactive lab and traceability
+
+Open `/executable-engineering-lab/lab/` from the home navigation. The lab imports `calculateCoverage` and `evaluateCoverage` from the same DOM-free engineering modules exercised by Vitest. Both its build-time fallback and browser updates use those functions. Input defaults and the threshold come from validated canonical YAML, serialized into the page at build time.
+
+Numeric x/y/radius controls update the clipped SVG, accessible description, sampled percentage, threshold status and margin immediately. Reset restores all SCN-001 inputs. Blank, fractional or out-of-range UI edits hide stale geometry/results until corrected; the model itself permits any finite center and nonnegative radius. The diagram uses the SVG coordinate convention (origin upper-left, y down), stated beside the graphic. Without JavaScript, controls stay disabled and the build-time reference result remains readable.
+
+`/executable-engineering-lab/reference/` exposes canonical need, requirement, scenario, model, test, evaluator and manifest sources from this build, with stable ID anchors. A short typed relationship sequence connects the sources to retained CI evidence. This is a source view, not a graph engine.
 
 ## Numerical contract
 
@@ -60,8 +68,8 @@ The root-level Astro configuration uses `site/src` as its source directory. This
 
 PRs and pushes to `main` run validation, types, tests, static build and evidence generation. PR evidence uses the actual PR head commit rather than labeling a synthetic merge revision as the source. CI should be inspected before merge.
 
-Pages deployment is prepared but **manual** in this foundation PR. After merge, set repository **Settings → Pages → Build and deployment → Source: GitHub Actions**, then run **Deploy foundation to GitHub Pages** on `main`. The workflow only deploys `main`. The intended URL is `https://and-gu.github.io/executable-engineering-lab/`; it is not a claim that the site is already published. Configuration follows the [official Astro GitHub Pages guide](https://docs.astro.build/en/guides/deploy/github/).
+Pages deployment runs on pushes to `main` after checks pass and can also be triggered manually. The repository is configured for **GitHub Actions** as its Pages source. After merge, inspect the deployment run, or run **Deploy to GitHub Pages** on `main` to retry. For a fork, configure **Settings → Pages → Build and deployment → Source: GitHub Actions** first. The workflow only deploys `main`. No merge is performed as part of preparing this PR. The intended URL is `https://and-gu.github.io/executable-engineering-lab/`; it is not a claim that the site is already published. Configuration follows the [official Astro GitHub Pages guide](https://docs.astro.build/en/guides/deploy/github/).
 
 ## Contributing
 
-Use a short-lived branch and reviewable PR. Read [SITE_SPEC.md](SITE_SPEC.md), [DEMONSTRATOR_SPEC.md](DEMONSTRATOR_SPEC.md) and [MILESTONE_01.md](MILESTONE_01.md) as planning inputs. Preserve their scope boundaries. Change engineering definitions in canonical YAML and keep model computation outside the UI. Run `npm run check` and inspect `npm run evidence` before opening a PR. Do not commit generated evidence or build output. See [ROADMAP.md](ROADMAP.md) for remaining work.
+Use a short-lived branch and reviewable PR. Read [SITE_SPEC.md](SITE_SPEC.md), [DEMONSTRATOR_SPEC.md](DEMONSTRATOR_SPEC.md) and [MILESTONE_01.md](MILESTONE_01.md) as planning inputs. Preserve their scope boundaries. Change engineering definitions in canonical YAML and keep model computation outside the UI. Run `npm run check` and inspect `npm run evidence` before opening a PR. Do not commit generated evidence or build output. See [ROADMAP.md](ROADMAP.md) for remaining work and [docs/VERIFICATION.md](docs/VERIFICATION.md) for recorded browser checks and verification limits.

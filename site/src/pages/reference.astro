@@ -1,0 +1,42 @@
+---
+import { readFileSync } from 'node:fs';
+import { resolve } from 'node:path';
+import Layout from '../layouts/Layout.astro';
+import { loadSources, root } from '../../../scripts/sources';
+const { need, requirement, scenario, manifest } = loadSources();
+const records = [
+  { id: need.id, kind: 'Intent: operational need', path: 'engineering/needs/NEED-001.yaml' },
+  { id: requirement.id, kind: 'Definition: proposed system requirement', path: 'engineering/requirements/REQ-COV-001.yaml' },
+  { id: scenario.id, kind: 'Definition: reference inputs', path: 'engineering/scenarios/SCN-001.yaml' },
+  { id: manifest.model.id, kind: 'Definition: executable model', path: manifest.model.source },
+  { id: manifest.test.id, kind: 'Definition: verification test', path: manifest.test.source },
+];
+const sources = records.map(record => ({ ...record, text: readFileSync(resolve(root, record.path), 'utf8') }));
+---
+<Layout title="Engineering sources and traceability">
+  <p class="eyebrow">Reference / source traceability</p>
+  <h1>Follow the engineering sources.</h1>
+  <p>These source views are bundled from the canonical repository files when the site builds. Editing controls in the lab does not alter them.</p>
+  <h2>Intent → definition → evidence</h2>
+  <ol>
+    <li><a href={`#${need.id}`}>{need.id}</a> is the source need of <a href={`#${requirement.id}`}>{requirement.id}</a>.</li>
+    <li>The requirement is evaluated under <a href={`#${scenario.id}`}>{scenario.id}</a> using <a href={`#${manifest.model.id}`}>{manifest.model.id}</a>.</li>
+    <li><a href={`#${manifest.test.id}`}>{manifest.test.id}</a> evaluates that reference configuration against the requirement’s threshold.</li>
+    <li>An evidence execution creates a <code>RESULT-*</code> record with the inputs, result, model version, source commit and run context. The <a href="https://github.com/And-Gu/executable-engineering-lab/actions/workflows/validate.yml">validation workflow</a> retains these as downloadable CI artifacts for 30 days. No saved CI result is displayed here.</li>
+  </ol>
+  <p>These are different relationships, not a general-purpose knowledge graph. A browser what-if run is temporary, and a changed configuration is no longer the unmodified reference scenario.</p>
+  {sources.map(source => <section id={source.id}>
+    <h2>{source.id}</h2><p>{source.kind} · <code>{source.path}</code></p>
+    <pre tabindex="0" aria-label={`${source.id} source`}><code>{source.text}</code></pre>
+  </section>)}
+  <h2>Model and test registration</h2>
+  <pre tabindex="0" aria-label="Model and test manifest"><code>{readFileSync(resolve(root, 'engineering/manifest.yaml'), 'utf8')}</code></pre>
+  <h2>Evaluation rule</h2>
+  <pre tabindex="0" aria-label="Threshold evaluator source"><code>{readFileSync(resolve(root, 'models/coverage/evaluate.ts'), 'utf8')}</code></pre>
+</Layout>
+<style>
+  section { scroll-margin-top: 1rem; margin-top: 3rem; }
+  pre { max-width: 100%; overflow: auto; padding: 1rem; background: #e9ecdf; font-size: .85rem; }
+  pre code { padding: 0; }
+  pre:focus-visible { outline: 3px solid #765c12; outline-offset: 3px; }
+</style>

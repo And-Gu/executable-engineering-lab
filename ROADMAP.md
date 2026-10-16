@@ -3,10 +3,10 @@
 ## Milestone 1
 
 - **This PR / increments A and B:** repository foundation, validated canonical data, pure V0 model/evaluator, independent tests, reproducible CLI evidence, minimal Astro home and marked chapter placeholder, PR validation and manual deployment workflow.
-- **Next PR / increment C:** shared-model browser lab, clipped SVG, labeled x/y/radius controls, reset, textual result and clearly marked transient what-if execution.
-- **Then / increment D:** complete Chapter 1, exercise and quiz, navigable source-to-result view, evidence presentation, publication and keyboard/mobile/deep-link verification.
+- **Included follow-up / increment C:** shared-model browser lab, clipped SVG, labeled x/y/radius controls, reset, textual result, transient what-if labeling and canonical source views. Pages deployment is wired to main after validation.
+- **Then / increment D:** complete Chapter 1, exercise and quiz, retained evidence presentation and publication review. The first slice has a simple source trace view and recorded keyboard/mobile/deep-link smoke checks.
 
-The first PR does not satisfy the full milestone Definition of Done. Publication and final editorial/accessibility checks remain.
+This vertical slice does not satisfy the full milestone Definition of Done. Publication, the full chapter and final editorial/accessibility review remain.
 
 ## Later milestones
 
