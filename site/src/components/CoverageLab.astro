@@ -18,12 +18,12 @@ const config = { area: scenario.area, sensor: scenario.sensor, threshold: requir
         <title id="coverage-title">Ideal single-sensor coverage</title>
         <desc id="coverage-description">A rectangular monitoring area with one circular footprint, clipped to the area.</desc>
         <defs><clipPath id="area-clip"><rect width={scenario.area.width} height={scenario.area.height} /></clipPath></defs>
-        <rect width={scenario.area.width} height={scenario.area.height} fill="#e9ecdf" />
+        <rect width={scenario.area.width} height={scenario.area.height} fill="var(--surface-muted)" />
         <g clip-path="url(#area-clip)">
-          <circle data-footprint cx={scenario.sensor.x} cy={scenario.sensor.y} r={scenario.sensor.radius} fill="#a9bb83" stroke="#43552c" stroke-width="0.5" />
-          <circle data-sensor cx={scenario.sensor.x} cy={scenario.sensor.y} r="1.4" fill="#263025" />
+          <circle data-footprint cx={scenario.sensor.x} cy={scenario.sensor.y} r={scenario.sensor.radius} fill="var(--sage-olive)" stroke="var(--deep-olive)" stroke-width="0.5" />
+          <circle data-sensor cx={scenario.sensor.x} cy={scenario.sensor.y} r="1.4" fill="var(--deep-olive)" stroke="var(--surface)" stroke-width="0.7" />
         </g>
-        <rect width={scenario.area.width} height={scenario.area.height} fill="none" stroke="#263025" stroke-width="0.5" />
+        <rect width={scenario.area.width} height={scenario.area.height} fill="none" stroke="var(--deep-olive)" stroke-width="0.5" />
       </svg>
       <p class="caption">Area: {scenario.area.width} × {scenario.area.height} model units. Origin is the upper-left corner; x increases right and y increases down. Filled disk: ideal footprint. Dark dot: sensor position.</p>
     </div>
@@ -58,17 +58,17 @@ const config = { area: scenario.area, sensor: scenario.sensor, threshold: requir
 </script>
 <style>
   .experiment { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 2rem; align-items: start; }
-  svg { display: block; width: 100%; height: auto; border: 1px solid #c7cabc; }
+  svg { display: block; width: 100%; height: auto; border: 1px solid var(--sage-olive); }
   .caption { font-size: .9rem; }
-  fieldset { border: 1px solid #c7cabc; padding: 1.2rem; display: grid; gap: .65rem; }
+  fieldset { border: 1px solid var(--sage-olive); padding: 1.2rem; display: grid; gap: .65rem; }
   legend, label { font-weight: 650; }
   input, button { font: inherit; padding: .55rem; min-height: 2.8rem; }
-  input { width: 100%; border: 1px solid #68735c; background: #fffef8; border-radius: .2rem; }
-  button { cursor: pointer; background: #3e542b; color: white; border: 0; border-radius: .2rem; }
-  input:focus-visible, button:focus-visible { outline: 3px solid #765c12; outline-offset: 3px; }
-  [aria-invalid="true"] { border: 2px solid #8d3024; }
-  [data-error] { color: #8d3024; font-weight: 650; }
-  .result { border-left: 4px solid #657644; padding: .2rem 1.2rem; margin-top: 1.5rem; background: #e9ecdf; }
+  input { width: 100%; border: 1px solid var(--sage-olive); background: var(--surface); border-radius: .2rem; }
+  button { cursor: pointer; background: var(--deep-olive); color: var(--surface); border: 0; border-radius: .2rem; }
+  input:focus-visible, button:focus-visible { outline: 3px solid var(--dusty-violet); outline-offset: 3px; }
+  [aria-invalid="true"] { border: 2px solid var(--deep-olive); box-shadow: 0 0 0 2px var(--autumn-orange); }
+  [data-error] { color: var(--deep-olive); font-weight: 650; }
+  .result { border-left: 4px solid var(--dusty-violet); padding: .2rem 1.2rem; margin-top: 1.5rem; background: var(--surface-muted); }
   #input-help { font-size: .85rem; }
   @media (max-width: 44rem) { .experiment { grid-template-columns: 1fr; } }
 </style>

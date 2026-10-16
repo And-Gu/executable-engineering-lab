@@ -36,7 +36,7 @@ const sources = records.map(record => ({ ...record, text: readFileSync(resolve(r
 </Layout>
 <style>
   section { scroll-margin-top: 1rem; margin-top: 3rem; }
-  pre { max-width: 100%; overflow: auto; padding: 1rem; background: #e9ecdf; font-size: .85rem; }
+  pre { max-width: 100%; overflow: auto; padding: 1rem; background: var(--surface-muted); font-size: .85rem; }
   pre code { padding: 0; }
-  pre:focus-visible { outline: 3px solid #765c12; outline-offset: 3px; }
+  pre:focus-visible { outline: 3px solid var(--dusty-violet); outline-offset: 3px; }
 </style>
