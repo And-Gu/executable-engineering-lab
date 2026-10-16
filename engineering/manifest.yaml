@@ -1,0 +1,17 @@
+model:
+  id: MODEL-COV-001
+  version: 0.1.0
+  source: models/coverage/coverage.ts
+  method: cell-center-grid
+  grid_width: 100
+  grid_height: 100
+  boundary_rule: distance <= radius
+  assumptions:
+    - One fixed ideal circular footprint in a uniformly weighted rectangular area.
+    - No terrain, occlusion, uncertainty, time, faults, or communication effects.
+test:
+  id: TEST-COV-001
+  source: models/coverage/verification.test.ts
+  requirement_id: REQ-COV-001
+  scenario_id: SCN-001
+  model_id: MODEL-COV-001

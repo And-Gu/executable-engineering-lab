@@ -1,0 +1,74 @@
+---
+import { loadSources } from '../../../scripts/sources';
+import { calculateCoverage } from '../../../models/coverage/coverage';
+import { evaluateCoverage } from '../../../models/coverage/evaluate';
+const { scenario, requirement, manifest } = loadSources();
+const initial = calculateCoverage({ area: scenario.area, sensor: scenario.sensor });
+const evaluation = evaluateCoverage(initial, requirement.threshold_percent);
+const reference = `${import.meta.env.BASE_URL}reference/`;
+const config = { area: scenario.area, sensor: scenario.sensor, threshold: requirement.threshold_percent };
+---
+<section data-coverage-lab data-config={JSON.stringify(config)} aria-labelledby="experiment-title">
+  <h2 id="experiment-title">One sensor. One explicit criterion.</h2>
+  <p>Initialized from <a href={`${reference}#SCN-001`}>{scenario.id}</a>. Change a position or radius to explore geometric coverage, then reset to the reference configuration.</p>
+  <div class="status"><strong>Interactive browser what-if run.</strong> These changes are temporary. They do not edit the source scenario or create saved CI verification evidence.</div>
+  <div class="experiment">
+    <div>
+      <svg viewBox={`0 0 ${scenario.area.width} ${scenario.area.height}`} role="img" aria-labelledby="coverage-title coverage-description">
+        <title id="coverage-title">Ideal single-sensor coverage</title>
+        <desc id="coverage-description">A rectangular monitoring area with one circular footprint, clipped to the area.</desc>
+        <defs><clipPath id="area-clip"><rect width={scenario.area.width} height={scenario.area.height} /></clipPath></defs>
+        <rect width={scenario.area.width} height={scenario.area.height} fill="var(--surface-muted)" />
+        <g clip-path="url(#area-clip)">
+          <circle data-footprint cx={scenario.sensor.x} cy={scenario.sensor.y} r={scenario.sensor.radius} fill="var(--sage-olive)" stroke="var(--deep-olive)" stroke-width="0.5" />
+          <circle data-sensor cx={scenario.sensor.x} cy={scenario.sensor.y} r="1.4" fill="var(--deep-olive)" stroke="var(--surface)" stroke-width="0.7" />
+        </g>
+        <rect width={scenario.area.width} height={scenario.area.height} fill="none" stroke="var(--deep-olive)" stroke-width="0.5" />
+      </svg>
+      <p class="caption">Area: {scenario.area.width} × {scenario.area.height} model units. Origin is the upper-left corner; x increases right and y increases down. Filled disk: ideal footprint. Dark dot: sensor position.</p>
+    </div>
+    <div>
+      <fieldset disabled data-controls>
+        <legend>Sensor configuration (model units)</legend>
+        <label for="sensor-x">Sensor x</label>
+        <input id="sensor-x" name="x" type="number" min="0" max={scenario.area.width} step="1" value={scenario.sensor.x} required aria-describedby="input-help" />
+        <label for="sensor-y">Sensor y</label>
+        <input id="sensor-y" name="y" type="number" min="0" max={scenario.area.height} step="1" value={scenario.sensor.y} required aria-describedby="input-help" />
+        <label for="sensor-radius">Sensor radius</label>
+        <input id="sensor-radius" name="radius" type="number" min="0" max={2 * Math.max(scenario.area.width, scenario.area.height)} step="1" value={scenario.sensor.radius} required aria-describedby="input-help" />
+        <p id="input-help">Use arrow keys or type whole model units. x: 0–{scenario.area.width}; y: 0–{scenario.area.height}; radius: 0–{2 * Math.max(scenario.area.width, scenario.area.height)}. Position controls stay within the area; the engineering model also accepts outside positions.</p>
+        <button type="button" data-reset>Reset to {scenario.id}</button>
+      </fieldset>
+      <p data-error role="alert" hidden></p>
+      <div class="result" role="status" aria-live="polite" aria-atomic="true">
+        <p data-outcome><strong>{evaluation.pass ? 'PASS' : 'FAIL'}</strong> — {initial.coveragePercent.toFixed(2)}% estimated coverage; threshold {requirement.threshold_percent.toFixed(2)}%.</p>
+        <p data-detail>{initial.coveredCells} / {initial.totalCells} cell centers covered. Margin: {evaluation.marginPercentagePoints.toFixed(2)} percentage points.</p>
+      </div>
+      <noscript><p>JavaScript is required to change the configuration. The values above show the reference calculation produced during this site build, not saved CI evidence. You can also run the model from the repository.</p></noscript>
+    </div>
+  </div>
+  <h3>Definition and interpretation</h3>
+  <p><a href={`${reference}#REQ-COV-001`}>{requirement.id}</a> defines the {requirement.threshold_percent}% criterion. This threshold is a teaching assumption, not an operationally derived target. <a href={`${reference}#TEST-COV-001`}>{manifest.test.id}</a> evaluates the reference scenario using <a href={`${reference}#MODEL-COV-001`}>{manifest.model.id}</a> v{manifest.model.version}.</p>
+  <p>Method: {initial.method}, {initial.gridWidth} × {initial.gridHeight} equal-area cells. A cell is covered when its center’s distance is ≤ radius; zero radius means zero coverage. This is a sampled estimate, with discretization error. The smooth circle depicts the ideal footprint, not the sampled cells. PASS uses the unrounded estimate and includes equality.</p>
+  <ul>{manifest.model.assumptions.map(assumption => <li>{assumption}</li>)}</ul>
+  <p>No directional sensitivity or real sensor calibration is modeled. Area coverage is not detection probability, tracking performance or mission effectiveness. A PASS only satisfies this idealized geometric criterion.</p>
+</section>
+<script>
+  import '../scripts/coverage-lab';
+</script>
+<style>
+  .experiment { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 2rem; align-items: start; }
+  svg { display: block; width: 100%; height: auto; border: 1px solid var(--sage-olive); }
+  .caption { font-size: .9rem; }
+  fieldset { border: 1px solid var(--sage-olive); padding: 1.2rem; display: grid; gap: .65rem; }
+  legend, label { font-weight: 650; }
+  input, button { font: inherit; padding: .55rem; min-height: 2.8rem; }
+  input { width: 100%; border: 1px solid var(--sage-olive); background: var(--surface); border-radius: .2rem; }
+  button { cursor: pointer; background: var(--deep-olive); color: var(--surface); border: 0; border-radius: .2rem; }
+  input:focus-visible, button:focus-visible { outline: 3px solid var(--dusty-violet); outline-offset: 3px; }
+  [aria-invalid="true"] { border: 2px solid var(--deep-olive); box-shadow: 0 0 0 2px var(--autumn-orange); }
+  [data-error] { color: var(--deep-olive); font-weight: 650; }
+  .result { border-left: 4px solid var(--dusty-violet); padding: .2rem 1.2rem; margin-top: 1.5rem; background: var(--surface-muted); }
+  #input-help { font-size: .85rem; }
+  @media (max-width: 44rem) { .experiment { grid-template-columns: 1fr; } }
+</style>

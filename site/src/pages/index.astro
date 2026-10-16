@@ -1,0 +1,24 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { loadSources } from '../../../scripts/sources';
+const { need, requirement, scenario } = loadSources();
+const base = import.meta.env.BASE_URL;
+const repo = 'https://github.com/And-Gu/executable-engineering-lab/blob/main/';
+const reference = `${base}reference/`;
+---
+<Layout title="From engineering intent to working systems">
+  <p class="eyebrow">Executable Engineering Lab / Foundation</p>
+  <h1>From engineering intent to working systems.</h1>
+  <p class="lead">Make engineering questions explicit, connect their definitions, and examine what executable models can actually establish.</p>
+  <div class="status"><strong>Milestone 1 — first increment.</strong> The engineering core and interactive single-sensor lab are available. The completed first chapter remains a planned increment.</div>
+  <section aria-label="Three kinds of engineering information" class="cards">
+    <article class="card"><h2>Intent</h2><p><a href={`${reference}#NEED-001`}>{need.id}</a></p><p>{need.statement}</p></article>
+    <article class="card"><h2>Definition</h2><p><a href={`${reference}#REQ-COV-001`}>{requirement.id}</a></p><p>{requirement.statement}</p><p>The {requirement.threshold_percent}% threshold is a teaching assumption, not an operationally derived target.</p></article>
+    <article class="card"><h2>Evidence</h2><p>A result belongs to a specific execution, with inputs, model version, source revision and timestamp.</p><p>Run <code>npm run evidence</code> to generate a local reference record. This page displays no retained CI verification result.</p></article>
+  </section>
+  <p class="lead"><a href={`${base}lab/`}>Open the single-sensor coverage lab →</a></p>
+  <h2>A deliberately small engineering question</h2>
+  <p>For {scenario.id}, a single fixed sensor at ({scenario.sensor.x}, {scenario.sensor.y}) has an ideal circular radius of {scenario.sensor.radius} model units in a {scenario.area.width} × {scenario.area.height} area. How much area does that configuration cover?</p>
+  <p>The executable model estimates area coverage using cell-center sampling. It excludes terrain, occlusion, uncertainty, moving objects, faults and communication effects. A geometric PASS would not establish detection performance or real-world suitability.</p>
+  <p><a href={`${base}learn/01-engineering-intent/`}>See the Chapter 1 plan</a> · <a href={`${repo}README.md`}>Reproduce the reference calculation</a> · <a href={`${repo}ROADMAP.md`}>Roadmap</a></p>
+</Layout>

@@ -1,0 +1,11 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+<Layout title="Chapter 1 — planned">
+  <p class="eyebrow">Learn / Chapter 01 / Planned</p>
+  <h1>From Engineering Intent to Evidence</h1>
+  <div class="status"><strong>Not yet a published lesson.</strong> This placeholder records the learning objective; the final chapter, exercise and quiz arrive in a subsequent increment.</div>
+  <p>Learning objective: given an operational need, explain why an explicit requirement, executable model, test and qualified evidence are separate engineering artifacts.</p>
+  <p>The chapter will follow the fictional Distributed Monitoring System from an operator’s need to a measurable geometric coverage requirement, then examine an executable model and the limits of its results.</p>
+  <p>The <a href={`${import.meta.env.BASE_URL}lab/`}>interactive lab</a> lets you change the reference sensor configuration and inspect its geometric result. The repository contains the structured need, requirement, reference scenario, pure model and independent verification tests. Follow the <a href="https://github.com/And-Gu/executable-engineering-lab#readme">repository instructions</a> to reproduce the core calculation.</p>
+</Layout>

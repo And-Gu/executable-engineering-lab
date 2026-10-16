@@ -1,0 +1,14 @@
+id: REQ-COV-001
+title: Geometric monitoring coverage
+source_need: NEED-001
+statement: >
+  Under reference scenario SCN-001 and the V0 model assumptions,
+  the monitoring configuration shall cover at least 50 percent
+  of the defined area geometrically.
+threshold_percent: 50
+threshold_basis: Teaching assumption; not derived from operational analysis.
+verification:
+  method: simulation
+  model_id: MODEL-COV-001
+  test_id: TEST-COV-001
+  scenario_id: SCN-001
