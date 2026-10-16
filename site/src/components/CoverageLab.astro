@@ -10,7 +10,7 @@ const config = { area: scenario.area, sensor: scenario.sensor, threshold: requir
 ---
 <section data-coverage-lab data-config={JSON.stringify(config)} aria-labelledby="experiment-title">
   <h2 id="experiment-title">One sensor. One explicit criterion.</h2>
-  <p>Initialized from <a href={`${reference}#SCN-001`}>{scenario.id}</a>. Change a position or radius to explore geometric coverage, then reset to the reference configuration.</p>
+  <p>Initialized from <a href={`${reference}#SCN-001`}>{scenario.id}</a>. Change position or radius, then record separate trials below to compare them against the same criterion.</p>
   <div class="status"><strong>Interactive browser what-if run.</strong> These changes are temporary. They do not edit the source scenario or create saved CI verification evidence.</div>
   <div class="experiment">
     <div>
@@ -38,6 +38,7 @@ const config = { area: scenario.area, sensor: scenario.sensor, threshold: requir
         <input id="sensor-radius" name="radius" type="number" min="0" max={2 * Math.max(scenario.area.width, scenario.area.height)} step="1" value={scenario.sensor.radius} required aria-describedby="input-help" />
         <p id="input-help">Use arrow keys or type whole model units. x: 0–{scenario.area.width}; y: 0–{scenario.area.height}; radius: 0–{2 * Math.max(scenario.area.width, scenario.area.height)}. Position controls stay within the area; the engineering model also accepts outside positions.</p>
         <button type="button" data-reset>Reset to {scenario.id}</button>
+        <button type="button" data-record>Record configuration</button>
       </fieldset>
       <p data-error role="alert" hidden></p>
       <div class="result" role="status" aria-live="polite" aria-atomic="true">
@@ -47,6 +48,20 @@ const config = { area: scenario.area, sensor: scenario.sensor, threshold: requir
       <noscript><p>JavaScript is required to change the configuration. The values above show the reference calculation produced during this site build, not saved CI evidence. You can also run the model from the repository.</p></noscript>
     </div>
   </div>
+  <section aria-labelledby="comparison-title" class="comparison">
+    <h3 id="comparison-title">Compare separate single-sensor trials</h3>
+    <p>Record up to four configurations. Each row is a separate one-sensor what-if run with the same area, threshold and model; rows do not combine sensors. Reset keeps your rows. Reloading or leaving this page discards them.</p>
+    <p data-comparison-note role="status">No configurations recorded.</p>
+    <div class="table-scroll" role="region" aria-label="Configuration comparison table" tabindex="0">
+      <table>
+        <caption>Temporary browser comparisons — not retained CI evidence</caption>
+        <thead><tr><th scope="col">Trial</th><th scope="col">x</th><th scope="col">y</th><th scope="col">Radius</th><th scope="col">Coverage estimate</th><th scope="col">Margin (pp)</th><th scope="col">Criterion</th></tr></thead>
+        <tbody data-comparisons></tbody>
+      </table>
+    </div>
+    <p>Positions and radii use model units; margins use percentage points. A larger margin does not establish optimality: cost, installation constraints and real sensing performance are not evaluated.</p>
+    <button type="button" data-clear-comparisons disabled>Clear comparison</button>
+  </section>
   <h3>Definition and interpretation</h3>
   <p><a href={`${reference}#REQ-COV-001`}>{requirement.id}</a> defines the {requirement.threshold_percent}% criterion. This threshold is a teaching assumption, not an operationally derived target. <a href={`${reference}#TEST-COV-001`}>{manifest.test.id}</a> evaluates the reference scenario using <a href={`${reference}#MODEL-COV-001`}>{manifest.model.id}</a> v{manifest.model.version}.</p>
   <p>Method: {initial.method}, {initial.gridWidth} × {initial.gridHeight} equal-area cells. A cell is covered when its center’s distance is ≤ radius; zero radius means zero coverage. This is a sampled estimate, with discretization error. The smooth circle depicts the ideal footprint, not the sampled cells. PASS uses the unrounded estimate and includes equality.</p>
@@ -59,6 +74,14 @@ const config = { area: scenario.area, sensor: scenario.sensor, threshold: requir
 <style>
   .experiment { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 2rem; align-items: start; }
   svg { display: block; width: 100%; height: auto; border: 1px solid var(--sage-olive); }
+  .comparison { margin-top: 2.5rem; }
+  .table-scroll { overflow-x: auto; max-width: 100%; margin: 1rem 0; }
+  table { border-collapse: collapse; width: 100%; background: var(--surface); }
+  caption { text-align: left; padding: .6rem 0; font-weight: 650; }
+  th, td { padding: .65rem; border: 1px solid var(--sage-olive); text-align: left; }
+  th { background: var(--surface-muted); }
+  .table-scroll:focus-visible { outline: 3px solid var(--dusty-violet); outline-offset: 3px; }
+  button:disabled { opacity: .65; cursor: default; }
   .caption { font-size: .9rem; }
   fieldset { border: 1px solid var(--sage-olive); padding: 1.2rem; display: grid; gap: .65rem; }
   legend, label { font-weight: 650; }

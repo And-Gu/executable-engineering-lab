@@ -2,7 +2,7 @@
 
 **From engineering intent to working systems.**
 
-A practical learning site built around a fictional Distributed Monitoring System (DMS). This reviewable vertical slice establishes the V0 engineering core, an interactive single-sensor lab, source views and a static Astro foundation. It does **not** complete Milestone 1: final Chapter 1 writing and full release review remain.
+A practical learning site built around a fictional Distributed Monitoring System (DMS). Milestone 1 connects Chapter 1, an interactive single-sensor experiment, canonical engineering sources and reproducible verification. The learning-completion PR is ready for review; the full milestone release still requires its merge, Pages deployment and public smoke check.
 
 ## Reproduce locally
 
@@ -33,11 +33,15 @@ For reproducibility compare `definition` and `calculation`; `id` and `execution`
 
 The trace chain is `NEED-001 → REQ-COV-001 → SCN-001 → MODEL-COV-001 → TEST-COV-001 → RESULT-*`. The arrows are a teaching sequence; actual source fields distinguish need origin, reference scenario, implemented model and verification test relationships.
 
+## Learning path
+
+Start at Home → Learn → **From Engineering Intent to Evidence**. The chapter moves from the operator’s problem to a measurable criterion, a bounded model, an embedded experiment, evidence interpretation and four reasoning questions with revealable explanations. Its main narrative is approximately 850 words, excluding the interactive lab, exercise and quiz. Continue to Reference to inspect the exact sources and download retained CI evidence for a chosen revision.
+
 ## Interactive lab and traceability
 
 Open `/executable-engineering-lab/lab/` from the home navigation. The lab imports `calculateCoverage` and `evaluateCoverage` from the same DOM-free engineering modules exercised by Vitest. Both its build-time fallback and browser updates use those functions. Input defaults and the threshold come from validated canonical YAML, serialized into the page at build time.
 
-Numeric x/y/radius controls update the clipped SVG, accessible description, sampled percentage, threshold status and margin immediately. Reset restores all SCN-001 inputs. Blank, fractional or out-of-range UI edits hide stale geometry/results until corrected; the model itself permits any finite center and nonnegative radius. The diagram uses the SVG coordinate convention (origin upper-left, y down), stated beside the graphic. Without JavaScript, controls stay disabled and the build-time reference result remains readable.
+Numeric x/y/radius controls update the clipped SVG, accessible description, sampled percentage, threshold status and margin immediately. Reset restores all SCN-001 inputs. Record up to four independent one-sensor configurations in a temporary comparison table, including inputs, model-calculated coverage, margin and outcome against the same threshold. Reset keeps recorded rows; Clear comparison removes them. Reloading or leaving the page discards them. No results are stored or exported as verification evidence. Blank, fractional or out-of-range UI edits hide stale geometry/results until corrected; the model itself permits any finite center and nonnegative radius. The diagram uses the SVG coordinate convention (origin upper-left, y down), stated beside the graphic. Without JavaScript, controls stay disabled and the build-time reference result remains readable.
 
 `/executable-engineering-lab/reference/` exposes canonical need, requirement, scenario, model, test, evaluator and manifest sources from this build, with stable ID anchors. A short typed relationship sequence connects the sources to retained CI evidence. This is a source view, not a graph engine.
 
@@ -58,8 +62,8 @@ engineering/       Canonical YAML need, requirement, scenario and manifest
 schemas/           Zod contracts, independent of the presentation
 models/coverage/   Pure model, evaluator and independent tests
 scripts/           Validation, source loading and provenance-bearing evidence
-site/src/          Minimal Astro landing page and clearly marked chapter placeholder
-.github/workflows/ PR validation/evidence and manual Pages deployment
+site/src/          Home, Chapter 1, shared lab/comparison component and source views
+.github/workflows/ PR validation/evidence and main-branch Pages deployment
 ```
 
 The root-level Astro configuration uses `site/src` as its source directory. This small adaptation keeps one package/lockfile while preserving canonical engineering data outside the site.
@@ -68,7 +72,7 @@ The root-level Astro configuration uses `site/src` as its source directory. This
 
 PRs and pushes to `main` run validation, types, tests, static build and evidence generation. PR evidence uses the actual PR head commit rather than labeling a synthetic merge revision as the source. CI should be inspected before merge.
 
-Pages deployment runs on pushes to `main` after checks pass and can also be triggered manually. The repository is configured for **GitHub Actions** as its Pages source. After merge, inspect the deployment run, or run **Deploy to GitHub Pages** on `main` to retry. For a fork, configure **Settings → Pages → Build and deployment → Source: GitHub Actions** first. The workflow only deploys `main`. No merge is performed as part of preparing this PR. The intended URL is `https://and-gu.github.io/executable-engineering-lab/`; it is not a claim that the site is already published. Configuration follows the [official Astro GitHub Pages guide](https://docs.astro.build/en/guides/deploy/github/).
+Pages deployment runs on pushes to `main` after checks pass and can also be triggered manually. The repository is configured for **GitHub Actions** as its Pages source. After merge, inspect the deployment run, or run **Deploy to GitHub Pages** on `main` to retry. For a fork, configure **Settings → Pages → Build and deployment → Source: GitHub Actions** first. The workflow only deploys `main`. No merge is performed as part of preparing this PR. The foundation is published at [Executable Engineering Lab](https://and-gu.github.io/executable-engineering-lab/). New PR content appears there only after merge and a successful deployment; local/PR verification does not establish that it is already live. Configuration follows the [official Astro GitHub Pages guide](https://docs.astro.build/en/guides/deploy/github/).
 
 ## Contributing
 

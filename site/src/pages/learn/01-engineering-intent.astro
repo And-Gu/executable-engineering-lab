@@ -1,11 +1,90 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import CoverageLab from '../../components/CoverageLab.astro';
+import { loadSources } from '../../../../scripts/sources';
+import { calculateCoverage } from '../../../../models/coverage/coverage';
+const { need, requirement, scenario } = loadSources();
+const result = calculateCoverage({ area: scenario.area, sensor: scenario.sensor });
+const base = import.meta.env.BASE_URL;
+const reference = `${base}reference/`;
 ---
-<Layout title="Chapter 1 — planned">
-  <p class="eyebrow">Learn / Chapter 01 / Planned</p>
-  <h1>From Engineering Intent to Evidence</h1>
-  <div class="status"><strong>Not yet a published lesson.</strong> This placeholder records the learning objective; the final chapter, exercise and quiz arrive in a subsequent increment.</div>
-  <p>Learning objective: given an operational need, explain why an explicit requirement, executable model, test and qualified evidence are separate engineering artifacts.</p>
-  <p>The chapter will follow the fictional Distributed Monitoring System from an operator’s need to a measurable geometric coverage requirement, then examine an executable model and the limits of its results.</p>
-  <p>The <a href={`${import.meta.env.BASE_URL}lab/`}>interactive lab</a> lets you change the reference sensor configuration and inspect its geometric result. The repository contains the structured need, requirement, reference scenario, pure model and independent verification tests. Follow the <a href="https://github.com/And-Gu/executable-engineering-lab#readme">repository instructions</a> to reproduce the core calculation.</p>
+<Layout title="From Engineering Intent to Evidence">
+  <article>
+    <p class="eyebrow">Learn / Chapter 01</p>
+    <h1>From Engineering Intent to Evidence</h1>
+    <p class="lead">What would convince you that a monitoring configuration provides enough coverage?</p>
+    <p><strong>Learning objective:</strong> distinguish an operational need, a measurable requirement, a model and the evidence from a particular execution.</p>
+    <nav aria-label="Chapter sections"><a href="#question">The question</a><a href="#criterion">The criterion</a><a href="#model">The model</a><a href="#exercise">Experiment</a><a href="#evidence">Evidence</a><a href="#quiz">Quiz</a></nav>
+
+    <section id="question" data-chapter-prose>
+      <h2>Begin with the operator’s problem</h2>
+      <p>An operator needs to understand activity within a bounded industrial area. Objects may enter, cross and leave it. Before choosing equipment, an engineering team must ask what the operator needs to observe and what would count as adequate monitoring. A sensor specification alone cannot answer those questions.</p>
+      <p>Our fictional Distributed Monitoring System starts with a smaller question: how much of a designated area lies within an assumed observation footprint? This reduction makes one engineering claim inspectable. It does not resolve the wider monitoring problem, which also concerns objects, events and decisions over time.</p>
+      <p>This is <strong>engineering intent</strong>: the outcome someone needs, before a particular solution is prescribed. The repository records it as <a href={`${reference}#${need.id}`}>{need.id}</a>. Its identifier lets us refer back to the need; the identifier is not a substitute for understanding it. Choosing a single circular sensor is a modeling decision, not something the need itself demands.</p>
+    </section>
+
+    <section id="criterion" data-chapter-prose>
+      <h2>Turn “enough” into an explicit criterion</h2>
+      <p>“Provide coverage” leaves too much open for a reproducible evaluation. We need a defined area, a measure and a threshold. For this exercise, the proposed requirement is at least {requirement.threshold_percent}% geometric area coverage under a reference scenario and the stated V0 assumptions. Read its exact wording in <a href={`${reference}#${requirement.id}`}>{requirement.id}</a>.</p>
+      <p>The threshold is a <strong>teaching assumption</strong>. It was not derived from an operational analysis and is not a recommended design target. Making it explicit allows an experiment; it does not make the number authoritative. A real project would need a justified relationship between the criterion and the operator’s task.</p>
+      <p>The reference scenario, <a href={`${reference}#${scenario.id}`}>{scenario.id}</a>, defines a {scenario.area.width} × {scenario.area.height} rectangle, a sensor at ({scenario.sensor.x}, {scenario.sensor.y}) and a radius of {scenario.sensor.radius} model units. Separating these inputs from the requirement lets us distinguish changing a candidate configuration from changing what it must satisfy.</p>
+    </section>
+
+    <section id="model" data-chapter-prose>
+      <h2>Make a limited claim executable</h2>
+      <p>The model treats the sensor footprint as a perfect disk and every part of the rectangle as equally important. Coverage means the fraction of the rectangle inside that disk. Distances use generic model units; no relationship to a physical sensor’s range has been established.</p>
+      <p><a href={`${reference}#MODEL-COV-001`}>MODEL-COV-001</a> estimates that fraction with a fixed grid of {result.gridWidth} × {result.gridHeight} equal-area cells. It tests each cell’s center against the circular boundary, counts covered centers and converts that count to a percentage. Boundary points count as covered; a zero radius gives zero coverage. The smooth circle in the lab illustrates the ideal footprint, while the number is a sampled estimate with discretization error.</p>
+      <p>The model omits terrain, occlusion, directional sensitivity, uncertainty, time, faults and communication effects. These are limits on interpretation, not details to forget once a result appears. A coverage percentage is neither a probability of detecting an object nor a measure of tracking performance.</p>
+      <p>The reference configuration produces {result.coveragePercent.toFixed(2)}% estimated coverage, below the {requirement.threshold_percent}% criterion. Its footprint leaves too much of the rectangle uncovered. This intentional failure gives us a concrete discrepancy to investigate.</p>
+    </section>
+
+    <section id="exercise" aria-labelledby="exercise-heading">
+      <h2 id="exercise-heading">Experiment: one requirement, several configurations</h2>
+      <p>Predict the effect of each change before running it. Keep the threshold and area fixed throughout.</p>
+      <ol>
+        <li>Record the reference configuration in the comparison table.</li>
+        <li>Change only the radius until the criterion passes. Record that configuration.</li>
+        <li>Keep that radius and move the sensor toward a corner. Record the changed result. Where does some of the footprint go?</li>
+        <li>Find another passing configuration. Compare the inputs, percentage and margin, then explain which conclusion the model supports.</li>
+      </ol>
+      <p>Each row is a separate trial of <strong>one sensor</strong>. The rows are not simultaneous sensors. Reset restores the reference inputs; Clear comparison removes your temporary notes.</p>
+      <CoverageLab />
+    </section>
+
+    <section id="evidence" data-chapter-prose>
+      <h2>Separate the result from the claim</h2>
+      <p>The evaluator compares the unrounded estimate with the same threshold for every trial. Equality passes. A passing altered configuration shows that those inputs satisfy the geometric criterion; it does not replace the retained result for the unchanged reference scenario. Browser edits do not modify the canonical YAML.</p>
+      <p>Two configurations can both pass with different margins. That does not identify an optimum. We have defined no cost, power budget, installation constraint or operational objective to optimize. A larger assumed radius may improve this metric, but the model does not establish whether such a sensor exists or is suitable. Ask what additional criteria would be necessary before recommending either configuration.</p>
+      <p><strong>Verification</strong> asks whether the specified criterion is met under the defined conditions. <a href={`${reference}#TEST-COV-001`}>TEST-COV-001</a> executes the reference model and evaluates its requirement outcome independently of the website. Other automated tests compare known geometries and exercise invalid inputs and boundaries. A passing software test suite can correctly report a failing engineering configuration.</p>
+      <p><strong>Evidence</strong> is the result of a particular execution together with enough context to interpret it. A retained reference record identifies the requirement, scenario, test, model version, inputs, sampling method, threshold and result. It also records the source commit, working-tree status, execution context and timestamp. Without those, an isolated PASS label cannot tell you what was evaluated.</p>
+      <p>To inspect retained evidence, follow the <a href={`${reference}#retained-evidence`}>reference page’s CI artifact instructions</a>. To reproduce it locally, use the repository’s test and evidence commands. Identical definitions and calculation outputs should repeat; timestamps and execution identifiers naturally differ. Temporary browser comparisons are exploratory notes, not retained CI artifacts.</p>
+      <p>Successful verification within this model is a narrow conclusion. Real-world suitability would require justified requirements and evidence about effects this model excludes. Keep the chain visible: intent motivates the criterion; definitions make it executable; evidence records what happened; interpretation limits the claim.</p>
+    </section>
+
+    <section id="quiz" aria-labelledby="quiz-heading">
+      <h2 id="quiz-heading">Check your reasoning</h2>
+      <p>Answer before opening each explanation.</p>
+      <details><summary>1. The software tests pass, but the reference requirement fails. Is that a contradiction?</summary><p>No. The tests can confirm that the model and evaluator correctly report a configuration below the threshold. Software correctness and requirement satisfaction are different claims.</p></details>
+      <details><summary>2. Two configurations pass. What would justify choosing one?</summary><p>Additional, justified decision criteria and evidence: for example installation constraints, cost or actual sensing performance. Geometric PASS alone establishes neither optimality nor suitability.</p></details>
+      <details><summary>3. Which is an assumption: the operator’s need, the ideal circular footprint, or a recorded coverage result?</summary><p>The ideal circular footprint is a modeling assumption. The need expresses intent; the recorded percentage is an execution result. The threshold’s chosen value also has an explicitly assumed teaching basis.</p></details>
+      <details><summary>4. What would you need to reproduce a saved result?</summary><p>The source revision, model version, exact inputs, method and resolution, and evaluation threshold. The record’s timestamp and execution context identify the run; they are not numerical inputs to the deterministic calculation.</p></details>
+    </section>
+
+    <section data-chapter-prose>
+      <h2>The next question: what must stay connected?</h2>
+      <p>If the threshold changes, which evaluations need rerunning? If an assumption becomes invalid, which conclusions need review? Those questions require explicit relationships between engineering definitions and their evidence. Follow the <a href={reference}>source-to-test chain</a> to inspect the small set we already maintain. Connected engineering knowledge begins with preserving those meanings and dependencies, before introducing a larger representation.</p>
+    </section>
+    <p class="lesson-next"><a href={`${base}lab/`}>Continue experimenting in the standalone lab →</a></p>
+  </article>
 </Layout>
+<style>
+  section { margin: 3rem 0; scroll-margin-top: 1.5rem; }
+  [data-chapter-prose], #quiz { max-width: 72ch; }
+  nav { padding: 1rem 0; border-block: 1px solid var(--sage-olive); }
+  #exercise > ol { max-width: 70ch; padding-left: 1.5rem; }
+  li { margin-bottom: .6rem; }
+  details { background: var(--surface); border: 1px solid var(--sage-olive); padding: 1rem; margin: .8rem 0; }
+  summary { cursor: pointer; font-weight: 650; }
+  summary:focus-visible { outline: 3px solid var(--dusty-violet); outline-offset: 4px; }
+  .lesson-next { border-top: 1px solid var(--sage-olive); padding-top: 1.5rem; }
+</style>

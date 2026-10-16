@@ -25,6 +25,16 @@ const sources = records.map(record => ({ ...record, text: readFileSync(resolve(r
     <li>An evidence execution creates a <code>RESULT-*</code> record with the inputs, result, model version, source commit and run context. The <a href="https://github.com/And-Gu/executable-engineering-lab/actions/workflows/validate.yml">validation workflow</a> retains these as downloadable CI artifacts for 30 days. No saved CI result is displayed here.</li>
   </ol>
   <p>These are different relationships, not a general-purpose knowledge graph. A browser what-if run is temporary, and a changed configuration is no longer the unmodified reference scenario.</p>
+  <section id="retained-evidence">
+    <h2>Inspect a retained verification record</h2>
+    <ol>
+      <li>Open the <a href="https://github.com/And-Gu/executable-engineering-lab/actions/workflows/validate.yml?query=branch%3Amain">main-branch validation runs</a> and select a successful run for the revision you want to inspect.</li>
+      <li>Download its <code>reference-evidence-&lt;commit&gt;</code> artifact (GitHub sign-in may be required). Artifacts expire after 30 days.</li>
+      <li>Open <code>reference-evidence.json</code>. Check <code>execution.sourceCommit</code>, <code>runTimestamp</code>, <code>workingTreeDirty</code> and <code>context</code> before interpreting <code>definition</code> and <code>calculation</code>.</li>
+    </ol>
+    <p>The record includes exact inputs, model version, sampling method/resolution, threshold, result and requirement outcome. No live “latest PASS” is implied by this page. If an artifact has expired, reproduce a local record with <code>npm ci</code>, <code>npm test</code> and <code>npm run evidence</code> at the intended source revision; that new run has its own timestamp and context.</p>
+    <p><a href={`${import.meta.env.BASE_URL}learn/01-engineering-intent/#evidence`}>Return to interpreting evidence</a> · <a href={`${import.meta.env.BASE_URL}lab/`}>Explore a temporary browser configuration</a></p>
+  </section>
   {sources.map(source => <section id={source.id}>
     <h2>{source.id}</h2><p>{source.kind} · <code>{source.path}</code></p>
     <pre tabindex="0" aria-label={`${source.id} source`}><code>{source.text}</code></pre>
