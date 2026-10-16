@@ -1,13 +1,13 @@
 # Roadmap — planned capabilities, not published lessons
 
-## Milestone 1
+## Milestone 1 — learning completion ready for review
 
-- **This PR / increments A and B:** repository foundation, validated canonical data, pure V0 model/evaluator, independent tests, reproducible CLI evidence, minimal Astro home and marked chapter placeholder, PR validation and manual deployment workflow.
-- **Included follow-up / increment C:** shared-model browser lab, clipped SVG, labeled x/y/radius controls, reset, textual result, transient what-if labeling and canonical source views. Pages deployment is wired to main after validation.
-- **Then / increment D:** complete Chapter 1, exercise and quiz, retained evidence presentation and publication review. The first slice has a simple source trace view and recorded keyboard/mobile/deep-link smoke checks.
+- Existing foundation: canonical YAML, strict validation, pure V0 calculation/evaluator, independent tests, CLI/CI evidence, interactive lab and source views. Published through GitHub Pages.
+- Learning-completion PR: full Chapter 1 with embedded exercise and quiz; question → experiment → evidence navigation; temporary comparison of separate single-sensor configurations; retained-evidence inspection instructions; documented keyboard/mobile/base-path checks.
+- Release gate: review and merge the learning-completion PR, then verify the automatic Pages deployment and public chapter/lab/source navigation. Until then the new educational experience is verified locally and in PR CI, not published.
 
-This vertical slice does not satisfy the full milestone Definition of Done. Publication, the full chapter and final editorial/accessibility review remain.
+The engineering model, canonical definitions and verification workflows remain unchanged by the educational increment. A browser comparison is temporary exploratory work, not retained CI evidence. See docs/VERIFICATION.md for results and limitations.
 
 ## Later milestones
 
-V1: multiple sensors and geometric union coverage. V2: time and moving objects. V3: bounded agent-assisted proposals under review. V4: governance and assurance examples. No implementation of these capabilities belongs in the V0 foundation.
+V1: multiple sensors and geometric union coverage. V2: time and moving objects. V3: bounded agent-assisted proposals under review. V4: governance and assurance examples. These are future learning increments, not implemented capabilities or links to empty lessons.
