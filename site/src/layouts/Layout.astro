@@ -1,0 +1,48 @@
+---
+interface Props { title: string }
+const { title } = Astro.props;
+const base = import.meta.env.BASE_URL;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="From engineering intent to working systems. A practical, reproducible engineering learning lab." />
+    <title>{title} · Executable Engineering Lab</title>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <header>
+      <a class="brand" href={base}>Executable Engineering Lab</a>
+      <nav aria-label="Main navigation"><a href={base}>Home</a><a href={`${base}learn/01-engineering-intent/`}>Chapter 1 status</a><a href="https://github.com/And-Gu/executable-engineering-lab">Source</a></nav>
+    </header>
+    <main id="main"><slot /></main>
+    <footer>Fictional Distributed Monitoring System · V0 teaching model · Foundation increment</footer>
+  </body>
+</html>
+<style is:global>
+  :root { font-family: system-ui, sans-serif; color: #263025; background: #f7f7f0; line-height: 1.65; }
+  * { box-sizing: border-box; }
+  body { margin: 0; }
+  header, main, footer { max-width: 70rem; margin: auto; padding: 1.5rem clamp(1rem, 4vw, 3rem); }
+  header { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; border-bottom: 1px solid #c7cabc; }
+  nav { display: flex; gap: 1.3rem; flex-wrap: wrap; }
+  a { color: #3e542b; text-underline-offset: .2em; }
+  a:hover { color: #192719; }
+  a:focus-visible { outline: 3px solid #765c12; outline-offset: 5px; }
+  .brand { font-weight: 750; }
+  h1 { font-size: clamp(2rem, 5vw, 3.9rem); line-height: 1.12; letter-spacing: -.035em; max-width: 18ch; }
+  h2 { line-height: 1.25; }
+  p { max-width: 70ch; }
+  .eyebrow { text-transform: uppercase; font-size: .8rem; letter-spacing: .12em; font-weight: 700; }
+  .lead { font-size: 1.25rem; max-width: 55ch; }
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr)); gap: 1rem; margin: 2rem 0; }
+  .card { border: 1px solid #c7cabc; border-radius: .5rem; padding: 1.4rem; background: #fffef8; }
+  .card h2 { margin-top: 0; }
+  .status { border-left: 4px solid #657644; padding: 1rem 1.5rem; background: #e9ecdf; margin: 2rem 0; }
+  code { background: #e9ecdf; padding: .15em .35em; overflow-wrap: anywhere; }
+  footer { margin-top: 3rem; border-top: 1px solid #c7cabc; font-size: .85rem; }
+  .skip { position: absolute; top: -5rem; padding: .5rem; background: white; }
+  .skip:focus { top: 0; }
+</style>

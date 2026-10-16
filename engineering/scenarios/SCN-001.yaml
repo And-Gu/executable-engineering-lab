@@ -1,0 +1,11 @@
+id: SCN-001
+title: Single-sensor reference configuration
+area:
+  width: 100
+  height: 100
+sensor:
+  x: 50
+  y: 50
+  radius: 35
+units: model-units
+model_id: MODEL-COV-001
