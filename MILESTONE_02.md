@@ -1,6 +1,6 @@
 # Milestone 02 — Engineering Information Models
 
-**Status:** Plan accepted through PR #3; repository exercise merged as PR #4; Chapter 2/workspace ready for review, publication pending · **Version:** 0.1 · **Date:** 2026-10-20
+**Status:** Published through PR #5 on 2026-10-20; planning PR #3 and repository exercise PR #4 merged · **Version:** 0.1 · **Date:** 2026-10-20
 
 ## 1. Objective and relationship to the baseline
 
@@ -8,7 +8,7 @@ Teach how structured engineering definitions make a change explicit, checkable a
 
 Build on SITE_SPEC.md, DEMONSTRATOR_SPEC.md and the published MILESTONE_01.md implementation. This increment delivers Chapter 2 from the proposed curriculum while retaining the **V0 single-sensor teaching capability**. Milestone numbers identify delivery increments; they do not map directly to demonstrator versions. V1 multi-sensor capability remains later work.
 
-This document is a planning input for later implementation PRs. It does not publish a lesson or authorize the rest of the curriculum.
+This document records the accepted Milestone 2 scope. Publication evidence and remaining audit limitations are in [docs/MILESTONE_02_VERIFICATION.md](docs/MILESTONE_02_VERIFICATION.md). It does not authorize the rest of the curriculum.
 
 ## 2. Learning objective and chapter contract
 
@@ -115,4 +115,4 @@ Implementation is done when these gates pass and a reader can explain what chang
 - **Proposals masquerading as approved sources/evidence:** separate baseline/proposal labels, exact inputs and execution provenance; no browser persistence or approval claims.
 - **Hardcoded baseline tests being weakened for the exercise:** preserve them and add separate proposal fixtures/checks.
 - **Scope drifting into Chapter 3 or V1:** expose the existing typed links and teach manual dependency reasoning; defer graph tooling and multiple sensors.
-- **Planning being mistaken for publication:** keep this document marked proposed and avoid navigation to an unpublished Chapter 2.
+- **Planning being mistaken for publication:** distinguish planned gates from release evidence and add chapter navigation only with the completed lesson.

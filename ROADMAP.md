@@ -11,16 +11,21 @@ Chapter 1, the embedded/standalone single-sensor lab, temporary comparisons, sou
 
 The V0 model and approved definitions remain the baseline. Browser comparisons are temporary exploratory work, not retained CI evidence. A geometric PASS establishes neither operational suitability nor optimality.
 
-## Milestone 2 — Chapter 2 and browser workspace ready for review
+## Milestone 2 — published
 
-[Engineering Information Models](MILESTONE_02.md) builds Chapter 2 around a controlled requirement/scenario change: inspect structured fields and relationship meanings, validate a proposal, rerun evaluation and explain which evidence applies.
+[Engineering Information Models](MILESTONE_02.md) teaches controlled changes, typed relationships, validation and evidence applicability. Planning PR #3, the [repository proposal exercise](docs/02-proposal-exercise.md) in PR #4, and Chapter 2/workspace in [PR #5](https://github.com/And-Gu/executable-engineering-lab/pull/5) are merged.
 
-Planning PR #3 and repository exercise PR #4 are merged. The [repository proposal exercise](docs/02-proposal-exercise.md) supplies isolated fixtures, shared analysis/validation and retained analysis records.
+- [Read Chapter 2](https://and-gu.github.io/executable-engineering-lab/learn/02-engineering-information-models/).
+- Release revision: `7a5dc2b86c180500d1ecc162d93f0549309f6c1d`.
+- [Successful Pages deployment](https://github.com/And-Gu/executable-engineering-lab/actions/runs/39492136163); [successful post-merge validation](https://github.com/And-Gu/executable-engineering-lab/actions/runs/39492136267).
+- Public navigation, direct refresh, both proposal trials, broken/restored reference, reset and source links were smoke-tested after deployment. See [Milestone 2 verification](docs/MILESTONE_02_VERIFICATION.md).
 
-The educational PR adds Chapter 2, a temporary browser proposal workspace with exact field differences and invalid-reference handling, a two-chapter Learn index, typed relationship/source views and quiz. Its local production-build review and CI are the review gates; publication still requires merge, successful Pages deployment and public smoke checks. See [Milestone 2 verification](docs/MILESTONE_02_VERIFICATION.md).
+The single-sensor model, canonical YAML and baseline reference test remain unchanged. Browser proposals remain temporary and unapproved; retained proposal analyses do not claim execution of the registered reference test against changed inputs.
 
-The single-sensor model, canonical YAML and baseline reference test remain unchanged. This milestone is not declared published or complete by preparing the PR.
+## Milestone 3 — proposed planning scope
+
+[Digital Threads and Knowledge Graphs](MILESTONE_03.md) proposes a bounded lesson on following typed relationships and judging change impact and evidence applicability. It retains V0 and uses source-derived tables or a small static diagram; no graph infrastructure or general impact engine is authorized. There is no published Chapter 3 yet.
 
 ## Later learning increments
 
-Chapter 3 can develop digital threads and change-impact reasoning further. The demonstrator's V1 capability can later introduce multiple sensors and geometric union coverage; V2 can introduce time and moving objects. Bounded agent-assisted engineering and governance remain subsequent capabilities. Milestone numbering and demonstrator version numbering describe different progressions.
+The demonstrator's V1 capability can later introduce multiple sensors and geometric union coverage; V2 can introduce time and moving objects. Bounded agent-assisted engineering and governance remain subsequent capabilities. Milestone numbering and demonstrator version numbering describe different progressions.

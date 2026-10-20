@@ -1,6 +1,6 @@
 # Milestone 2 educational increment — verification
 
-Checked 2026-10-20. PR #4’s repository exercise is merged. Chapter 2 and the browser workspace are ready for review, not yet published. This is a development verification record, distinct from generated model/proposal evidence.
+Checked 2026-10-20. Milestone 2 is published through PR #5, following the repository exercise in PR #4. This development and release verification record is distinct from generated model/proposal evidence.
 
 ## Automated and editorial checks
 
@@ -48,7 +48,7 @@ The initial mobile review found that dynamically inserted table cells did not re
 
 Local implementation/review covers M2-EDU-01, DATA-01, VAL-01, EXP-01/02, TRC-01, EVD-01, UI-01 and REG-01 as bounded by the checks above. EVD-01 is supported by exact-definition CLI/CI records and explicit temporary-browser labeling; no browser result is promoted to retained evidence. The recorded test suite remains the baseline/proposal contract coverage, not proof of engineering suitability.
 
-M2-PUB-01 remains pending: review/merge the educational PR, inspect the automatic main-branch Pages deployment and validation, then smoke-test the public Home/Learn/Chapter 1→2 path, both proposal trials, broken/restore reference, source/evidence links and direct chapter refresh. The intended chapter URL is https://and-gu.github.io/executable-engineering-lab/learn/02-engineering-information-models/; preparing this PR does not claim it is live.
+M2-PUB-01 was completed on 2026-10-20. [PR #5](https://github.com/And-Gu/executable-engineering-lab/pull/5) merged as `7a5dc2b86c180500d1ecc162d93f0549309f6c1d`. [Pages deployment](https://github.com/And-Gu/executable-engineering-lab/actions/runs/39492136163) and [post-merge validation](https://github.com/And-Gu/executable-engineering-lab/actions/runs/39492136267) succeeded for that revision. Public smoke review covered Home/Learn/Chapter 1→2 navigation, direct chapter load/refresh, both proposal examples, broken/restored reference, reset, source relationships/return links and keyboard quiz disclosure. The [published chapter](https://and-gu.github.io/executable-engineering-lab/learn/02-engineering-information-models/) is available at the Pages base path. These observations complete the publication gate within the manual-review limitations below; they do not establish operational suitability.
 
 ## Limitations
 
