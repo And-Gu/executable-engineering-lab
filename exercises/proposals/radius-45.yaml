@@ -1,0 +1,14 @@
+id: PROPOSAL-RADIUS-45
+title: Change the configuration under the existing criterion
+status: unapproved
+rationale: >
+  Hypothetical teaching trial of a larger ideal footprint. It does not establish
+  that a physical sensor can provide this radius or is operationally suitable.
+baseline:
+  requirement_id: REQ-COV-001
+  scenario_id: SCN-001
+  model_id: MODEL-COV-001
+  model_version: 0.1.0
+change:
+  kind: sensor-radius
+  radius: 45

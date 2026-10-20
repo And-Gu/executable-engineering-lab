@@ -14,7 +14,8 @@
     "test": "vitest run",
     "evidence": "tsx scripts/evidence.ts",
     "build": "npm run validate && astro build",
-    "check": "npm run typecheck && npm run test && npm run build"
+    "check": "npm run typecheck && npm run test && npm run build",
+    "proposals": "tsx scripts/proposals.ts"
   },
   "dependencies": {
     "astro": "^7.4.0",

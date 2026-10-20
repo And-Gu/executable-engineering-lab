@@ -1,0 +1,14 @@
+id: PROPOSAL-THRESHOLD-35
+title: Change the criterion without changing the configuration
+status: unapproved
+rationale: >
+  Hypothetical teaching trial to distinguish a changed criterion from improved
+  geometric coverage. No operational justification for relaxing the requirement.
+baseline:
+  requirement_id: REQ-COV-001
+  scenario_id: SCN-001
+  model_id: MODEL-COV-001
+  model_version: 0.1.0
+change:
+  kind: requirement-threshold
+  threshold_percent: 35

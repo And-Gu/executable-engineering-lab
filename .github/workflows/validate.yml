@@ -19,9 +19,16 @@ jobs:
       - run: npm ci
       - run: npm run check
       - run: npm run evidence
+      - run: npm run proposals
       - uses: actions/upload-artifact@v4
         with:
           name: reference-evidence-${{ github.event.pull_request.head.sha || github.sha }}
           path: artifacts/reference-evidence.json
+          if-no-files-found: error
+          retention-days: 30
+      - uses: actions/upload-artifact@v4
+        with:
+          name: proposal-analysis-${{ github.event.pull_request.head.sha || github.sha }}
+          path: artifacts/proposals/*.json
           if-no-files-found: error
           retention-days: 30
