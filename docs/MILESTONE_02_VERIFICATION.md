@@ -32,6 +32,7 @@ Served the build through Astro preview at the Pages base path. Observations are 
 | Relationship view | Eight field/role rows link actual canonical IDs; direct refresh and return-to-Chapter-2 link work |
 | Analysis artifact instructions | Explain record kind, exact definitions, provenance, false testExecuted flag, expiry/sign-in and local reproduction |
 | Navigate away and return | Temporary proposal edits disappear |
+| Browser Back after a valid or broken-reference trial | Baseline threshold/radius/reference and no-difference view are restored; pagehide/pageshow also cover cached-document restoration |
 | Chapter 1 regression | Original embedded lab/reset still gives 38.52% FAIL; its next link reaches Chapter 2 |
 | Learn index | Chapters 1 and 2 appear in sequence with their learning purposes |
 | Direct Chapter 2 refresh | Loads at base-prefixed path; canonical initial proposal restored |

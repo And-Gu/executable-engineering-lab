@@ -57,7 +57,11 @@ if (workspace) {
   kind.addEventListener('change', () => { choose(kind.value); render(); });
   value.addEventListener('input', render);
   need.addEventListener('input', render);
-  controls.querySelector<HTMLButtonElement>('[data-reset-proposal]')!.addEventListener('click', () => { choose('requirement-threshold'); need.value = config.baseline.requirement.source_need; render(); });
+  function reset() { choose('requirement-threshold'); need.value = config.baseline.requirement.source_need; render(); }
+  controls.querySelector<HTMLButtonElement>('[data-reset-proposal]')!.addEventListener('click', reset);
+  // History can restore a cached document without rerunning module initialization.
+  window.addEventListener('pagehide', reset);
+  window.addEventListener('pageshow', event => { if (event.persisted) reset(); });
   for (const button of controls.querySelectorAll<HTMLButtonElement>('[data-example]')) button.addEventListener('click', () => {
     const fixture = button.dataset.example === 'threshold' ? config.threshold : config.radius;
     choose(fixture.change.kind); value.value = String(fixture.change.kind === 'requirement-threshold' ? fixture.change.threshold_percent : fixture.change.radius);
