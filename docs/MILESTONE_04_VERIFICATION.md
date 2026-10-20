@@ -1,6 +1,6 @@
 # Milestone 4 educational increment — verification
 
-Checked 2026-10-20. Planning PR #9 is merged. Chapter 4 is ready for review, not published. This development record is separate from generated engineering evidence.
+Checked 2026-10-20. Planning PR #9 is merged. Chapter 4 is published through PR #10. This development record is separate from generated engineering evidence.
 
 ## Scope and automated checks
 
@@ -44,6 +44,6 @@ Two `npm run evidence` executions at clean revision `81de229` produced identical
 
 Local review supports M4-EDU-01, MOD-01, EXP-01, VAL-01, EVD-01, UI-01 and REG-01 within the limits above. M4-REP-01 is supported by the two-execution comparison above. Browser numbers remain temporary calculations; no retained CI result is loaded by the lesson.
 
-M4-PUB-01 remains pending: review/merge, inspect validation and Pages deployment for the main revision, then publicly smoke-test direct refresh, Home/Learn/Chapter 3→4, counts/radius/boundary/reset, invalid input, source return and quiz. Intended path: `/executable-engineering-lab/learn/04-executable-models/`.
+M4-PUB-01 was completed on 2026-10-20. [PR #10](https://github.com/And-Gu/executable-engineering-lab/pull/10) merged at 21:14:41 UTC as `5c93196767d514bf5a4fc4bbe5bdb9cc09a0b80d`. [Pages deployment](https://github.com/And-Gu/executable-engineering-lab/actions/runs/39498771756) and [main-revision validation](https://github.com/And-Gu/executable-engineering-lab/actions/runs/39498771698) succeeded. The merged checkout passed `npm run check` (86 tests) and `npm run evidence`, retaining the expected baseline FAIL. Public direct load/refresh, Home/Learn/Chapter 3→4, radius count update (4060 at radius 36), boundary count (1926 at x=0), invalid-input withholding, canonical reset (3852), source/evidence return and quiz via Enter passed. No browser error logs were observed. [Chapter 4 is published](https://and-gu.github.io/executable-engineering-lab/learn/04-executable-models/) within the manual-review limitations above.
 
 V0 provides neither an established universal discretization bound nor physical sensor validity. Its geometric criterion cannot establish optimality, detection performance or operational suitability. CI artifacts expire after 30 days and can require sign-in. Full screen-reader/cross-browser and JavaScript-disabled browser audits remain unperformed.

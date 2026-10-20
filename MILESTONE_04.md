@@ -1,6 +1,6 @@
 # Milestone 04 — Executable Engineering Models
 
-**Status:** Plan accepted through PR #9; Chapter 4 ready for review, publication pending · **Version:** 0.1 · **Date:** 2026-10-20
+**Status:** Published through PR #10 on 2026-10-20; planning PR #9 merged · **Version:** 0.1 · **Date:** 2026-10-20
 
 ## Objective and baseline
 
