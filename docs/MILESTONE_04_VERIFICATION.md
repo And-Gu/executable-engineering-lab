@@ -38,11 +38,11 @@ These are manual smoke checks, not comprehensive accessibility or cross-browser 
 
 ## Evidence reproduction
 
-Run `npm run evidence` twice from the committed checkout and compare `definition` and `calculation`, separately from `id` and `execution.runTimestamp`. The completed reproduction record is included with the handoff results. Source revision and dirty status must match the actual checkout; differing execution metadata is expected. `npm run proposals` remains a separate unapproved-analysis path, not execution of TEST-COV-001 against proposals.
+Two `npm run evidence` executions at clean revision `81de229` produced identical `definition` and `calculation` fields, including the expected 38.52% FAIL. Their result identifiers and timestamps differed, while source revision and clean working-tree status agreed. This verifies repeatability separately from execution metadata. `npm run proposals` remains a separate unapproved-analysis path, not execution of TEST-COV-001 against proposals.
 
 ## Acceptance and remaining release work
 
-Local review supports M4-EDU-01, MOD-01, EXP-01, VAL-01, EVD-01, UI-01 and REG-01 within the limits above. M4-REP-01 also requires the recorded two-execution comparison. Browser numbers remain temporary calculations; no retained CI result is loaded by the lesson.
+Local review supports M4-EDU-01, MOD-01, EXP-01, VAL-01, EVD-01, UI-01 and REG-01 within the limits above. M4-REP-01 is supported by the two-execution comparison above. Browser numbers remain temporary calculations; no retained CI result is loaded by the lesson.
 
 M4-PUB-01 remains pending: review/merge, inspect validation and Pages deployment for the main revision, then publicly smoke-test direct refresh, Home/Learn/Chapter 3→4, counts/radius/boundary/reset, invalid input, source return and quiz. Intended path: `/executable-engineering-lab/learn/04-executable-models/`.
 
