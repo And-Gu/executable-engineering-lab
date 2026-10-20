@@ -31,9 +31,18 @@ The single-sensor model, canonical YAML and baseline reference test remain uncha
 - [Successful Pages deployment](https://github.com/And-Gu/executable-engineering-lab/actions/runs/39496821993); [successful post-merge validation](https://github.com/And-Gu/executable-engineering-lab/actions/runs/39496821997).
 - Public navigation, refresh, proposal trials, invalid/restored reference, reset, source return and keyboard quiz were smoke-tested. See [Milestone 3 verification](docs/MILESTONE_03_VERIFICATION.md) for observations and limits.
 
-## Milestone 4 — Chapter 4 ready for review
+## Milestone 4 — published
 
-[Executable Engineering Models](MILESTONE_04.md) defines a lesson on the existing calculation's numerical method, reproducible execution and limitations. It retains the fixed V0 grid and single sensor, reusing the current lab and evidence path. Planning PR #9 is merged. The educational increment integrates the existing lab, numerical-method lesson, reproduction exercise and quiz. No lab refactor was needed because counts, method, resolution and evaluation were already visible. See [Milestone 4 verification](docs/MILESTONE_04_VERIFICATION.md). Publication remains pending review/merge, successful deployment and public smoke checks.
+[Executable Engineering Models](MILESTONE_04.md) explains the existing calculation's numerical method, reproducible execution and limitations. Planning PR #9 and the educational [PR #10](https://github.com/And-Gu/executable-engineering-lab/pull/10) are merged. The existing lab already exposed counts, method, resolution and evaluation; no model or lab refactor was needed.
+
+- [Read Chapter 4](https://and-gu.github.io/executable-engineering-lab/learn/04-executable-models/).
+- Release revision: `5c93196767d514bf5a4fc4bbe5bdb9cc09a0b80d`.
+- [Successful Pages deployment](https://github.com/And-Gu/executable-engineering-lab/actions/runs/39498771756); [successful post-merge validation](https://github.com/And-Gu/executable-engineering-lab/actions/runs/39498771698).
+- Public refresh/navigation, count/radius/boundary/reset behavior, invalid input, source return and keyboard quiz passed smoke review. See [Milestone 4 verification](docs/MILESTONE_04_VERIFICATION.md).
+
+## Milestone 5 — proposed planning scope
+
+[Experimentation and Trade-offs](MILESTONE_05.md) proposes controlled comparisons within the existing single-sensor architecture. It teaches feasibility versus preference and missing decision evidence, without claiming multi-sensor architecture comparison or introducing invented cost/ranking metrics. No Chapter 5 is published yet.
 
 ## Later learning increments
 

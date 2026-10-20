@@ -2,7 +2,7 @@
 
 **From engineering intent to working systems.**
 
-A practical learning site built around a fictional Distributed Monitoring System (DMS). Chapters 1–3 connect engineering intent, a single-sensor experiment, structured definitions, digital threads and reproducible evidence. Milestone 3 was published on 2026-10-20. See [ROADMAP.md](ROADMAP.md) for release evidence and [MILESTONE_04.md](MILESTONE_04.md) for the accepted Chapter 4 scope. The lesson is ready for review, with publication pending; see [Milestone 4 verification](docs/MILESTONE_04_VERIFICATION.md).
+A practical learning site built around a fictional Distributed Monitoring System (DMS). Chapters 1–4 connect engineering intent, structured definitions, digital threads and reproducible executable models. Milestone 4 was published on 2026-10-20. See [ROADMAP.md](ROADMAP.md) for release evidence and [MILESTONE_05.md](MILESTONE_05.md) for the proposed lesson on controlled experiments and trade-offs between single-sensor configurations.
 
 ## Reproduce locally
 
