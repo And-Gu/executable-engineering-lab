@@ -1,6 +1,6 @@
 # Milestone 02 — Engineering Information Models
 
-**Status:** Proposed plan; implementation not started · **Version:** 0.1 · **Date:** 2026-10-20
+**Status:** Plan accepted through PR #3; repository exercise implementation in progress · **Version:** 0.1 · **Date:** 2026-10-20
 
 ## 1. Objective and relationship to the baseline
 
@@ -105,7 +105,7 @@ Implementation is done when these gates pass and a reader can explain what chang
 
 ## 7. Proposed PR sequence
 
-1. **This planning PR:** record the published Milestone 1 baseline, define this chapter/exercise and review the scope. No runtime changes or empty Chapter 2 page.
+1. **Planning (merged as PR #3):** record the published Milestone 1 baseline, define this chapter/exercise and review the scope. No runtime changes or empty Chapter 2 page.
 2. **Proposal validation and reproducible exercise:** implement the bounded proposal/fixture path, reuse validation/evaluation and add meaningful positive/negative checks while preserving baseline regression tests.
 3. **Educational vertical slice:** write Chapter 2, integrate the browser experiment and source relationship view, verify accessibility/navigation/base paths and propose the complete lesson for publication. Keep all new features within this plan; split further only if needed for a reviewable change.
 
