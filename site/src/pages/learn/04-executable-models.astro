@@ -1,0 +1,77 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import CoverageLab from '../../components/CoverageLab.astro';
+const base = import.meta.env.BASE_URL;
+const reference = `${base}reference/`;
+---
+<Layout title="Executable Engineering Models">
+  <article>
+    <p class="eyebrow">Learn / Chapter 04</p>
+    <h1>Executable Engineering Models</h1>
+    <p class="lead">What exactly did the model execute, and can another engineer reproduce it?</p>
+    <p><strong>Learning objective:</strong> explain the numerical calculation, separate it from requirement evaluation, and reproduce a result without overstating its validity.</p>
+    <p>Prerequisite: <a href={`${base}learn/03-digital-threads/`}>Digital Threads and Knowledge Graphs</a>.</p>
+    <nav aria-label="Chapter sections"><a href="#question">The question</a><a href="#calculation">The calculation</a><a href="#exercise">Experiment</a><a href="#reproduce">Reproduce</a><a href="#quiz">Quiz</a></nav>
+    <section id="question" data-chapter-prose>
+      <h2>Make the calculation inspectable</h2>
+      <p>The monitoring team wants enough geometric coverage of its industrial area. A drawing shows an ideal circular footprint, and a result reports a percentage. Before using that percentage in a decision, a reviewer asks what the software actually measured. Did it calculate continuous area exactly, count sample locations, or estimate detection performance?</p>
+      <p>Our answer is deliberately narrow: this model counts covered sample locations in a rectangle. It estimates area coverage under stated assumptions. It does not estimate the probability of detecting an object, track movement or demonstrate a physical sensor’s range. Making a model executable makes its rules repeatable; it does not make those rules appropriate for every engineering question.</p>
+      <p>Chapter 3 followed the relationships behind a conclusion. Now open the calculation at the center of that thread. Inspect <a href={`${reference}#MODEL-COV-001`}>MODEL-COV-001</a> alongside its inputs and output fields. The engineering meaning belongs to those definitions and assumptions, not to the language or interface used to run them.</p>
+    </section>
+    <section id="calculation" data-chapter-prose>
+      <h2>From continuous geometry to a discrete estimate</h2>
+      <p>The geometric definition asks what fraction of the rectangle lies inside the circular footprint. The implementation divides the rectangle into a fixed grid of equally sized cells. It checks each cell’s center: if its distance from the sensor is less than or equal to the radius, that cell counts as covered. Radius zero is explicitly treated as zero area coverage, even if a center coincides with the sensor.</p>
+      <p>Because every cell has equal area, the covered-center fraction estimates the covered-area fraction. The function returns covered cells, total cells, estimated percentage, method and grid dimensions. These are actual outputs, not labels inferred from the drawing. The smooth circle illustrates the ideal footprint; its edge does not show which individual sample centers were counted.</p>
+      <p>The grid stays fixed while position and radius change. Small edits can leave the count unchanged or move several centers across the boundary together. A finer-looking drawing or more decimal places would not improve this numerical resolution. No universal error bound is established here. The estimate must remain labeled approximate, including when it falls close to a requirement threshold.</p>
+      <p>Clipping also matters. A sensor near a boundary has part of its circle outside the monitored rectangle. Only sample centers inside the rectangle contribute. Using the whole circle’s area would answer a different question. The independent tests compare known contained-disk and corner cases with analytic geometry using stated tolerances; they do not replace the executable calculation used by the site.</p>
+    </section>
+    <section data-chapter-prose>
+      <h2>Separate calculation from evaluation</h2>
+      <p>The pure coverage function accepts area dimensions, sensor position and radius. It validates these inputs and returns a result without reading the page, writing a file or selecting a requirement. Browser controls restrict inputs for usability; the engineering function also accepts sensor centers outside the rectangle. A control’s allowed range is therefore distinct from the model’s supported domain.</p>
+      <p>The evaluator receives the coverage result and a threshold. It calculates a margin and passes equality. It uses the unrounded percentage, not the two-decimal display string. Changing a threshold can change the outcome without changing coverage; the <a href={`${base}learn/02-engineering-information-models/#exercise`}>existing proposal exercise</a> lets you inspect that distinction separately. The threshold’s operational justification remains outside both functions.</p>
+      <p>Read the <a href="https://github.com/And-Gu/executable-engineering-lab/blob/main/models/coverage/coverage.ts">coverage implementation</a> and <a href="https://github.com/And-Gu/executable-engineering-lab/blob/main/models/coverage/evaluate.ts">evaluator</a> to follow that division. The browser and automated tests import these same modules. Sharing an implementation prevents competing formulas from drifting apart, while independent expected geometries and boundary tests provide checks on that implementation.</p>
+    </section>
+    <section id="exercise" aria-labelledby="exercise-heading">
+      <h2 id="exercise-heading">Experiment: predict, count, restore</h2>
+      <ol>
+        <li>Reset to SCN-001. Read the covered-cell count, total, percentage and margin. Find the method and grid dimensions under Definition and interpretation.</li>
+        <li>Increase radius by one model unit, then again. Predict the direction of change and inspect the actual count. Do not assume every edit produces the same increment.</li>
+        <li>Reset, then move x toward the left boundary while keeping y and radius unchanged. Explain why footprint outside the rectangle contributes nothing.</li>
+        <li>Restore the exact earlier values or reset. Compare the count and percentage with the original run. Record separate trials if useful; they never combine sensors.</li>
+        <li>Try radius zero, then a blank input. Explain the difference between a valid zero result and a configuration that must not be evaluated.</li>
+      </ol>
+      <CoverageLab />
+      <details><summary>Compare your explanation</summary><p>The numerical estimate counts cell centers, while the circle depicts continuous geometry. With unchanged method and inputs, the numerical output repeats. Boundary clipping can reduce coverage; a zero radius is valid and gives zero coverage. A blank value is invalid, so stale numbers and geometry must be withheld. No trial changes canonical YAML or creates retained verification evidence.</p></details>
+    </section>
+    <section id="reproduce" data-chapter-prose>
+      <h2>Reproduce the execution, not just the screenshot</h2>
+      <p>Use an identified repository checkout and run <code>npm ci</code>, <code>npm run check</code> and <code>npm run evidence</code>. Inspect <code>artifacts/reference-evidence.json</code>. Repeat evidence generation and compare its definition and calculation fields. Those numerical fields should agree for identical sources and method. The result identifier and timestamp describe separate executions and need not match.</p>
+      <p>Check the source commit, working-tree status, context and runtime recorded with each execution. An uncommitted edit cannot be recovered from the commit alone. Keep dirty status honest, preserve the evaluated inputs and inspect the relevant source differences. A screenshot lacks this execution context and is insufficient as a reproducible verification record.</p>
+      <p>The reference test deliberately checks the canonical configuration and its expected engineering failure. Passing software tests means those checks succeeded, not that the reference design met its coverage criterion. Preserve those assertions. Use <code>npm run proposals</code> only for the separate unapproved proposal path; it does not execute the registered reference test against changed definitions.</p>
+      <p>The <a href={`${reference}#retained-evidence`}>retained evidence instructions</a> explain CI artifacts and local reproduction. Artifacts expire after 30 days and may require sign-in. This chapter displays build-time and temporary browser calculations, not a loaded CI record. Reproducing the number checks numerical repeatability; assessing whether an ideal unobstructed circle represents a real sensor still requires other evidence.</p>
+    </section>
+    <section id="quiz">
+      <h2>Check your reasoning</h2>
+      <p>Answer before revealing each explanation.</p>
+      <details><summary>1. Why might a small radius edit leave the percentage unchanged?</summary><p>The fixed grid counts cell centers. If no center changes membership in the footprint, the count stays the same even though the ideal circle changed.</p></details>
+      <details><summary>2. What should match between two reproducible executions?</summary><p>The exact evaluated definition and deterministic calculation fields should match for unchanged inputs and method. Execution identifiers and timestamps can differ; inspect revision, dirty status and context separately.</p></details>
+      <details><summary>3. Should the displayed percentage decide PASS?</summary><p>No. The evaluator compares the unrounded estimate with the criterion and includes equality. Display rounding must not alter that decision, and numerical approximation still limits its interpretation.</p></details>
+      <details><summary>4. Is a reproducible result proof of physical validity?</summary><p>No. It shows repeatability under specified rules. Calibration, occlusion, uncertainty and actual detection performance are absent from V0.</p></details>
+    </section>
+    <section data-chapter-prose>
+      <h2>Next: decide what to compare</h2>
+      <p>We can now explain the executed rules and reproduce their output. The next engineering question is which alternatives and criteria deserve comparison. A larger modeled margin is only one observation; choosing a design also requires justified objectives and constraints. Keep that decision separate from making a calculation run successfully.</p>
+    </section>
+    <p><a href={`${base}learn/03-digital-threads/`}>← Chapter 3</a> · <a href={`${base}learn/`}>Learning path</a> · <a href={reference}>Inspect engineering sources →</a></p>
+  </article>
+</Layout>
+<style>
+  section { margin: 3rem 0; scroll-margin-top: 1.5rem; }
+  [data-chapter-prose], #quiz { max-width: 72ch; }
+  nav { border-block: 1px solid var(--sage-olive); padding: 1rem 0; }
+  #exercise > ol { max-width: 70ch; padding-left: 1.5rem; }
+  li { margin-bottom: .6rem; }
+  details { background: var(--surface); border: 1px solid var(--sage-olive); padding: 1rem; margin: .8rem 0; max-width: 72ch; }
+  summary { cursor: pointer; font-weight: 650; }
+  summary:focus-visible { outline: 3px solid var(--dusty-violet); outline-offset: 4px; }
+</style>
