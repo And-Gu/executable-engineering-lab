@@ -47,7 +47,9 @@ The layout preserves the approved color palette. Status is textual and does not 
 
 ## Publication and unresolved limitations
 
-The foundation was successfully deployed previously. This learning-completion PR intentionally remains unmerged for review. The complete Milestone 1 published Definition of Done is therefore pending review/merge, automatic Pages deployment, and a public smoke check of Home → Learn → experiment → sources → evidence interpretation, including direct chapter refresh and script/asset loading. Expected public root: https://and-gu.github.io/executable-engineering-lab/.
+Milestone 1 was published on 2026-10-16 after [PR #2](https://github.com/And-Gu/executable-engineering-lab/pull/2) merged at revision `cc18dc8246fa4c1fa02d72560681da4858681abe`. [Pages deployment 38942199903](https://github.com/And-Gu/executable-engineering-lab/actions/runs/38942199903) and [post-merge validation 38942199469](https://github.com/And-Gu/executable-engineering-lab/actions/runs/38942199469) succeeded.
+
+Public browser checks passed after deployment: the homepage learning path, direct Chapter 1 refresh, embedded comparison (reference 38.52% FAIL and centered radius-45 63.76% PASS), requirement source link, return-to-evidence navigation and keyboard quiz disclosure. The chapter is [published here](https://and-gu.github.io/executable-engineering-lab/learn/01-engineering-intent/). This release record supersedes the pre-merge publication gate from the learning-completion review. On 2026-10-20 the merged revision and successful deployment were reconfirmed, and an HTTP check found the chapter's operational-question and quiz headings; this was not a repeat of the full browser audit.
 
 Retained evidence is downloaded from the selected validation run; the site does not fetch or claim a live latest result. GitHub may require sign-in for artifact downloads, and artifacts expire after 30 days. Local reproduction remains available. Temporary comparison rows are neither persisted nor exported; changing them does not change the reference scenario or its retained CI outcome.
 

@@ -1,13 +1,22 @@
-# Roadmap — planned capabilities, not published lessons
+# Roadmap — delivery status and proposed learning increments
 
-## Milestone 1 — learning completion ready for review
+## Milestone 1 — published
 
-- Existing foundation: canonical YAML, strict validation, pure V0 calculation/evaluator, independent tests, CLI/CI evidence, interactive lab and source views. Published through GitHub Pages.
-- Learning-completion PR: full Chapter 1 with embedded exercise and quiz; question → experiment → evidence navigation; temporary comparison of separate single-sensor configurations; retained-evidence inspection instructions; documented keyboard/mobile/base-path checks.
-- Release gate: review and merge the learning-completion PR, then verify the automatic Pages deployment and public chapter/lab/source navigation. Until then the new educational experience is verified locally and in PR CI, not published.
+Chapter 1, the embedded/standalone single-sensor lab, temporary comparisons, source views and retained verification workflow were published on 2026-10-16 through [PR #2](https://github.com/And-Gu/executable-engineering-lab/pull/2).
 
-The engineering model, canonical definitions and verification workflows remain unchanged by the educational increment. A browser comparison is temporary exploratory work, not retained CI evidence. See docs/VERIFICATION.md for results and limitations.
+- [Read Chapter 1](https://and-gu.github.io/executable-engineering-lab/learn/01-engineering-intent/).
+- Release revision: `cc18dc8246fa4c1fa02d72560681da4858681abe`.
+- [Successful Pages deployment](https://github.com/And-Gu/executable-engineering-lab/actions/runs/38942199903); [successful post-merge validation](https://github.com/And-Gu/executable-engineering-lab/actions/runs/38942199469).
+- Public chapter refresh, comparison exercise, quiz and source/return navigation were smoke-tested after deployment. See [docs/VERIFICATION.md](docs/VERIFICATION.md) for results and limits.
 
-## Later milestones
+The V0 model and approved definitions remain the baseline. Browser comparisons are temporary exploratory work, not retained CI evidence. A geometric PASS establishes neither operational suitability nor optimality.
 
-V1: multiple sensors and geometric union coverage. V2: time and moving objects. V3: bounded agent-assisted proposals under review. V4: governance and assurance examples. These are future learning increments, not implemented capabilities or links to empty lessons.
+## Milestone 2 — proposed plan, not implemented
+
+[Engineering Information Models](MILESTONE_02.md) builds Chapter 2 around a controlled requirement/scenario change: inspect structured fields and relationship meanings, validate a proposal, rerun evaluation and explain which evidence applies.
+
+Retain the existing single-sensor model. Provide a browser proposal exercise and reproducible repository path without weakening baseline tests. Review the plan and acceptance gates before implementation. There is no published Chapter 2 page yet.
+
+## Later learning increments
+
+Chapter 3 can develop digital threads and change-impact reasoning further. The demonstrator's V1 capability can later introduce multiple sensors and geometric union coverage; V2 can introduce time and moving objects. Bounded agent-assisted engineering and governance remain subsequent capabilities. Milestone numbering and demonstrator version numbering describe different progressions.

@@ -2,7 +2,7 @@
 
 **From engineering intent to working systems.**
 
-A practical learning site built around a fictional Distributed Monitoring System (DMS). Milestone 1 connects Chapter 1, an interactive single-sensor experiment, canonical engineering sources and reproducible verification. The learning-completion PR is ready for review; the full milestone release still requires its merge, Pages deployment and public smoke check.
+A practical learning site built around a fictional Distributed Monitoring System (DMS). Milestone 1 connects Chapter 1, an interactive single-sensor experiment, canonical engineering sources and reproducible verification. Milestone 1 was published on 2026-10-16. See [ROADMAP.md](ROADMAP.md) for its release evidence and [MILESTONE_02.md](MILESTONE_02.md) for the proposed Chapter 2 plan; Milestone 2 is not implemented.
 
 ## Reproduce locally
 
