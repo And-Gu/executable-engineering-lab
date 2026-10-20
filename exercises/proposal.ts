@@ -35,9 +35,11 @@ export function analyzeProposal(rawBaseline: Parameters<typeof validateDefinitio
   const change = proposal.change;
   if (change.kind === 'requirement-threshold') {
     const old = baseline.requirement;
-    proposed.requirement.threshold_percent = change.threshold_percent;
-    proposed.requirement.statement = old.statement.replace(criterion, `at least ${change.threshold_percent} percent`);
-    proposed.requirement.threshold_basis = `Unapproved teaching proposal: ${proposal.rationale}`;
+    if (change.threshold_percent !== old.threshold_percent) {
+      proposed.requirement.threshold_percent = change.threshold_percent;
+      proposed.requirement.statement = old.statement.replace(criterion, `at least ${change.threshold_percent} percent`);
+      proposed.requirement.threshold_basis = `Unapproved teaching proposal: ${proposal.rationale}`;
+    }
     for (const field of ['threshold_percent', 'statement', 'threshold_basis'] as const) {
       if (old[field] !== proposed.requirement[field]) differences.push({ field: `requirement.${field}`, before: old[field], after: proposed.requirement[field] });
     }

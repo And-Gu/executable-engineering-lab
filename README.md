@@ -2,7 +2,7 @@
 
 **From engineering intent to working systems.**
 
-A practical learning site built around a fictional Distributed Monitoring System (DMS). Milestone 1 connects Chapter 1, an interactive single-sensor experiment, canonical engineering sources and reproducible verification. Milestone 1 was published on 2026-10-16. See [ROADMAP.md](ROADMAP.md) for its release evidence and [MILESTONE_02.md](MILESTONE_02.md) for the proposed Chapter 2 plan; Milestone 2 is in progress: the [repository proposal exercise](docs/02-proposal-exercise.md) is ready for review; Chapter 2 and the browser workspace remain pending.
+A practical learning site built around a fictional Distributed Monitoring System (DMS). Milestone 1 connects Chapter 1, an interactive single-sensor experiment, canonical engineering sources and reproducible verification. Milestone 1 was published on 2026-10-16. See [ROADMAP.md](ROADMAP.md) for its release evidence and [MILESTONE_02.md](MILESTONE_02.md) for the proposed Chapter 2 plan; Milestone 2 is in progress: the [repository proposal exercise](docs/02-proposal-exercise.md) is merged; Chapter 2 and the browser workspace are ready for review, with publication pending.
 
 ## Reproduce locally
 
@@ -35,11 +35,11 @@ The trace chain is `NEED-001 → REQ-COV-001 → SCN-001 → MODEL-COV-001 → T
 
 ## Milestone 2 proposal exercise (repository increment)
 
-Run `npm run proposals` after `npm run check` to analyze the separate unapproved threshold/radius fixtures in `exercises/proposals/`. Reports are written to ignored `artifacts/proposals/`, with exact definitions, calculated outcomes and source provenance. These are proposal analyses, explicitly not executions of TEST-COV-001 against changed inputs. Reference verification remains unchanged. See [the exercise](docs/02-proposal-exercise.md) for isolated edits, invalid-reference diagnostics, reproduction and limitations. No Chapter 2 page is published by this increment.
+Run `npm run proposals` after `npm run check` to analyze the separate unapproved threshold/radius fixtures in `exercises/proposals/`. Reports are written to ignored `artifacts/proposals/`, with exact definitions, calculated outcomes and source provenance. These are proposal analyses, explicitly not executions of TEST-COV-001 against changed inputs. Reference verification remains unchanged. See [the exercise](docs/02-proposal-exercise.md) for isolated edits, invalid-reference diagnostics, reproduction and limitations. The educational increment integrates this shared analysis into Chapter 2; it is locally verified but not published until its PR merges and deploys.
 
 ## Learning path
 
-Start at Home → Learn → **From Engineering Intent to Evidence**. The chapter moves from the operator’s problem to a measurable criterion, a bounded model, an embedded experiment, evidence interpretation and four reasoning questions with revealable explanations. Its main narrative is approximately 850 words, excluding the interactive lab, exercise and quiz. Continue to Reference to inspect the exact sources and download retained CI evidence for a chosen revision.
+Start at Home → Learn → **From Engineering Intent to Evidence**, then **Engineering Information Models**. The chapter moves from the operator’s problem to a measurable criterion, a bounded model, an embedded experiment, evidence interpretation and four reasoning questions with revealable explanations. Its main narrative is approximately 850 words, excluding the interactive lab, exercise and quiz. Chapter 2 explains structure, relationship consistency and engineering meaning, then compares temporary threshold/radius proposals with the canonical baseline and tests a broken reference. It uses the same `analyzeProposal` function as the repository exercise and tests; reset/leaving restores the canonical definition. The proposed statement and numeric threshold stay consistent. Continue to Reference for source relationship roles and chosen-revision verification/analysis artifact instructions. See [Milestone 2 verification](docs/MILESTONE_02_VERIFICATION.md) for checks, publication status and limits.
 
 ## Interactive lab and traceability
 

@@ -1,0 +1,68 @@
+---
+import { loadSources, readYaml } from '../../../scripts/sources';
+import { analyzeProposal } from '../../../exercises/proposal';
+const baseline = loadSources();
+const threshold = analyzeProposal(baseline, readYaml('exercises/proposals/threshold-35.yaml'));
+const radius = analyzeProposal(baseline, readYaml('exercises/proposals/radius-45.yaml'));
+const result = threshold.calculation.baseline;
+const config = { baseline, threshold: threshold.proposal, radius: radius.proposal };
+---
+<section data-proposal-workspace data-config={JSON.stringify(config)} aria-labelledby="workspace-heading">
+  <h3 id="workspace-heading">A definition change, not an approval</h3>
+  <p class="status"><strong>Temporary, unapproved browser proposal.</strong> This workspace changes a copy of the definitions. It does not edit YAML, execute TEST-COV-001, retain evidence or approve a requirement. Reset restores the baseline; leaving or reloading discards edits.</p>
+  <div class="workspace-grid">
+    <section class="panel" aria-labelledby="baseline-heading">
+      <h4 id="baseline-heading">Canonical baseline from this site build</h4>
+      <p>Requirement <a href={`${import.meta.env.BASE_URL}reference/#REQ-COV-001`}>{baseline.requirement.id}</a>: {baseline.requirement.threshold_percent}%. Scenario <a href={`${import.meta.env.BASE_URL}reference/#SCN-001`}>{baseline.scenario.id}</a>: radius {baseline.scenario.sensor.radius}, center ({baseline.scenario.sensor.x}, {baseline.scenario.sensor.y}), area {baseline.scenario.area.width} × {baseline.scenario.area.height} model units.</p>
+      <p>{baseline.requirement.statement}</p>
+      <p><strong>{result.evaluation.pass ? 'PASS' : 'FAIL'}</strong> — {result.coverage.coveragePercent.toFixed(2)}% estimated coverage. Margin: {result.evaluation.marginPercentagePoints.toFixed(2)} percentage points.</p>
+      <p>This is a build-time calculation, not a displayed CI verification artifact. The baseline stays unchanged while you edit.</p>
+    </section>
+    <fieldset disabled data-proposal-controls>
+      <legend>Temporary proposal controls</legend>
+      <label for="proposal-kind">Change one definition</label>
+      <select id="proposal-kind"><option value="requirement-threshold">Requirement threshold</option><option value="sensor-radius">Sensor radius</option></select>
+      <label for="proposal-value" data-value-label>Proposed threshold (%)</label>
+      <input id="proposal-value" type="number" step="any" min="0" max="100" value={baseline.requirement.threshold_percent} required aria-describedby="proposal-help" />
+      <p id="proposal-help">Threshold: 0–100%. Radius: 0–200 model units. Choosing a different change restores that field’s baseline value.</p>
+      <div class="buttons"><button type="button" data-example="threshold">Try threshold {threshold.proposal.change.kind === 'requirement-threshold' && threshold.proposal.change.threshold_percent}%</button><button type="button" data-example="radius">Try radius {radius.proposal.change.kind === 'sensor-radius' && radius.proposal.change.radius}</button></div>
+      <label for="proposal-need">Requirement source_need reference</label>
+      <input id="proposal-need" type="text" value={baseline.requirement.source_need} required aria-describedby="reference-help" />
+      <p id="reference-help">This edit applies only to the temporary copy. Its source_need must resolve to the existing need.</p>
+      <div class="buttons"><button type="button" data-break-reference>Break reference</button><button type="button" data-restore-reference>Restore reference</button><button type="button" data-reset-proposal>Reset proposal</button></div>
+    </fieldset>
+  </div>
+  <p data-proposal-error role="alert" hidden></p>
+  <div class="panel" role="status" aria-live="polite" aria-atomic="true"><p data-proposal-result>Enable JavaScript to validate and evaluate a temporary proposal.</p></div>
+  <h4>Exact field differences</h4>
+  <p>The requirement statement and basis change with the threshold so the proposed definition stays consistent. These differences describe the current trial, not a committed revision.</p>
+  <div class="table-scroll" role="region" aria-label="Proposal field differences" tabindex="0">
+    <table><caption>Canonical value → temporary proposed value</caption><thead><tr><th scope="col">Field</th><th scope="col">Baseline</th><th scope="col">Proposal</th></tr></thead><tbody data-proposal-differences></tbody></table>
+  </div>
+  <details><summary>Inspect the validated proposed definition</summary><pre data-proposal-definition tabindex="0">No proposal evaluated yet.</pre></details>
+  <noscript><p>The baseline above is readable without JavaScript. For the executable repository path, follow the <a href="https://github.com/And-Gu/executable-engineering-lab/blob/main/docs/02-proposal-exercise.md">proposal exercise</a>.</p></noscript>
+  <p>Both calculations use MODEL-COV-001 v{baseline.manifest.model.version}: a {result.coverage.gridWidth} × {result.coverage.gridHeight} cell-center area estimate. No physical sensor calibration, terrain, occlusion, directional effects, time, uncertainty, faults or communications are modeled. A PASS establishes neither operational suitability nor an optimal design.</p>
+</section>
+<script>import '../scripts/proposal-workspace';</script>
+<style>
+  .workspace-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 1.5rem; align-items: start; }
+  .panel, fieldset { background: var(--surface); border: 1px solid var(--sage-olive); padding: 1.2rem; min-width: 0; }
+  h4 { margin-top: .4rem; }
+  fieldset { display: grid; gap: .6rem; }
+  legend, label { font-weight: 650; }
+  input, select, button { font: inherit; padding: .55rem; min-height: 2.8rem; max-width: 100%; }
+  input, select { width: 100%; background: var(--surface); color: var(--deep-olive); border: 1px solid var(--sage-olive); }
+  button { background: var(--deep-olive); color: var(--surface); border: 0; cursor: pointer; }
+  .buttons { display: flex; flex-wrap: wrap; gap: .6rem; }
+  .table-scroll { overflow: auto; max-width: 100%; }
+  table { width: 100%; border-collapse: collapse; background: var(--surface); }
+  caption { text-align: left; padding: .7rem 0; }
+  :global([data-proposal-workspace] th), :global([data-proposal-workspace] td) { border: 1px solid var(--sage-olive); padding: .7rem; text-align: left; vertical-align: top; overflow-wrap: anywhere; min-width: 10rem; }
+  pre { overflow: auto; background: var(--surface-muted); padding: 1rem; font-size: .85rem; }
+  details { margin: 1.3rem 0; }
+  summary { cursor: pointer; font-weight: 650; }
+  :is(input, select, button, summary, pre, .table-scroll):focus-visible { outline: 3px solid var(--dusty-violet); outline-offset: 3px; }
+  [aria-invalid="true"] { border: 2px solid var(--deep-olive); box-shadow: 0 0 0 2px var(--autumn-orange); }
+  [data-proposal-error] { border-left: 4px solid var(--autumn-orange); padding: 1rem; font-weight: 650; }
+  @media (max-width: 44rem) { .workspace-grid { grid-template-columns: 1fr; } }
+</style>

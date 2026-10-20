@@ -1,0 +1,79 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ProposalWorkspace from '../../components/ProposalWorkspace.astro';
+import { loadSources } from '../../../../scripts/sources';
+const { requirement, scenario, manifest } = loadSources();
+const base = import.meta.env.BASE_URL;
+const reference = `${base}reference/`;
+---
+<Layout title="Engineering Information Models">
+  <article>
+    <p class="eyebrow">Learn / Chapter 02</p>
+    <h1>Engineering Information Models</h1>
+    <p class="lead">If the criterion or configuration changes, what must we check again?</p>
+    <p><strong>Learning objective:</strong> identify a changed definition, validate its structure and references, re-evaluate it, and explain which evidence still applies.</p>
+    <p>Prerequisite: <a href={`${base}learn/01-engineering-intent/`}>From Engineering Intent to Evidence</a>.</p>
+    <nav aria-label="Chapter sections"><a href="#change">The change</a><a href="#contracts">Three checks</a><a href="#exercise">Experiment</a><a href="#evidence">Evidence</a><a href="#quiz">Quiz</a></nav>
+    <section id="change" data-chapter-prose>
+      <h2>Start with a proposed change</h2>
+      <p>The monitoring team has a failing reference configuration. Someone suggests a lower coverage threshold; another person suggests a larger sensor footprint. Either proposal might produce a passing result, but they change different engineering definitions. Before comparing their outcomes, we must be able to say exactly what each proposal changes.</p>
+      <p>Chapter 1 separated the operator’s intent from a geometric criterion and its evidence. Now we need that distinction to survive an edit. The operator’s need has not changed merely because someone alters a number. Nor does an old result automatically apply to the revised definition. We need an information model that makes those dependencies inspectable.</p>
+      <p>An <strong>engineering information model</strong> defines the kinds of records we maintain, the fields they contain and the meanings of their relationships. Here it is small: a need, requirement, scenario, model registration and test registration. YAML stores the canonical definitions; Zod contracts and reference checks enforce supported structure. No specialized modeling tool is required to inspect them.</p>
+    </section>
+    <section id="contracts" data-chapter-prose>
+      <h2>Ask three different questions</h2>
+      <p>First: <strong>is the record well formed?</strong> A requirement needs an identity, statement, threshold and verification references. A scenario needs valid area dimensions, a finite sensor position and a nonnegative radius. Parsing YAML establishes readable syntax; checking the schema establishes allowed fields and values. Neither check determines whether the engineering choice is justified.</p>
+      <p>Second: <strong>do the references resolve consistently?</strong> The requirement’s <code>source_need</code> identifies its motivating need. Its verification fields identify a scenario, model and test. These are different roles, even when drawn as arrows in one chain. Replacing the need ID with an unknown value breaks a relationship; it does not create a new need.</p>
+      <p>Third: <strong>does the definition make engineering sense?</strong> A valid threshold can still lack an operational basis. A resolvable model reference can still point to an idealization unsuitable for a decision. Our {requirement.threshold_percent}% threshold is explicitly a teaching assumption. Schema and reference validation do not convert that assumption into an approved requirement.</p>
+      <p>The stable ID <a href={`${reference}#REQ-COV-001`}>{requirement.id}</a> lets us discuss the requirement across revisions. It is not a version identifier. A meaningful comparison needs the changed field values and the source revision or temporary proposal context. Inspect the <a href={`${reference}#relationships`}>actual field relationships</a> before treating two records with the same ID as equivalent evidence targets.</p>
+    </section>
+    <section id="exercise" aria-labelledby="exercise-title">
+      <h2 id="exercise-title">Experiment: change the criterion or the configuration</h2>
+      <ol>
+        <li>Begin with Reset proposal. Predict the baseline outcome.</li>
+        <li>Try the lower-threshold example. Compare estimated coverage, outcome, statement and field differences with the unchanged baseline.</li>
+        <li>Reset, then try the larger-radius example. Which definition and numerical output change this time?</li>
+        <li>Break the source_need reference. Explain why no proposal result should remain visible. Restore it and check the result again.</li>
+        <li>Write one sentence explaining what each passing trial establishes, and one additional justification you would need before recommending it.</li>
+      </ol>
+      <ProposalWorkspace />
+    </section>
+    <section data-chapter-prose>
+      <h2>Interpret the difference, not just the label</h2>
+      <p>In the criterion trial, the configuration is unchanged: the same rectangle, position and radius are supplied to the same coverage model. The coverage estimate therefore stays the same. The evaluator compares it with a different threshold, which can change the outcome and margin. Relaxing a criterion has not improved the sensor’s geometric performance.</p>
+      <p>In the radius trial, the criterion stays fixed while the proposed scenario changes. Coverage must be recalculated before evaluation. That hypothetical footprint may satisfy the geometric criterion, but the model provides no evidence that a physical sensor can produce it. It also contains no cost, installation or optimization objective that would establish which proposal is best.</p>
+      <p>The proposed statement must agree with its numeric threshold. Otherwise readers and software would be evaluating different definitions. This exercise updates both together and marks the proposed basis as unapproved. It rejects unsupported baseline wording rather than silently changing a sentence it cannot interpret. Reset restores the canonical definition without overwriting its YAML.</p>
+    </section>
+    <section id="evidence" data-chapter-prose>
+      <h2>Bind evidence to what was evaluated</h2>
+      <p>The existing reference test, <a href={`${reference}#TEST-COV-001`}>TEST-COV-001</a>, deliberately checks the unchanged {requirement.threshold_percent}% criterion under <a href={`${reference}#SCN-001`}>{scenario.id}</a>. A passing browser proposal does not replace that reference outcome. The model remains <a href={`${reference}#MODEL-COV-001`}>MODEL-COV-001</a> v{manifest.model.version}; changing a threshold is not a new implementation of the coverage calculation.</p>
+      <p>Both browser proposals and the repository exercise call the same analysis function, which validates definitions and uses the existing coverage function and evaluator. The browser workspace is temporary. It creates neither a versioned source change nor a retained verification artifact, and it does not execute the reference test against its altered definitions.</p>
+      <p>For a reproducible repository trial, follow the <a href="https://github.com/And-Gu/executable-engineering-lab/blob/main/docs/02-proposal-exercise.md">proposal exercise</a> from an identified checkout. Keep the canonical records and reference assertions intact. Add an isolated fixture with a unique proposal ID, inspect the diff, and run validation, tests and proposal analysis. Commit valid source changes before requesting revision-bound evidence; an uncommitted local run must report its dirty working tree honestly.</p>
+      <p>A retained proposal analysis records the complete baseline and proposed definitions, their differences, exact inputs, threshold, model version, method, grid and results. Its execution metadata identifies the source commit, working-tree state, timestamp and context. It explicitly says the reference test was not executed against the proposal. The separate reference evidence record retains its original meaning. Inspect both through the <a href={`${reference}#proposal-evidence`}>artifact instructions</a>; an analysis ID or PASS label alone is insufficient.</p>
+      <p>For a threshold change, the existing coverage calculation can support reasoning about unchanged geometry, but the old requirement evaluation does not establish the new criterion’s outcome. For a scenario change, rerun both coverage and evaluation. For an invalidated assumption, reconsider interpretation even if a numerical result happens to repeat. These are engineering judgments about specific dependencies, not automatic approval rules.</p>
+    </section>
+    <section id="quiz">
+      <h2>Check your reasoning</h2>
+      <p>Answer before revealing each explanation.</p>
+      <details><summary>1. The threshold changes and PASS replaces FAIL, but coverage is identical. What improved?</summary><p>No modeled geometric performance improved. The comparison criterion changed. Whether that new criterion is justified requires separate engineering reasoning.</p></details>
+      <details><summary>2. Can a valid record describe an unjustified requirement?</summary><p>Yes. Schema validation and resolvable references establish structure and consistency. They do not establish the operational basis of a threshold or the suitability of the modeling assumptions.</p></details>
+      <details><summary>3. Is changing source_need to an unknown ID equivalent to changing a radius?</summary><p>No. The first breaks a reference and blocks evaluation. The second can be a valid scenario change that requires fresh calculation and evaluation.</p></details>
+      <details><summary>4. Which result belongs to a changed definition?</summary><p>A result whose exact evaluated definition, inputs, method and source context match that change. A stable requirement ID alone does not establish the match; inspect the revision and proposed fields.</p></details>
+    </section>
+    <section data-chapter-prose>
+      <h2>Next: follow the dependencies</h2>
+      <p>We can now describe a change without confusing a requirement with its scenario or its evidence. The next question is how to keep larger sets of these relationships useful as definitions evolve. Begin with the explicit meanings already present in the <a href={reference}>source view</a>. A future lesson can build systematic digital-thread reasoning on that foundation; this exercise remains a bounded single-sensor example.</p>
+    </section>
+    <p><a href={`${base}learn/01-engineering-intent/`}>← Chapter 1</a> · <a href={`${base}learn/`}>Learning path</a> · <a href={reference}>Inspect engineering sources →</a></p>
+  </article>
+</Layout>
+<style>
+  section { margin: 3rem 0; scroll-margin-top: 1.5rem; }
+  [data-chapter-prose], #quiz { max-width: 72ch; }
+  nav { border-block: 1px solid var(--sage-olive); padding: 1rem 0; }
+  #exercise > ol { max-width: 70ch; padding-left: 1.5rem; }
+  li { margin-bottom: .6rem; }
+  details { background: var(--surface); border: 1px solid var(--sage-olive); padding: 1rem; margin: .8rem 0; }
+  summary { cursor: pointer; font-weight: 650; }
+  summary:focus-visible { outline: 3px solid var(--dusty-violet); outline-offset: 4px; }
+</style>
