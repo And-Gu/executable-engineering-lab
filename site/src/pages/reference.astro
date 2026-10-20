@@ -19,6 +19,7 @@ const sources = records.map(record => ({ ...record, text: readFileSync(resolve(r
   <p class="eyebrow">Reference / source traceability</p>
   <h1>Follow the engineering sources.</h1>
   <p>These source views are bundled from the canonical repository files when the site builds. Editing controls in the lab does not alter them.</p>
+  <p>For change-impact reasoning, <a href={`${import.meta.env.BASE_URL}learn/03-digital-threads/`}>return to Chapter 3</a>.</p>
   <h2>Intent → definition → evidence</h2>
   <ol>
     <li><a href={`#${need.id}`}>{need.id}</a> is the source need of <a href={`#${requirement.id}`}>{requirement.id}</a>.</li>

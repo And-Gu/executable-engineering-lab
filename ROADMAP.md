@@ -22,9 +22,9 @@ The V0 model and approved definitions remain the baseline. Browser comparisons a
 
 The single-sensor model, canonical YAML and baseline reference test remain unchanged. Browser proposals remain temporary and unapproved; retained proposal analyses do not claim execution of the registered reference test against changed inputs.
 
-## Milestone 3 — accepted plan; trace preparation in review
+## Milestone 3 — Chapter 3 ready for review
 
-[Digital Threads and Knowledge Graphs](MILESTONE_03.md) defines a bounded lesson on following typed relationships and judging change impact and evidence applicability. It retains V0 and uses source-derived tables or a small static diagram; no graph infrastructure or general impact engine is authorized. Planning [PR #6](https://github.com/And-Gu/executable-engineering-lab/pull/6) is merged. The first implementation extracts and tests the existing eight definition relationships; Chapter 3 and its educational integration remain subsequent work. There is no published Chapter 3 yet.
+[Digital Threads and Knowledge Graphs](MILESTONE_03.md) defines a bounded lesson on following typed relationships and judging change impact and evidence applicability. It retains V0 and uses source-derived tables or a small static diagram; no graph infrastructure or general impact engine is authorized. Planning [PR #6](https://github.com/And-Gu/executable-engineering-lab/pull/6) is merged. Trace preparation [PR #7](https://github.com/And-Gu/executable-engineering-lab/pull/7) is merged. The educational increment adds Chapter 3, a source-derived relationship table, the shared proposal exercise with impact reasoning, quiz and learning navigation. Local review is recorded in [Milestone 3 verification](docs/MILESTONE_03_VERIFICATION.md). Publication still requires review/merge, successful deployment and public smoke checks. There is no published Chapter 3 yet.
 
 ## Later learning increments
 
