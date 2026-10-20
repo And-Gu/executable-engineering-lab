@@ -1,6 +1,6 @@
 # Milestone 05 — Experimentation and Trade-offs
 
-**Status:** Proposed for review · **Version:** 0.1 · **Date:** 2026-10-20
+**Status:** Plan accepted through PR #11; Chapter 5 ready for review, publication pending · **Version:** 0.1 · **Date:** 2026-10-20
 
 ## Objective and baseline
 

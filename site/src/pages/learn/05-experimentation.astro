@@ -1,0 +1,79 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import CoverageLab from '../../components/CoverageLab.astro';
+const base = import.meta.env.BASE_URL;
+const reference = `${base}reference/`;
+---
+<Layout title="Experimentation and Trade-offs">
+  <article>
+    <p class="eyebrow">Learn / Chapter 05</p>
+    <h1>Experimentation and Trade-offs</h1>
+    <p class="lead">Several configurations can pass. What would make one preferable?</p>
+    <p><strong>Learning objective:</strong> design a controlled comparison, distinguish feasibility from preference, and identify the evidence missing from a recommendation.</p>
+    <p>Prerequisite: <a href={`${base}learn/04-executable-models/`}>Executable Engineering Models</a>.</p>
+    <nav aria-label="Chapter sections"><a href="#question">The decision</a><a href="#protocol">Control the comparison</a><a href="#exercise">Experiment</a><a href="#interpret">Interpret</a><a href="#reproduce">Reproduce</a><a href="#quiz">Quiz</a></nav>
+    <section id="question" data-chapter-prose>
+      <h2>Ask a decision question before running trials</h2>
+      <p>The monitoring team can change where it places a sensor or what footprint it assumes. Some modeled configurations satisfy the coverage criterion. The next question is not simply how to obtain another PASS, but what a comparison can establish about choosing a configuration. A larger percentage may be useful without being sufficient to recommend a design.</p>
+      <p>Begin by stating the decision and the available evidence. Here we can compare geometric coverage under one ideal circular footprint. We cannot compare equipment prices, installation effort or detection reliability because those properties have no model or data in this demonstrator. An honest experiment can reveal this gap rather than conceal it behind a ranking.</p>
+      <p>A reference configuration gives us an identified starting point. A candidate changes specified input values. A different architecture would change how the system is organized, such as introducing several sensors. This lesson compares configurations within the existing single-sensor architecture. Each recorded row is an independent run; recording four rows never creates a four-sensor system.</p>
+    </section>
+    <section id="protocol" data-chapter-prose>
+      <h2>Control what the experiment means</h2>
+      <p>A factor is an input deliberately varied to answer a question. Controlled inputs stay fixed so that differences in response can be attributed clearly. Our measured responses are estimated coverage and its margin against the criterion. The area, threshold, grid and model remain the same throughout the browser comparison.</p>
+      <p>First ask about placement. Hold radius and y fixed, and compare the center with a location on the left boundary. Predict how much of the footprint contributes inside the rectangle. Then ask about assumed radius: keep the center fixed and compare two footprints. Separate these questions so that a changed position does not obscure the effect of a changed radius.</p>
+      <p>Changing two factors together can still describe a candidate, but it weakens attribution. If the result improves, which change caused it? A useful protocol makes that ambiguity visible. Record exact inputs, not just a memorable label such as “better sensor,” and state what each trial is meant to test before looking at its outcome.</p>
+      <p>Keep the criterion fixed when comparing configurations against the same requirement. The <a href={`${base}learn/02-engineering-information-models/#exercise`}>threshold proposal exercise</a> shows why a lower threshold may produce PASS without improving coverage. That is a different engineering question. It must not be mixed into the table as if the design had improved under an unchanged requirement.</p>
+    </section>
+    <section id="exercise" aria-labelledby="exercise-heading">
+      <h2 id="exercise-heading">Experiment: four separate configurations</h2>
+      <p>Predict each result before recording it. All coordinates and radii below use model units.</p>
+      <ol>
+        <li>Clear comparison, then reset to SCN-001. Record trial 1: x=50, y=50, radius=35.</li>
+        <li>Change only x to 0. Record trial 2: x=0, y=50, radius=35. Compare these two rows to investigate boundary clipping.</li>
+        <li>Reset, then change radius to 45. Record trial 3: x=50, y=50, radius=45.</li>
+        <li>Change only radius to 50. Record trial 4: x=50, y=50, radius=50. Compare trials 3 and 4 under the same criterion.</li>
+        <li>Identify which rows pass. Write a conditional recommendation: what did you observe, what assumptions support it, and what missing evidence prevents a final choice?</li>
+      </ol>
+      <p>Reset restores current inputs while keeping recorded rows. Clear comparison removes the rows; reloading discards the temporary table. The fifth record is blocked until you clear it.</p>
+      <CoverageLab />
+      <details><summary>Compare your interpretation</summary><p>The placement pair isolates clipping at a fixed radius. The centered footprint pair isolates assumed radius. Read the calculated outcomes in your table rather than substituting an expected PASS. A larger assumed footprint can increase geometric coverage, but the model does not show that such a sensor exists, is affordable or can be installed. These observations support a bounded geometric comparison, not a preferred operational design.</p></details>
+    </section>
+    <section id="interpret" data-chapter-prose>
+      <h2>Feasible under a criterion is not preferred overall</h2>
+      <p>A passing row satisfies this geometric criterion under the model assumptions. It does not establish every condition required for a feasible real installation. The margin reports distance from one threshold in percentage points. It is not a safety margin against every omitted effect, and a higher margin is not automatically a better engineering decision.</p>
+      <p>Preference requires an objective and justified constraints. If installation access matters, obtain evidence about acceptable locations. If cost matters, obtain relevant cost data. If a larger footprint is proposed, establish the physical performance and conditions supporting that assumption. Do not turn model units into prices or treat assumed radius as a calibrated product specification.</p>
+      <p>A trade-off concerns competing considerations in a decision. This model supplies only geometric observations; it cannot manufacture the other side of a numerical trade-off. Assigning arbitrary weights to unknown cost or reliability would make a score look precise while leaving its basis unjustified. It is legitimate to conclude that the available evidence is insufficient to select between passing candidates.</p>
+      <p>Likewise, two tested radii do not establish a globally optimal footprint or robustness across all scenarios. A placement with the same modeled coverage may have different practical constraints. Uniformly weighted area also ignores whether particular locations are more important. Keep these limitations attached to the comparison instead of promoting a small set of trials into an architecture recommendation.</p>
+    </section>
+    <section id="reproduce" data-chapter-prose>
+      <h2>Make the comparison reproducible</h2>
+      <p>Follow the <a href="https://github.com/And-Gu/executable-engineering-lab/blob/main/docs/05-configuration-experiment.md">repository configuration experiment</a> from an identified checkout. After installation and checks, its executable example calls the same pure coverage function and evaluator for the four stated inputs. Compare its numerical outputs with your browser rows. It prints exploratory calculations; it does not create a retained verification record or execute the registered reference test against the candidates.</p>
+      <p>Canonical YAML remains the source of the area, criterion, reference configuration and model registration. Candidate input copies do not overwrite it. The existing radius proposal fixture reproduces the radius-45 trial, but does not reproduce the boundary-placement trial or every browser edit. Preserve those distinctions when explaining what was executed.</p>
+      <p>For retained reference evidence, use <code>npm run evidence</code> and inspect the actual revision, working-tree status, exact inputs, method and execution context. The <a href={`${reference}#retained-evidence`}>artifact instructions</a> explain reproduction and retention limits. Browser rows and terminal output are useful observations, but neither becomes CI evidence merely because it resembles a saved result.</p>
+    </section>
+    <section id="quiz">
+      <h2>Check your reasoning</h2>
+      <p>Answer before revealing each explanation.</p>
+      <details><summary>1. Why keep the threshold fixed across the four trials?</summary><p>To compare configurations against the same criterion. Lowering the threshold changes the question and can change PASS without improving geometric coverage.</p></details>
+      <details><summary>2. Why separate placement and radius changes?</summary><p>It makes attribution clearer. Changing both together describes another candidate, but does not isolate which factor explains the response.</p></details>
+      <details><summary>3. Does a passing radius-50 trial demonstrate an available sensor?</summary><p>No. Radius is an assumed input in model units. Physical range, calibration and installation suitability require separate evidence.</p></details>
+      <details><summary>4. Can the best recommendation be to defer selection?</summary><p>Yes. If relevant objectives, constraints or evidence are missing, report the bounded comparison and identify the information needed before choosing.</p></details>
+    </section>
+    <section data-chapter-prose>
+      <h2>Next: judge the evidence</h2>
+      <p>We can now frame a comparison without confusing a passing candidate with an accepted design. The next question is how strongly each observation supports its intended conclusion. Verification needs more than a table of results: it needs appropriate checks, traceable execution and explicit limits on what the model represents.</p>
+    </section>
+    <p><a href={`${base}learn/04-executable-models/`}>← Chapter 4</a> · <a href={`${base}learn/`}>Learning path</a> · <a href={reference}>Inspect engineering sources →</a></p>
+  </article>
+</Layout>
+<style>
+  section { margin: 3rem 0; scroll-margin-top: 1.5rem; }
+  [data-chapter-prose], #quiz { max-width: 72ch; }
+  nav { border-block: 1px solid var(--sage-olive); padding: 1rem 0; }
+  #exercise > ol { max-width: 70ch; padding-left: 1.5rem; }
+  li { margin-bottom: .6rem; }
+  details { background: var(--surface); border: 1px solid var(--sage-olive); padding: 1rem; margin: .8rem 0; max-width: 72ch; }
+  summary { cursor: pointer; font-weight: 650; }
+  summary:focus-visible { outline: 3px solid var(--dusty-violet); outline-offset: 4px; }
+</style>

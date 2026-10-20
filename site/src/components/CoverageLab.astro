@@ -78,8 +78,8 @@ const config = { area: scenario.area, sensor: scenario.sensor, threshold: requir
   .table-scroll { overflow-x: auto; max-width: 100%; margin: 1rem 0; }
   table { border-collapse: collapse; width: 100%; background: var(--surface); }
   caption { text-align: left; padding: .6rem 0; font-weight: 650; }
-  th, td { padding: .65rem; border: 1px solid var(--sage-olive); text-align: left; }
-  th { background: var(--surface-muted); }
+  :global([data-coverage-lab] th), :global([data-coverage-lab] td) { padding: .65rem; border: 1px solid var(--sage-olive); text-align: left; }
+  :global([data-coverage-lab] th) { background: var(--surface-muted); }
   .table-scroll:focus-visible { outline: 3px solid var(--dusty-violet); outline-offset: 3px; }
   button:disabled { opacity: .65; cursor: default; }
   .caption { font-size: .9rem; }
