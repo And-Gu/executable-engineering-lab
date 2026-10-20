@@ -1,6 +1,6 @@
 # Milestone 02 — Engineering Information Models
 
-**Status:** Plan accepted through PR #3; repository exercise implementation in progress · **Version:** 0.1 · **Date:** 2026-10-20
+**Status:** Plan accepted through PR #3; repository exercise merged as PR #4; Chapter 2/workspace ready for review, publication pending · **Version:** 0.1 · **Date:** 2026-10-20
 
 ## 1. Objective and relationship to the baseline
 

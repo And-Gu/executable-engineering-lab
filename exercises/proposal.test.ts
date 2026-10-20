@@ -47,6 +47,13 @@ describe('isolated V0 proposal analysis', () => {
     const fixture = { ...criterion(), change: { kind: 'requirement-threshold', threshold_percent: measured.coveragePercent } };
     expect(analyzeProposal(baseline, fixture).calculation.proposed.evaluation).toEqual({ pass: true, marginPercentagePoints: 0 });
   });
+  it('keeps all definitions unchanged when reset to the baseline criterion', () => {
+    const baseline = loadSources();
+    const a = analyzeProposal(baseline, { ...criterion(), change: { kind: 'requirement-threshold', threshold_percent: baseline.requirement.threshold_percent } });
+    expect(a.proposed).toEqual(a.baseline);
+    expect(a.differences).toEqual([]);
+    expect(a.calculation.proposed).toEqual(a.calculation.baseline);
+  });
   it('accepts zero radius as a valid zero-coverage proposal', () => {
     const a = analyzeProposal(loadSources(), { ...radius(), change: { kind: 'sensor-radius', radius: 0 } });
     expect(a.calculation.proposed.coverage.coveragePercent).toBe(0);

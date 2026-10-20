@@ -11,13 +11,15 @@ Chapter 1, the embedded/standalone single-sensor lab, temporary comparisons, sou
 
 The V0 model and approved definitions remain the baseline. Browser comparisons are temporary exploratory work, not retained CI evidence. A geometric PASS establishes neither operational suitability nor optimality.
 
-## Milestone 2 — repository exercise ready for review
+## Milestone 2 — Chapter 2 and browser workspace ready for review
 
 [Engineering Information Models](MILESTONE_02.md) builds Chapter 2 around a controlled requirement/scenario change: inspect structured fields and relationship meanings, validate a proposal, rerun evaluation and explain which evidence applies.
 
-The planning PR is merged. The next PR implements the [repository proposal exercise](docs/02-proposal-exercise.md): isolated threshold/radius fixtures, shared validation/evaluation, negative tests and separate provenance-bearing analysis artifacts. It retains the single-sensor calculation and baseline regression tests.
+Planning PR #3 and repository exercise PR #4 are merged. The [repository proposal exercise](docs/02-proposal-exercise.md) supplies isolated fixtures, shared analysis/validation and retained analysis records.
 
-Chapter 2, the browser proposal workspace and publication remain the next increment; no empty lesson is published. This milestone is not complete.
+The educational PR adds Chapter 2, a temporary browser proposal workspace with exact field differences and invalid-reference handling, a two-chapter Learn index, typed relationship/source views and quiz. Its local production-build review and CI are the review gates; publication still requires merge, successful Pages deployment and public smoke checks. See [Milestone 2 verification](docs/MILESTONE_02_VERIFICATION.md).
+
+The single-sensor model, canonical YAML and baseline reference test remain unchanged. This milestone is not declared published or complete by preparing the PR.
 
 ## Later learning increments
 

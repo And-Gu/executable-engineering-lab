@@ -1,0 +1,15 @@
+---
+import Layout from '../../layouts/Layout.astro';
+const base = import.meta.env.BASE_URL;
+---
+<Layout title="Learning path">
+  <p class="eyebrow">Learn / DMS V0</p>
+  <h1>Ask, define, experiment, interpret.</h1>
+  <p class="lead">Use one fictional monitoring problem to connect engineering intent, structured definitions and qualified evidence.</p>
+  <ol>
+    <li><h2><a href={`${base}learn/01-engineering-intent/`}>From Engineering Intent to Evidence</a></h2><p>Start with an operator’s need, define a coverage criterion and interpret an executable model’s result.</p></li>
+    <li><h2><a href={`${base}learn/02-engineering-information-models/`}>Engineering Information Models</a></h2><p>Then change one definition, validate its fields and relationships, and decide which evidence still applies.</p></li>
+  </ol>
+  <p>Both lessons retain one ideal circular sensor. They do not establish real-world sensing performance.</p>
+</Layout>
+<style>li { margin: 2rem 0; } ol { padding-left: 1.5rem; }</style>

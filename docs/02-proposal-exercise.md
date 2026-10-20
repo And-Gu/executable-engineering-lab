@@ -1,6 +1,6 @@
 # Repository exercise — change the definition, then re-evaluate
 
-This is the first Milestone 2 implementation increment, preceding the browser workspace and Chapter 2. It uses the unchanged V0 single-sensor model. A proposal is an **unapproved teaching input**, not an approved engineering requirement or a retained reference verification result.
+This repository exercise was introduced in PR #4. The educational increment reuses its analysis function in Chapter 2’s temporary browser workspace. It uses the unchanged V0 single-sensor model. A proposal is an **unapproved teaching input**, not an approved engineering requirement or a retained reference verification result.
 
 ## Establish a reproducible baseline
 
@@ -64,7 +64,7 @@ Schemas and reference checks establish supported structure and consistent links.
 
 The fixture mechanism is deliberately bounded to the existing single-sensor threshold and radius, not a generic patch language. Source-file existence/path checks remain in Node; reusable schema/relationship and proposal-analysis functions have no filesystem imports. Baseline source data and reference tests remain unchanged.
 
-The browser proposal workspace, field-difference UI, Chapter 2 narrative/quiz and new navigation are the next reviewable increment. This PR does not publish Chapter 2 or complete Milestone 2.
+Chapter 2, its browser proposal workspace, field-difference UI and navigation are prepared in the educational PR. This exercise does not imply they have been published; review/merge and Pages verification remain the release gate.
 
 
 ## Verification of this increment — 2026-10-20
@@ -74,3 +74,6 @@ The browser proposal workspace, field-difference UI, Chapter 2 narrative/quiz an
 - Tests confirm equality behavior, zero radius, invalid numbers, unsupported edits, mismatched baseline IDs/version, contradictory requirement text, canonical immutability and deterministic analysis. CLI failure tests use temporary directories to verify duplicate IDs/YAML keys and broken references clear stale proposal reports without changing real sources.
 - Diff inspection confirms canonical engineering YAML, model/evaluator, original reference tests, site files, baseline evidence script and dependencies are unchanged. No new UI is present, so this increment does not claim new browser/mobile checks.
 - CI generates the two proposal-analysis reports separately from reference evidence. Downloaded CI artifacts should be matched to the PR head revision before review. Publication of Chapter 2 remains pending its separate implementation and review.
+
+
+The educational increment adds a baseline-reset regression test: 74 tests now pass. The historical checks above describe the PR #4 repository increment; see [Milestone 2 verification](MILESTONE_02_VERIFICATION.md) for the combined browser/content checks.
