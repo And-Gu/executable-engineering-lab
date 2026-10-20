@@ -31,9 +31,9 @@ The single-sensor model, canonical YAML and baseline reference test remain uncha
 - [Successful Pages deployment](https://github.com/And-Gu/executable-engineering-lab/actions/runs/39496821993); [successful post-merge validation](https://github.com/And-Gu/executable-engineering-lab/actions/runs/39496821997).
 - Public navigation, refresh, proposal trials, invalid/restored reference, reset, source return and keyboard quiz were smoke-tested. See [Milestone 3 verification](docs/MILESTONE_03_VERIFICATION.md) for observations and limits.
 
-## Milestone 4 — proposed planning scope
+## Milestone 4 — Chapter 4 ready for review
 
-[Executable Engineering Models](MILESTONE_04.md) proposes a lesson on the existing calculation's numerical method, reproducible execution and limitations. It retains the fixed V0 grid and single sensor, reusing the current lab and evidence path. No Chapter 4 is published yet.
+[Executable Engineering Models](MILESTONE_04.md) defines a lesson on the existing calculation's numerical method, reproducible execution and limitations. It retains the fixed V0 grid and single sensor, reusing the current lab and evidence path. Planning PR #9 is merged. The educational increment integrates the existing lab, numerical-method lesson, reproduction exercise and quiz. No lab refactor was needed because counts, method, resolution and evaluation were already visible. See [Milestone 4 verification](docs/MILESTONE_04_VERIFICATION.md). Publication remains pending review/merge, successful deployment and public smoke checks.
 
 ## Later learning increments
 
