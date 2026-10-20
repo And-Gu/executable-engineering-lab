@@ -22,9 +22,18 @@ The V0 model and approved definitions remain the baseline. Browser comparisons a
 
 The single-sensor model, canonical YAML and baseline reference test remain unchanged. Browser proposals remain temporary and unapproved; retained proposal analyses do not claim execution of the registered reference test against changed inputs.
 
-## Milestone 3 — Chapter 3 ready for review
+## Milestone 3 — published
 
-[Digital Threads and Knowledge Graphs](MILESTONE_03.md) defines a bounded lesson on following typed relationships and judging change impact and evidence applicability. It retains V0 and uses source-derived tables or a small static diagram; no graph infrastructure or general impact engine is authorized. Planning [PR #6](https://github.com/And-Gu/executable-engineering-lab/pull/6) is merged. Trace preparation [PR #7](https://github.com/And-Gu/executable-engineering-lab/pull/7) is merged. The educational increment adds Chapter 3, a source-derived relationship table, the shared proposal exercise with impact reasoning, quiz and learning navigation. Local review is recorded in [Milestone 3 verification](docs/MILESTONE_03_VERIFICATION.md). Publication still requires review/merge, successful deployment and public smoke checks. There is no published Chapter 3 yet.
+[Digital Threads and Knowledge Graphs](MILESTONE_03.md) teaches typed relationships, change-impact reasoning and evidence applicability. Planning PR #6, trace preparation PR #7 and the educational [PR #8](https://github.com/And-Gu/executable-engineering-lab/pull/8) are merged. The V0 model and canonical definitions are unchanged.
+
+- [Read Chapter 3](https://and-gu.github.io/executable-engineering-lab/learn/03-digital-threads/).
+- Release revision: `4430d28b37612f3c64b9c0729fedba13aff24952`.
+- [Successful Pages deployment](https://github.com/And-Gu/executable-engineering-lab/actions/runs/39496821993); [successful post-merge validation](https://github.com/And-Gu/executable-engineering-lab/actions/runs/39496821997).
+- Public navigation, refresh, proposal trials, invalid/restored reference, reset, source return and keyboard quiz were smoke-tested. See [Milestone 3 verification](docs/MILESTONE_03_VERIFICATION.md) for observations and limits.
+
+## Milestone 4 — proposed planning scope
+
+[Executable Engineering Models](MILESTONE_04.md) proposes a lesson on the existing calculation's numerical method, reproducible execution and limitations. It retains the fixed V0 grid and single sensor, reusing the current lab and evidence path. No Chapter 4 is published yet.
 
 ## Later learning increments
 

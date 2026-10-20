@@ -1,6 +1,6 @@
 # Milestone 3 educational increment — verification
 
-Checked 2026-10-20. Trace preparation PR #7 is merged as `b3c1d18`; Chapter 3 is ready for review, not published. This is a development verification record, separate from generated engineering evidence.
+Checked 2026-10-20. Trace preparation PR #7 is merged as `b3c1d18`; Chapter 3 is published through PR #8. This is a development verification record, separate from generated engineering evidence.
 
 ## Automated and editorial checks
 
@@ -40,6 +40,6 @@ These are manual smoke checks, not an automated end-to-end suite or full screen-
 
 Local review supports M3-EDU-01, TRC-01, EXP-01, EVD-01, VAL-01, UI-01 and REG-01 within the checks above. No saved execution is displayed in Chapter 3: it explicitly directs readers to actual artifact/reproduction instructions. The relationship table describes definitions from the site build, not a historical execution. Impact reasoning is narrative and exercise-based, not automated evidence invalidation or a general impact decision.
 
-M3-PUB-01 remains pending. After review/merge, confirm main-revision validation and Pages deployment, then publicly smoke-test Home/Learn/Chapter 2→3, direct refresh, both proposal trials, invalid/restore/reset behavior, source return and quiz. Intended path: `/executable-engineering-lab/learn/03-digital-threads/`.
+M3-PUB-01 was completed on 2026-10-20. [PR #8](https://github.com/And-Gu/executable-engineering-lab/pull/8) merged at 21:00:33 UTC as `4430d28b37612f3c64b9c0729fedba13aff24952`. [Pages deployment](https://github.com/And-Gu/executable-engineering-lab/actions/runs/39496821993) and [main-revision validation](https://github.com/And-Gu/executable-engineering-lab/actions/runs/39496821997) succeeded. The merged checkout passed `npm run check`, `npm run evidence` and `npm run proposals` with 86 tests and a clean working tree. Public Home/Learn/Chapter 2→3 navigation, direct load/refresh, both proposal trials, broken/restored reference, reset, source/evidence return and quiz via Enter passed. The baseline remained 38.52% FAIL; threshold and radius trials remained separate unapproved analyses. No browser error logs were observed. [Chapter 3 is published](https://and-gu.github.io/executable-engineering-lab/learn/03-digital-threads/), within the audit limitations above.
 
 A geometric PASS remains insufficient for operational suitability or optimality. The wall/obstruction exercise is a judgment question: the model does not simulate occlusion. Browser copies remain temporary and unapproved; retained proposal analyses still do not claim TEST-COV-001 executed changed inputs. CI artifacts expire after 30 days and can require sign-in. Physical validity, artifact persistence and comprehensive assistive-technology testing remain outside the demonstrated checks.
