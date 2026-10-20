@@ -1,6 +1,6 @@
 # Milestone 03 — Digital Threads and Knowledge Graphs
 
-**Status:** Proposed for review · **Version:** 0.1 · **Date:** 2026-10-20
+**Status:** Plan accepted through PR #6; bounded trace preparation in review · **Version:** 0.1 · **Date:** 2026-10-20
 
 ## Objective and baseline
 
