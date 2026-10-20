@@ -2,7 +2,7 @@
 
 **From engineering intent to working systems.**
 
-A practical learning site built around a fictional Distributed Monitoring System (DMS). Milestone 1 connects Chapter 1, an interactive single-sensor experiment, canonical engineering sources and reproducible verification. Milestone 1 was published on 2026-10-16. See [ROADMAP.md](ROADMAP.md) for its release evidence and [MILESTONE_02.md](MILESTONE_02.md) for the proposed Chapter 2 plan; Milestone 2 is in progress: the [repository proposal exercise](docs/02-proposal-exercise.md) is merged; Chapter 2 and the browser workspace are ready for review, with publication pending.
+A practical learning site built around a fictional Distributed Monitoring System (DMS). Chapters 1 and 2 connect engineering intent, an interactive single-sensor experiment, structured definitions and reproducible verification. Milestone 2 was published on 2026-10-20. See [ROADMAP.md](ROADMAP.md) for release evidence and [MILESTONE_03.md](MILESTONE_03.md) for the proposed next lesson on digital threads and change-impact reasoning.
 
 ## Reproduce locally
 
@@ -35,7 +35,7 @@ The trace chain is `NEED-001 → REQ-COV-001 → SCN-001 → MODEL-COV-001 → T
 
 ## Milestone 2 proposal exercise (repository increment)
 
-Run `npm run proposals` after `npm run check` to analyze the separate unapproved threshold/radius fixtures in `exercises/proposals/`. Reports are written to ignored `artifacts/proposals/`, with exact definitions, calculated outcomes and source provenance. These are proposal analyses, explicitly not executions of TEST-COV-001 against changed inputs. Reference verification remains unchanged. See [the exercise](docs/02-proposal-exercise.md) for isolated edits, invalid-reference diagnostics, reproduction and limitations. The educational increment integrates this shared analysis into Chapter 2; it is locally verified but not published until its PR merges and deploys.
+Run `npm run proposals` after `npm run check` to analyze the separate unapproved threshold/radius fixtures in `exercises/proposals/`. Reports are written to ignored `artifacts/proposals/`, with exact definitions, calculated outcomes and source provenance. These are proposal analyses, explicitly not executions of TEST-COV-001 against changed inputs. Reference verification remains unchanged. See [the exercise](docs/02-proposal-exercise.md) for isolated edits, invalid-reference diagnostics, reproduction and limitations. The published Chapter 2 integrates this shared analysis into a temporary browser workspace. See [Milestone 2 verification](docs/MILESTONE_02_VERIFICATION.md) for release checks and limitations.
 
 ## Learning path
 
