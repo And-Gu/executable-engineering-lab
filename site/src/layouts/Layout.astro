@@ -53,9 +53,9 @@ const base = import.meta.env.BASE_URL;
   .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr)); gap: 1rem; margin: 2rem 0; }
   .card { border: 1px solid var(--sage-olive); border-radius: .5rem; padding: 1.4rem; background: var(--surface); }
   .card h2 { margin-top: 0; }
-  .card:nth-child(1) { border-top: 4px solid var(--sage-olive); }
-  .card:nth-child(2) { border-top: 4px solid var(--autumn-orange); }
-  .card:nth-child(3) { border-top: 4px solid var(--dusty-violet); }
+  .card:nth-child(3n + 1) { border-top: 4px solid var(--sage-olive); }
+  .card:nth-child(3n + 2) { border-top: 4px solid var(--autumn-orange); }
+  .card:nth-child(3n) { border-top: 4px solid var(--dusty-violet); }
   .status { border-left: 4px solid var(--autumn-orange); padding: 1rem 1.5rem; background: var(--surface-muted); margin: 2rem 0; }
   code { background: var(--surface-muted); padding: .15em .35em; overflow-wrap: anywhere; }
   footer { margin-top: 3rem; border-top: 1px solid var(--sage-olive); font-size: .85rem; }

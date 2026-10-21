@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { chapters } from '../data/chapters';
 const base = import.meta.env.BASE_URL;
 ---
 <Layout title="From engineering intent to working systems">
@@ -8,15 +9,16 @@ const base = import.meta.env.BASE_URL;
   <p class="lead">An industrial area needs monitoring. What would count as enough coverage—and what would convince you that a proposed configuration provides it?</p>
   <p>Work through one engineering question using a fictional monitoring system: define a criterion, experiment with a single-sensor model, and judge what its evidence actually establishes.</p>
   <p class="lead"><a href={`${base}learn/01-engineering-intent/`}>Start Chapter 1: From Engineering Intent to Evidence →</a></p>
-  <p>Completed Chapter 1? <a href={`${base}learn/02-engineering-information-models/`}>Continue with Engineering Information Models</a> to explore what a changed definition means for its evidence.</p>
-  <p>Completed Chapter 2? <a href={`${base}learn/03-digital-threads/`}>Follow the digital thread in Chapter 3</a> to reason about change impact.</p>
-  <p>Completed Chapter 3? <a href={`${base}learn/04-executable-models/`}>Inspect the executable model in Chapter 4</a> and reproduce its calculation.</p>
-  <p>Completed Chapter 4? <a href={`${base}learn/05-experimentation/`}>Compare configurations in Chapter 5</a> and identify the evidence needed for a decision.</p>
-  <section class="cards" aria-label="Learning path">
-    <article class="card"><p class="eyebrow">01 / Ask</p><h2>Define success</h2><p>Separate the operator’s need from the measurable criterion and the assumptions behind it.</p><a href={`${base}learn/01-engineering-intent/`}>Read Chapter 1</a></article>
-    <article class="card"><p class="eyebrow">02 / Experiment</p><h2>Explore the model</h2><p>Vary one sensor’s radius and position. Compare configurations against the same requirement.</p><a href={`${base}lab/`}>Open the lab</a></article>
-    <article class="card"><p class="eyebrow">03 / Inspect</p><h2>Examine the evidence</h2><p>Follow the requirement to its scenario, executable model, test and retained verification record.</p><a href={`${base}reference/`}>Inspect engineering sources</a></article>
+  <h2 id="learning-path">Follow the learning path</h2>
+  <section class="cards" aria-labelledby="learning-path">
+    {chapters.map((chapter, index) => <article class="card">
+      <p class="eyebrow">Chapter {String(index + 1).padStart(2, '0')}</p>
+      <h3><a href={`${base}learn/${chapter.path}/`}>{chapter.title}</a></h3>
+      <p>{chapter.summary}</p>
+      <a href={`${base}learn/${chapter.path}/`}>Read Chapter {index + 1} →</a>
+    </article>)}
   </section>
-  <p>This first lesson uses an idealized geometric area estimate. A passing result does not establish real-world detection performance or an optimal design.</p>
+  <p><a href={`${base}lab/`}>Explore the interactive lab</a> · <a href={`${base}reference/`}>Inspect engineering sources</a></p>
+  <p>These lessons use an idealized geometric area estimate. A passing result does not establish real-world detection performance or an optimal design.</p>
   <p><a href="https://github.com/And-Gu/executable-engineering-lab#readme">Reproduce the calculation locally</a> · <a href="https://github.com/And-Gu/executable-engineering-lab/blob/main/ROADMAP.md">Later learning increments</a></p>
 </Layout>
