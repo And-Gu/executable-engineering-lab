@@ -49,9 +49,18 @@ The single-sensor model, canonical YAML and baseline reference test remain uncha
 - [Successful Pages deployment](https://github.com/And-Gu/executable-engineering-lab/actions/runs/39551268225); [successful post-merge validation](https://github.com/And-Gu/executable-engineering-lab/actions/runs/39551268218).
 - Public four-trial protocol, record limit, clear/reset, invalid-input handling, refresh, learning/source navigation and keyboard quiz passed smoke review. See [Milestone 5 verification](docs/MILESTONE_05_VERIFICATION.md).
 
-## Milestone 6 — Chapter 6 ready for review
+## Milestone 6 — published
 
-[Verification and Engineering Evidence](MILESTONE_06.md) defines a review exercise on what successful software checks, modeled requirement outcomes and provenance establish. It retains V0 and reuses existing tests, calculations and records. Planning PR #13 is merged. The educational increment adds the lesson, shared proposal exercise, focused test/evidence review instructions and quiz. See [Milestone 6 verification](docs/MILESTONE_06_VERIFICATION.md). Publication remains pending review/merge, successful deployment and public smoke checks. No assurance engine or agent capability is introduced.
+[Verification and Engineering Evidence](MILESTONE_06.md) distinguishes successful assertions, modeled requirement outcomes, record generation and physical suitability. Planning PR #13 and educational [PR #14](https://github.com/And-Gu/executable-engineering-lab/pull/14) are merged. Home cards and Learn now share one completed-chapter register; new completed lessons must be registered there.
+
+- [Read Chapter 6](https://and-gu.github.io/executable-engineering-lab/learn/06-verification-evidence/).
+- Release revision: `3d8829e73a03c2d2d63d2d32a6c9bbd6b2cf6f9e`.
+- [Successful Pages deployment](https://github.com/And-Gu/executable-engineering-lab/actions/runs/39598903854); [successful post-merge validation](https://github.com/And-Gu/executable-engineering-lab/actions/runs/39598904031).
+- Public six-card Home/Learn, Chapter 5→6, refresh, radius/reset/broken-reference behavior, artifact/source return and keyboard quiz passed smoke checks. See [Milestone 6 verification](docs/MILESTONE_06_VERIFICATION.md).
+
+## Milestone 7 — proposed planning scope
+
+[Agentic Engineering](MILESTONE_07.md) proposes a bounded task-contract and manual proposal-review lesson using existing fixtures and executable checks. It introduces no agent runtime, API, autonomous permissions or V3 capability. No Chapter 7 is published yet.
 
 ## Later learning increments
 

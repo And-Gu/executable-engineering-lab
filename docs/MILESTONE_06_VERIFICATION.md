@@ -1,6 +1,6 @@
 # Milestone 6 educational increment — verification
 
-Checked 2026-10-21. Planning PR #13 is merged. Chapter 6 is ready for review, not published. This development record is separate from generated engineering evidence.
+Checked 2026-10-21. Planning PR #13 is merged. Chapter 6 and the synchronized homepage are published through PR #14. This development record is separate from generated engineering evidence.
 
 ## Scope and automated checks
 
@@ -46,7 +46,7 @@ These are manual smoke checks, not comprehensive screen-reader/cross-browser cer
 
 Local review supports M6-EDU-01, EXP-01, EXE-01, EVD-01, LIM-01, UI-01 and REG-01 within the checks above. No loaded CI record, fabricated successful test badge or automated acceptance decision is presented. Expected geometric FAIL is preserved alongside successful assertion execution.
 
-M6-PUB-01 remains pending: review/merge, inspect exact main-revision validation and Pages deployment, then publicly test direct refresh, Home/Learn/Chapter 5→6, radius/reset/invalid-input behavior, test-source/artifact return and quiz. Intended path: `/executable-engineering-lab/learn/06-verification-evidence/`.
+M6-PUB-01 was completed on 2026-10-21. [PR #14](https://github.com/And-Gu/executable-engineering-lab/pull/14) merged at 12:21:07 UTC (14:21:07 Europe/Stockholm) as `3d8829e73a03c2d2d63d2d32a6c9bbd6b2cf6f9e`. [Pages deployment](https://github.com/And-Gu/executable-engineering-lab/actions/runs/39598903854) and [main-revision validation](https://github.com/And-Gu/executable-engineering-lab/actions/runs/39598904031) succeeded. The merged checkout passed all 86 tests, validation, types, build, reference evidence generation and proposal analysis. Public Home and Learn both display six chapters; the Chapter 6 card, direct refresh, Chapter 5→6, radius trial, broken/restored reference, reset, artifact/source return and quiz via Enter worked. The reference page explicitly distinguishes evidence generation from Vitest invocation. No browser errors were observed. [Chapter 6 is published](https://and-gu.github.io/executable-engineering-lab/learn/06-verification-evidence/) within the manual-review limits above.
 
 Physical model validity, an operational basis for the threshold and a universal discretization error bound remain unestablished. Artifact expiry/sign-in and unperformed comprehensive accessibility audits remain limitations. More automation or repeated numerical output does not establish engineering authority.
 
