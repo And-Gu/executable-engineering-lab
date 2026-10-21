@@ -1,6 +1,6 @@
 # Milestone 7 educational increment — verification
 
-Checked 2026-10-21. Planning PR #15 is merged. Chapter 7 is ready for review, not published. This development record is separate from generated engineering evidence.
+Checked 2026-10-21. Planning PR #15 is merged. Chapter 7 is published through PR #16. This development record is separate from generated engineering evidence.
 
 ## Scope and automated checks
 
@@ -46,6 +46,6 @@ These are manual smoke checks, not comprehensive accessibility/cross-browser cer
 
 Local review supports M7-EDU-01, SCP-01, EVD-01, STOP-01, UI-01 and REG-01 within the limits above. Stop/reject decisions are reasoning tasks; the workspace deliberately permits valid out-of-scope teaching cases. A readable contract does not enforce runtime permissions, and an in-scope edit is not design acceptance.
 
-M7-PUB-01 remains pending: review/merge, inspect exact main-revision CI/Pages, then publicly test Home/Learn seven-entry path, Chapter 6→7, refresh, both proposal diffs, broken/restore/reset behavior, reference return and quiz. Intended path: `/executable-engineering-lab/learn/07-agentic-engineering/`.
+M7-PUB-01 was completed on 2026-10-21. [PR #16](https://github.com/And-Gu/executable-engineering-lab/pull/16) merged at 16:31:07 UTC (18:31:07 Europe/Stockholm) as `ee1555fa56f8f05fa44180724da02f51066e86da`. [Pages deployment](https://github.com/And-Gu/executable-engineering-lab/actions/runs/39635487713) and [main-revision validation](https://github.com/And-Gu/executable-engineering-lab/actions/runs/39635487759) succeeded. The merged checkout passed all 86 tests, validation, types, build, reference generation and proposal analysis. Public Home/Learn display seven chapters. The Chapter 7 card, Chapter 6→7, direct refresh, both proposal outputs/differences, broken-reference withholding, restore/reset, source return and permission-boundary quiz via Enter passed. No browser errors were observed. [Chapter 7 is published](https://and-gu.github.io/executable-engineering-lab/learn/07-agentic-engineering/) within the audit limits above.
 
 No real agent integration, V3 capability, autonomous editing or physical validation is delivered. V0 modeling limits, artifact expiry/sign-in and unperformed comprehensive assistive-technology audits remain limitations. This educational increment does not authorize a later runtime integration implicitly.
