@@ -1,0 +1,79 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ProposalWorkspace from '../../components/ProposalWorkspace.astro';
+const base = import.meta.env.BASE_URL;
+const reference = `${base}reference/`;
+---
+<Layout title="Agentic Engineering">
+  <article>
+    <p class="eyebrow">Learn / Chapter 07</p>
+    <h1>Agentic Engineering</h1>
+    <p class="lead">What may an assistant change, and what must an engineer still verify?</p>
+    <p><strong>Learning objective:</strong> define a bounded assistance task, inspect its proposal against that scope, and retain responsibility for interpreting evidence.</p>
+    <p>Prerequisite: <a href={`${base}learn/06-verification-evidence/`}>Verification and Engineering Evidence</a>.</p>
+    <p class="status">This is a manual task-contract and review exercise. It runs the existing engineering calculation, not an AI agent. The proposal fixtures are designed teaching examples, not outputs attributed to a real agent run.</p>
+    <nav aria-label="Chapter sections"><a href="#task">The task</a><a href="#contract">The contract</a><a href="#exercise">Review proposals</a><a href="#checks">Execute checks</a><a href="#quiz">Quiz</a></nav>
+    <section id="task" data-chapter-prose>
+      <h2>Delegate a bounded question</h2>
+      <p>The monitoring team has a failing geometric configuration and wants help proposing a change. “Make it pass” leaves too much unstated. It could invite a larger assumed footprint, a relaxed criterion or altered assertions. Each might produce a reassuring label while answering a different question. Define the permitted work before asking for a proposal.</p>
+      <p>In this lesson, agentic engineering is a working label for examining assistance that may propose changes and carry out authorized steps toward an engineering objective. We use a manual exercise to study those boundaries. We make no claim that a particular agent architecture is required, that an agent has executed these examples, or that delegation transfers engineering authority.</p>
+      <p>Separate three activities: proposing a change, executing checks and deciding what to accept. A proposer can describe its reasoning, but that description is not execution evidence. A reviewer needs the exact changed definition and actual outputs from the specified checks. Even a correctly calculated result remains limited by the model and requirement basis.</p>
+    </section>
+    <section id="contract" data-chapter-prose>
+      <h2>Write the task contract first</h2>
+      <p>For this exercise, the objective is to propose one sensor-radius change against the unchanged geometric criterion. Identify the source revision and inspect the need, requirement, scenario, model assumptions and registered test. Missing or contradictory context is a reason to stop and ask for clarification, not permission to invent a requirement.</p>
+      <p>The allowed edit is one finite nonnegative radius in an isolated, unapproved proposal. Keep the area, center, threshold, requirement wording, source relationships, grid and model version fixed. The existing browser range is a usability boundary for this exercise. It does not establish a physical sensor capability or authorize edits to canonical YAML.</p>
+      <p>Specify prohibited actions as well as the deliverable. This assignment excludes changing the criterion, weakening assertions, editing model code, merging, publishing and approving a requirement. Require the exact proposed input, rationale, scoped differences, actual commands and results, execution context where recorded, and unresolved limitations. A useful output may include a question for the reviewer rather than a recommendation.</p>
+      <p>The <a href="https://github.com/And-Gu/executable-engineering-lab/blob/main/docs/07-task-review.md">written task contract</a> makes those expectations inspectable. It is an instruction and review aid, not enforced permission control. Describing a prohibition does not prevent a tool from violating it. This lesson implements neither sandboxing nor runtime authorization; the reviewer must not confuse a readable contract with a security boundary.</p>
+    </section>
+    <section id="exercise" aria-labelledby="exercise-heading">
+      <h2 id="exercise-heading">Review the proposal, not just PASS</h2>
+      <p>Apply the fixed-criterion contract above. The workspace intentionally permits both teaching cases; it does not enforce that contract.</p>
+      <ol>
+        <li>Reset proposal. Predict which field the assignment allows to change.</li>
+        <li>Try the radius example. Inspect the exact differences and validated definition. Does it fit the edit scope? What remains unjustified?</li>
+        <li>Reset, then try the threshold example. Inspect the criterion, statement and basis changes. Explain why a passing outcome cannot authorize them for this task.</li>
+        <li>Break a source reference. Observe withheld analysis, name the stop condition, then restore/reset.</li>
+        <li>Write a brief review distinguishing edit scope, calculated outcome and missing evidence. Compare your reasons with the explanation below.</li>
+      </ol>
+      <ProposalWorkspace />
+      <details><summary>Compare your review</summary><p>The radius proposal fits the permitted numeric edit, but its result is still an unapproved geometric analysis without physical-range justification. The threshold proposal is outside this task’s fixed-criterion scope, even if it calculates PASS. It remains a valid teaching proposal in Chapter 2’s different context. A broken reference blocks analysis and needs correction. None of these observations constitutes approval or an actual agent run.</p></details>
+    </section>
+    <section data-chapter-prose>
+      <h2>Scope and evidence answer different questions</h2>
+      <p>The radius example can fit the task’s edit scope without becoming an accepted design. Its assumed footprint still needs physical justification, and the teaching threshold still needs an operational basis. Scope compliance asks whether the proposal changed only what was permitted. Engineering acceptance asks whether the resulting definition and evidence support the intended decision.</p>
+      <p>The threshold example is useful precisely because its outcome can look attractive. The model is allowed to evaluate that separate proposal, and Chapter 2 uses it to explain changed criteria. Here the same proposal violates the assignment. Valid structure and a passing calculation cannot silently expand the authority granted to the proposer.</p>
+      <p>A review can therefore conclude that an edit is within scope while evidence is insufficient for acceptance. It can also reject an out-of-scope change without disputing its numerical calculation. State these reasons explicitly rather than collapsing them into one approval score. The browser stores no review decision and offers no approval action.</p>
+    </section>
+    <section id="checks" data-chapter-prose>
+      <h2>Execute checks independently of the narrative</h2>
+      <p>Use the <a href="https://github.com/And-Gu/executable-engineering-lab/blob/main/docs/07-task-review.md#reproduce-the-review">repository review procedure</a> from an identified checkout. Run validation, the canonical regression suite and the existing proposal analyses. Inspect their exact definitions, differences and numerical outputs. Do not substitute a proposer’s statement that tests passed for the command output showing which checks actually ran.</p>
+      <p>Independent checking here means executing and inspecting the defined checks rather than trusting that narrative. The same deterministic coverage model remains deliberately shared across browser and repository. This is not an alternative numerical implementation or independent physical validation. Known-geometry tests and explicit assumptions retain their separate roles.</p>
+      <p>Preserve the canonical reference assertions and their expected geometric FAIL. A passing radius proposal does not execute those assertions against changed inputs. Proposal records explicitly retain that distinction. If reference evidence is generated, remember Chapter 6: its generator calculates and evaluates canonical inputs but does not itself invoke Vitest.</p>
+      <p>Review the actual source commit, dirty status, timestamp and execution context where recorded. Browser trials remain temporary and unapproved; local output must not be relabeled CI evidence. CI artifacts expire after 30 days and can require sign-in. Inspect sources at the recorded revision, because stable identifiers alone do not establish which definitions were evaluated.</p>
+    </section>
+    <section id="quiz">
+      <h2>Check your reasoning</h2>
+      <p>Answer before revealing each explanation.</p>
+      <details><summary>1. Does “make it pass” define an adequate task boundary?</summary><p>No. Specify the objective, fixed context, allowed edit, prohibited actions, checks, stop conditions and deliverable.</p></details>
+      <details><summary>2. Can the threshold proposal be valid but outside this task?</summary><p>Yes. It is a valid teaching case in another context, but this assignment requires the criterion to remain fixed. Numerical PASS does not extend authorization.</p></details>
+      <details><summary>3. Does the written contract enforce tool permissions?</summary><p>No. It supports instruction and review. This exercise implements no runtime permission enforcement or agent execution.</p></details>
+      <details><summary>4. Does an in-scope radius proposal deserve immediate acceptance?</summary><p>No. Inspect the actual checks and provenance, then identify missing operational and physical justification. Scope compliance and engineering acceptance are different judgments.</p></details>
+    </section>
+    <section data-chapter-prose>
+      <h2>Next: define the engineering context</h2>
+      <p>A bounded task still depends on the context and actions available to whoever performs it. The next question is how to select relevant definitions, expose appropriate tools and preserve review responsibility. Begin with those explicit needs before choosing an execution mechanism; more assistance does not remove the need for qualified evidence.</p>
+    </section>
+    <p><a href={`${base}learn/06-verification-evidence/`}>← Chapter 6</a> · <a href={`${base}learn/`}>Learning path</a> · <a href={reference}>Inspect engineering sources →</a></p>
+  </article>
+</Layout>
+<style>
+  section { margin: 3rem 0; scroll-margin-top: 1.5rem; }
+  [data-chapter-prose], #quiz { max-width: 72ch; }
+  nav { border-block: 1px solid var(--sage-olive); padding: 1rem 0; }
+  #exercise > ol { max-width: 70ch; padding-left: 1.5rem; }
+  li { margin-bottom: .6rem; }
+  details { background: var(--surface); border: 1px solid var(--sage-olive); padding: 1rem; margin: .8rem 0; max-width: 72ch; }
+  summary { cursor: pointer; font-weight: 650; }
+  summary:focus-visible { outline: 3px solid var(--dusty-violet); outline-offset: 4px; }
+</style>

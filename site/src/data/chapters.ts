@@ -6,4 +6,5 @@ export const chapters = [
   { path: '04-executable-models', title: 'Executable Engineering Models', summary: 'Inspect the discrete calculation, separate evaluation from geometry, and reproduce its output.' },
   { path: '05-experimentation', title: 'Experimentation and Trade-offs', summary: 'Control the comparison, interpret separate candidate runs, and identify missing decision evidence.' },
   { path: '06-verification-evidence', title: 'Verification and Engineering Evidence', summary: 'Inspect what executed, reconcile test success with requirement failure, and qualify the evidence.' },
+  { path: '07-agentic-engineering', title: 'Agentic Engineering', summary: 'Define a bounded assistance task, inspect its proposal and checks, and retain engineering review responsibility.' },
 ] as const;
