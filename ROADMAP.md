@@ -58,9 +58,18 @@ The single-sensor model, canonical YAML and baseline reference test remain uncha
 - [Successful Pages deployment](https://github.com/And-Gu/executable-engineering-lab/actions/runs/39598903854); [successful post-merge validation](https://github.com/And-Gu/executable-engineering-lab/actions/runs/39598904031).
 - Public six-card Home/Learn, Chapter 5→6, refresh, radius/reset/broken-reference behavior, artifact/source return and keyboard quiz passed smoke checks. See [Milestone 6 verification](docs/MILESTONE_06_VERIFICATION.md).
 
-## Milestone 7 — Chapter 7 ready for review
+## Milestone 7 — published
 
-[Agentic Engineering](MILESTONE_07.md) defines a bounded task-contract and manual proposal-review lesson using existing fixtures and executable checks. It introduces no agent runtime, API, autonomous permissions or V3 capability. Planning PR #15 is merged. The educational increment adds the lesson, written contract, manual proposal review, repository procedure and quiz; Home and Learn use the shared seven-chapter register. See [Milestone 7 verification](docs/MILESTONE_07_VERIFICATION.md). Publication remains pending review/merge, deployment and public smoke checks.
+[Agentic Engineering](MILESTONE_07.md) teaches a bounded task contract and manual proposal review. Planning PR #15 and educational [PR #16](https://github.com/And-Gu/executable-engineering-lab/pull/16) are merged. It introduces no actual agent runtime or V3 capability. Home and Learn display seven completed chapters from the same register.
+
+- [Read Chapter 7](https://and-gu.github.io/executable-engineering-lab/learn/07-agentic-engineering/).
+- Release revision: `ee1555fa56f8f05fa44180724da02f51066e86da`.
+- [Successful Pages deployment](https://github.com/And-Gu/executable-engineering-lab/actions/runs/39635487713); [successful post-merge validation](https://github.com/And-Gu/executable-engineering-lab/actions/runs/39635487759).
+- Public Home/Learn/Chapter 6→7, refresh, radius/threshold differences, broken-reference/reset behavior, source return and keyboard quiz passed smoke review. See [Milestone 7 verification](docs/MILESTONE_07_VERIFICATION.md).
+
+## Milestone 8 — proposed planning scope
+
+[Agents and Engineering Context](MILESTONE_08.md) proposes a source/context/action-review lesson. It retains V0 and the manual exercise boundary, with no agent runtime, retrieval system or implemented permission controls. No Chapter 8 is published yet.
 
 ## Later learning increments
 

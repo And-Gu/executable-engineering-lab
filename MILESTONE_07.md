@@ -1,6 +1,6 @@
 # Milestone 07 — Agentic Engineering
 
-**Status:** Plan accepted through PR #15; Chapter 7 ready for review, publication pending · **Version:** 0.1 · **Date:** 2026-10-21
+**Status:** Published through PR #16 on 2026-10-21; planning PR #15 merged · **Version:** 0.1 · **Date:** 2026-10-21
 
 ## Objective and baseline
 
