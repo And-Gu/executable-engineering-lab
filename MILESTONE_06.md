@@ -1,6 +1,6 @@
 # Milestone 06 — Verification and Engineering Evidence
 
-**Status:** Plan accepted through PR #13; Chapter 6 ready for review, publication pending · **Version:** 0.1 · **Date:** 2026-10-21
+**Status:** Published through PR #14 on 2026-10-21; planning PR #13 merged · **Version:** 0.1 · **Date:** 2026-10-21
 
 ## Objective and baseline
 
