@@ -1,6 +1,6 @@
 # Milestone 5 educational increment — verification
 
-Checked 2026-10-20. Planning PR #11 is merged. Chapter 5 is ready for review, not published. This development record is separate from generated engineering evidence.
+Checked 2026-10-20. Planning PR #11 is merged. Chapter 5 is published through PR #12 on 2026-10-21. This development record is separate from generated engineering evidence.
 
 ## Scope and automated checks
 
@@ -43,6 +43,6 @@ These are smoke checks, not comprehensive accessibility or cross-browser testing
 
 Local review supports M5-EDU-01, EXP-01, REP-01, INT-01, UI-01 and REG-01 within the limits above. Numerical costs, ranking, optimization and multi-sensor behavior remain absent. It is an intended educational conclusion that geometric results alone cannot justify selecting a preferred operational design.
 
-M5-PUB-01 remains pending: review/merge, inspect exact main-revision validation/Pages deployment, then publicly check refresh, Home/Learn/Chapter 4→5, four-trial protocol, record limit, clear/reset, invalid input, source return and quiz. Intended path: `/executable-engineering-lab/learn/05-experimentation/`.
+M5-PUB-01 was completed on 2026-10-21. [PR #12](https://github.com/And-Gu/executable-engineering-lab/pull/12) merged at 05:44:27 UTC (07:44:27 Europe/Stockholm) as `9df4fc5774151d266a5ac115dadb506515484d25`. [Pages deployment](https://github.com/And-Gu/executable-engineering-lab/actions/runs/39551268225) and [main-revision validation](https://github.com/And-Gu/executable-engineering-lab/actions/runs/39551268218) succeeded. The merged checkout passed all 86 tests, validation, type checks, build, reference evidence generation and proposal analysis. Public trials reproduced the four outcomes above. The four-row limit, reset retaining rows, clear removing rows, invalid-input withholding and refresh restoring baseline passed. Home/Learn/Chapter 4→5, artifact/source return and quiz via Enter worked, and no browser errors were observed. [Chapter 5 is published](https://and-gu.github.io/executable-engineering-lab/learn/05-experimentation/) within the audit limits above.
 
 Browser rows and terminal calculations remain temporary/exploratory. Canonical reference evidence and unapproved proposal analyses retain their distinct meanings. V0 physical assumptions, discretization limits, artifact expiry/sign-in and unperformed comprehensive assistive-technology audits remain limitations.

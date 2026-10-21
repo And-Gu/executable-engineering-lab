@@ -40,9 +40,18 @@ The single-sensor model, canonical YAML and baseline reference test remain uncha
 - [Successful Pages deployment](https://github.com/And-Gu/executable-engineering-lab/actions/runs/39498771756); [successful post-merge validation](https://github.com/And-Gu/executable-engineering-lab/actions/runs/39498771698).
 - Public refresh/navigation, count/radius/boundary/reset behavior, invalid input, source return and keyboard quiz passed smoke review. See [Milestone 4 verification](docs/MILESTONE_04_VERIFICATION.md).
 
-## Milestone 5 — Chapter 5 ready for review
+## Milestone 5 — published
 
-[Experimentation and Trade-offs](MILESTONE_05.md) defines controlled comparisons within the existing single-sensor architecture. It teaches feasibility versus preference and missing decision evidence, without claiming multi-sensor architecture comparison or introducing invented cost/ranking metrics. Planning PR #11 is merged. The educational increment integrates the existing comparison lab, a four-trial protocol, repository reproduction example and quiz. See [Milestone 5 verification](docs/MILESTONE_05_VERIFICATION.md). Publication remains pending review/merge, successful deployment and public smoke checks.
+[Experimentation and Trade-offs](MILESTONE_05.md) teaches controlled configuration comparisons, feasibility versus preference and missing decision evidence. Planning PR #11 and educational [PR #12](https://github.com/And-Gu/executable-engineering-lab/pull/12) are merged. The V0 calculation and canonical definitions remain unchanged.
+
+- [Read Chapter 5](https://and-gu.github.io/executable-engineering-lab/learn/05-experimentation/).
+- Release revision: `9df4fc5774151d266a5ac115dadb506515484d25`.
+- [Successful Pages deployment](https://github.com/And-Gu/executable-engineering-lab/actions/runs/39551268225); [successful post-merge validation](https://github.com/And-Gu/executable-engineering-lab/actions/runs/39551268218).
+- Public four-trial protocol, record limit, clear/reset, invalid-input handling, refresh, learning/source navigation and keyboard quiz passed smoke review. See [Milestone 5 verification](docs/MILESTONE_05_VERIFICATION.md).
+
+## Milestone 6 — proposed planning scope
+
+[Verification and Engineering Evidence](MILESTONE_06.md) proposes a review exercise on what successful software checks, modeled requirement outcomes and provenance establish. It retains V0 and reuses existing tests, calculations and records. No Chapter 6 is published yet; no assurance engine or agent capability is proposed.
 
 ## Later learning increments
 
