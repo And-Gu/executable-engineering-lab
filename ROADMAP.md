@@ -67,9 +67,9 @@ The single-sensor model, canonical YAML and baseline reference test remain uncha
 - [Successful Pages deployment](https://github.com/And-Gu/executable-engineering-lab/actions/runs/39635487713); [successful post-merge validation](https://github.com/And-Gu/executable-engineering-lab/actions/runs/39635487759).
 - Public Home/Learn/Chapter 6→7, refresh, radius/threshold differences, broken-reference/reset behavior, source return and keyboard quiz passed smoke review. See [Milestone 7 verification](docs/MILESTONE_07_VERIFICATION.md).
 
-## Milestone 8 — proposed planning scope
+## Milestone 8 — Chapter 8 ready for review
 
-[Agents and Engineering Context](MILESTONE_08.md) proposes a source/context/action-review lesson. It retains V0 and the manual exercise boundary, with no agent runtime, retrieval system or implemented permission controls. No Chapter 8 is published yet.
+[Agents and Engineering Context](MILESTONE_08.md) defines a source/context/action-review lesson. It retains V0 and the manual exercise boundary, with no agent runtime, retrieval system or implemented permission controls. Planning PR #17 is merged. The educational increment adds a source-backed context checklist, manual omission/action review, existing proposal workspace, repository instructions and quiz. Home/Learn share the eight-chapter register. See [Milestone 8 verification](docs/MILESTONE_08_VERIFICATION.md). Publication remains pending review/merge, CI/Pages and public smoke checks.
 
 ## Later learning increments
 
