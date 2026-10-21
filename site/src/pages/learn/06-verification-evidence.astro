@@ -1,0 +1,78 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ProposalWorkspace from '../../components/ProposalWorkspace.astro';
+const base = import.meta.env.BASE_URL;
+const reference = `${base}reference/`;
+---
+<Layout title="Verification and Engineering Evidence">
+  <article>
+    <p class="eyebrow">Learn / Chapter 06</p>
+    <h1>Verification and Engineering Evidence</h1>
+    <p class="lead">The checks are green. Has the engineering requirement been satisfied?</p>
+    <p><strong>Learning objective:</strong> identify which claim an execution supports, distinguish test success from requirement satisfaction, and explain the limits of its evidence.</p>
+    <p>Prerequisite: <a href={`${base}learn/05-experimentation/`}>Experimentation and Trade-offs</a>.</p>
+    <nav aria-label="Chapter sections"><a href="#claim">The claim</a><a href="#checks">Different checks</a><a href="#exercise">Experiment</a><a href="#record">Inspect evidence</a><a href="#limits">Limits</a><a href="#quiz">Quiz</a></nav>
+    <section id="claim" data-chapter-prose>
+      <h2>Start with the claim, not the badge</h2>
+      <p>A reviewer sees successful software checks alongside a failing reference coverage result. Another engineer demonstrates a passing browser configuration. These observations look inconsistent only if their subjects are left unstated. Before accepting a conclusion, identify the criterion, evaluated configuration, method and activity that produced each observation.</p>
+      <p>The claim here is narrow: whether the reference configuration satisfies a geometric coverage threshold under V0 assumptions. The operator’s broader monitoring need remains separate. A test badge cannot supply a missing operational basis for that threshold, and a passing idealized configuration cannot establish physical sensing performance. Evidence is useful when its scope is explicit.</p>
+      <p>Verification in this lesson means checking specified behavior or a criterion against defined expectations. We make no claim of conformity with a verification standard. Follow <a href={`${reference}#REQ-COV-001`}>the actual requirement</a> and <a href={`${reference}#TEST-COV-001`}>registered test</a> to see what this example checks, rather than inferring authority from their identifiers.</p>
+    </section>
+    <section id="checks" data-chapter-prose>
+      <h2>Ask what each check establishes</h2>
+      <p>Source validation checks supported fields, parameter ranges and resolvable relationships. Independent model tests compare known geometries and exercise boundary and invalid-input behavior. The evaluator compares an estimated percentage with a criterion. These activities answer related but different questions; succeeding at one does not automatically establish the others.</p>
+      <p>The registered reference test deliberately expects the canonical configuration to fail the coverage criterion. Its assertions check that the estimate lies in the expected neighborhood, the threshold remains unchanged and the evaluation reports failure with a negative margin. A successful test run means those assertions held. It preserves the engineering finding instead of disguising FAIL as PASS.</p>
+      <p>A changed browser radius supplies different inputs to the same model. Its passing outcome does not contradict the reference result, because it is a different evaluated configuration. Nor does the browser execute Vitest. The source scenario and registered test remain unchanged when you manipulate temporary controls. To establish that a test executed, inspect its actual command and logs.</p>
+    </section>
+    <section id="exercise" aria-labelledby="exercise-heading">
+      <h2 id="exercise-heading">Experiment: reconcile the observations</h2>
+      <ol>
+        <li>Reset proposal. Identify the canonical criterion, inputs and geometric outcome.</li>
+        <li>Try the radius example while keeping the criterion fixed. Explain which definition changed and what the new outcome establishes.</li>
+        <li>Follow <a href={`${reference}#TEST-COV-001`}>TEST-COV-001’s source</a>. Did your browser edit change its canonical inputs or execute its assertions?</li>
+        <li>Reset and explain how a successful software suite, a failing canonical criterion and a passing candidate can all be correct.</li>
+        <li>Suppose an obstruction challenges the ideal footprint. Which conclusion needs review even if the calculation repeats?</li>
+      </ol>
+      <ProposalWorkspace />
+      <details><summary>Compare your review</summary><p>The canonical evaluation and the radius proposal use different scenario inputs under the same criterion. The reference test expects the unchanged canonical result to fail; a successful test therefore agrees with that finding. The browser proposal executes calculation/evaluation, not the reference assertions, and creates no retained CI evidence. An obstruction challenges model applicability; none of these outputs calculates its effect or establishes physical suitability.</p></details>
+    </section>
+    <section id="record" data-chapter-prose>
+      <h2>Inspect the activity behind the record</h2>
+      <p>Follow the <a href="https://github.com/And-Gu/executable-engineering-lab/blob/main/docs/06-evidence-review.md">repository evidence review</a> from an identified checkout. Run the focused reference test and inspect its assertions. Then generate a reference record. Keep these steps separate: <code>npm run evidence</code> loads validated sources and calls the calculation and evaluator, but does not itself invoke Vitest or execute the assertions.</p>
+      <p>The generated record’s test ID associates the reference context. That field alone is not proof that the named test ran. In CI, inspect the workflow steps and logs for test execution, then the separate evidence-generation step. Locally, retain the command output needed to explain what you ran. Never turn an association into an execution claim merely because the IDs match.</p>
+      <p>Inspect the record’s definition fields: requirement, scenario and model identities, model version, exact inputs, threshold and assumptions. Its calculation carries covered cells, total cells, method, grid, percentage, margin and outcome. It does not embed every YAML statement or title. Inspect source definitions at the recorded revision for that surrounding meaning.</p>
+      <p>Next inspect source commit, working-tree status, timestamp, context and runtime. A dirty checkout cannot be reconstructed from its commit alone. Preserve relevant source differences and the evaluated inputs. Repeated numerical fields may agree while execution identifiers and timestamps differ. Neither repeatability nor a plausible timestamp establishes that every required verification activity occurred.</p>
+      <p>No retained execution record is loaded on this page. Its baseline is calculated during the site build; interactive results are temporary. The <a href={`${reference}#retained-evidence`}>reference artifact instructions</a> explain how to inspect a real chosen-revision record. Artifacts expire after 30 days and can require sign-in. Reproducing an expired artifact creates a new local execution, with its own context.</p>
+      <p>The <a href={`${reference}#proposal-evidence`}>proposal analysis record</a> has a different meaning. It includes exact baseline and proposed definitions and explicitly states that the reference test was not executed against the proposal. A passing proposal analysis therefore cannot replace canonical reference evidence or a test log. Read each record according to its generation path.</p>
+    </section>
+    <section id="limits" data-chapter-prose>
+      <h2>State what remains unjustified</h2>
+      <p>The shared calculation keeps browser and tests from drifting into competing implementations. Independent geometry checks can detect numerical mistakes in selected cases; invalid-input and equality tests check other contracts. These checks strengthen confidence within their scope. They do not establish a universal discretization bound or prove that an ideal circle represents a physical sensor.</p>
+      <p>An obstruction, directional sensitivity or calibration issue can undermine interpretation without changing the software’s deterministic output. The model does not include those effects, and the teaching threshold has no derived operational basis. Additional model or physical evidence would be needed for those questions. Avoid inventing a correction factor or treating a geometric margin as protection against every omitted effect.</p>
+      <p>A useful review conclusion states the checked claim, evaluated definitions, activity and outcome, then names its limits. “The canonical geometric criterion fails as expected by the reference assertions” is different from “the monitoring system is unsuitable in every setting.” Neither a green workflow nor a red criterion answers the broader operational question by itself.</p>
+    </section>
+    <section id="quiz">
+      <h2>Check your reasoning</h2>
+      <p>Answer before revealing each explanation.</p>
+      <details><summary>1. How can the reference test pass while the criterion fails?</summary><p>The assertions expect the canonical geometric failure. A successful assertion confirms that the implementation reports that finding correctly.</p></details>
+      <details><summary>2. Does the test ID in reference-evidence.json prove Vitest ran?</summary><p>No. The generator calculates and evaluates canonical inputs without invoking Vitest. Inspect the separate test command and logs to establish assertion execution.</p></details>
+      <details><summary>3. Does a passing radius proposal replace the reference evidence?</summary><p>No. It evaluates changed inputs in an unapproved proposal context and does not execute the registered reference test against them.</p></details>
+      <details><summary>4. What does a repeated number say about physical model validity?</summary><p>It supports numerical repeatability under the same rules. It does not establish calibration, occlusion behavior or operational suitability.</p></details>
+    </section>
+    <section data-chapter-prose>
+      <h2>Next: bound the assistance</h2>
+      <p>These distinctions also constrain future engineering assistance. A tool may help inspect sources, propose a change or repeat a calculation, but its output must retain the activity’s actual meaning. Before delegating work, define the allowed changes, independent checks and review responsibility. More automation does not create engineering authority.</p>
+    </section>
+    <p><a href={`${base}learn/05-experimentation/`}>← Chapter 5</a> · <a href={`${base}learn/`}>Learning path</a> · <a href={reference}>Inspect engineering sources →</a></p>
+  </article>
+</Layout>
+<style>
+  section { margin: 3rem 0; scroll-margin-top: 1.5rem; }
+  [data-chapter-prose], #quiz { max-width: 72ch; }
+  nav { border-block: 1px solid var(--sage-olive); padding: 1rem 0; }
+  #exercise > ol { max-width: 70ch; padding-left: 1.5rem; }
+  li { margin-bottom: .6rem; }
+  details { background: var(--surface); border: 1px solid var(--sage-olive); padding: 1rem; margin: .8rem 0; max-width: 72ch; }
+  summary { cursor: pointer; font-weight: 650; }
+  summary:focus-visible { outline: 3px solid var(--dusty-violet); outline-offset: 4px; }
+</style>

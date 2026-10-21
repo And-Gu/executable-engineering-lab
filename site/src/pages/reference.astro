@@ -22,6 +22,7 @@ const sources = records.map(record => ({ ...record, text: readFileSync(resolve(r
   <p>For change-impact reasoning, <a href={`${import.meta.env.BASE_URL}learn/03-digital-threads/`}>return to Chapter 3</a>.</p>
   <p>For numerical method and reproduction, <a href={`${import.meta.env.BASE_URL}learn/04-executable-models/`}>return to Chapter 4</a>.</p>
   <p>For controlled configuration comparisons, <a href={`${import.meta.env.BASE_URL}learn/05-experimentation/`}>return to Chapter 5</a>.</p>
+  <p>For test execution and evidence interpretation, <a href={`${import.meta.env.BASE_URL}learn/06-verification-evidence/`}>return to Chapter 6</a>.</p>
   <h2>Intent → definition → evidence</h2>
   <ol>
     <li><a href={`#${need.id}`}>{need.id}</a> is the source need of <a href={`#${requirement.id}`}>{requirement.id}</a>.</li>
@@ -43,7 +44,8 @@ const sources = records.map(record => ({ ...record, text: readFileSync(resolve(r
     <p><a href={`${import.meta.env.BASE_URL}learn/02-engineering-information-models/#evidence`}>Return to Chapter 2’s evidence interpretation</a> · <a href="https://github.com/And-Gu/executable-engineering-lab/blob/main/docs/02-proposal-exercise.md">Repository exercise</a></p>
   </section>
   <section id="retained-evidence">
-    <h2>Inspect a retained verification record</h2>
+    <h2>Inspect a retained reference evaluation record</h2>
+    <p><code>npm run evidence</code> calculates and evaluates canonical inputs; it does not itself invoke Vitest. The record’s test ID associates the registered reference context. Inspect the separate test command and workflow logs to establish assertion execution. <a href="https://github.com/And-Gu/executable-engineering-lab/blob/main/docs/06-evidence-review.md">Reproduce and review both activities</a>.</p>
     <ol>
       <li>Open the <a href="https://github.com/And-Gu/executable-engineering-lab/actions/workflows/validate.yml?query=branch%3Amain">main-branch validation runs</a> and select a successful run for the revision you want to inspect.</li>
       <li>Download its <code>reference-evidence-&lt;commit&gt;</code> artifact (GitHub sign-in may be required). Artifacts expire after 30 days.</li>
