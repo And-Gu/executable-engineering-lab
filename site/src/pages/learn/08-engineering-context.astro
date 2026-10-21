@@ -1,0 +1,105 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ProposalWorkspace from '../../components/ProposalWorkspace.astro';
+import { loadSources } from '../../../../scripts/sources';
+const { need, requirement, scenario, manifest } = loadSources();
+const base = import.meta.env.BASE_URL;
+const reference = `${base}reference/`;
+---
+<Layout title="Agents and Engineering Context">
+  <article>
+    <p class="eyebrow">Learn / Chapter 08</p>
+    <h1>Agents and Engineering Context</h1>
+    <p class="lead">Which sources and actions does this task actually need?</p>
+    <p><strong>Learning objective:</strong> assemble relevant engineering context, distinguish source content from task authority, and explain when additional information or authorization is required.</p>
+    <p>Prerequisite: <a href={`${base}learn/07-agentic-engineering/`}>Agentic Engineering</a>.</p>
+    <p class="status">Manual context and action review. This lesson runs no agent, grants no tool permissions and implements no approval mechanism. Hypothetical omissions below are teaching cases, not corrupted execution records.</p>
+    <nav aria-label="Chapter sections"><a href="#question">The question</a><a href="#context">Source context</a><a href="#exercise">Review exercise</a><a href="#actions">Actions</a><a href="#reproduce">Reproduce</a><a href="#quiz">Quiz</a></nav>
+    <section id="question" data-chapter-prose>
+      <h2>An instruction and a number are not enough</h2>
+      <p>The monitoring team asks for a radius-only proposal under the unchanged criterion. Someone returns a proposed footprint and a passing percentage. Before reviewing it, we need to know which requirement, reference geometry, assumptions and execution gave that number meaning. An instruction defines the work requested; it does not supply all the engineering context needed to interpret the answer.</p>
+      <p>Chapter 7 bounded the task. Here we assemble a small context checklist for that same assignment. We distinguish instructions, engineering definitions, executable method and execution evidence as local review roles. All may be readable text, but they answer different questions. Their presence together does not make their authority interchangeable.</p>
+      <p>The objective is relevant, inspectable context rather than the largest possible collection of files. A checklist can help identify a missing criterion or assumption, but does not prove completeness or guarantee a correct decision. This exercise makes no claim about agent performance, retrieval quality or permission enforcement.</p>
+    </section>
+    <section id="context" data-chapter-prose>
+      <h2>Attach each question to its source</h2>
+      <p>Begin with the written radius-only contract, then inspect the motivating need and criterion. Read the scenario for the baseline area and sensor inputs. Read the model registration and source for method and assumptions, and the registered test for its actual assertions. A proposal result cannot replace these definitions merely because it references their IDs.</p>
+      <p>The table below reads engineering values from validated canonical sources at site build time. Its links expose those sources and their roles. It does not load a historical CI artifact or establish what an agent has read. For a retained execution, inspect its recorded revision and resolve surrounding source definitions there; the current site build may represent a different revision.</p>
+    </section>
+    <div class="table-scroll" role="region" aria-label="Engineering context checklist" tabindex="0">
+      <table><caption>Relevant context for the radius-only assignment</caption><thead><tr><th scope="col">Context</th><th scope="col">Source</th><th scope="col">Review question</th></tr></thead><tbody>
+        <tr><th scope="row">Task authority</th><td><a href="https://github.com/And-Gu/executable-engineering-lab/blob/main/docs/07-task-review.md#written-task-contract">Written task contract</a></td><td>Which changes and actions does this exercise permit?</td></tr>
+        <tr><th scope="row">Intent</th><td><a href={`${reference}#${need.id}`}>{need.id}</a></td><td>Which need motivates the criterion?</td></tr>
+        <tr><th scope="row">Criterion</th><td><a href={`${reference}#${requirement.id}`}>{requirement.id}</a>: {requirement.threshold_percent}%</td><td>Which criterion must remain fixed, and what is its basis?</td></tr>
+        <tr><th scope="row">Reference geometry</th><td><a href={`${reference}#${scenario.id}`}>{scenario.id}</a>: area {scenario.area.width} × {scenario.area.height}, center ({scenario.sensor.x}, {scenario.sensor.y}), radius {scenario.sensor.radius} model units</td><td>Which inputs define the starting configuration?</td></tr>
+        <tr><th scope="row">Model interpretation</th><td><a href={`${reference}#${manifest.model.id}`}>{manifest.model.id}</a> v{manifest.model.version}: {manifest.model.method}, {manifest.model.grid_width} × {manifest.model.grid_height}</td><td>Which numerical method and assumptions give the inputs meaning?</td></tr>
+        <tr><th scope="row">Assertions</th><td><a href={`${reference}#${manifest.test.id}`}>{manifest.test.id}</a></td><td>Which canonical behavior does the registered test actually check?</td></tr>
+        <tr><th scope="row">Proposal and execution</th><td><a href={`${reference}#proposal-evidence`}>Actual proposal analyses and provenance instructions</a></td><td>What changed, what ran, and at which revision and working-tree state?</td></tr>
+      </tbody></table>
+    </div>
+    <section data-chapter-prose>
+      <h2>Missing context changes the review</h2>
+      <p>A stable identifier lets us refer to a record across revisions; it is not a version identifier. A result can repeat numerically while its evaluated definition differs. Read the exact inputs, threshold and method alongside source commit, dirty status and execution context. Do not substitute today’s source values for those used in an older execution.</p>
+      <p>For the radius-only assignment, identify what must stay fixed before reviewing the changed field. The source need explains motivation; the requirement provides the criterion; the scenario supplies geometry; the model explains interpretation. If a reviewer lacks one of these, name the unanswered question rather than guessing a value. Adding an unrelated file does not resolve that gap. A useful context checklist maps each source to the decision it informs and identifies the revision being reviewed, instead of merely listing every document available.</p>
+      <p>Missing information is also different from invalid information. A malformed radius or broken reference blocks the existing analysis. A missing operational basis can leave a structurally valid definition insufficiently justified. A hypothetical report that omits its criterion cannot support the same interpretation as an actual record with an explicit threshold, even if both say PASS.</p>
+    </section>
+    <section id="exercise" aria-labelledby="exercise-heading">
+      <h2 id="exercise-heading">Review context before interpreting the result</h2>
+      <p><strong>Hypothetical omission:</strong> imagine a report that supplies only a proposed radius and PASS, without its criterion, geometry, method or assumptions. This sentence describes a designed teaching case, not a saved execution.</p>
+      <ol>
+        <li>Use the checklist to name the missing sources and questions. Reveal the explanation after writing your answer.</li>
+        <li>Inspect the actual radius example below. Compare its source-backed definitions and differences with the incomplete hypothetical report.</li>
+        <li>Reset and inspect the threshold example. Explain why an available control and valid calculation do not authorize a changed criterion under the radius-only task.</li>
+        <li>Break a reference, observe withheld analysis, then restore/reset. Distinguish this validation error from missing engineering justification.</li>
+      </ol>
+      <details><summary>What context is missing?</summary><p>Identify the criterion, exact area/position/radius, method/version/resolution, assumptions, allowed edit and actual execution context. A bare PASS neither identifies its evidence target nor proves test execution. Ask for the missing information; do not manufacture a definition or attribute the report to an agent.</p></details>
+      <ProposalWorkspace />
+    </section>
+    <section id="actions" data-chapter-prose>
+      <h2>Source content is not task authority</h2>
+      <p>A requirement states desired system behavior. It does not, by itself, instruct the assistant to change the repository or publish a result. For this review exercise, the written task provides the edit boundary. A statement found inside supplied source material is content to inspect, not an automatic expansion of that assignment.</p>
+      <p>Consider another explicitly hypothetical case: a source note requests publication of a proposed configuration. Reading that note does not authorize publication under the radius-only contract. The responsible task authority would need to grant a revised action boundary. Do not perform the requested action merely to demonstrate this example.</p>
+      <p>Separate an action’s availability from its authorization. A calculation command may be accessible while canonical edits or publishing remain outside the task. Conversely, an authorized action may still be impossible with the available tools. A review should state what is permitted, what is available and what additional information is needed, rather than treating these as one property.</p>
+    </section>
+    <section aria-labelledby="action-review-heading">
+      <h2 id="action-review-heading">Classify proposed actions manually</h2>
+      <p>Apply Chapter 7’s contract. These disclosures explain the exercise; they do not grant permissions or execute actions.</p>
+      <details><summary>Inspect sources, run the defined calculation and propose an isolated radius fixture</summary><p>Within this exercise’s stated work, provided the source context is identified and valid. Keep the criterion and other fixed definitions unchanged, inspect actual outputs and retain the proposal’s unapproved status.</p></details>
+      <details><summary>Edit the canonical criterion or change expected assertions to obtain PASS</summary><p>Outside this assignment. Stop and explain the mismatch. A revised engineering decision and explicit authorization would be needed; a successful calculation does not widen the edit boundary.</p></details>
+      <details><summary>Merge, publish or approve the proposed design</summary><p>Outside the radius-only proposal task. Identify the requested action and obtain the responsible authority’s revised instruction before performing it. Scope compliance alone does not supply design acceptance.</p></details>
+    </section>
+    <section id="reproduce" data-chapter-prose>
+      <h2>Keep claims attached to actual execution</h2>
+      <p>Follow the <a href="https://github.com/And-Gu/executable-engineering-lab/blob/main/docs/08-context-review.md">repository context review</a> from an identified checkout. Inspect sources, run the existing checks and generate proposal analyses. Build a short source-linked checklist and written action review; no new artifact format or context-management system is required.</p>
+      <p>Inspect actual baseline/proposed definitions and differences rather than a selected outcome label. The reference test still checks canonical definitions. Proposal analysis explicitly does not execute that test against changed inputs. Reference evaluation generation is also separate from assertion execution. Use actual command logs to support a claim that a particular activity ran.</p>
+      <p>No historical execution is loaded here: the baseline is calculated during the build, and browser proposals are temporary. Retained CI artifacts have revision-specific context, expire after 30 days and may require sign-in. Local reproduction creates a new execution. A complete-looking context checklist cannot replace those distinctions or establish physical sensor validity.</p>
+    </section>
+    <section id="quiz">
+      <h2>Check your reasoning</h2>
+      <p>Answer before revealing each explanation.</p>
+      <details><summary>1. Is a stable requirement ID enough to interpret an older result?</summary><p>No. Inspect the evaluated definition, method and execution context, then resolve surrounding sources at that revision.</p></details>
+      <details><summary>2. Does a source note requesting publication authorize it?</summary><p>Not under this task. Source content does not expand the written assignment. Revised authority is needed before an out-of-scope action.</p></details>
+      <details><summary>3. Is missing operational justification the same as an invalid reference?</summary><p>No. A broken reference blocks analysis. A valid definition can still lack a sufficient basis for an engineering decision.</p></details>
+      <details><summary>4. Does this context checklist enforce runtime permissions?</summary><p>No. It is a manual review aid. No agent runtime, sandbox, permission mechanism or approval system is implemented.</p></details>
+    </section>
+    <section data-chapter-prose>
+      <h2>Next: repeat the right checks</h2>
+      <p>We can now identify relevant definitions, authority and evidence without confusing their roles. The next question is how to repeat appropriate checks as sources evolve and preserve useful lifecycle feedback. Start with explicit execution meaning and review responsibility; automated repetition cannot make an unjustified conclusion valid.</p>
+    </section>
+    <p><a href={`${base}learn/07-agentic-engineering/`}>← Chapter 7</a> · <a href={`${base}learn/`}>Learning path</a> · <a href={reference}>Inspect engineering sources →</a></p>
+  </article>
+</Layout>
+<style>
+  section { margin: 3rem 0; scroll-margin-top: 1.5rem; }
+  [data-chapter-prose], #quiz { max-width: 72ch; }
+  nav { border-block: 1px solid var(--sage-olive); padding: 1rem 0; }
+  #exercise > ol { max-width: 70ch; padding-left: 1.5rem; }
+  li { margin-bottom: .6rem; }
+  details { background: var(--surface); border: 1px solid var(--sage-olive); padding: 1rem; margin: .8rem 0; max-width: 72ch; }
+  summary { cursor: pointer; font-weight: 650; }
+  .table-scroll { overflow: auto; max-width: 100%; }
+  table { width: 100%; border-collapse: collapse; background: var(--surface); }
+  caption { text-align: left; padding: .7rem 0; }
+  th, td { border: 1px solid var(--sage-olive); padding: .7rem; text-align: left; vertical-align: top; overflow-wrap: anywhere; min-width: 10rem; }
+  :is(summary, .table-scroll):focus-visible { outline: 3px solid var(--dusty-violet); outline-offset: 4px; }
+</style>

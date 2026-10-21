@@ -1,6 +1,6 @@
 # Milestone 08 — Agents and Engineering Context
 
-**Status:** Proposed for review · **Version:** 0.1 · **Date:** 2026-10-21
+**Status:** Plan accepted through PR #17; Chapter 8 ready for review, publication pending · **Version:** 0.1 · **Date:** 2026-10-21
 
 ## Objective and baseline
 
