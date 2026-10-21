@@ -40,9 +40,9 @@ The single-sensor model, canonical YAML and baseline reference test remain uncha
 - [Successful Pages deployment](https://github.com/And-Gu/executable-engineering-lab/actions/runs/39498771756); [successful post-merge validation](https://github.com/And-Gu/executable-engineering-lab/actions/runs/39498771698).
 - Public refresh/navigation, count/radius/boundary/reset behavior, invalid input, source return and keyboard quiz passed smoke review. See [Milestone 4 verification](docs/MILESTONE_04_VERIFICATION.md).
 
-## Milestone 5 — proposed planning scope
+## Milestone 5 — Chapter 5 ready for review
 
-[Experimentation and Trade-offs](MILESTONE_05.md) proposes controlled comparisons within the existing single-sensor architecture. It teaches feasibility versus preference and missing decision evidence, without claiming multi-sensor architecture comparison or introducing invented cost/ranking metrics. No Chapter 5 is published yet.
+[Experimentation and Trade-offs](MILESTONE_05.md) defines controlled comparisons within the existing single-sensor architecture. It teaches feasibility versus preference and missing decision evidence, without claiming multi-sensor architecture comparison or introducing invented cost/ranking metrics. Planning PR #11 is merged. The educational increment integrates the existing comparison lab, a four-trial protocol, repository reproduction example and quiz. See [Milestone 5 verification](docs/MILESTONE_05_VERIFICATION.md). Publication remains pending review/merge, successful deployment and public smoke checks.
 
 ## Later learning increments
 
