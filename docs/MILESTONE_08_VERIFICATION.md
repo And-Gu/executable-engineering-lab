@@ -51,3 +51,9 @@ Local review supports M8-EDU-01, SRC-01, ACT-01, EVD-01, UI-01 and REG-01 within
 M8-PUB-01 remains pending: review/merge, inspect exact main-revision CI/Pages, then publicly test Home/Learn eight-entry path, Chapter 7→8, source table links, disclosures/quiz, both proposal cases, broken/restore/reset behavior and direct refresh. Intended path: `/executable-engineering-lab/learn/08-engineering-context/`.
 
 V0 physical and numerical limits, artifact expiry/sign-in and unperformed comprehensive assistive-technology audits remain limitations. No future agent integration, context-management infrastructure or actual permission controls are authorized by this educational increment.
+
+## Publication observation — 2026-10-21
+
+This observation supersedes the prepublication status above. PR #18 merged at 16:45:57 UTC as `3532574dd6c4c02a852efdf858e5fbe6f10a6289`. [Main validation](https://github.com/And-Gu/executable-engineering-lab/actions/runs/39637714802) and [Pages](https://github.com/And-Gu/executable-engineering-lab/actions/runs/39637714807) succeeded for that revision. The merged checkout passed check (86 tests, no diagnostics, twelve routes), evidence and proposals. Canonical geometric FAIL remains expected.
+
+Public smoke review confirmed eight Home cards and eight Learn entries, Chapter 7→8, direct refresh, source/proposal instructions and return, keyboard context/action/quiz disclosures, both proposal cases, invalid-reference withholding, restore/reset and baseline after reload. No browser errors observed. M8-PUB-01 is satisfied within the earlier smoke-test limitations; publication did not include a new comprehensive assistive-technology or cross-browser audit.
