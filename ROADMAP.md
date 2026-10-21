@@ -58,9 +58,9 @@ The single-sensor model, canonical YAML and baseline reference test remain uncha
 - [Successful Pages deployment](https://github.com/And-Gu/executable-engineering-lab/actions/runs/39598903854); [successful post-merge validation](https://github.com/And-Gu/executable-engineering-lab/actions/runs/39598904031).
 - Public six-card Home/Learn, Chapter 5→6, refresh, radius/reset/broken-reference behavior, artifact/source return and keyboard quiz passed smoke checks. See [Milestone 6 verification](docs/MILESTONE_06_VERIFICATION.md).
 
-## Milestone 7 — proposed planning scope
+## Milestone 7 — Chapter 7 ready for review
 
-[Agentic Engineering](MILESTONE_07.md) proposes a bounded task-contract and manual proposal-review lesson using existing fixtures and executable checks. It introduces no agent runtime, API, autonomous permissions or V3 capability. No Chapter 7 is published yet.
+[Agentic Engineering](MILESTONE_07.md) defines a bounded task-contract and manual proposal-review lesson using existing fixtures and executable checks. It introduces no agent runtime, API, autonomous permissions or V3 capability. Planning PR #15 is merged. The educational increment adds the lesson, written contract, manual proposal review, repository procedure and quiz; Home and Learn use the shared seven-chapter register. See [Milestone 7 verification](docs/MILESTONE_07_VERIFICATION.md). Publication remains pending review/merge, deployment and public smoke checks.
 
 ## Later learning increments
 

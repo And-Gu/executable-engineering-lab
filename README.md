@@ -2,7 +2,7 @@
 
 **From engineering intent to working systems.**
 
-A practical learning site built around a fictional Distributed Monitoring System (DMS). Chapters 1–6 connect engineering intent, structured definitions, executable experiments and qualified evidence. Milestone 6 and synchronized homepage chapter cards were published on 2026-10-21. See [ROADMAP.md](ROADMAP.md) for release evidence and [MILESTONE_07.md](MILESTONE_07.md) for the proposed lesson on bounded engineering-assistance tasks and review; no agent runtime is proposed.
+A practical learning site built around a fictional Distributed Monitoring System (DMS). Chapters 1–6 connect engineering intent, structured definitions, executable experiments and qualified evidence. Milestone 6 and synchronized homepage chapter cards were published on 2026-10-21. See [ROADMAP.md](ROADMAP.md) for release evidence and [MILESTONE_07.md](MILESTONE_07.md) for the accepted bounded-task/review scope. Chapter 7 is ready for review, with publication pending; see [Milestone 7 verification](docs/MILESTONE_07_VERIFICATION.md). No agent runtime is introduced.
 
 ## Reproduce locally
 
