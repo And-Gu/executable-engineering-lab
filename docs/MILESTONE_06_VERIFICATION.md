@@ -49,3 +49,9 @@ Local review supports M6-EDU-01, EXP-01, EXE-01, EVD-01, LIM-01, UI-01 and REG-0
 M6-PUB-01 remains pending: review/merge, inspect exact main-revision validation and Pages deployment, then publicly test direct refresh, Home/Learn/Chapter 5→6, radius/reset/invalid-input behavior, test-source/artifact return and quiz. Intended path: `/executable-engineering-lab/learn/06-verification-evidence/`.
 
 Physical model validity, an operational basis for the threshold and a universal discretization error bound remain unestablished. Artifact expiry/sign-in and unperformed comprehensive accessibility audits remain limitations. More automation or repeated numerical output does not establish engineering authority.
+
+## Homepage follow-up — 2026-10-21
+
+Home now introduces all six completed lessons through numbered cards instead of three activity shortcuts and repeated continuation paragraphs. Home and Learn share `site/src/data/chapters.ts`; contributor guidance requires registering each new completed lesson there. The approved card accents repeat across rows, and Lab/Reference remain direct links.
+
+`npm run check` passes with 86 tests and ten routes. Built-output inspection confirms all six Learn entries have Home links and existing base-prefixed chapter routes. Browser review confirms six cards in three columns at 1280px, one 343px column with no overflow at 375px, visible keyboard focus and the Chapter 6 card opening its actual lesson. No new model or engineering-data behavior is introduced. This is a bounded manual review, not a comprehensive accessibility audit.
