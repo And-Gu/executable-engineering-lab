@@ -103,9 +103,14 @@ The single-sensor model, canonical YAML and baseline reference test remain uncha
 - [Successful Pages deployment](https://github.com/And-Gu/executable-engineering-lab/actions/runs/39982049116); [successful post-merge validation](https://github.com/And-Gu/executable-engineering-lab/actions/runs/39982049107).
 - Public eleven-entry Home/Learn, Chapter 10→11, source return, refresh, proposals, invalid-reference/restore/reset and keyboard reuse/quiz checks passed smoke review. See [Milestone 11 verification](docs/MILESTONE_11_VERIFICATION.md) for observations and limits.
 
-## Milestone 12 — Chapter 12 ready for review
+## Milestone 12 — published; twelve-chapter path complete
 
-[The Integrated Engineering Environment](MILESTONE_12.md) connects existing V0 sources, calculations, checks and manual review in a capstone. Planning PR #25 is merged. The educational increment adds the lesson, source route, written handover/reasoning guide, repository instructions and shared twelfth Home/Learn entry. See [Milestone 12 verification](docs/MILESTONE_12_VERIFICATION.md). Publication remains pending review/merge and exact-revision CI/Pages/public checks. The twelve-lesson path is not yet fully published; future demonstrator capabilities V1–V4 remain unimplemented.
+[The Integrated Engineering Environment](MILESTONE_12.md) connects existing V0 sources, calculations, checks and manual review in a capstone. Planning PR #25 and educational [PR #26](https://github.com/And-Gu/executable-engineering-lab/pull/26) are merged. All twelve lessons are published, with twelve Home cards and Learn entries. Curriculum completion does not imply operational acceptance or delivery of future demonstrator capabilities V1–V4.
+
+- [Read Chapter 12](https://and-gu.github.io/executable-engineering-lab/learn/12-integrated-environment/).
+- Release revision: `bae571bdd7f79b638b8ec2a8a952a74fba4c020b`.
+- [Successful Pages deployment](https://github.com/And-Gu/executable-engineering-lab/actions/runs/39983281781); [successful post-merge validation](https://github.com/And-Gu/executable-engineering-lab/actions/runs/39983281753).
+- Public twelve-entry Home/Learn, Chapter 11→12, source return, refresh, both proposal cases, invalid-reference/restore/reset and keyboard handover-guide/quiz checks passed smoke review. See [Milestone 12 verification](docs/MILESTONE_12_VERIFICATION.md) for observations and limits.
 
 ## Later learning increments
 

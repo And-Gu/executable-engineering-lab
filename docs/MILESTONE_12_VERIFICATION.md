@@ -37,3 +37,11 @@ Final text count and preview were inspected after rebuild. Screenshot: workspace
 Inspect generated reference/proposal records at the clean committed checkout for actual revision/dirty-state provenance. The capstone loads no historical CI artifact. Artifact expiry/sign-in, V0 numerical/physical limits and inability of a dirty flag to snapshot every modification remain explicit.
 
 Local checks support M12-EDU-01, TRC-01, EVD-01, UI-01 and REG-01 within these limits. M12-PUB-01 remains pending review/merge, exact main-revision validation/Pages success and public Home/Learn/Chapter 11→12/source-return/capstone/refresh checks. Curriculum publication is distinct from operational acceptance and future V1–V4 delivery.
+
+## Publication observation — 2026-10-23
+
+This observation supersedes the prepublication status above. PR #26 merged at 16:01:30 UTC (18:01:30 Europe/Stockholm) as `bae571bdd7f79b638b8ec2a8a952a74fba4c020b`. [Main validation](https://github.com/And-Gu/executable-engineering-lab/actions/runs/39983281753) and [Pages](https://github.com/And-Gu/executable-engineering-lab/actions/runs/39983281781) succeeded for that exact revision. The merged checkout passed check (86 tests, zero diagnostics, sixteen routes), evidence and proposals. Canonical modeled 38.52% FAIL remains expected.
+
+Public browser review confirmed twelve Home cards and twelve Learn entries, Chapter 11→12, direct refresh, source return, both proposal outcomes, invalid-reference withholding, restore/reset/reload and keyboard handover-guide/quiz disclosures. An initially cached eleven-entry Learn page required reload; refreshed Learn, Chapter 11 continuation and source return then matched the new release. No browser console errors observed. M12-PUB-01 is satisfied within the earlier smoke-review limits. No new comprehensive accessibility/cross-browser audit was performed for publication.
+
+The twelve-lesson learning path is complete. V0 remains the implemented demonstrator capability; multiple sensors, dynamics, actual agents and governance integrations are separate future work. Completion of the curriculum is not physical-system acceptance.
