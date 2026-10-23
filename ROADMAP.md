@@ -76,9 +76,9 @@ The single-sensor model, canonical YAML and baseline reference test remain uncha
 - [Successful Pages deployment](https://github.com/And-Gu/executable-engineering-lab/actions/runs/39637714807); [successful post-merge validation](https://github.com/And-Gu/executable-engineering-lab/actions/runs/39637714802).
 - Public Home/Learn, Chapter 7→8, source return, direct refresh, both proposals, broken/restore/reset and keyboard context/action/quiz checks passed smoke review. See [Milestone 8 verification](docs/MILESTONE_08_VERIFICATION.md) for limits.
 
-## Milestone 9 — proposed
+## Milestone 9 — Chapter 9 ready for review
 
-[Continuous Engineering](MILESTONE_09.md) proposes a lesson using the existing revision/check/analysis/review loop. No new workflow, approval mechanism or engineering capability is introduced by this planning increment.
+[Continuous Engineering](MILESTONE_09.md) teaches the existing revision/check/analysis/review loop. Planning PR #19 is merged. The educational increment adds Chapter 9, manual workflow review cases, reproduction instructions and the shared ninth Home/Learn entry. No workflow, model or canonical engineering changes are introduced. See [Milestone 9 verification](docs/MILESTONE_09_VERIFICATION.md). Publication remains pending review/merge and exact-revision CI/Pages/public checks.
 
 ## Later learning increments
 
