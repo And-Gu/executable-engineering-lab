@@ -76,9 +76,18 @@ The single-sensor model, canonical YAML and baseline reference test remain uncha
 - [Successful Pages deployment](https://github.com/And-Gu/executable-engineering-lab/actions/runs/39637714807); [successful post-merge validation](https://github.com/And-Gu/executable-engineering-lab/actions/runs/39637714802).
 - Public Home/Learn, Chapter 7→8, source return, direct refresh, both proposals, broken/restore/reset and keyboard context/action/quiz checks passed smoke review. See [Milestone 8 verification](docs/MILESTONE_08_VERIFICATION.md) for limits.
 
-## Milestone 9 — Chapter 9 ready for review
+## Milestone 9 — published
 
-[Continuous Engineering](MILESTONE_09.md) teaches the existing revision/check/analysis/review loop. Planning PR #19 is merged. The educational increment adds Chapter 9, manual workflow review cases, reproduction instructions and the shared ninth Home/Learn entry. No workflow, model or canonical engineering changes are introduced. See [Milestone 9 verification](docs/MILESTONE_09_VERIFICATION.md). Publication remains pending review/merge and exact-revision CI/Pages/public checks.
+[Continuous Engineering](MILESTONE_09.md) teaches the existing revision/check/analysis/review loop. Planning PR #19 and educational [PR #20](https://github.com/And-Gu/executable-engineering-lab/pull/20) are merged. Home and Learn share nine completed chapters; workflows, V0 and canonical sources remain unchanged.
+
+- [Read Chapter 9](https://and-gu.github.io/executable-engineering-lab/learn/09-continuous-engineering/).
+- Release revision: `807b935b4efe3a475abc85c35382f8df27cac268`.
+- [Successful Pages deployment](https://github.com/And-Gu/executable-engineering-lab/actions/runs/39906474919); [successful post-merge validation](https://github.com/And-Gu/executable-engineering-lab/actions/runs/39906475089).
+- Public nine-entry Home/Learn, Chapter 8→9, source return, direct refresh, proposals, invalid-reference/restore/reset and keyboard review/quiz checks passed smoke review. See [Milestone 9 verification](docs/MILESTONE_09_VERIFICATION.md) for observations and limits.
+
+## Milestone 10 — proposed
+
+[Governance and Assurance](MILESTONE_10.md) proposes a manual claim/control/evidence review using existing sources and checks. It introduces no governance integration, compliance engine or operational approval.
 
 ## Later learning increments
 

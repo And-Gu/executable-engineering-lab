@@ -37,3 +37,9 @@ Generated records must be inspected at the committed checkout for actual revisio
 Local checks support M9-EDU-01, CI-01, EVD-01, UI-01 and REG-01 within these limits. Browser checks are smoke review, not comprehensive assistive-technology/cross-browser testing. Older complete exercises were not repeated; shared workspace/model code remains unchanged. V0 physical limitations, historical artifact expiry/sign-in and missing operational justification still apply.
 
 M9-PUB-01 remains pending: review/merge, successful exact main-revision validation/Pages and public Home/Learn/Chapter 8→9/source-return/exercise/refresh checks. This PR does not publish Chapter 9. No later governance capabilities are implemented.
+
+## Publication observation — 2026-10-23
+
+This observation supersedes the prepublication status above. PR #20 merged at 05:34:04 UTC (07:34:04 Europe/Stockholm) as `807b935b4efe3a475abc85c35382f8df27cac268`. [Main validation](https://github.com/And-Gu/executable-engineering-lab/actions/runs/39906475089) and [Pages](https://github.com/And-Gu/executable-engineering-lab/actions/runs/39906474919) succeeded for that exact revision. The merged checkout passed check (86 tests, zero diagnostics, thirteen routes), evidence and proposals; generated records identify the clean merge revision. Canonical modeled 38.52% FAIL remains expected.
+
+Public browser review confirmed nine Home cards and nine Learn entries, Chapter 8→9, direct refresh, source return, both proposal outcomes, invalid-reference withholding, restore/reset/reload and keyboard review/quiz disclosures. No browser errors observed. M9-PUB-01 is satisfied within the earlier smoke-review limitations. No new comprehensive accessibility/cross-browser audit was performed for release.
