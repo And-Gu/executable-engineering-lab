@@ -37,3 +37,9 @@ Screenshot: workspace outputs/chapter-11-preview.png. These checks are manual sm
 Generated reference/proposal records are inspected at the committed checkout for actual revision and dirty-state provenance. The written reuse template is a manual review aid, not an approved baseline or new engineering evidence format. A dirty-state flag does not snapshot every uncommitted modification; the lesson explicitly retains that limitation.
 
 Local observations support M11-EDU-01, SRC-01, EVD-01, UI-01 and REG-01 within these limits. M11-PUB-01 remains pending review/merge, successful exact main-revision validation/Pages and public Home/Learn/Chapter 10→11/source-return/proposal/disclosure/refresh checks. V0 physical/numerical limits and historical artifact expiry/sign-in remain. No operational suitability or universal evidence applicability is claimed.
+
+## Publication observation — 2026-10-23
+
+This observation supersedes the prepublication status above. PR #24 merged at 15:52:48 UTC (17:52:48 Europe/Stockholm) as `f13f700527da5af69b0fe7b0c2a7314549ec8246`. [Main validation](https://github.com/And-Gu/executable-engineering-lab/actions/runs/39982049107) and [Pages](https://github.com/And-Gu/executable-engineering-lab/actions/runs/39982049116) succeeded for that exact revision. The merged checkout passed check (86 tests, zero diagnostics, fifteen routes), evidence and proposals; all generated records identify the clean merge revision. Canonical modeled 38.52% FAIL remains expected.
+
+Public browser review confirmed eleven Home cards and eleven Learn entries, Chapter 10→11, direct refresh, source return, both proposal outcomes, invalid-reference withholding, restore/reset/reload and keyboard dirty-checkout/quiz disclosures. No browser errors observed. M11-PUB-01 is satisfied within the earlier smoke-review limits. No new comprehensive accessibility/cross-browser audit was performed for publication.
