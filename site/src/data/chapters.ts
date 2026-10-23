@@ -11,4 +11,5 @@ export const chapters = [
   { path: '09-continuous-engineering', title: 'Continuous Engineering', summary: 'Follow revision-bound checks, interpret automated feedback, and identify the engineering decisions still open.' },
   { path: '10-governance-assurance', title: 'Governance and Assurance', summary: 'Connect bounded claims to actual checks and evidence, identify gaps, and retain accountable review decisions.' },
   { path: '11-engineering-knowledge', title: 'Engineering Knowledge at Scale', summary: 'Identify coherent configurations, distinguish identity from revision, and review evidence applicability before reuse.' },
+  { path: '12-integrated-environment', title: 'The Integrated Engineering Environment', summary: 'Complete an end-to-end handover from operational intent through a controlled proposal to qualified evidence and the next review decision.' },
 ] as const;

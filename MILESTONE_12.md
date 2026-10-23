@@ -1,6 +1,6 @@
 # Milestone 12 — The Integrated Engineering Environment
 
-**Status:** Proposed educational scope · **Version:** 0.1 · **Date:** 2026-10-23
+**Status:** Plan accepted through PR #25; Chapter 12 ready for review, publication pending · **Version:** 0.1 · **Date:** 2026-10-23
 
 ## Objective and baseline
 
