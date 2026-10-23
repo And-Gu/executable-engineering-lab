@@ -103,9 +103,9 @@ The single-sensor model, canonical YAML and baseline reference test remain uncha
 - [Successful Pages deployment](https://github.com/And-Gu/executable-engineering-lab/actions/runs/39982049116); [successful post-merge validation](https://github.com/And-Gu/executable-engineering-lab/actions/runs/39982049107).
 - Public eleven-entry Home/Learn, Chapter 10→11, source return, refresh, proposals, invalid-reference/restore/reset and keyboard reuse/quiz checks passed smoke review. See [Milestone 11 verification](docs/MILESTONE_11_VERIFICATION.md) for observations and limits.
 
-## Milestone 12 — proposed
+## Milestone 12 — Chapter 12 ready for review
 
-[The Integrated Engineering Environment](MILESTONE_12.md) proposes an end-to-end capstone using existing V0 sources, calculations, checks and manual review. It completes the proposed learning sequence without claiming that future demonstrator capabilities V1–V4 have been implemented.
+[The Integrated Engineering Environment](MILESTONE_12.md) connects existing V0 sources, calculations, checks and manual review in a capstone. Planning PR #25 is merged. The educational increment adds the lesson, source route, written handover/reasoning guide, repository instructions and shared twelfth Home/Learn entry. See [Milestone 12 verification](docs/MILESTONE_12_VERIFICATION.md). Publication remains pending review/merge and exact-revision CI/Pages/public checks. The twelve-lesson path is not yet fully published; future demonstrator capabilities V1–V4 remain unimplemented.
 
 ## Later learning increments
 

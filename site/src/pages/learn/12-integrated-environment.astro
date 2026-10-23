@@ -1,0 +1,109 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ProposalWorkspace from '../../components/ProposalWorkspace.astro';
+import { loadSources } from '../../../../scripts/sources';
+const { need, requirement, scenario, manifest } = loadSources();
+const base = import.meta.env.BASE_URL;
+const reference = `${base}reference/`;
+const repo = 'https://github.com/And-Gu/executable-engineering-lab';
+---
+<Layout title="The Integrated Engineering Environment">
+  <article>
+    <p class="eyebrow">Learn / Chapter 12</p>
+    <h1>The Integrated Engineering Environment</h1>
+    <p class="lead">Can another engineer follow this proposal from operational intent to a justified next decision?</p>
+    <p><strong>Learning objective:</strong> hand over a bounded proposal with inspectable definitions, actual observations, qualified evidence and unresolved review decisions.</p>
+    <p>Prerequisite: <a href={`${base}learn/11-engineering-knowledge/`}>Engineering Knowledge at Scale</a>.</p>
+    <p class="status">Capstone using existing V0 sources and calculations. This connected review path records no design approval and implements no future demonstrator capability.</p>
+    <nav aria-label="Chapter sections"><a href="#question">The question</a><a href="#route">Source route</a><a href="#exercise">Capstone</a><a href="#handover">Handover</a><a href="#reproduce">Reproduce</a><a href="#quiz">Quiz</a></nav>
+    <section id="question" data-chapter-prose>
+      <h2>Hand over a decision, not just a percentage</h2>
+      <p>An operator needs to understand activity in a bounded industrial area. The team proposes a larger sensor footprint and asks you to review the radius-only change before handing it to another engineer. Your task is to explain what the result establishes, which work actually ran and what must still be decided. A passing number is useful, but cannot carry that handover alone.</p>
+      <p>Return to the original engineering question: what would count as enough coverage, and what would convince us? V0 answers a deliberately narrow version using an ideal circular footprint and a geometric area criterion. The criterion is a teaching assumption, not a derived operational target. Neither the original FAIL nor a later PASS measures real-world detection effectiveness.</p>
+      <p>This final exercise connects the sources and review activities already available. Integrated means another engineer can follow the reasoning across them without losing their roles. It does not mean the repository has become an operational monitoring platform, an agent system or an automated acceptance authority.</p>
+    </section>
+    <section id="route" data-chapter-prose>
+      <h2>Follow the sources in the order the question needs</h2>
+      <p>Begin with intent, then the criterion and scenario. Inspect the model's method and assumptions before interpreting its output. Read the registered assertions separately from the generated analysis. Finally identify the execution context supporting the observation. Each step answers a different question; a trace link makes it inspectable, not automatically sufficient.</p>
+      <p>The route below reads current identifiers from validated canonical sources. It does not load an older execution or prove which definitions a historical run used. For retained evidence, inspect its embedded inputs, criterion, model version and provenance, then resolve surrounding sources at that revision.</p>
+    </section>
+    <ol class="source-route" aria-label="Intent to evidence review route">
+      <li><a href={`${reference}#${need.id}`}>{need.id}: intent</a> — why the operator needs monitoring.</li>
+      <li><a href={`${reference}#${requirement.id}`}>{requirement.id}: criterion</a> — {requirement.threshold_percent}% geometric coverage under stated assumptions.</li>
+      <li><a href={`${reference}#${scenario.id}`}>{scenario.id}: reference inputs</a> — area, center and radius defining the starting configuration.</li>
+      <li><a href={`${reference}#${manifest.model.id}`}>{manifest.model.id}: method</a> — model version {manifest.model.version}, numerical contract and limitations.</li>
+      <li><a href={`${reference}#${manifest.test.id}`}>{manifest.test.id}: assertions</a> — canonical behavior checked by the registered test.</li>
+      <li><a href={`${reference}#retained-evidence`}>Reference evaluation</a> and <a href={`${reference}#proposal-evidence`}>unapproved proposal analyses</a> — actual record inspection instructions, separate from test execution.</li>
+    </ol>
+    <section data-chapter-prose>
+      <h2>Keep one change and one claim together</h2>
+      <p>Apply the existing radius-only task. Preserve the criterion and other fixed inputs, inspect the exact radius difference and evaluate that candidate. The shared pure model and evaluator supply the calculation; the presentation supplies controls and explanation. Reusing that implementation keeps browser and automated calculations aligned without making every execution the same evidence.</p>
+      <p>The threshold example asks a different question. It changes the criterion's meaning while retaining the same geometry. Its valid data and possible PASS do not justify the requirement change or fit the radius-only assignment. Keep the candidates separate: combining their definitions would create a configuration whose result neither separate trial establishes.</p>
+      <p>Invalid definitions and insufficient justification also need separate responses. A broken reference blocks the current analysis. A valid radius proposal can still lack evidence about terrain, physical detection or operational usefulness. Correcting a structural error enables analysis; it cannot remove the model's omissions or authorize acceptance.</p>
+    </section>
+    <section data-chapter-prose>
+      <h2>Review the handover as its next reader</h2>
+      <p>Before completing the exercise, imagine receiving your own report without this page beside it. Could you identify the evaluated candidate, find the actual observation and explain why it supports the stated claim? Could you distinguish an unavailable record from a failed criterion? If either answer requires guessing, revise the handover. Its purpose is to preserve enough meaning for another engineer to inspect and challenge the reasoning, including the decision deliberately left open.</p>
+    </section>
+    <section id="exercise">
+      <h2>Capstone: inspect, experiment and explain</h2>
+      <ol>
+        <li>Write the operator's question in one sentence. Follow the source route and state the narrower claim V0 can address.</li>
+        <li>Read the <a href={`${repo}/blob/main/docs/07-task-review.md#written-task-contract`}>radius-only contract</a>. Try the radius example below and inspect exact differences and the proposed definition.</li>
+        <li>Write the observed result with its criterion and assumptions. Identify it as a temporary browser calculation, not retained CI evidence.</li>
+        <li>Reset and try the threshold example. Explain the changed claim and why it is outside this task. Break a reference, observe withholding, then restore/reset.</li>
+        <li>Inspect an actual generated record through the repository route. Record revision, working-tree state and commands actually completed.</li>
+        <li>Complete the written handover below before revealing the reasoning guide.</li>
+      </ol>
+      <ProposalWorkspace />
+    </section>
+    <section data-chapter-prose>
+      <h2>Say what actually executed</h2>
+      <p>Browser exploration changes a temporary copy and runs the shared calculation. Software assertions check expected behavior, including the canonical geometric FAIL. Reference generation calculates and evaluates canonical inputs but does not invoke those assertions. Proposal generation produces separate unapproved analyses and explicitly does not execute the registered reference test against changed inputs.</p>
+      <p>Review is another activity: it connects observations to a bounded claim and names gaps. Publication makes the learning material available; it is not sensor-design acceptance. A successful build or deployed chapter cannot stand in for a missing analysis record, responsible review or physical validation.</p>
+      <p>Attach each execution claim to actual logs or records. Check source commit, dirty status, evaluated definitions, method and timestamp. A dirty flag alone does not snapshot every source modification. If an artifact is unavailable, state that limitation. Local reproduction is a new execution, not reconstruction of an original event or approval.</p>
+    </section>
+    <section id="handover">
+      <h2>Write a short engineering handover</h2>
+      <p>Write outside the page; nothing is saved here. Use actual observations, not the reasoning guide as an execution record.</p>
+      <ol>
+        <li>Operational question and bounded modeled claim.</li>
+        <li>Task boundary, source revision/working-tree state and evaluated definitions.</li>
+        <li>Actual candidate difference and commands or browser actions completed.</li>
+        <li>Observed outcome, criterion, method and evidence actually inspected.</li>
+        <li>Assumptions, unavailable evidence and counterarguments.</li>
+        <li>Responsible next review and unresolved decision.</li>
+      </ol>
+      <details><summary>Reasoning guide: what a defensible handover contains</summary><p>This is guidance, not a completed execution report. State the radius-only geometric claim under the unchanged criterion; copy actual values only from your observed calculation or record. Identify canonical versus proposed definitions, and distinguish browser calculation, assertion logs and generated analyses. Name missing operational support and the responsible next review. Leave acceptance unresolved; do not infer it from PASS or fill missing provenance with invented facts.</p></details>
+    </section>
+    <section id="reproduce" data-chapter-prose>
+      <h2>Let another engineer reproduce the reasoning</h2>
+      <p>Use the <a href={`${repo}/blob/main/docs/12-integrated-review.md`}>repository capstone instructions</a> from an identified checkout. Run existing checks and record generation, inspect actual outputs and compare them with your written claim. No canonical edits, push or publication are needed. The handover is a review aid separate from generated engineering evidence.</p>
+      <p>No historical CI record is loaded by this lesson. The baseline is calculated at build time, and browser edits disappear on reset or reload. Retained CI artifacts expire after 30 days and may require sign-in. A reader can reproduce the calculation while still being unable to inspect an original artifact; report both facts without treating them as equivalent.</p>
+    </section>
+    <section id="quiz">
+      <h2>Check the whole argument</h2>
+      <details><summary>1. What is missing from a handover containing only PASS?</summary><p>The claim, evaluated definitions, criterion, method, assumptions, execution context and remaining decision. Inspect actual support rather than guessing it.</p></details>
+      <details><summary>2. Why can green tests preserve an engineering FAIL?</summary><p>The assertions can correctly check the expected canonical outcome. Software correctness and satisfaction of the modeled criterion answer different questions.</p></details>
+      <details><summary>3. Does the threshold proposal resolve the radius-only assignment?</summary><p>No. It changes the criterion and requires a different engineering justification and authority, even if the calculation passes.</p></details>
+      <details><summary>4. What remains after a reproducible geometric PASS?</summary><p>Operational suitability and omitted physical behavior remain unverified. Identify required evidence and responsible review; reproducibility alone does not approve the design.</p></details>
+    </section>
+    <section data-chapter-prose>
+      <h2>Carry the distinctions into the next engineering problem</h2>
+      <p>The principle is now practical: preserve intent, definition and evidence as distinct but connected parts of a reviewable decision. Another engineer should be able to inspect what changed, reproduce the bounded calculation and challenge the conclusion without guessing which sources or assumptions supplied its meaning.</p>
+      <p>This chapter closes the proposed twelve-lesson learning sequence. Multiple sensors, dynamics, actual agents and governance integrations remain separate, unimplemented demonstrator capabilities in the <a href={`${repo}/blob/main/ROADMAP.md`}>roadmap</a>. Further work should start from a new engineering question and explicit scope, while retaining the same discipline about claims and evidence.</p>
+    </section>
+    <p>Revisit <a href={`${base}learn/01-engineering-intent/`}>intent and evidence</a>, <a href={`${base}learn/06-verification-evidence/`}>verification</a>, <a href={`${base}learn/10-governance-assurance/`}>review responsibility</a> or <a href={`${base}learn/11-engineering-knowledge/`}>evidence reuse</a> where your handover needs stronger reasoning.</p>
+    <p><a href={`${base}learn/11-engineering-knowledge/`}>← Chapter 11</a> · <a href={`${base}learn/`}>Learning path</a> · <a href={reference}>Inspect engineering sources →</a></p>
+  </article>
+</Layout>
+<style>
+  section { margin: 3rem 0; scroll-margin-top: 1.5rem; }
+  [data-chapter-prose], #handover, #quiz, .source-route { max-width: 72ch; }
+  nav { border-block: 1px solid var(--sage-olive); padding: 1rem 0; }
+  #exercise > ol { max-width: 70ch; padding-left: 1.5rem; }
+  li { margin-bottom: .6rem; }
+  details { background: var(--surface); border: 1px solid var(--sage-olive); padding: 1rem; margin: .8rem 0; }
+  summary { cursor: pointer; font-weight: 650; }
+  summary:focus-visible { outline: 3px solid var(--dusty-violet); outline-offset: 4px; }
+</style>
