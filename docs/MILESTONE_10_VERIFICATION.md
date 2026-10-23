@@ -41,3 +41,9 @@ Final narrative count and preview screenshot were checked after rebuild. Screens
 Inspect generated records at the clean committed checkout for actual revision and dirty-state provenance. The written repository review is an aid separate from generated engineering evidence, not an approval artifact. This lesson loads no historical CI record. Artifact expiry/sign-in and V0 physical/numerical limitations remain.
 
 Local observations support M10-EDU-01, CTL-01, EVD-01, SRC-01 (documented omission), UI-01 and REG-01 within these limits. M10-PUB-01 remains pending review/merge, successful exact main-revision validation/Pages and public Home/Learn/Chapter 9→10/source return/exercise/refresh checks. No operational acceptance or production-system assurance is claimed.
+
+## Publication observation — 2026-10-23
+
+This observation supersedes the prepublication status above. PR #22 merged at 06:03:18 UTC (08:03:18 Europe/Stockholm) as `db7a0e9529063c6348098cc4367d151d79a0cf1a`. [Main validation](https://github.com/And-Gu/executable-engineering-lab/actions/runs/39909203929) and [Pages](https://github.com/And-Gu/executable-engineering-lab/actions/runs/39909203982) succeeded for that revision. The merged checkout passed check (86 tests, zero diagnostics, fourteen routes), evidence and proposals; all generated records identify the clean merge revision. Canonical modeled 38.52% FAIL remains expected.
+
+Public browser review confirmed ten Home cards and ten Learn entries, Chapter 9→10, direct refresh, source return, both proposal outcomes, invalid-reference withholding, restore/reset/reload and keyboard evidence-gap/quiz disclosures. No browser errors observed. M11 planning does not change those observations. M10-PUB-01 is satisfied within the earlier smoke-review limits; no new comprehensive accessibility/cross-browser audit was performed for publication.

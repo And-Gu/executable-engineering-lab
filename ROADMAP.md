@@ -85,9 +85,18 @@ The single-sensor model, canonical YAML and baseline reference test remain uncha
 - [Successful Pages deployment](https://github.com/And-Gu/executable-engineering-lab/actions/runs/39906474919); [successful post-merge validation](https://github.com/And-Gu/executable-engineering-lab/actions/runs/39906475089).
 - Public nine-entry Home/Learn, Chapter 8→9, source return, direct refresh, proposals, invalid-reference/restore/reset and keyboard review/quiz checks passed smoke review. See [Milestone 9 verification](docs/MILESTONE_09_VERIFICATION.md) for observations and limits.
 
-## Milestone 10 — Chapter 10 ready for review
+## Milestone 10 — published
 
-[Governance and Assurance](MILESTONE_10.md) adds a manual claim/control/evidence review using existing sources and checks. Planning PR #21 is merged. The educational increment includes the chapter, source-linked expectations table, gap cases, existing proposal workspace, repository review template and shared tenth Home/Learn entry. It introduces no governance integration, compliance engine or operational approval. See [Milestone 10 verification](docs/MILESTONE_10_VERIFICATION.md). Publication remains pending review/merge and exact-revision CI/Pages/public checks.
+[Governance and Assurance](MILESTONE_10.md) teaches bounded claims, actual checks, evidence gaps and review responsibility. Planning PR #21 and educational [PR #22](https://github.com/And-Gu/executable-engineering-lab/pull/22) are merged. Home and Learn share ten completed chapters. No governance integration or operational approval is introduced.
+
+- [Read Chapter 10](https://and-gu.github.io/executable-engineering-lab/learn/10-governance-assurance/).
+- Release revision: `db7a0e9529063c6348098cc4367d151d79a0cf1a`.
+- [Successful Pages deployment](https://github.com/And-Gu/executable-engineering-lab/actions/runs/39909203982); [successful post-merge validation](https://github.com/And-Gu/executable-engineering-lab/actions/runs/39909203929).
+- Public ten-entry Home/Learn, Chapter 9→10, source return, refresh, proposals, invalid-reference/restore/reset and keyboard gap/quiz checks passed smoke review. See [Milestone 10 verification](docs/MILESTONE_10_VERIFICATION.md) for observations and limits.
+
+## Milestone 11 — proposed
+
+[Engineering Knowledge at Scale](MILESTONE_11.md) proposes a configuration and evidence-reuse lesson using existing V0 sources and isolated proposals. No configuration platform or new modeling capability is introduced.
 
 ## Later learning increments
 
