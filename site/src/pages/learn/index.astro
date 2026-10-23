@@ -2,14 +2,30 @@
 import Layout from '../../layouts/Layout.astro';
 import { chapters } from '../../data/chapters';
 const base = import.meta.env.BASE_URL;
+const future = [
+  {name: 'Part I · Engineering in the Age of AI',titles:['The New Engineering Paradigm','Planning Under Uncertainty']},
+  {name: 'Part II · Building Engineering Knowledge',titles:['Engineering Knowledge as Code','Learning Through Models and Prototypes','Spec-Driven Development Without Waterfall']},
+  {name: 'Part III · Engineering with AI Agents',titles:['Directing AI Engineering Agents','Engineering in Small, Reviewable Increments','Continuously Integrated Engineering']},
+  {name: 'Part IV · Trust, Decisions and Evolution',titles:['Verification, Validation and Engineering Evidence','Governance and Engineering Authority','Managing Engineering Knowledge at Scale','The AI-Native Engineering Environment']}
+];
 ---
 <Layout title="Learning path">
-  <p class="eyebrow">Learn / DMS V0</p>
-  <h1>Ask, define, experiment, interpret.</h1>
-  <p class="lead">Use one fictional monitoring problem to connect engineering intent, structured definitions and qualified evidence.</p>
-  <ol>
-    {chapters.map(chapter => <li><h2><a href={`${base}learn/${chapter.path}/`}>{chapter.title}</a></h2><p>{chapter.summary}</p></li>)}
-  </ol>
-  <p>These lessons retain one ideal circular sensor. They do not establish real-world sensing performance.</p>
+  <p class="eyebrow">Learn · Curriculum transition</p>
+  <h1>Learn to engineer with AI — and maintain control.</h1>
+  <p class="lead">The new twelve-chapter journey will connect planning, engineering knowledge, prototyping, progressive specifications, AI agents, integration and engineering evidence.</p>
+  <h2>V2 course structure</h2>
+  <p><strong>Planned curriculum.</strong> Topics below are specifications, not yet published lessons. Use the current lessons further down this page for working examples.</p>
+  <div class="parts">{future.map(part => <section class="card"><h3>{part.name}</h3><ol>{part.titles.map(title => <li>{title}</li>)}</ol></section>)}</div>
+  <h2>Published lessons — V1</h2>
+  <p>The original twelve lessons and URLs are preserved during migration. Their V0 simulation remains intentionally limited to one ideal circular sensor.</p>
+  <ol class="current">{chapters.map(chapter => <li><h3><a href={`${base}learn/${chapter.path}/`}>{chapter.title}</a></h3><p>{chapter.summary}</p></li>)}</ol>
+  <p><a href={`${base}lab/`}>Open the existing lab →</a></p>
 </Layout>
-<style>li { margin: 2rem 0; } ol { padding-left: 1.5rem; }</style>
+<style>
+  .parts{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,21rem),1fr));gap:1rem;margin-bottom:3rem}
+  .parts h3{margin-top:0}
+  .parts li{margin:.35rem 0}
+  .current{padding-left:1.5rem}
+  .current>li{margin:1.5rem 0}
+  .current h3{margin:0}
+</style>
