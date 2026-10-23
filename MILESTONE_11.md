@@ -1,6 +1,6 @@
 # Milestone 11 — Engineering Knowledge at Scale
 
-**Status:** Proposed educational scope · **Version:** 0.1 · **Date:** 2026-10-23
+**Status:** Plan accepted through PR #23; Chapter 11 ready for review, publication pending · **Version:** 0.1 · **Date:** 2026-10-23
 
 ## Objective and baseline
 
