@@ -8,4 +8,5 @@ export const chapters = [
   { path: '06-verification-evidence', title: 'Verification and Engineering Evidence', summary: 'Inspect what executed, reconcile test success with requirement failure, and qualify the evidence.' },
   { path: '07-agentic-engineering', title: 'Agentic Engineering', summary: 'Define a bounded assistance task, inspect its proposal and checks, and retain engineering review responsibility.' },
   { path: '08-engineering-context', title: 'Agents and Engineering Context', summary: 'Assemble relevant source context, separate content from authority, and review proposed actions.' },
+  { path: '09-continuous-engineering', title: 'Continuous Engineering', summary: 'Follow revision-bound checks, interpret automated feedback, and identify the engineering decisions still open.' },
 ] as const;

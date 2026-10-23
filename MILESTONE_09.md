@@ -1,6 +1,6 @@
 # Milestone 09 — Continuous Engineering
 
-**Status:** Proposed educational scope · **Version:** 0.1 · **Date:** 2026-10-21
+**Status:** Plan accepted through PR #19; Chapter 9 ready for review, publication pending · **Version:** 0.1 · **Date:** 2026-10-21
 
 ## Objective and baseline
 

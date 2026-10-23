@@ -1,0 +1,86 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ProposalWorkspace from '../../components/ProposalWorkspace.astro';
+import { loadSources } from '../../../../scripts/sources';
+const { requirement, manifest } = loadSources();
+const base = import.meta.env.BASE_URL;
+const repo = 'https://github.com/And-Gu/executable-engineering-lab';
+---
+<Layout title="Continuous Engineering">
+  <article>
+    <p class="eyebrow">Learn / Chapter 09</p>
+    <h1>Continuous Engineering</h1>
+    <p class="lead">What must be checked again when an engineering definition changes?</p>
+    <p><strong>Learning objective:</strong> interpret automated feedback, identify its revision and scope, and explain which engineering decisions remain open.</p>
+    <p>Prerequisite: <a href={`${base}learn/08-engineering-context/`}>Agents and Engineering Context</a>.</p>
+    <p class="status">Manual review of existing workflows and temporary proposals. This page neither loads CI results nor triggers workflows, publishes changes or records approvals.</p>
+    <nav aria-label="Chapter sections"><a href="#question">The question</a><a href="#feedback">Feedback loop</a><a href="#exercise">Experiment</a><a href="#cases">Review cases</a><a href="#reproduce">Reproduce</a><a href="#quiz">Quiz</a></nav>
+    <section id="question" data-chapter-prose>
+      <h2>A passing proposal starts another question</h2>
+      <p>The monitoring team proposes a larger sensor radius. Its modeled coverage satisfies the unchanged criterion. That is useful feedback, but the next reviewer asks whether the definitions validate, software assertions still hold and the result belongs to the proposed revision. A passing percentage alone answers none of those questions.</p>
+      <p>We use continuous engineering here to mean a repeated, inspectable feedback cycle as engineering sources evolve. The cycle connects a proposed change to checks, evidence interpretation and a responsible decision. Automation repeats defined activities; engineers still decide whether those activities address the change and whether their assumptions support the intended use.</p>
+      <p>Chapter 8 assembled relevant context and authority. Now we follow that context through change and execution. The operational need remains the reason for the work; versioned definitions describe the candidate; actual runs supply bounded evidence. Repeating a calculation does not collapse those roles or turn the teaching criterion into an operationally derived target.</p>
+    </section>
+    <section id="feedback" data-chapter-prose>
+      <h2>Read the loop that actually exists</h2>
+      <p>Begin with the <a href={`${repo}/blob/main/.github/workflows/validate.yml`}>validation workflow</a> and <a href={`${repo}/blob/main/package.json`}>command definitions</a>. Validation is triggered for pull requests and pushes to main. Its checkout explicitly selects the pull request head when available, otherwise the event revision. Identify the checked commit rather than assuming a displayed branch name identifies immutable sources.</p>
+      <p>After installation, <code>npm run check</code> runs type checks, Vitest assertions and the static build, which also validates engineering sources and proposal fixtures. Next, reference generation evaluates canonical inputs, then proposal generation analyzes isolated definitions. Finally, artifact steps retain their JSON records. This ordering matters when interpreting missing outputs.</p>
+      <p>The workflow has no continue-on-error setting or always-run upload steps. Under <a href="https://docs.github.com/en/actions/reference/evaluate-expressions-in-workflows-and-actions#status-check-functions">GitHub’s default success condition</a>, subsequent ordinary steps require preceding success. If checking fails, later analysis or upload steps may never execute. Inspect step conclusions and logs; absence of an artifact is not proof that its calculation succeeded or even ran.</p>
+      <h2>Keep the conclusions separate</h2>
+      <p>Schema validation establishes that the checked definitions meet the implemented contracts. Successful assertions establish that tested behavior matches expectations. The registered <a href={`${base}reference/#${manifest.test.id}`}>{manifest.test.id}</a> intentionally checks a canonical configuration that fails the geometric criterion. Therefore green software tests and a modeled requirement FAIL are consistent findings.</p>
+      <p><code>npm run evidence</code> generates a reference evaluation, not a Vitest execution. Its test ID identifies the registered context; separate command logs establish assertion execution. Proposal records explicitly report that the reference test was not executed against changed inputs. Neither record type is a design approval, even when its calculated outcome is PASS.</p>
+      <p>Publication is another activity. The separate <a href={`${repo}/blob/main/.github/workflows/deploy.yml`}>Pages workflow</a> builds main after a push, or a manual dispatch on main, using its own check command. Its deploy job depends on that build. It has no dependency on the separate validation workflow, which generates the retained analysis records. A successful deployment therefore cannot substitute for inspecting that validation run. This lesson makes no claim about configured branch protection or required approvals.</p>
+    </section>
+    <section id="exercise">
+      <h2>Compare the feedback before deciding</h2>
+      <ol>
+        <li>Apply the <a href={`${repo}/blob/main/docs/07-task-review.md#written-task-contract`}>radius-only assignment</a>. Inspect the radius proposal, its exact difference and the unchanged {requirement.threshold_percent}% criterion.</li>
+        <li>Reset, then try the threshold proposal. Explain why a valid calculation and PASS do not establish compliance with the assignment.</li>
+        <li>Break a reference. Observe withheld analysis, then restore/reset. Which later claim would be unsupported if validation stopped here?</li>
+        <li>Read both workflow files. Identify where assertions, reference evaluation, proposal analysis, retention and publication occur.</li>
+      </ol>
+      <ProposalWorkspace />
+    </section>
+    <section data-chapter-prose>
+      <h2>Use differences to choose the next check</h2>
+      <p>Review the actual difference before selecting evidence. A radius change affects model inputs; a criterion change affects evaluation meaning even when coverage stays numerically identical. A model implementation change can affect every evaluated scenario. Identify the affected claim, rerun relevant checks and inspect outcomes instead of copying an older PASS into the new proposal.</p>
+      <p>Historical evidence remains evidence of its recorded execution. It does not automatically establish a changed definition. Match inputs, threshold, model version, numerical method and source revision before claiming applicability. A stable requirement ID alone cannot establish equivalence. If surrounding definitions are missing, name that gap and retrieve the corresponding revision rather than silently using today’s source view.</p>
+      <p>Do not alter expected assertions or weaken the criterion merely to obtain green checks. A changed expectation may be justified by a separately reviewed engineering decision, but the successful run cannot supply that justification. Even an authorized radius proposal leaves physical detection, occlusion, reliability and operational suitability outside this ideal geometric model.</p>
+    </section>
+    <section id="cases">
+      <h2>Review the next action</h2>
+      <p>These are hypothetical cases for reasoning, not reports of actual CI events. Answer before opening each explanation.</p>
+      <details><summary>Invalid reference before calculation</summary><p>Correct the proposed definition or reference within the task boundary and rerun validation. Do not claim a fresh calculation or artifact upload without an actual completed step.</p></details>
+      <details><summary>Green checks with canonical geometric FAIL</summary><p>Inspect assertions and evaluated definitions. The expected engineering FAIL can coexist with successful tests; it motivates a proposal rather than rewriting the expected result.</p></details>
+      <details><summary>Valid proposal without operational justification</summary><p>Keep its unapproved status. Identify missing evidence and the responsible review decision. More identical runs cannot establish omitted physical behavior.</p></details>
+      <details><summary>Pages succeeded, separate validation evidence is unavailable</summary><p>Confirm what the Pages check ran, then inspect the separate validation run and its revision. State unavailable evidence explicitly; deployment alone does not show retained reference/proposal generation.</p></details>
+    </section>
+    <section id="reproduce" data-chapter-prose>
+      <h2>Inspect one actual execution</h2>
+      <p>Follow the <a href={`${repo}/blob/main/docs/09-feedback-review.md`}>repository feedback review</a> to reproduce checks and analyses at an identified checkout. Or select an actual <a href={`${repo}/actions/workflows/validate.yml`}>validation run</a> and inspect its revision, step conclusions, logs and available artifacts. This page supplies navigation, not a fetched run or current status dashboard.</p>
+      <p>Write a short review recording the changed definition, claim, revision, commands actually completed, observations and remaining decision. Retained records include timestamps and working-tree state; local reproduction creates a new execution. CI artifacts expire after 30 days and may require sign-in. If unavailable, report that limitation rather than reconstructing an original event from a later calculation.</p>
+    </section>
+    <section id="quiz">
+      <h2>Check your reasoning</h2>
+      <details><summary>1. Can software tests pass while the canonical requirement fails?</summary><p>Yes. Successful assertions can confirm the expected modeled FAIL. Inspect what each outcome evaluates.</p></details>
+      <details><summary>2. Does a successful Pages deployment prove proposal artifacts were retained?</summary><p>No. Pages and validation are separate workflows. Inspect the relevant validation steps and available artifacts at the intended revision.</p></details>
+      <details><summary>3. Can an older result verify a changed criterion because its ID stayed the same?</summary><p>No. Compare the evaluated definitions and execution scope. The stable ID does not establish unchanged meaning.</p></details>
+      <details><summary>4. Does rerunning checks approve the design?</summary><p>No. Checks support specified claims. Acceptance still needs responsible review and sufficient evidence for the intended use.</p></details>
+    </section>
+    <section data-chapter-prose>
+      <h2>Next: make assurance responsibilities explicit</h2>
+      <p>The feedback loop now exposes what changed, what ran and what remains unresolved. The next question is which decisions, controls and evidence an assurance argument requires. Automated repetition supports that argument only when its scope and limitations remain explicit; no governance system is implemented by this lesson.</p>
+    </section>
+    <p><a href={`${base}learn/08-engineering-context/`}>← Chapter 8</a> · <a href={`${base}learn/`}>Learning path</a> · <a href={`${base}reference/`}>Inspect engineering sources →</a></p>
+  </article>
+</Layout>
+<style>
+  section { margin: 3rem 0; scroll-margin-top: 1.5rem; }
+  [data-chapter-prose], #quiz, #cases { max-width: 72ch; }
+  nav { border-block: 1px solid var(--sage-olive); padding: 1rem 0; }
+  #exercise > ol { max-width: 70ch; padding-left: 1.5rem; }
+  li { margin-bottom: .6rem; }
+  details { background: var(--surface); border: 1px solid var(--sage-olive); padding: 1rem; margin: .8rem 0; }
+  summary { cursor: pointer; font-weight: 650; }
+  summary:focus-visible { outline: 3px solid var(--dusty-violet); outline-offset: 4px; }
+</style>
