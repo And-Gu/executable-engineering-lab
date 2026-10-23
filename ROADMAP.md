@@ -67,9 +67,18 @@ The single-sensor model, canonical YAML and baseline reference test remain uncha
 - [Successful Pages deployment](https://github.com/And-Gu/executable-engineering-lab/actions/runs/39635487713); [successful post-merge validation](https://github.com/And-Gu/executable-engineering-lab/actions/runs/39635487759).
 - Public Home/Learn/Chapter 6→7, refresh, radius/threshold differences, broken-reference/reset behavior, source return and keyboard quiz passed smoke review. See [Milestone 7 verification](docs/MILESTONE_07_VERIFICATION.md).
 
-## Milestone 8 — Chapter 8 ready for review
+## Milestone 8 — published
 
-[Agents and Engineering Context](MILESTONE_08.md) defines a source/context/action-review lesson. It retains V0 and the manual exercise boundary, with no agent runtime, retrieval system or implemented permission controls. Planning PR #17 is merged. The educational increment adds a source-backed context checklist, manual omission/action review, existing proposal workspace, repository instructions and quiz. Home/Learn share the eight-chapter register. See [Milestone 8 verification](docs/MILESTONE_08_VERIFICATION.md). Publication remains pending review/merge, CI/Pages and public smoke checks.
+[Agents and Engineering Context](MILESTONE_08.md) teaches source/context/action review without an agent runtime or implemented permission controls. Planning PR #17 and educational [PR #18](https://github.com/And-Gu/executable-engineering-lab/pull/18) are merged. Home and Learn share eight completed chapters.
+
+- [Read Chapter 8](https://and-gu.github.io/executable-engineering-lab/learn/08-engineering-context/).
+- Release revision: `3532574dd6c4c02a852efdf858e5fbe6f10a6289`.
+- [Successful Pages deployment](https://github.com/And-Gu/executable-engineering-lab/actions/runs/39637714807); [successful post-merge validation](https://github.com/And-Gu/executable-engineering-lab/actions/runs/39637714802).
+- Public Home/Learn, Chapter 7→8, source return, direct refresh, both proposals, broken/restore/reset and keyboard context/action/quiz checks passed smoke review. See [Milestone 8 verification](docs/MILESTONE_08_VERIFICATION.md) for limits.
+
+## Milestone 9 — proposed
+
+[Continuous Engineering](MILESTONE_09.md) proposes a lesson using the existing revision/check/analysis/review loop. No new workflow, approval mechanism or engineering capability is introduced by this planning increment.
 
 ## Later learning increments
 
