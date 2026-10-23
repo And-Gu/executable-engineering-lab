@@ -94,9 +94,18 @@ The single-sensor model, canonical YAML and baseline reference test remain uncha
 - [Successful Pages deployment](https://github.com/And-Gu/executable-engineering-lab/actions/runs/39909203982); [successful post-merge validation](https://github.com/And-Gu/executable-engineering-lab/actions/runs/39909203929).
 - Public ten-entry Home/Learn, Chapter 9→10, source return, refresh, proposals, invalid-reference/restore/reset and keyboard gap/quiz checks passed smoke review. See [Milestone 10 verification](docs/MILESTONE_10_VERIFICATION.md) for observations and limits.
 
-## Milestone 11 — Chapter 11 ready for review
+## Milestone 11 — published
 
-[Engineering Knowledge at Scale](MILESTONE_11.md) teaches configuration and evidence reuse using existing V0 sources and isolated proposals. Planning PR #23 is merged. The educational increment adds the complete lesson, source-role table, manual reuse cases, repository review template and shared eleventh Home/Learn entry. No configuration platform or new modeling capability is introduced. See [Milestone 11 verification](docs/MILESTONE_11_VERIFICATION.md). Publication remains pending review/merge and exact-revision CI/Pages/public checks.
+[Engineering Knowledge at Scale](MILESTONE_11.md) teaches coherent configurations and evidence applicability. Planning PR #23 and educational [PR #24](https://github.com/And-Gu/executable-engineering-lab/pull/24) are merged. Home and Learn share eleven completed chapters. V0 and canonical sources remain unchanged.
+
+- [Read Chapter 11](https://and-gu.github.io/executable-engineering-lab/learn/11-engineering-knowledge/).
+- Release revision: `f13f700527da5af69b0fe7b0c2a7314549ec8246`.
+- [Successful Pages deployment](https://github.com/And-Gu/executable-engineering-lab/actions/runs/39982049116); [successful post-merge validation](https://github.com/And-Gu/executable-engineering-lab/actions/runs/39982049107).
+- Public eleven-entry Home/Learn, Chapter 10→11, source return, refresh, proposals, invalid-reference/restore/reset and keyboard reuse/quiz checks passed smoke review. See [Milestone 11 verification](docs/MILESTONE_11_VERIFICATION.md) for observations and limits.
+
+## Milestone 12 — proposed
+
+[The Integrated Engineering Environment](MILESTONE_12.md) proposes an end-to-end capstone using existing V0 sources, calculations, checks and manual review. It completes the proposed learning sequence without claiming that future demonstrator capabilities V1–V4 have been implemented.
 
 ## Later learning increments
 
