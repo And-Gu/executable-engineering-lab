@@ -94,9 +94,9 @@ The single-sensor model, canonical YAML and baseline reference test remain uncha
 - [Successful Pages deployment](https://github.com/And-Gu/executable-engineering-lab/actions/runs/39909203982); [successful post-merge validation](https://github.com/And-Gu/executable-engineering-lab/actions/runs/39909203929).
 - Public ten-entry Home/Learn, Chapter 9→10, source return, refresh, proposals, invalid-reference/restore/reset and keyboard gap/quiz checks passed smoke review. See [Milestone 10 verification](docs/MILESTONE_10_VERIFICATION.md) for observations and limits.
 
-## Milestone 11 — proposed
+## Milestone 11 — Chapter 11 ready for review
 
-[Engineering Knowledge at Scale](MILESTONE_11.md) proposes a configuration and evidence-reuse lesson using existing V0 sources and isolated proposals. No configuration platform or new modeling capability is introduced.
+[Engineering Knowledge at Scale](MILESTONE_11.md) teaches configuration and evidence reuse using existing V0 sources and isolated proposals. Planning PR #23 is merged. The educational increment adds the complete lesson, source-role table, manual reuse cases, repository review template and shared eleventh Home/Learn entry. No configuration platform or new modeling capability is introduced. See [Milestone 11 verification](docs/MILESTONE_11_VERIFICATION.md). Publication remains pending review/merge and exact-revision CI/Pages/public checks.
 
 ## Later learning increments
 

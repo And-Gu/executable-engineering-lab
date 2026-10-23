@@ -1,0 +1,104 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ProposalWorkspace from '../../components/ProposalWorkspace.astro';
+import { loadSources } from '../../../../scripts/sources';
+const { need, requirement, scenario, manifest } = loadSources();
+const base = import.meta.env.BASE_URL;
+const reference = `${base}reference/`;
+const repo = 'https://github.com/And-Gu/executable-engineering-lab';
+---
+<Layout title="Engineering Knowledge at Scale">
+  <article>
+    <p class="eyebrow">Learn / Chapter 11</p>
+    <h1>Engineering Knowledge at Scale</h1>
+    <p class="lead">Which definitions belong together, and when can their evidence be reused?</p>
+    <p><strong>Learning objective:</strong> identify a coherent configuration, distinguish identity from revision, and review evidence applicability before reuse.</p>
+    <p>Prerequisite: <a href={`${base}learn/10-governance-assurance/`}>Governance and Assurance</a>.</p>
+    <p class="status">Manual configuration and reuse review using the small V0 demonstrator. This lesson adds no configuration platform, approved product baseline or scale benchmark.</p>
+    <nav aria-label="Chapter sections"><a href="#question">The question</a><a href="#configuration">Configuration</a><a href="#exercise">Experiment</a><a href="#cases">Reuse cases</a><a href="#reproduce">Reproduce</a><a href="#quiz">Quiz</a></nav>
+    <section id="question" data-chapter-prose>
+      <h2>The same identifier is not the same configuration</h2>
+      <p>A colleague finds a passing result and attaches it to a new monitoring proposal. The requirement ID matches, so they assume the result is reusable. Before accepting that reasoning, ask which criterion, geometry and method produced the result. A stable name lets us follow a definition through change; it does not say that its meaning or evaluated inputs stayed unchanged.</p>
+      <p>The problem becomes harder as more people reuse sources and results. We can practice the necessary reasoning with this small demonstrator: identify the definitions that belong together, inspect their differences and qualify the evidence attached to them. More records would increase the review burden, but no large dataset or infrastructure is needed to expose the mistake.</p>
+      <p>Here, configuration means an identified, coherent set of definitions used for a particular analysis. Baseline means the named starting set for comparison. These local teaching terms do not designate an approved product baseline. The canonical sources remain the reference for this lesson; temporary proposals are separate candidates, not replacements for those sources.</p>
+    </section>
+    <section id="configuration" data-chapter-prose>
+      <h2>Identify the set, not just one member</h2>
+      <p>Start with the need, criterion and scenario, then the model and test registration. The need supplies intent; the other records define what the calculation and checks mean. Their typed relationships provide a route through the sources. Follow the <a href={`${reference}#relationships`}>actual relationship fields</a> rather than assuming every arrow denotes the same dependency.</p>
+      <p>The table reads current identifiers and values from validated canonical sources at build time. It identifies their roles, not a historical execution. To interpret an older record, inspect its evaluated definitions and resolve surrounding sources at the recorded revision. A source link to main can later show a different state.</p>
+    </section>
+    <div class="table-scroll" role="region" aria-label="Configuration source roles" tabindex="0">
+      <table><caption>Members of the current reference context</caption><thead><tr><th scope="col">Source</th><th scope="col">Role</th><th scope="col">What else must be identified?</th></tr></thead><tbody>
+        <tr><th scope="row"><a href={`${reference}#${need.id}`}>{need.id}</a></th><td>Intent motivating the criterion</td><td>Its wording and revision, not only its ID</td></tr>
+        <tr><th scope="row"><a href={`${reference}#${requirement.id}`}>{requirement.id}</a></th><td>Criterion: {requirement.threshold_percent}%</td><td>Statement, basis and evaluated scenario/model links</td></tr>
+        <tr><th scope="row"><a href={`${reference}#${scenario.id}`}>{scenario.id}</a></th><td>Area {scenario.area.width} × {scenario.area.height}; center ({scenario.sensor.x}, {scenario.sensor.y}); radius {scenario.sensor.radius} model units</td><td>Exact inputs used by the candidate</td></tr>
+        <tr><th scope="row"><a href={`${reference}#${manifest.model.id}`}>{manifest.model.id}</a></th><td>Model version {manifest.model.version}</td><td>Implementation revision, method and assumptions</td></tr>
+        <tr><th scope="row"><a href={`${reference}#${manifest.test.id}`}>{manifest.test.id}</a></th><td>Registered canonical assertions</td><td>Actual assertion execution, separate from analysis generation</td></tr>
+      </tbody></table>
+    </div>
+    <section data-chapter-prose>
+      <h2>Identity, revision and execution answer different questions</h2>
+      <p>A requirement ID identifies the record. A source commit identifies committed repository state. The model version labels the model, while execution metadata identifies a particular run and its context. None of these alone identifies every evaluated input. A branch name can move; a model version does not describe the scenario or threshold.</p>
+      <p>A dirty checkout adds another qualification: HEAD alone does not identify its uncommitted changes. Generated records report working-tree state and embed evaluated definitions, but that flag is not a complete snapshot of every modified source. Record the actual differences needed for reproduction and do not attribute the whole working tree to the commit alone.</p>
+      <p>Coherence also requires meaning, not just matching references. A source bundle can contain resolvable IDs while combining a criterion from one candidate with inputs from another. Validation detects the contracts it implements; it cannot decide that this combination was intended, justified or covered by a historical result.</p>
+      <h2>Reuse implementation deliberately</h2>
+      <p>The browser and automated checks reuse one pure coverage function and evaluator. That avoids separately maintained formulas. It does not transfer the outcome of one execution to every consumer of that implementation. A new input still needs its own calculation, and a broader claim still needs evidence that the model can address it.</p>
+      <p>Evidence reuse is therefore a separate review question. Compare evaluated inputs, criterion, method, assumptions and intended claim. An unchanged number may have a different meaning after a threshold change. An unchanged criterion may have a different outcome after a geometry change. A shared function supports consistent computation, not universal applicability of its earlier results.</p>
+    </section>
+    <section id="exercise">
+      <h2>Review a proposed reuse</h2>
+      <ol>
+        <li>Inspect the reference context above. Identify what its build-time source view can tell you and what historical context it cannot supply.</li>
+        <li>Try the radius proposal. Inspect its exact field difference and proposed definition. Reset before trying the threshold proposal.</li>
+        <li>Explain why unchanged coverage in the threshold example does not preserve the evaluation's meaning. Keep both candidates separate.</li>
+        <li>Break a reference, observe withheld analysis, then restore/reset. Explain why passing structural checks would still leave an applicability review.</li>
+      </ol>
+      <ProposalWorkspace />
+    </section>
+    <section data-chapter-prose>
+      <h2>Make change impact inspectable</h2>
+      <p>Begin a reuse decision with the actual difference. A radius-only proposal changes scenario geometry while retaining the criterion. The threshold proposal changes criterion fields while preserving that geometry. Neither is the unmodified canonical configuration, and their separate results must not be combined into a third candidate that nobody evaluated.</p>
+      <p>Follow affected source relationships to identify what needs checking again. A broken need reference blocks analysis; a valid changed criterion may still lack an engineering basis. Existing canonical assertions do not claim reference-test execution against every proposal. Use the actual command logs and record semantics rather than interpreting the test ID as universal verification.</p>
+      <p>Leave the next engineer a reviewable handover: the intended claim, identified definitions, actual differences, evidence inspected and unresolved questions. This is more useful than a list of unexplained links. State whether evidence is unavailable or outside scope, and identify the next check or responsible review instead of silently carrying forward a selected PASS.</p>
+    </section>
+    <section id="cases">
+      <h2>Review hypothetical reuse cases</h2>
+      <p>These are designed cases, not reports of actual corrupted bundles or executions.</p>
+      <details><summary>An old PASS has the same ID but a different criterion</summary><p>Compare the evaluated criterion and inputs. The ID alone does not establish applicability; inspect or rerun the relevant evaluation and justify the intended claim.</p></details>
+      <details><summary>A bundle mixes definitions from different revisions</summary><p>Identify the intended configuration and actual differences. Resolvable IDs do not prove that this combination was evaluated. Do not invent a combined result.</p></details>
+      <details><summary>A dirty checkout is attributed only to HEAD</summary><p>HEAD identifies committed state. Inspect uncommitted differences and actual record inputs; a dirty-state flag alone cannot reconstruct all changed sources.</p></details>
+      <details><summary>The same model is reused for a new scenario</summary><p>Reuse the implementation, validate new inputs and execute the relevant calculation/checks. Review assumptions and evidence applicability; the old result does not automatically verify the new scenario.</p></details>
+    </section>
+    <section id="reproduce" data-chapter-prose>
+      <h2>Inspect actual records before reusing their conclusions</h2>
+      <p>Follow the <a href={`${repo}/blob/main/docs/11-reuse-review.md`}>repository reuse review</a> to inspect canonical and proposed definitions, differences, calculations and provenance at an identified checkout. Keep assertion execution, reference evaluation generation and proposal analysis distinct. The written template records reasoning, not an approved baseline or a new engineering evidence format.</p>
+      <p>No historical CI record is loaded here. Browser proposals are temporary; retained artifacts expire after 30 days and may require sign-in. Local reproduction is a new execution. Even a coherent configuration and successful checks cannot establish physical detection, operational suitability or an optimal design under V0's omitted behavior.</p>
+    </section>
+    <section id="quiz">
+      <h2>Check your reasoning</h2>
+      <details><summary>1. Does an unchanged ID establish unchanged meaning?</summary><p>No. Inspect the definition and revision, including criterion, inputs and relationships.</p></details>
+      <details><summary>2. Is shared implementation the same as reusable evidence?</summary><p>No. A shared function computes consistently; evidence applicability depends on the evaluated configuration, method, assumptions and claim.</p></details>
+      <details><summary>3. Does a dirty-state flag fully identify an execution's sources?</summary><p>No. It warns that HEAD alone is insufficient. Inspect the actual inputs and relevant uncommitted differences.</p></details>
+      <details><summary>4. Can two passing candidates be combined without another evaluation?</summary><p>No. Their separate results do not establish a result for an unevaluated combination.</p></details>
+    </section>
+    <section data-chapter-prose>
+      <h2>Next: connect the whole review</h2>
+      <p>We can now identify what belongs together and explain why a reuse decision needs evidence of its own applicability. The next step is an integrated exercise connecting operational intent, definitions, execution, evidence interpretation and responsible review without losing those distinctions.</p>
+    </section>
+    <p><a href={`${base}learn/10-governance-assurance/`}>← Chapter 10</a> · <a href={`${base}learn/`}>Learning path</a> · <a href={reference}>Inspect engineering sources →</a></p>
+  </article>
+</Layout>
+<style>
+  section { margin: 3rem 0; scroll-margin-top: 1.5rem; }
+  [data-chapter-prose], #quiz, #cases { max-width: 72ch; }
+  nav { border-block: 1px solid var(--sage-olive); padding: 1rem 0; }
+  #exercise > ol { max-width: 70ch; padding-left: 1.5rem; }
+  li { margin-bottom: .6rem; }
+  details { background: var(--surface); border: 1px solid var(--sage-olive); padding: 1rem; margin: .8rem 0; }
+  summary { cursor: pointer; font-weight: 650; }
+  .table-scroll { overflow: auto; max-width: 100%; }
+  table { width: 100%; border-collapse: collapse; background: var(--surface); }
+  caption { text-align: left; padding: .7rem 0; }
+  th, td { border: 1px solid var(--sage-olive); padding: .7rem; text-align: left; vertical-align: top; min-width: 10rem; overflow-wrap: anywhere; }
+  :is(summary, .table-scroll):focus-visible { outline: 3px solid var(--dusty-violet); outline-offset: 4px; }
+</style>
