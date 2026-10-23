@@ -1,6 +1,6 @@
 # Milestone 09 — Continuous Engineering
 
-**Status:** Plan accepted through PR #19; Chapter 9 ready for review, publication pending · **Version:** 0.1 · **Date:** 2026-10-21
+**Status:** Published through PR #20; release verified · **Version:** 0.1 · **Date:** 2026-10-21
 
 ## Objective and baseline
 

@@ -2,7 +2,7 @@
 
 **From engineering intent to working systems.**
 
-A practical learning site built around a fictional Distributed Monitoring System (DMS). Chapters 1–8 connect engineering intent, executable experiments, qualified evidence and bounded task/context review. Milestone 8 was published on 2026-10-21; Home and Learn share the completed-chapter register. See [ROADMAP.md](ROADMAP.md) for release evidence and [MILESTONE_09.md](MILESTONE_09.md) for the accepted continuous-engineering scope. Chapter 9 is ready for review, with publication pending; see [Milestone 9 verification](docs/MILESTONE_09_VERIFICATION.md). No agent runtime is introduced.
+A practical learning site built around a fictional Distributed Monitoring System (DMS). Chapters 1–9 connect engineering intent, executable experiments, qualified evidence and accountable review with continuous feedback. Milestone 9 was published on 2026-10-23; Home and Learn share the completed-chapter register. See [ROADMAP.md](ROADMAP.md) for release evidence and [MILESTONE_10.md](MILESTONE_10.md) for the proposed governance and assurance lesson. No agent runtime or governance integration is introduced.
 
 ## Reproduce locally
 
