@@ -81,3 +81,7 @@ Pages deployment runs on pushes to `main` after checks pass and can also be trig
 ## Contributing
 
 Use a short-lived branch and reviewable PR. Read [SITE_SPEC.md](SITE_SPEC.md), [DEMONSTRATOR_SPEC.md](DEMONSTRATOR_SPEC.md) and [MILESTONE_01.md](MILESTONE_01.md) as planning inputs. Preserve their scope boundaries. Change engineering definitions in canonical YAML and keep model computation outside the UI. Run `npm run check` and inspect `npm run evidence` before opening a PR. Do not commit generated evidence or build output. See [ROADMAP.md](ROADMAP.md) for remaining work and [docs/VERIFICATION.md](docs/VERIFICATION.md) for recorded browser checks and verification limits.
+
+## V2 transition proposal
+
+A Stage 0–1 draft reframes Home/Learn around **Engineering at the Speed of AI** while preserving the published twelve-lesson course and V0. The revised curriculum and multidisciplinary/recorded-agent demonstrations are planned, not implemented. Start with [adoption status](docs/v2/ADOPTION-STATUS.md), [tutorial proposal](project/TUTORIAL-SPEC.md) and [staged delivery plan](implementation/IMPLEMENTATION-PLAN.md). This branch is not a publication or acceptance record.
