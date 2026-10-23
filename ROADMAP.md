@@ -85,9 +85,9 @@ The single-sensor model, canonical YAML and baseline reference test remain uncha
 - [Successful Pages deployment](https://github.com/And-Gu/executable-engineering-lab/actions/runs/39906474919); [successful post-merge validation](https://github.com/And-Gu/executable-engineering-lab/actions/runs/39906475089).
 - Public nine-entry Home/Learn, Chapter 8→9, source return, direct refresh, proposals, invalid-reference/restore/reset and keyboard review/quiz checks passed smoke review. See [Milestone 9 verification](docs/MILESTONE_09_VERIFICATION.md) for observations and limits.
 
-## Milestone 10 — proposed
+## Milestone 10 — Chapter 10 ready for review
 
-[Governance and Assurance](MILESTONE_10.md) proposes a manual claim/control/evidence review using existing sources and checks. It introduces no governance integration, compliance engine or operational approval.
+[Governance and Assurance](MILESTONE_10.md) adds a manual claim/control/evidence review using existing sources and checks. Planning PR #21 is merged. The educational increment includes the chapter, source-linked expectations table, gap cases, existing proposal workspace, repository review template and shared tenth Home/Learn entry. It introduces no governance integration, compliance engine or operational approval. See [Milestone 10 verification](docs/MILESTONE_10_VERIFICATION.md). Publication remains pending review/merge and exact-revision CI/Pages/public checks.
 
 ## Later learning increments
 

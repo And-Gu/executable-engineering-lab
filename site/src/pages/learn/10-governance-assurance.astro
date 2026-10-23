@@ -1,0 +1,102 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ProposalWorkspace from '../../components/ProposalWorkspace.astro';
+import { loadSources } from '../../../../scripts/sources';
+const { need, requirement, scenario, manifest } = loadSources();
+const base = import.meta.env.BASE_URL;
+const reference = `${base}reference/`;
+const repo = 'https://github.com/And-Gu/executable-engineering-lab';
+---
+<Layout title="Governance and Assurance">
+  <article>
+    <p class="eyebrow">Learn / Chapter 10</p>
+    <h1>Governance and Assurance</h1>
+    <p class="lead">Which claim does this evidence support, and who must decide what remains acceptable?</p>
+    <p><strong>Learning objective:</strong> construct a bounded review argument, distinguish expectations from implemented checks, and identify evidence gaps and decision responsibility.</p>
+    <p>Prerequisite: <a href={`${base}learn/09-continuous-engineering/`}>Continuous Engineering</a>.</p>
+    <p class="status">Manual assurance review using V0 sources. No approval, compliance evaluation or certification is performed. Hypothetical cases are teaching examples.</p>
+    <nav aria-label="Chapter sections"><a href="#question">The question</a><a href="#controls">Controls</a><a href="#exercise">Experiment</a><a href="#gaps">Evidence gaps</a><a href="#reproduce">Reproduce</a><a href="#quiz">Quiz</a></nav>
+    <section id="question" data-chapter-prose>
+      <h2>From a passing calculation to a justified claim</h2>
+      <p>The monitoring team proposes a larger sensor radius and obtains a geometric PASS. Someone asks whether the configuration can now be accepted for operational use. The calculation supports a narrower statement: under particular inputs, criterion and idealized assumptions, the sampled area estimate meets the threshold. It does not establish that a physical sensor will detect the objects the operator needs to monitor.</p>
+      <p>The gap is a reasoning problem before it is a tooling problem. We must say what is being claimed, why the available evidence bears on that claim and what remains unsupported. A longer list of successful checks cannot supply a missing relationship between geometric area and operational detection.</p>
+      <p>For this lesson, a claim is a statement under review; evidence is an actual observation from an identified execution or source; supporting reasoning explains their connection. A control is a defined measure intended to constrain or check work. Decision responsibility identifies who must resolve remaining questions within the real assignment. These are local teaching terms, not a claim of standards conformance.</p>
+    </section>
+    <section id="controls" data-chapter-prose>
+      <h2>Separate the expectation from its mechanism</h2>
+      <p>The <a href={`${reference}#${need.id}`}>operational need</a> motivates the work. The <a href={`${reference}#${requirement.id}`}>requirement</a> defines a geometric criterion, currently {requirement.threshold_percent}%, for <a href={`${reference}#${scenario.id}`}>{scenario.id}</a>. A review expectation such as “identify the evaluated revision” concerns how a proposal is assessed. It does not replace that behavioral criterion or provide its operational basis.</p>
+      <p>An expectation also differs from an implemented mechanism. The source validator checks contracts and relationships. The registered <a href={`${reference}#${manifest.test.id}`}>test assertions</a> check specified behavior. Generated analyses record inputs and execution context. None of those mechanisms automatically decides whether the operational need is adequately addressed. Read their actual scope before describing them as controls over a broader decision.</p>
+      <p>The table maps selected review expectations to existing sources and observations. It is a manual teaching aid, not a canonical policy, a control evaluation result or an approval record. The responsible reviewers named here describe roles needed by the exercise; they do not identify appointed people or assert configured repository permissions.</p>
+    </section>
+    <div class="table-scroll" role="region" aria-label="Assurance review expectations" tabindex="0">
+      <table><caption>What each existing mechanism can support</caption><thead><tr><th scope="col">Expectation</th><th scope="col">Existing source/check</th><th scope="col">Observation needed</th><th scope="col">Limit and next responsibility</th></tr></thead><tbody>
+        <tr><th scope="row">Definitions are interpretable</th><td><a href={`${repo}/blob/main/scripts/validate.ts`}>Source validation</a></td><td>Actual validation outcome and definitions at its revision</td><td>Contracts do not establish operational basis; requirement reviewer examines the criterion.</td></tr>
+        <tr><th scope="row">Implemented behavior matches assertions</th><td><a href={`${reference}#${manifest.test.id}`}>{manifest.test.id}</a> and <a href={`${repo}/blob/main/models/coverage/coverage.test.ts`}>model tests</a></td><td>Actual test command/log and checked revision</td><td>Successful assertions preserve the canonical geometric FAIL; model reviewer assesses omitted behavior.</td></tr>
+        <tr><th scope="row">Analysis is attributable</th><td><a href={`${reference}#proposal-evidence`}>Proposal records and provenance</a></td><td>Definitions, differences, calculation and execution context</td><td>Attribution is not acceptance; proposal reviewer checks task scope and evidence applicability.</td></tr>
+        <tr><th scope="row">Decision is justified</th><td><a href={`${repo}/blob/main/docs/07-task-review.md#written-task-contract`}>Written task boundary</a></td><td>Explicit claim, gaps and responsible next review</td><td>No operational approval is recorded here; responsible engineering authority must resolve acceptance.</td></tr>
+      </tbody></table>
+    </div>
+    <section data-chapter-prose>
+      <h2>Traceability is a route to review</h2>
+      <p>A source link lets a reviewer inspect a definition; a stable identifier connects records across changes. Neither establishes that an execution used today's definition. Match source revision, working-tree state, inputs, criterion, method and model version before attaching a retained result to the claim being reviewed.</p>
+      <p>Then test the reasoning, not merely the links. An ideal circular footprint omits terrain, occlusion, uncertainty and sensor faults. Evidence of its sampled area supports a geometric statement under those omissions. If the claim concerns physical detection, name the missing observations or models instead of treating additional trace links as stronger physical evidence.</p>
+      <p>Counterarguments make that boundary inspectable. Ask whether the criterion has a justified operational basis, whether the scenario represents intended use and whether the method can observe the behavior claimed. An unanswered question is an explicit limitation. It is not automatically a measured failure, and it must not disappear because another check passed.</p>
+      <p>Keep the argument reviewable as the proposal evolves. If the evaluated input changes, revisit the associated observation. If the claim broadens, revisit whether the same method can support it. If only a document link changes, confirm that it still identifies the intended definition. These are different review questions; recording them explicitly helps the next engineer avoid carrying an unsupported conclusion into a later decision.</p>
+    </section>
+    <section id="exercise">
+      <h2>Build a bounded review argument</h2>
+      <ol>
+        <li>Apply the radius-only task. Try the radius proposal and inspect its exact difference. Write the narrow geometric claim, including criterion and assumptions.</li>
+        <li>Reset and try the threshold proposal. Compare changed fields and explain why calculation success does not justify the new criterion under that assignment.</li>
+        <li>Break a reference, then restore/reset. Distinguish invalid definitions from valid definitions with insufficient operational support.</li>
+        <li>Use the review table to name actual evidence needed, remaining gaps and the responsible next review. No decision is saved or approved by this page.</li>
+      </ol>
+      <ProposalWorkspace />
+    </section>
+    <section data-chapter-prose>
+      <h2>A proposal can pass and still need a decision</h2>
+      <p>Both existing proposal examples can produce a modeled PASS. The radius example changes geometry while retaining the criterion. The threshold example changes evaluation meaning while keeping the same coverage. Under the radius-only assignment, the latter is outside the agreed edit boundary even though its data validate and its arithmetic is correct.</p>
+      <p>A request to relax the criterion therefore needs a separately justified requirement decision and appropriate authority. The proposal author cannot derive that authority from the result they wish to obtain. Likewise, changing expected assertions to conceal a known outcome would remove useful feedback rather than resolve the engineering problem.</p>
+      <p>Keep the stages visible: propose, validate, analyze, interpret and decide. In this exercise the decision remains unresolved. A reviewer can identify the narrow supported claim and request missing evidence without either accepting the physical design or declaring every aspect of the proposal invalid. No automated approval system is needed to practice that distinction.</p>
+    </section>
+    <section id="gaps">
+      <h2>Review hypothetical evidence gaps</h2>
+      <p>These designed cases do not report actual missing artifacts or failed controls. State what remains supportable before revealing the explanation.</p>
+      <details><summary>A PASS has no provenance</summary><p>The label alone cannot be attributed to the candidate. Request definitions and execution context; do not invent a revision or claim verified suitability.</p></details>
+      <details><summary>The proposal is valid, but operational evidence is absent</summary><p>The geometric claim may remain supported by its actual calculation. Physical acceptance remains open; the responsible engineering reviewer must identify required operational evidence.</p></details>
+      <details><summary>Someone asks to lower the threshold</summary><p>Identify the changed requirement and its missing justification. Refer it to the responsible requirement authority; a passing number cannot authorize the change.</p></details>
+      <details><summary>The historical artifact has expired</summary><p>State that the original record was unavailable. A local reproduction is a new execution with its own provenance; it does not reconstruct an original approval or observation.</p></details>
+    </section>
+    <section id="reproduce" data-chapter-prose>
+      <h2>Record what was actually inspected</h2>
+      <p>Follow the <a href={`${repo}/blob/main/docs/10-assurance-review.md`}>repository assurance review</a> to inspect actual definitions and generated records at an identified checkout. Reference generation evaluates canonical inputs; separate test logs establish assertion execution. Proposal analysis explicitly does not execute the registered reference test against changed inputs. Preserve those meanings in your written argument.</p>
+      <p>No historical CI artifact is loaded by this page. Browser proposals are temporary; the baseline is calculated at build time. Retained artifacts expire after 30 days and may require sign-in. Record what you actually inspected, what was unavailable and which claim remains unresolved. This review is an aid to accountable reasoning, not production-system assurance or certification.</p>
+    </section>
+    <section id="quiz">
+      <h2>Check your reasoning</h2>
+      <details><summary>1. Does traceability establish evidence sufficiency?</summary><p>No. It enables inspection; reasoning must still connect the evidence's scope and limitations to the claim.</p></details>
+      <details><summary>2. Is an unobserved operational behavior a measured failure?</summary><p>No. Missing support and a measured failure are different findings. Name the gap without inventing a result.</p></details>
+      <details><summary>3. Can a PASS authorize a changed criterion?</summary><p>No. The criterion needs its own engineering basis and responsible decision; task authority does not follow from arithmetic.</p></details>
+      <details><summary>4. Does this review table implement governance controls?</summary><p>No. It maps expectations to existing checks and remaining decisions. It records no approval or compliance evaluation.</p></details>
+    </section>
+    <section data-chapter-prose>
+      <h2>Next: preserve meaning through evolution</h2>
+      <p>We can now state a bounded claim, inspect its support and identify unresolved responsibility. The next question is how to preserve those meanings when definitions are configured, reused and changed across a growing body of engineering knowledge.</p>
+    </section>
+    <p><a href={`${base}learn/09-continuous-engineering/`}>← Chapter 9</a> · <a href={`${base}learn/`}>Learning path</a> · <a href={reference}>Inspect engineering sources →</a></p>
+  </article>
+</Layout>
+<style>
+  section { margin: 3rem 0; scroll-margin-top: 1.5rem; }
+  [data-chapter-prose], #quiz, #gaps { max-width: 72ch; }
+  nav { border-block: 1px solid var(--sage-olive); padding: 1rem 0; }
+  #exercise > ol { max-width: 70ch; padding-left: 1.5rem; }
+  li { margin-bottom: .6rem; }
+  details { background: var(--surface); border: 1px solid var(--sage-olive); padding: 1rem; margin: .8rem 0; }
+  summary { cursor: pointer; font-weight: 650; }
+  .table-scroll { overflow: auto; max-width: 100%; }
+  table { width: 100%; border-collapse: collapse; background: var(--surface); }
+  caption { text-align: left; padding: .7rem 0; }
+  th, td { border: 1px solid var(--sage-olive); padding: .7rem; text-align: left; vertical-align: top; min-width: 10rem; overflow-wrap: anywhere; }
+  :is(summary, .table-scroll):focus-visible { outline: 3px solid var(--dusty-violet); outline-offset: 4px; }
+</style>

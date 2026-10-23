@@ -1,6 +1,6 @@
 # Milestone 10 — Governance and Assurance
 
-**Status:** Proposed educational scope · **Version:** 0.1 · **Date:** 2026-10-23
+**Status:** Plan accepted through PR #21; Chapter 10 ready for review, publication pending · **Version:** 0.1 · **Date:** 2026-10-23
 
 ## Objective and baseline
 

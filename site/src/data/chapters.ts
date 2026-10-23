@@ -9,4 +9,5 @@ export const chapters = [
   { path: '07-agentic-engineering', title: 'Agentic Engineering', summary: 'Define a bounded assistance task, inspect its proposal and checks, and retain engineering review responsibility.' },
   { path: '08-engineering-context', title: 'Agents and Engineering Context', summary: 'Assemble relevant source context, separate content from authority, and review proposed actions.' },
   { path: '09-continuous-engineering', title: 'Continuous Engineering', summary: 'Follow revision-bound checks, interpret automated feedback, and identify the engineering decisions still open.' },
+  { path: '10-governance-assurance', title: 'Governance and Assurance', summary: 'Connect bounded claims to actual checks and evidence, identify gaps, and retain accountable review decisions.' },
 ] as const;
