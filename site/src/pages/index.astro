@@ -1,24 +1,32 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { chapters } from '../data/chapters';
+import { v2Parts } from '../data/v2-curriculum';
 const base = import.meta.env.BASE_URL;
+
 ---
-<Layout title="From engineering intent to working systems">
-  <p class="eyebrow">Executable Engineering Lab</p>
-  <h1>From engineering intent to working systems.</h1>
-  <p class="lead">An industrial area needs monitoring. What would count as enough coverage—and what would convince you that a proposed configuration provides it?</p>
-  <p>Work through one engineering question using a fictional monitoring system: define a criterion, experiment with a single-sensor model, and judge what its evidence actually establishes.</p>
-  <p class="lead"><a href={`${base}learn/01-engineering-intent/`}>Start Chapter 1: From Engineering Intent to Evidence →</a></p>
-  <h2 id="learning-path">Follow the learning path</h2>
-  <section class="cards" aria-labelledby="learning-path">
-    {chapters.map((chapter, index) => <article class="card">
-      <p class="eyebrow">Chapter {String(index + 1).padStart(2, '0')}</p>
-      <h3><a href={`${base}learn/${chapter.path}/`}>{chapter.title}</a></h3>
-      <p>{chapter.summary}</p>
-      <a href={`${base}learn/${chapter.path}/`}>Read Chapter {index + 1} →</a>
-    </article>)}
+<Layout title="Engineering at the Speed of AI">
+  <p class="eyebrow">Executable Engineering Lab · A practical learning environment</p>
+  <h1>Engineering at the Speed of AI.</h1>
+  <p class="lead">Digital Engineering connects knowledge across disciplines. AI agents can accelerate exploration and implementation. The challenge is to use both without losing control of engineering decisions, architecture, or evidence.</p>
+  <p>Follow a fictional Distributed Monitoring System from uncertain intent toward progressively more informed engineering decisions. The planned curriculum will explore how software, electronics, mechanical design, integration and verification contribute at different speeds.</p>
+  <p><strong>Our approach:</strong> specify what we know, explore what we don't, verify what we build, and preserve what we learn.</p>
+  <p><a href={`${base}learn/`}>Explore the learning path →</a> · <a href={`${base}lab/`}>Open the existing coverage lab</a></p>
+  <p class="status">V2 curriculum in development. The published lessons and working lab below remain the current learning experience.</p>
+  <h2>Four connected questions</h2>
+  <div class="parts">
+    {v2Parts.map(part => <section class="card"><h3>{part.title}</h3><p>{part.message}</p><p class="future"><strong>V2 direction:</strong> {part.chapters.join(' / ')}</p></section>)}
+  </div>
+  <h2 id="published-lessons">Explore the published lessons</h2>
+  <p>The original twelve lessons remain available while the new curriculum is developed. They focus on a deliberately limited single-sensor teaching model. The new multidisciplinary demonstrations and recorded agent workflows are <strong>planned, not yet implemented</strong>.</p>
+  <section id="learning-path" class="cards" aria-label="Published lessons">
+    {chapters.map((chapter, index) => <article class="card"><p class="eyebrow">Existing lesson {String(index+1).padStart(2,'0')}</p><h3><a href={`${base}learn/${chapter.path}/`}>{chapter.title}</a></h3><p>{chapter.summary}</p><a href={`${base}learn/${chapter.path}/`}>Read Chapter {index + 1} &rarr;</a></article>)}
   </section>
-  <p><a href={`${base}lab/`}>Explore the interactive lab</a> · <a href={`${base}reference/`}>Inspect engineering sources</a></p>
-  <p>These lessons use an idealized geometric area estimate. A passing result does not establish real-world detection performance or an optimal design.</p>
-  <p><a href="https://github.com/And-Gu/executable-engineering-lab#readme">Reproduce the calculation locally</a> · <a href="https://github.com/And-Gu/executable-engineering-lab/blob/main/ROADMAP.md">Later learning increments</a></p>
+  <p><a href={`${base}reference/`}>Inspect engineering sources</a> · <a href="https://github.com/And-Gu/executable-engineering-lab">See the repository</a></p>
 </Layout>
+<style>
+  .parts {display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,15rem),1fr));gap:1rem;margin:1.5rem 0 3rem}
+  .parts .card {background:var(--surface)}
+  .parts h3 {margin-top:0}
+  .future {font-size:.88rem}
+</style>

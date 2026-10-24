@@ -1,15 +1,27 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import { chapters } from '../../data/chapters';
+import { v2Parts } from '../../data/v2-curriculum';
 const base = import.meta.env.BASE_URL;
+
 ---
 <Layout title="Learning path">
-  <p class="eyebrow">Learn / DMS V0</p>
-  <h1>Ask, define, experiment, interpret.</h1>
-  <p class="lead">Use one fictional monitoring problem to connect engineering intent, structured definitions and qualified evidence.</p>
-  <ol>
-    {chapters.map(chapter => <li><h2><a href={`${base}learn/${chapter.path}/`}>{chapter.title}</a></h2><p>{chapter.summary}</p></li>)}
-  </ol>
-  <p>These lessons retain one ideal circular sensor. They do not establish real-world sensing performance.</p>
+  <p class="eyebrow">Learn · Curriculum transition</p>
+  <h1>Learn to engineer with AI — and maintain control.</h1>
+  <p class="lead">The new twelve-chapter journey will connect planning, engineering knowledge, prototyping, progressive specifications, AI agents, integration and engineering evidence.</p>
+  <h2>V2 course structure</h2>
+  <p><strong>Planned curriculum.</strong> Topics below are specifications, not yet published lessons. <a href="#published-lessons">Go to the published lessons</a> for working examples.</p>
+  <div class="parts">{v2Parts.map(part => <section class="card"><h3>{part.title}</h3><ol start={part.start}>{part.chapters.map(title => <li>{title}</li>)}</ol></section>)}</div>
+  <h2 id="published-lessons">Published lessons — original course</h2>
+  <p>The original twelve lessons and URLs are preserved during migration. The V0 demonstrator remains intentionally limited to one ideal circular sensor.</p>
+  <ol class="current" aria-label="Published lessons">{chapters.map(chapter => <li><h3><a href={`${base}learn/${chapter.path}/`}>{chapter.title}</a></h3><p>{chapter.summary}</p></li>)}</ol>
+  <p><a href={`${base}lab/`}>Open the existing lab →</a></p>
 </Layout>
-<style>li { margin: 2rem 0; } ol { padding-left: 1.5rem; }</style>
+<style>
+  .parts{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,21rem),1fr));gap:1rem;margin-bottom:3rem}
+  .parts h3{margin-top:0}
+  .parts li{margin:.35rem 0}
+  .current{padding-left:1.5rem}
+  .current>li{margin:1.5rem 0}
+  .current h3{margin:0}
+</style>
