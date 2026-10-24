@@ -1,6 +1,6 @@
-# V2 adoption — Stage 0/1 draft
+# V2 adoption — Stage 0/1 foundation
 
-Prepared 2026-10-23 from the owner-supplied review archive. Implementation of this bounded transition was requested; owner acceptance of the full v2 curriculum, merge and publication are not recorded. The public original course remains published. This branch changes Home/Learn framing and imports proposed specifications; it does not migrate chapters or implement new demonstrations.
+Prepared 2026-10-23 from the owner-supplied review archive. On 2026-10-24 the owner selected PR #28 and authorized its refinement, merge and publication. The original preparation observations below precede that authorization; they do not describe the subsequent release outcome. Implementation of this bounded transition was requested; owner acceptance of the full v2 curriculum, merge and publication are not recorded. The public original course remains published. This branch changes Home/Learn framing and imports proposed specifications; it does not migrate chapters or implement new demonstrations.
 
 ## Baseline and actual inventory
 
@@ -39,3 +39,7 @@ See [verification record](VERIFICATION.md) for actual commands and browser obser
 Open decisions: future public slugs, inline versus Lab/Explore placement, authentic agent-run capture environment and redaction, hypothetical physical parameters, and acceptance of the new hero before publishing. No templates were included in the received archive. Later slices need their own engineering/editorial review.
 
 Next proposed PR after Stage 0/1 acceptance: Stage 2 B1, Chapters 01–02 with a distinct workflow/roadmap learning experience. Do not start that slice merely because this draft passes CI.
+
+## Consolidation decision — 2026-10-24
+
+Retain PR #28 as the single candidate. Add the [linked foundation overview](FOUNDATION-SPEC.md) inspired by PR #29, without importing its page code or duplicating curriculum definitions. PR #29 is to be retired without merge. Full v2 completion and later Stage 2–5 delivery remain separate from publishing this foundation. Exact-revision release observations are recorded after deployment.

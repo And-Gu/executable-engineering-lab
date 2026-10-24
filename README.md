@@ -84,4 +84,4 @@ Use a short-lived branch and reviewable PR. Read [SITE_SPEC.md](SITE_SPEC.md), [
 
 ## V2 transition proposal
 
-A Stage 0–1 draft reframes Home/Learn around **Engineering at the Speed of AI** while preserving the published twelve-lesson course and V0. The revised curriculum and multidisciplinary/recorded-agent demonstrations are planned, not implemented. Start with [adoption status](docs/v2/ADOPTION-STATUS.md), [tutorial proposal](project/TUTORIAL-SPEC.md) and [staged delivery plan](implementation/IMPLEMENTATION-PLAN.md). This branch is not a publication or acceptance record.
+A Stage 0–1 draft reframes Home/Learn around **Engineering at the Speed of AI** while preserving the published twelve-lesson course and V0. The revised curriculum and multidisciplinary/recorded-agent demonstrations are planned, not implemented. Start with the [foundation overview](docs/v2/FOUNDATION-SPEC.md), [adoption status](docs/v2/ADOPTION-STATUS.md), [tutorial proposal](project/TUTORIAL-SPEC.md) and [staged delivery plan](implementation/IMPLEMENTATION-PLAN.md). This branch is not a publication or acceptance record.
