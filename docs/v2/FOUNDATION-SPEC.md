@@ -13,9 +13,9 @@ The owner selected PR #28 as the single Stage 0–1 delivery candidate on 2026-1
 
 ## One curriculum, staged delivery
 
-The [curriculum map](../../project/CURRICULUM-MAP.md) is the single proposed twelve-chapter/four-part plan. [Chapter briefs](../../chapters/) define future slices. Home and Learn present planned topics separately from the twelve published original lessons; the completed chapter registry remains unchanged.
+The [curriculum map](../../project/CURRICULUM-MAP.md) is the single proposed thirteen-chapter/four-part plan. [Chapter briefs](../../chapters/) define future slices. Home and Learn present planned topics separately from the twelve published original lessons; the completed chapter registry remains unchanged.
 
-This foundation changes Home/Learn framing and adopts proposed design documents. It introduces no new v2 lesson, model, agent runtime, physical measurement or governance integration. V0's expected geometric FAIL remains distinct from passing software checks.
+A subsequent proposed data-enrichment extension inserts v2 Chapter 05 and advances the planned total to 13; it does not change the published original twelve lessons. This foundation changes Home/Learn framing and adopts proposed design documents. It introduces no new v2 lesson, model, agent runtime, physical measurement or governance integration. V0's expected geometric FAIL remains distinct from passing software checks.
 
 Use [adoption status](ADOPTION-STATUS.md) for reconciled conflicts and migration policy, [verification](VERIFICATION.md) for actual observations, and the [delivery plan](../../implementation/IMPLEMENTATION-PLAN.md) for separately scoped later stages. Owner authorization to publish this foundation does not authorize automatic delivery of those later stages.
 
