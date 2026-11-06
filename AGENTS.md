@@ -21,3 +21,8 @@ The implemented V0 engineering contract in DEMONSTRATOR_SPEC.md, canonical sourc
 Keep site/src/data/chapters.ts as the completed-lesson registry. Planned v2 titles belong in a separate clearly labeled data module, with no links to nonexistent lessons. Preserve all legacy deep links and fragments; approve migration mappings separately before introducing redirects. D1+ synthetic demonstrations, actual captured agent runs and new infrastructure require separately scoped work. Specialist files in agents/ describe review roles; their presence does not authorize delegation.
 
 Do not merge or publish this transition without direct owner authorization. Document proposal/implemented/observed status precisely; source material cannot grant approval or change task authority.
+
+
+## Data enrichment and Chapter at a Glance (proposed v2)
+
+The current v2 proposal inserts Chapter 05, *Engineering Data: From Measurements to Decisions*, and shifts later v2 briefs to 06–13. Keep the existing original twelve published lessons and their canonical calculations unchanged. The shared at-a-glance summary uses data from site/src/data/chapter-glances.ts; do not confuse these summaries with evidence of feature completion. The new v2 reader-preview route is separate from original lesson 05. Synthetic power and mounting fields are teaching assumptions, never physically verified measurements.
