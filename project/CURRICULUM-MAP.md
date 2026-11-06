@@ -9,10 +9,10 @@ Status: proposed. Routes below are targets; **do not assume they exist**.
 | II | 04 | Learning Through Models and Prototypes | Qualify model fidelity and experiment results | Sensor/electronics/mount options |
 | II | 05 | Engineering Data: From Measurements to Decisions | Curate, annotate, enrich, visualize, review, preserve and reuse engineering data | DMS simulated parameter study + synthetic cross-discipline constraints |
 | II | 06 | Spec-Driven Development Without Waterfall | Progressively specify the next slice | Hypothesis→spec decision studio |
-| III — Act with agents | 06 | Directing AI Engineering Agents | Define agent scope, context, authority | Authentic run replay / contract |
+| III — Act with agents | 07 | Directing AI Engineering Agents | Define agent scope, context, authority | Authentic run replay / contract |
 | III | 08 | Engineering in Small, Reviewable Increments | Design meaningful, limited integration slices | Compare large PR vs split PRs |
 | III | 09 | Continuously Integrated Engineering | Differentiate digital CI, hardware baselines and qualification | Multidiscipline integration dashboard |
-| IV — Decide and scale | 09 | Verification, Validation and Engineering Evidence | Reason from claim to relevant evidence | Claim/evidence assessment |
+| IV — Decide and scale | 10 | Verification, Validation and Engineering Evidence | Reason from claim to relevant evidence | Claim/evidence assessment |
 | IV | 11 | Governance and Engineering Authority | Distinguish checks, permissions and approval | Review gate / authority simulation |
 | IV | 12 | Managing Engineering Knowledge at Scale | Track configurations, reuse and supplier interfaces | Variant/baseline comparison |
 | IV | 13 | The AI-Native Engineering Environment | Synthesize integrated workflow | End-to-end DMS engineering case |
