@@ -56,3 +56,8 @@ Do not imply simulation results equal operational assurance.
 - At least one cross-discipline change impacts electronics, mechanical installation and software/integration, without treating synthetic values as certified evidence.
 - All legacy V0 tests and canonical reference outputs retained.
 - Accessibility, links, mobile rendering and performance verified against checklist.
+
+
+## Proposed data enrichment extension (November 2026)
+
+Insert v2 Chapter 05 — Engineering Data: From Measurements to Decisions — immediately after modeling/prototypes. The learning outcome is to evaluate and improve the usefulness of engineering data through quality, annotation, enrichment, visualization, review and preservation/reuse. Use a deterministic V0 parameter study with explicitly hypothetical cross-discipline planning constraints. Distinguish computed outputs from measurements; show original, curated and derived data with their provenance. The proposed v2 curriculum now has 13 chapters. Every lesson should have an accessible Chapter at a Glance, with one concise idea and six topic-specific anchors; these tiles are conceptual, not six mandatory process steps. The original 12 published routes and V0 assertions remain untouched. The new chapter draft is for owner editorial review, not implementation approval.
