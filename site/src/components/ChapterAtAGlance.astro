@@ -1,0 +1,41 @@
+---
+import { chapterGlances } from '../data/chapter-glances';
+interface Props { slug: string }
+const { slug } = Astro.props;
+const glance = chapterGlances[slug];
+---
+{glance && <section class="chapter-glance" aria-label="Chapter at a Glance">
+  <div class="glance-lead">
+    <span class="glance-label">Chapter at a Glance</span>
+    <p>{glance.message}</p>
+  </div>
+  <ul class="glance-grid">
+    {glance.tiles.map((tile, index) => <li>
+      <span class="glance-mark" aria-hidden="true">
+        <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round">
+          {index === 0 && <><circle cx="11" cy="11" r="7"/><path d="m16 16 5 5"/></>}
+          {index === 1 && <><path d="M4 5h16v14H4z"/><path d="M8 9h8M8 13h5"/></>}
+          {index === 2 && <><path d="M4 18 9 8l5 5 6-9"/><circle cx="4" cy="18" r="1.5"/><circle cx="20" cy="4" r="1.5"/></>}
+          {index === 3 && <><path d="M4 19V5M4 19h16"/><path d="m7 15 4-4 4 2 4-7"/></>}
+          {index === 4 && <><rect x="4" y="4" width="16" height="16" rx="3"/><path d="m8 12 3 3 6-7"/></>}
+          {index === 5 && <><path d="M4 7h16v12H4zM3 4h18v3"/><path d="M9 12h6"/></>}
+        </svg>
+      </span>
+      <strong>{tile.title}</strong>
+      <span class="glance-detail">{tile.detail}</span>
+    </li>)}
+  </ul>
+</section>}
+<style>
+  .chapter-glance{border:1px solid #a6b49d;border-radius:.9rem;background:#f7f7f0;padding:clamp(1rem,2.6vw,1.5rem);margin:1rem 0 1.8rem;max-width:100%}
+  .glance-label{display:block;font-size:.76rem;text-transform:uppercase;letter-spacing:.095em;font-weight:750;color:#4b604b}
+  .glance-lead p{max-width:67ch;margin:.35rem 0 1rem;font-size:1.04rem;line-height:1.5}
+  .glance-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.7rem;list-style:none;margin:0;padding:0}
+  .glance-grid li{display:flex;flex-direction:column;align-items:flex-start;gap:.22rem;min-width:0;padding:.8rem;border-radius:.6rem;background:#e9ede2}
+  .glance-mark{display:block;color:#506b52;height:28px}
+  .glance-grid strong{font-size:.92rem}
+  .glance-detail{font-size:.78rem;line-height:1.45;overflow-wrap:anywhere}
+  @media(max-width:700px){.glance-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+  @media(max-width:370px){.glance-grid{grid-template-columns:1fr}}
+  @media print{.chapter-glance{break-inside:avoid}}
+</style>
