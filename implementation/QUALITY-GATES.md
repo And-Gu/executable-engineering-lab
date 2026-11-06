@@ -4,7 +4,7 @@
 | Area | Verification |
 |---|---|
 | Narrative | Above-the-fold text states AI+digital engineering, control, and multidisciplinary scope |
-| Curriculum | 12 chapters in 4 parts, correct ordered links and unique learning outcomes |
+| Curriculum | 13 planned v2 chapters in 4 parts (original 12 published lessons remain available), correct ordered links and unique learning outcomes |
 | Workflow | Planning, exploration, progressive specs, bounded agents and delivery visibly connected |
 | Multi-discipline | Substantive electronics/mechanical/software interaction plus physical lead-time |
 | True AI | At least one authentic, source-stamped agent trace/diff/check/reviewer artifact |
