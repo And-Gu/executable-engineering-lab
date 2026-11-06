@@ -1,6 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { chapters } from '../data/chapters';
+import { chapters, v2Chapters } from '../data/chapters';
 import { v2Parts } from '../data/v2-curriculum';
 const base = import.meta.env.BASE_URL;
 
@@ -17,6 +17,8 @@ const base = import.meta.env.BASE_URL;
   <div class="parts">
     {v2Parts.map(part => <section class="card"><h3>{part.title}</h3><p>{part.message}</p><p class="future"><strong>V2 direction:</strong> {part.chapters.join(' / ')}</p></section>)}
   </div>
+  <h2 id="published-v2">Published v2 articles</h2>
+  <div class="cards">{v2Chapters.map(chapter => <article class="card"><p class="eyebrow">V2 · Chapter {chapter.number}</p><h3><a href={`${base}learn/${chapter.path}/`}>{chapter.title}</a></h3><p>{chapter.summary}</p></article>)}</div>
   <h2 id="published-lessons">Explore the published lessons</h2>
   <p>The original twelve lessons remain available while the new curriculum is developed. They focus on a deliberately limited single-sensor teaching model. The new multidisciplinary demonstrations and recorded agent workflows are <strong>planned, not yet implemented</strong>.</p>
   <section id="learning-path" class="cards" aria-label="Published lessons">

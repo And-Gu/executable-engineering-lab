@@ -17,20 +17,21 @@ Status: proposed, no repository changes made by this package.
 ## Stage 2 — Early chapters (PR B1/B2/B3)
 - B1 Ch 01 and 02; interactive roadmap fixture, genuine plan distinction.
 - B2 Ch 03; derived cross-discipline graph with semantic edges.
-- B3 Ch 04 and 05; isolated hypothetical design option model and progressive-spec studio.
+- B3 Ch 04 and 06; isolated hypothetical design option model and progressive-spec studio.
+- B4 Ch 05; data enrichment article and calculated comparison, followed by a separately scoped investigation tool.
 - Review one slice at a time; update examples with traceable assumptions.
 **Gate:** unique learning value, valid synthetic-data labeling, V0 unaffected, reproducible demos.
 
 ## Stage 3 — Agentic chapters (PR C1/C2/C3)
 - C1 Capture one real agent task **in sandbox / safe separate branch**, scrub secrets; attach execution and reviewer notes.
-- C2 Ch 06 and 07 with task/review replay and small-vs-large PR comparison.
-- C3 Ch 08 with actual CI references and **explicitly illustrative** non-software gates.
+- C2 Ch 07 and 08 with task/review replay and small-vs-large PR comparison.
+- C3 Ch 09 with actual CI references and **explicitly illustrative** non-software gates.
 **Gate:** no fictional agent transcript, actual provenance, no bypass of review or main-branch protections.
 
 ## Stage 4 — Assurance, scale and capstone (PR D1/D2/D3)
-- D1 Ch 09–10; claim-evidence and human authority views.
-- D2 Ch 11 baseline/variant explorer.
-- D3 Ch 12 end-to-end case, course-wide links and dedicated reference resources.
+- D1 Ch 10–11; claim-evidence and human authority views.
+- D2 Ch 12 baseline/variant explorer.
+- D3 Ch 13 end-to-end case, course-wide links and dedicated reference resources.
 **Gate:** one coherent DMS initiative across chapters and clear outstanding physical validations.
 
 ## Stage 5 — Final editorial/UX QA (PR E1 then optional small fixes)

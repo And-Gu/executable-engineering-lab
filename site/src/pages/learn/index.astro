@@ -1,6 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import { chapters } from '../../data/chapters';
+import { chapters, v2Chapters } from '../../data/chapters';
 import { v2Parts } from '../../data/v2-curriculum';
 const base = import.meta.env.BASE_URL;
 
@@ -10,8 +10,10 @@ const base = import.meta.env.BASE_URL;
   <h1>Learn to engineer with AI — and maintain control.</h1>
   <p class="lead">The new thirteen-chapter journey will connect planning, engineering knowledge, prototyping, progressive specifications, AI agents, integration and engineering evidence.</p>
   <h2>V2 course structure</h2>
-  <p><strong>Planned curriculum.</strong> Topics below are specifications, not yet published lessons. <a href="#published-lessons">Go to the published lessons</a> for working examples.</p>
+  <p><strong>Planned curriculum.</strong> The full sequence below is planned; available v2 articles are linked separately below. <a href="#published-lessons">Go to the published lessons</a> for working examples.</p>
   <div class="parts">{v2Parts.map(part => <section class="card"><h3>{part.title}</h3><ol start={part.start}>{part.chapters.map(title => <li>{title}</li>)}</ol></section>)}</div>
+  <h2 id="published-v2">Published v2 articles</h2>
+  <div class="cards">{v2Chapters.map(chapter => <article class="card"><p class="eyebrow">V2 · Chapter {chapter.number}</p><h3><a href={`${base}learn/${chapter.path}/`}>{chapter.title}</a></h3><p>{chapter.summary}</p></article>)}</div>
   <h2 id="published-lessons">Published lessons — original course</h2>
   <p>The original twelve lessons and URLs are preserved during migration. The V0 demonstrator remains intentionally limited to one ideal circular sensor.</p>
   <ol class="current" aria-label="Published lessons">{chapters.map(chapter => <li><h3><a href={`${base}learn/${chapter.path}/`}>{chapter.title}</a></h3><p>{chapter.summary}</p></li>)}</ol>

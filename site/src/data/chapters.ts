@@ -13,3 +13,8 @@ export const chapters = [
   { path: '11-engineering-knowledge', title: 'Engineering Knowledge at Scale', summary: 'Identify coherent configurations, distinguish identity from revision, and review evidence applicability before reuse.' },
   { path: '12-integrated-environment', title: 'The Integrated Engineering Environment', summary: 'Complete an end-to-end handover from operational intent through a controlled proposal to qualified evidence and the next review decision.' },
 ] as const;
+
+/** Published v2 articles, separate from the original course numbering. */
+export const v2Chapters = [
+  { path: 'v2/05-engineering-data', title: 'Engineering Data: From Measurements to Decisions', summary: 'Check, annotate and combine data; interpret calculated geometry alongside hypothetical power constraints.', number: 5 },
+] as const;
