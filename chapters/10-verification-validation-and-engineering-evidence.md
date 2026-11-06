@@ -1,15 +1,15 @@
-# Chapter 10 — Governance and Engineering Authority
+# Chapter 10 — Verification, Validation and Engineering Evidence
 Status: v2 implementation brief (proposed)
 Part: IV — Trust, Decisions and Evolution
 
 ## The one question
-How can engineering teams govern AI proposals without blocking useful exploration?
+What exactly do our tests and experiments establish about system effectiveness?
 
 ## What the reader must gain
-Define human/agent authority, proposal vs approval, automated policy vs judgment, safety/compliance and control cases.
+Distinguish software regression, model validation, requirement verification and operational validation; reason through claim/argument/evidence.
 
 ## Opening engineering situation
-One proposal changes sensor hardware interface; decide what an agent can alter in sandbox and what requires interface-owner approval.
+A geometry model passes an educational threshold in an exploratory proposal but lacks sensor characterization and field testing.
 
 ## Narrative arc
 1. Start with a concrete decision or unexpected constraint, not a definition.
@@ -20,13 +20,13 @@ One proposal changes sensor hardware interface; decide what an agent can alter i
 6. Connect the decision to the next engineering question.
 
 ## Primary learning experience
-Interactive decision/authority matrix and change gate; introduce Gemara as optional reference.
+Claim–evidence builder with applicability and gap flags; keep original baseline engineering FAIL and software-test PASS distinct.
 
 ## Reuse and migration from v1
-Refactor old Ch 10 and authority sections of Ch 7–8.
+Refactor old Ch 6, 10 and Ch 1 evidence sections.
 
 ## Technical/editorial constraints
-Distinguish described policy and technically enforced permission; no fictional certification or automatic approval.
+Evidence bound to revision, inputs, assumptions and method. Physical test not done means NOT VERIFIED, never green.
 
 ## Suggested article skeleton
 - Opening question and scenario
@@ -46,4 +46,4 @@ Distinguish described policy and technically enforced permission; no fictional c
 - Existing V0 technical checks and old deep links remain intact following migration.
 
 ## Bridge
-Approved and proposed changes span baselines and suppliers. How do we maintain knowledge over time?
+When evidence is partial, who has authority to accept risks and authorize the next step?

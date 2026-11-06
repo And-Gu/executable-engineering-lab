@@ -1,4 +1,4 @@
-# Chapter 11 — Managing Engineering Knowledge at Scale
+# Chapter 12 — Managing Engineering Knowledge at Scale
 Status: v2 implementation brief (proposed)
 Part: IV — Trust, Decisions and Evolution
 

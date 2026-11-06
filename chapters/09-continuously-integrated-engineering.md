@@ -1,4 +1,4 @@
-# Chapter 08 — Continuously Integrated Engineering
+# Chapter 09 — Continuously Integrated Engineering
 Status: v2 implementation brief (proposed)
 Part: III — Engineering with AI Agents
 

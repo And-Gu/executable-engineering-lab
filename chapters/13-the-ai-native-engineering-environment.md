@@ -1,15 +1,15 @@
-# Chapter 09 — Verification, Validation and Engineering Evidence
+# Chapter 13 — The AI-Native Engineering Environment
 Status: v2 implementation brief (proposed)
 Part: IV — Trust, Decisions and Evolution
 
 ## The one question
-What exactly do our tests and experiments establish about system effectiveness?
+Can another engineering team follow one initiative from uncertainty to trustworthy capability?
 
 ## What the reader must gain
-Distinguish software regression, model validation, requirement verification and operational validation; reason through claim/argument/evidence.
+Integrate roadmap, hypothesis, data, experiments, progressive specification, agent actions, review, CI, engineering authority and evolving evidence.
 
 ## Opening engineering situation
-A geometry model passes an educational threshold in an exploratory proposal but lacks sensor characterization and field testing.
+End-to-end DMS initiative: coverage improvement explored → trade-off → chosen next slice → actual bounded agent PR/run → digital checks → pending physical gates → next roadmap learning.
 
 ## Narrative arc
 1. Start with a concrete decision or unexpected constraint, not a definition.
@@ -20,13 +20,13 @@ A geometry model passes an educational threshold in an exploratory proposal but 
 6. Connect the decision to the next engineering question.
 
 ## Primary learning experience
-Claim–evidence builder with applicability and gap flags; keep original baseline engineering FAIL and software-test PASS distinct.
+Navigable end-to-end case map with one authentic record and transparent fictional assumptions; brief capstone decision, not another radius worksheet.
 
 ## Reuse and migration from v1
-Refactor old Ch 6, 10 and Ch 1 evidence sections.
+Old Ch 12 provides handover/evidence ideas only; substantially new integrated narrative.
 
 ## Technical/editorial constraints
-Evidence bound to revision, inputs, assumptions and method. Physical test not done means NOT VERIFIED, never green.
+No claim of fielded DMS or completed physical qualification. Show the unfinished decision and why it matters.
 
 ## Suggested article skeleton
 - Opening question and scenario
@@ -46,4 +46,4 @@ Evidence bound to revision, inputs, assumptions and method. Physical test not do
 - Existing V0 technical checks and old deep links remain intact following migration.
 
 ## Bridge
-When evidence is partial, who has authority to accept risks and authorize the next step?
+Conclude with an actionable adoption checklist; invite adaptation to reader's engineering context.

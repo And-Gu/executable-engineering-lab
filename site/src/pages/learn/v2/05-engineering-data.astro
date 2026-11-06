@@ -1,0 +1,61 @@
+---
+import { Content } from '../../../content/engineering-data.md';
+import { loadSources } from '../../../../../scripts/sources';
+import Layout from '../../../layouts/Layout.astro';
+import { calculateCoverage, MODEL_VERSION, GRID_WIDTH, GRID_HEIGHT } from '../../../../../models/coverage/coverage';
+import { evaluateCoverage } from '../../../../../models/coverage/evaluate';
+const base = import.meta.env.BASE_URL;
+const { scenario, requirement } = loadSources();
+const threshold = requirement.threshold_percent;
+const variants = [
+  { id: 'ILL-A', radius: scenario.sensor.radius, demand: 80, mount: 'Candidate fixture' },
+  { id: 'ILL-B', radius: 45, demand: 130, mount: 'Candidate fixture' },
+  { id: 'ILL-C', radius: 50, demand: 110, mount: 'Requires review' },
+] as const;
+const budget = 120; // illustrative, not a measured equipment constraint
+const rows = variants.map(v => {
+  const output = calculateCoverage({ area: scenario.area, sensor: { ...scenario.sensor, radius: v.radius } });
+  const verdict = evaluateCoverage(output, threshold);
+  return { ...v, coverage: output.coveragePercent, margin: verdict.marginPercentagePoints, satisfiesGeometry: verdict.pass, powerMargin: budget - v.demand };
+});
+const format = (value: number) => value.toFixed(2);
+---
+<Layout title="Engineering Data: From Measurements to Decisions">
+  <article>
+    <p class="eyebrow">V2 · Part II · Chapter 05</p>
+    <h1>Engineering Data: From Measurements to Decisions</h1>
+    <p class="lead">A result is not the same as understanding. How do we turn technical observations and calculations into data that can support an engineering decision?</p>
+    <p class="status">Published v2 article · The comparison below is a static calculated example. An interactive raw/curated/derived investigation tool remains planned.</p>
+    <Content />
+    <h2>An illustrative cross-discipline comparison</h2>
+    <p>The following geometric percentages are calculated during this site build with the existing V0 model ({MODEL_VERSION}, {GRID_WIDTH} × {GRID_HEIGHT} cell-center sampling). They describe ideal area coverage in generic model units—not detection probability or measured hardware performance.</p>
+    <p>Power demands and the {budget} W budget are <strong>fictional planning assumptions</strong> introduced solely to illustrate enrichment across domains. There are no physical measurements, supplier specifications, or actual mounting assessments for these variants.</p>
+    <div class="table-scroll" tabindex="0" role="region" aria-label="Scrollable variant comparison">
+      <table>
+        <caption>Calculated V0 geometric outputs joined with hypothetical power-budget assumptions</caption>
+        <thead><tr><th scope="col">Illustrative variant</th><th scope="col">Radius (model units)</th><th scope="col">Modeled coverage</th><th scope="col">Coverage margin (pp)</th><th scope="col">Fictional power demand</th><th scope="col">Power margin</th><th scope="col">Installation note</th></tr></thead>
+        <tbody>
+          {rows.map(row => <tr><th scope="row">{row.id}</th><td>{row.radius}</td><td>{format(row.coverage)}%</td><td>{format(row.margin)}</td><td>{row.demand} W</td><td>{row.powerMargin} W</td><td>{row.mount}</td></tr>)}
+        </tbody>
+      </table>
+    </div>
+    <p>Consider the two margins separately. <strong>Coverage margin</strong> is the unrounded modeled percentage minus the {threshold}% educational criterion, in percentage points. <strong>Power margin</strong> is the invented 120 W planning budget minus the invented demand, in watts. Both are calculated consistently; only the geometric result is generated from the canonical model. No engineering conclusion about real equipment follows from the fictional power values.</p>
+    <p>Inputs: <a href={base + 'reference/#SCN-001'}>{scenario.id}</a> supplies area and position; <a href={base + 'reference/#REQ-COV-001'}>{requirement.id}</a> supplies the criterion. ILL-A uses its reference radius; ILL-B and ILL-C override only radius. These are separate single-sensor calculations, not a combined sensor system.</p>
+    <h2>Which data became more valuable?</h2>
+    <p>The geometric analysis produces one result per explicitly defined scenario. The added variant notes and synthetic power table create a new view of potential trade-offs. But a safe join requires matching configuration identity, not a guessed name. A missing or mismatched ID is an unresolved data issue—not an invitation to fill the gap automatically.</p>
+    <p>The displayed table is an inspectable build-time snapshot rather than a live experiment or certification record. It is not a physical test. An engineer can now ask whether another variant deserves exploration, but cannot approve an installation based on this table. That would require actual electrical and mechanical data, relevant operating conditions, credible models and appropriate verification.</p>
+    <h2>The next decision</h2>
+    <p>Which uncertainty should we reduce next: coverage under a more credible model, a real equipment power budget, or mechanical integration feasibility? Data enrichment improves the question and the available options. It does not bypass the need for engineering judgment and new evidence.</p>
+    <p><a href={base + 'learn/'}>Return to the v2 learning map</a> · <a href={base + 'lab/'}>Inspect the original V0 simulation</a></p>
+  </article>
+</Layout>
+<style>
+  article{max-width:65rem}
+  .table-scroll{overflow-x:auto;border:1px solid var(--sage-olive);border-radius:.5rem;margin:1.3rem 0}
+  table{border-collapse:collapse;width:100%;min-width:52rem;background:var(--surface);font-size:.9rem}
+  caption{text-align:left;padding:.65rem;font-weight:650}
+  th,td{text-align:left;padding:.7rem;border-top:1px solid var(--sage-olive);vertical-align:top}
+  thead{background:var(--surface-muted)}
+  .table-scroll:focus-visible{outline:3px solid var(--dusty-violet);outline-offset:4px}
+  article p{max-width:75ch}
+</style>

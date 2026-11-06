@@ -1,4 +1,4 @@
-# Chapter 05 — Spec-Driven Development Without Waterfall
+# Chapter 06 — Spec-Driven Development Without Waterfall
 Status: v2 implementation brief (proposed)
 Part: II — Building Engineering Knowledge
 

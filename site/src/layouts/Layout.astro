@@ -1,7 +1,9 @@
 ---
+import ChapterAtAGlance from '../components/ChapterAtAGlance.astro';
 interface Props { title: string }
 const { title } = Astro.props;
 const base = import.meta.env.BASE_URL;
+const chapterSlug = Astro.url.pathname.split('/learn/')[1]?.replace(/\/$/, '') || '';
 ---
 <!doctype html>
 <html lang="en">
@@ -17,7 +19,7 @@ const base = import.meta.env.BASE_URL;
       <a class="brand" href={base}>Executable Engineering Lab</a>
       <nav aria-label="Main navigation"><a href={base}>Home</a><a href={`${base}lab/`}>Lab</a><a href={`${base}reference/`}>Reference</a><a href={`${base}learn/`}>Learn</a><a href="https://github.com/And-Gu/executable-engineering-lab">Source</a></nav>
     </header>
-    <main id="main"><slot /></main>
+    <main id="main">{chapterSlug && <ChapterAtAGlance slug={chapterSlug} />}<slot /></main>
     <footer>Fictional Distributed Monitoring System · V0 teaching model · From intent to evidence</footer>
   </body>
 </html>

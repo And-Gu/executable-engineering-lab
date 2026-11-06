@@ -2,7 +2,7 @@
 
 ## Routes (target, not existing)
 Home: compelling AI-native, multidisciplinary engineering thesis plus first-step CTA.
-Learn: 4 parts, 12 chapters, unique outcomes, progress markers without mandatory gating.
+Learn: 4 parts, 13 chapters, unique outcomes, progress markers without mandatory gating.
 Lab: V0 coverage plus staged isolated D1+ experimental tools.
 Explore: knowledge graph, architecture alternatives, roadmap, decision/evidence paths.
 Reference: glossary, assumptions, canonical sources, example specifications, review artifacts, citations and reproducibility.

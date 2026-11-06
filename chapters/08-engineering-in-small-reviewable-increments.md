@@ -1,15 +1,15 @@
-# Chapter 06 — Directing AI Engineering Agents
+# Chapter 08 — Engineering in Small, Reviewable Increments
 Status: v2 implementation brief (proposed)
 Part: III — Engineering with AI Agents
 
 ## The one question
-What can an agent do on our behalf, and how do we know what actually happened?
+How do we prevent fast AI output from becoming opaque engineering change?
 
 ## What the reader must gain
-Set task objective, sources, permissions, tool boundaries, stop conditions and review deliverable; distinguish agent narration from trace and evidence.
+Design vertical increments and architectural boundaries; compare PR review burden and feedback; include cross-discipline interfaces.
 
 ## Opening engineering situation
-Agent investigates a bounded DMS proposal, reads approved sources, modifies an isolated fixture, runs checks and opens a reviewable diff.
+Contrast a hypothetical 3,000-line monolithic change with small feature slices: interface definition, calculation, UI and test, plus separately reviewed hardware interface decision.
 
 ## Narrative arc
 1. Start with a concrete decision or unexpected constraint, not a definition.
@@ -20,13 +20,13 @@ Agent investigates a bounded DMS proposal, reads approved sources, modifies an i
 6. Connect the decision to the next engineering question.
 
 ## Primary learning experience
-Inspect an *authentic captured* agent run: instructions, tool calls, sources read, diff, verification, human review; optional labeled mock until recorded.
+Interactive change-review storyboard, scoped diff examples and pass/fail checks at each slice.
 
 ## Reuse and migration from v1
-Consolidate old Ch 7 and Ch 8; stop repeating radius/threshold exercise as main interaction.
+Major new content; use existing GitHub checks in old Ch 9 as supporting reference.
 
 ## Technical/editorial constraints
-Never invent transcript or imply active AI runtime. Secrets sanitized. Agent may not change criterion or approve itself.
+Synthetic PR examples must be labeled; if showing true historical changes, link to commits/PRs. Hardware fabrication is not a daily software PR.
 
 ## Suggested article skeleton
 - Opening question and scenario
@@ -46,4 +46,4 @@ Never invent transcript or imply active AI runtime. Secrets sanitized. Agent may
 - Existing V0 technical checks and old deep links remain intact following migration.
 
 ## Bridge
-Even with correct boundaries, a single large change can overwhelm a reviewer. How should we divide work?
+Once small changes enter the repository, what must be checked continuously across disciplines?

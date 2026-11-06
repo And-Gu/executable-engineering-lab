@@ -1,15 +1,15 @@
-# Chapter 12 — The AI-Native Engineering Environment
+# Chapter 11 — Governance and Engineering Authority
 Status: v2 implementation brief (proposed)
 Part: IV — Trust, Decisions and Evolution
 
 ## The one question
-Can another engineering team follow one initiative from uncertainty to trustworthy capability?
+How can engineering teams govern AI proposals without blocking useful exploration?
 
 ## What the reader must gain
-Integrate roadmap, hypothesis, data, experiments, progressive specification, agent actions, review, CI, engineering authority and evolving evidence.
+Define human/agent authority, proposal vs approval, automated policy vs judgment, safety/compliance and control cases.
 
 ## Opening engineering situation
-End-to-end DMS initiative: coverage improvement explored → trade-off → chosen next slice → actual bounded agent PR/run → digital checks → pending physical gates → next roadmap learning.
+One proposal changes sensor hardware interface; decide what an agent can alter in sandbox and what requires interface-owner approval.
 
 ## Narrative arc
 1. Start with a concrete decision or unexpected constraint, not a definition.
@@ -20,13 +20,13 @@ End-to-end DMS initiative: coverage improvement explored → trade-off → chose
 6. Connect the decision to the next engineering question.
 
 ## Primary learning experience
-Navigable end-to-end case map with one authentic record and transparent fictional assumptions; brief capstone decision, not another radius worksheet.
+Interactive decision/authority matrix and change gate; introduce Gemara as optional reference.
 
 ## Reuse and migration from v1
-Old Ch 12 provides handover/evidence ideas only; substantially new integrated narrative.
+Refactor old Ch 10 and authority sections of Ch 7–8.
 
 ## Technical/editorial constraints
-No claim of fielded DMS or completed physical qualification. Show the unfinished decision and why it matters.
+Distinguish described policy and technically enforced permission; no fictional certification or automatic approval.
 
 ## Suggested article skeleton
 - Opening question and scenario
@@ -46,4 +46,4 @@ No claim of fielded DMS or completed physical qualification. Show the unfinished
 - Existing V0 technical checks and old deep links remain intact following migration.
 
 ## Bridge
-Conclude with an actionable adoption checklist; invite adaptation to reader's engineering context.
+Approved and proposed changes span baselines and suppliers. How do we maintain knowledge over time?
