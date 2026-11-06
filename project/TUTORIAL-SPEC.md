@@ -37,7 +37,7 @@ At the end readers can:
 
 ## Experience
 Main routes: Home / Learn / Lab / Explore / Reference.
-Learn is a 12-chapter, four-part progression with independent entry points.
+Learn is a 13-chapter, four-part progression with independent entry points.
 Lab hosts executable models and scenario investigations.
 Explore hosts digital-thread/change-impact and roadmap/decision contexts.
 Reference gives glossary, assumptions, source artifacts, model limitations and reproducibility.
