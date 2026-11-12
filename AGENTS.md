@@ -26,3 +26,11 @@ Do not merge or publish this transition without direct owner authorization. Docu
 ## Data enrichment and Chapter at a Glance (proposed v2)
 
 The current v2 proposal inserts Chapter 05, *Engineering Data: From Measurements to Decisions*, and shifts later v2 briefs to 06–13. Keep the existing original twelve published lessons and their canonical calculations unchanged. The shared at-a-glance summary uses data from site/src/data/chapter-glances.ts; do not confuse these summaries with evidence of feature completion. The new v2 reader-preview route is separate from original lesson 05. Synthetic power and mounting fields are teaching assumptions, never physically verified measurements.
+
+## V3 research sources and unpublished background (agent entry point)
+
+**Before drafting, revising, or reviewing any v3 chapter, read [research/INDEX.md](research/INDEX.md) and the relevant item in [research/v3/](research/v3/).** The index maps all 13 chapters to relevant research, source types, and candidate quotes. Also consult the approved manuscript and [issue #32](https://github.com/And-Gu/executable-engineering-lab/issues/32) for actual editorial decisions. A background research note is not approved chapter prose and does not authorize changes to product code or the public site.
+
+The root `research/` folder is a **non-published archive**: it is outside Astro's `site/src/` and static assets, and must never be imported into a public route or copied to public assets without explicit editorial approval. GitHub itself is public, so do not put confidential material in this folder. Register every new source note in `research/INDEX.md` (chapter mapping, topic, date, verification status, source URL). Follow `research/README.md` when updating the archive.
+
+Before citing an archived claim or chapter quote in published prose, open the authoritative primary source and verify precise text, context, date and scope. Distinguish peer-reviewed results, standards, surveys, and vendor/project positioning. Do not auto-promote quotations or repeat generic AI caveats. Run `npm run build` and `npm run research:check` on any PR affecting research or publication; this checks for accidental leakage into the generated site.
