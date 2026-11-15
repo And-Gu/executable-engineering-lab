@@ -1,0 +1,26 @@
+---
+import { v2Parts } from '../data/v2-curriculum';
+import { v2Chapters, chapterPreviews } from '../data/chapters';
+interface Props { current: number }
+const { current } = Astro.props;
+const base = import.meta.env.BASE_URL;
+const available = [...chapterPreviews, ...v2Chapters];
+---
+<nav aria-label="Course chapters" class="course-navigation">
+  <a class="course-home" href={`${base}learn/`}>← Learning path</a>
+  {v2Parts.map(part => (
+    <details open={current >= part.start && current < part.start + part.chapters.length}>
+      <summary>{part.title}</summary>
+      <p class="part-message">{part.message}</p>
+      <ol start={part.start}>
+        {part.chapters.map((title, offset) => {
+          const number = part.start + offset;
+          const chapter = available.find(item => item.number === number);
+          return <li>{chapter
+            ? <a href={`${base}learn/${chapter.path}/`} aria-current={number === current ? 'page' : undefined}>{title}{number === 1 && <small>Reader preview</small>}</a>
+            : <span>{title}<small>Planned</small></span>}</li>;
+        })}
+      </ol>
+    </details>
+  ))}
+</nav>

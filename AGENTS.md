@@ -26,3 +26,9 @@ Do not merge or publish this transition without direct owner authorization. Docu
 ## Data enrichment and Chapter at a Glance (proposed v2)
 
 The current v2 proposal inserts Chapter 05, *Engineering Data: From Measurements to Decisions*, and shifts later v2 briefs to 06–13. Keep the existing original twelve published lessons and their canonical calculations unchanged. The shared at-a-glance summary uses data from site/src/data/chapter-glances.ts; do not confuse these summaries with evidence of feature completion. The new v2 reader-preview route is separate from original lesson 05. Synthetic power and mounting fields are teaching assumptions, never physically verified measurements.
+
+## Chapter 1 reader pilot — owner-authorized 15 November 2026
+
+The owner approved applying the revised site direction and terminology to Chapter 1 as a local pilot before other chapters. Read project/SITE-DIRECTION.md as the current editorial direction. Implement the complete preview at learn/v2/01-new-engineering-paradigm/ with its own dark reading layout; preserve the original Chapter 1 route, fragments and V0 lab. This authorization supersedes the earlier Home/Learn-only scope for this single pilot.
+
+The pilot uses a concrete opening, explanatory graphics and optional interactions without the universal six-tile summary. Other chapter layouts stay unchanged pending review. Register complete reader previews separately in site/src/data/chapters.ts and label their status in Home/Learn. Keep conceptual situations distinct from model executions or recorded agent runs. Do not publish, migrate other chapters or extend the engineering engine under this authorization.

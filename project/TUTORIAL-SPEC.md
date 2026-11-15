@@ -1,19 +1,21 @@
 # Tutorial specification v2.0 — Executable Engineering Lab
-Status: proposed | Language: American English | Format: browser-first Astro tutorial
+Status: revised direction; Chapter 1 pilot authorized, remaining curriculum planned | Language: American English | Format: browser-first Astro tutorial
+
+Current editorial authority: [Site direction](SITE-DIRECTION.md), updated 15 November 2026.
 
 ## Product promise
-**Engineering at the Speed of AI.**
-Show how connected engineering knowledge and constrained AI-assisted work increase the speed of learning and controlled delivery in multidisciplinary systems, without abandoning engineering judgment, architecture or verification.
+**Software and AI change what we build. And how we build it.**
+Explain how executable models, software-driven workflows and AI agents support faster learning and useful delivery across software, electronics, physical design and operation. Show the practical mechanisms and engineering judgment behind the change.
 
 ## Central thesis
-Digital engineering has long sought connected information across engineering disciplines. Agentic AI can use and transform that information at high speed, increasing both opportunity and the need for control. Knowledge, exploratory models, progressive specifications, reviewable increments and engineering evidence must co-evolve.
+We develop, operate and improve the engineering environment alongside the product. Greenfield product questions shape the models, methods, tools and workflows the team needs. Those capabilities expand what it can investigate and deliver. AI in products and AI used during development have distinct roles; digital threads and integration support the work rather than define its primary benefit.
 
 ## Audience
 Practicing systems, mechanical, electronics, software, manufacturing, integration, safety and verification engineers; engineering leads and technically engaged managers. Do not assume familiarity with Git, Astro, YAML, SysML, specific agents or CI. Explain terms where first used; add optional implementation depth.
 
 ## Learning outcomes
 At the end readers can:
-1. Explain why integrated information and agentic workflows reinforce one another.
+1. Explain how executable models, software-driven workflows and AI agents change systems engineering, distinguishing AI assistance from AI in products.
 2. Separate vision, roadmap initiative, uncertainty, release increment and implementation backlog.
 3. Distinguish intent, hypothesis, controlled definition, observed evidence and decision.
 4. Navigate and critique cross-discipline digital threads and change impact.
@@ -47,10 +49,11 @@ Browser-first; local development optional. A chapter can be valuable without req
 Narrative-first, concise American English, reader-facing engineering question before tool explanation.
 Avoid recurring lengthy disclaimers in the main prose; provide a consistent `Model limits / What this does not establish` pattern in relevant context.
 Use terms consistently: need, requirement, model, evidence, approval, hypothesis, design option, baseline, release.
+The [curriculum terminology and introduction sequence](CURRICULUM-MAP.md#terminology-and-introduction-sequence) defines systems engineering, executable engineering, software-driven workflows, AI-assisted engineering, AI agents/agentic engineering, AI in products and large language models. Establish the shared vocabulary in Chapter 01; develop agent mechanisms in Chapter 07.
 Do not imply simulation results equal operational assurance.
 
 ## Success criteria
-- AI-native engineering and multidisciplinary integration clearly articulated above the fold.
+- The opening makes the change in systems engineering practice, its mechanisms and relevance to R&D understandable.
 - Every chapter demonstrably adds a unique concept and decision-making capability.
 - At least one actual, provenance-bearing agent-run record is inspectable (static replay acceptable; no invented agent actions).
 - At least one cross-discipline change impacts electronics, mechanical installation and software/integration, without treating synthetic values as certified evidence.
@@ -60,4 +63,8 @@ Do not imply simulation results equal operational assurance.
 
 ## Proposed data enrichment extension (November 2026)
 
-Insert v2 Chapter 05 — Engineering Data: From Measurements to Decisions — immediately after modeling/prototypes. The learning outcome is to evaluate and improve the usefulness of engineering data through quality, annotation, enrichment, visualization, review and preservation/reuse. Use a deterministic V0 parameter study with explicitly hypothetical cross-discipline planning constraints. Distinguish computed outputs from measurements; show original, curated and derived data with their provenance. The proposed v2 curriculum now has 13 chapters. Every lesson should have an accessible Chapter at a Glance, with one concise idea and six topic-specific anchors; these tiles are conceptual, not six mandatory process steps. The original 12 published routes and V0 assertions remain untouched. The new chapter draft is for owner editorial review, not implementation approval.
+Insert v2 Chapter 05 — Engineering Data: From Measurements to Decisions — immediately after modeling/prototypes. The learning outcome is to evaluate and improve the usefulness of engineering data through quality, annotation, enrichment, visualization, review and preservation/reuse. Use a deterministic V0 parameter study with explicitly hypothetical cross-discipline planning constraints. Distinguish computed outputs from measurements; show original, curated and derived data with their provenance. The proposed v2 curriculum now has 13 chapters. The original 12 published routes and V0 assertions remain untouched.
+
+## Chapter reading pilot — 15 November 2026
+
+The owner authorized Chapter 1 as a local reader preview applying the revised direction. Use an engineering situation, an early explanatory graphic, terminology in context, optional deeper material and consistent course navigation. A six-tile At a Glance panel is no longer a universal requirement for new or revised chapters. Existing chapter panels remain pending their individual review. Implement and evaluate Chapter 1 before applying its layout more widely; this is not publication approval.

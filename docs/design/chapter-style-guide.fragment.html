@@ -1,0 +1,242 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<div id="eel-chapter-guide" aria-label="Proposed chapter style guide">
+  <div class="sg-masthead"><span class="sg-brand">Executable Engineering Lab</span><span class="sg-version">CHAPTER STYLE GUIDE · PROPOSAL</span></div>
+  <div class="sg-tabs" role="tablist" aria-label="Style guide sections">
+    <button type="button" role="tab" id="sg-tab-reading" aria-controls="sg-reading" aria-selected="true" data-view="reading">Reading layout</button>
+    <button type="button" role="tab" id="sg-tab-foundations" aria-controls="sg-foundations" aria-selected="false" data-view="foundations">Type &amp; color</button>
+    <button type="button" role="tab" id="sg-tab-graphics" aria-controls="sg-graphics" aria-selected="false" data-view="graphics">Graphics</button>
+    <button type="button" role="tab" id="sg-tab-components" aria-controls="sg-components" aria-selected="false" data-view="components">Components</button>
+  </div>
+
+  <section id="sg-reading" role="tabpanel" aria-labelledby="sg-tab-reading">
+    <div class="sg-reading-layout" aria-label="Chapter reading specimen">
+      <aside class="sg-sidebar">
+        <p class="sg-small-label">LEARNING PATH</p>
+        <p class="sg-part">I · Why and what next</p>
+        <p class="sg-current">01 The New Engineering Paradigm</p>
+        <p>02 Planning Under Uncertainty</p>
+        <div class="sg-sidebar-rule"></div>
+        <p class="sg-small-label">IN THIS CHAPTER</p>
+        <p>Two systems develop together</p><p>Put the models to work</p><p>Two roles for AI</p><p>Different cadences</p>
+        <div class="sg-sidebar-rule"></div>
+        <p class="sg-sidebar-note">Course location stays visible.<br>On mobile, navigation collapses.</p>
+      </aside>
+      <div class="sg-reading-main">
+        <details class="sg-mobile-nav"><summary>Course navigation · Chapter 01</summary><p>Part I · Why and what next<br>01 The New Engineering Paradigm<br>02 Planning Under Uncertainty</p></details>
+        <p class="sg-kicker">PART I / CHAPTER 01</p>
+        <h1>The New Engineering Paradigm</h1>
+        <p class="sg-deck">How do we turn faster modeling, agentic work and frequent releases into useful progress across the whole system?</p>
+        <details class="sg-metadata"><summary>About this chapter</summary><p>A compact home for editorial status, source revision and history. The reader can begin without opening it.</p></details>
+        <p class="sg-body">An operations team wants to detect developing equipment faults. The sensor, its mounting and the operator’s response are still open questions. Each experiment develops our understanding of the product—and the means of investigating it.</p>
+        <div class="sg-mini-figure">
+          <div class="sg-mini-system"><span class="sg-small-label sg-teal">PRODUCT SYSTEM</span><h3>What should we build?</h3><p>Behavior · interfaces · use</p></div>
+          <div class="sg-mini-arrows"><span>Questions →</span><span>← Findings</span></div>
+          <div class="sg-mini-system"><span class="sg-small-label sg-gold">ENGINEERING ENVIRONMENT</span><h3>How can we find out?</h3><p>People · models · tools</p></div>
+          <p class="sg-caption">A product question shapes an experiment. Its findings guide both the design and the next engineering capability.</p>
+        </div>
+        <div class="sg-reading-note"><span>CONCRETE SITUATION</span><span>EARLY VISUAL</span><span>OPTIONAL DEPTH</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="sg-foundations" role="tabpanel" aria-labelledby="sg-tab-foundations" hidden>
+    <div class="sg-panel-content">
+      <p class="sg-kicker">FOUNDATIONS</p><h2>One identity. A comfortable reading scale.</h2>
+      <div class="sg-font-samples"><div><span class="sg-small-label">INTER · HEADINGS &amp; PROSE</span><p class="sg-type-sample">Develop the system.</p></div><div><span class="sg-small-label">IBM PLEX MONO · LABELS &amp; CODE</span><p class="sg-mono-sample">MODEL / RUN / COMPARE</p></div></div>
+      <table class="sg-spec-table"><thead><tr><th>Role</th><th>Desktop</th><th>Narrow screen</th></tr></thead><tbody>
+        <tr><td>Chapter title · 600 weight</td><td>48 px</td><td>34–38 px</td></tr>
+        <tr><td>Section / subsection</td><td>30 / 21 px</td><td>26 / 20 px</td></tr>
+        <tr><td>Opening paragraph</td><td>20 px</td><td>18 px</td></tr>
+        <tr><td>Body · 400 weight</td><td>18 px / 1.7 line height</td><td>16–17 px / 1.7</td></tr>
+        <tr><td>Diagram labels / captions</td><td>14 / 13–14 px</td><td>Keep readable; reflow</td></tr>
+        <tr><td>Short mono labels</td><td>12 px</td><td>12 px</td></tr>
+      </tbody></table>
+      <div class="sg-swatches">
+        <div><div class="sg-swatch" style="background:#0d1011"></div><strong>Canvas</strong><code>#0D1011</code></div>
+        <div><div class="sg-swatch" style="background:#151a1c"></div><strong>Figure surface</strong><code>#151A1C</code></div>
+        <div><div class="sg-swatch" style="background:#f1f3ef"></div><strong>Headings &amp; emphasis</strong><code>#F1F3EF</code></div>
+        <div><div class="sg-swatch" style="background:#d7dedf"></div><strong>Reading text · proposed</strong><code>#D7DEDF</code></div>
+        <div><div class="sg-swatch" style="background:#b9c2c5"></div><strong>Secondary text</strong><code>#B9C2C5</code></div>
+        <div><div class="sg-swatch" style="background:#384144"></div><strong>Quiet separators</strong><code>#384144</code></div>
+        <div><div class="sg-swatch" style="background:#9ed8cb"></div><strong>Product / behavior</strong><code>#9ED8CB · TEAL</code></div>
+        <div><div class="sg-swatch" style="background:#f1d67b"></div><strong>Engineering environment</strong><code>#F1D67B · GOLD</code></div>
+      </div>
+      <div class="sg-foundation-footer"><p><strong>Measure:</strong> 60–68 characters per prose line. Figures may use the wider article column.</p><p><strong>Spacing:</strong> 8 · 16 · 24 · 32 · 48 · 64 px. Use 48–64 px between major sections and 24 px inside figures.</p><p><strong>Restraint:</strong> plain chapter titles, thin rules, square or minimally rounded panels. Keep hexagons faint and confined to occasional opening areas.</p></div>
+    </div>
+  </section>
+
+  <section id="sg-graphics" role="tabpanel" aria-labelledby="sg-tab-graphics" hidden>
+    <div class="sg-panel-content">
+      <p class="sg-kicker">GRAPHIC LANGUAGE</p><h2>Every arrow should explain a relationship.</h2>
+      <figure class="sg-full-figure">
+        <div class="sg-figure-header"><h3>One finding changes both systems.</h3><span>Conceptual illustration</span></div>
+        <div class="sg-finding-center"><span class="sg-small-label">OBSERVATION TO INVESTIGATE</span><p>The signal changes with the mounting.</p></div>
+        <div class="sg-branch-labels"><span>↙ Questions the design</span><span>Changes the investigation ↘</span></div>
+        <div class="sg-outcomes"><div><span class="sg-small-label sg-teal">PRODUCT SYSTEM</span><h3>Compare mounting options.</h3><p>Check whether the signal remains useful in the intended installation.</p></div><div><span class="sg-small-label sg-gold">ENGINEERING ENVIRONMENT</span><h3>Improve the model and test fixture.</h3><p>Reuse the analysis workflow for the next comparison.</p></div></div>
+        <figcaption>The next investigation starts from what the team has learned. This illustration does not report a measured result.</figcaption>
+      </figure>
+      <div class="sg-graphic-rules"><div><h3>Choose the form by the question.</h3><p>Feedback → a loop.<br>Alternatives → a comparison.<br>Dependencies → named links.<br>Different cadences → separate lanes.</p></div><div><h3>Preserve meaning at every width.</h3><p>Stack and redraw on mobile. Keep labels at reading size. Explain the consequence in a caption. Pair color with names; use status text for results.</p></div></div>
+      <p class="sg-rule-note">Teal and gold identify the two systems. They do not mean PASS and FAIL. Decorative rules may be subtle; meaningful connectors must remain clearly visible.</p>
+    </div>
+  </section>
+
+  <section id="sg-components" role="tabpanel" aria-labelledby="sg-tab-components" hidden>
+    <div class="sg-panel-content">
+      <p class="sg-kicker">REUSABLE READING PATTERNS</p><h2>A small set of useful components.</h2>
+      <div class="sg-component-row"><span class="sg-small-label">SECTION</span><div><h3>Put the models to work.</h3><p>A heading names the idea or action. The paragraph explains why it matters before introducing the mechanism.</p></div></div>
+      <div class="sg-component-row"><span class="sg-small-label">PRINCIPLE</span><div class="sg-principle">We develop, operate and improve the engineering environment alongside the product.</div></div>
+      <div class="sg-component-row"><span class="sg-small-label">TERM IN CONTEXT</span><p><strong>Executable engineering</strong> puts models, analyses and checks into workflows that can be run, evaluated and improved.</p></div>
+      <div class="sg-component-row"><span class="sg-small-label">OPTIONAL DEPTH</span><details class="sg-disclosure"><summary>What does this example assume?</summary><p>The example is conceptual. A physical conclusion would require suitable measurements, a known configuration and a model whose assumptions apply.</p></details></div>
+      <div class="sg-component-row"><span class="sg-small-label">REASONING CHECK</span><details class="sg-disclosure"><summary>The software checks pass. What do we know about the mounting?</summary><p>Only what those checks evaluate. Identify the model or physical experiment needed for the mounting question.</p></details></div>
+      <div class="sg-component-row"><span class="sg-small-label">DEEPER READING</span><p><span class="sg-text-link">Inspect the model →</span><br><span class="sg-secondary">A contextual link says what the reader will find and whether setup is needed.</span></p></div>
+      <div class="sg-component-row"><span class="sg-small-label">CHAPTER CLOSE</span><div><h3>Which uncertainty should we reduce next?</h3><p>End with the engineering insight, then a real next destination. Mark a planned chapter clearly.</p></div></div>
+      <p class="sg-rule-note">Use flowing prose as the default. Reserve panels for figures and interactions; reserve disclosures for optional depth. The main argument stays visible.</p>
+    </div>
+  </section>
+</div>
+<style>
+#eel-chapter-guide { --sg-bg:#0d1011; --sg-panel:#151a1c; --sg-text:#f1f3ef; --sg-body:#d7dedf; --sg-muted:#b9c2c5; --sg-rule:#384144; --sg-teal:#9ed8cb; --sg-gold:#f1d67b; --sg-body-size:18px; --sg-measure:64ch; color-scheme:dark; color:var(--sg-text); background:var(--sg-bg); font:16px/1.65 Inter,Arial,sans-serif; overflow-wrap:break-word; }
+#eel-chapter-guide * { box-sizing:border-box; }
+#eel-chapter-guide [hidden] { display:none !important; }
+#eel-chapter-guide h1,#eel-chapter-guide h2,#eel-chapter-guide h3,#eel-chapter-guide p,#eel-chapter-guide figure { margin:0; }
+#eel-chapter-guide h1 { font-size:48px; line-height:1.12; font-weight:600; letter-spacing:-.045em; max-width:19ch; margin:14px 0 20px; text-wrap:balance; }
+#eel-chapter-guide h2 { font-size:30px; line-height:1.25; font-weight:600; letter-spacing:-.03em; margin:12px 0 28px; }
+#eel-chapter-guide h3 { font-size:21px; line-height:1.35; font-weight:600; letter-spacing:-.025em; }
+#eel-chapter-guide .sg-masthead { padding:24px 28px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; border-bottom:1px solid var(--sg-rule); }
+#eel-chapter-guide .sg-brand { border-left:3px solid var(--sg-gold); padding-left:12px; font-size:14px; font-weight:600; }
+#eel-chapter-guide .sg-version { color:var(--sg-muted); font:12px/1.5 'IBM Plex Mono',monospace; }
+#eel-chapter-guide .sg-tabs { display:flex; flex-wrap:wrap; gap:8px 24px; padding:8px 28px 0; border-bottom:1px solid var(--sg-rule); }
+#eel-chapter-guide .sg-tabs button { font:14px/1.5 Inter,Arial,sans-serif; color:var(--sg-muted); background:transparent; border:0; border-bottom:2px solid transparent; padding:12px 0; }
+#eel-chapter-guide .sg-tabs button[aria-selected="true"] { color:var(--sg-gold); border-bottom-color:var(--sg-gold); }
+#eel-chapter-guide .sg-reading-layout { display:grid; grid-template-columns:165px minmax(0,1fr); gap:32px; padding:32px 28px; }
+#eel-chapter-guide .sg-sidebar { font-size:13px; color:var(--sg-muted); }
+#eel-chapter-guide .sg-sidebar p { margin-bottom:12px; }
+#eel-chapter-guide .sg-sidebar .sg-part { color:var(--sg-text); margin-top:20px; }
+#eel-chapter-guide .sg-sidebar .sg-current { color:var(--sg-gold); border-left:2px solid var(--sg-gold); padding-left:10px; }
+#eel-chapter-guide .sg-sidebar-rule { height:1px; background:var(--sg-rule); margin:24px 0; }
+#eel-chapter-guide .sg-sidebar-note { font-size:12px; }
+#eel-chapter-guide .sg-small-label,#eel-chapter-guide .sg-kicker { font:12px/1.6 'IBM Plex Mono',Menlo,monospace; letter-spacing:.04em; }
+#eel-chapter-guide .sg-kicker { color:var(--sg-teal); }
+#eel-chapter-guide .sg-small-label { color:var(--sg-muted); }
+#eel-chapter-guide .sg-teal { color:var(--sg-teal); }
+#eel-chapter-guide .sg-gold { color:var(--sg-gold); }
+#eel-chapter-guide .sg-deck { color:var(--sg-body); font-size:20px; line-height:1.6; max-width:55ch; }
+#eel-chapter-guide .sg-body { color:var(--sg-body); font-size:var(--sg-body-size); line-height:1.7; max-width:var(--sg-measure); margin:24px 0; }
+#eel-chapter-guide .sg-metadata { color:var(--sg-muted); font-size:13px; margin-top:16px; }
+#eel-chapter-guide details summary { padding:8px 0; }
+#eel-chapter-guide details p { margin-top:12px; }
+#eel-chapter-guide .sg-mini-figure { background:var(--sg-panel); border-top:2px solid var(--sg-teal); padding:24px; display:grid; grid-template-columns:minmax(0,1fr) 100px minmax(0,1fr); gap:16px; align-items:center; }
+#eel-chapter-guide .sg-mini-system h3 { font-size:20px; margin:12px 0 8px; }
+#eel-chapter-guide .sg-mini-system p { font-size:14px; color:var(--sg-muted); }
+#eel-chapter-guide .sg-mini-arrows { display:flex; flex-direction:column; gap:16px; font-size:13px; text-align:center; color:var(--sg-muted); }
+#eel-chapter-guide .sg-caption { grid-column:1/-1; font-size:14px; line-height:1.6; color:var(--sg-muted); border-top:1px solid var(--sg-rule); padding-top:16px; margin-top:8px; }
+#eel-chapter-guide .sg-reading-note { display:flex; gap:12px 24px; flex-wrap:wrap; font:12px/1.6 'IBM Plex Mono',monospace; color:var(--sg-muted); margin-top:20px; }
+#eel-chapter-guide .sg-mobile-nav { display:none; }
+#eel-chapter-guide .sg-panel-content { padding:32px 28px; }
+#eel-chapter-guide .sg-font-samples { display:grid; grid-template-columns:1.2fr 1fr; gap:32px; padding-bottom:24px; }
+#eel-chapter-guide .sg-type-sample { font-size:28px; margin-top:8px; letter-spacing:-.03em; }
+#eel-chapter-guide .sg-mono-sample { font:16px/1.6 'IBM Plex Mono',monospace; margin-top:14px; }
+#eel-chapter-guide .sg-spec-table { border-collapse:collapse; width:100%; font-size:14px; color:var(--sg-body); }
+#eel-chapter-guide .sg-spec-table th,#eel-chapter-guide .sg-spec-table td { padding:12px 12px 12px 0; border-bottom:1px solid var(--sg-rule); vertical-align:top; text-align:left; }
+#eel-chapter-guide .sg-spec-table th { font-weight:500; color:var(--sg-text); }
+#eel-chapter-guide .sg-swatches { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:24px; margin:32px 0; }
+#eel-chapter-guide .sg-swatch { height:36px; border:1px solid var(--sg-rule); margin-bottom:8px; }
+#eel-chapter-guide .sg-swatches strong { display:block; font-size:13px; font-weight:500; }
+#eel-chapter-guide .sg-swatches code { display:block; font:12px/1.7 'IBM Plex Mono',monospace; color:var(--sg-muted); background:none; padding:0; }
+#eel-chapter-guide .sg-foundation-footer { border-top:1px solid var(--sg-rule); padding-top:20px; font-size:14px; color:var(--sg-body); }
+#eel-chapter-guide .sg-foundation-footer p + p { margin-top:12px; }
+#eel-chapter-guide .sg-foundation-footer strong { font-weight:600; color:var(--sg-text); }
+#eel-chapter-guide .sg-full-figure { padding:24px; border-top:2px solid var(--sg-teal); background:var(--sg-panel); }
+#eel-chapter-guide .sg-figure-header { display:flex; flex-wrap:wrap; justify-content:space-between; gap:16px; align-items:center; }
+#eel-chapter-guide .sg-figure-header span { font:12px/1.5 'IBM Plex Mono',monospace; color:var(--sg-muted); }
+#eel-chapter-guide .sg-finding-center { text-align:center; max-width:40ch; margin:32px auto 16px; }
+#eel-chapter-guide .sg-finding-center p { font-size:24px; line-height:1.4; margin-top:12px; }
+#eel-chapter-guide .sg-branch-labels { display:flex; justify-content:space-around; gap:24px; padding:12px 0 24px; color:var(--sg-muted); font-size:14px; }
+#eel-chapter-guide .sg-outcomes { display:grid; grid-template-columns:1fr 1fr; gap:32px; }
+#eel-chapter-guide .sg-outcomes > div { border-left:2px solid var(--sg-teal); padding-left:16px; }
+#eel-chapter-guide .sg-outcomes > div:last-child { border-color:var(--sg-gold); }
+#eel-chapter-guide .sg-outcomes h3 { margin:8px 0; }
+#eel-chapter-guide .sg-outcomes p { color:var(--sg-body); font-size:16px; }
+#eel-chapter-guide .sg-full-figure figcaption { color:var(--sg-muted); font-size:14px; margin-top:24px; padding-top:16px; border-top:1px solid var(--sg-rule); }
+#eel-chapter-guide .sg-graphic-rules { display:grid; grid-template-columns:1fr 1fr; gap:32px; margin-top:32px; }
+#eel-chapter-guide .sg-graphic-rules p { color:var(--sg-body); margin-top:12px; font-size:16px; }
+#eel-chapter-guide .sg-rule-note { margin-top:24px; border-top:1px solid var(--sg-rule); padding-top:16px; font-size:14px; color:var(--sg-muted); }
+#eel-chapter-guide .sg-component-row { display:grid; grid-template-columns:150px 1fr; gap:24px; padding:24px 0; border-top:1px solid var(--sg-rule); }
+#eel-chapter-guide .sg-component-row p { color:var(--sg-body); font-size:16px; }
+#eel-chapter-guide .sg-component-row h3 + p { margin-top:10px; }
+#eel-chapter-guide .sg-component-row strong { color:var(--sg-text); font-weight:600; }
+#eel-chapter-guide .sg-principle { font-size:20px; line-height:1.55; border-left:2px solid var(--sg-gold); padding-left:16px; }
+#eel-chapter-guide .sg-disclosure { font-size:16px; }
+#eel-chapter-guide .sg-secondary { color:var(--sg-muted); font-size:14px; }
+#eel-chapter-guide .sg-text-link { text-decoration:underline; text-underline-offset:.25em; color:var(--sg-teal); }
+@media(max-width:760px) {
+  #eel-chapter-guide .sg-reading-layout { grid-template-columns:1fr; }
+  #eel-chapter-guide .sg-sidebar { display:none; }
+  #eel-chapter-guide .sg-mobile-nav { display:block; font-size:14px; border-bottom:1px solid var(--sg-rule); margin-bottom:24px; padding-bottom:8px; }
+  #eel-chapter-guide h1 { font-size:38px; }
+  #eel-chapter-guide .sg-swatches { grid-template-columns:repeat(2,minmax(0,1fr)); }
+}
+@media(max-width:500px) {
+  #eel-chapter-guide .sg-masthead,#eel-chapter-guide .sg-panel-content { padding:24px 20px; }
+  #eel-chapter-guide .sg-reading-layout { padding:24px 20px; }
+  #eel-chapter-guide .sg-tabs { padding-inline:20px; gap:0 20px; }
+  #eel-chapter-guide .sg-tabs button { min-height:44px; }
+  #eel-chapter-guide h1 { font-size:34px; }
+  #eel-chapter-guide h2 { font-size:26px; }
+  #eel-chapter-guide .sg-deck { font-size:18px; }
+  #eel-chapter-guide .sg-body { font-size:17px; }
+  #eel-chapter-guide .sg-mini-figure,#eel-chapter-guide .sg-outcomes,#eel-chapter-guide .sg-graphic-rules,#eel-chapter-guide .sg-font-samples,#eel-chapter-guide .sg-component-row { grid-template-columns:1fr; }
+  #eel-chapter-guide .sg-mini-arrows { flex-direction:row; justify-content:space-between; border-block:1px solid var(--sg-rule); padding:12px 0; }
+  #eel-chapter-guide .sg-full-figure,#eel-chapter-guide .sg-mini-figure { padding:20px; }
+  #eel-chapter-guide .sg-branch-labels { flex-direction:column; gap:4px; text-align:center; }
+  #eel-chapter-guide .sg-spec-table { font-size:13px; }
+  #eel-chapter-guide .sg-spec-table td,#eel-chapter-guide .sg-spec-table th { padding-right:8px; }
+  #eel-chapter-guide .sg-component-row { gap:12px; }
+}
+</style>
+<script>
+(() => {
+  const root = document.getElementById('eel-chapter-guide');
+  const buttons = Array.from(root.querySelectorAll('[data-view]'));
+  const panels = Array.from(root.querySelectorAll('[role="tabpanel"]'));
+  const state = { view:'reading', bodySize:18, measure:64 };
+  function apply() {
+    if (!buttons.some(button => button.dataset.view === state.view)) state.view='reading';
+    buttons.forEach(button => button.setAttribute('aria-selected',String(button.dataset.view === state.view)));
+    panels.forEach(panel => panel.hidden=panel.id !== 'sg-'+state.view);
+    root.style.setProperty('--sg-body-size',state.bodySize+'px');
+    root.style.setProperty('--sg-measure',state.measure+'ch');
+  }
+  function restore(saved) {
+    const data=saved && saved.modelContent;
+    if (data && typeof data==='object') {
+      if(typeof data.view==='string')state.view=data.view;
+      if(typeof data.bodySize==='number' && data.bodySize>=16 && data.bodySize<=20)state.bodySize=data.bodySize;
+      if(typeof data.measure==='number' && data.measure>=56 && data.measure<=72)state.measure=data.measure;
+    }
+    apply();
+  }
+  function save() {
+    if(window.openai && window.openai.setWidgetState) window.openai.setWidgetState({modelContent:{...state},privateContent:null}).catch(()=>{});
+  }
+  buttons.forEach((button,index)=>{
+    button.addEventListener('click',()=>{state.view=button.dataset.view;apply();save();});
+    button.addEventListener('keydown',event=>{
+      let next=index;
+      if(event.key==='ArrowRight')next=(index+1)%buttons.length;
+      else if(event.key==='ArrowLeft')next=(index+buttons.length-1)%buttons.length;
+      else if(event.key==='Home')next=0;
+      else if(event.key==='End')next=buttons.length-1;
+      else return;
+      event.preventDefault();buttons[next].focus();buttons[next].click();
+    });
+  });
+  restore(window.openai && window.openai.widgetState);
+  window.addEventListener('openai:set_globals',event=>restore(event.detail && event.detail.globals && event.detail.globals.widgetState));
+  if(globalThis.Tweak){
+    const tweak=new Tweak({container:root.querySelector('.sg-reading-layout'),onChange:()=>{apply();save();}});
+    tweak.addSlider(state,'bodySize',{label:'Reading text',min:16,max:20,unit:'px',reference:'--sg-body-size'});
+    tweak.addSlider(state,'measure',{label:'Text width',min:56,max:72,unit:'ch',reference:'--sg-measure'});
+  }
+})();
+</script>
