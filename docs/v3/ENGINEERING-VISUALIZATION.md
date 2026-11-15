@@ -2,9 +2,25 @@
 
 **Status:** Proposed V3 supporting reference and implementation-planning material; **not** an approved V3 chapter manuscript, implemented visualization, or published feature.
 
-**Curriculum placement:** Reuse across V3 Chapter 03 (*Digital Threads and Knowledge Graphs*), Chapter 04 (*Executable Engineering Models*), and Chapter 06 (*Engineering Data: From Measurements to Decisions*). This is **not** a request for a fourteenth chapter. Link to [V3 master issue #32](https://github.com/And-Gu/executable-engineering-lab/issues/32) for editorial decisions and implementation boundaries.
+**Curriculum placement:** Use the **current approved 13-chapter map** in [`project/CURRICULUM-MAP.md`](../../project/CURRICULUM-MAP.md). This technical reference informs Chapters 03 (*Engineering Knowledge as Code*), 04 (*Learning Through Models and Prototypes*), 05 (*Engineering Data: From Measurements to Decisions*), 06 (*Spec-Driven Development Without Waterfall*) and later synthesis. It adds **no new chapter**. See [V3 master issue #32](https://github.com/And-Gu/executable-engineering-lab/issues/32).
 
 **Companion:** The Document-as-Code Lab covers presentation design, audience narratives and guided/explorable delivery in its proposed Chapter 13, *Beyond Slides: Presentations as Explorable Knowledge*. This guide addresses a different question: what must a technical visualization mean and do to support valid engineering reasoning?
+
+## Current chapter mapping of historical visual identifiers
+
+These **visual IDs are source/reference identifiers, not chapter numbers**. The original visual guide used an **alternative chapter sequence**. To avoid destroying existing references, preserve visual IDs but use the **current** approved placements:
+
+| Visual ID | Topic | Current chapter |
+|---|---|---|
+| V02 | Functional/structural/requirements views, including appropriate SysML v2 representations | **03 — Engineering Knowledge as Code** |
+| V03 | **Mandatory interactive typed knowledge graph** and impact exploration | **03 — Engineering Knowledge as Code** |
+| V04 | Executable state/model behavior and bounded teaching simulation | **04 — Learning Through Models and Prototypes** |
+| V05 | From exploratory concept to progressive engineering definition | **06 — Spec-Driven Development Without Waterfall** |
+| V06 | Raw, curated, enriched and derived engineering-data views | **05 — Engineering Data: From Measurements to Decisions** |
+
+Later visualization requirements must map to **current** Chapters 07–13; do not take the old project draft numbers as authoritatively approved. Read [v3 curriculum alignment](../../project/v3/EDITORIAL-ALIGNMENT-2026-11-15.md) and its [briefs](../../project/v3/CHAPTER-BRIEFS-05-13-2026-11-15.md) before specifying any new illustration.
+
+**Presentations split:** Document-as-Code Lab teaches interactive presentations, narrative sequence, HTML decks, dashboards, mind maps and audience communication. Here we teach how to represent **engineering meaning** with appropriate diagrams, simulations, typed relations, source provenance, impact and evidence views. Engineering graphics can be reused in presentations without becoming separate, contradictory engineering definitions.
 
 ## A technical picture is an argument about a system
 
