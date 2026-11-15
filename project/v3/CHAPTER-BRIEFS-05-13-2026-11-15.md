@@ -1,7 +1,7 @@
 # V3 Editorial Briefs — Current Approved Chapters 05–13
 
 **Status:** Updated writing proposals, not approved chapter manuscripts or authorization to publish  
-**Curriculum authority:** \`project/CURRICULUM-MAP.md\` — the **current owner-reviewed, approved 13-chapter plan**  
+**Curriculum authority:** `project/CURRICULUM-MAP.md` — the **current owner-reviewed, approved 13-chapter plan**  
 **Companion:** [Curriculum alignment and gap register](EDITORIAL-ALIGNMENT-2026-11-15.md)  
 **Prepared:** 2026-11-15 · Draft language: American English
 
@@ -201,4 +201,4 @@ Cross-project division: **Document-as-Code Lab** owns audience-facing storytelli
 2. Confirm the recurring main system example vs supporting monitoring vignette; preserve existing published behavior.
 3. Approve the **scope** of Chapters 05–13 in the **current numbering**, including the reassignment of the previously discussed v3 concepts.
 4. For each manuscript: one distinctive learning question, a clear two-system consequence, appropriate engineering data/visualization, reference provenance, a relevant transition and limited caveats.
-5. Keep draft manuscripts under \`project/v3/manuscripts/drafts/\`, not Astro pages, until separately authorized.
+5. Keep draft manuscripts under `project/v3/manuscripts/drafts/`, not Astro pages, until separately authorized.
