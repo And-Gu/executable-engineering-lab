@@ -1,278 +1,204 @@
-# V3 Proposed Chapter Briefs — Chapters 05–13
+# V3 Editorial Briefs — Current Approved Chapters 05–13
 
-**Status:** Editorial proposals only; **not owner-approved manuscripts or Astro implementation instructions**  
-**Prepared:** 2026-11-15 · **Language of final reader prose:** American English  
-**Read first:** [Editorial Alignment Review](EDITORIAL-ALIGNMENT-2026-11-15.md), [Site Direction](../SITE-DIRECTION.md), [Style Guide](../CHAPTER-STYLE-GUIDE.md), [v3 Manuscript Index](manuscripts/INDEX.md), [Research Index](../../research/INDEX.md), [Visualization Guide](../../docs/v3/ENGINEERING-VISUALIZATION.md).
+**Status:** Updated writing proposals, not approved chapter manuscripts or authorization to publish  
+**Curriculum authority:** \`project/CURRICULUM-MAP.md\` — the **current owner-reviewed, approved 13-chapter plan**  
+**Companion:** [Curriculum alignment and gap register](EDITORIAL-ALIGNMENT-2026-11-15.md)  
+**Prepared:** 2026-11-15 · Draft language: American English
 
-## Writing requirements shared by Chapters 05–13
+The previous version of this file used an **alternative chapter numbering from earlier V3 discussions**. That numbering has been rejected as the working sequence in favor of the **current** reviewed plan. The useful ideas are redistributed below without inventing a new curriculum.
 
-The site teaches **how systems engineering changes**, not how to program an intersection, operate Astro, or perform a live agent task. The primary reader is an engineer, engineering lead or technical decision-maker. Start with a concrete engineering situation, make the new insight inspectable, and close with a practical question. Show both **the product** and **the environment that enables engineering it** through consequences of the same problem. Include physical/electronics and software realities. Keep caveats relevant and concise.
+## Shared educational commitments
 
-Use the **four-way traffic intersection** only as a *provisionally recommended* recurring example, pending owner choice on the monitoring vignette. The Chapter 01 public pilot currently uses monitoring instead: do not silently rewrite it or pretend the discrepancy has been approved. A model or result used for teaching must be distinguished from a validated/operational claim.
+Executable Engineering Lab teaches the transition toward connected, executable, software-driven and agent-supported **systems engineering**, not programming a traffic controller, using Astro, or operating an agent platform.
 
-The front page's teal/gold dual-system visual language and dark chapter reading shell are the style reference, but not a directive to implement UI changes here. The reader may inspect a diagram or adjust a bounded educational simulation. Do not turn these briefs into specifications for a new engineering IDE, an agent runtime or mandatory coding exercises.
+Bring two evolving perspectives into the story: **what changes in the product** and **what changes in the engineering environment**. Lead with an engineering decision or uncertainty, then a meaningful visualization, and explain what was learned. Include software, electronics, physical design and operational concerns. Keep brief technical caveats located where the model/result requires them, not a repeated AI warning.
 
-**One primary learning gain + one primary explanatory visual per chapter**; supplementary visualizations only when they add a different insight. Six introductory tiles are optional. Research and epigraphs are proposals pending primary-source checking. No new v3 site pages are authorized by these briefs.
+Use the new published front-page direction and dark Chapter 1 reader preview for visual/editorial guidance, not as permission to rewrite approved source texts. A main system-example choice (traffic signals vs equipment condition monitoring) remains open. Avoid a second complete simulated product. Existing V0 demonstrations are preserved.
 
----
+Cross-project division: **Document-as-Code Lab** owns audience-facing storytelling, presentations and HTML decks/scrollytelling; **Executable Engineering Lab** owns technically meaningful representations (SysML, knowledge graph, simulations, data/assurance views). No dedicated presentation chapter or engineering IDE.
 
-## Chapter 05 — From Exploration to Engineering Definition
+## Chapter 05 — Engineering Data: From Measurements to Decisions
 
-**Editorial position:** Title and direction accepted; full manuscript awaiting explicit review.
+**Learning question:** How do observations, simulated outputs and measurements become data that support sound engineering decisions?
 
-**Central question:** How do we use learning from uncertain concepts and experiments to make decisions and establish a sufficient engineering definition for the next useful development increment?
+**Distinct contribution:** Data quality, annotation, provenance, enrichment, independent review, visualization, preservation and reuse. This chapter is NOT a reintroduction to specifications/relations (Ch 03), model implementation (Ch 04), or trade-off/decision governance (Ch 06/10).
 
-**Distinct learning gain:** Introduce **progressive specification and decision maturity**, not a second modeling chapter and not a spec-to-code tooling tutorial. Make **Planning Under Uncertainty**, a distinct topic in the older v2 course, visible here without adding a fourteenth chapter.
+**Proposed narrative:** Start with two apparently contradictory measurements or simulated results associated with different configurations. Distinguish raw observations, assumed parameters, calculated results and physical measurements. Show transformations from raw → curated (units, time, duplicate/missing records, source identity) → enriched (cross-disciplinary annotations, known assumptions, component/baseline links) → derived (metrics, plots, meaningful comparison). Connect the improvement in information quality to the **engineering environment**: repeatable data pipelines, versioned evaluation datasets, provenance and tests. Where the product contains AI, mention evaluation datasets without conflating product AI with agents assisting development.
 
-**Narrative arc:**
-- Begin with uncertainty: the initial intersection intent is understood but the appropriate control strategy, input data and interfaces are not.
-- Compare two questions: What must we investigate before choosing? What is sufficiently understood to be defined now?
-- Describe how assumptions, hypotheses, alternative concepts, decisions, requirements and acceptance criteria acquire distinct states; selected items progress into controlled engineering definition while the rest remain explicitly open.
-- Explain that product slices and the engineering environment co-evolve: each selected capability may need new models, interfaces, review methods and tests.
-- Show **two concurrent loops**: exploration (question → model/experiment → learning) and delivery (bounded capability → specification → implementation/verification → feedback). They may run together; do not imply waterfall.
-- Describe the practical value of small **reviewable increments**, and the difference between technical direction and detailed upfront design.
+**Reused source:** The existing published **v2 Engineering Data** article, its calculated DMS example and source Markdown, as material to adapt, not silently duplicate.
 
-**Reference illustration:** Choosing a provisional fixed-time signal-control baseline while adaptive control remains an exploration option. Show an example decision record, open questions and which interfaces or constraints become sufficiently defined for next work; do **not** implement a controller in the article.
+**Primary view:** **V05 data investigation** with a raw/curated/enriched/derived representation, linked chart and table, explicit source/version status. More useful than a decorative dashboard.
 
-**Primary view V05:** "Concept → mature engineering definition" — switch between early intent, analyzed options and chosen/controlled definitions; the viewer sees *what changed in our knowledge*, what remains unknown, what must be decided next, and which new engineering method/test was needed. Present text-based alternatives as well.
+**Research:** FAIR principles, data quality/annotation literature, appropriate standards. Quotes are candidates pending primary-source checking.
 
-**Sources/continuity:** OpenSpec and GitHub Spec Kit as differing **illustrations** of progressive specification; do not present either as an engineering standard. Extend Chapter 04's experiment/learning insight; lead to Chapter 06's question, "Do we have usable, appropriately qualified data for the next decision?"
+**Next question:** Even well-curated data is only useful if it can guide the next increment; what should we specify now without falsely freezing remaining uncertainty?
 
-**Do not repeat:** State-machine or arrival-model mechanics (Ch 04), data-quality pipeline (Ch 06), agent context/permissions (Ch 09), release automation (Ch 10).
-
-**Editorial acceptance:** The reader can distinguish exploratory hypothesis, selected concept, controlled definition and remaining uncertainty, and explain why planning and specification are iterative.
+**Acceptance for the draft:** The reader can identify at least two improvements to data usefulness, distinguish evidence origin from the conclusion, and see reuse/value across disciplines.
 
 ---
 
-## Chapter 06 — Engineering Data: From Measurements to Decisions
+## Chapter 06 — Spec-Driven Development Without Waterfall
 
-**Editorial position:** A separate chapter in the 13-chapter v3 curriculum is agreed. A published **v2** article exists at `site/src/content/engineering-data.md`; adapt rather than duplicate it. Its publication is not approval of the v3 manuscript.
+**Learning question:** How do we turn an uncertain, evolving engineering problem into bounded specifications and useful increments, without demanding a complete design up front?
 
-**Central question:** How do engineering observations become usable, trustworthy and reusable inputs for technical decisions?
+**Distinct contribution:** Progressive specification is an operating practice for **engineering changes**, broader than spec-to-code. It builds on Ch 02 (planning uncertainty), Ch 03 (engineering knowledge as code), Ch 04 (model-based learning) and Ch 05 (usable data).
 
-**Distinct learning gain:** Information **quality and refinement**, rather than structured records themselves (Ch 02), lifecycle relationships (Ch 03) or model mechanics (Ch 04).
+**Proposed narrative:** Compare a vague request ("improve the intersection's operation") with a scoped next engineering increment. Demonstrate intent → questions/assumptions → candidate options → decision → controlled capability/interface/acceptance conditions. Show exploration and delivery as **concurrent feedback loops**, not sequential waterfall gates. Distinguish spec-to-engineering from software-only spec-to-code. Include prompt-led refinement of definitions: natural-language interaction starts work, durable version-controlled sources preserve results. OpenSpec and GitHub Spec Kit offer concrete *software workflow illustrations*, not universally binding engineering standards.
 
-**Narrative arc:**
-- Distinguish observations, recorded measurements, simulation outputs, derived indicators and assumptions.
-- Explain how raw inputs are organized and checked: units, identity, configuration, time, completeness, outliers and source context.
-- Show curation, annotation, deterministic joining/enrichment, and reuse of versioned data without silently mutating original observations.
-- Compare two views of the same dataset to show how analysis and visualization expose a decision-relevant question (e.g., uneven traffic and waiting-time tails, not just mean waiting time).
-- Connect to the engineering environment: the usefulness of data depends on repeatable ingestion/curation and reproducible evaluation, including evaluation datasets for **AI in products** as distinct from agent tools used during engineering.
+**Two-system emphasis:** Choosing a product increment may require new simulations, interfaces, test methods, evaluation data, and task context in the engineering environment.
 
-**Reference illustration:** Traffic measurements versus simplified simulated traffic arrivals; annotate sensor conditions, timing, units and source quality; derive waiting-time/queue series and a separate planning constraint. Optionally refer to equipment monitoring as a concrete **supporting** example where product-AI datasets matter.
+**Primary view:** **V06 progressive-specification explorer**: concept and uncertainty state → scoped change contract → new product definition + new engineering-method requirement. One example decision record and a short textual equivalent. No source editor or coding exercise.
 
-**Primary view V06:** "Raw → curated → enriched → decision-ready data" with an accessible linked table/plot, visible record provenance and meaningful missing-data markers. Keep calculated outputs, hypothetical constraints and measured inputs separate. Reader does not need to manage a database.
+**Research:** OpenSpec, GitHub Spec Kit, progressive specification, engineering decision/ADR approaches.
 
-**Sources/continuity:** Reuse the v2 engineering-data article and its curation lessons; FAIR for reuse, relevant data-quality research. Connect to Chapter 07's question about what evidence qualifies a product claim.
+**Next question:** What happens when much of the bounded work can be delegated to an agent that uses tools?
 
-**Do not repeat:** Why requirements need structure (Ch 02), how simulation engine works (Ch 04), selecting a concept (Ch 05), or complete verification procedures (Ch 07).
-
-**Editorial acceptance:** Readers can explain why a technically correct calculation may still be an inadequate basis for a decision and describe at least two purposeful data improvements.
+**Acceptance:** Readers can identify the next useful engineering slice, which questions remain open, and which parts of the outcome should become versioned specifications.
 
 ---
 
-## Chapter 07 — Verification and Engineering Evidence
+## Chapter 07 — Directing AI Engineering Agents
 
-**Editorial position:** New full v3 prose pending.
+**Learning question:** How does engineering work change when AI agents can use tools, inspect results and adapt the next actions within a bounded task?
 
-**Central question:** What does it take to deliver a **complete product**, and which information and evidence must exist to justify readiness at each stage?
+**Distinct contribution:** Mechanism and collaboration: distinguish **LLM, assistant, deterministic workflow, agent** and **AI in the product**. Present the human role in setting goals, scope, context, tools, evaluation and adopting work. This is not a how-to for constructing a custom agent system.
 
-**Distinct learning gain:** Introduce the **product delivery and lifecycle view**: not only passing software tests but design definitions, interface baselines, integration, validation, safety/security, operating instructions, approvals and ongoing updates.
+**Proposed narrative:** Start with an agent requested to assess an engineering change across a model, its source assumptions and tests. A normal language answer is insufficient; trace the deliberate tool-assisted sequence and inspect its proposed changes. Show objectives, task contract, source revision, permissions, stop conditions, expected outputs and explicit review points. Explain what makes this *agentic* rather than a fixed script or ordinary chatbot. A real, cited external practitioner report or an honestly labeled conceptual replay is acceptable; never invent an "authentic" run.
 
-**Narrative arc:**
-- Start with a model or prototype that works in an experiment; ask what is missing before it can be shipped, installed, or accepted for use.
-- Explain the difference between verification (specified properties) and validation (fitness for intended use) through product and model examples.
-- Identify categories of deliverables and why they depend on product context and assurance expectations, not a universal document checklist.
-- Show system integration across software, electronics and mechanical installation, each with its own cadence and evidence maturity.
-- Introduce baseline-specific evidence and the difference between simulation, software regression and physical observations.
-- Explain how the engineering environment must produce and preserve appropriate test/measurement/configuration records to support delivery.
+**Two-system emphasis:** Useful delegation depends on an engineering environment containing controlled information, accessible tools, validation and review procedures; changing product AI is a different topic.
 
-**Reference illustration:** The intersection controller model behaves plausibly, but real roadside equipment, fail-safe operation, operational instructions and qualification have not yet been established. Do not present a teaching simulation as a real traffic-control deliverable.
+**Primary view:** **V07 assistant vs deterministic workflow vs agent** comparison plus a bounded task timeline, not an embedded live agent.
 
-**Primary view V07:** Layered **deliverable/evidence map** (product definition → integration → verification/validation → release/operation), with clickable details or compact text. Include provenance labels for actual vs illustrative results.
+**Research:** AAIF/Linux Foundation, Anthropic practitioner/observational work, METR and software-agent evaluation studies with appropriate evidence labels.
 
-**Sources/continuity:** NASA IV&V, INCOSE, relevant safety/verification standards used as educational references. Connect to Chapter 08: how agentic methods might change the work that produces these deliverables.
+**Next question:** An agent can generate work rapidly; how do we keep changes bounded, understandable and integrable?
 
-**Do not repeat:** Definition/maturity process (Ch 05), raw-data curation (Ch 06), cybersecurity policy detail (Ch 11), detailed pipeline operation (Ch 10).
-
-**Editorial acceptance:** Reader can list the **classes** of deliverables/evidence needed by their product and explain why passing CI alone is insufficient for complete delivery.
+**Acceptance:** Readers can recognize a genuinely agentic task and explain the importance of scope, relevant context, tool actions and reviewable outcomes.
 
 ---
 
-## Chapter 08 — Agentic Engineering
+## Chapter 08 — Engineering in Small, Reviewable Increments
 
-**Editorial position:** New full v3 prose pending.
+**Learning question:** How do teams maintain technical and review quality when AI can produce substantial engineering changes quickly?
 
-**Central question:** How does the way engineers **direct and perform work** change when agents can use tools, inspect outcomes and adapt their next steps?
+**Distinct contribution:** Reviewable incremental development, architecture and human–agent collaboration with defined DoD. **Keep it as a separate chapter**; do not collapse it into Continuous Engineering.
 
-**Distinct learning gain:** Distinguish interactive AI assistance, deterministic automation and **agentic delegation**. Introduce practical change in human/agent division of work, not an agent-building tutorial.
+**Proposed narrative:** Start with a large cross-system change: software interface, electronics implication, mechanical assumption, verification and user guidance all touched. Compare an opaque all-at-once change with a sequence of small, meaningful vertical increments. Introduce stable architecture and module contracts that make parallel engineering work possible. Show PR review, bounded tasks, dependency tracking, change impact, explicit Definition of Done, and a simple maturity view that reveals how deliverables approach DoD. Distinguish useful outcomes from number of PRs or generated lines of code. Explain integration across different discipline cadences, decision records and architectural ownership.
 
-**Narrative arc:**
-- Open with an engineering task spanning sources, model assumptions and checks; show why one prompt-to-text answer differs from multi-step, tool-assisted work.
-- Distinguish LLM, assistant, fixed workflow, agent, and **AI used inside a product**. Product AI and agentic engineering must not be collapsed.
-- Explain the delegated task loop (objective, relevant context, tools, observe/evaluate, next action), outcomes and appropriate human decision points.
-- Show how scope and **small reviewable increments** make engineering progress understandable (the longer process belongs in Chapter 10).
-- Use real practitioner findings cautiously: self-selected usage research and vendor examples are informative but not universal proof of productivity.
-- Return to the two-system frame: product work becomes newly feasible when the engineering environment supplies reusable context, models, tooling and evaluation mechanisms.
+**Two-system emphasis:** The product evolves incrementally; the engineering environment needs test scaffolding, task breakdown, review conventions, agent coordination and feedback to detect gaps.
 
-**Reference illustration:** A conceptual proposal to evaluate a changed traffic-control strategy. Show what an agent could inspect, execute and report; **do not invent a recorded agent run** or add live agent functionality to Astro. A linked actual public example can be used later if suitable.
+**Primary view:** **V08 change-scope comparison** — one large change vs a coherent series, with affected functions/interfaces, review/evidence coverage and status of acceptance criteria.
 
-**Primary view V08:** Interactive, explanatory triptych comparing **AI assistant vs predefined workflow vs agentic task**, with a simple step timeline and what requires evaluation. Clear labels for hypothetical sequences.
+**Research:** DORA, studies on agent-generated PR review and coordination; source-qualified practitioner findings.
 
-**Sources/continuity:** Linux Foundation / AAIF, Anthropic observational research, GitHub Octoverse, METR research with qualification. Lead to Chapter 09: agents need relevant accessible engineering context.
+**Next question:** How do we integrate and validate these reviewable changes frequently and predictably?
 
-**Do not repeat:** Reiterate the generic "AI may make mistakes" caveat, specialist tool wiring (Ch 09), governance/authorization controls in depth (Ch 11).
-
-**Editorial acceptance:** Readers can identify an actually agentic task and explain why task-level intent and visible outcomes differ from chatting or script automation.
+**Acceptance:** Reader can propose a set of meaningful increments and explain the criteria that make each increment useful and reviewable rather than arbitrary mini-tasks.
 
 ---
 
-## Chapter 09 — Agents and Engineering Context
+## Chapter 09 — Continuously Integrated Engineering
 
-**Editorial position:** New full v3 prose pending.
+**Learning question:** How should we design and operate the engineering factory so a product can be changed and suitable software improvements prepared for release at the required frequency?
 
-**Central question:** How can an agent receive the **correct, usable and permitted** context for an engineering task without transferring the whole document archive?
+**Distinct contribution:** Two inseparable responsibilities: **build/improve the machine that builds the machine** AND **operate it to deliver changes**. The requirement for rapid delivery is an architectural driver, not a decorative CI pipeline.
 
-**Distinct learning gain:** Understand the interplay of structured information, relationships, task scope, machine-readable instructions, tool interfaces and authority.
+**Proposed narrative:** Start with an **illustrative target** to move an eligible software fix or feature from an accepted change request to a releasable baseline **within 24 hours**. Trace implications for the product (modularity, bounded interfaces, configuration and rollout/rollback) and the factory (sources, automated checks, model/simulation evaluations, release evidence, documentation, agent tooling, approvals). Distinguish CI, continuous delivery and deployment. Show software, electronics, mechanical work and physical qualification operating at different cadences. Explain bottlenecks beyond implementation, monitoring, recovery and continuous factory improvement.
 
-**Narrative arc:**
-- Begin with an agent assigned a plausible engineering question but insufficient context to evaluate it.
-- Show how context includes system definition, assumptions, applicable requirements, decision history, model/test interfaces, current baseline, permissions and output contract.
-- Demonstrate how a digital thread/knowledge graph can help select relevant items while maintaining source attribution, freshness and semantic meaning.
-- Explain open ecosystem concepts **MCP, AGENTS.md, Agent Skills**, and API/tool contracts as examples of connecting models, agents, tools and reusable procedures; not mandatory standard stack.
-- Contrast too little, too much, outdated and contradictory context; relate each to a distinct engineering consequence.
-- Separate **information available to an agent** from **authority to change**; Chapter 11 covers governance rigor.
+**Two-system emphasis:** The product and factory **co-evolve**. Each new product capability can require new tests and toolchain capabilities; existing automation improves the economics of subsequent changes. Do not claim that most development cost has already shifted quantitatively.
 
-**Reference illustration:** An illustrative context package for examining intersection phase timing, showing minimum required model/test/constraint references, explicit open questions and tool access. No agent runtime or authoring interface.
+**Primary view:** **V09 dual-track factory map + change-to-releasable timeline**, showing engineering of the factory vs operation and its feedback. Duration examples must be hypothetical; distinguish the target interval from DORA's commit-to-deploy lead-time metric.
 
-**Primary view V09:** "Task → selected information and tools → proposed result" with inspectable source categories and relevance labels; do not imply semantic retrieval is implemented if it is static.
+**Research:** DORA metrics and platform engineering, CNCF, continuous integration/delivery research.
 
-**Sources/continuity:** Linux Foundation AAIF, MCP, AGENTS.md, Agent Skills, OSLC, Microsoft tool-interface research. Lead to Chapter 10: context and checks are part of an operable engineering factory.
+**Next question:** Passing repeatable checks is part of readiness; what product-level evidence and validation must be established?
 
-**Do not repeat:** Graph traversal theory (Ch 03), agent basics (Ch 08), full approval policy (Ch 11).
-
-**Editorial acceptance:** Readers can distinguish an agent's context, source authority, tool permissions and task scope and explain why each matters.
+**Acceptance:** Reader can explain why delivery cadence affects both product and engineering architecture, distinguish CI/CD terms, and identify which changes require longer qualification.
 
 ---
 
-## Chapter 10 — Continuous Engineering
+## Chapter 10 — Verification, Validation and Engineering Evidence
 
-**Editorial position:** New full v3 prose pending; earlier Chapter 9 brief was created before adding the Engineering Data chapter and is not the current numbering.
+**Learning question:** Beyond working software and successful simulations, what information and evidence must be produced to deliver, operate and evolve a complete product?
 
-**Central question:** How do we **design and operate** an engineering environment that can integrate, verify and release eligible software improvements rapidly, without losing system integrity?
+**Distinct contribution:** Whole-lifecycle deliverables and relevant evidence: definitions, interfaces, integration, verified requirements, operational validation, physical testing, test plans/results, safety/cyber inputs, documentation, manuals, decision/approval records. Discuss which claims a result supports.
 
-**Distinct learning gain:** The engineering factory has **two connected jobs**: (1) build the capability and improve it and (2) operate it to deliver changes repeatedly. Short delivery cadence is an **architectural requirement** for suitable change classes.
+**Proposed narrative:** Start with a plausible model/CI success and ask what is missing for real equipment and operations. Distinguish V&V and different levels of evidence; explain the dependency on configuration, model fidelity and conditions. Explore how repeatable engineering processes generate the proper deliverable set, and how every change in a released product should assess applicability of previous evidence. Not a universal certification checklist.
 
-**Narrative arc:**
-- Begin with a requirement to prepare an eligible software fix or feature for release within an **illustrative 24-hour window**. Specify start/end events carefully.
-- Identify both product-side prerequisites (interfaces, configuration, modularity, deployment/rollback options) and engineering-side capabilities (test suites, simulation, integration environment, agent context, CI/CD, documentation, evidence and approvals).
-- Distinguish CI, continuous delivery and continuous deployment; the release gate is not always automatic.
-- Show small, reviewable change increments and explicit change classes; software, electronics, mechanical and physical qualification operate at different cadences.
-- Explain lead-time bottlenecks and automation of repeatable steps including documentation and relevant verification; measure system-level delivery performance and recovery, not lines of code.
-- Close the feedback loop: new product needs create new factory requirements, while better factory capabilities enable new product work. Explicitly include cost/maintenance of the factory.
+**Two-system emphasis:** The factory must automate suitable evidence gathering, source and report generation and consistent links, but physical work and formal acceptance may require different constraints.
 
-**Reference illustration:** An accepted, bounded timing configuration fix versus a safety-affecting algorithm change in the traffic intersection. Only the eligible class is a candidate for 24-hour releasability. Explain verification and human decisions.
+**Primary view:** **V10 lifecycle and deliverables map**, linking claims to engineering artifacts, model/test/physical evidence and relevant revisions. Keep educational examples distinct from certification.
 
-**Primary view V10:** Two evolving systems plus **factory design and operation**, including a timed illustrative change-to-releasable timeline and its bottlenecks. Label all hypothetical durations as such; distinguish DORA commit-to-deploy lead time from the educational accepted-request-to-releasable measure.
+**Research:** NASA IV&V, INCOSE, appropriate assurance and verification sources.
 
-**Sources/continuity:** DORA, CNCF/platform engineering, continuous delivery literature. Leads to Chapter 11 where risk, integrity and controls are developed in depth.
+**Next question:** Who governs authority, risk and nonfunctional product integrity as more engineering work becomes automated?
 
-**Do not repeat:** Requirements maturity (Ch 05), delivery evidence categories (Ch 07), detailed agent mechanics (Ch 08–09).
-
-**Editorial acceptance:** The reader can explain why a 24-hour release target affects both the product architecture and the engineering environment and describe when the target is inapplicable.
+**Acceptance:** Reader can distinguish software green build, simulation evidence, requirement verification and operational validation, and name classes of deliverables needed for a real product.
 
 ---
 
-## Chapter 11 — Governance and Assurance
+## Chapter 11 — Governance and Engineering Authority
 
-**Editorial position:** New full v3 prose pending.
+**Learning question:** What controls and decisions maintain integrity, security and accountability as humans and agents continuously change an engineering system?
 
-**Central question:** How do we preserve product integrity, appropriate authority, security and evidence as the engineering environment becomes more automated and agent-supported?
+**Distinct contribution:** Governance and engineering authority, including **cybersecurity, hardening, safety, robustness and other non-functional requirements from early design through operation**.
 
-**Distinct learning gain:** Show **proportional governance and end-to-end assurance**, not repeated generic warnings.
+**Proposed narrative:** Start with a small change that unexpectedly affects safety or cyber and the chain of authority across software, electronics, operations. Explain model/agent identity, tool permissions, provenance, configuration and acceptance authority; which changes agents may propose versus commit; change-impact analysis and proportional gates. Use a compact claim → control → evidence → decision example, referencing Gemara and relevant control modeling where appropriate. Avoid repeated generic warnings.
 
-**Narrative arc:**
-- Introduce a change that affects both operational performance and a safety/cyber constraint.
-- Explain ownership, model and tool provenance, scope of agent work, configuration/requirements changes and human approval points.
-- Include non-functional concerns **from design onward**: cybersecurity, hardening, availability, maintainability, operational robustness and safety.
-- Connect important claims to controls, analyses, tests and recorded decisions in a compact assurance argument.
-- Explain how continuous changes maintain applicable regression/evidence without pretending every check validates every property.
-- Clarify how governance can be designed to support the delivery cadence for eligible change classes rather than always adding the same gates.
+**Two-system emphasis:** Governance must apply to **both** evolving product and engineering factory, including toolchain and agent permission updates. Fit risk-based controls to eligible rapid-release classes without bypassing necessary tests/approvals.
 
-**Reference illustration:** A proposed adaptive controller change affects detector interfaces, conflicting signals, error handling, cybersecurity and operator expectations. Show affected assurance claims and which checks belong to which requirement.
+**Primary view:** **V11 permission/authority and assurance graph**, with one concise concrete change-impact case and textual alternative.
 
-**Primary view V11:** A small **claim–argument–evidence** and change/authority map, using terms and relation types from earlier chapters.
+**Research:** OpenSSF Gemara, supply-chain/provenance standards and risk/assurance literature.
 
-**Sources/continuity:** OpenSSF Gemara and related assurance sources; clearly distinguish industry controls from safety certification. Leads to Chapter 12: knowledge and assurance capability can be reused across products.
+**Next question:** How do teams reuse trustworthy decisions, models and methods in more than one project?
 
-**Do not repeat:** General V&V definitions (Ch 07), repetitive agent caveats, exhaustive policy/catalog recitation.
-
-**Editorial acceptance:** Reader can explain what constitutes a controlled change and identify a few technical and governance consequences of a specific system modification.
+**Acceptance:** Reader can describe appropriate authority boundaries and identify relevant cybersecurity, safety and assurance implications of a defined change.
 
 ---
 
-## Chapter 12 — Engineering Knowledge at Scale
+## Chapter 12 — Managing Engineering Knowledge at Scale
 
-**Editorial position:** New full v3 prose pending.
+**Learning question:** How can engineering organizations preserve, find and reuse knowledge and working capabilities across teams, configurations, products and time?
 
-**Central question:** How can teams reuse **knowledge and the engineering capability itself** across products, suppliers, configurations and time?
+**Distinct contribution:** From project information to **organization-level reusable knowledge and engineering-system assets**. Do not simply repeat digital thread or source versioning.
 
-**Distinct learning gain:** Scale reuse from single project artifacts to models, decisions, interfaces, test approaches, evaluation datasets, reusable agent skills and CI patterns.
+**Proposed narrative:** A second team tries to reuse a model, test result or agent skill from an earlier project, but hardware assumptions, interfaces or evidence applicability differ. Explain stable identity and revision/configuration, federated sources, links and ownership. Introduce reuse of technical decisions, model/validation patterns, curated data, reusable agent skills, evaluation datasets, interface templates, CI checks and engineering-factory capabilities. Discuss provenance, discoverability, validation and updating shared materials over time.
 
-**Narrative arc:**
-- Start with a second product team trying to reuse a proven engineering approach but facing incompatible baselines/interfaces or assumptions.
-- Introduce federation of authoritative engineering sources, stable identity, variants/configuration versions and reproducibility.
-- Explain how shared information/ontology, component models, verification assets and knowledge/skills can be reused without requiring a universal central database.
-- Show why cross-product learning includes reusable **engineering environment** capability: common tests, simulator adapters, review conventions and task context patterns.
-- Discuss stewardship, ownership, search/discoverability, source applicability and change over time.
-- Relate organizational scaling to faster new-product learning without pretending all products share one release cadence.
+**Two-system emphasis:** Product assets may be reusable, but **engineering methods and environments** can also be reused and improved, making the next product exploration cheaper and more capable.
 
-**Reference illustration:** A related intersection/roadside controller variant reuses an interface pattern and verification concept; readers inspect what can be reused, what needs a new baseline and what cannot be inherited unchanged.
+**Primary view:** **V12 reusable knowledge/capability map** showing two products, shared patterns and exceptions where evidence must be re-established.
 
-**Primary view V12:** "One engineering pattern → multiple product configurations" graph with provenance, version differences and evidence applicability.
+**Research:** OSLC, FAIR, INCOSE, Linux Foundation Agent Skills / governance project references.
 
-**Sources/continuity:** FAIR, OSLC, INCOSE, Linux Foundation reusable Agent Skills examples. Leads to integrated view in Chapter 13.
+**Next question:** What does an integrated environment actually feel like when engineers work across all these capabilities?
 
-**Do not repeat:** Basic graph introduction (Ch 03), artifact lists (Ch 07), single-product pipeline details (Ch 10).
-
-**Editorial acceptance:** Reader can distinguish reusable method or asset from reusable product evidence and explain what version/context information enables sound reuse.
+**Acceptance:** Reader distinguishes reusable knowledge, reusable method and applicability of product-specific test evidence.
 
 ---
 
-## Chapter 13 — The Integrated Engineering Environment
+## Chapter 13 — The AI-Native Engineering Environment
 
-**Editorial position:** New full v3 prose pending.
+**Learning question:** What does a connected, executable and agent-supporting engineering environment look like across concept exploration, implementation, delivery and system evolution?
 
-**Central question:** What does a connected, executable and agent-supporting engineering approach look like over an entire product lifecycle—and how do we decide where to improve it next?
+**Distinct contribution:** End-to-end **synthesis of the approved curriculum**, not a code lab, engineering IDE or another ten-diagram recap.
 
-**Distinct learning gain:** Synthesize a **whole engineering journey**, not another application build or a recap of 12 diagrams.
+**Proposed narrative:** Follow one understandable greenfield product question. As learning accumulates, the team adds useful engineering capabilities: structured info, decisions, models, data curation, simulation, agent tasks, reviewable changes, CI, V&V and governance. Introduce an operational change/brownfield scenario and trace which information and factory capabilities are reused. Make the human–agent interaction pattern clear: natural-language intent/prompt → structured definitions/context and agent/tool execution → **specialized graphical inspection and decisions**. Discuss prompt-oriented interfaces replacing some manual tool navigation without assuming all specialized GUIs disappear. Close with the question of which engineering capability the organization should improve next.
 
-**Narrative arc:**
-- Start with a **greenfield** objective: what use or product capability is uncertain?
-- Follow progressively established information, selected models, small experiments, decisions and definition of a first useful system configuration.
-- Show how the engineering environment grows with the product: source relationships, repeatable analysis, context for agents, test/verification infrastructure, release controls.
-- Introduce a **brownfield** operational finding that creates a new change request; trace its impact across product and engineering environment.
-- Demonstrate a realistic conditional continuous-release workflow for an eligible software change, while other disciplines may require longer validation.
-- Discuss emerging **intent-first / prompt-oriented interfaces** paired with specialized diagrams, dashboards and engineering review views; avoid claiming all purpose-built GUIs disappear.
-- Finish by asking which new engineering capability the team should invest in next, using the two-system feedback loop introduced on Home and Chapter 01.
+**Primary view:** **V13 explorable systems map**, connecting product milestones and engineering-environment capabilities, with optional reader pathways and links to earlier technical illustrations. This is **engineering communication** rather than a standalone presentation authoring tool.
 
-**Reference illustration:** A concise **illustrative** traffic intersection lifecycle from initial question to working baseline to change, with a supporting equipment monitoring vignette only if editorially agreed. Do not claim actual executed agents or validated traffic control. Link the reader to the earlier specific views rather than reproducing all their technical details.
+**Presentations split:** Point interested readers to Document-as-Code Lab's *Beyond Slides* bonus chapter for HTML/deck/storytelling/scrollytelling/Markmap. Keep technical visual meaning (SysML, graphs, models, impact, simulation/data interpretation) in EEL.
 
-**Primary view V13:** Interactive **end-to-end two-system map** showing which question, decision, source, model, experiment, check or release activity each chapter contributes; meaningful stops for source inspection and reflection. Accessible static sequence fallback.
+**Research:** OpenAI/GitHub agent-interface approaches, AAIF, engineering integration/MBSE, DORA and a source-checked short chapter quotation.
 
-**Sources/continuity:** OpenAI specialist GUI/agent interaction perspective, Linux Foundation open agent standards, INCOSE systems engineering, DORA capability viewpoint. Quote candidates and numerical claims require primary-source confirmation.
-
-**Do not repeat:** Re-explaining all earlier chapter definitions, decorative dashboard proliferation, engineering IDE or mandatory agent exercise.
-
-**Editorial acceptance:** Reader can map a new engineering challenge to an appropriate source/model/experiment/process and explain how the product and the engineering system improve together.
+**Acceptance:** Readers can explain the two co-developing systems, identify a reasonable next engineering investment and describe where prompts, agents and visual interfaces help at different stages.
 
 ---
 
-## Deferred review of Chapters 01–04
+## Editorial gates before full manuscripts
 
-Do not change approved prose in this planning effort. Later editorial review should examine, without assuming a result:
-- The published v2 reader pilot's title *The New Engineering Paradigm* versus approved v3 Chapter 01 *From Engineering Intent to Evidence*.
-- The pilot's monitoring vignette versus the v3 intersection reference.
-- The pilot's Chapter 02 bridge (*Planning Under Uncertainty*) versus approved v3 Chapter 02 (*Engineering Information Models*).
-- The approved Chapter 04's final transition to "alternative control strategies, design experiments, and trade-offs" versus Chapter 05's broader "From Exploration to Engineering Definition".
-- How to adapt existing approved content to the dark reading shell and the now-optional six-tile overview without rewriting its argument.
+1. Reconcile the **current** Chapter 01–04 topics first against the newly published Chapter 01 pilot and the previously approved **alternative-structure** text. Do not silently transplant earlier chapters or republish them.
+2. Confirm the recurring main system example vs supporting monitoring vignette; preserve existing published behavior.
+3. Approve the **scope** of Chapters 05–13 in the **current numbering**, including the reassignment of the previously discussed v3 concepts.
+4. For each manuscript: one distinctive learning question, a clear two-system consequence, appropriate engineering data/visualization, reference provenance, a relevant transition and limited caveats.
+5. Keep draft manuscripts under \`project/v3/manuscripts/drafts/\`, not Astro pages, until separately authorized.
