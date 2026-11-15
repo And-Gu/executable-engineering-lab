@@ -108,6 +108,6 @@ Use stable identifiers, **explicit relation types** (e.g. `constrains`, `impleme
 
 1. Owner reviews the updated Chapter 01–04 content proposal and reference vocabulary before approving a chapter migration.
 2. The full course is **13 chapters** with titles/numbering controlled by [CURRICULUM-MAP.md](../CURRICULUM-MAP.md); the prior alternative sequence is historical only.
-3. Previous owner-approved alternative-chapter prose remains in [the preserved manuscript archive](v3/manuscripts/INDEX.md), untouched.
+3. Previous owner-approved alternative-chapter prose remains in [the preserved manuscript archive](manuscripts/INDEX.md), untouched.
 4. Any source fixtures, diagrams, interactive graph or simulation require their own scoped implementation PR, schema/semantics review, tests, accessibility checks and explicit publication decision.
 5. Existing front page, **published condition-monitoring Chapter 01 preview**, original 12 DMS lessons, v2 Engineering Data article and V0 model are not changed by this reference decision.
