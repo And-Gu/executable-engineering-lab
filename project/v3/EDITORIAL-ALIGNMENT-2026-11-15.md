@@ -1,140 +1,116 @@
-# V3 Editorial Alignment Review — New Site Direction
+# V3 alignment to the current approved 13-chapter curriculum
 
-**Status:** Proposed review baseline; **not approved chapter prose, not implementation authorization, not published**  
-**Prepared:** 2026-11-15 · **Curriculum size:** 13 chapters (owner-approved)  
-**Scope:** Reconcile the revised site identity and Chapter 1 reader pilot with proposed v3 content for Chapters 05–13. Preserve approved manuscripts 01–04 until their separate owner review.
+**Status:** Proposed editorial integration, awaiting owner review; no chapter manuscript, runtime implementation or site publication is authorized  
+**Date:** 2026-11-15  
+**Reviewed starting point:** \`project/CURRICULUM-MAP.md\` and the published front page / Chapter 1 reader pilot (PR #36). **The user has clarified that the current 13-chapter plan is the reviewed and approved curriculum.**  
+**Master tracker:** [Issue #32](https://github.com/And-Gu/executable-engineering-lab/issues/32)
 
-## 1. Sources and precedence
+## 1. Decision: one current chapter plan, not two competing curricula
 
-Read all the sources, distinguishing their purpose:
+The **current 13-chapter plan**, now reaffirmed by the owner, is the structure to carry into V3:
 
-1. [Site Direction](../SITE-DIRECTION.md) — revised public editorial purpose and approved front-page direction (PR #36).
-2. [Chapter Style Guide](../CHAPTER-STYLE-GUIDE.md) — proposed visual and reading patterns. The Chapter 1 pilot implements only some of the suggestions.
-3. [Current public Chapter 1 reader pilot](../../site/src/pages/learn/v2/01-new-engineering-paradigm.astro) — **published preview**, not the approved v3 manuscript; example and transition are deliberately different.
-4. [Approved v3 manuscript index](manuscripts/INDEX.md) and Chapters 01–04 — owner-approved **editorial prose**, not yet public v3 routes.
-5. [v3 master issue #32](https://github.com/And-Gu/executable-engineering-lab/issues/32) — ongoing status and decisions.
-6. [Engineering Visualization](../../docs/v3/ENGINEERING-VISUALIZATION.md) — proposed technical pedagogy and source → projection → view → evidence contracts (PR #34).
-7. [External Research Index](../../research/INDEX.md) — research and proposed quotations; **all quoted text and substantive claims must be checked in original sources before publication** (PR #33).
-8. [Existing v2 curriculum](../CURRICULUM-MAP.md) and [v2 briefs](../../chapters/) — historical/proposed alternative design, **not v3 approval**.
+| Part | # | Current chapter title | Unique question |
+|---|---:|---|---|
+| I — Engineering in the Age of AI | 01 | The New Engineering Paradigm | What changes in the product and in the engineering environment? |
+| I | 02 | Planning Under Uncertainty | What to explore now, and which capability is ready for commitment? |
+| II — Building Engineering Knowledge | 03 | Engineering Knowledge as Code | How does engineering information become structured, reusable, inspectable and connected? |
+| II | 04 | Learning Through Models and Prototypes | Which models and experiments reduce uncertainty and help engineers decide? |
+| II | 05 | Engineering Data: From Measurements to Decisions | How can data be checked, annotated, enriched, visualized and reused for decisions? |
+| II | 06 | Spec-Driven Development Without Waterfall | How can progressively refined specifications guide engineering changes without prescribing everything upfront? |
+| III — Engineering with AI Agents | 07 | Directing AI Engineering Agents | How is useful tool-assisted, multi-step work delegated, bounded and evaluated? |
+| III | 08 | Engineering in Small, Reviewable Increments | How can fast agent-enabled changes remain understandable and integrable? |
+| III | 09 | Continuously Integrated Engineering | How do we design and operate an engineering factory for frequent, controlled change? |
+| IV — Trust, Decisions and Evolution | 10 | Verification, Validation and Engineering Evidence | What deliverables and evidence establish product readiness and support lifecycle decisions? |
+| IV | 11 | Governance and Engineering Authority | How are safety, cyber, non-functional constraints and agent authority governed? |
+| IV | 12 | Managing Engineering Knowledge at Scale | How do organizations reuse knowledge, models, tests, context and engineering capabilities? |
+| IV | 13 | The AI-Native Engineering Environment | How does the end-to-end product / engineering-environment system work together? |
 
-**Do not resolve disagreements by silently rewriting approved Chapters 01–04 or the published pilot.** This document is a planning proposal for future editorial decisions.
+**Do not use the old alternative V3 numbering** (Ch 02 Engineering Information Models / Ch 03 Digital Threads / Ch 04 Executable Models / Ch 05 From Exploration to Engineering Definition / Ch 06 Engineering Data / Ch 07 Verification / Ch 08 Agentic / Ch 09 Agent Context / Ch 10 Continuous Engineering, etc.) as the active sequence. Those discussions produced useful **content**, not a replacement for the current approved curriculum.
 
-## 2. What the revised public site changes
+The earlier owner-approved long manuscripts (the four files under \`project/v3/manuscripts/approved/\`) remain preserved as **approved source prose from an earlier proposed chapter arrangement**, pending a new editorial mapping. Approval of their wording is not approval to reassign their headings, replace current Chapter 01, or force their previous chapter numbers onto the current plan.
 
-**Core message:** "Software and AI change what we build. And how we build it."
+The public dark Chapter 1 preview, \`The New Engineering Paradigm\`, is a live reader/presentation reference. It is not automatically a final V3 manuscript and does not silently supersede reviewed source prose. Review Chapter 01–04 for consistency before drafting the remainder.
 
-**Two evolving systems:**
-- **Product system:** intended use, functions, constraints, software, electronics, mechanics, potential product AI, operation and value.
-- **Engineering environment:** people, methods, sources, models, data, tests, AI agents, workflows and delivery capability.
+## 2. Sources and publication boundaries
 
-The defining idea is **co-evolution**. New product questions create needs for models and engineering tools; better engineering methods enable new product capabilities. The reader must see both sides through concrete findings and consequences, not repetitive dual-column boilerplate.
+- [Current curriculum](../CURRICULUM-MAP.md): **owner-confirmed sequence and titles**.
+- [Site direction](../SITE-DIRECTION.md): audience, mission, engineering thesis, greenfield-first and product/environment co-evolution.
+- [Chapter style guide](../CHAPTER-STYLE-GUIDE.md): dark reading shell, teal/gold semantics, early meaningful graphics, no mandatory six-card intro.
+- [Public Chapter 1 preview](../../site/src/pages/learn/v2/01-new-engineering-paradigm.astro): implemented reference for layout and a monitoring vignette.
+- [Archived early V3 manuscripts](manuscripts/INDEX.md): previously approved text, mapping pending.
+- [Research index](../../research/INDEX.md): external research and chapter quotation *candidates*; remap to current numbering and verify before publication.
+- [Engineering visualization guide](../../docs/v3/ENGINEERING-VISUALIZATION.md): methods and components; its previous V02–V06 chapter mapping must be revised to current 03–05.
+- [Proposed current-plan briefs for Chapters 05–13](CHAPTER-BRIEFS-05-13-2026-11-15.md).
 
-**The educational site is not a product-development tool.** It uses prose, conceptual workflows, static diagrams and narrowly scoped browser interactions where they teach a question. No custom engineering authoring GUI, mandatory coding lab, live agent runtime or full product controller implementation is required.
+**Scope:** Planning/editorial review only. No automatic migration of old URLs, no rewrite of approved source text, no new engineering authoring application, agent runner, Codespaces exercise, or site publication. Root \`project/\` and \`research/\` are non-published on the Astro website, although GitHub itself is public.
 
-**Greenfield first, then evolution.** Start with uncertain system intent, concepts and different feedback cadences; later address changes to a working baseline. Preserve the v3 treatment of brownfield in Chapter 03 and practical continuous release in Chapter 10.
+## 3. Findings missing from the current plan — prioritized gap register
 
-**Discipline differences are substantive.** Software and model revisions may iterate rapidly; physical prototypes, electronics and qualification have different rates and evidence needs. Avoid conflating software CI with product approval.
-
-**AI in a product and AI used in engineering are different.** Chapter 01 reader preview makes that explicit. Continue this distinction in data, agent and integration chapters rather than turning all product AI into agentic engineering.
-
-**Language and visual approach:** US English; dark sans-serif reading environment (Inter, IBM Plex Mono labels), gold for the engineering environment and teal for the product, meaningful accessible diagrams, text near the relevant visualization. Six introductory tiles are optional, not a required chapter template. Do not repeat generic AI caveats.
-
-## 3. Real curriculum conflict (must be managed)
-
-The **published v2 Chapter 1 preview** is titled *The New Engineering Paradigm* and directs readers toward v2 Chapter 02 *Planning Under Uncertainty*. The four **owner-approved v3 manuscripts** are:
-01 *From Engineering Intent to Evidence*; 02 *Engineering Information Models*; 03 *Digital Threads and Knowledge Graphs*; 04 *Executable Engineering Models*.
-
-Both remain valid assets with different roles; they are **not interchangeable**. In particular:
-- The approved v3 manuscript 01 emphasizes intent, engineering information and engineering evidence.
-- The published pilot emphasizes the new software/AI framing, greenfield equipment monitoring, product/environment co-development and discipline-specific feedback cadences.
-- The planned v2 course uses a different 13-chapter order and distinct chapter titles. It cannot become an implicit replacement for owner-approved v3 without review.
-
-**Interim recommendation:** Retain the approved v3 01–04 manuscripts untouched. Apply the latest site **style and framing** to proposed 05–13 briefs. Defer final title, chapter order, pilot reconciliation and bridges for 01–04 to the owner's explicit follow-up review. Do not modify the preview or published routes.
-
-### Example conflict
-
-The published front page and v2 reader pilot use a fictional **equipment condition-monitoring device**. The agreed v3 reference case uses a **four-way traffic intersection**.
-
-Recommended provisional policy (awaiting explicit owner decision): use the intersection as the **single recurring, easy-to-understand system-model example** in v3 Chapters 02–13, while retaining the monitoring vignette as an **occasional complementary example** of product AI, electronics/mechanical interaction and physical evaluation. A dedicated reference overview introduces the intersection before detailed use. Do not build two parallel complete demonstration systems or overwrite the published pilot.
-
-## 4. Chapters and distinct learning gains
-
-| Ch. | Proposed v3 chapter | Unique reader gain | Main product/environment connection | Editorial status |
+| ID | Topic from earlier dialogue and research | Status of current plan | Where to integrate | Required editorial addition |
 |---|---|---|---|---|
-| 01 | From Engineering Intent to Evidence | Understand why engineering evolves and how intent matures to evidence | Product objective ↔ engineering capability | **Approved text; review deferred** |
-| 02 | Engineering Information Models | Structure reusable, controlled engineering knowledge | Product architecture ↔ reusable engineering information | **Approved text; review deferred** |
-| 03 | Digital Threads and Knowledge Graphs | Navigate meaningful cross-lifecycle relationships and change impacts | Product change ↔ context and information access | **Approved text; review deferred** |
-| 04 | Executable Engineering Models | Examine model behavior and assumptions | Product behavior ↔ simulations and test methods | **Approved text; review deferred** |
-| 05 | From Exploration to Engineering Definition | Progress from questions and option learning to controlled decisions and specifications | Concept choice ↔ planning next engineering work | **Title/direction approved; text review pending** |
-| 06 | Engineering Data: From Measurements to Decisions | Curate and enrich raw observations into reusable decision inputs | Product observations ↔ engineering data pipelines and evaluation datasets | **v2 article exists; v3 adaptation pending** |
-| 07 | Verification and Engineering Evidence | Understand deliverables, evidence and release/acceptance readiness across product lifecycle | Product acceptance ↔ verification and documentation capability | Pending |
-| 08 | Agentic Engineering | Explain delegated AI work, agent mechanisms and reviewable increments | Engineering task ↔ agent workflow and bounded outputs | Pending |
-| 09 | Agents and Engineering Context | Understand usable context, constraints and tool connections for agent work | Engineering change ↔ relevant authorized context and interfaces | Pending |
-| 10 | Continuous Engineering | Design **and operate** an engineering factory for controlled, rapid releases | Product change cadence ↔ integration, checks, review and deployment capability | Pending |
-| 11 | Governance and Assurance | Govern risk, authority, cyber/safety and changes through the lifecycle | Product integrity ↔ risk-based controls and evidence | Pending |
-| 12 | Engineering Knowledge at Scale | Reuse engineering knowledge AND engineering capabilities across products | Product variants ↔ shared patterns, tests and agent knowledge | Pending |
-| 13 | The Integrated Engineering Environment | Synthesize the complete two-system journey and feedback loops | Product lifecycle ↔ continuously improved engineering environment | Pending |
+| G01 | Two systems co-evolve: product and engineering environment, "We build the machine that builds the machine" | **Introduced on Home/Ch 01**, not consistently carried forward | Every chapter, especially 02, 09, 13 | Show in **consequences**, not repetitive side-by-side boilerplate |
+| G02 | Prompt-led/specification-driven engineering, not vibe coding | Only partially present as progressive spec | 03, **06**, 07, 13 | Prompts direct work; structured version-controlled specs persist; spec-to-engineering is broader than spec-to-code |
+| G03 | Engineering information models, SysML primarily as visualization, multiple derived views | V2 Ch 03 focuses on connections, not the full model/view distinction | **03**, 04 | Functional, structural, behavioral, requirements, interface views; authoritative semantics; SysML not main authoring UI |
+| G04 | Knowledge graph **as interactive educational visualization** with typed relations and change-impact | Proposed in older plan and visualization guide, not implemented | **03**, 12 | Mandatory educational graph with provenance, source links, status and a table/text fallback; no graph database requirement |
+| G05 | Greenfield versus brownfield | Greenfield visible; brownfield evolution underdeveloped | 02, 03, 09, 13 | Early concept learning, then changes against controlled baseline; avoid two artificial lifecycles |
+| G06 | Exploration → progressive specification without waterfall | Conceptual material exists, but previous v3 mapped it to a different chapter | **02** and **06** | Retain Planning Under Uncertainty as distinct Ch 02 and Spec-Driven Development as distinct Ch 06; do not collapse |
+| G07 | Data quality, annotation, visualization, provenance, FAIR/reuse, data supporting product AI | Published separate v2 data article exists, but new v3 context unclear | **05**, 12 | Keep data enrichment as own chapter; distinguish observed, computed, synthetic, evaluated and qualified data |
+| G08 | Agentic human collaboration, task contract, model/tool/context, authentic practice reports | Ch 07 broad proposal | **07**, 08 | Distinguish assistant, automated script, agent, AI in product; use real sourced cases or clearly labeled conceptual sequences |
+| G09 | Agent context infrastructure: MCP, AGENTS.md, skills, authorized tools, context retrieval | Context risks being an orphaned former Chapter 09 | **07**, 08, 12 | Treat context as practical prerequisite for directing agents; preserve permissions/sources separately from task instructions |
+| G10 | Small reviewable increments, agent-measured Definition of Done, integration across disciplines | Partially proposed in current Ch 08 | **08** | Preserve Ch 08 as its own topic; explain scoped changes, reviews, decision records and how deliverables mature |
+| G11 | Engineering factory **design AND operation**; 24-hour eligible software change target | Ch 09 currently mostly CI and readiness | **09** (+ 10/11) | Target drives product interfaces, test automation, docs, release criteria, monitoring and rollback; distinguish CI, delivery, deployment and physical qualification |
+| G12 | Whole-product lifecycle deliverables, safety/cyber/manuals, evidence and assurance | Ch 10 focused on claim/evidence, delivery categories too narrow | **10**, 11 | Broaden beyond code/test results to complete deliverable classes and verification/validation |
+| G13 | Governance, agent/model provenance, permissions, hardening, cybersecurity, operational robustness | Ch 11 mostly agent authority | **11** | Include risk-based security/safety/non-functional integrity through design, change and release |
+| G14 | Organizational reuse of engineering knowledge **and** the engineering factory capability | Ch 12 focuses on configuration and evidence | **12** | Add reusable models, evaluations, interfaces, tests, agent skills, ontologies/OSLC and knowledge stewardship |
+| G15 | Presentation as explorable knowledge vs engineering-specific visualization | **Split agreed**, but no cross-link/educational guidance in chapter map | **03–05**, **13** | Doc-as-Code Lab: storytelling, HTML/reveal.js, mindmaps, dashboards, presentations; EEL: SysML, graphs, model/state/data/impact visualizations. Avoid a 14th chapter |
+| G16 | Prompt-based interaction, generated interfaces and coexistence with specialized GUIs | Fragmentary | **13** with links to 06–08 | Show **intent → agent/tool execution → visual review**. Not "all GUIs disappear" |
+| G17 | Research foundation and a source-checked quotation candidate for every chapter | Research archived and indexed to **old alternative chapter numbering** | All 01–13 | Remap \`research/INDEX.md\`, verify quotes at primary sources and attach few relevant further readings |
+| G18 | Two reference examples conflict: public equipment monitoring vs planned traffic intersection | **Open editorial decision** | 01–13 reference strategy | Prefer a single main red thread, with limited complementary example; no replacement of public pilot without review |
+| G19 | Consistent v3 navigation and source authority | \`CourseNavigation.astro\` uses current V2 data; \`ChapterLayout.astro\` hardcodes Ch01 anchors | Future implementation of 02–13 | One current curriculum registry; per-chapter anchor metadata; keep published legacy routes and current reader pilot intact |
+| G20 | Educational content, not a new engineering tool | Earlier proposals sometimes assumed an agent coding lab | All visual/interactive specs | Purposeful diagrams/simulations only; no mandatory reader coding, live agent or engineering IDE |
 
-### v2 topics to preserve without expanding course count
+### Highest-value updates for the next writing phase
 
-| Distinctive v2 topic | Recommended v3 placement |
-|---|---|
-| Planning Under Uncertainty (v2 Chapter 02) | Chapter 05 — choosing next uncertainty/increment, revising decisions and roadmap (with an introductory pointer from Chapter 01 only after its later review) |
-| Engineering in Small, Reviewable Increments (v2 Chapter 08) | Chapter 10 — engineering-factory delivery flow; support in Chapter 08 on bounded agent scope |
-| Spec-Driven Development Without Waterfall (v2 Chapter 06) | Chapter 05 — **central** example of progressive specification, not a separate coding lab |
-| Engineering Data enrichment (v2 Chapter 05) | v3 Chapter 06 — preserve/extend published article and separate its data-quality aim from Chapter 05 |
-| Integrated AI-native engineering (v2 Chapter 13) | v3 Chapter 13, use the new site vocabulary and two evolving systems |
+**First: 01–04 alignment check** with current chapter titles, model/example choice, visual conventions and transitions. Preserve their earlier accepted text as source material; extract relevant passages rather than transplant entire chapters under incorrect headings.
 
-## 5. Visual design and engineering example contract
+**Second: Chapters 05–13 briefs** under the **current approved** numbers and educational contributions; use [the refreshed briefs](CHAPTER-BRIEFS-05-13-2026-11-15.md).
 
-Use [Engineering Visualization](../../docs/v3/ENGINEERING-VISUALIZATION.md) for common rules. New briefs should specify a **learning question**, source/meaning, representation, reader interactions, accessibility fallback and validation boundaries.
+**Third: remap the research index and visual IDs** so agents no longer associate Ch 03 with a standalone "Digital Threads" chapter, Ch 06 with "Engineering Data", or Ch 09 with "Agent Context" under the current curriculum.
 
-| Visual | Educational responsibility |
-|---|---|
-| V02 | Multiple functional, structural and requirements views, optionally illustrated with SysML v2 |
-| V03 | **Required interactive, typed knowledge graph**, with source links, baseline/proposed status and transparent change-impact mode |
-| V04 | Simple bounded traffic state model and arrivals simulation, with understandable metrics |
-| V05 | Concept-to-definition evolution, explicit decisions, open questions and next-slice scope |
-| V06 | Raw → curated → annotated/enriched → derived data comparison, with provenance |
-| V07 | Product deliverables/evidence map across disciplines |
-| V08 | AI assistance vs fixed workflow vs agentic task, and bounded increment |
-| V09 | Context assembly map / information and tool permission boundaries |
-| V10 | Engineering factory design + operation and illustrated 24-hour eligible software release timeline |
-| V11 | Risk/authority/evidence and change-integrity view |
-| V12 | Reusable engineering knowledge and capability across product variants |
-| V13 | End-to-end two-system story; prompt-based intent plus specialized visual review |
+## 4. Presentations and visualizations — previously agreed scope
 
-Do **not** infer any physical/test validity or simulated performance from an attractive diagram. Source and status should be available once per meaningful visualization. Avoid repeating disclaimers in every paragraph.
+Two related but distinct tutorials:
 
-**Technical design dependency:** the current `site/src/layouts/ChapterLayout.astro` hardcodes the Chapter 1 in-page anchor list, and `CourseNavigation.astro` reads the proposed v2 curriculum. Before extending the dark chapter reader, design **chapter-specific navigation metadata and a single approved curriculum mapping** instead of copying these assumptions to Chapters 05–13. This is a future implementation/design brief, not permission to change Astro today.
+**Document-as-Code Lab** is the home for *presentations as explorable knowledge*: audience-oriented narrative, scrollytelling, HTML decks/reveal.js, mind maps/Markmap, dashboards, reusable presentation code and responsive publishing. Reference its **Beyond Slides** bonus chapter where appropriate.
 
-## 6. Scope of drafting and review
+**Executable Engineering Lab** shows how engineering understanding and decisions can be improved by purposeful technical views: system context, SysML where valuable, process flows, state machines, knowledge graphs, linked data charts, simulations, impact/assurance views and integrated engineering maps. Content selection starts with **which engineering question a view answers**, not an inventory of drawing libraries.
 
-For Chapters 05–13, use [proposed detailed briefs](CHAPTER-BRIEFS-05-13-2026-11-15.md). Their prose is **not yet an approved manuscript**.
+Use \`docs/v3/ENGINEERING-VISUALIZATION.md\` as the technical visualization contract, but **remap its chapter references to the approved sequence**. No general presentation training or additional Ch14 in this site.
 
-Each future full draft should:
-1. Start with a recognizable engineering question involving uncertainty, consequences or a decision.
-2. Introduce a **new** concept rather than summarize earlier chapters.
-3. Connect the product system and engineering environment naturally, without forcing duplicate sections.
-4. Explain one illustrative event in the reference system with labeled conceptual/actual status.
-5. Recommend one primary visualization with a clear teaching question, not a feature list of engineering-tool controls.
-6. Close with a concrete new insight and purposeful transition.
-7. Suggest a small number of source-checked further readings. A source candidate is not a quote approval.
-8. Avoid repetitive AI caveats and unwarranted efficiency/cost assertions.
-9. Preserve all approved v3 manuscripts and the existing v1/v2 Astro routes until explicit owner review and migration approval.
+## 5. Proposed checks for Chapters 01–04 before drafting 05–13
 
-Draft **one chapter at a time** for owner review after the alignment decisions. Keep new drafts under a separate `project/v3/manuscripts/drafts/` namespace, not `site/src/`. Neither the technical reference nor this proposal authorizes publication.
+| Ch | Current title | Existing new-site material | Specific review question |
+|---|---|---|---|
+| 01 | The New Engineering Paradigm | Public pilot in dark chapter reader | Does it establish enough scope, product/environment development, AI in product versus agents and later lifecycle? What of old approved *Intent to Evidence* prose should be reused? |
+| 02 | Planning Under Uncertainty | V2 brief; no completed new reader | How do uncertainty, product roadmap, engineering-environment backlog, physical lead times and iterative learning fit together? Preserve this as its own chapter |
+| 03 | Engineering Knowledge as Code | V2 brief, approved alternative text about info models and digital threads | Merge useful explanations of information models, spec-to-engineering, digital threads/knowledge graph into coherent distinct learning outcome; preserve mandatory interactive graph requirement |
+| 04 | Learning Through Models and Prototypes | V2 brief, approved alternative text about executable models | Add model fidelity, behavioral/state models, optional controlled simulation, two engineering cadences and model limitations; avoid being a traffic-controller coding tutorial |
 
-## 7. Owner review questions (no implicit decisions)
+**Only after review** should new full manuscripts be drafted for Ch 02–04 or any existing approved passages be modified.
 
-1. **Anchor example:** Keep traffic intersection as v3 reference and equipment monitoring as a supporting vignette (recommended), or revise the course reference case?
-2. **v3 vs pilot Chapter 1:** Preserve v3 Chapter 01–04 text until the separate agreed review, with the published v2 pilot kept as a layout/narrative reference (recommended)?
-3. **Planning under uncertainty:** Integrate its distinctive contribution into Chapter 05, and review the Chapter 01/02 bridge later (recommended)?
-4. **Hands-on scope:** Keep educational interactions only, not a required engineering tool, agent-runner or coding exercise (previously agreed)?
-5. **Visual reader shell:** Reuse current dark design; wait for the separate typography/navigation pass before migrating chapter routes (recommended).
+## 6. Site design / implementation readiness (not implementation authorization)
 
-## 8. Change and publication boundaries
+- **Current style:** dark sans-serif reader shell, gold engineering environment and teal product system when used semantically; strong prose column; one early consequential visual.
+- **Chapter 1 pilot:** \`/learn/v2/01-new-engineering-paradigm/\` is a published reader preview, not a complete final v3 course release.
+- **Component dependency:** \`site/src/layouts/ChapterLayout.astro\` currently hardcodes Chapter 1 "on this page" anchors. Make navigation data-driven before reusing layout for later chapters.
+- **Registry dependency:** course navigation currently imports the v2 curriculum; treat the approved current 13-chapter map as the primary planning authority, with a single versioned presentation registry at migration.
+- **Non-publishing status:** this PR must not modify \`site/src/\`, \`research/\` runtime inputs, historic manuscript text, release workflows, or published pages.
 
-This document and its companion briefs are proposals only. They must not appear as the public course; they are visible in the GitHub repository. No existing approved 01–04 text or public site code should be edited by this planning PR.
+## 7. Decisions for subsequent review
 
-Record reviewer decisions in [issue #32](https://github.com/And-Gu/executable-engineering-lab/issues/32), then update the appropriate future chapter briefs and only then create the full manuscripts.
+1. Which primary example to retain as the common reference across 13 chapters (traffic signals vs equipment monitoring), and which is supporting? Previous dialogue favored traffic signals for simple system models, public Chapter 1 uses monitoring.
+2. Which **parts** of the early approved prose should be incorporated into each **current** Chapter 01–04, without declaring older titles/numbering canonical?
+3. Which visualizations are essential to teach the chapter versus optional depth?
+4. Which chapter quote candidates can be verified and approved from original sources? (Do not treat research archive as verified quotations.)
+
+**No decision to publish or rewrite existing approved copy is made by this alignment proposal.**
