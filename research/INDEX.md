@@ -11,6 +11,8 @@
 |---|---|---|---|
 | EEL-R-2026-11-12-V3 | [External Reference and Research Baseline](v3/2026-11-12-external-research.md) | Linux Foundation / AAIF, MCP, OpenSpec, GitHub Spec Kit, SysML, OSLC, digital thread, agent use, engineering data, DORA, GUI vs prompt, source quotes | Research proposal; factual and quote verification before citation |
 
+**Reference decision (2026-11-15):** The owner selected the fictional **four-way traffic intersection** as the sole recurring V3 system case; see [reference contract](../project/v3/REFERENCE-INTERSECTION.md). The already published condition-monitoring Chapter 01 preview and legacy DMS V0 lab remain unchanged; do not make them a second V3 case. Research references should support the **engineering claims**, not supply unverified intersection measurements or generic quotation decoration.
+
 ## Routing by the current approved 13-chapter curriculum
 
 **Owner clarification 2026-11-15:** The chapter sequence and titles in `project/CURRICULUM-MAP.md` are approved. This index supersedes an earlier alternative V3 numbering. The source archive's **13 quotation candidates still show their original chapter numbers**; map those quotes by **topic and source**, never by their old numerical labels, and verify exact wording and attribution before use.
