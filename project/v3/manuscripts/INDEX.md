@@ -36,6 +36,15 @@ The owner confirmed a **13-chapter curriculum** on 2026-11-11. The *direction an
 
 **Known handover to resolve later:** The approved Chapter 04 ends by introducing alternative strategies/experiment design for the next chapter, whereas the now accepted Chapter 05 direction is broader (moving from exploration to engineering definition). Preserve the approved text today; propose only a small transition edit for owner review when Chapter 05 is finalized.
 
+## New site direction review — proposed only (2026-11-15)
+
+A new public front page and **v2 Chapter 1 reader preview** were released in [PR #36](https://github.com/And-Gu/executable-engineering-lab/pull/36). Their title, example and Chapter 2 transition are not identical to the **approved v3 Chapters 01–04** archived here. This difference is documented, **not resolved by this planning PR**.
+
+- [Full curriculum alignment review](../EDITORIAL-ALIGNMENT-2026-11-15.md) — scope, two-system framing, competing chapter maps, example choice and adoption questions.
+- [Updated proposed briefs for Chapters 05–13](../CHAPTER-BRIEFS-05-13-2026-11-15.md) — distinct learning questions, narrative, product/environment linkage and educational visualizations.
+
+These are **proposal documents, not approved manuscripts**. Do not edit approved Chapters 01–04 or published routes based only on these proposed briefs. The new public [site direction](../../../SITE-DIRECTION.md) and [chapter reading guide](../../../CHAPTER-STYLE-GUIDE.md) should inform drafts for the still-unapproved chapters.
+
 ## Mandatory reading path for editorial agents
 
 1. Read **this index** to establish which chapters have owner-approved manuscripts; do not infer approval from older published pages or previously proposed planning files.
