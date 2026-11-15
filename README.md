@@ -85,3 +85,7 @@ Use a short-lived branch and reviewable PR. Read [SITE_SPEC.md](SITE_SPEC.md), [
 ## V2 transition proposal
 
 A Stage 0–1 draft reframes Home/Learn around **Engineering at the Speed of AI** while preserving the published twelve-lesson course and V0. The revised curriculum and multidisciplinary/recorded-agent demonstrations are planned, not implemented. Start with the [foundation overview](docs/v2/FOUNDATION-SPEC.md), [adoption status](docs/v2/ADOPTION-STATUS.md), [tutorial proposal](project/TUTORIAL-SPEC.md) and [staged delivery plan](implementation/IMPLEMENTATION-PLAN.md). This branch is not a publication or acceptance record.
+
+## Unpublished editorial research and agent source index
+
+Research, source assessments and quotation candidates for the v3 curriculum are stored under [`research/`](research/). See the [chapter-by-chapter index](research/INDEX.md) and [archival / non-publication procedure](research/README.md). Agents drafting educational text must read the index before selecting source material. The research is visible in this public GitHub repository but is excluded from the Astro website unless separately approved. The build runs `npm run research:check` as an additional isolation safeguard.
