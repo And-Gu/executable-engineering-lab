@@ -28,7 +28,7 @@ An engineer points to a diagram and says that changing the controller will affec
 
 A compelling visualization can make technical relationships understandable. It can also create unwarranted confidence if its notation, source, assumptions or calculation are unclear. The important skill is therefore not learning to draw attractive diagrams; it is **choosing a representation that makes a particular engineering question answerable**.
 
-The V3 reference scenario is an illustrative four-way traffic-signal intersection. The site is a learning resource about engineering practices, **not** a traffic-control design product or a live engineering IDE. The existing Distributed Monitoring System (DMS) V0 demonstration, source IDs, calculations and evidence remain protected historical/current functionality until a separately approved migration.
+**Owner decision 2026-11-15:** The [fictional four-way traffic intersection](../../project/v3/REFERENCE-INTERSECTION.md) is the **single recurring V3 reference**. The site is a learning resource about engineering practices, **not** a traffic-control design product or a live engineering IDE. The existing *published* Chapter 01 condition-monitoring preview and Distributed Monitoring System (DMS) V0 demonstration, source IDs, calculations and evidence remain unchanged until a separately approved editorial migration. Do not build a second recurring V3 monitoring demonstration.
 
 ## Begin with the engineering question
 
