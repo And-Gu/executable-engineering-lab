@@ -19,7 +19,7 @@ export const v2Chapters = [
   { path: 'v2/05-engineering-data', title: 'Engineering Data: From Measurements to Decisions', summary: 'Check, annotate and combine data; interpret calculated geometry alongside hypothetical power constraints.', number: 5 },
 ] as const;
 
-/** Complete reader previews in this build; publication has not been approved. */
+/** Complete editorial reader previews, separate from the established articles. */
 export const chapterPreviews = [
   { path: 'v2/01-new-engineering-paradigm', title: 'The New Engineering Paradigm', summary: 'Develop the system and its engineering environment together, using executable models, AI agents and useful feedback across disciplines.', number: 1 },
 ] as const;

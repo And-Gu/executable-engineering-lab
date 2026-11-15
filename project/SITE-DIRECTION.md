@@ -1,6 +1,6 @@
 # Site direction — Executable Engineering Lab
 
-Updated 15 November 2026 from the owner's front-page reviews and approved revised brief. This is the current editorial direction. Historical release specifications and the implemented V0 model retain their technical history and contracts.
+Updated 15 November 2026 from the owner's front-page reviews and approved revised brief. This is the editorial direction for the reviewed front page and v2 reader pilot. The separate [v3 manuscript index](v3/manuscripts/INDEX.md) governs approved v3 prose. Historical release specifications and the implemented V0 model retain their technical history and contracts.
 
 The [original site-direction document](https://chatgpt.com/space/page_52692f0497f48191bc7e6b4a254696a0) is the owner-facing brief. The [revised brief and review rationale](https://chatgpt.com/space/page_ddc0b4dd8ea88191afe241eed2019b95) records how the direction developed.
 
@@ -76,4 +76,8 @@ Do not change the canonical V0 sources, calculation, evidence contract or existi
 
 Can a reader explain what is changing in engineering practice, why it helps the team and what practical work it requires? Are models, agentic work, software-driven delivery and physical behavior all visible? Does the terminology clarify rather than dominate? Does each graphic reduce the work of understanding? Can the reader distinguish an illustration, a working example and a planned capability?
 
-Review Chapter 1 for these qualities before applying the layout to other chapters. Publication remains a separate decision.
+Review Chapter 1 for these qualities before applying the layout to other chapters.
+
+## Publication authorization — 15 November 2026
+
+After the session changes were committed, the owner explicitly requested publication. Publish the reviewed front page, Learn navigation and Chapter 1 reader preview while retaining its editorial preview status. This does not approve the remaining chapter migrations or publication of the separate v3 manuscripts and research archive.

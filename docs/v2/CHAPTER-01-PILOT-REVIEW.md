@@ -1,6 +1,6 @@
 # Chapter 1 reader pilot — review record
 
-Prepared 15 November 2026 after the owner authorized the revised site direction and Chapter 1 pilot. Local implementation is complete for review; publication and adoption across other chapters remain pending.
+Prepared 15 November 2026 after the owner authorized the revised site direction and Chapter 1 pilot. The initial local preview was followed by explicit publication authorization, recorded below. Adoption across other chapters remains pending.
 
 ## Preview
 
@@ -38,3 +38,7 @@ The owner-facing direction and revised-brief Pages were saved and their changed 
 The owner subsequently requested checking in all session changes. This checkpoint includes the front page, Chapter 1 pilot, direction and terminology updates, and the [chapter style-guide proposal](../../project/CHAPTER-STYLE-GUIDE.md). Chapter 1 remains the implemented reading reference; proposed typography refinements are documented separately. Checking in the feature branch does not approve publication or migration of the other chapters.
 
 Before committing, `npm run check` passed again: 50 Astro files without diagnostics, all 86 tests, source validation and all 18 static routes. `npm run evidence` completed with the unchanged 38.52% teaching-model result. The style-guide specimen was preserved as editable source and a standalone browser export under `docs/design/`, outside the deployed site.
+
+## Publication scope
+
+The owner subsequently requested publication on 15 November 2026. The release includes the revised front page, Learn navigation and the complete v2 Chapter 1 reader preview. Its preview label remains because editorial review continues. The separate v3 manuscripts and research archive stay outside the site. Publication success must be established from the GitHub Pages workflow and live routes; this authorization record alone is not a deployment result.

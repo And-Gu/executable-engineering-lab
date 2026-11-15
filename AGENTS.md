@@ -31,4 +31,22 @@ The current v2 proposal inserts Chapter 05, *Engineering Data: From Measurements
 
 The owner approved applying the revised site direction and terminology to Chapter 1 as a local pilot before other chapters. Read project/SITE-DIRECTION.md as the current editorial direction. Implement the complete preview at learn/v2/01-new-engineering-paradigm/ with its own dark reading layout; preserve the original Chapter 1 route, fragments and V0 lab. This authorization supersedes the earlier Home/Learn-only scope for this single pilot.
 
-The pilot uses a concrete opening, explanatory graphics and optional interactions without the universal six-tile summary. Other chapter layouts stay unchanged pending review. Register complete reader previews separately in site/src/data/chapters.ts and label their status in Home/Learn. Keep conceptual situations distinct from model executions or recorded agent runs. Do not publish, migrate other chapters or extend the engineering engine under this authorization.
+The pilot uses a concrete opening, explanatory graphics and optional interactions without the universal six-tile summary. Other chapter layouts stay unchanged pending review. Register complete reader previews separately in site/src/data/chapters.ts and label their status in Home/Learn. Keep conceptual situations distinct from model executions or recorded agent runs.
+
+After checking in the reviewed work, the owner explicitly requested publication on 15 November 2026. That authorization covers the revised front page, Learn navigation and the v2 Chapter 1 reader preview in this branch. Keep the reader-preview label because editorial review continues. It does not authorize migration of other chapters, publication of the separate v3 manuscripts or changes to the engineering engine.
+
+## V3 approved editorial manuscripts — agents must read first
+
+**Before drafting, revising, visualizing or publishing v3 content, read [project/v3/manuscripts/INDEX.md](project/v3/manuscripts/INDEX.md)** and the applicable **owner-approved chapter manuscript** under `project/v3/manuscripts/approved/`. Editorial approval for Chapters 01–04 is recorded there; Chapter 05's title/direction and the 13-chapter count are agreed, while Chapters 05–13 manuscripts remain under review. Older published lessons and v2 briefs must not be mistaken for the approved v3 prose.
+
+**Do not automatically publish or materially rewrite approved chapters.** These files are intentionally outside Astro's `site/src/`. Preserve all existing published legacy routes and functionality. Any content migration, diagram, interactive knowledge graph, traffic simulation or publication work requires separately approved scope and review. Read v3 [master issue #32](https://github.com/And-Gu/executable-engineering-lab/issues/32) for ongoing decisions.
+
+For external references and quotations, use `research/INDEX.md` once the separate research-archive PR is merged; verify sources before publication. Agent instructions and source archives are planning context, not permission to publish.
+
+## V3 research sources and unpublished background (agent entry point)
+
+**Before drafting, revising, or reviewing any v3 chapter, read [research/INDEX.md](research/INDEX.md) and the relevant item in [research/v3/](research/v3/).** The index maps all 13 chapters to relevant research, source types, and candidate quotes. Also consult the approved manuscript and [issue #32](https://github.com/And-Gu/executable-engineering-lab/issues/32) for actual editorial decisions. A background research note is not approved chapter prose and does not authorize changes to product code or the public site.
+
+The root `research/` folder is a **non-published archive**: it is outside Astro's `site/src/` and static assets, and must never be imported into a public route or copied to public assets without explicit editorial approval. GitHub itself is public, so do not put confidential material in this folder. Register every new source note in `research/INDEX.md` (chapter mapping, topic, date, verification status, source URL). Follow `research/README.md` when updating the archive.
+
+Before citing an archived claim or chapter quote in published prose, open the authoritative primary source and verify precise text, context, date and scope. Distinguish peer-reviewed results, standards, surveys, and vendor/project positioning. Do not auto-promote quotations or repeat generic AI caveats. Run `npm run build` and `npm run research:check` on any PR affecting research or publication; this checks for accidental leakage into the generated site.

@@ -82,6 +82,14 @@ Pages deployment runs on pushes to `main` after checks pass and can also be trig
 
 Use a short-lived branch and reviewable PR. Read [SITE_SPEC.md](SITE_SPEC.md), [DEMONSTRATOR_SPEC.md](DEMONSTRATOR_SPEC.md) and [MILESTONE_01.md](MILESTONE_01.md) as planning inputs. Preserve their scope boundaries. Change engineering definitions in canonical YAML and keep model computation outside the UI. Run `npm run check` and inspect `npm run evidence` before opening a PR. Do not commit generated evidence or build output. See [ROADMAP.md](ROADMAP.md) for remaining work and [docs/VERIFICATION.md](docs/VERIFICATION.md) for recorded browser checks and verification limits.
 
+## V3 technical visualization reference (proposal)
+
+The open [V3 master issue #32](https://github.com/And-Gu/executable-engineering-lab/issues/32) defines the editorial and planning boundary for the proposed 13-chapter curriculum. The [Engineering Visualization: From Models to Understanding](docs/v3/ENGINEERING-VISUALIZATION.md) guide is proposed supporting material for V3 Chapters 03, 04 and 06, including the V03 interactive knowledge-graph specification, bounded executable behavior and engineering data views. It is **not** an implemented visualization, an approved reader-facing manuscript or an authorization to begin implementation. Published V0/v2 routes and definitions remain unchanged.
+
 ## V2 transition proposal
 
 A Stage 0–1 draft reframes Home/Learn around **Engineering at the Speed of AI** while preserving the published twelve-lesson course and V0. The revised curriculum and multidisciplinary/recorded-agent demonstrations are planned, not implemented. Start with the [foundation overview](docs/v2/FOUNDATION-SPEC.md), [adoption status](docs/v2/ADOPTION-STATUS.md), [tutorial proposal](project/TUTORIAL-SPEC.md) and [staged delivery plan](implementation/IMPLEMENTATION-PLAN.md). This branch is not a publication or acceptance record.
+
+## Unpublished editorial research and agent source index
+
+Research, source assessments and quotation candidates for the v3 curriculum are stored under [`research/`](research/). See the [chapter-by-chapter index](research/INDEX.md) and [archival / non-publication procedure](research/README.md). Agents drafting educational text must read the index before selecting source material. The research is visible in this public GitHub repository but is excluded from the Astro website unless separately approved. The build runs `npm run research:check` as an additional isolation safeguard.
