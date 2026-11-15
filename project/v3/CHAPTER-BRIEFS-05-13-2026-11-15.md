@@ -13,13 +13,13 @@ Executable Engineering Lab teaches the transition toward connected, executable, 
 
 Bring two evolving perspectives into the story: **what changes in the product** and **what changes in the engineering environment**. Lead with an engineering decision or uncertainty, then a meaningful visualization, and explain what was learned. Include software, electronics, physical design and operational concerns. Keep brief technical caveats located where the model/result requires them, not a repeated AI warning.
 
-Use the new published front-page direction and dark Chapter 1 reader preview for visual/editorial guidance, not as permission to rewrite approved source texts. A main system-example choice (traffic signals vs equipment condition monitoring) remains open. Avoid a second complete simulated product. Existing V0 demonstrations are preserved.
+Use the published front page and Chapter 1 pilot for visual and explanatory *style*, not permission to rewrite its monitoring story or earlier approved manuscripts. **The owner confirmed the fictional four-way traffic intersection as the single recurring V3 product case**, described in [REFERENCE-INTERSECTION.md](REFERENCE-INTERSECTION.md). Carry that same case from greenfield uncertainty through model, data, specification, agent work, delivery, assurance and evolution. Do not create a second V3 condition-monitoring story. The published V2 pilot and original DMS V0 lab remain unchanged.
 
 Cross-project division: **Document-as-Code Lab** owns audience-facing storytelling, presentations and HTML decks/scrollytelling; **Executable Engineering Lab** owns technically meaningful representations (SysML, knowledge graph, simulations, data/assurance views). No dedicated presentation chapter or engineering IDE.
 
 ## Chapter 05 — Engineering Data: From Measurements to Decisions
 
-**Learning question:** How do observations, simulated outputs and measurements become data that support sound engineering decisions?
+**Single V3 reference case:** Illustrative arrival events and model-computed queues/wait times from the same intersection need units, source identity, timestamps, annotations and comparable versions. Do not call model outputs field measurements.\n\n**Learning question:** How do observations, simulated outputs and measurements become data that support sound engineering decisions?
 
 **Distinct contribution:** Data quality, annotation, provenance, enrichment, independent review, visualization, preservation and reuse. This chapter is NOT a reintroduction to specifications/relations (Ch 03), model implementation (Ch 04), or trade-off/decision governance (Ch 06/10).
 
@@ -39,7 +39,7 @@ Cross-project division: **Document-as-Code Lab** owns audience-facing storytelli
 
 ## Chapter 06 — Spec-Driven Development Without Waterfall
 
-**Learning question:** How do we turn an uncertain, evolving engineering problem into bounded specifications and useful increments, without demanding a complete design up front?
+**Single V3 reference case:** Select a bounded improvement to the intersection concept and progressively define interfaces, operating assumptions, decision records and acceptance criteria while leaving unselected adaptive alternatives open.\n\n**Learning question:** How do we turn an uncertain, evolving engineering problem into bounded specifications and useful increments, without demanding a complete design up front?
 
 **Distinct contribution:** Progressive specification is an operating practice for **engineering changes**, broader than spec-to-code. It builds on Ch 02 (planning uncertainty), Ch 03 (engineering knowledge as code), Ch 04 (model-based learning) and Ch 05 (usable data).
 
@@ -59,7 +59,7 @@ Cross-project division: **Document-as-Code Lab** owns audience-facing storytelli
 
 ## Chapter 07 — Directing AI Engineering Agents
 
-**Learning question:** How does engineering work change when AI agents can use tools, inspect results and adapt the next actions within a bounded task?
+**Single V3 reference case:** Describe a bounded *illustrative* agent investigation of the intersection's phase model or checks, including tool/context boundaries. Do not invent executed agent traces.\n\n**Learning question:** How does engineering work change when AI agents can use tools, inspect results and adapt the next actions within a bounded task?
 
 **Distinct contribution:** Mechanism and collaboration: distinguish **LLM, assistant, deterministic workflow, agent** and **AI in the product**. Present the human role in setting goals, scope, context, tools, evaluation and adopting work. This is not a how-to for constructing a custom agent system.
 
@@ -79,7 +79,7 @@ Cross-project division: **Document-as-Code Lab** owns audience-facing storytelli
 
 ## Chapter 08 — Engineering in Small, Reviewable Increments
 
-**Learning question:** How do teams maintain technical and review quality when AI can produce substantial engineering changes quickly?
+**Single V3 reference case:** Split an intersection control-model/interface/software change into distinct reviewable increments while recognizing electrical and physical integration dependencies.\n\n**Learning question:** How do teams maintain technical and review quality when AI can produce substantial engineering changes quickly?
 
 **Distinct contribution:** Reviewable incremental development, architecture and human–agent collaboration with defined DoD. **Keep it as a separate chapter**; do not collapse it into Continuous Engineering.
 
@@ -99,7 +99,7 @@ Cross-project division: **Document-as-Code Lab** owns audience-facing storytelli
 
 ## Chapter 09 — Continuously Integrated Engineering
 
-**Learning question:** How should we design and operate the engineering factory so a product can be changed and suitable software improvements prepared for release at the required frequency?
+**Single V3 reference case:** Demonstrate how one *eligible* intersection software change might become releasable within a hypothetical 24-hour window; safety/physical changes have their own gates.\n\n**Learning question:** How should we design and operate the engineering factory so a product can be changed and suitable software improvements prepared for release at the required frequency?
 
 **Distinct contribution:** Two inseparable responsibilities: **build/improve the machine that builds the machine** AND **operate it to deliver changes**. The requirement for rapid delivery is an architectural driver, not a decorative CI pipeline.
 
@@ -119,7 +119,7 @@ Cross-project division: **Document-as-Code Lab** owns audience-facing storytelli
 
 ## Chapter 10 — Verification, Validation and Engineering Evidence
 
-**Learning question:** Beyond working software and successful simulations, what information and evidence must be produced to deliver, operate and evolve a complete product?
+**Single V3 reference case:** Distinguish a passing illustrative signal-state simulation from real-product readiness: actual signals, wiring, installation, operating instructions, verification and validation.\n\n**Learning question:** Beyond working software and successful simulations, what information and evidence must be produced to deliver, operate and evolve a complete product?
 
 **Distinct contribution:** Whole-lifecycle deliverables and relevant evidence: definitions, interfaces, integration, verified requirements, operational validation, physical testing, test plans/results, safety/cyber inputs, documentation, manuals, decision/approval records. Discuss which claims a result supports.
 
@@ -139,7 +139,7 @@ Cross-project division: **Document-as-Code Lab** owns audience-facing storytelli
 
 ## Chapter 11 — Governance and Engineering Authority
 
-**Learning question:** What controls and decisions maintain integrity, security and accountability as humans and agents continuously change an engineering system?
+**Single V3 reference case:** Consider a proposed adaptive-control or remote-update change with conflict constraints, cyber risk, hardware failure behavior, agent authority and proportionate assurance.\n\n**Learning question:** What controls and decisions maintain integrity, security and accountability as humans and agents continuously change an engineering system?
 
 **Distinct contribution:** Governance and engineering authority, including **cybersecurity, hardening, safety, robustness and other non-functional requirements from early design through operation**.
 
@@ -159,7 +159,7 @@ Cross-project division: **Document-as-Code Lab** owns audience-facing storytelli
 
 ## Chapter 12 — Managing Engineering Knowledge at Scale
 
-**Learning question:** How can engineering organizations preserve, find and reuse knowledge and working capabilities across teams, configurations, products and time?
+**Single V3 reference case:** Compare two illustrative intersection variants to decide which model/test/engineering-work patterns can be reused and which product evidence requires re-evaluation.\n\n**Learning question:** How can engineering organizations preserve, find and reuse knowledge and working capabilities across teams, configurations, products and time?
 
 **Distinct contribution:** From project information to **organization-level reusable knowledge and engineering-system assets**. Do not simply repeat digital thread or source versioning.
 
@@ -179,7 +179,7 @@ Cross-project division: **Document-as-Code Lab** owns audience-facing storytelli
 
 ## Chapter 13 — The AI-Native Engineering Environment
 
-**Learning question:** What does a connected, executable and agent-supporting engineering environment look like across concept exploration, implementation, delivery and system evolution?
+**Single V3 reference case:** Trace the same fictional intersection from uncertain greenfield need to a provisional configuration and a later change, as product and engineering environment co-evolve.\n\n**Learning question:** What does a connected, executable and agent-supporting engineering environment look like across concept exploration, implementation, delivery and system evolution?
 
 **Distinct contribution:** End-to-end **synthesis of the approved curriculum**, not a code lab, engineering IDE or another ten-diagram recap.
 
@@ -198,7 +198,7 @@ Cross-project division: **Document-as-Code Lab** owns audience-facing storytelli
 ## Editorial gates before full manuscripts
 
 1. Reconcile the **current** Chapter 01–04 topics first against the newly published Chapter 01 pilot and the previously approved **alternative-structure** text. Do not silently transplant earlier chapters or republish them.
-2. Confirm the recurring main system example vs supporting monitoring vignette; preserve existing published behavior.
+2. **Confirmed by owner:** Use the four-way traffic intersection as the sole recurring V3 reference for Chapters 01–13. Preserve the earlier published condition-monitoring preview and DMS V0 lab until a separately authorized migration.
 3. Approve the **scope** of Chapters 05–13 in the **current numbering**, including the reassignment of the previously discussed v3 concepts.
 4. For each manuscript: one distinctive learning question, a clear two-system consequence, appropriate engineering data/visualization, reference provenance, a relevant transition and limited caveats.
 5. Keep draft manuscripts under `project/v3/manuscripts/drafts/`, not Astro pages, until separately authorized.
