@@ -43,7 +43,7 @@ A new public front page and **v2 Chapter 1 reader preview** were released in [PR
 - [Full curriculum alignment review](../EDITORIAL-ALIGNMENT-2026-11-15.md) — scope, two-system framing, competing chapter maps, example choice and adoption questions.
 - [Updated proposed briefs for Chapters 05–13](../CHAPTER-BRIEFS-05-13-2026-11-15.md) — distinct learning questions, narrative, product/environment linkage and educational visualizations.
 
-These are **proposal documents, not approved manuscripts**. Do not edit approved Chapters 01–04 or published routes based only on these proposed briefs. The new public [site direction](../../../SITE-DIRECTION.md) and [chapter reading guide](../../../CHAPTER-STYLE-GUIDE.md) should inform drafts for the still-unapproved chapters.
+These are **proposal documents, not approved manuscripts**. Do not edit approved Chapters 01–04 or published routes based only on these proposed briefs. The new public [site direction](../../SITE-DIRECTION.md) and [chapter reading guide](../../CHAPTER-STYLE-GUIDE.md) should inform drafts for the still-unapproved chapters.
 
 ## Mandatory reading path for editorial agents
 
