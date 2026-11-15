@@ -2,7 +2,7 @@
 
 **Status:** Proposed editorial integration, awaiting owner review; no chapter manuscript, runtime implementation or site publication is authorized  
 **Date:** 2026-11-15  
-**Reviewed starting point:** \`project/CURRICULUM-MAP.md\` and the published front page / Chapter 1 reader pilot (PR #36). **The user has clarified that the current 13-chapter plan is the reviewed and approved curriculum.**  
+**Reviewed starting point:** `project/CURRICULUM-MAP.md` and the published front page / Chapter 1 reader pilot (PR #36). **The user has clarified that the current 13-chapter plan is the reviewed and approved curriculum.**  
 **Master tracker:** [Issue #32](https://github.com/And-Gu/executable-engineering-lab/issues/32)
 
 ## 1. Decision: one current chapter plan, not two competing curricula
@@ -27,9 +27,9 @@ The **current 13-chapter plan**, now reaffirmed by the owner, is the structure t
 
 **Do not use the old alternative V3 numbering** (Ch 02 Engineering Information Models / Ch 03 Digital Threads / Ch 04 Executable Models / Ch 05 From Exploration to Engineering Definition / Ch 06 Engineering Data / Ch 07 Verification / Ch 08 Agentic / Ch 09 Agent Context / Ch 10 Continuous Engineering, etc.) as the active sequence. Those discussions produced useful **content**, not a replacement for the current approved curriculum.
 
-The earlier owner-approved long manuscripts (the four files under \`project/v3/manuscripts/approved/\`) remain preserved as **approved source prose from an earlier proposed chapter arrangement**, pending a new editorial mapping. Approval of their wording is not approval to reassign their headings, replace current Chapter 01, or force their previous chapter numbers onto the current plan.
+The earlier owner-approved long manuscripts (the four files under `project/v3/manuscripts/approved/`) remain preserved as **approved source prose from an earlier proposed chapter arrangement**, pending a new editorial mapping. Approval of their wording is not approval to reassign their headings, replace current Chapter 01, or force their previous chapter numbers onto the current plan.
 
-The public dark Chapter 1 preview, \`The New Engineering Paradigm\`, is a live reader/presentation reference. It is not automatically a final V3 manuscript and does not silently supersede reviewed source prose. Review Chapter 01–04 for consistency before drafting the remainder.
+The public dark Chapter 1 preview, `The New Engineering Paradigm`, is a live reader/presentation reference. It is not automatically a final V3 manuscript and does not silently supersede reviewed source prose. Review Chapter 01–04 for consistency before drafting the remainder.
 
 ## 2. Sources and publication boundaries
 
@@ -42,7 +42,7 @@ The public dark Chapter 1 preview, \`The New Engineering Paradigm\`, is a live r
 - [Engineering visualization guide](../../docs/v3/ENGINEERING-VISUALIZATION.md): methods and components; its previous V02–V06 chapter mapping must be revised to current 03–05.
 - [Proposed current-plan briefs for Chapters 05–13](CHAPTER-BRIEFS-05-13-2026-11-15.md).
 
-**Scope:** Planning/editorial review only. No automatic migration of old URLs, no rewrite of approved source text, no new engineering authoring application, agent runner, Codespaces exercise, or site publication. Root \`project/\` and \`research/\` are non-published on the Astro website, although GitHub itself is public.
+**Scope:** Planning/editorial review only. No automatic migration of old URLs, no rewrite of approved source text, no new engineering authoring application, agent runner, Codespaces exercise, or site publication. Root `project/` and `research/` are non-published on the Astro website, although GitHub itself is public.
 
 ## 3. Findings missing from the current plan — prioritized gap register
 
@@ -64,9 +64,9 @@ The public dark Chapter 1 preview, \`The New Engineering Paradigm\`, is a live r
 | G14 | Organizational reuse of engineering knowledge **and** the engineering factory capability | Ch 12 focuses on configuration and evidence | **12** | Add reusable models, evaluations, interfaces, tests, agent skills, ontologies/OSLC and knowledge stewardship |
 | G15 | Presentation as explorable knowledge vs engineering-specific visualization | **Split agreed**, but no cross-link/educational guidance in chapter map | **03–05**, **13** | Doc-as-Code Lab: storytelling, HTML/reveal.js, mindmaps, dashboards, presentations; EEL: SysML, graphs, model/state/data/impact visualizations. Avoid a 14th chapter |
 | G16 | Prompt-based interaction, generated interfaces and coexistence with specialized GUIs | Fragmentary | **13** with links to 06–08 | Show **intent → agent/tool execution → visual review**. Not "all GUIs disappear" |
-| G17 | Research foundation and a source-checked quotation candidate for every chapter | Research archived and indexed to **old alternative chapter numbering** | All 01–13 | Remap \`research/INDEX.md\`, verify quotes at primary sources and attach few relevant further readings |
+| G17 | Research foundation and a source-checked quotation candidate for every chapter | Research archived and indexed to **old alternative chapter numbering** | All 01–13 | Remap `research/INDEX.md`, verify quotes at primary sources and attach few relevant further readings |
 | G18 | Two reference examples conflict: public equipment monitoring vs planned traffic intersection | **Open editorial decision** | 01–13 reference strategy | Prefer a single main red thread, with limited complementary example; no replacement of public pilot without review |
-| G19 | Consistent v3 navigation and source authority | \`CourseNavigation.astro\` uses current V2 data; \`ChapterLayout.astro\` hardcodes Ch01 anchors | Future implementation of 02–13 | One current curriculum registry; per-chapter anchor metadata; keep published legacy routes and current reader pilot intact |
+| G19 | Consistent v3 navigation and source authority | `CourseNavigation.astro` uses current V2 data; `ChapterLayout.astro` hardcodes Ch01 anchors | Future implementation of 02–13 | One current curriculum registry; per-chapter anchor metadata; keep published legacy routes and current reader pilot intact |
 | G20 | Educational content, not a new engineering tool | Earlier proposals sometimes assumed an agent coding lab | All visual/interactive specs | Purposeful diagrams/simulations only; no mandatory reader coding, live agent or engineering IDE |
 
 ### Highest-value updates for the next writing phase
@@ -85,7 +85,7 @@ Two related but distinct tutorials:
 
 **Executable Engineering Lab** shows how engineering understanding and decisions can be improved by purposeful technical views: system context, SysML where valuable, process flows, state machines, knowledge graphs, linked data charts, simulations, impact/assurance views and integrated engineering maps. Content selection starts with **which engineering question a view answers**, not an inventory of drawing libraries.
 
-Use \`docs/v3/ENGINEERING-VISUALIZATION.md\` as the technical visualization contract, but **remap its chapter references to the approved sequence**. No general presentation training or additional Ch14 in this site.
+Use `docs/v3/ENGINEERING-VISUALIZATION.md` as the technical visualization contract, but **remap its chapter references to the approved sequence**. No general presentation training or additional Ch14 in this site.
 
 ## 5. Proposed checks for Chapters 01–04 before drafting 05–13
 
@@ -101,10 +101,10 @@ Use \`docs/v3/ENGINEERING-VISUALIZATION.md\` as the technical visualization cont
 ## 6. Site design / implementation readiness (not implementation authorization)
 
 - **Current style:** dark sans-serif reader shell, gold engineering environment and teal product system when used semantically; strong prose column; one early consequential visual.
-- **Chapter 1 pilot:** \`/learn/v2/01-new-engineering-paradigm/\` is a published reader preview, not a complete final v3 course release.
-- **Component dependency:** \`site/src/layouts/ChapterLayout.astro\` currently hardcodes Chapter 1 "on this page" anchors. Make navigation data-driven before reusing layout for later chapters.
+- **Chapter 1 pilot:** `/learn/v2/01-new-engineering-paradigm/` is a published reader preview, not a complete final v3 course release.
+- **Component dependency:** `site/src/layouts/ChapterLayout.astro` currently hardcodes Chapter 1 "on this page" anchors. Make navigation data-driven before reusing layout for later chapters.
 - **Registry dependency:** course navigation currently imports the v2 curriculum; treat the approved current 13-chapter map as the primary planning authority, with a single versioned presentation registry at migration.
-- **Non-publishing status:** this PR must not modify \`site/src/\`, \`research/\` runtime inputs, historic manuscript text, release workflows, or published pages.
+- **Non-publishing status:** this PR must not modify `site/src/`, `research/` runtime inputs, historic manuscript text, release workflows, or published pages.
 
 ## 7. Decisions for subsequent review
 
