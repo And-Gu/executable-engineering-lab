@@ -45,20 +45,23 @@ These manuscripts were **editorially reviewed and approved as written**, before 
 
 **Plan approval is not manuscript approval.** No new V3 Chapters 02–13 have been approved as complete manuscripts by this current-plan alignment.
 
-## Proposed update material
+## Owner-confirmed reference and proposed editorial material
 
-- [Alignment and gap register — current plan](../EDITORIAL-ALIGNMENT-2026-11-15.md): discrepancy resolution, 20 identified content/visualization gaps, presentation split, Chapters 01–04 review questions and boundaries.
+- [Four-way intersection reference](../REFERENCE-INTERSECTION.md): owner-confirmed **single recurring V3 teaching case**, scope and proposed object IDs. Published monitoring and DMS V0 remain separate historical assets.
+- [Chapters 01–04 editorial review](../CHAPTERS-01-04-EDITORIAL-REVIEW.md): substantive brief-level reconciliation against current site direction, transitions, visuals and previously approved source prose.
+- [Current proposed Chapter 01–04 briefs](../../../chapters/01-the-new-engineering-paradigm.md), with matching `chapters/02-...`–`chapters/04-...`: **editorial proposals**, not full approved manuscripts or published pages.
+- [Alignment and gap register — current plan](../EDITORIAL-ALIGNMENT-2026-11-15.md): resolved example choice, 20 identified content/visualization gaps, presentation split, remaining manuscript review.
 - [Current-plan briefs for Chapters 05–13](../CHAPTER-BRIEFS-05-13-2026-11-15.md): proposed chapter questions, distinct outcomes, learning sequences, example boundaries, primary visual and editorial acceptance criteria.
 - [Site direction](../../SITE-DIRECTION.md): product system and engineering environment, greenfield focus, AI/tool distinctions and site goal.
 - [Reading style guide](../../CHAPTER-STYLE-GUIDE.md): first reader preview, visual hierarchy, accessibility and engineering meaning.
-- [Research index](../../../research/INDEX.md): source archive. Its historical chapter links may still use the earlier V3 numbering until the mapping update is merged. Verify original-source claims and quotes before publication.
-- [Technical visualization guide](../../../docs/v3/ENGINEERING-VISUALIZATION.md): purposeful graphics. Historical V02–V06 labels require remapping before implementation.
+- [Research index](../../../research/INDEX.md): source archive. Its proposed current-plan index maps topics to titles; the dated source archive still contains historical numbered quote candidates. Verify original-source claims and quotes before publication.
+- [Technical visualization guide](../../../docs/v3/ENGINEERING-VISUALIZATION.md): purposeful graphics. Source visual IDs are mapped to current chapters in the planning PR; IDs are not chapter numbers.
 
 ## Editorial agent read sequence
 
 1. **Read the current course map** `project/CURRICULUM-MAP.md` first and do **not** infer the current chapter sequence from older V3 manuscript filenames.
-2. Read `project/SITE-DIRECTION.md` and `project/CHAPTER-STYLE-GUIDE.md` for the current reader, purpose and example.
-3. Read this index and the alignment/gap register. For Chapters 05–13 use the current-plan briefs; for 01–04 inspect the preserved older prose as source material **only**.
+2. Read `project/SITE-DIRECTION.md`, `project/CHAPTER-STYLE-GUIDE.md` and **`project/v3/REFERENCE-INTERSECTION.md`** for the reader design, purpose and confirmed reference. The existing published monitoring pilot is historical/preview material until separately replaced.
+3. Read this index, the alignment/gap register and **`project/v3/CHAPTERS-01-04-EDITORIAL-REVIEW.md`**. For current Chapters 01–04 use the updated `chapters/01-...` through `chapters/04-...` proposed briefs and inspect preserved older prose as source material **only**. For current Chapters 05–13 use their current-plan briefs.
 4. Read relevant source research via `research/INDEX.md` and `research/v3/`; verify claims and potential quotations at the original source.
 5. Draft a chapter's distinct learning contribution and proposed visual with an explicit editorial status. Do not assume a passing test or PR implies approval of prose.
 6. Keep review drafts under `project/v3/manuscripts/drafts/` and any reusable reference under `project/` or `docs/`; avoid `site/src/` until **explicit publication authorization**. Existing legacy lessons, V2 Chapter 01 preview and engineering demonstrator remain intact.
