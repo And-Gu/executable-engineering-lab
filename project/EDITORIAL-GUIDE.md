@@ -23,3 +23,11 @@ Prefer: 'The recorded agent run proposes a configuration. An engineer reviews th
 
 ## Writing QA
 Ask: Is the engineering problem visible in the first 150 words? Is jargon explained once? Does a reader gain a new skill or decision capability? Does the example advance? Are limitations precise rather than repetitive? Does the conclusion bridge forward?
+
+## V3 external research and publication boundary
+
+When drafting or revising a v3 chapter, first consult `research/INDEX.md`, the relevant dated background note, and any owner-approved manuscript. Treat research as context, not automatically approved copy. Cite a primary source only after verifying its precise claim or quotation, publication date, sample and applicability. Differentiate standards and peer-reviewed work from vendor claims and practitioner surveys.
+
+Avoid repeated disclaimers: explain limitations only where they materially affect comprehension or a decision, and place detailed treatment in the relevant verification, agent-context or governance chapter. Do not turn a learning chapter into an LLM warning manual.
+
+Research remains in root `research/`; public content belongs under Astro's `site/src/` and requires a separate editorial/publishing decision. Never import or surface background-only notes, candidate quotations or source indexes automatically. Follow `research/README.md` for archival workflow and publication checks.
