@@ -29,10 +29,10 @@ These manuscripts were **editorially reviewed and approved as written**, before 
 
 | Ch | Current title | Editorial manuscript / site status |
 |---|---|---|
-| 01 | The New Engineering Paradigm | Published **reader preview** in dark layout; editorial reconciliation with archived source text pending |
-| 02 | Planning Under Uncertainty | Current v2 brief exists; V3 full manuscript pending |
-| 03 | Engineering Knowledge as Code | Current v2 brief exists; V3 full manuscript pending; mandatory knowledge graph proposal |
-| 04 | Learning Through Models and Prototypes | Current v2 brief exists; V3 full manuscript pending |
+| 01 | The New Engineering Paradigm | Published **older condition-monitoring reader preview** remains intact; **new intersection-based V3 brief and content review drafted**; complete revised manuscript pending |
+| 02 | Planning Under Uncertainty | Updated **intersection-based V3 editorial brief** in `chapters/02-...`; full manuscript pending |
+| 03 | Engineering Knowledge as Code | Updated **intersection-based V3 editorial brief**; full manuscript pending; **mandatory interactive typed knowledge graph** still planned |
+| 04 | Learning Through Models and Prototypes | Updated **intersection-based V3 editorial brief**; full manuscript pending; bounded simulation planned |
 | 05 | Engineering Data: From Measurements to Decisions | Published v2 article exists; V3 adaptation pending |
 | 06 | Spec-Driven Development Without Waterfall | Current v2 brief exists; V3 full manuscript pending |
 | 07 | Directing AI Engineering Agents | Current v2 brief exists; V3 full manuscript pending |
