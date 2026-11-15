@@ -13,7 +13,7 @@
 
 ## Routing by the current approved 13-chapter curriculum
 
-**Owner clarification 2026-11-15:** The chapter sequence and titles in \`project/CURRICULUM-MAP.md\` are approved. This index supersedes an earlier alternative V3 numbering. The source archive's **13 quotation candidates still show their original chapter numbers**; map those quotes by **topic and source**, never by their old numerical labels, and verify exact wording and attribution before use.
+**Owner clarification 2026-11-15:** The chapter sequence and titles in `project/CURRICULUM-MAP.md` are approved. This index supersedes an earlier alternative V3 numbering. The source archive's **13 quotation candidates still show their original chapter numbers**; map those quotes by **topic and source**, never by their old numerical labels, and verify exact wording and attribution before use.
 
 | Current chapter | Search themes and best source types | Older candidate quote/topic to consider |
 |---|---|---|
