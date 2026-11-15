@@ -1,6 +1,6 @@
 # V3 alignment to the current approved 13-chapter curriculum
 
-**Status:** Proposed editorial integration, awaiting owner review; no chapter manuscript, runtime implementation or site publication is authorized  
+**Status:** Editorial review updated for owner-confirmed traffic-intersection reference; chapter order is approved, full revised manuscripts are pending; no runtime/site publication authorized  
 **Date:** 2026-11-15  
 **Reviewed starting point:** `project/CURRICULUM-MAP.md` and the published front page / Chapter 1 reader pilot (PR #36). **The user has clarified that the current 13-chapter plan is the reviewed and approved curriculum.**  
 **Master tracker:** [Issue #32](https://github.com/And-Gu/executable-engineering-lab/issues/32)
@@ -41,6 +41,8 @@ The public dark Chapter 1 preview, `The New Engineering Paradigm`, is a live rea
 - [Research index](../../research/INDEX.md): external research and chapter quotation *candidates*; remap to current numbering and verify before publication.
 - [Engineering visualization guide](../../docs/v3/ENGINEERING-VISUALIZATION.md): methods and components; its previous V02–V06 chapter mapping must be revised to current 03–05.
 - [Proposed current-plan briefs for Chapters 05–13](CHAPTER-BRIEFS-05-13-2026-11-15.md).
+- [Owner-confirmed V3 intersection reference](REFERENCE-INTERSECTION.md): single recurring product example; published monitoring preview remains until separately reviewed.
+- [Detailed editorial review for current Chapters 01–04](CHAPTERS-01-04-EDITORIAL-REVIEW.md): reuse mapping, core questions, transitions, visual requirements and open manuscript work.
 
 **Scope:** Planning/editorial review only. No automatic migration of old URLs, no rewrite of approved source text, no new engineering authoring application, agent runner, Codespaces exercise, or site publication. Root `project/` and `research/` are non-published on the Astro website, although GitHub itself is public.
 
@@ -65,13 +67,13 @@ The public dark Chapter 1 preview, `The New Engineering Paradigm`, is a live rea
 | G15 | Presentation as explorable knowledge vs engineering-specific visualization | **Split agreed**, but no cross-link/educational guidance in chapter map | **03–05**, **13** | Doc-as-Code Lab: storytelling, HTML/reveal.js, mindmaps, dashboards, presentations; EEL: SysML, graphs, model/state/data/impact visualizations. Avoid a 14th chapter |
 | G16 | Prompt-based interaction, generated interfaces and coexistence with specialized GUIs | Fragmentary | **13** with links to 06–08 | Show **intent → agent/tool execution → visual review**. Not "all GUIs disappear" |
 | G17 | Research foundation and a source-checked quotation candidate for every chapter | Research archived and indexed to **old alternative chapter numbering** | All 01–13 | Remap `research/INDEX.md`, verify quotes at primary sources and attach few relevant further readings |
-| G18 | Two reference examples conflict: public equipment monitoring vs planned traffic intersection | **Open editorial decision** | 01–13 reference strategy | Prefer a single main red thread, with limited complementary example; no replacement of public pilot without review |
+| G18 | Two reference examples conflict: public equipment monitoring vs planned traffic intersection | **DECIDED: Four-way traffic intersection is sole recurring V3 product example** | **01–13; see [reference contract](REFERENCE-INTERSECTION.md)** | Do not create a second V3 monitoring case; leave published V2 monitoring pilot and V0 lab untouched until separately authorized |
 | G19 | Consistent v3 navigation and source authority | `CourseNavigation.astro` uses current V2 data; `ChapterLayout.astro` hardcodes Ch01 anchors | Future implementation of 02–13 | One current curriculum registry; per-chapter anchor metadata; keep published legacy routes and current reader pilot intact |
 | G20 | Educational content, not a new engineering tool | Earlier proposals sometimes assumed an agent coding lab | All visual/interactive specs | Purposeful diagrams/simulations only; no mandatory reader coding, live agent or engineering IDE |
 
 ### Highest-value updates for the next writing phase
 
-**First: 01–04 alignment check** with current chapter titles, model/example choice, visual conventions and transitions. Preserve their earlier accepted text as source material; extract relevant passages rather than transplant entire chapters under incorrect headings.
+**First: 01–04 brief-level alignment now documented** in [the detailed review](CHAPTERS-01-04-EDITORIAL-REVIEW.md) and updated proposed briefs under `chapters/01-...` to `chapters/04-...`. Full revised manuscripts remain unapproved. Earlier alternative-structure source prose is preserved untouched.
 
 **Second: Chapters 05–13 briefs** under the **current approved** numbers and educational contributions; use [the refreshed briefs](CHAPTER-BRIEFS-05-13-2026-11-15.md).
 
@@ -87,7 +89,7 @@ Two related but distinct tutorials:
 
 Use `docs/v3/ENGINEERING-VISUALIZATION.md` as the technical visualization contract, but **remap its chapter references to the approved sequence**. No general presentation training or additional Ch14 in this site.
 
-## 5. Proposed checks for Chapters 01–04 before drafting 05–13
+## 5. Chapters 01–04 reviewed at brief level — revised full manuscripts remain pending
 
 | Ch | Current title | Existing new-site material | Specific review question |
 |---|---|---|---|
@@ -96,7 +98,7 @@ Use `docs/v3/ENGINEERING-VISUALIZATION.md` as the technical visualization contra
 | 03 | Engineering Knowledge as Code | V2 brief, approved alternative text about info models and digital threads | Merge useful explanations of information models, spec-to-engineering, digital threads/knowledge graph into coherent distinct learning outcome; preserve mandatory interactive graph requirement |
 | 04 | Learning Through Models and Prototypes | V2 brief, approved alternative text about executable models | Add model fidelity, behavioral/state models, optional controlled simulation, two engineering cadences and model limitations; avoid being a traffic-controller coding tutorial |
 
-**Only after review** should new full manuscripts be drafted for Ch 02–04 or any existing approved passages be modified.
+**The Chapter 01–04 brief review is recorded in [CHAPTERS-01-04-EDITORIAL-REVIEW.md](CHAPTERS-01-04-EDITORIAL-REVIEW.md).** Preparing complete *current-title* manuscripts remains the next editorial step, subject to owner review. Do not overwrite earlier approved source prose or silently change the published reader pilot.
 
 ## 6. Site design / implementation readiness (not implementation authorization)
 
@@ -108,8 +110,8 @@ Use `docs/v3/ENGINEERING-VISUALIZATION.md` as the technical visualization contra
 
 ## 7. Decisions for subsequent review
 
-1. Which primary example to retain as the common reference across 13 chapters (traffic signals vs equipment monitoring), and which is supporting? Previous dialogue favored traffic signals for simple system models, public Chapter 1 uses monitoring.
-2. Which **parts** of the early approved prose should be incorporated into each **current** Chapter 01–04, without declaring older titles/numbering canonical?
+1. **DECIDED by owner:** The fictional four-way traffic intersection is the single recurring V3 example. See [REFERENCE-INTERSECTION.md](REFERENCE-INTERSECTION.md). The published monitoring Chapter 01 preview remains as an earlier pilot until separately approved migration.
+2. **Reviewed at brief level:** The proposed source reuse mapping is in [the Chapter 01–04 review](CHAPTERS-01-04-EDITORIAL-REVIEW.md). Final wording and full replacement manuscripts still await owner review.
 3. Which visualizations are essential to teach the chapter versus optional depth?
 4. Which chapter quote candidates can be verified and approved from original sources? (Do not treat research archive as verified quotations.)
 
