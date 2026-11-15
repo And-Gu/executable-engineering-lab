@@ -56,12 +56,12 @@ These manuscripts were **editorially reviewed and approved as written**, before 
 
 ## Editorial agent read sequence
 
-1. **Read the current course map** \`project/CURRICULUM-MAP.md\` first and do **not** infer the current chapter sequence from older V3 manuscript filenames.
-2. Read \`project/SITE-DIRECTION.md\` and \`project/CHAPTER-STYLE-GUIDE.md\` for the current reader, purpose and example.
+1. **Read the current course map** `project/CURRICULUM-MAP.md` first and do **not** infer the current chapter sequence from older V3 manuscript filenames.
+2. Read `project/SITE-DIRECTION.md` and `project/CHAPTER-STYLE-GUIDE.md` for the current reader, purpose and example.
 3. Read this index and the alignment/gap register. For Chapters 05–13 use the current-plan briefs; for 01–04 inspect the preserved older prose as source material **only**.
-4. Read relevant source research via \`research/INDEX.md\` and \`research/v3/\`; verify claims and potential quotations at the original source.
+4. Read relevant source research via `research/INDEX.md` and `research/v3/`; verify claims and potential quotations at the original source.
 5. Draft a chapter's distinct learning contribution and proposed visual with an explicit editorial status. Do not assume a passing test or PR implies approval of prose.
-6. Keep review drafts under \`project/v3/manuscripts/drafts/\` and any reusable reference under \`project/\` or \`docs/\`; avoid \`site/src/\` until **explicit publication authorization**. Existing legacy lessons, V2 Chapter 01 preview and engineering demonstrator remain intact.
+6. Keep review drafts under `project/v3/manuscripts/drafts/` and any reusable reference under `project/` or `docs/`; avoid `site/src/` until **explicit publication authorization**. Existing legacy lessons, V2 Chapter 01 preview and engineering demonstrator remain intact.
 7. Preserve the editorial rule: avoid repetitive caveats, provide only meaningful engineering qualifications.
 
 **This is a manual, deterministic agent index, not a semantic search database.** These GitHub files are visible to the public but are not automatically published as Astro website pages.
