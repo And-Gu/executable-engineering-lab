@@ -81,3 +81,11 @@ Review Chapter 1 for these qualities before applying the layout to other chapter
 ## Publication authorization — 15 November 2026
 
 After the session changes were committed, the owner explicitly requested publication. Publish the reviewed front page, Learn navigation and Chapter 1 reader preview while retaining its editorial preview status. This does not approve the remaining chapter migrations or publication of the separate v3 manuscripts and research archive.
+
+## V3 course reference decision — 15 November 2026
+
+The owner confirmed that the **four-way traffic intersection** is the **single recurring system example** for the current owner-approved 13-chapter V3 curriculum in [CURRICULUM-MAP.md](CURRICULUM-MAP.md). Read [the reference contract](v3/REFERENCE-INTERSECTION.md) and [the first four-chapter editorial review](v3/CHAPTERS-01-04-EDITORIAL-REVIEW.md) before writing further V3 prose.
+
+**This supersedes the example choice for future V3 chapter content only.** The already published Chapter 01 **reader preview** and front-page example currently use a conceptual condition-monitoring device; they remain as published historical/current site content until a separately reviewed, explicitly authorized rewrite/deployment. The original DMS V0 engineering demonstrator and its checks also remain unchanged. Do **not** use the monitoring vignette as a second, parallel V3 instructional product story.
+
+Keep the site's approved argument, audience, dark reader visual identity, two co-evolving systems, software-driven engineering and AI distinctions. Use the same intersection to show a greenfield idea evolving through information models, experimentation, data, specification, agent work, integration, evidence, delivery and later changes. The illustrative teaching scenario is **not** a real traffic engineering design, deployed controller or safety qualification.
