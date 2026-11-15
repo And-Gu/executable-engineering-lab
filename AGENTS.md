@@ -35,3 +35,11 @@ The current v2 proposal inserts Chapter 05, *Engineering Data: From Measurements
 **Do not automatically publish or materially rewrite approved chapters.** These files are intentionally outside Astro's `site/src/`. Preserve all existing published legacy routes and functionality. Any content migration, diagram, interactive knowledge graph, traffic simulation or publication work requires separately approved scope and review. Read v3 [master issue #32](https://github.com/And-Gu/executable-engineering-lab/issues/32) for ongoing decisions.
 
 For external references and quotations, use `research/INDEX.md` once the separate research-archive PR is merged; verify sources before publication. Agent instructions and source archives are planning context, not permission to publish.
+
+## V3 research sources and unpublished background (agent entry point)
+
+**Before drafting, revising, or reviewing any v3 chapter, read [research/INDEX.md](research/INDEX.md) and the relevant item in [research/v3/](research/v3/).** The index maps all 13 chapters to relevant research, source types, and candidate quotes. Also consult the approved manuscript and [issue #32](https://github.com/And-Gu/executable-engineering-lab/issues/32) for actual editorial decisions. A background research note is not approved chapter prose and does not authorize changes to product code or the public site.
+
+The root `research/` folder is a **non-published archive**: it is outside Astro's `site/src/` and static assets, and must never be imported into a public route or copied to public assets without explicit editorial approval. GitHub itself is public, so do not put confidential material in this folder. Register every new source note in `research/INDEX.md` (chapter mapping, topic, date, verification status, source URL). Follow `research/README.md` when updating the archive.
+
+Before citing an archived claim or chapter quote in published prose, open the authoritative primary source and verify precise text, context, date and scope. Distinguish peer-reviewed results, standards, surveys, and vendor/project positioning. Do not auto-promote quotations or repeat generic AI caveats. Run `npm run build` and `npm run research:check` on any PR affecting research or publication; this checks for accidental leakage into the generated site.
