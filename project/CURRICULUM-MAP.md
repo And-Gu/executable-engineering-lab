@@ -1,5 +1,7 @@
-# Curriculum map — 13 chapters, four parts (v2.0)
-Status: proposed. Routes below are targets; **do not assume they exist**.
+# Current approved curriculum map — 13 chapters, four parts
+**V3 editorial authority:** Chapter titles, order and four-part grouping reviewed and approved by the owner on 2026-11-15. **Full new V3 manuscript wording and implementation are not thereby approved.** The public website still has its original lessons, a V2 Chapter 01 reader preview and a separate V2 data article; do not assume the remaining V3 routes exist.
+
+**Owner-confirmed reference for the new V3 course:** The fictional **four-way traffic intersection** across Chapters 01–13. See [reference contract](v3/REFERENCE-INTERSECTION.md) and [Chapters 01–04 editorial review](v3/CHAPTERS-01-04-EDITORIAL-REVIEW.md). The published earlier condition-monitoring preview and original DMS V0 example remain unchanged until separately approved migration.
 
 | Part | # | Chapter | Distinct learning gain | Demonstration |
 |---|---:|---|---|---|
@@ -50,7 +52,7 @@ The systems scope follows [INCOSE's systems engineering definition](https://www.
 
 ## Narrative controls
 - Planning, spec development, agents and review are core; do not subordinate them to V0 geometric explanation.
-- Keep a reusable illustrative DMS storyline, but each chapter must move a real engineering question forward.
+- Keep **one illustrative traffic-intersection V3 storyline**, but each chapter must move a new and specific engineering question forward. The published DMS V0 remains a legacy teaching system, not the recurring V3 product.
 - Show feedback upstream to planning, hypotheses and interface decisions.
 - Keep long-lead electronics/mechanical/physical-test cadences visible.
 - Link existing V0 topics to optional sidebars/references where main narrative would become repetitive.
