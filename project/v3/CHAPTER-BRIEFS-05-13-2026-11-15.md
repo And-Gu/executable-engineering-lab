@@ -27,7 +27,7 @@ Cross-project division: **Document-as-Code Lab** owns audience-facing storytelli
 
 **Reused source:** The existing published **v2 Engineering Data** article, its calculated DMS example and source Markdown, as material to adapt, not silently duplicate.
 
-**Primary view:** **V05 data investigation** with a raw/curated/enriched/derived representation, linked chart and table, explicit source/version status. More useful than a decorative dashboard.
+**Primary view:** **V06 data investigation** with a raw/curated/enriched/derived representation, linked chart and table, explicit source/version status. More useful than a decorative dashboard.
 
 **Research:** FAIR principles, data quality/annotation literature, appropriate standards. Quotes are candidates pending primary-source checking.
 
@@ -47,7 +47,7 @@ Cross-project division: **Document-as-Code Lab** owns audience-facing storytelli
 
 **Two-system emphasis:** Choosing a product increment may require new simulations, interfaces, test methods, evaluation data, and task context in the engineering environment.
 
-**Primary view:** **V06 progressive-specification explorer**: concept and uncertainty state → scoped change contract → new product definition + new engineering-method requirement. One example decision record and a short textual equivalent. No source editor or coding exercise.
+**Primary view:** **V05 progressive-specification explorer**: concept and uncertainty state → scoped change contract → new product definition + new engineering-method requirement. One example decision record and a short textual equivalent. No source editor or coding exercise.
 
 **Research:** OpenSpec, GitHub Spec Kit, progressive specification, engineering decision/ADR approaches.
 
