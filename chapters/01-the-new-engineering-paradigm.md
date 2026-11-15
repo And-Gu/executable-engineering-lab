@@ -1,15 +1,26 @@
 # Chapter 01 — The New Engineering Paradigm
-Status: v2 implementation brief (proposed)
+Status: owner-authorized reader pilot, 15 November 2026; local preview before wider adoption or publication
 Part: I — Engineering in the Age of AI
 
 ## The one question
-Why does faster AI execution require a different engineering environment?
+How do software-driven workflows and AI agents change the way we develop systems?
 
 ## What the reader must gain
-Explain how digital threads and agents reinforce each other; identify the production-versus-review bottleneck; recognize discipline-specific cadences.
+Distinguish systems engineering, executable engineering, software-driven workflows, AI assistance and agentic work. Explain how the product system and engineering environment develop together; distinguish AI used in engineering from AI in products; recognize discipline-specific feedback and release cadences.
+
+## Terminology introduced here
+Use the shared definitions and introduction sequence in [the curriculum map](../project/CURRICULUM-MAP.md#terminology-and-introduction-sequence).
+
+- Establish systems engineering as the scope across software, electronics, physical design, people and use.
+- Introduce executable engineering and software-driven workflows through a model, experiment or repeatable check in the opening situation.
+- Explain an AI agent as carrying out a defined task with tools, inspecting results and adapting the next step. Introduce agentic engineering as this way of working within the broader category of AI-assisted engineering.
+- Distinguish AI used to develop the product from AI contributing to the product's behavior. Neither product AI nor all automation is necessarily agentic.
+- Reserve large language model (LLM) detail for Chapter 07 unless a specific example requires it earlier; spell out the term on first use.
+
+Introduce “We build the machine that builds the machine” through the product system and the engineering environment. Make the people, methods, models, tools and workflows in the second system explicit.
 
 ## Opening engineering situation
-An operations team proposes a distributed monitoring capability. Compare a document/tool-silo workflow with connected information and bounded agent assistance.
+An operations team wants to detect developing equipment faults. The intended use, sensor mounting, signal interpretation and operator response are still open questions. Explain how product questions shape the engineering environment through a clearly conceptual monitoring example.
 
 ## Narrative arc
 1. Start with a concrete decision or unexpected constraint, not a definition.
@@ -20,7 +31,13 @@ An operations team proposes a distributed monitoring capability. Compare a docum
 6. Connect the decision to the next engineering question.
 
 ## Primary learning experience
-Side-by-side interactive lifecycle maps with visible handoff delays and review points; no fabricated productivity numbers.
+A two-lane visual connects the product system to the engineering environment through questions and findings. Expand three illustrative findings—mounting behavior, a classifier's missed condition and changed firmware sampling—to inspect the next product work and the next improvement to the engineering environment. A separate comparison distinguishes AI in engineering from AI in products; a cadence schematic shows different feedback loops without invented durations. A reasoning check asks what passing software checks establish about physical mounting.
+
+## Reader layout and route
+
+The complete pilot is at `/learn/v2/01-new-engineering-paradigm/`, with a dark sans-serif reading layout, grouped course navigation, compact chapter information and contextual deeper links. Preserve `/learn/01-engineering-intent/` and all original fragments. Chapter 2's bridge points to the planned learning map until a complete reader exists. Home and Learn link to the pilot as a preview.
+
+The pilot deliberately omits the six-tile At a Glance panel under the updated [site direction](../project/SITE-DIRECTION.md). Other chapter content and layouts await review.
 
 ## Reuse and migration from v1
 Existing homepage framing and Ch 1 intent explanation; retain Ch 1 V0 lab as legacy/related resource.

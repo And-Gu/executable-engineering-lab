@@ -1,0 +1,45 @@
+---
+import CourseNavigation from '../components/CourseNavigation.astro';
+import '../styles/chapter-reading.css';
+interface Props { title: string; description: string; number: number }
+const { title, description, number } = Astro.props;
+const base = import.meta.env.BASE_URL;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#0d1011" />
+    <title>{title} · Executable Engineering Lab</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to chapter</a>
+    <header class="reading-shell site-header">
+      <a class="brand" href={base}>Executable Engineering Lab</a>
+      <nav aria-label="Main navigation"><a href={`${base}learn/`}>Learn</a><a href={`${base}lab/`}>Lab</a><a href={`${base}reference/`}>Reference</a><a href="https://github.com/And-Gu/executable-engineering-lab">Source</a></nav>
+    </header>
+    <div class="reading-shell reading-grid">
+      <aside class="course-sidebar">
+        <CourseNavigation current={number} />
+        <nav class="on-this-page" aria-label="In this chapter">
+          <p class="eyebrow">In this chapter</p>
+          <a href="#two-systems">Two systems, one effort</a>
+          <a href="#executable-work">Put the models to work</a>
+          <a href="#ai-roles">Two roles for AI</a>
+          <a href="#engineering-pace">Different cadences</a>
+          <a href="#next-question">What to investigate next</a>
+        </nav>
+      </aside>
+      <main id="main" tabindex="-1">
+        <details class="mobile-course"><summary>Course navigation · Chapter {String(number).padStart(2, '0')}</summary><CourseNavigation current={number} /></details>
+        <slot />
+      </main>
+    </div>
+    <footer class="reading-shell site-footer"><a href={`${base}learn/`}>Explore the learning path</a><span>Executable Engineering Lab · Chapter reader preview</span></footer>
+  </body>
+</html>

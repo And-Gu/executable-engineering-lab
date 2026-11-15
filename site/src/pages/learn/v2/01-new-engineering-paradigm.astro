@@ -1,0 +1,145 @@
+---
+import ChapterLayout from '../../../layouts/ChapterLayout.astro';
+const base = import.meta.env.BASE_URL;
+---
+<ChapterLayout title="The New Engineering Paradigm" number={1} description="Develop the product and the engineering environment together. Explore executable models, AI agents and different engineering cadences through a systems example.">
+  <article>
+    <header class="chapter-opening">
+      <p class="eyebrow">Part I · Engineering in the Age of AI / Chapter 01</p>
+      <h1>The New Engineering Paradigm</h1>
+      <p class="standfirst">Software and AI change the systems we can build—and the work of building them. How do we turn that new pace into useful engineering progress?</p>
+      <details class="chapter-info">
+        <summary>About this chapter · Reader preview</summary>
+        <p>This pilot applies the revised site direction. The monitoring example and agent workflow are conceptual, not a simulation or a recorded agent run. The original lessons and working coverage lab remain available.</p>
+        <p>Content and layout revised 15 November 2026. <a href="https://github.com/And-Gu/executable-engineering-lab">Repository and revision history</a> · <a href={`${base}learn/01-engineering-intent/`}>Original Chapter 1</a></p>
+      </details>
+    </header>
+
+    <div class="chapter-body">
+      <p>An operations team wants to detect developing equipment faults before they interrupt production. A small monitoring device might help. But which faults matter, where can the sensor be mounted, and what would an operator do with its warning? The product is still a set of questions.</p>
+      <p>The team can model signal behavior, prototype an enclosure, try an AI classifier and test an early software version. Each activity can move quickly. The harder task is deciding what those results mean for the system—and what to investigate next.</p>
+
+      <section id="two-systems" aria-labelledby="two-systems-title">
+        <h2 id="two-systems-title">Two systems develop together.</h2>
+        <figure class="diagram" aria-labelledby="diagram-title" aria-describedby="diagram-caption">
+          <div class="figure-heading"><p class="eyebrow" id="diagram-title">One product question. Two kinds of engineering work.</p><small>Conceptual example</small></div>
+          <p class="diagram-question">Can we recognize a useful fault signal on the equipment as it is actually installed?</p>
+          <div class="system-lane">
+            <h3>The product system</h3>
+            <ol>
+              <li>Sensor + mounting<small>Capture the physical signal</small></li>
+              <li>Software + product AI<small>Interpret what was observed</small></li>
+              <li>Operator + response<small>Act on a useful warning</small></li>
+            </ol>
+          </div>
+          <p class="exchange"><span>↓ Product questions shape the experiments</span><span>↑ Findings guide the design</span></p>
+          <div class="system-lane environment-lane">
+            <h3>The engineering environment</h3>
+            <ol>
+              <li>Models + test fixtures<small>Represent conditions and alternatives</small></li>
+              <li>Tools + AI agents<small>Run analyses and inspect results</small></li>
+              <li>People + methods<small>Evaluate findings and choose next work</small></li>
+            </ol>
+          </div>
+          <figcaption id="diagram-caption">The product has to work in use. The engineering environment helps the team discover what works, investigate what does not, and carry that learning into the next design.</figcaption>
+        </figure>
+        <p>This is a <strong>systems engineering</strong> problem: develop the whole system across disciplines, people and operating conditions. Sensor electronics, mechanical installation, software and the operator's task all affect whether a warning is useful.</p>
+        <p>It is also work on the engineering environment. A new mounting concept may require a better model or a different test fixture. Once the team can repeat that experiment, the next comparison becomes easier to make and explain.</p>
+        <p class="principle">We develop, operate and improve the engineering environment alongside the product.</p>
+
+        <h3>Follow a finding into the next piece of work.</h3>
+        <p class="concept-note">Illustrative situations · Expand a finding to see its consequences.</p>
+        <details class="finding" name="engineering-finding" open>
+          <summary><small>01 / PHYSICAL BEHAVIOR</small>The signal changes with the mounting.</summary>
+          <div class="finding-grid">
+            <div><h3>Develop the product</h3><p>Compare mounting options before committing to the enclosure. Check whether the signal remains useful under the intended installation conditions.</p></div>
+            <div><h3>Develop how we engineer it</h3><p>Revise the model's mounting assumptions and adapt the test fixture. Keep the signal-processing workflow so the next experiment can reuse it.</p></div>
+          </div>
+          <p class="finding-insight">The useful gain: the next design comparison starts from what the team has learned about the physical system.</p>
+        </details>
+        <details class="finding" name="engineering-finding">
+          <summary><small>02 / PRODUCT AI</small>The classifier misses an unfamiliar operating condition.</summary>
+          <div class="finding-grid">
+            <div><h3>Develop the product</h3><p>Investigate the missed condition and the consequence for the operator. Revisit the classifier, sensing approach or intended range of use.</p></div>
+            <div><h3>Develop how we engineer it</h3><p>Add representative cases to a separate evaluation set. Compare future candidates against these cases and the conditions already understood.</p></div>
+          </div>
+          <p class="finding-insight">The useful gain: an observed weakness becomes a repeatable evaluation for subsequent candidates.</p>
+        </details>
+        <details class="finding" name="engineering-finding">
+          <summary><small>03 / SOFTWARE DELIVERY</small>A firmware change alters sampling behavior.</summary>
+          <div class="finding-grid">
+            <div><h3>Develop the product</h3><p>Evaluate the changed behavior against the current electronics and sensing assumptions before releasing the increment.</p></div>
+            <div><h3>Develop how we engineer it</h3><p>Add a repeatable interface check and retain the tested configuration. Run the check on later changes and schedule physical tests where the change requires them.</p></div>
+          </div>
+          <p class="finding-insight">The useful gain: frequent software delivery gets earlier feedback about a system dependency.</p>
+        </details>
+      </section>
+
+      <section id="executable-work" aria-labelledby="executable-title">
+        <h2 id="executable-title">Put the models to work.</h2>
+        <p>A model is more useful to the investigation when the team can change an input, run it and compare the result. A test becomes more useful when it can run again after a change. A workflow becomes more useful when the next person can use it without reconstructing every step.</p>
+        <p>We use <strong>executable engineering</strong> for this approach: models, analyses, tests and parts of the engineering workflow can be run, evaluated and improved. The name describes a way of working; it does not make every engineering judgment executable.</p>
+        <p><strong>Software-driven workflows</strong> carry this beyond software development. A mechanical engineer can run a parameter study. An electronics engineer can evaluate a signal chain. A test engineer can process measurements and compare configurations. Repeatable execution makes another investigation practical while preserving enough context to interpret it.</p>
+        <p>A <strong>digital thread</strong> maintains the relationships that matter: this model uses that assumption; this experiment tests that configuration; this finding informs that decision. The benefit is that the next investigation can build on the reasoning, rather than rediscovering which result belongs to which design.</p>
+      </section>
+
+      <section id="ai-roles" aria-labelledby="ai-title">
+        <h2 id="ai-title">AI changes the work and the product.</h2>
+        <p><strong>AI-assisted engineering</strong> covers AI used in engineering work, from helping an engineer examine an idea to carrying out a delegated task. An <strong>AI agent</strong> can use tools, inspect their results and adapt its next steps toward a defined objective. We call this way of working <strong>agentic engineering</strong>. Engineers still frame the task and evaluate the work.</p>
+        <div class="ai-comparison">
+          <div>
+            <p class="eyebrow">AI in the engineering environment</p>
+            <h3>Investigate a design question.</h3>
+            <p>An agent could implement alternative signal-processing models, run them against specified cases, inspect the outputs and revise a candidate. The engineer needs to examine the model, comparison and remaining uncertainty.</p>
+          </div>
+          <div>
+            <p class="eyebrow">AI in the product</p>
+            <h3>Provide a product capability.</h3>
+            <p>A classifier could help the monitoring device distinguish a fault signal from normal operation. Its usefulness depends on the data, equipment conditions and consequences of a missed or false warning.</p>
+          </div>
+        </div>
+        <p>These are different uses of AI. The classifier need not be an agent or use a <strong>large language model (LLM)</strong>. An LLM is a model technology behind many assistants and agents; it is one part of the surrounding tools and workflow. A fixed script that reruns tests is automation, even if an AI helped write it.</p>
+        <p>Useful agent work also changes the team's preparation. Models need usable inputs. Tools need clear interfaces. Results need context. Making those available lets people and agents investigate with the same engineering resources, while keeping the interpretation open to review.</p>
+      </section>
+
+      <section id="engineering-pace" aria-labelledby="pace-title">
+        <h2 id="pace-title">Increase the pace. Respect the system.</h2>
+        <p>Faster engineering means shortening the time between a question, an experiment and a useful decision. It also means delivering smaller improvements more frequently when the system can support them. Software releases, model revisions and physical prototypes contribute different kinds of feedback.</p>
+        <figure class="cadences" aria-labelledby="cadence-caption">
+          <div class="cadence"><strong>Software</strong><span>Change <i>→</i> check <i>→</i> release <i>→</i> observe</span></div>
+          <div class="cadence"><strong>Models</strong><span>Revise assumptions <i>→</i> run alternatives <i>→</i> compare</span></div>
+          <div class="cadence"><strong>Electronics + mechanics</strong><span>Design <i>→</i> fabricate <i>→</i> integrate <i>→</i> test</span></div>
+          <div class="cadence"><strong>System in use</strong><span>Observe behavior <i>→</i> evaluate usefulness <i>→</i> revise intent</span></div>
+          <figcaption id="cadence-caption">Different feedback cycles, not a common release clock. This schematic assigns no durations.</figcaption>
+        </figure>
+        <p>Testing and evaluation belong inside these loops. Verification asks whether specified expectations are met; validation investigates whether the system is suitable for its intended use. Frequent software checks support delivery, while physical behavior and use still need relevant evidence.</p>
+        <p>This changes how teams organize and follow the work. Alongside completed tasks, ask which behavior has been demonstrated, which uncertainty remains and which dependency is holding up the next decision. A failed prototype can advance understanding. More generated code does not, by itself, establish product maturity.</p>
+        <details class="reasoning-check">
+          <summary>A software release passes every automated check. What have we learned about the mounting?</summary>
+          <p>Only what those checks actually evaluate. If they do not represent mounting behavior, they provide no new evidence about it. Use their results to advance the software work, then identify the model or physical experiment needed for the mounting question.</p>
+        </details>
+      </section>
+
+      <section id="next-question" aria-labelledby="next-title">
+        <p class="eyebrow">The engineering takeaway</p>
+        <h2 id="next-title">We build the machine that builds the machine.</h2>
+        <p>The second machine is the people, methods, models, tools and workflows that make engineering possible. Develop it through real product questions. Reuse what already works, add what the next investigation needs, and improve the environment as the team learns.</p>
+        <p>The monitoring team now has several possible next steps: understand the mounting, improve the classifier, or test what an operator needs. Which uncertainty deserves attention first—and which work is ready for commitment? That is the question for Chapter 2, <strong>Planning Under Uncertainty</strong>.</p>
+      </section>
+
+      <section class="sources" aria-labelledby="further-title">
+        <h3 id="further-title">Inspect an example or go deeper</h3>
+        <ul>
+          <li><a href={`${base}lab/`}>Run the existing coverage model</a> — a browser-based example of inputs, repeatable calculation and a bounded conclusion.</li>
+          <li><a href="https://www.incose.org/about-systems-engineering/">INCOSE: systems engineering</a> — the interdisciplinary scope and whole-system perspective.</li>
+          <li><a href="https://www.anthropic.com/research/building-effective-agents">Anthropic: workflows and agents</a> — the distinction between predefined steps and agent-directed tool use.</li>
+        </ul>
+        <p>Executable engineering is this tutorial's working description. The monitoring situations illustrate an approach; they are not measured product results or evidence of a running agent.</p>
+      </section>
+    </div>
+    <nav class="chapter-next" aria-label="Chapter navigation">
+      <div><small>START HERE</small><a href={base}>← The site’s central idea</a></div>
+      <div><small>NEXT · CHAPTER 02 IS PLANNED</small><a href={`${base}learn/#part-1`}>Planning Under Uncertainty →</a></div>
+    </nav>
+  </article>
+</ChapterLayout>

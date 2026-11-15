@@ -1,34 +1,287 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import { chapters, v2Chapters } from '../data/chapters';
-import { v2Parts } from '../data/v2-curriculum';
-const base = import.meta.env.BASE_URL;
+import HomeLayout from '../layouts/HomeLayout.astro';
+import { chapters, chapterPreviews, v2Chapters } from '../data/chapters';
 
+const base = import.meta.env.BASE_URL;
+const featuredPaths: ReadonlySet<string> = new Set([
+  '04-executable-models',
+  '05-experimentation',
+  '07-agentic-engineering',
+  '09-continuous-engineering',
+]);
+const featuredChapters = chapters.filter(chapter => featuredPaths.has(chapter.path));
 ---
-<Layout title="Engineering at the Speed of AI">
-  <p class="eyebrow">Executable Engineering Lab · A practical learning environment</p>
-  <h1>Engineering at the Speed of AI.</h1>
-  <p class="lead">Digital Engineering connects knowledge across disciplines. AI agents can accelerate exploration and implementation. The challenge is to use both without losing control of engineering decisions, architecture, or evidence.</p>
-  <p>Follow a fictional Distributed Monitoring System from uncertain intent toward progressively more informed engineering decisions. The planned curriculum will explore how software, electronics, mechanical design, integration and verification contribute at different speeds.</p>
-  <p><strong>Our approach:</strong> specify what we know, explore what we don't, verify what we build, and preserve what we learn.</p>
-  <p><a href={`${base}learn/`}>Explore the learning path →</a> · <a href={`${base}lab/`}>Open the existing coverage lab</a></p>
-  <p class="status">V2 curriculum in development. The published lessons and working lab below remain the current learning experience.</p>
-  <h2>Four connected questions</h2>
-  <div class="parts">
-    {v2Parts.map(part => <section class="card"><h3>{part.title}</h3><p>{part.message}</p><p class="future"><strong>V2 direction:</strong> {part.chapters.join(' / ')}</p></section>)}
-  </div>
-  <h2 id="published-v2">Published v2 articles</h2>
-  <div class="cards">{v2Chapters.map(chapter => <article class="card"><p class="eyebrow">V2 · Chapter {chapter.number}</p><h3><a href={`${base}learn/${chapter.path}/`}>{chapter.title}</a></h3><p>{chapter.summary}</p></article>)}</div>
-  <h2 id="published-lessons">Explore the published lessons</h2>
-  <p>The original twelve lessons remain available while the new curriculum is developed. They focus on a deliberately limited single-sensor teaching model. The new multidisciplinary demonstrations and recorded agent workflows are <strong>planned, not yet implemented</strong>.</p>
-  <section id="learning-path" class="cards" aria-label="Published lessons">
-    {chapters.map((chapter, index) => <article class="card"><p class="eyebrow">Existing lesson {String(index+1).padStart(2,'0')}</p><h3><a href={`${base}learn/${chapter.path}/`}>{chapter.title}</a></h3><p>{chapter.summary}</p><a href={`${base}learn/${chapter.path}/`}>Read Chapter {index + 1} &rarr;</a></article>)}
+
+<HomeLayout
+  title="Software and AI change what we build. And how we build it"
+  description="Explore how executable models, AI agents and software-driven workflows change systems engineering across software, electronics and physical design."
+>
+  <section class="opening" aria-labelledby="page-title">
+    <div>
+      <p class="kicker">New product development · Systems engineering + AI agents</p>
+      <h1 id="page-title">Software and AI change what we build. <br /><span>And how we build it.</span></h1>
+      <p class="deck">Software and AI are changing both the systems we develop and the way we develop them. Executable models, AI agents and repeatable workflows let teams explore designs, test assumptions and deliver smaller increments. The engineering challenge is to turn that pace into better systems—across software, electronics and physical design.</p>
+      <p class="principle">We develop, operate and improve the engineering environment alongside the product.</p>
+    </div>
+    <aside class="destination" aria-label="The engineering question">
+      <p class="label">The engineering question</p>
+      <p>How should our models, workflows and organisation evolve as software and AI agents change what we can build—and how often we can deliver improvements?</p>
+    </aside>
   </section>
-  <p><a href={`${base}reference/`}>Inspect engineering sources</a> · <a href="https://github.com/And-Gu/executable-engineering-lab">See the repository</a></p>
-</Layout>
+
+  <section class="approach" id="approach" aria-labelledby="approach-title">
+    <div class="section-heading">
+      <h2 id="approach-title">Develop the system. <br />Develop how we engineer it.</h2>
+      <span class="small-label">Conceptual approach</span>
+    </div>
+    <figure aria-labelledby="approach-title" aria-describedby="approach-caption">
+      <div class="connected-systems">
+        <div class="cycle product-cycle">
+          <svg viewBox="0 0 320 260" aria-hidden="true">
+            <defs><marker id="product-arrow" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L8 4L0 8" fill="var(--home-teal)" /></marker></defs>
+            <path class="cycle-arc" d="M143 40C77 40 38 109 77 181" marker-end="url(#product-arrow)" />
+            <path class="cycle-arc" d="M91 200C122 226 190 226 225 200" marker-end="url(#product-arrow)" />
+            <path class="cycle-arc" d="M241 182C275 120 250 48 178 40" marker-end="url(#product-arrow)" />
+          </svg>
+          <div class="cycle-centre">
+            <p class="cycle-name">Product system</p>
+            <p class="cycle-detail">Software · electronics<br />Physical design · AI</p>
+          </div>
+          <p class="cycle-node node-top">Understand use</p>
+          <p class="cycle-node node-left">Model<br />and experiment</p>
+          <p class="cycle-node node-right">Integrate<br />and validate</p>
+        </div>
+        <div class="decision-hub">
+          <p class="flow-label">New product ambitions<br />change the engineering work <span class="forward" aria-hidden="true">→</span></p>
+          <p class="decision">Decide what to test<br />and what to build next.</p>
+          <p class="flow-label"><span class="return" aria-hidden="true">←</span>New engineering capabilities<br />expand what we can try</p>
+        </div>
+        <div class="cycle environment-cycle">
+          <svg viewBox="0 0 320 260" aria-hidden="true">
+            <defs><marker id="environment-arrow" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L8 4L0 8" fill="var(--home-gold)" /></marker></defs>
+            <g transform="rotate(90 160 130)">
+              <path class="cycle-arc" d="M143 40C77 40 38 109 77 181" marker-end="url(#environment-arrow)" />
+              <path class="cycle-arc" d="M91 200C122 226 190 226 225 200" marker-end="url(#environment-arrow)" />
+              <path class="cycle-arc" d="M241 182C275 120 250 48 178 40" marker-end="url(#environment-arrow)" />
+            </g>
+          </svg>
+          <div class="cycle-centre">
+            <p class="cycle-name">Engineering<br />environment</p>
+            <p class="cycle-detail">People · models<br />Tools · AI agents</p>
+          </div>
+          <p class="cycle-node node-top">Develop methods and models</p>
+          <p class="cycle-node node-left">Work with<br />AI agents</p>
+          <p class="cycle-node node-right">Automate<br />and evaluate</p>
+        </div>
+      </div>
+      <div class="shared-thread">
+        <p class="label">Executable engineering</p>
+        <p>Executable engineering puts models, analyses and checks to work in repeatable workflows. AI agents can carry out tasks within that environment, using tools and responding to results, with engineers directing and evaluating the work.</p>
+      </div>
+      <figcaption id="approach-caption">We build the machine that builds the machine.</figcaption>
+    </figure>
+  </section>
+
+  <section class="example" aria-labelledby="example-title">
+    <div class="section-heading">
+      <h2 id="example-title">From a product question to the next experiment.</h2>
+      <span class="small-label">Conceptual workflow</span>
+    </div>
+    <p class="example-question">Can an AI-enabled monitoring device recognise faults reliably enough to be useful, within its power and latency limits?</p>
+    <div class="example-thread">
+      <div class="example-step">
+        <p class="label">Model + prototype</p>
+        <h3>Turn the question into an experiment.</h3>
+        <p>Engineers define relevant fault scenarios. An AI agent prepares and runs a simulation, inspects the results and revises the analysis; engineers check the assumptions.</p>
+      </div>
+      <div class="example-step observed">
+        <span class="step-connector" aria-hidden="true">→</span>
+        <p class="label">Run + compare</p>
+        <h3>Evaluate the product’s AI.</h3>
+        <p>Compare candidate detection models on representative data. Test missed detections, false alarms, latency and power on the target hardware.</p>
+      </div>
+      <div class="example-step next-work">
+        <span class="step-connector" aria-hidden="true">→</span>
+        <p class="label">Learn + release</p>
+        <h3>Make the next change smaller.</h3>
+        <p>Use the results to revise the model, sensing setup or software. When release criteria are met, ship a small software increment and use operating feedback to shape the next experiment.</p>
+      </div>
+    </div>
+    <p class="example-caption">The workflow is part of the engineering result. Retain the model, dataset, configuration and evaluation code so the team can rerun the experiment after the next change.</p>
+  </section>
+
+  <div class="notes">
+    <section class="note" aria-labelledby="collaboration-title">
+      <p class="note-number">01 / Modelling and exploration</p>
+      <h2 id="collaboration-title">Make ideas<br />executable.</h2>
+      <p>Use code, simulation, data-driven models and physical prototypes to explore behaviour. AI agents can help implement and explore models; engineers choose the abstraction, check predictions and test where the model stops being useful.</p>
+    </section>
+    <section class="note" aria-labelledby="progress-title">
+      <p class="note-number">02 / Teams and workflows</p>
+      <h2 id="progress-title">Engineer the<br />workflow too.</h2>
+      <p>Give teams responsibility for the models, tools and data they rely on. Automate repeatable analysis, testing and release preparation. Make progress visible through demonstrated behaviour, unresolved questions and dependencies, so engineers and leaders can decide what to improve next.</p>
+    </section>
+    <section class="note" aria-labelledby="feedback-title">
+      <p class="note-number">03 / Release and feedback</p>
+      <h2 id="feedback-title">Release often.<br />Learn from use.</h2>
+      <p>Small software releases keep the feedback loop moving. Automated tests, AI evaluations and operating data help judge quality. Electronics, mechanical changes and physical validation have their own cadences; frequent software delivery must respect those constraints.</p>
+    </section>
+  </div>
+
+  <section class="reading" aria-labelledby="reading-title">
+    <h2 id="reading-title">Explore the argument</h2>
+    <div class="reading-content">
+      {chapterPreviews.map(chapter => (
+        <div class="chapter-preview">
+          <p class="label">Chapter {chapter.number} · Preview</p>
+          <a href={`${base}learn/${chapter.path}/`}>Start with {chapter.title} <span aria-hidden="true">→</span></a>
+        </div>
+      ))}
+      <ul class="reading-routes">
+        {featuredChapters.map(chapter => (
+          <li><a href={`${base}learn/${chapter.path}/`}>{chapter.title} <span aria-hidden="true">↗</span></a></li>
+        ))}
+      </ul>
+      <details class="course-directory" id="published-lessons">
+        <summary>All published lessons</summary>
+        <div class="directory-content">
+          <h3 id="published-v2">Published v2 articles</h3>
+          <ul class="article-list">
+            {v2Chapters.map(chapter => <li><a href={`${base}learn/${chapter.path}/`}>{chapter.title}</a></li>)}
+          </ul>
+          <h3>Original course</h3>
+          <ol id="learning-path" class="lesson-list">
+            {chapters.map(chapter => <li><a href={`${base}learn/${chapter.path}/`}>{chapter.title}</a></li>)}
+          </ol>
+          <a class="learning-path-link" href={`${base}learn/`}>Explore the full learning path <span aria-hidden="true">→</span></a>
+        </div>
+      </details>
+    </div>
+  </section>
+</HomeLayout>
+
 <style>
-  .parts {display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,15rem),1fr));gap:1rem;margin:1.5rem 0 3rem}
-  .parts .card {background:var(--surface)}
-  .parts h3 {margin-top:0}
-  .future {font-size:.88rem}
+  .opening { position: relative; isolation: isolate; display: grid; grid-template-columns: minmax(0, 2.4fr) minmax(0, 1fr); align-items: end; gap: 3rem; padding-block: 2.875rem 2.625rem; }
+  .opening::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background-image: url('../assets/hero-hexagons.svg');
+    background-size: 3rem 5.19615rem;
+    mask-image: radial-gradient(ellipse 80% 85% at 75% 25%, #000, transparent 75%);
+  }
+  .kicker, .label, .small-label, .note-number { font-family: var(--home-mono); font-size: .6875rem; line-height: 1.5; }
+  .kicker, .label, .note-number { color: var(--home-gold); text-transform: uppercase; }
+  .kicker { letter-spacing: .0625rem; margin-bottom: 1.1875rem; color: var(--home-teal); }
+  h1 { font-size: clamp(2.125rem, 4.6vw, 3.375rem); font-weight: 600; line-height: 1.08; letter-spacing: -.115rem; text-wrap: balance; }
+  h1 span { color: var(--home-gold); }
+  .deck, .principle { font-size: .9375rem; line-height: 1.75; max-width: 43rem; }
+  .deck { color: var(--home-muted); margin-top: 1.5rem; }
+  .principle { margin-top: 1.125rem; }
+  .destination { border-left: 1px solid #677274; padding-left: 1.25rem; color: var(--home-muted); font-size: .875rem; line-height: 1.75; margin-bottom: .25rem; }
+  .destination .label { color: var(--home-text); margin-bottom: .75rem; letter-spacing: .0625rem; }
+  .approach { border-top: 1px solid var(--home-rule); padding-block: 1.875rem 2.5rem; }
+  .section-heading { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; }
+  .section-heading h2 { font-size: 1.75rem; line-height: 1.25; letter-spacing: -.05rem; font-weight: 500; }
+  .small-label { color: var(--home-muted); }
+  .connected-systems { display: grid; grid-template-columns: minmax(0, 1fr) 13.125rem minmax(0, 1fr); gap: 1.5rem; align-items: center; margin-block: 1.75rem 1.5rem; }
+  .cycle { position: relative; height: 16.25rem; width: 100%; max-width: 24rem; margin-inline: auto; }
+  .cycle svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .cycle-arc { fill: none; stroke: var(--home-teal); stroke-width: 1.5; opacity: .8; }
+  .environment-cycle .cycle-arc { stroke: var(--home-gold); }
+  .cycle-centre { position: absolute; top: 50%; left: 10%; right: 10%; transform: translateY(-50%); text-align: center; }
+  .cycle-name { color: var(--home-teal); font: .8125rem/1.6 var(--home-mono); letter-spacing: .055rem; text-transform: uppercase; }
+  .environment-cycle .cycle-name { color: var(--home-gold); }
+  .cycle-detail { font-size: .6875rem; line-height: 1.6; margin-top: .5rem; color: var(--home-muted); }
+  .cycle-node { position: absolute; padding: .375rem .5rem; background: var(--home-bg); text-align: center; font-size: .8125rem; line-height: 1.45; }
+  .node-top { top: 0; left: 50%; transform: translateX(-50%); white-space: nowrap; }
+  .node-left { left: 0; bottom: 0; }
+  .node-right { right: 0; bottom: 0; }
+  .decision-hub { text-align: center; }
+  .decision { font-size: 1rem; line-height: 1.4; background: var(--home-panel); padding: 1.125rem .75rem; border-top: 2px solid var(--home-teal); border-bottom: 2px solid var(--home-gold); }
+  .flow-label { color: var(--home-muted); font-size: .6875rem; line-height: 1.5; padding-block: .75rem; }
+  .flow-label span { display: block; font-size: 1.375rem; line-height: 1.3; }
+  .forward { color: var(--home-teal); }
+  .return { color: var(--home-gold); }
+  .shared-thread { display: grid; grid-template-columns: 12rem 1fr; gap: 1.75rem; align-items: start; border-block: 1px solid var(--home-rule); padding-block: 1.125rem; }
+  .shared-thread .label { color: var(--home-teal); letter-spacing: .03rem; }
+  .shared-thread > p:last-child { font-size: .8125rem; line-height: 1.75; color: var(--home-muted); }
+  figcaption { font-size: .875rem; line-height: 1.7; text-align: center; margin-top: 1.5rem; }
+  .example { padding: 1.625rem; border: 1px solid var(--home-rule); background-color: var(--home-panel); background-image: linear-gradient(rgb(200 217 222 / 3%) 1px, transparent 1px), linear-gradient(90deg, rgb(200 217 222 / 3%) 1px, transparent 1px); background-size: 3rem 3rem; }
+  .example .section-heading h2 { font-size: 1.4375rem; font-weight: 600; }
+  .example-question { max-width: 55rem; margin-top: 1rem; color: var(--home-muted); font-size: .875rem; line-height: 1.7; }
+  .example-thread { display: grid; grid-template-columns: .9fr 1.1fr 1.2fr; gap: 2.625rem; margin-top: 1.625rem; }
+  .example-step { position: relative; }
+  .example-step .label { margin-bottom: .625rem; }
+  .example-step h3 { font-size: 1.125rem; line-height: 1.35; letter-spacing: -.025rem; font-weight: 600; }
+  .example-step > p:not(.label) { font-size: .75rem; line-height: 1.75; margin-top: .75rem; color: var(--home-muted); }
+  .example-step strong { font-weight: 500; color: var(--home-text); }
+  .observed .label { color: var(--home-teal); }
+  .step-connector { position: absolute; top: 2.125rem; left: -1.875rem; color: var(--home-muted); font-size: 1.25rem; }
+  .example-caption { border-top: 1px solid var(--home-rule); padding-top: 1rem; margin-top: 1.5rem; font-size: .75rem; line-height: 1.7; color: var(--home-muted); }
+  .notes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.75rem; padding-block: 2.125rem 2rem; }
+  .note { border-top: 1px solid var(--home-rule); padding-top: 1.0625rem; }
+  .note-number { letter-spacing: .025rem; margin-bottom: .75rem; }
+  .note h2 { font-size: 1.375rem; font-weight: 600; line-height: 1.25; letter-spacing: -.0375rem; }
+  .note > p:last-child { font-size: .8125rem; line-height: 1.75; color: var(--home-muted); margin-top: .9375rem; }
+  .reading { display: grid; grid-template-columns: 1fr 2.1fr; gap: 1.5625rem; padding-block: 1.5625rem 1.75rem; border-top: 1px solid var(--home-rule); }
+  .reading h2 { font-size: 1.3125rem; line-height: 1.35; font-weight: 600; letter-spacing: -.025rem; }
+  .chapter-preview { padding-bottom: 1.125rem; margin-bottom: 1.125rem; border-bottom: 1px solid var(--home-rule); }
+  .chapter-preview .label { color: var(--home-teal); margin-bottom: .375rem; }
+  .chapter-preview a { display: inline-block; padding-block: .25rem; font-size: .9375rem; line-height: 1.5; }
+  .reading-routes { display: grid; grid-template-columns: 1fr 1fr; gap: .75rem 1.375rem; font-size: .75rem; list-style: none; margin: 0; padding: 0; }
+  .reading-routes a { display: block; border-bottom: 1px solid var(--home-rule); padding-bottom: .5625rem; }
+  .course-directory { margin-top: 1.125rem; color: var(--home-muted); font-size: .75rem; }
+  summary { cursor: pointer; width: fit-content; padding-block: .375rem; }
+  summary:hover { color: var(--home-gold); }
+  .directory-content { margin-top: 1rem; padding: 1rem 1.125rem; border: 1px solid var(--home-rule); }
+  .directory-content h3 { font-size: .8125rem; color: var(--home-text); }
+  .article-list, .lesson-list { padding-left: 1.375rem; margin-block: .625rem 1.25rem; }
+  .directory-content li { padding-block: .25rem; }
+  .learning-path-link { color: var(--home-gold); }
+
+  @media (max-width: 900px) {
+    .opening { grid-template-columns: 1fr; gap: 1.625rem; }
+    .destination { max-width: 38rem; }
+    .connected-systems { grid-template-columns: minmax(0, 1fr) 10rem minmax(0, 1fr); gap: .75rem; }
+    .cycle-name { font-size: .75rem; letter-spacing: .02rem; }
+    .cycle-node { font-size: .75rem; padding-inline: .25rem; }
+    .decision { font-size: .875rem; padding-inline: .5rem; }
+  }
+  @media (max-width: 700px) {
+    .connected-systems { grid-template-columns: 1fr; max-width: 22.5rem; margin-inline: auto; gap: .5rem; }
+    .decision-hub { margin: .25rem 1.5rem 1rem; }
+    .flow-label span { transform: rotate(90deg); }
+    .cycle-name { font-size: .8125rem; }
+    .cycle-node { font-size: .8125rem; }
+    .shared-thread { grid-template-columns: 1fr; gap: .625rem; }
+    .example-thread { grid-template-columns: 1fr; gap: 1.75rem; }
+    .example-step + .example-step { border-top: 1px solid var(--home-rule); padding-top: 1.125rem; }
+    .step-connector { display: none; }
+    .notes { grid-template-columns: 1fr; gap: 1.375rem; }
+    .note { display: grid; grid-template-columns: 1fr 1.5fr; gap: .5rem 1.5rem; }
+    .note-number { grid-column: 1; margin-bottom: 0; }
+    .note h2 { grid-column: 1; }
+    .note > p:last-child { grid-column: 2; grid-row: 1 / 3; margin-top: 0; }
+    .reading { grid-template-columns: 1fr 2fr; }
+  }
+  @media (max-width: 500px) {
+    .opening { padding-block: 2rem; }
+    h1 { font-size: 2.125rem; letter-spacing: -.075rem; line-height: 1.13; }
+    h1 br { display: none; }
+    h1 span { display: block; }
+    .kicker { line-height: 1.6; }
+    .deck, .principle { font-size: .875rem; }
+    .section-heading { flex-direction: column; align-items: flex-start; gap: .625rem; }
+    .section-heading h2 { font-size: 1.5rem; }
+    .approach { padding-top: 1.5rem; }
+    .example { padding: 1.25rem 1.125rem; }
+    figcaption { text-align: left; font-size: .8125rem; }
+    .note, .reading { display: block; }
+    .note-number { margin-bottom: .75rem; }
+    .note > p:last-child { margin-top: .9375rem; }
+    .reading-routes { grid-template-columns: 1fr; margin-top: 1.25rem; }
+  }
 </style>

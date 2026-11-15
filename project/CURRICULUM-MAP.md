@@ -3,7 +3,7 @@ Status: proposed. Routes below are targets; **do not assume they exist**.
 
 | Part | # | Chapter | Distinct learning gain | Demonstration |
 |---|---:|---|---|---|
-| I — Why and what next | 01 | The New Engineering Paradigm | Explain AI+digital engineering convergence | Fragmented vs connected workflow |
+| I — Why and what next | 01 | The New Engineering Paradigm | Establish systems scope and shared terminology; explain how software-driven workflows and AI agents change engineering | Compare systems engineering workflows and feedback cycles |
 | I | 02 | Planning Under Uncertainty | Separate exploration from committed increments | DMS roadmap/option planning |
 | II — Learn and specify | 03 | Engineering Knowledge as Code | Explain cross-discipline source relationships | Interactive change-impact graph |
 | II | 04 | Learning Through Models and Prototypes | Qualify model fidelity and experiment results | Sensor/electronics/mount options |
@@ -16,6 +16,26 @@ Status: proposed. Routes below are targets; **do not assume they exist**.
 | IV | 11 | Governance and Engineering Authority | Distinguish checks, permissions and approval | Review gate / authority simulation |
 | IV | 12 | Managing Engineering Knowledge at Scale | Track configurations, reuse and supplier interfaces | Variant/baseline comparison |
 | IV | 13 | The AI-Native Engineering Environment | Synthesize integrated workflow | End-to-end DMS engineering case |
+
+## Terminology and introduction sequence
+
+The owner approved this terminology direction on 15 November 2026 during the front-page review. These are editorial definitions for the tutorial; the chapter sequence and future demonstrations remain planned. Systems engineering establishes the scope, executable engineering describes the approach, and AI agents are one capability within it.
+
+| Term | Meaning and usage in this tutorial | Introduce and develop |
+|---|---|---|
+| Systems engineering | Understanding and developing the whole system across disciplines, people and operating conditions. Keep software, electronics, physical design and use in view. | Establish in Chapter 01; apply throughout. |
+| Executable engineering | The site's working description for engineering where models, analyses, tests and parts of the workflow can be run, evaluated and improved. It does not imply that every engineering activity is executable or automated. | Introduce on Home and in Chapter 01; develop through Chapters 03–06 and synthesize in Chapter 13. |
+| Software-driven workflows | Software supports how engineering work is performed across disciplines: running models, handling data, testing, reviewing and preparing releases. This is broader than software development. | Introduce in Chapter 01; apply in Chapters 04–06, 08–09 and 13. |
+| AI-assisted engineering | The broad use of AI in engineering work, including interactive assistance and delegated agent tasks. “AI-assisted systems engineering” is a useful description of that application, not the name for the entire tutorial approach. | Introduce in Chapter 01; illustrate in Chapter 04 and deepen in Chapter 07. |
+| AI agents / agentic engineering | Agents pursue a defined task, use tools, inspect results and adapt their next steps. Prefer “AI agents” in introductory prose; use “agentic engineering” for this way of working. Engineers direct and evaluate the work. | Explain AI agents in Chapter 01; develop task delegation, tool use, context and evaluation in Chapter 07, then apply in Chapters 08–09 and 13. |
+| AI in products | AI contributing to product behavior, including prediction, perception or decision support. Product AI need not be agentic or based on an LLM. | Distinguish from AI used in engineering in Chapter 01; revisit when evaluating models and system behavior in Chapters 04, 05 and 10. |
+| Large language model (LLM) | A model technology underlying many AI assistants and agents. Explain the model's role separately from the surrounding tools and workflow. Spell out the term at first use; use it where the underlying mechanism matters. | Explain in Chapter 07, or at first use if a preceding example requires the mechanism. Do not lead Home with the acronym. |
+
+Use the opening engineering situation to introduce the distinctions, rather than requiring readers to memorize a glossary before seeing the problem. Carry the same meanings into subsequent chapter briefs and the future Reference glossary. The scope of AI in products remains separate from the choice to use agents during development.
+
+“We build the machine that builds the machine” describes the co-development of the product system and its engineering environment: people, methods, models, tools and workflows. Chapter 01 introduces the two systems; Chapter 13 brings the idea together. Frequent software releases, model iterations and physical validation retain their different cadences.
+
+The systems scope follows [INCOSE's systems engineering definition](https://www.incose.org/about-systems-engineering/). The agent distinction draws on [Anthropic's explanation of predefined workflows and agents that choose their steps and tools](https://www.anthropic.com/research/building-effective-agents). “Executable engineering” is the tutorial's working description, not a claim of a standardized discipline.
 
 ## Content dependency model
 01→02 sets motive and direction.

@@ -8,6 +8,9 @@ What can an agent do on our behalf, and how do we know what actually happened?
 ## What the reader must gain
 Set task objective, sources, permissions, tool boundaries, stop conditions and review deliverable; distinguish agent narration from trace and evidence.
 
+## Terminology developed here
+Build on the [Chapter 01 vocabulary](../project/CURRICULUM-MAP.md#terminology-and-introduction-sequence). Explain large language model (LLM) at first use, separating the underlying model from the agent's tools, context and execution loop. Contrast interactive AI assistance, predefined automation and an agent selecting and adapting steps toward a delegated objective. Use “agentic engineering” for this working practice; do not use it as a synonym for all AI in engineering or AI in products.
+
 ## Opening engineering situation
 Agent investigates a bounded DMS proposal, reads approved sources, modifies an isolated fixture, runs checks and opens a reviewable diff.
 

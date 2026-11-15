@@ -2,6 +2,8 @@
 
 **Status:** Proposed baseline · **Version:** 0.1 · **Date:** 2026-10-16
 
+**Historical release specification.** For the current editorial direction and the authorized Chapter 1 reader pilot, use [project/SITE-DIRECTION.md](project/SITE-DIRECTION.md). The original curriculum and visual direction below document the first release; the V0 technical contracts remain in force.
+
 ## 1. Purpose
 
 Executable Engineering Lab is a standalone, practical learning site showing how engineering intent can become structured, connected, executable, and verifiable engineering knowledge. It builds conceptually on [Document-as-Code Lab](https://and-gu.github.io/document-as-code-lab/) without assuming readers completed it.
