@@ -3,7 +3,7 @@
 <!-- EEL_RESEARCH_NOT_FOR_PUBLICATION -->
 **For editors and AI agents.** Start here before drafting, revising or sourcing a v3 chapter. This file is in the GitHub repository but **not published on the Astro site**.
 
-**Version:** 2026-11-12 · **Curriculum:** 13 chapters · **Status:** background material awaiting source and quotation verification.
+**Version:** 2026-11-15 (curriculum mapping updated) · **Curriculum:** current owner-approved 13 chapters · **Status:** background material awaiting source and quotation verification.
 
 ## Source register
 
@@ -11,29 +11,33 @@
 |---|---|---|---|
 | EEL-R-2026-11-12-V3 | [External Reference and Research Baseline](v3/2026-11-12-external-research.md) | Linux Foundation / AAIF, MCP, OpenSpec, GitHub Spec Kit, SysML, OSLC, digital thread, agent use, engineering data, DORA, GUI vs prompt, source quotes | Research proposal; factual and quote verification before citation |
 
-## Routing by chapter
+## Routing by the current approved 13-chapter curriculum
 
-| Chapter | Search themes and suggested source types | Read first |
+**Owner clarification 2026-11-15:** The chapter sequence and titles in \`project/CURRICULUM-MAP.md\` are approved. This index supersedes an earlier alternative V3 numbering. The source archive's **13 quotation candidates still show their original chapter numbers**; map those quotes by **topic and source**, never by their old numerical labels, and verify exact wording and attribution before use.
+
+| Current chapter | Search themes and best source types | Older candidate quote/topic to consider |
 |---|---|---|
-| 01 — From Engineering Intent to Evidence | Engineering factory, organizational performance, intent-to-evidence, DORA, cost-shift claim (not established as a numerical majority) | DORA 2025, software product-line and continuous delivery ideas in the research baseline |
-| 02 — Engineering Information Models | Federated information, SysML v2, information semantics, document-as-code, prompt-driven modeling | OMG SysML v2, OSLC |
-| 03 — Digital Threads and Knowledge Graphs | Lifecycle information, linked data, relationships, greenfield/brownfield impact | NIST Digital Thread, OSLC, INCOSE linked-information studies |
-| 04 — Executable Engineering Models | Model fidelity, behavior, simulations, MBSE definitions and limitations | INCOSE / OMG |
-| 05 — From Exploration to Engineering Definition | Progressive specifications, OpenSpec, spec-to-code, GitHub Spec Kit, decisions | OpenSpec, GitHub Spec Kit |
-| 06 — Engineering Data: From Measurements to Decisions | Quality, annotation, provenance, enrichment, reuse, FAIR, source reliability | FAIR Guiding Principles, related data/knowledge papers |
-| 07 — Verification and Engineering Evidence | Verification versus validation, reproducibility, evidence, assurance | NASA IV&V, Gemara |
-| 08 — Agentic Engineering | What agents actually do, human planning, delegation, field studies, usage limitations | Anthropic Claude Code research, GitHub Octoverse, METR |
-| 09 — Agents and Engineering Context | MCP, Agent Skills, AGENTS.md, context, tool architecture, interoperability | AAIF / Linux Foundation, Microsoft Research |
-| 10 — Continuous Engineering | Build AND operate engineering factory, 24-hour *eligible change* objective, lead time, platform engineering, CI/CD | DORA, CNCF, software engineering empirical studies |
-| 11 — Governance and Assurance | Model provenance, permissions, cyber, safety, risk controls and evidence | OpenSSF Gemara, Linux Foundation research |
-| 12 — Engineering Knowledge at Scale | Reuse across products, federated source-of-truth, OSLC, FAIR | OSLC, INCOSE, FAIR |
-| 13 — The Integrated Engineering Environment | Intent interface, prompts and agents, dynamic/specialist GUIs, review visualizations | OpenAI Codex as a Platform, GitHub ambient interface, ACL / Microsoft research |
+| 01 — The New Engineering Paradigm | Two co-developing systems, AI in product vs agent work, organizational AI effects, DORA, INCOSE scope | Previously Ch 01: DORA amplification |
+| 02 — Planning Under Uncertainty | Vision/themes/initiatives, exploration vs commitment, uncertainty-driven learning, stage-specific cadences | **New source/quotation needed**; no existing direct match |
+| 03 — Engineering Knowledge as Code | Versioned specs, open information models, SysML views, digital threads, linked data, interactive knowledge graph | Previously Ch 02 SysML + Ch 03 NIST digital thread |
+| 04 — Learning Through Models and Prototypes | MBSE, model fidelity, simulation, experiments, prototypes, physical testing | Previously Ch 04 INCOSE models |
+| 05 — Engineering Data: From Measurements to Decisions | FAIR, provenance, annotation, enrichment, visual and statistical review, reusable data | Previously Ch 06 FAIR |
+| 06 — Spec-Driven Development Without Waterfall | OpenSpec, GitHub Spec Kit, spec-to-code vs spec-to-engineering, progressive specs, feedback loops | Previously Ch 05 OpenSpec |
+| 07 — Directing AI Engineering Agents | Anthropic agent observations, Linux Foundation AAIF, task contracts, tools, human/agent roles | Previously Ch 08 Anthropic and Ch 09 context/AAIF |
+| 08 — Engineering in Small, Reviewable Increments | PR review quality, DoD, architectural scope, agent-generated change studies, cross-discipline increments | **New source/quotation needed**; evaluate PR mining papers and DORA |
+| 09 — Continuously Integrated Engineering | Factory design **and** operation, DORA, CI/CD, platform engineering, eligible 24-hour release goal, physical cadences | Previously Ch 10 DORA lead time |
+| 10 — Verification, Validation and Engineering Evidence | NASA IV&V, INCOSE V&V, product lifecycle deliverables, evidence applicability | Previously Ch 07 NASA |
+| 11 — Governance and Engineering Authority | OpenSSF Gemara, safety, cyber, nonfunctional constraints, model/agent permissions and supply chain | Previously Ch 11 Gemara |
+| 12 — Managing Engineering Knowledge at Scale | FAIR, OSLC, cross-product reuse, models, engineering process assets and Agent Skills | Previously Ch 12 OSLC |
+| 13 — The AI-Native Engineering Environment | Intent-driven and prompt-first interaction plus specialist GUIs, integrative engineering factory, agent interfaces | Previously Ch 13 OpenAI specialist UI |
+
+**Presentation split:** Document-as-Code Lab's *Beyond Slides* material covers presentation storytelling, HTML slides, mind maps, dashboards and interactive delivery; Executable Engineering Lab's technical views serve engineering investigation (system/knowledge graphs, SysML, simulation/data/evidence).
 
 ## Discovery checklist for drafting agents
 
 1. Locate the chapter in the table above.
 2. Read [the archived external research baseline](v3/2026-11-12-external-research.md), focusing on the relevant topic and quote candidate.
-3. Read `project/TUTORIAL-SPEC.md`, `project/EDITORIAL-GUIDE.md`, and the **owner-approved chapter manuscript** where one exists. **Chapter 1–4 are editorially approved in discussion; the legacy published source files are not those v3 manuscripts.**
+3. Read `project/CURRICULUM-MAP.md` and `project/SITE-DIRECTION.md` as current title/sequence authority, then the [v3 manuscript index](../project/v3/manuscripts/INDEX.md), the relevant brief and `project/EDITORIAL-GUIDE.md`. Previously approved alternative-titled manuscripts are **source material awaiting alignment**, not automatic replacements for current Chapters 01–04.
 4. Confirm the reference is current, authoritative for the claim, and appropriate to its source type. **Never treat the quote-candidate table as verbatim-verified evidence.**
 5. Write concise reader-facing American English and link primary sources when quoting. Use a source once where it adds value; avoid repetitive AI caveats.
 6. If new sources are used, add a dated note in `research/v3/`, update this index and record pending validations.
