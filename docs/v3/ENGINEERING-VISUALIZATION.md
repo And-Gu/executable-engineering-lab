@@ -2,7 +2,7 @@
 
 **Status:** Proposed V3 supporting reference and implementation-planning material; **not** an approved V3 chapter manuscript, implemented visualization, or published feature.
 
-**Curriculum placement:** Use the **current approved 13-chapter map** in [`project/CURRICULUM-MAP.md`](../../project/CURRICULUM-MAP.md). This technical reference informs Chapters 03 (*Engineering Knowledge as Code*), 04 (*Learning Through Models and Prototypes*), 05 (*Engineering Data: From Measurements to Decisions*), 06 (*Spec-Driven Development Without Waterfall*) and later synthesis. It adds **no new chapter**. See [V3 master issue #32](https://github.com/And-Gu/executable-engineering-lab/issues/32).
+**Curriculum placement:** Use the **owner-approved 14-chapter V3 map** in [`project/CURRICULUM-MAP.md`](../../project/CURRICULUM-MAP.md) and its [13→14 migration map](../../project/v3/CHAPTER-MIGRATION-13-TO-14-2026-11-16.md). This technical reference informs Ch03 (knowledge graph), Ch04 (model), Ch05 (data), Ch06 (progressive specification), **new Ch09 (*From Models to an Integrated Product*)**, Ch10–12 (evidence, authority and factory operation) and the capstone. This reference is **not** an extra course chapter, implemented visualization or public Astro page. See [master issue #32](https://github.com/And-Gu/executable-engineering-lab/issues/32).
 
 **Companion:** The Document-as-Code Lab covers presentation design, audience narratives and guided/explorable delivery in its proposed Chapter 13, *Beyond Slides: Presentations as Explorable Knowledge*. This guide addresses a different question: what must a technical visualization mean and do to support valid engineering reasoning?
 
@@ -18,7 +18,21 @@ These **visual IDs are source/reference identifiers, not chapter numbers**. The 
 | V05 | From exploratory concept to progressive engineering definition | **06 — Spec-Driven Development Without Waterfall** |
 | V06 | Raw, curated, enriched and derived engineering-data views | **05 — Engineering Data: From Measurements to Decisions** |
 
-Later visualization requirements must map to **current** Chapters 07–13; do not take the old project draft numbers as authoritatively approved. Read [v3 curriculum alignment](../../project/v3/EDITORIAL-ALIGNMENT-2026-11-15.md) and its [briefs](../../project/v3/CHAPTER-BRIEFS-05-13-2026-11-15.md) before specifying any new illustration.
+The **historical visual IDs remain fixed**; they are NOT chapter numbers. For later visualizations, use the **current 07–14 chapter mapping** below and the [new integration brief](../../project/v3/CHAPTER-09-INTEGRATION-BRIEF-2026-11-16.md), not the earlier thirteen-chapter briefs.
+
+| Current chapter | Proposed teaching view | Source/meaning requirement |
+|---|---|---|
+| 07 — Directing AI Engineering Agents | Source-context selection + honest task replay | Real/illustrative action status, authorized tools and resulting evidence kept distinct |
+| 08 — Engineering in Small, Reviewable Increments | One thin outcome-driven change and one coupled interface change | Revision IDs, dependent engineering owners, scope and review decisions |
+| **09 — From Models to an Integrated Product** | **Controller vs adapter interface semantics comparison** and bounded integration/bench plan | Applied-state vs receipt acknowledgment, revision/source, operational consequence; **no executed hardware claim** |
+| 10 — Verification, Validation and Engineering Evidence | Claim/configuration/method/result/applicability | Scope of model checks vs actual integration/physical/operational observation |
+| 11 — Governance and Engineering Authority | Role/control/evidence/decision argument with deferred change | Distinguish configured permission, governance responsibility and claim support |
+| 12 — Continuously Integrated Engineering | Eligible and blocked change in a design/operate factory map | No implied deployed system; hypothetical 24-hour target for qualified change classes |
+| 13 — Managing Engineering Knowledge at Scale | Variant/asset compatibility matrix | Reusable method vs configuration-specific product evidence |
+| 14 — Choosing the Next Engineering Capability | Reused case records and competing engineering investment choices | A reasoned reader decision instead of a decorative dashboard |
+
+Use [the latest cross-chapter source example](../../project/v3/reviews/WORKED-CASE-REVISION-PACKAGE-2026-11-16.md), explicitly a **hand-worked planning proposal** until independently reviewed; do not present those numbers or interface records as verified observations.
+
 
 **Presentations split:** Document-as-Code Lab teaches interactive presentations, narrative sequence, HTML decks, dashboards, mind maps and audience communication. Here we teach how to represent **engineering meaning** with appropriate diagrams, simulations, typed relations, source provenance, impact and evidence views. Engineering graphics can be reused in presentations without becoming separate, contradictory engineering definitions.
 

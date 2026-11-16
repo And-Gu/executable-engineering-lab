@@ -1,5 +1,8 @@
 # V3 post-review editorial decisions — 13 versus 14 chapters
 
+> **Decision update 2026-11-16:** The owner explicitly **approved the fourteen-chapter option**, new Ch09 integration chapter and moving verification, governance and continuous engineering into the recommended order. See the [current authoritative map](../../CURRICULUM-MAP.md) and [13→14 migration](../CHAPTER-MIGRATION-13-TO-14-2026-11-16.md). The detailed proposal below remains a historical analysis. The proposed Ch06 rename remains open; original manuscript editing and publication are still separate decisions.
+
+
 **Status:** Proposed decisions for the course owner; not approved curriculum, rewritten manuscript, authorization to implement, or publication approval  
 **Date:** 2026-11-16  
 **Authoritative approved baseline:** [Current 13-chapter curriculum](../../CURRICULUM-MAP.md)  
