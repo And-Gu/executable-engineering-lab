@@ -1,49 +1,36 @@
 # Chapter 04 — Learning Through Models and Prototypes
-Status: v2 implementation brief (proposed)
-Part: II — Building Engineering Knowledge
+
+**Status:** Proposed V3 editorial update to an existing brief; current title/sequence owner-approved, full new prose pending  
+**Part:** II — Building Engineering Knowledge  
+**Reference:** [four-way intersection case](../project/v3/REFERENCE-INTERSECTION.md)  
+**Review:** [Chapters 01–04 reconciliation](../project/v3/CHAPTERS-01-04-EDITORIAL-REVIEW.md)  
+**Visual guide:** [Engineering Visualization](../docs/v3/ENGINEERING-VISUALIZATION.md).
 
 ## The one question
-What should we simulate, prototype or test before committing to an architecture?
+What should we model, simulate or prototype to learn whether a candidate intersection concept works **under the assumptions we can justify**?
 
 ## What the reader must gain
-Distinguish computational models, prototypes, physical tests, model credibility, hypothesis and observation; select experiment to reduce uncertainty.
+Describe how an engineering question determines model fidelity and experiment design. Distinguish functional/behavioral representations, a bounded state machine, deterministic vs seeded random arrivals, physical prototypes and real observations. Understand reproducible inputs, interpreted outputs and how model limits affect engineering decisions. Explain why executable analysis capability is also a maintained asset of the engineering environment.
 
 ## Opening engineering situation
-Compare single- and multiple-sensor concepts or mounting alternatives with explicitly synthetic power/cable/lead-time constraints.
+A fixed signal-timing concept is simple to describe, but its effect on vehicle queues depends on arrival patterns and permitted phase transitions. Before deciding to investigate adaptive control, the team needs a repeatable model, meaningful comparisons and awareness of missing physical/operational concerns.
 
 ## Narrative arc
-1. Start with a concrete decision or unexpected constraint, not a definition.
-2. Show why the current working practice is insufficient for this question.
-3. Introduce only the concepts needed to reason about it.
-4. Let the reader examine a clear example and make a prediction/choice.
-5. Interpret the outcome, including limitations and authority.
-6. Connect the decision to the next engineering question.
+1. Choose a *specific learning question*: what could the next experiment tell us about phase behavior and queue outcomes?
+2. Compare suitable model forms and their fidelity: conceptual system diagram, signal-state model, discrete queue/arrival simulation, physical prototype and later field validation.
+3. Introduce a small two-group **north–south / east–west phase** representation with amber and all-red clearance; the no-conflicting-permissive rule is a model-level **candidate property**, not proof of actual intersection safety.
+4. Compare **regular vs seeded stochastic arrivals** with a stated average rate; interpret queue size, waiting time, throughput and run-to-run variation as simulation results.
+5. Make the **execution contract** visible: inputs, version/configuration, pure calculation vs rendering, timeline/traces, deterministic replay and appropriate checks.
+6. Explain how outputs affect the product idea and what new experiment/test capability is worth developing. Show what physical design, electronics, pedestrian/turning conflicts, reliability and real operation **have not** been evaluated.
 
-## Primary learning experience
-Multidisciplinary option explorer and model-fidelity panel, with a controlled comparison and clearly labeled synthetic inputs.
+## Primary educational view V04
+A bounded interactive phase-state/vehicle-queue simulation or a reproducible static walkthrough before interactive implementation is authorized. The viewer can predict, vary a limited input, run/pause/reset, inspect a readable signal-state sequence and compare outcomes. State and chart share one defined scenario; reproduce seeded cases and provide keyboard/table/text equivalents. Do not make a code editor, working traffic-controller product or safety assessment.
 
-## Reuse and migration from v1
-Old Ch 4 + Ch 5 plus V0 CoverageLab; retain exact V0 as a reference mode.
+## Source prose / preservation
+Reuse selected approved *Executable Engineering Models* paragraphs on model types, signal phases, arrival processes, fidelity and engineering choices. The old DMS single-sensor calculation remains a separate legacy reference, not the current recurring example.
 
-## Technical/editorial constraints
-Experimental D1 engine separate from V0; no physical-detection claims; include failure results and what was learned.
+## Acceptance / transition
+Reader can explain what a simulation establishes **and what experiment is needed next**, not merely read a number. No fake physical measurements, fabricated agent log or unqualified release readiness. Bridge to Chapter 05, *Engineering Data: From Measurements to Decisions*: **How do we quality-check, annotate, compare and reuse the observations and calculated outputs from this experiment?**
 
-## Suggested article skeleton
-- Opening question and scenario
-- Why the usual approach is difficult here
-- A new engineering capability or method
-- The demonstration and what to look for
-- How to interpret results and unresolved uncertainty
-- A short engineering takeaway
-- Next question / suggested deeper reference
-
-## Verification and acceptance
-- The main question can be answered by a reader using the chapter, without prior local setup.
-- The chapter contributes a *new* insight not reproduced verbatim from its predecessor.
-- Its primary demo has an explicit data origin and limitations; no claims of unimplemented functions.
-- A meaningful link exists to canonical or clearly illustrative source information.
-- Text, controls and results work with keyboard/screen reader as applicable.
-- Existing V0 technical checks and old deep links remain intact following migration.
-
-## Bridge
-The experiment narrows options. How precise should the next specification be?
+## Boundaries
+Pure model, visualization, source fixtures and interaction require a separately scoped implementation PR and verification; this brief alone authorizes no public change. Preserve existing Astro/legacy V0 routes.

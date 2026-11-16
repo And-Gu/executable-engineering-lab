@@ -1,21 +1,23 @@
-# Curriculum map — 13 chapters, four parts (v2.0)
-Status: proposed. Routes below are targets; **do not assume they exist**.
+# Current approved curriculum map — 13 chapters, four parts
+**V3 editorial authority:** Chapter titles, order and four-part grouping reviewed and approved by the owner on 2026-11-15. **Full new V3 manuscript wording and implementation are not thereby approved.** The public website still has its original lessons, a V2 Chapter 01 reader preview and a separate V2 data article; do not assume the remaining V3 routes exist.
+
+**Owner-confirmed reference for the new V3 course:** The fictional **four-way traffic intersection** across Chapters 01–13. See [reference contract](v3/REFERENCE-INTERSECTION.md) and [Chapters 01–04 editorial review](v3/CHAPTERS-01-04-EDITORIAL-REVIEW.md). The published earlier condition-monitoring preview and original DMS V0 example remain unchanged until separately approved migration.
 
 | Part | # | Chapter | Distinct learning gain | Demonstration |
 |---|---:|---|---|---|
-| I — Why and what next | 01 | The New Engineering Paradigm | Establish systems scope and shared terminology; explain how software-driven workflows and AI agents change engineering | Compare systems engineering workflows and feedback cycles |
-| I | 02 | Planning Under Uncertainty | Separate exploration from committed increments | DMS roadmap/option planning |
-| II — Learn and specify | 03 | Engineering Knowledge as Code | Explain cross-discipline source relationships | Interactive change-impact graph |
-| II | 04 | Learning Through Models and Prototypes | Qualify model fidelity and experiment results | Sensor/electronics/mount options |
-| II | 05 | Engineering Data: From Measurements to Decisions | Curate, annotate, enrich, visualize, review, preserve and reuse engineering data | DMS simulated parameter study + synthetic cross-discipline constraints |
-| II | 06 | Spec-Driven Development Without Waterfall | Progressively specify the next slice | Hypothesis→spec decision studio |
-| III — Act with agents | 07 | Directing AI Engineering Agents | Define agent scope, context, authority | Authentic run replay / contract |
-| III | 08 | Engineering in Small, Reviewable Increments | Design meaningful, limited integration slices | Compare large PR vs split PRs |
-| III | 09 | Continuously Integrated Engineering | Differentiate digital CI, hardware baselines and qualification | Multidiscipline integration dashboard |
-| IV — Decide and scale | 10 | Verification, Validation and Engineering Evidence | Reason from claim to relevant evidence | Claim/evidence assessment |
-| IV | 11 | Governance and Engineering Authority | Distinguish checks, permissions and approval | Review gate / authority simulation |
-| IV | 12 | Managing Engineering Knowledge at Scale | Track configurations, reuse and supplier interfaces | Variant/baseline comparison |
-| IV | 13 | The AI-Native Engineering Environment | Synthesize integrated workflow | End-to-end DMS engineering case |
+| I — Why and what next | 01 | The New Engineering Paradigm | Establish systems scope and shared terminology; explain how software-driven workflows and AI agents change engineering | Fictional intersection product ↔ engineering environment: uncertain intent, three conceptual findings and different cadences |
+| I | 02 | Planning Under Uncertainty | Separate exploration from committed increments | Intersection uncertainty and initiative roadmap; product increments alongside needed engineering-method capability |
+| II — Learn and specify | 03 | Engineering Knowledge as Code | Explain cross-discipline source relationships | Intersection information objects, multiple views and **mandatory typed interactive knowledge graph** for proposed adaptive change |
+| II | 04 | Learning Through Models and Prototypes | Qualify model fidelity and experiment results | Simplified signal-state model, regular/seeded arrivals and model-fidelity/physical-test comparison |
+| II | 05 | Engineering Data: From Measurements to Decisions | Curate, annotate, enrich, visualize, review, preserve and reuse engineering data | Illustrative arrival/queue dataset quality, annotations, provenance and derived decision views; V2 DMS article retained as historical source |
+| II | 06 | Spec-Driven Development Without Waterfall | Progressively specify the next slice | Intersection concept and control strategy → evolving specifications, open questions and next bounded increment |
+| III — Act with agents | 07 | Directing AI Engineering Agents | Define agent scope, context, authority | Bounded illustrative intersection analysis and source/agent context contract; actual agent trace only if genuinely recorded |
+| III | 08 | Engineering in Small, Reviewable Increments | Design meaningful, limited integration slices | Compare broad versus small reviewed intersection model/interface/software changes and physical dependencies |
+| III | 09 | Continuously Integrated Engineering | Differentiate digital CI, hardware baselines and qualification | Intersection engineering factory: design + operate checks and eligible software-release readiness vs physical gates |
+| IV — Decide and scale | 10 | Verification, Validation and Engineering Evidence | Reason from claim to relevant evidence | Intersection system deliverables and evidence readiness: simulation versus controller hardware, installation and operational use |
+| IV | 11 | Governance and Engineering Authority | Distinguish checks, permissions and approval | Intersection proposed adaptive/remote change with signal-conflict, safety/cyber and authority review |
+| IV | 12 | Managing Engineering Knowledge at Scale | Track configurations, reuse and supplier interfaces | Compare intersection variants and reuse of versioned model/engineering methods versus product-specific evidence |
+| IV | 13 | The AI-Native Engineering Environment | Synthesize integrated workflow | End-to-end illustrative intersection: greenfield intent → model/data/spec → bounded changes → evidence and factory improvement |
 
 ## Terminology and introduction sequence
 
@@ -50,7 +52,7 @@ The systems scope follows [INCOSE's systems engineering definition](https://www.
 
 ## Narrative controls
 - Planning, spec development, agents and review are core; do not subordinate them to V0 geometric explanation.
-- Keep a reusable illustrative DMS storyline, but each chapter must move a real engineering question forward.
+- Keep **one illustrative traffic-intersection V3 storyline**, but each chapter must move a new and specific engineering question forward. The published DMS V0 remains a legacy teaching system, not the recurring V3 product.
 - Show feedback upstream to planning, hypotheses and interface decisions.
 - Keep long-lead electronics/mechanical/physical-test cadences visible.
 - Link existing V0 topics to optional sidebars/references where main narrative would become repetitive.
