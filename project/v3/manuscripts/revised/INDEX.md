@@ -44,7 +44,7 @@ The prior [thirteen unapproved original draft manuscripts](../drafts/INDEX.md) a
 **The following remain different approval events:**
 1. Owner approval of the **fourteen-chapter structure** — completed in [issue #44](https://github.com/And-Gu/executable-engineering-lab/issues/44).
 2. Review of T1 **teaching source/model/integration semantics** — ongoing in [P0 issue #45](https://github.com/And-Gu/executable-engineering-lab/issues/45).
-3. **Independent full-course re-review** of these revised fourteen texts, preferably using the existing editorial reviewer agent and the actual Document-as-Code Lab source practices — **not yet performed**.
+3. **Independent full-course re-review** of these revised fourteen texts, preferably using the existing editorial reviewer agent and the actual Document-as-Code Lab source practices — **not yet performed**; tracked in [independent re-review issue #50](https://github.com/And-Gu/executable-engineering-lab/issues/50) with [the current brief](../../reviews/INDEPENDENT-REVIEW-BRIEF-REVISED-14-2026-11-16.md).
 4. Owner **editorial acceptance of the revised manuscript text** — not yet recorded.
 5. Separately authorized Astro implementation (including required accessible Ch03 graph and Ch04 model) and public release — not yet authorized.
 
