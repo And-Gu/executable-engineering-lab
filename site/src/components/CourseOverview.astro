@@ -1,0 +1,33 @@
+---
+import { readFileSync, readdirSync } from 'node:fs';
+const map = readFileSync(new URL('../../../project/CURRICULUM-MAP.md', import.meta.url), 'utf8');
+const files = readdirSync(new URL('../../../project/v3/manuscripts/revised/', import.meta.url));
+const rows = map.split('\n').filter(line => /^\| (I|II|III|IV)( |\|)/.test(line)).map(line => line.split('|').slice(1,-1).map(cell => cell.trim().replaceAll('**','')));
+const parts: { title: string; chapters: { number: string; title: string; summary: string; url: string }[] }[] = [];
+for (const [part, number, title, summary] of rows) {
+  if (part.includes('—')) parts.push({ title: part, chapters: [] });
+  const file = files.find(file => file.startsWith(number + '-') && file.endsWith('.md'));
+  if (!file) throw new Error(`Missing revised manuscript ${number}`);
+  parts.at(-1)!.chapters.push({ number, title, summary, url: `https://github.com/And-Gu/executable-engineering-lab/blob/main/project/v3/manuscripts/revised/${file}` });
+}
+if (parts.flatMap(part => part.chapters).length !== 14) throw new Error('Expected fourteen approved chapters');
+---
+<section class="course-overview" aria-labelledby="current-course-title">
+  <h2 id="current-course-title">The course · Fourteen chapters</h2>
+  <p>Follow one fictional traffic intersection from uncertain intent to an integrated product and the engineering capabilities needed to sustain it.</p>
+  <p class="course-status">The revised manuscripts have received an initial author review. Read them on GitHub below; V3 chapter web pages and interactive experiences are still in development. The earlier published lessons remain available separately.</p>
+  {parts.map(part => <section class="course-part"><h3>{part.title}</h3><ol start={Number(part.chapters[0].number)}>{part.chapters.map(chapter => <li><article><p class="chapter-number">Chapter {chapter.number}</p><h4><a href={chapter.url}>{chapter.title}</a></h4><p>{chapter.summary}</p><a class="manuscript-link" href={chapter.url}>Read manuscript on GitHub →</a></article></li>)}</ol></section>)}
+</section>
+<style>
+.course-overview{margin:3rem 0;color:inherit}
+.course-overview>p{max-width:75ch}
+.course-status{border-left:3px solid currentColor;padding-left:1rem;font-size:.9rem;opacity:.85}
+.course-part{margin:2rem 0}
+.course-part ol{list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,17rem),1fr));gap:1rem;padding:0}
+.course-part li{border:1px solid color-mix(in srgb,currentColor 35%,transparent);border-radius:.5rem;padding:1.2rem}
+h4{font-size:1.1rem;line-height:1.4;margin:.5rem 0}
+a{color:inherit;text-underline-offset:.2em}
+a:focus-visible{outline:3px solid currentColor;outline-offset:4px}
+.chapter-number,.manuscript-link{font-size:.8rem}
+article>p{line-height:1.6}
+</style>

@@ -1,4 +1,5 @@
 ---
+import CourseOverview from '../components/CourseOverview.astro';
 import HomeLayout from '../layouts/HomeLayout.astro';
 import { chapters, chapterPreviews, v2Chapters } from '../data/chapters';
 
@@ -128,12 +129,14 @@ const featuredChapters = chapters.filter(chapter => featuredPaths.has(chapter.pa
     </section>
   </div>
 
+  <CourseOverview />
+
   <section class="reading" aria-labelledby="reading-title">
-    <h2 id="reading-title">Explore the argument</h2>
+    <h2 id="reading-title">Earlier published lessons</h2>
     <div class="reading-content">
       {chapterPreviews.map(chapter => (
         <div class="chapter-preview">
-          <p class="label">Chapter {chapter.number} · Preview</p>
+          <p class="label">V2 · Chapter {chapter.number} · Earlier preview</p>
           <a href={`${base}learn/${chapter.path}/`}>Start with {chapter.title} <span aria-hidden="true">→</span></a>
         </div>
       ))}
