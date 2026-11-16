@@ -1,6 +1,7 @@
 ---
 import CourseNavigation from '../components/CourseNavigation.astro';
 import AuthorAttribution from '../components/AuthorAttribution.astro';
+import SocialLinks from '../components/SocialLinks.astro';
 import '../styles/chapter-reading.css';
 interface Props { title: string; description: string; number: number }
 const { title, description, number } = Astro.props;
@@ -22,7 +23,8 @@ const base = import.meta.env.BASE_URL;
     <a class="skip" href="#main">Skip to chapter</a>
     <header class="reading-shell site-header">
       <a class="brand" href={base}>Executable Engineering Lab</a>
-      <nav aria-label="Main navigation"><a href={`${base}learn/`}>Learn</a><a href={`${base}lab/`}>Lab</a><a href={`${base}reference/`}>Reference</a><a href="https://github.com/And-Gu/executable-engineering-lab">Source</a></nav>
+      <nav aria-label="Main navigation"><a href={`${base}learn/`}>Learn</a><a href={`${base}lab/`}>Lab</a><a href={`${base}reference/`}>Reference</a></nav>
+      <SocialLinks />
     </header>
     <div class="reading-shell reading-grid">
       <aside class="course-sidebar">
