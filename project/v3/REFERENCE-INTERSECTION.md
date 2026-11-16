@@ -1,7 +1,7 @@
 # V3 reference system — Four-way traffic intersection
 
 **Status:** Owner-confirmed editorial reference scenario · 2026-11-15  
-**Applies to:** The current, owner-approved 13-chapter curriculum in [CURRICULUM-MAP.md](../CURRICULUM-MAP.md)  
+**Applies to:** The current, owner-approved 14-chapter curriculum in [CURRICULUM-MAP.md](../CURRICULUM-MAP.md)  
 **What is approved:** Use the **four-way traffic intersection** as the **single recurring example** across V3.  
 **What is not approved here:** A completed engineering specification, safety-valid controller, model/simulation implementation, reworking the already-published Chapter 01 reader preview, or publishing any new V3 pages.
 
@@ -76,21 +76,22 @@ Use stable identifiers, **explicit relation types** (e.g. `constrains`, `impleme
 
 ## A single coherent journey across the current approved curriculum
 
-| Current chapter | What happens in the shared intersection case | Primary reader gain |
+| Approved chapter | What happens in the same fictional intersection | Primary reader gain |
 |---|---|---|
-| **01 — The New Engineering Paradigm** | A city has a traffic-flow problem, not a complete product or an engineering method. Show how improving the **product** and its **engineering environment** reinforce each other; distinguish agent work from a hypothetical AI-enabled product feature | Understand the two evolving systems |
-| **02 — Planning Under Uncertainty** | Choose which questions to investigate first; compare timing, sensing and physical lead times; plan both a product increment and the needed simulation/verification ability | Prioritize learning and capability |
-| **03 — Engineering Knowledge as Code** | Represent needs, functions, interfaces, constraints, decisions and source relationships; explore the **required interactive typed knowledge graph**, including a proposed adaptive-control change | Understand connected reusable information |
-| **04 — Learning Through Models and Prototypes** | Examine the simple signal state machine, regular vs seeded random arrivals, explainable waiting/queue output and model fidelity | Decide what a simulation establishes |
-| **05 — Engineering Data: From Measurements to Decisions** | Trace arrival/time series from original inputs to curated, annotated and derived comparisons; differentiate hypothetical/simulated from measured conditions | Improve data usefulness |
-| **06 — Spec-Driven Development Without Waterfall** | Turn the next intersection uncertainty into a bounded increment, with evolving specifications and explicit open questions | Specify progressively |
-| **07 — Directing AI Engineering Agents** | Explain a bounded, illustrative tool-assisted analysis/proposal task with sources, permissions and review outputs | Direct and evaluate agent work |
-| **08 — Engineering in Small, Reviewable Increments** | Separate interface, model, test and software improvements into reviewable changes while respecting physical dependencies | Control integration scope |
-| **09 — Continuously Integrated Engineering** | Design and **operate** the relevant engineering factory; an eligible bounded software change may target a hypothetical 24-hour accepted-request-to-releasable window, unlike physical/assurance-gated changes | Connect architecture to delivery capability |
-| **10 — Verification, Validation and Engineering Evidence** | Distinguish simulated property checks from controller, wiring, installation, operational and physical validation deliverables | Qualify product readiness |
-| **11 — Governance and Engineering Authority** | Examine safety/security/authority and risks when signal behavior or sensing interfaces change | Govern specific engineering consequences |
-| **12 — Managing Engineering Knowledge at Scale** | Compare related intersection configurations; ask which model, interface and test patterns can be reused and what evidence must be revisited | Reuse knowledge responsibly |
-| **13 — The AI-Native Engineering Environment** | Revisit the greenfield question, follow an illustrative product baseline and a later change, and assess the engineering environment's growing capabilities | Understand the end-to-end two-system cycle |
+| **01 — The New Engineering Paradigm** | City transport need is uncertain; show product/environment co-evolution and distinction between agents during engineering and hypothetical AI in product | Understand two evolving systems |
+| **02 — Planning Under Uncertainty** | Compare what is unknown about arrivals, conflicts, integration and physical equipment; choose next investigation | Prioritize learning and capability |
+| **03 — Engineering Knowledge as Code** | Represent need, functions, typed relations, interface and proposal status; inspect the mandatory graph | Interpret controlled, connected knowledge |
+| **04 — Learning Through Models and Prototypes** | Inspect a simplified fixed-phase state model and transparent arrivals/queue trace | Decide what a bounded model can establish |
+| **05 — Engineering Data: From Measurements to Decisions** | Preserve raw rows, annotations, units and valid/withheld comparisons from the same Ch04 trace | Assess whether data support a decision |
+| **06 — Spec-Driven Development Without Waterfall** | State a revision-bound next increment with valid/invalid cases, acceptance and unresolved alternatives | Specify progressively |
+| **07 — Directing AI Engineering Agents** | Illustrate bounded source selection, allowed tools, trace and handover without inventing an actual executed agent | Direct and audit delegated work |
+| **08 — Engineering in Small, Reviewable Increments** | Compare a thin outcome-driven change with a coupled interface revision needing multi-discipline review | Define coherent review boundaries |
+| **09 — From Models to an Integrated Product** | **New:** controller-side applied-state acknowledgment differs from a proposed adapter's message-received acknowledgment; inspect discrepancy, bench/emulator need, installer/maintainer consequences | Reason about real product interfaces and integration |
+| **10 — Verification, Validation and Engineering Evidence** | Assess claim-specific evidence for the provisional integrated configuration, distinguishing model checks, interface records and open physical validation | Qualify product and intended-use claims |
+| **11 — Governance and Engineering Authority** | Identify the roles, assurance controls and outstanding risks behind a deferred acceptance/change decision | Govern a concrete engineering consequence |
+| **12 — Continuously Integrated Engineering** | Design and operate the engineering factory for eligible changes, with a **hypothetical** 24-hour request-to-releasable target and a deliberately blocked path | Connect product eligibility to delivery capability |
+| **13 — Managing Engineering Knowledge at Scale** | Compare variants and decide which source/model/test patterns transfer and which evidence must be reassessed | Reuse engineering capabilities responsibly |
+| **14 — Choosing the Next Engineering Capability** | Make a constrained choice among improving data comparability, integration testing and agent delegation, using the accumulated case evidence | Decide the next engineering investment |
 
 **AI distinction:** AI agents may support engineering the intersection. The illustrated signal controller need not contain AI. An optional predictive traffic-model idea may illustrate **AI in products**, clearly labeled as an unselected hypothetical alternative. Do not claim the simple fixed-time controller uses AI. Do not invent agent-run logs.
 
@@ -100,7 +101,7 @@ Use stable identifiers, **explicit relation types** (e.g. `constrains`, `impleme
 - **V04, current Ch04:** Bounded phase-state and arrivals demonstration; pure calculation separate from display; seed/stated config for reproducibility; static explanatory fallback.
 - **V06, current Ch05:** Raw/curated/derived data, source identity, annotations and linked explanatory charts.
 - **V05, current Ch06:** Progressive spec maturity and decision consequences, not a coding tool.
-- **Ch07–13:** Reuse the same illustrative definitions only where a *new learning question* justifies the view. Avoid decorative dashboards, separate contradictory datasets and redundant model definitions.
+- **Ch07–14:** Reuse the same illustrative definitions only where a *new learning question* justifies the view. Avoid decorative dashboards, separate contradictory datasets and redundant model definitions.
 - Dark reading experience consistent with [the site design guide](../CHAPTER-STYLE-GUIDE.md); gold engineering environment / teal product in the contexts where this meaning matters.
 - The general craft of HTML presentations, scrollytelling, mindmaps and narrative dashboards belongs in **Document-as-Code Lab**. This site covers engineering semantics and visual evidence; no fourteenth presentation chapter.
 
