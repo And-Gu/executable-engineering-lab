@@ -6,11 +6,11 @@
 
 ## Curriculum authority
 
-**The owner's currently reviewed and approved chapter plan is the 13-chapter structure in [project/CURRICULUM-MAP.md](../../CURRICULUM-MAP.md).** The existing front page and [published Chapter 01 reader preview](../../../site/src/pages/learn/v2/01-new-engineering-paradigm.astro) use that structure.
+**The owner approved a fourteen-chapter V3 curriculum on 2026-11-16**, documented in [project/CURRICULUM-MAP.md](../../CURRICULUM-MAP.md) and the [13→14 migration map](../CHAPTER-MIGRATION-13-TO-14-2026-11-16.md). The public front page and [published V2 Chapter 01 reader preview](../../../site/src/pages/learn/v2/01-new-engineering-paradigm.astro) retain their **historical V2 structure** until a separate publication approval; they are not authoritative for the new fourteen chapters.
 
 Previous V3 discussions proposed **different chapter titles and numbering**. The four approved source manuscripts archived below are preserved, but should not be treated as the finished current Chapters 01–04. The user explicitly asked to re-review how they fit the **current** approved curriculum before drafting the remaining chapters.
 
-The current plan is **not** to rename chapters, insert another chapter or publish old V3 drafts into the new routes.
+The **structure change is approved**: new Chapter 09 and reordered later chapters. Existing thirteen full drafts are **unchanged source files**; no new Chapter 09 prose, 14-chapter manuscripts or published V3 routes are implied. Chapter 06 title retains its original wording pending possible later editorial renaming.
 
 ## Source prose preserved from earlier V3 discussions
 
@@ -25,25 +25,28 @@ These manuscripts were **editorially reviewed and approved as written**, before 
 
 **Do not alter these archived texts in place or silently transplant their former numbers into the current 13-chapter curriculum.** Reuse through proposed copy changes, with a new owner review where needed.
 
-## Current approved 13-chapter sequence — manuscript progress
+## Approved fourteen-chapter sequence — editorial migration status
 
-| Ch | Current title | Editorial manuscript / site status |
-|---|---|---|
-| 01 | The New Engineering Paradigm | Published **older condition-monitoring reader preview** remains intact; **new intersection-based V3 brief and content review drafted**; complete revised manuscript pending |
-| 02 | Planning Under Uncertainty | Updated **intersection-based V3 editorial brief** in `chapters/02-...`; full manuscript pending |
-| 03 | Engineering Knowledge as Code | Updated **intersection-based V3 editorial brief**; full manuscript pending; **mandatory interactive typed knowledge graph** still planned |
-| 04 | Learning Through Models and Prototypes | Updated **intersection-based V3 editorial brief**; full manuscript pending; bounded simulation planned |
-| 05 | Engineering Data: From Measurements to Decisions | Published v2 article exists; V3 adaptation pending |
-| 06 | Spec-Driven Development Without Waterfall | Current v2 brief exists; V3 full manuscript pending |
-| 07 | Directing AI Engineering Agents | Current v2 brief exists; V3 full manuscript pending |
-| 08 | Engineering in Small, Reviewable Increments | Current v2 brief exists; V3 full manuscript pending |
-| 09 | Continuously Integrated Engineering | Current v2 brief exists; V3 full manuscript pending |
-| 10 | Verification, Validation and Engineering Evidence | Current v2 brief exists; V3 full manuscript pending |
-| 11 | Governance and Engineering Authority | Current v2 brief exists; V3 full manuscript pending |
-| 12 | Managing Engineering Knowledge at Scale | Current v2 brief exists; V3 full manuscript pending |
-| 13 | The AI-Native Engineering Environment | Current v2 brief exists; V3 full manuscript pending |
+**No fourteen-chapter manuscript collection has been approved or completed.** Thirteen original source drafts remain available under [drafts/INDEX.md](drafts/INDEX.md), still numbered as before the structure decision. Follow the [exact source-to-current mapping](../CHAPTER-MIGRATION-13-TO-14-2026-11-16.md) instead of trusting old filenames or YAML front matter.
 
-**Plan approval is not manuscript approval.** No new V3 Chapters 02–13 have been approved as complete manuscripts by this current-plan alignment.
+| Approved # | Approved title | Existing thirteen-draft source | Status |
+|---:|---|---|---|
+| 01 | The New Engineering Paradigm | Old 01 | Original source draft; revised text pending |
+| 02 | Planning Under Uncertainty | Old 02 | Original source draft; revised text pending |
+| 03 | Engineering Knowledge as Code | Old 03 | Original source draft; required graph/fixture not implemented |
+| 04 | Learning Through Models and Prototypes | Old 04 | Original source draft; model/trace P0 work pending |
+| 05 | Engineering Data: From Measurements to Decisions | Old 05 | Original source draft; common data-case P0 work pending |
+| 06 | Spec-Driven Development Without Waterfall | Old 06 | Original source draft; revised spec example pending |
+| 07 | Directing AI Engineering Agents | Old 07 | Original source draft; auditable context/replay pending |
+| 08 | Engineering in Small, Reviewable Increments | Old 08 | Original source draft; vertical-slice revision pending |
+| **09** | **From Models to an Integrated Product** | **None** | **New chapter — editorial brief exists; full manuscript not written** |
+| 10 | Verification, Validation and Engineering Evidence | Old 10 | Original source draft; integrated product/evidence chain pending |
+| 11 | Governance and Engineering Authority | Old 11 | Original source draft; one worked authority decision pending |
+| **12** | Continuously Integrated Engineering | Old 09 | Source to renumber/review only after shared case |
+| **13** | Managing Engineering Knowledge at Scale | Old 12 | Source to renumber/review only after shared case |
+| **14** | **Choosing the Next Engineering Capability** | Old 13 | Capstone source to retitle/rewrite as an engineering choice |
+
+**Owner approval covers the chapter count/position/reordering**, not the original prose's suitability for its new position. Existing V2 preview, published V2 Engineering Data article, original DMS V0 lessons, and four previously approved alternative-title source manuscripts remain unchanged.
 
 ## Owner-confirmed reference and proposed editorial material
 
@@ -51,7 +54,8 @@ These manuscripts were **editorially reviewed and approved as written**, before 
 - [Chapters 01–04 editorial review](../CHAPTERS-01-04-EDITORIAL-REVIEW.md): substantive brief-level reconciliation against current site direction, transitions, visuals and previously approved source prose.
 - [Current proposed Chapter 01–04 briefs](../../../chapters/01-the-new-engineering-paradigm.md), with matching `chapters/02-...`–`chapters/04-...`: **editorial proposals**, not full approved manuscripts or published pages.
 - [Alignment and gap register — current plan](../EDITORIAL-ALIGNMENT-2026-11-15.md): resolved example choice, 20 identified content/visualization gaps, presentation split, remaining manuscript review.
-- [Current-plan briefs for Chapters 05–13](../CHAPTER-BRIEFS-05-13-2026-11-15.md): proposed chapter questions, distinct outcomes, learning sequences, example boundaries, primary visual and editorial acceptance criteria.
+- [Dated thirteen-chapter briefs](../CHAPTER-BRIEFS-05-13-2026-11-15.md): **superseded numbering**; reuse through the approved [migration map](../CHAPTER-MIGRATION-13-TO-14-2026-11-16.md).
+- [New Chapter 09 integration brief](../CHAPTER-09-INTEGRATION-BRIEF-2026-11-16.md): editorial goal, example discrepancy, reader decisions, interface/physical handoff and acceptance checks.
 - [Site direction](../../SITE-DIRECTION.md): product system and engineering environment, greenfield focus, AI/tool distinctions and site goal.
 - [Reading style guide](../../CHAPTER-STYLE-GUIDE.md): first reader preview, visual hierarchy, accessibility and engineering meaning.
 - [Research index](../../../research/INDEX.md): source archive. Its proposed current-plan index maps topics to titles; the dated source archive still contains historical numbered quote candidates. Verify original-source claims and quotes before publication.
@@ -61,7 +65,7 @@ These manuscripts were **editorially reviewed and approved as written**, before 
 
 1. **Read the current course map** `project/CURRICULUM-MAP.md` first and do **not** infer the current chapter sequence from older V3 manuscript filenames.
 2. Read `project/SITE-DIRECTION.md`, `project/CHAPTER-STYLE-GUIDE.md` and **`project/v3/REFERENCE-INTERSECTION.md`** for the reader design, purpose and confirmed reference. The existing published monitoring pilot is historical/preview material until separately replaced.
-3. Read this index, the alignment/gap register and **`project/v3/CHAPTERS-01-04-EDITORIAL-REVIEW.md`**. For current Chapters 01–04 use the updated `chapters/01-...` through `chapters/04-...` proposed briefs and inspect preserved older prose as source material **only**. For current Chapters 05–13 use their current-plan briefs.
+3. Read the **approved 13→14 migration map** `project/v3/CHAPTER-MIGRATION-13-TO-14-2026-11-16.md` and this index before using any old chapter-numbered file. Read the latest independent review and worked-case proposal. For new Ch09 use `project/v3/CHAPTER-09-INTEGRATION-BRIEF-2026-11-16.md`. Earlier 01–04 briefs and 05–13 briefs remain useful, but those dated files do **not** override approved fourteen-chapter numbering.
 4. Read relevant source research via `research/INDEX.md` and `research/v3/`; verify claims and potential quotations at the original source.
 5. Draft a chapter's distinct learning contribution and proposed visual with an explicit editorial status. Do not assume a passing test or PR implies approval of prose.
 6. Keep review drafts under `project/v3/manuscripts/drafts/` and any reusable reference under `project/` or `docs/`; avoid `site/src/` until **explicit publication authorization**. Existing legacy lessons, V2 Chapter 01 preview and engineering demonstrator remain intact.
@@ -70,8 +74,8 @@ These manuscripts were **editorially reviewed and approved as written**, before 
 **This is a manual, deterministic agent index, not a semantic search database.** These GitHub files are visible to the public but are not automatically published as Astro website pages.
 
 
-## Complete current-title manuscript drafts — 16 November 2026
+## Thirteen preserved source drafts — archived 16 November 2026
 
-All thirteen chapters have **full draft text** under [drafts/INDEX.md](drafts/INDEX.md), following the owner-approved **current** chapter titles and the four-way intersection reference. These are **new unapproved manuscripts** for review, **not** the four earlier approved alternative-title source documents above. No public V3 pages are published by these files.
+Thirteen **source drafts** remain under [drafts/INDEX.md](drafts/INDEX.md) with the **earlier thirteen-chapter titles/numbering and full unchanged text**. They are *not* the approved fourteen-chapter collection; new Ch09 still needs to be written and the later draft texts must be reviewed/reordered. These are editorial drafts, not owner-approved prose or published site pages.
 
-The independent editorial review is described in [the review brief](../reviews/INDEPENDENT-REVIEW-BRIEF-2026-11-16.md) and tracked by [issue #40](https://github.com/And-Gu/executable-engineering-lab/issues/40). The reviewer may propose moving material, new chapters or a different chapter count, subject to a later owner decision. Do not silently make the proposed changes.
+The [independent full-course review](../reviews/INDEPENDENT-FULL-COURSE-REVIEW-2026-11-16.md) is complete and produced the **owner-accepted 14-chapter recommendation**. [Decision #44](https://github.com/And-Gu/executable-engineering-lab/issues/44) records the authorization of the structure. [P0 issue #45](https://github.com/And-Gu/executable-engineering-lab/issues/45) tracks **real, inspectable teaching records** required before the large manuscript rewrite; all revisions and publication remain separate review gates.
