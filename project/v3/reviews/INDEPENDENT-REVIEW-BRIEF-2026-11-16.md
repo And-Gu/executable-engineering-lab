@@ -1,5 +1,8 @@
 # Independent Editorial and Curriculum Review Assignment — V3
 
+> **Historical completed review assignment (13 original drafts).** The first independent review was delivered in [PR #42](https://github.com/And-Gu/executable-engineering-lab/pull/42). The new owner-approved course now has **14 revised draft manuscripts**. For a second independent review, use [issue #50](https://github.com/And-Gu/executable-engineering-lab/issues/50) and the [current fourteen-chapter review brief](INDEPENDENT-REVIEW-BRIEF-REVISED-14-2026-11-16.md), not the source paths/targets below.
+
+
 **Status:** Review brief for a **separate reviewing agent**; not the review itself  
 **Date:** 2026-11-16  
 **Target:** All 13 full draft reader-facing chapters, written by a different agent/author  
