@@ -10,7 +10,7 @@
 
 Previous V3 discussions proposed **different chapter titles and numbering**. The four approved source manuscripts archived below are preserved, but should not be treated as the finished current Chapters 01–04. The user explicitly asked to re-review how they fit the **current** approved curriculum before drafting the remaining chapters.
 
-The **structure change is approved**: new Chapter 09 and reordered later chapters. Existing thirteen full drafts are **unchanged source files**; no new Chapter 09 prose, 14-chapter manuscripts or published V3 routes are implied. Chapter 06 title retains its original wording pending possible later editorial renaming.
+The **structure change is approved**: new Chapter 09 and reordered later chapters. Existing thirteen full drafts are **unchanged source files**; a **new fourteen-chapter set of complete revised drafts now exists**, including new Ch09, but **none of its text is owner-approved or published**. Chapter 06 title retains its original wording pending possible later editorial renaming.
 
 ## Source prose preserved from earlier V3 discussions
 
@@ -25,9 +25,9 @@ These manuscripts were **editorially reviewed and approved as written**, before 
 
 **Do not alter these archived texts in place or silently transplant their former numbers into the current fourteen-chapter curriculum.** Reuse through proposed copy changes, with a new owner review where needed.
 
-## Approved fourteen-chapter sequence — editorial migration status
+## Approved fourteen-chapter sequence — original source mapping and revised manuscript status
 
-**No fourteen-chapter manuscript collection has been approved or completed.** Thirteen original source drafts remain available under [drafts/INDEX.md](drafts/INDEX.md), still numbered as before the structure decision. Follow the [exact source-to-current mapping](../CHAPTER-MIGRATION-13-TO-14-2026-11-16.md) instead of trusting old filenames or YAML front matter.
+**The revised fourteen-chapter manuscript set is complete as a draft, not approved.** Read [all 14 revised manuscripts](revised/INDEX.md) and the shared [T1 inspectable teaching case](../case-study/README.md). The thirteen original source drafts remain separately under [drafts/INDEX.md](drafts/INDEX.md), still numbered as before the structural decision. The table below remains a **historical source mapping**, not a claim that revised text is missing.
 
 | Approved # | Approved title | Existing thirteen-draft source | Status |
 |---:|---|---|---|
@@ -39,7 +39,7 @@ These manuscripts were **editorially reviewed and approved as written**, before 
 | 06 | Spec-Driven Development Without Waterfall | Old 06 | Original source draft; revised spec example pending |
 | 07 | Directing AI Engineering Agents | Old 07 | Original source draft; auditable context/replay pending |
 | 08 | Engineering in Small, Reviewable Increments | Old 08 | Original source draft; vertical-slice revision pending |
-| **09** | **From Models to an Integrated Product** | **None** | **New chapter — editorial brief exists; full manuscript not written** |
+| **09** | **From Models to an Integrated Product** | **None** | New [complete revised manuscript draft](revised/09-from-models-to-an-integrated-product.md); editorial review pending |
 | 10 | Verification, Validation and Engineering Evidence | Old 10 | Original source draft; integrated product/evidence chain pending |
 | 11 | Governance and Engineering Authority | Old 11 | Original source draft; one worked authority decision pending |
 | **12** | Continuously Integrated Engineering | Old 09 | Source to renumber/review only after shared case |
@@ -47,6 +47,10 @@ These manuscripts were **editorially reviewed and approved as written**, before 
 | **14** | **Choosing the Next Engineering Capability** | Old 13 | Capstone source to retitle/rewrite as an engineering choice |
 
 **Owner approval covers the chapter count/position/reordering**, not the original prose's suitability for its new position. Existing V2 preview, published V2 Engineering Data article, original DMS V0 lessons, and four previously approved alternative-title source manuscripts remain unchanged.
+
+## Complete revised fourteen-chapter manuscript set — pending editorial acceptance
+
+**14/14 revised, full-text US-English editorial drafts are now available** in [revised/INDEX.md](revised/INDEX.md), based on the current fourteen-chapter authority. They use the [T1 case-study source and checked toy-model data](../case-study/README.md) to make chapter claims inspectable. The original thirteen drafts and four earlier approved alternative-title sources remain intact. These revised drafts have **not** received an independent re-review or owner approval; no Astro publication is authorized.
 
 ## Owner-confirmed reference and proposed editorial material
 
@@ -76,6 +80,6 @@ These manuscripts were **editorially reviewed and approved as written**, before 
 
 ## Thirteen preserved source drafts — archived 16 November 2026
 
-Thirteen **source drafts** remain under [drafts/INDEX.md](drafts/INDEX.md) with the **earlier thirteen-chapter titles/numbering and full unchanged text**. They are *not* the approved fourteen-chapter collection; new Ch09 still needs to be written and the later draft texts must be reviewed/reordered. These are editorial drafts, not owner-approved prose or published site pages.
+Thirteen **source drafts** remain under [drafts/INDEX.md](drafts/INDEX.md) with the **earlier thirteen-chapter titles/numbering and full unchanged text**. They are *not* the approved fourteen-chapter collection; new Ch09 and all later revised texts now exist separately in [revised/](revised/INDEX.md) but still require editorial review. These are editorial drafts, not owner-approved prose or published site pages.
 
 The [independent full-course review](../reviews/INDEPENDENT-FULL-COURSE-REVIEW-2026-11-16.md) is complete and produced the **owner-accepted 14-chapter recommendation**. [Decision #44](https://github.com/And-Gu/executable-engineering-lab/issues/44) records the authorization of the structure. [P0 issue #45](https://github.com/And-Gu/executable-engineering-lab/issues/45) tracks **real, inspectable teaching records** required before the large manuscript rewrite; all revisions and publication remain separate review gates.
