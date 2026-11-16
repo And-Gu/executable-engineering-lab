@@ -1,22 +1,11 @@
 ---
-import { readFileSync, readdirSync } from 'node:fs';
-const map = readFileSync(new URL('../../../project/CURRICULUM-MAP.md', import.meta.url), 'utf8');
-const files = readdirSync(new URL('../../../project/v3/manuscripts/revised/', import.meta.url));
-const rows = map.split('\n').filter(line => /^\| (I|II|III|IV)( |\|)/.test(line)).map(line => line.split('|').slice(1,-1).map(cell => cell.trim().replaceAll('**','')));
-const parts: { title: string; chapters: { number: string; title: string; summary: string; url: string }[] }[] = [];
-for (const [part, number, title, summary] of rows) {
-  if (part.includes('—')) parts.push({ title: part, chapters: [] });
-  const file = files.find(file => file.startsWith(number + '-') && file.endsWith('.md'));
-  if (!file) throw new Error(`Missing revised manuscript ${number}`);
-  parts.at(-1)!.chapters.push({ number, title, summary, url: `https://github.com/And-Gu/executable-engineering-lab/blob/main/project/v3/manuscripts/revised/${file}` });
-}
-if (parts.flatMap(part => part.chapters).length !== 14) throw new Error('Expected fourteen approved chapters');
+import { parts } from "../data/v3-course";
 ---
 <section class="course-overview" aria-labelledby="current-course-title">
   <h2 id="current-course-title">The course · Fourteen chapters</h2>
   <p>Follow one fictional traffic intersection from uncertain intent to an integrated product and the engineering capabilities needed to sustain it.</p>
-  <p class="course-status">The revised manuscripts have received an initial author review. Read them on GitHub below; V3 chapter web pages and interactive experiences are still in development. The earlier published lessons remain available separately.</p>
-  {parts.map(part => <section class="course-part"><h3>{part.title}</h3><ol start={Number(part.chapters[0].number)}>{part.chapters.map(chapter => <li><article><p class="chapter-number">Chapter {chapter.number}</p><h4><a href={chapter.url}>{chapter.title}</a></h4><p>{chapter.summary}</p><a class="manuscript-link" href={chapter.url}>Read manuscript on GitHub →</a></article></li>)}</ol></section>)}
+  <p class="course-status">All fourteen chapters are available below following initial author review. The examples are fictional teaching cases; interactive V3 graph and model tools remain in development. Earlier lessons remain available separately.</p>
+  {parts.map(part => <section class="course-part" id={`part-${Number(part.chapters[0].number)}`}><h3>{part.title}</h3><ol start={Number(part.chapters[0].number)}>{part.chapters.map(chapter => <li><article><p class="chapter-number">Chapter {chapter.number}</p><h4><a href={chapter.url}>{chapter.title}</a></h4><p>{chapter.summary}</p><a class="manuscript-link" href={chapter.url}>Read chapter →</a></article></li>)}</ol></section>)}
 </section>
 <style>
 .course-overview{margin:3rem 0;color:inherit}

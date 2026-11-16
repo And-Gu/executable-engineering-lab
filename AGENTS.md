@@ -73,3 +73,6 @@ Read the [complete fourteen-chapter revised draft index](project/v3/manuscripts/
 
 ## Home/Learn publication — 16 November 2026
 The owner confirms initial review of the revised manuscripts and authorizes Home/Learn alignment, push and publication. Both surfaces use CourseOverview.astro, derived from project/CURRICULUM-MAP.md, with explicit GitHub manuscript links. This publishes course navigation, not V3 interactive chapter pages. Preserve existing lessons and distinguish initial owner review from independent re-review.
+
+## V3 web publication — owner authorization 16 November 2026
+The owner explicitly requests publication of all fourteen revised manuscripts as real chapter pages, linked from Home/Learn. Render the revised Markdown directly, preserve historical originals, distinguish initial author review from physical validation or completed interactive tools. This supersedes earlier unpublished-site restrictions for these fourteen texts only.
