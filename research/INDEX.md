@@ -3,7 +3,7 @@
 <!-- EEL_RESEARCH_NOT_FOR_PUBLICATION -->
 **For editors and AI agents.** Start here before drafting, revising or sourcing a v3 chapter. This file is in the GitHub repository but **not published on the Astro site**.
 
-**Version:** 2026-11-15 (curriculum mapping updated) · **Curriculum:** current owner-approved 13 chapters · **Status:** background material awaiting source and quotation verification.
+**Version:** 2026-11-16 (curriculum remapped after owner structural approval) · **Curriculum:** current approved **14 chapters** · **Status:** background material awaiting source and quotation verification.
 
 ## Source register
 
@@ -13,9 +13,9 @@
 
 **Reference decision (2026-11-15):** The owner selected the fictional **four-way traffic intersection** as the sole recurring V3 system case; see [reference contract](../project/v3/REFERENCE-INTERSECTION.md). The already published condition-monitoring Chapter 01 preview and legacy DMS V0 lab remain unchanged; do not make them a second V3 case. Research references should support the **engineering claims**, not supply unverified intersection measurements or generic quotation decoration.
 
-## Routing by the current approved 13-chapter curriculum
+## Routing by the current approved fourteen-chapter curriculum
 
-**Owner clarification 2026-11-15:** The chapter sequence and titles in `project/CURRICULUM-MAP.md` are approved. This index supersedes an earlier alternative V3 numbering. The source archive's **13 quotation candidates still show their original chapter numbers**; map those quotes by **topic and source**, never by their old numerical labels, and verify exact wording and attribution before use.
+**Owner decisions 2026-11-15 and 2026-11-16:** The V3 chapter titles/numbers are governed by `project/CURRICULUM-MAP.md`; an independent review led to the **approved fourteen-chapter sequence**, with new product integration Ch09 and later chapter reordering. Use the [exact migration map](../project/v3/CHAPTER-MIGRATION-13-TO-14-2026-11-16.md). The historical source archive includes **thirteen quotation candidates with obsolete chapter-number labels**; match quotations by *topic and verified source*, never by old number. No candidate quotation is automatically verified.
 
 | Current chapter | Search themes and best source types | Older candidate quote/topic to consider |
 |---|---|---|
@@ -27,11 +27,12 @@
 | 06 — Spec-Driven Development Without Waterfall | OpenSpec, GitHub Spec Kit, spec-to-code vs spec-to-engineering, progressive specs, feedback loops | Previously Ch 05 OpenSpec |
 | 07 — Directing AI Engineering Agents | Anthropic agent observations, Linux Foundation AAIF, task contracts, tools, human/agent roles | Previously Ch 08 Anthropic and Ch 09 context/AAIF |
 | 08 — Engineering in Small, Reviewable Increments | PR review quality, DoD, architectural scope, agent-generated change studies, cross-discipline increments | **New source/quotation needed**; evaluate PR mining papers and DORA |
-| 09 — Continuously Integrated Engineering | Factory design **and** operation, DORA, CI/CD, platform engineering, eligible 24-hour release goal, physical cadences | Previously Ch 10 DORA lead time |
-| 10 — Verification, Validation and Engineering Evidence | NASA IV&V, INCOSE V&V, product lifecycle deliverables, evidence applicability | Previously Ch 07 NASA |
-| 11 — Governance and Engineering Authority | OpenSSF Gemara, safety, cyber, nonfunctional constraints, model/agent permissions and supply chain | Previously Ch 11 Gemara |
-| 12 — Managing Engineering Knowledge at Scale | FAIR, OSLC, cross-product reuse, models, engineering process assets and Agent Skills | Previously Ch 12 OSLC |
-| 13 — The AI-Native Engineering Environment | Intent-driven and prompt-first interaction plus specialist GUIs, integrative engineering factory, agent interfaces | Previously Ch 13 OpenAI specialist UI |
+| **09 — From Models to an Integrated Product** | Product realization and system integration, interface semantic disagreement, configuration, bench/emulator validation approach, operator/maintainer needs | **New research area:** NASA Product Realization, NASA Product Verification/Validation (scope-specific, not traffic regulations) |
+| 10 — Verification, Validation and Engineering Evidence | NASA IV&V, INCOSE V&V, analysis/inspection/demonstration/test, claim versus applicability, physical/operational evidence | Previously candidate Ch07 NASA; verify precise source before quotation |
+| 11 — Governance and Engineering Authority | OpenSSF Gemara, safety, cyber, hardening, nonfunctional constraints, tool/model/agent permissions and accountable acceptance | Previously candidate Ch11 Gemara; source check required |
+| **12 — Continuously Integrated Engineering** | Engineering factory **design and operation**, DORA metrics, CI/CD, eligible release classes and illustrative 24-hour target, distinct physical cadences | Previously candidate Ch10 DORA; distinguish commit-to-deploy from accepted-request-to-releasable |
+| **13 — Managing Engineering Knowledge at Scale** | FAIR, OSLC, cross-product source/model/test reuse, shared-asset stewardship, variant/configuration compatibility, Agent Skills | Previously candidate Ch12 OSLC; qualification of applicability required |
+| **14 — Choosing the Next Engineering Capability** | Whole-product/engineering-environment co-evolution, capability investment, prompt→agent/tool→specialist visual review and engineering decisions | Previously candidate Ch13 specialist GUI discussion; verify specific sources and claims |
 
 **Presentation split:** Document-as-Code Lab's *Beyond Slides* material covers presentation storytelling, HTML slides, mind maps, dashboards and interactive delivery; Executable Engineering Lab's technical views serve engineering investigation (system/knowledge graphs, SysML, simulation/data/evidence).
 
@@ -50,6 +51,7 @@
 - [Research archive routine](README.md)
 - [v3 tracking issue #32](https://github.com/And-Gu/executable-engineering-lab/issues/32)
 - [v2 editorial guidelines](../project/EDITORIAL-GUIDE.md)
-- [v2 curriculum map](../project/CURRICULUM-MAP.md)
+- [current approved V3 fourteen-chapter curriculum](../project/CURRICULUM-MAP.md)
+- [approved migration and source map](../project/v3/CHAPTER-MIGRATION-13-TO-14-2026-11-16.md)
 
 **Editorial scope:** The reference intersection is a teaching example, not an engineering authoring tool. An interactive knowledge graph and a small simulation may be used to illustrate principles; they are not evidence of an operational controller.
