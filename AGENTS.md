@@ -56,3 +56,12 @@ Do not rewrite previously approved source text, update published Astro pages, cr
 The root `research/` folder is a **non-published archive**: it is outside Astro's `site/src/` and static assets, and must never be imported into a public route or copied to public assets without explicit editorial approval. GitHub itself is public, so do not put confidential material in this folder. Register every new source note in `research/INDEX.md` (chapter mapping, topic, date, verification status, source URL). Follow `research/README.md` when updating the archive.
 
 Before citing an archived claim or chapter quote in published prose, open the authoritative primary source and verify precise text, context, date and scope. Distinguish peer-reviewed results, standards, surveys, and vendor/project positioning. Do not auto-promote quotations or repeat generic AI caveats. Run `npm run build` and `npm run research:check` on any PR affecting research or publication; this checks for accidental leakage into the generated site.
+
+
+## V3 complete manuscript drafts and independent review — 2026-11-16
+
+The current 13 chapters now each have a **complete reader-facing draft** under [project/v3/manuscripts/drafts/INDEX.md](project/v3/manuscripts/drafts/INDEX.md). All are **unapproved, unpublished drafts**; chapter-plan approval does not approve the prose. The earlier alternative-title approved source manuscripts remain preserved separately.
+
+Before reviewing, implementing or preparing a new public chapter, read the **entire current draft**, current site/curriculum authority and [independent reviewer brief](project/v3/reviews/INDEPENDENT-REVIEW-BRIEF-2026-11-16.md). [Review issue #40](https://github.com/And-Gu/executable-engineering-lab/issues/40) requests a genuinely independent agent critique of the whole course, including Chapter 01–13, language and structure; the reviewer is free to recommend changing the chapter count, but no recommendation is applied automatically.
+
+A [dedicated reviewer agent definition](.github/agents/v3-curriculum-reviewer.agent.md) is available for explicit selection in supported Copilot/VS Code sessions. **Adding an agent definition or issue is not proof that the agent was executed.** The independent review is complete only when its separate report has actually been submitted and inspected. No change to the public Astro site, original V0 model or historically approved sources is implied.
