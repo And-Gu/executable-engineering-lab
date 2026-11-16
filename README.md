@@ -127,7 +127,7 @@ Use a short-lived branch and reviewable PR. Read [SITE_SPEC.md](SITE_SPEC.md), [
 
 ## V3 technical visualization reference (proposal)
 
-The open [V3 master issue #32](https://github.com/And-Gu/executable-engineering-lab/issues/32) defines the editorial and planning boundary for the proposed 13-chapter curriculum. The [Engineering Visualization: From Models to Understanding](docs/v3/ENGINEERING-VISUALIZATION.md) guide is proposed supporting material for V3 Chapters 03, 04 and 06, including the V03 interactive knowledge-graph specification, bounded executable behavior and engineering data views. It is **not** an implemented visualization, an approved reader-facing manuscript or an authorization to begin implementation. Published V0/v2 routes and definitions remain unchanged.
+The open [V3 master issue #32](https://github.com/And-Gu/executable-engineering-lab/issues/32) defines the editorial and planning boundary for the owner-approved **fourteen-chapter V3** curriculum (editorial plan; no site publication). The [Engineering Visualization: From Models to Understanding](docs/v3/ENGINEERING-VISUALIZATION.md) guide is proposed supporting material for V3 Chapters 03, 04 and 06, including the V03 interactive knowledge-graph specification, bounded executable behavior and engineering data views. It is **not** an implemented visualization, an approved reader-facing manuscript or an authorization to begin implementation. Published V0/v2 routes and definitions remain unchanged.
 
 ## V2 transition proposal
 
@@ -136,3 +136,7 @@ A Stage 0–1 draft reframes Home/Learn around **Engineering at the Speed of AI*
 ## Unpublished editorial research and agent source index
 
 Research, source assessments and quotation candidates for the v3 curriculum are stored under [`research/`](research/). See the [chapter-by-chapter index](research/INDEX.md) and [archival / non-publication procedure](research/README.md). Agents drafting educational text must read the index before selecting source material. The research is visible in this public GitHub repository but is excluded from the Astro website unless separately approved. The build runs `npm run research:check` as an additional isolation safeguard.
+
+## V3 editorial curriculum — approved fourteen chapters (16 November 2026)
+
+The authoritative new course is [the owner-approved fourteen-chapter plan](project/CURRICULUM-MAP.md), with [a 13-source→14 migration map](project/v3/CHAPTER-MIGRATION-13-TO-14-2026-11-16.md) and a [new Chapter 09 interface/integration brief](project/v3/CHAPTER-09-INTEGRATION-BRIEF-2026-11-16.md). The [independent review](project/v3/reviews/INDEPENDENT-FULL-COURSE-REVIEW-2026-11-16.md) motivates the structural change. **Thirteen complete original manuscripts remain archived as draft sources; the revised fourteen manuscript set is not yet complete or published.** The [worked-case P0 issue](https://github.com/And-Gu/executable-engineering-lab/issues/45) tracks examples to make the course inspectable. Legacy pages and V2 navigation are preserved.
