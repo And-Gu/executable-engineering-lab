@@ -11,19 +11,7 @@ concurrency:
 jobs:
   build:
     if: github.ref == 'refs/heads/main'
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version-file: .nvmrc
-          cache: npm
-      - run: npm ci
-      - run: npm run check
-      - uses: actions/configure-pages@v5
-      - uses: actions/upload-pages-artifact@v3
-        with:
-          path: dist
+    uses: ./.github/workflows/validate.yml
   deploy:
     needs: build
     runs-on: ubuntu-latest
@@ -37,3 +25,30 @@ jobs:
       - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v4
+  verify:
+    name: Verify published revision and routes
+    needs: deploy
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    env:
+      EXPECTED_REVISION: ${{ github.sha }}
+      TEST_RUN_ID: hosted-${{ github.run_id }}-${{ github.run_attempt }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+      - name: Check public identity before and after route checks
+        run: node scripts/verify.mjs --release --checks=hosted --target=https://and-gu.github.io/executable-engineering-lab/
+      - name: Retain hosted verification evidence
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: hosted-verification-${{ github.sha }}
+          path: artifacts/runs/${{ env.TEST_RUN_ID }}/
+          if-no-files-found: error
+          retention-days: 30

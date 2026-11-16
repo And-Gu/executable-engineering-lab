@@ -8,7 +8,9 @@ V0 is one fixed ideal circular sensor, a rectangular area, deterministic cell-ce
 
 Use strict source validation. Resolve every ID and source path. Include provenance and honest working-tree status in generated evidence; never fabricate timestamps, results or CI outcomes. An expected engineering FAIL must not be disguised as PASS.
 
-Make reviewable PR-sized changes. Run npm run check and npm run evidence before handoff. For UI work check keyboard access, labels, text outcomes, mobile layout and GitHub Pages base-path links. Follow ROADMAP.md for subsequent increments. Do not merge or publish changes merely because checks pass.
+Make reviewable PR-sized changes. Follow the maintained delivery commands in README.md. Run the complete assigned preview check before handoff; it includes reference and proposal evidence. After an authorized commit, run release verification on the clean revision. For UI work check keyboard access, labels, text outcomes, mobile layout and GitHub Pages base-path links. Follow ROADMAP.md for subsequent increments. Do not merge or publish changes merely because checks pass.
+
+Read `npm run delivery -- report` before delivery work. Preserve an active owner and use an explicit reasoned handoff. Only that owner edits shared sources, builds, switches branches or performs authorized commit/merge/publication actions. Assign each check/revision/stage/target once; record a reason before rerunning. Select Node from `.nvmrc`, use the shared preflight, and retain isolated run evidence. The CI impact map is advisory and does not waive required gates. Record phase boundaries and unknowns honestly; reuse valid CI/hosted evidence instead of duplicating it. Instructions and owner records do not grant permission.
 
 When completing a new lesson, register its path, title and summary in site/src/data/chapters.ts. Home chapter cards and the Learn index share this list; keep it in reading order and include only complete lessons present in the build. Verify both surfaces and base-path links before handoff.
 
