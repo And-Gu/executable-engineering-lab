@@ -70,3 +70,6 @@ The independent review of the **original thirteen manuscripts** was completed an
 ## V3 revised full manuscripts and T1 source — pending independent re-review
 
 Read the [complete fourteen-chapter revised draft index](project/v3/manuscripts/revised/INDEX.md), [T1 source graph/data and decisions](project/v3/case-study/README.md) and [model-check note](project/v3/case-study/MODEL-CHECK.md). This collection is **14/14 draft-complete**, not independently re-reviewed or owner-approved. Use revised chapters as the **current editorial draft**, while the thirteen historical draft files remain unchanged sources. The T1 model is a synthetic toy calculation; it is not a real intersection or a qualified simulation. The editorial fixture's Node checker can be run separately, but it is not yet part of GitHub Actions. Do not publish Astro content without explicit approval.
+
+## Home/Learn publication — 16 November 2026
+The owner confirms initial review of the revised manuscripts and authorizes Home/Learn alignment, push and publication. Both surfaces use CourseOverview.astro, derived from project/CURRICULUM-MAP.md, with explicit GitHub manuscript links. This publishes course navigation, not V3 interactive chapter pages. Preserve existing lessons and distinguish initial owner review from independent re-review.

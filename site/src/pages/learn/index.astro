@@ -1,22 +1,20 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import { chapters, v2Chapters, chapterPreviews } from '../../data/chapters';
-import { v2Parts } from '../../data/v2-curriculum';
+import CourseOverview from '../../components/CourseOverview.astro';
 const base = import.meta.env.BASE_URL;
 
 ---
 <Layout title="Learning path">
-  <p class="eyebrow">Learn · Curriculum transition</p>
+  <p class="eyebrow">Learn · Fourteen-chapter course</p>
   <h1>Develop the system. Develop how you engineer it.</h1>
   <p class="lead">Explore how executable models, software-driven workflows and AI agents change systems engineering—from an uncertain product idea to useful improvements in operation.</p>
+  <CourseOverview />
   <section aria-labelledby="reader-preview-title">
-    <h2 id="reader-preview-title">Start with Chapter 1</h2>
-    <p>The opening chapter is a reader preview of the revised content and dark chapter layout.</p>
+    <h2 id="reader-preview-title">Earlier Chapter 1 preview</h2>
+    <p>This published V2 monitoring example predates the current fourteen-chapter intersection course.</p>
     {chapterPreviews.map(chapter => <p><a href={`${base}learn/${chapter.path}/`}><strong>{chapter.title} →</strong></a><br />{chapter.summary}</p>)}
   </section>
-  <h2>V2 course structure</h2>
-  <p><strong>Planned curriculum.</strong> The full sequence below is planned; available v2 articles are linked separately below. <a href="#published-lessons">Go to the published lessons</a> for working examples.</p>
-  <div class="parts">{v2Parts.map(part => <section class="card" id={`part-${part.start}`}><h3>{part.title}</h3><p>{part.message}</p><ol start={part.start}>{part.chapters.map(title => <li>{title}</li>)}</ol></section>)}</div>
   <section class="course-language" aria-labelledby="course-language-title">
     <h3 id="course-language-title">A shared vocabulary from Chapter 1</h3>
     <p>The <a href={`${base}learn/v2/01-new-engineering-paradigm/`}>Chapter 1 preview</a> introduces systems engineering, executable engineering, software-driven workflows and AI-assisted engineering. It explains what AI agents do and distinguishes AI used in engineering from AI in products.</p>
