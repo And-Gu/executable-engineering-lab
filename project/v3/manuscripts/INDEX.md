@@ -23,7 +23,7 @@ These manuscripts were **editorially reviewed and approved as written**, before 
 | Digital Threads and Knowledge Graphs | [03 manuscript](approved/03-digital-threads-and-knowledge-graphs.md) | Greenfield/brownfield, typed links, traceability, AI context and impact analysis |
 | Executable Engineering Models | [04 manuscript](approved/04-executable-engineering-models.md) | Model fidelity, state and arrival models, simulations and result interpretation |
 
-**Do not alter these archived texts in place or silently transplant their former numbers into the current 13-chapter curriculum.** Reuse through proposed copy changes, with a new owner review where needed.
+**Do not alter these archived texts in place or silently transplant their former numbers into the current fourteen-chapter curriculum.** Reuse through proposed copy changes, with a new owner review where needed.
 
 ## Approved fourteen-chapter sequence — editorial migration status
 
