@@ -1,5 +1,8 @@
 # V3 alignment to the current approved 13-chapter curriculum
 
+> **Historical document / superseded chapter order (2026-11-16):** This dated review analyzes the **then-approved thirteen-chapter plan**. The owner has since approved **fourteen chapters**, a new Ch09 product-integration bridge and reordering of later chapters. Use [the current approved curriculum](../CURRICULUM-MAP.md) and [13-source→14 mapping](CHAPTER-MIGRATION-13-TO-14-2026-11-16.md) for every current reference. The original gap register below is preserved for audit, **not as current numbering authority**.
+
+
 **Status:** Editorial review updated for owner-confirmed traffic-intersection reference; chapter order is approved, full revised manuscripts are pending; no runtime/site publication authorized  
 **Date:** 2026-11-15  
 **Reviewed starting point:** `project/CURRICULUM-MAP.md` and the published front page / Chapter 1 reader pilot (PR #36). **The user has clarified that the current 13-chapter plan is the reviewed and approved curriculum.**  
