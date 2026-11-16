@@ -1,5 +1,8 @@
 # V3 Editorial Briefs — Current Approved Chapters 05–13
 
+> **Historical brief set (superseded numbers, 2026-11-16):** These briefs were authored under the previous thirteen-chapter structure. Current V3 has **fourteen chapters** and a new Ch09 integration bridge. Use [current curriculum](../CURRICULUM-MAP.md), [migration map](CHAPTER-MIGRATION-13-TO-14-2026-11-16.md) and [new Ch09 brief](CHAPTER-09-INTEGRATION-BRIEF-2026-11-16.md). The old chapter numbers below are retained as editorial provenance, not active instructions to agents.
+
+
 **Status:** Updated writing proposals, not approved chapter manuscripts or authorization to publish  
 **Curriculum authority:** `project/CURRICULUM-MAP.md` — the **current owner-reviewed, approved 13-chapter plan**  
 **Companion:** [Curriculum alignment and gap register](EDITORIAL-ALIGNMENT-2026-11-15.md)  
