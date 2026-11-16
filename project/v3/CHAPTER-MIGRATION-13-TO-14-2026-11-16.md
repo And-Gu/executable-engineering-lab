@@ -1,5 +1,8 @@
 # V3 chapter migration — thirteen source drafts to approved fourteen-chapter plan
 
+> **Editorial draft update (2026-11-16):** A full **fourteen-chapter revised manuscript set** now exists at [manuscripts/revised/INDEX.md](manuscripts/revised/INDEX.md), including newly written Ch09. All are **draft/unpublished**, not independently re-reviewed or owner-approved. The original 13 source drafts remain untouched. The mapping below preserves original-to-revised lineage; any text asserting Ch09 remains unwritten describes the historical state before this update.
+
+
 **Status:** Owner-approved **course structure**, adopted 2026-11-16; manuscript revisions and new integrations remain **editorial drafts, not published**  
 **Single authority:** [Current V3 curriculum map](../CURRICULUM-MAP.md) · [Structure decision #44](https://github.com/And-Gu/executable-engineering-lab/issues/44)  
 **Evidence:** [Independent review](reviews/INDEPENDENT-FULL-COURSE-REVIEW-2026-11-16.md) · [Structure analysis](reviews/POST-REVIEW-STRUCTURE-PROPOSAL-2026-11-16.md) · [Worked-case P0 specification](reviews/WORKED-CASE-REVISION-PACKAGE-2026-11-16.md)
@@ -27,7 +30,7 @@ Use this mapping for **editorial planning**, not as permission to rename files o
 | 06 | Spec-Driven Development Without Waterfall | [old 06](manuscripts/drafts/06-spec-driven-development-without-waterfall.md) | Source draft: concrete valid/invalid conditions and revision |
 | 07 | Directing AI Engineering Agents | [old 07](manuscripts/drafts/07-directing-ai-engineering-agents.md) | Source draft: bounded context and honestly labeled replay |
 | 08 | Engineering in Small, Reviewable Increments | [old 08](manuscripts/drafts/08-engineering-in-small-reviewable-increments.md) | Source draft: thin vertical outcome and coupled physical interface |
-| **09** | **From Models to an Integrated Product** | **None — new chapter** | **Not yet written.** Start with [Chapter 09 editorial brief](CHAPTER-09-INTEGRATION-BRIEF-2026-11-16.md) and P0 interface discrepancy |
+| **09** | **From Models to an Integrated Product** | **None — new chapter** | [Full revised manuscript draft now exists](manuscripts/revised/09-from-models-to-an-integrated-product.md), editorial review pending. Also see [brief](CHAPTER-09-INTEGRATION-BRIEF-2026-11-16.md) |
 | 10 | Verification, Validation and Engineering Evidence | [old 10](manuscripts/drafts/10-verification-validation-and-engineering-evidence.md) | Same number/title; new handoff from actual integration questions and worked evidence |
 | 11 | Governance and Engineering Authority | [old 11](manuscripts/drafts/11-governance-and-engineering-authority.md) | Same number/title; concrete deferred control/approval choice |
 | **12** | Continuously Integrated Engineering | [old 09](manuscripts/drafts/09-continuously-integrated-engineering.md) | **Renumber at manuscript revision only**; release eligibility after evidence and authority |
@@ -63,7 +66,7 @@ The [P0 worked-case proposal](reviews/WORKED-CASE-REVISION-PACKAGE-2026-11-16.md
 - Before any drafting, read **this map** and [the current V3 curriculum](../CURRICULUM-MAP.md). Do not derive current numbers from old 13-draft file paths.
 - The thirteen original draft files are a **frozen source baseline**, not the completed new fourteen-chapter curriculum. Preserve them while preparing a separate `project/v3/manuscripts/revised/` (or another approved namespace) for revised current-sequence texts.
 - The earlier four historically approved alternative-structure manuscripts under `project/v3/manuscripts/approved/` also remain intact as source prose.
-- The new Ch09 **has an editorial brief but no complete manuscript**. Do not fabricate '14/14 manuscripts ready' or convert the historical 13-file index into such a claim.
+- The new Ch09 **now has a complete revised draft manuscript**, still pending editorial acceptance. Do not fabricate '14/14 manuscripts ready' or convert the historical 13-file index into such a claim.
 - The V2 preview's `site/src/data/v2-curriculum.ts` is **historical/published-site navigation data**, not current V3 authority. It and all current Astro routes stay unchanged pending separate publication authorization.
 - Interactive graph, educational model, any visualization source fixture and valid test results require later scoped implementation, validation, accessibility and review; this decision authorizes **curriculum structure**, not an engineering app or site deployment.
 - Independently re-review substantively revised manuscripts and confirm credible source citations before publication.
