@@ -1,5 +1,8 @@
 # V3 worked-case and substantive revision package
 
+> **Implementation status, 2026-11-16:** This remains the original **proposal** used for editorial planning. A candidate [T1 source/trace/data record set](../case-study/README.md) and a separate [fourteen-chapter revised manuscript draft collection](../manuscripts/revised/INDEX.md) have now been authored. T1 arithmetic and graph references have undergone internal consistency checks; the fixture still requires source/domain and independent editorial acceptance, and no public browser graph, simulation or physical observation exists. Do not mistake this dated proposal for the authoritative data fixture or a publication decision.
+
+
 **Status:** Concrete educational **proposal** derived from [independent review PR #42](https://github.com/And-Gu/executable-engineering-lab/pull/42); not a validated simulation, controlled engineering model, approved manuscript or site implementation  
 **Date:** 2026-11-16  
 **Reference:** [Single fictional traffic intersection](../REFERENCE-INTERSECTION.md)  
