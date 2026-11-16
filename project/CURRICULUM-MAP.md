@@ -1,23 +1,30 @@
-# Current approved curriculum map — 13 chapters, four parts
-**V3 editorial authority:** Chapter titles, order and four-part grouping reviewed and approved by the owner on 2026-11-15. **Full new V3 manuscript wording and implementation are not thereby approved.** The public website still has its original lessons, a V2 Chapter 01 reader preview and a separate V2 data article; do not assume the remaining V3 routes exist.
+# Current approved V3 curriculum map — 14 chapters, four parts
+**V3 editorial authority:** The owner approved the **fourteen-chapter** learning sequence and the *From Models to an Integrated Product* bridge on 2026-11-16 after [independent review #42](https://github.com/And-Gu/executable-engineering-lab/pull/42) and [decision #44](https://github.com/And-Gu/executable-engineering-lab/issues/44). The chapter count and the reordered V&V, governance and continuous-engineering topics are now agreed. Complete revised manuscripts, technical fixtures and Astro publication remain **unapproved**.
 
-**Owner-confirmed reference for the new V3 course:** The fictional **four-way traffic intersection** across Chapters 01–13. See [reference contract](v3/REFERENCE-INTERSECTION.md) and [Chapters 01–04 editorial review](v3/CHAPTERS-01-04-EDITORIAL-REVIEW.md). The published earlier condition-monitoring preview and original DMS V0 example remain unchanged until separately approved migration.
+**Single case:** A fictional four-way traffic intersection across all 14 chapters ([reference](v3/REFERENCE-INTERSECTION.md)). The published V2 Chapter 01 monitoring preview, original DMS V0 lessons and separately published V2 Engineering Data article remain unchanged. **Do not infer that any V3 route exists or that the 14-chapter manuscripts are complete.**
 
-| Part | # | Chapter | Distinct learning gain | Demonstration |
+**Title status:** The proposed capstone title *Choosing the Next Engineering Capability* appears in the owner-accepted fourteen-chapter plan. Retain the existing Chapter 06 title *Spec-Driven Development Without Waterfall* for now; the independent review's alternative *Specifying the Next Engineering Increment* remains a separate editorial naming decision. Older 13-chapter text remains preserved as source material and must not be silently renumbered.
+
+| Part | # | Chapter | Distinct learning gain | Primary intersection teaching view |
 |---|---:|---|---|---|
-| I — Why and what next | 01 | The New Engineering Paradigm | Establish systems scope and shared terminology; explain how software-driven workflows and AI agents change engineering | Fictional intersection product ↔ engineering environment: uncertain intent, three conceptual findings and different cadences |
-| I | 02 | Planning Under Uncertainty | Separate exploration from committed increments | Intersection uncertainty and initiative roadmap; product increments alongside needed engineering-method capability |
-| II — Learn and specify | 03 | Engineering Knowledge as Code | Explain cross-discipline source relationships | Intersection information objects, multiple views and **mandatory typed interactive knowledge graph** for proposed adaptive change |
-| II | 04 | Learning Through Models and Prototypes | Qualify model fidelity and experiment results | Simplified signal-state model, regular/seeded arrivals and model-fidelity/physical-test comparison |
-| II | 05 | Engineering Data: From Measurements to Decisions | Curate, annotate, enrich, visualize, review, preserve and reuse engineering data | Illustrative arrival/queue dataset quality, annotations, provenance and derived decision views; V2 DMS article retained as historical source |
-| II | 06 | Spec-Driven Development Without Waterfall | Progressively specify the next slice | Intersection concept and control strategy → evolving specifications, open questions and next bounded increment |
-| III — Act with agents | 07 | Directing AI Engineering Agents | Define agent scope, context, authority | Bounded illustrative intersection analysis and source/agent context contract; actual agent trace only if genuinely recorded |
-| III | 08 | Engineering in Small, Reviewable Increments | Design meaningful, limited integration slices | Compare broad versus small reviewed intersection model/interface/software changes and physical dependencies |
-| III | 09 | Continuously Integrated Engineering | Differentiate digital CI, hardware baselines and qualification | Intersection engineering factory: design + operate checks and eligible software-release readiness vs physical gates |
-| IV — Decide and scale | 10 | Verification, Validation and Engineering Evidence | Reason from claim to relevant evidence | Intersection system deliverables and evidence readiness: simulation versus controller hardware, installation and operational use |
-| IV | 11 | Governance and Engineering Authority | Distinguish checks, permissions and approval | Intersection proposed adaptive/remote change with signal-conflict, safety/cyber and authority review |
-| IV | 12 | Managing Engineering Knowledge at Scale | Track configurations, reuse and supplier interfaces | Compare intersection variants and reuse of versioned model/engineering methods versus product-specific evidence |
-| IV | 13 | The AI-Native Engineering Environment | Synthesize integrated workflow | End-to-end illustrative intersection: greenfield intent → model/data/spec → bounded changes → evidence and factory improvement |
+| I — Frame the Work | 01 | The New Engineering Paradigm | Explain why the product and the engineering environment co-evolve | Uncertain intersection purpose, two-system impact and different learning cadences |
+| I | 02 | Planning Under Uncertainty | Select a meaningful investigation and decide what is ready to commit | Compare investigation choices, dependencies and decision criteria |
+| II — Build and Test Knowledge | 03 | Engineering Knowledge as Code | Explain controlled engineering information, typed relationships and change impact | Source-backed functional/interface views and mandatory interactive knowledge graph |
+| II | 04 | Learning Through Models and Prototypes | Select a model, define assumptions and interpret a bounded experiment | Fixed-phase state model and traceable queue/arrival comparison |
+| II | 05 | Engineering Data: From Measurements to Decisions | Curate, annotate, inspect and reuse engineering observations | Original, checked and derived records from the same teaching model |
+| II | 06 | Spec-Driven Development Without Waterfall | Define a bounded next increment while leaving other uncertainties open | Progressive specification, valid/invalid scenarios and decisions |
+| III — Develop an Integrated Product | 07 | Directing AI Engineering Agents | Bound, observe and review delegated engineering work | Illustrative task context, tool actions and handover |
+| III | 08 | Engineering in Small, Reviewable Increments | Establish useful review boundaries and cross-discipline dependencies | Thin vertical improvement and dependent interface change |
+| III | **09** | **From Models to an Integrated Product** | Bridge model/software work to product interfaces, physical integration and intended use | Interface semantics mismatch, proposed bench/emulator and operator needs |
+| IV — Establish Trust and Sustain Change | 10 | Verification, Validation and Engineering Evidence | Qualify claims against the integrated configuration and intended use | Claim–method–result–applicability and open physical evidence |
+| IV | 11 | Governance and Engineering Authority | Identify controls, authority, technical integrity and residual risks | One deferred/restricted change with evidence gaps |
+| IV | 12 | Continuously Integrated Engineering | Design **and operate** an engineering factory for eligible controlled changes | Qualified change class, blocked release, hypothetical 24-hour capability |
+| IV | 13 | Managing Engineering Knowledge at Scale | Reuse sources, models, tests and working methods while judging applicability | Cross-variant compatibility and shared-asset stewardship |
+| IV | **14** | **Choosing the Next Engineering Capability** | Synthesize a complete two-system story into an informed investment decision | Constrained choice between data, integration tests and expanded delegation |
+
+**This is an educational progression, not a waterfall process.** Integration, verification, security, assurance and risk reasoning are relevant from the earliest stages, although their detailed lessons appear later.
+
+**Migration and status:** See [chapter migration map](v3/CHAPTER-MIGRATION-13-TO-14-2026-11-16.md), [editorial manuscript index](v3/manuscripts/INDEX.md), [independent assessment](v3/reviews/INDEPENDENT-FULL-COURSE-REVIEW-2026-11-16.md), and [P0 worked-case package](v3/reviews/WORKED-CASE-REVISION-PACKAGE-2026-11-16.md).
 
 ## Terminology and introduction sequence
 
@@ -26,29 +33,32 @@ The owner approved this terminology direction on 15 November 2026 during the fro
 | Term | Meaning and usage in this tutorial | Introduce and develop |
 |---|---|---|
 | Systems engineering | Understanding and developing the whole system across disciplines, people and operating conditions. Keep software, electronics, physical design and use in view. | Establish in Chapter 01; apply throughout. |
-| Executable engineering | The site's working description for engineering where models, analyses, tests and parts of the workflow can be run, evaluated and improved. It does not imply that every engineering activity is executable or automated. | Introduce on Home and in Chapter 01; develop through Chapters 03–06 and synthesize in Chapter 13. |
-| Software-driven workflows | Software supports how engineering work is performed across disciplines: running models, handling data, testing, reviewing and preparing releases. This is broader than software development. | Introduce in Chapter 01; apply in Chapters 04–06, 08–09 and 13. |
+| Executable engineering | The site's working description for engineering where models, analyses, tests and parts of the workflow can be run, evaluated and improved. It does not imply that every engineering activity is executable or automated. | Introduce on Home and in Chapter 01; develop through Chapters 03–06 and synthesize in Chapter 14. |
+| Software-driven workflows | Software supports how engineering work is performed across disciplines: running models, handling data, testing, reviewing and preparing releases. This is broader than software development. | Introduce in Chapter 01; apply in Chapters 04–06, 08, 12 and 14. |
 | AI-assisted engineering | The broad use of AI in engineering work, including interactive assistance and delegated agent tasks. “AI-assisted systems engineering” is a useful description of that application, not the name for the entire tutorial approach. | Introduce in Chapter 01; illustrate in Chapter 04 and deepen in Chapter 07. |
-| AI agents / agentic engineering | Agents pursue a defined task, use tools, inspect results and adapt their next steps. Prefer “AI agents” in introductory prose; use “agentic engineering” for this way of working. Engineers direct and evaluate the work. | Explain AI agents in Chapter 01; develop task delegation, tool use, context and evaluation in Chapter 07, then apply in Chapters 08–09 and 13. |
+| AI agents / agentic engineering | Agents pursue a defined task, use tools, inspect results and adapt their next steps. Prefer “AI agents” in introductory prose; use “agentic engineering” for this way of working. Engineers direct and evaluate the work. | Explain AI agents in Chapter 01; develop task delegation, tool use, context and evaluation in Chapter 07, then apply in Chapters 08, 12 and 14. |
 | AI in products | AI contributing to product behavior, including prediction, perception or decision support. Product AI need not be agentic or based on an LLM. | Distinguish from AI used in engineering in Chapter 01; revisit when evaluating models and system behavior in Chapters 04, 05 and 10. |
 | Large language model (LLM) | A model technology underlying many AI assistants and agents. Explain the model's role separately from the surrounding tools and workflow. Spell out the term at first use; use it where the underlying mechanism matters. | Explain in Chapter 07, or at first use if a preceding example requires the mechanism. Do not lead Home with the acronym. |
 
 Use the opening engineering situation to introduce the distinctions, rather than requiring readers to memorize a glossary before seeing the problem. Carry the same meanings into subsequent chapter briefs and the future Reference glossary. The scope of AI in products remains separate from the choice to use agents during development.
 
-“We build the machine that builds the machine” describes the co-development of the product system and its engineering environment: people, methods, models, tools and workflows. Chapter 01 introduces the two systems; Chapter 13 brings the idea together. Frequent software releases, model iterations and physical validation retain their different cadences.
+“We build the machine that builds the machine” describes the co-development of the product system and its engineering environment: people, methods, models, tools and workflows. Chapter 01 introduces the two systems; Chapter 14 brings the idea together. Frequent software releases, model iterations and physical validation retain their different cadences.
 
 The systems scope follows [INCOSE's systems engineering definition](https://www.incose.org/about-systems-engineering/). The agent distinction draws on [Anthropic's explanation of predefined workflows and agents that choose their steps and tools](https://www.anthropic.com/research/building-effective-agents). “Executable engineering” is the tutorial's working description, not a claim of a standardized discipline.
 
 ## Content dependency model
-01→02 sets motive and direction.
-02 feeds 03, 04, 05 and 06 through uncertainty priorities.
-03 provides controlled context for 04, 05, 06 and 07.
-04 produces model observations for 05; 05 enriches and reviews those data before feeding 06 and planning decisions.
-06 prepares a bounded task for 07–09.
-07–09 deliver reviewable results and expose gaps to 10–11.
-10–12 inform new decisions and future roadmaps.
-13 integrates all, including open decisions.
-**These arrows do not imply waterfall or mandatory course navigation.**
+
+- **01→02:** The whole-system and engineering-environment argument leads to selecting meaningful uncertainties and commitments.
+- **02→03:** Planning decisions and open assumptions need durable engineering information and typed relationships.
+- **03→04→05:** One source-backed concept drives a bounded model and inspectable data; Ch03's graph and Ch04's transparent experiment are required teaching roles, not yet implemented features.
+- **05→06:** Data quality decisions drive the next controlled specification and its unresolved questions.
+- **06→07→08:** A bounded specification can guide delegated agent work and a coherent, reviewable increment.
+- **08→09:** Reviewable changes are not an integrated product; interface, electronics, physical/operational and installer/maintainer questions must be addressed concretely.
+- **09→10→11:** Integrated configuration and open operational questions lead to scoped verification/validation evidence and accountable risk/authority decisions.
+- **11→12:** Release eligibility, evidence and authority constrain what engineering-factory delivery automation can legitimately do.
+- **12→13→14:** Reusable engineering capability informs product variants and the decision about what to improve next.
+
+The course shows connections and feedback **in both directions**. A change in operation can reopen Chapters 02–06, while an engineering-environment improvement may enable new product options. Chapter order does not prescribe when real engineering teams must perform verification or integration work.
 
 ## Narrative controls
 - Planning, spec development, agents and review are core; do not subordinate them to V0 geometric explanation.
