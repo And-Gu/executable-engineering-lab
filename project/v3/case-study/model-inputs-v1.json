@@ -1,0 +1,153 @@
+{
+  "id": "INT-MOD-001",
+  "revision": "T1",
+  "source_status": "synthetic_educational_input",
+  "time_unit": "abstract slot (NOT seconds)",
+  "horizon_slots": 8,
+  "groups": [
+    "NS",
+    "EW"
+  ],
+  "initial_queue": {
+    "NS": 0,
+    "EW": 0
+  },
+  "phase_sequence": [
+    "NS_GREEN",
+    "NS_GREEN",
+    "NS_AMBER",
+    "ALL_RED",
+    "EW_GREEN",
+    "EW_GREEN",
+    "EW_AMBER",
+    "ALL_RED"
+  ],
+  "event_order": [
+    "add arrivals to queues",
+    "serve at most one vehicle from the green group's non-empty queue",
+    "record departures and remaining queue"
+  ],
+  "service": {
+    "NS_GREEN": {
+      "NS": 1,
+      "EW": 0
+    },
+    "EW_GREEN": {
+      "NS": 0,
+      "EW": 1
+    },
+    "NS_AMBER": {
+      "NS": 0,
+      "EW": 0
+    },
+    "EW_AMBER": {
+      "NS": 0,
+      "EW": 0
+    },
+    "ALL_RED": {
+      "NS": 0,
+      "EW": 0
+    }
+  },
+  "validation": [
+    "exactly 8 phase slots",
+    "8 arrival records each scenario",
+    "non-negative integer arrivals",
+    "only listed phase labels accepted",
+    "empty initial queues",
+    "same model config for both input scenarios"
+  ],
+  "metrics": {
+    "arrivals": "sum of each direction's arrivals",
+    "departures": "sum served each slot",
+    "pending": "queue contents AFTER slot 8",
+    "mean_wait": "NOT DEFINED, do not infer",
+    "traffic_safety": "NOT ASSESSED"
+  },
+  "scenarios": [
+    {
+      "id": "A",
+      "name": "Staggered",
+      "status": "invented data",
+      "arrivals": [
+        {
+          "NS": 1,
+          "EW": 0
+        },
+        {
+          "NS": 0,
+          "EW": 1
+        },
+        {
+          "NS": 1,
+          "EW": 0
+        },
+        {
+          "NS": 0,
+          "EW": 0
+        },
+        {
+          "NS": 0,
+          "EW": 0
+        },
+        {
+          "NS": 0,
+          "EW": 1
+        },
+        {
+          "NS": 0,
+          "EW": 0
+        },
+        {
+          "NS": 0,
+          "EW": 0
+        }
+      ]
+    },
+    {
+      "id": "B",
+      "name": "Clustered",
+      "status": "invented data",
+      "arrivals": [
+        {
+          "NS": 0,
+          "EW": 2
+        },
+        {
+          "NS": 0,
+          "EW": 0
+        },
+        {
+          "NS": 2,
+          "EW": 0
+        },
+        {
+          "NS": 0,
+          "EW": 0
+        },
+        {
+          "NS": 0,
+          "EW": 0
+        },
+        {
+          "NS": 0,
+          "EW": 0
+        },
+        {
+          "NS": 0,
+          "EW": 0
+        },
+        {
+          "NS": 0,
+          "EW": 0
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "No real traffic counts or measured delay",
+    "No physical signal timings (slots are dimensionless)",
+    "No pedestrians, turning conflicts, controller hardware, failures, emergency priority or compliance",
+    "Phase remains FIXED between scenarios (not adaptive)"
+  ]
+}

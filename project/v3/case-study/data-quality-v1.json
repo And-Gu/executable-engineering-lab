@@ -1,0 +1,113 @@
+{
+  "schema_version": "1.0",
+  "case_id": "INT-CASE-001",
+  "revision": "T1",
+  "status": "editorial synthetic data",
+  "not_physical_measurements": true,
+  "reference_inputs": "model-inputs-v1.json",
+  "computed_trace": "trace-v1.csv",
+  "valid_records": [
+    {
+      "id": "RESULT-A",
+      "case": "A",
+      "metric": "pending_at_horizon",
+      "value": 1,
+      "unit": "vehicles",
+      "horizon": 8,
+      "model_revision": "T1",
+      "status": "computed_from_synthetic_inputs"
+    },
+    {
+      "id": "RESULT-B",
+      "case": "B",
+      "metric": "pending_at_horizon",
+      "value": 2,
+      "unit": "vehicles",
+      "horizon": 8,
+      "model_revision": "T1",
+      "status": "computed_from_synthetic_inputs"
+    }
+  ],
+  "original_incompatible_record": {
+    "id": "LEGACY-C",
+    "raw_field": "queue_final",
+    "value": 20,
+    "unit": null,
+    "model_revision": null,
+    "observation_window": null,
+    "source": "hypothetical legacy spreadsheet",
+    "status": "withhold_comparison"
+  },
+  "curation_decisions": [
+    {
+      "target": "RESULT-A",
+      "action": "retain",
+      "reason": "model revision, horizon and queue units are explicit"
+    },
+    {
+      "target": "RESULT-B",
+      "action": "retain",
+      "reason": "same revision, horizon, service rule, input totals and queue units; arrival order differs"
+    },
+    {
+      "target": "LEGACY-C",
+      "action": "withhold_comparison",
+      "reason": "missing metric meaning, unit, model/configuration and observation horizon; cannot be repaired by guessing a conversion"
+    }
+  ],
+  "allowed_conclusion": "Within the fictional T1 model and eight-slot horizon, same directional arrival totals but different arrival placement leave one versus two vehicles waiting. This does NOT demonstrate a superior real-world timing strategy.",
+  "forbidden_conclusions": [
+    "Average waiting time improved",
+    "Controller adapted its timing to arrivals",
+    "Scenario C is ten times worse",
+    "Real traffic safety or deployment suitability verified"
+  ],
+  "verification": {
+    "recomputed_trace_rows": 16,
+    "graph_edges_valid": 8,
+    "bad_target_is_visible": true,
+    "independent_totals": {
+      "A": {
+        "arrivals": {
+          "NS": 2,
+          "EW": 2
+        },
+        "departures": {
+          "NS": 1,
+          "EW": 2
+        },
+        "pending": {
+          "NS": 1,
+          "EW": 0
+        },
+        "model_revision": "T1",
+        "horizon": 8,
+        "unit": "vehicles (count)",
+        "source": "trace-v1.csv",
+        "status": "computed_from_synthetic_inputs"
+      },
+      "B": {
+        "arrivals": {
+          "NS": 2,
+          "EW": 2
+        },
+        "departures": {
+          "NS": 0,
+          "EW": 2
+        },
+        "pending": {
+          "NS": 2,
+          "EW": 0
+        },
+        "model_revision": "T1",
+        "horizon": 8,
+        "unit": "vehicles (count)",
+        "source": "trace-v1.csv",
+        "status": "computed_from_synthetic_inputs"
+      }
+    },
+    "negative_arrivals_rejected": true,
+    "fractional_arrivals_rejected": true,
+    "unknown_phase_rejected": true
+  }
+}

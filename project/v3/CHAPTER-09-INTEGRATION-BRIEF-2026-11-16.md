@@ -1,6 +1,6 @@
 # Chapter 09 editorial brief — From Models to an Integrated Product
 
-**Status:** Chapter **position and title approved** by the course owner, 2026-11-16. **Full reader-facing manuscript not written or approved.**  
+**Status:** Chapter **position and title approved** by the course owner, 2026-11-16. A [complete revised full manuscript](manuscripts/revised/09-from-models-to-an-integrated-product.md) has now been **drafted**, but **its prose is not independently re-reviewed, owner-approved or published**.  
 **Part:** III — Develop an Integrated Product  
 **Placement:** Immediately after Chapter 08 *Engineering in Small, Reviewable Increments*, before Chapter 10 *Verification, Validation and Engineering Evidence*  
 **Authority:** [14-chapter curriculum](../CURRICULUM-MAP.md) · [migration map](CHAPTER-MIGRATION-13-TO-14-2026-11-16.md) · [independent review](reviews/INDEPENDENT-FULL-COURSE-REVIEW-2026-11-16.md)
