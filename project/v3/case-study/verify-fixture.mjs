@@ -77,7 +77,7 @@ for (const [scenario, departures, remaining] of [['A',3,1],['B',2,2]]) {
   assert.equal(arrivals, totalOut + finalQueue, 'Conservation of vehicles');
   const derived = data.valid_records.find((row) => row.case === scenario);
   assert.equal(derived.value, finalQueue, 'Data-quality fixture agrees with calculated trace');
-  assert.equal(derived.model_revision, input.model_revision, 'Revision identity');
+  assert.equal(derived.model_revision, input.revision, 'Revision identity');
 }
 assert.equal(data.original_incompatible_record.status, 'withhold_comparison');
 assert.equal(data.original_incompatible_record.unit, null);
