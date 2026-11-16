@@ -1,0 +1,194 @@
+{
+  "schema_version": "1.0",
+  "case_id": "INT-CASE-001",
+  "revision": "T1",
+  "source_status": "synthetic_educational_fixture",
+  "real_product": false,
+  "physical_measurements": false,
+  "system_of_interest": "Conceptual signal-control subsystem; external users, indications and operator are interfaces",
+  "status_vocabulary": {
+    "recorded_in_fictional_fixture": "An entry exists in the synthetic teaching source, not a proven real-world relation",
+    "proposed_alternative": "Unselected engineering option",
+    "inferred_review_candidate": "May need review, not evidence of actual impact",
+    "proposed_check_not_run": "Purpose-only relation, with no executed outcome"
+  },
+  "relation_semantics": {
+    "has_function": "Source describes a function within a candidate system; not implementation proof",
+    "constrains": "Candidate model property constrains function; not operational safety proof",
+    "represents": "A simplified behavioral model represents one function with known omissions",
+    "uses_data": "Experiment definition names input data; does not attest a run occurred",
+    "examines_model": "Experiment is intended to study model; not a passed test",
+    "check_targets": "Proposed check would address a property; not a passed result",
+    "may_affect": "Potential change impact; review candidate, not demonstrated dependency"
+  },
+  "nodes": [
+    {
+      "id": "INT-NEED-001",
+      "kind": "intent",
+      "label": "Investigate intersection flow",
+      "revision": "T1",
+      "source_status": "recorded_in_fictional_fixture"
+    },
+    {
+      "id": "INT-SYS-001",
+      "kind": "system",
+      "label": "Fictional four-way intersection control concept",
+      "revision": "T1",
+      "source_status": "recorded_in_fictional_fixture"
+    },
+    {
+      "id": "INT-FUN-001",
+      "kind": "function",
+      "label": "Candidate phase selection",
+      "revision": "T1",
+      "source_status": "recorded_in_fictional_fixture"
+    },
+    {
+      "id": "INT-REQ-001",
+      "kind": "model_property",
+      "label": "No simultaneous NS/EW permissive greens",
+      "revision": "T1",
+      "source_status": "recorded_in_fictional_fixture"
+    },
+    {
+      "id": "INT-IF-001",
+      "kind": "interface",
+      "label": "Controller-side command interface rev A",
+      "revision": "T1",
+      "source_status": "recorded_in_fictional_fixture"
+    },
+    {
+      "id": "INT-MOD-001",
+      "kind": "model",
+      "label": "Two-queue eight-slot teaching model",
+      "revision": "T1",
+      "source_status": "recorded_in_fictional_fixture"
+    },
+    {
+      "id": "INT-DAT-001",
+      "kind": "dataset",
+      "label": "Synthetic A/B arrivals",
+      "revision": "T1",
+      "source_status": "recorded_in_fictional_fixture"
+    },
+    {
+      "id": "INT-EXP-001",
+      "kind": "experiment",
+      "label": "Arrival-pattern comparison",
+      "revision": "T1",
+      "source_status": "recorded_in_fictional_fixture"
+    },
+    {
+      "id": "INT-DEC-001",
+      "kind": "decision",
+      "label": "Provisional fixed-time teaching baseline",
+      "revision": "T1",
+      "source_status": "recorded_in_fictional_fixture"
+    },
+    {
+      "id": "INT-CHG-001",
+      "kind": "proposal",
+      "label": "Unselected adaptive strategy candidate",
+      "revision": "T1",
+      "source_status": "proposed_alternative"
+    },
+    {
+      "id": "INT-TST-001",
+      "kind": "check",
+      "label": "Candidate model property check",
+      "revision": "T1",
+      "source_status": "recorded_in_fictional_fixture"
+    },
+    {
+      "id": "INT-IF-ADAPTER-002",
+      "kind": "interface",
+      "label": "Hypothetical adapter contract rev B",
+      "revision": "T1",
+      "source_status": "recorded_in_fictional_fixture"
+    }
+  ],
+  "edges": [
+    {
+      "id": "E01",
+      "from": "INT-SYS-001",
+      "relation": "has_function",
+      "to": "INT-FUN-001",
+      "asserted_in_revision": "T1",
+      "relation_status": "recorded_in_fictional_fixture",
+      "provenance": "Synthetic source fixture v1; not validated product evidence"
+    },
+    {
+      "id": "E02",
+      "from": "INT-REQ-001",
+      "relation": "constrains",
+      "to": "INT-FUN-001",
+      "asserted_in_revision": "T1",
+      "relation_status": "recorded_in_fictional_fixture",
+      "provenance": "Synthetic source fixture v1; not validated product evidence"
+    },
+    {
+      "id": "E03",
+      "from": "INT-MOD-001",
+      "relation": "represents",
+      "to": "INT-FUN-001",
+      "asserted_in_revision": "T1",
+      "relation_status": "recorded_in_fictional_fixture",
+      "provenance": "Synthetic source fixture v1; not validated product evidence"
+    },
+    {
+      "id": "E04",
+      "from": "INT-EXP-001",
+      "relation": "uses_data",
+      "to": "INT-DAT-001",
+      "asserted_in_revision": "T1",
+      "relation_status": "recorded_in_fictional_fixture",
+      "provenance": "Synthetic source fixture v1; not validated product evidence"
+    },
+    {
+      "id": "E05",
+      "from": "INT-EXP-001",
+      "relation": "examines_model",
+      "to": "INT-MOD-001",
+      "asserted_in_revision": "T1",
+      "relation_status": "recorded_in_fictional_fixture",
+      "provenance": "Synthetic source fixture v1; not validated product evidence"
+    },
+    {
+      "id": "E06",
+      "from": "INT-TST-001",
+      "relation": "check_targets",
+      "to": "INT-REQ-001",
+      "asserted_in_revision": "T1",
+      "relation_status": "proposed_check_not_run",
+      "provenance": "Synthetic source fixture v1; not validated product evidence"
+    },
+    {
+      "id": "E07",
+      "from": "INT-CHG-001",
+      "relation": "may_affect",
+      "to": "INT-FUN-001",
+      "asserted_in_revision": "T1",
+      "relation_status": "inferred_review_candidate",
+      "provenance": "Synthetic source fixture v1; not validated product evidence"
+    },
+    {
+      "id": "E08",
+      "from": "INT-CHG-001",
+      "relation": "may_affect",
+      "to": "INT-IF-001",
+      "asserted_in_revision": "T1",
+      "relation_status": "inferred_review_candidate",
+      "provenance": "Synthetic source fixture v1; not validated product evidence"
+    }
+  ],
+  "missing_link_example": {
+    "from": "INT-CHG-001",
+    "relation": "may_affect",
+    "to": "INT-IF-UNKNOWN",
+    "expected_handling": "reject unresolved target; do not render a valid edge"
+  },
+  "interpretation": {
+    "supported": "INT-MOD-001 explicitly represents INT-FUN-001, so a proposed function change is a model review candidate",
+    "unsupported": "No direct link to an operating manual DOES NOT prove that a procedure is unaffected"
+  }
+}
