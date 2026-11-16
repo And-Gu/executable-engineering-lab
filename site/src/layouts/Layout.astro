@@ -1,5 +1,6 @@
 ---
 import ChapterAtAGlance from '../components/ChapterAtAGlance.astro';
+import AuthorAttribution from '../components/AuthorAttribution.astro';
 interface Props { title: string }
 const { title } = Astro.props;
 const base = import.meta.env.BASE_URL;
@@ -20,7 +21,7 @@ const chapterSlug = Astro.url.pathname.split('/learn/')[1]?.replace(/\/$/, '') |
       <nav aria-label="Main navigation"><a href={base}>Home</a><a href={`${base}lab/`}>Lab</a><a href={`${base}reference/`}>Reference</a><a href={`${base}learn/`}>Learn</a><a href="https://github.com/And-Gu/executable-engineering-lab">Source</a></nav>
     </header>
     <main id="main">{chapterSlug && <ChapterAtAGlance slug={chapterSlug} />}<slot /></main>
-    <footer>Fictional Distributed Monitoring System · V0 teaching model · From intent to evidence</footer>
+    <footer>Fictional Distributed Monitoring System · V0 teaching model · From intent to evidence<div class="footer-author"><AuthorAttribution /></div></footer>
   </body>
 </html>
 <style is:global>
@@ -61,6 +62,7 @@ const chapterSlug = Astro.url.pathname.split('/learn/')[1]?.replace(/\/$/, '') |
   .status { border-left: 4px solid var(--autumn-orange); padding: 1rem 1.5rem; background: var(--surface-muted); margin: 2rem 0; }
   code { background: var(--surface-muted); padding: .15em .35em; overflow-wrap: anywhere; }
   footer { margin-top: 3rem; border-top: 1px solid var(--sage-olive); font-size: .85rem; }
+  .footer-author { margin-top: .5rem; }
   .skip { position: absolute; top: -5rem; padding: .5rem; background: var(--surface); }
   .skip:focus { top: 0; }
 </style>
