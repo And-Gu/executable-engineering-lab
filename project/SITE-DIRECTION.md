@@ -44,7 +44,7 @@ Introduce the shared language through Chapter 1's engineering situation. Chapter
 
 ## Content and reading design
 
-Retain the planned four parts and thirteen chapters. Each chapter has a distinct engineering question, reader outcome, example and next question. Parts express a progression in understanding, not arbitrary content buckets. Keep the grouping consistent on Learn and in chapter navigation.
+The owner approved **four parts and fourteen chapters** for the V3 editorial sequence on 2026-11-16, including a new physical/product-integration chapter between reviewable increments and verification/authority. The published V2 chapter preview retains its historical navigation until a separate publication decision. Each chapter has a distinct engineering question, reader outcome, example and next question. Parts express a progression in understanding, not arbitrary content buckets. Keep the grouping consistent on Learn and in chapter navigation.
 
 Start with a recognizable situation and place a useful visual early. Put explanation beside the model, comparison or relationship it explains. Use optional interaction for prediction, variation, inspection or comparison; core understanding must remain available without an account or local setup.
 
@@ -84,8 +84,14 @@ After the session changes were committed, the owner explicitly requested publica
 
 ## V3 course reference decision — 15 November 2026
 
-The owner confirmed that the **four-way traffic intersection** is the **single recurring system example** for the current owner-approved 13-chapter V3 curriculum in [CURRICULUM-MAP.md](CURRICULUM-MAP.md). Read [the reference contract](v3/REFERENCE-INTERSECTION.md) and [the first four-chapter editorial review](v3/CHAPTERS-01-04-EDITORIAL-REVIEW.md) before writing further V3 prose.
+The owner confirmed that the **four-way traffic intersection** is the **single recurring system example** for the owner-approved fourteen-chapter V3 curriculum in [CURRICULUM-MAP.md](CURRICULUM-MAP.md). Read [the reference contract](v3/REFERENCE-INTERSECTION.md) and [the first four-chapter editorial review](v3/CHAPTERS-01-04-EDITORIAL-REVIEW.md) before writing further V3 prose.
 
 **This supersedes the example choice for future V3 chapter content only.** The already published Chapter 01 **reader preview** and front-page example currently use a conceptual condition-monitoring device; they remain as published historical/current site content until a separately reviewed, explicitly authorized rewrite/deployment. The original DMS V0 engineering demonstrator and its checks also remain unchanged. Do **not** use the monitoring vignette as a second, parallel V3 instructional product story.
 
 Keep the site's approved argument, audience, dark reader visual identity, two co-evolving systems, software-driven engineering and AI distinctions. Use the same intersection to show a greenfield idea evolving through information models, experimentation, data, specification, agent work, integration, evidence, delivery and later changes. The illustrative teaching scenario is **not** a real traffic engineering design, deployed controller or safety qualification.
+
+## Approved V3 course restructuring — 16 November 2026
+
+The owner approved a fourteen-chapter progression (see [curriculum authority](CURRICULUM-MAP.md) and [migration mapping](v3/CHAPTER-MIGRATION-13-TO-14-2026-11-16.md)). New **09 — From Models to an Integrated Product** bridges the conceptual/software model and real product integration. V&V (10) and governance/engineering authority (11) precede detailed continuous engineering/factory operation (12), with reuse (13) and a decision-based capstone (14). This pedagogical sequence must **not** imply that verification, integration, risk or security begin late in an actual project.
+
+The previous thirteen-chapter manuscripts remain preserved **unapproved editorial source drafts**. The new Ch09 has an [approved position and purpose](v3/CHAPTER-09-INTEGRATION-BRIEF-2026-11-16.md) but **no completed full manuscript**. Neither the website, its published V2 curriculum navigation, nor the V0 teaching engine is changed by this planning decision. Course publication needs separate approval.
