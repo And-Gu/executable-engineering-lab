@@ -1,0 +1,17 @@
+scenario,slot,phase,arrivals_NS,arrivals_EW,departures_NS,departures_EW,queue_NS,queue_EW
+A,1,NS_GREEN,1,0,1,0,0,0
+A,2,NS_GREEN,0,1,0,0,0,1
+A,3,NS_AMBER,1,0,0,0,1,1
+A,4,ALL_RED,0,0,0,0,1,1
+A,5,EW_GREEN,0,0,0,1,1,0
+A,6,EW_GREEN,0,1,0,1,1,0
+A,7,EW_AMBER,0,0,0,0,1,0
+A,8,ALL_RED,0,0,0,0,1,0
+B,1,NS_GREEN,0,2,0,0,0,2
+B,2,NS_GREEN,0,0,0,0,0,2
+B,3,NS_AMBER,2,0,0,0,2,2
+B,4,ALL_RED,0,0,0,0,2,2
+B,5,EW_GREEN,0,0,0,1,2,1
+B,6,EW_GREEN,0,0,0,1,2,0
+B,7,EW_AMBER,0,0,0,0,2,0
+B,8,ALL_RED,0,0,0,0,2,0
