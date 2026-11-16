@@ -4,6 +4,8 @@
 
 A practical learning site built around a fictional Distributed Monitoring System (DMS). All twelve chapters are published, from engineering intent through executable experiments and qualified evidence to an integrated engineering handover. The learning path was completed on 2026-10-23; Home and Learn share the completed-chapter register. See [ROADMAP.md](ROADMAP.md) for release evidence and [Milestone 12 verification](docs/MILESTONE_12_VERIFICATION.md) for the final capstone checks and limits. The demonstrator remains V0: multiple sensors, dynamics, actual agents and governance integrations are separate, unimplemented future capabilities.
 
+Created by **Anders Gustafsson** · [Connect on LinkedIn](https://www.linkedin.com/in/anders-gustafsson-359438/).
+
 ## Reproduce locally
 
 Use the Node version pinned in `.nvmrc` (currently 22.23.3) and npm 10. Astro's installed dependency requires at least Node 22.22; the earlier 22.12 minimum was insufficient. Local checks and CI use the same preflight. From the repository root:
