@@ -3,7 +3,7 @@
 **Status:** 13 complete, *unapproved* reader-facing English drafts; not published to Astro  
 **Date:** 2026-11-16  
 **Curriculum authority:** [Current owner-approved 13-chapter map](../../../CURRICULUM-MAP.md)  
-**Reference case:** [Owner-confirmed four-way intersection](../REFERENCE-INTERSECTION.md)  
+**Reference case:** [Owner-confirmed four-way intersection](../../REFERENCE-INTERSECTION.md)  
 **Manuscript base:** Draft PR based on the proposed planning and Chapter 01–04 review from PR #37. **Neither branch is merged to main by creating these drafts.**
 
 ## Read the full course in order
@@ -28,7 +28,7 @@
 
 These are **complete chapter prose drafts**, not 13 approved articles or 13 implemented interactives. Chapter-specific visual interactions are described conceptually, not coded. No new public V3 routes have been added. The currently published monitoring-device Chapter 01 *reader preview*, original 12 DMS lessons, separate V2 data article, and technical V0 model remain untouched.
 
-**Approval of the chapter plan and the traffic example does not equal approval of these manuscripts.** The four earlier approved alternative-title source chapters remain immutable in [the preserved archive](../manuscripts/approved/). The current new drafts do not replace them automatically.
+**Approval of the chapter plan and the traffic example does not equal approval of these manuscripts.** The four earlier approved alternative-title source chapters remain immutable in [the preserved archive](../approved/). The current new drafts do not replace them automatically.
 
 ## Review protocol
 
@@ -38,7 +38,7 @@ After all 13 are drafted, an **independent review** should assess:
 3. **Language**: natural, concise US English; cohesive paragraphs, helpful terminology, no formulaic chapter rhythm or repeated AI disclaimers.
 4. **Visual/editorial design**: semantics before tools, graphics deriving from defined sources, early helpful diagrams, static-accessible alternatives and minimum necessary interactivity.
 5. **Sources and validity**: separate simulated, assumed, physical, planned and observed evidence; quotations/statistical claims need primary verification.
-6. **Document-as-Code lessons**: see [Independent review assignment](../reviews/INDEPENDENT-REVIEW-BRIEF-2026-11-16.md) for actual source documents and evaluation rubric.
+6. **Document-as-Code lessons**: see [Independent review assignment](../../reviews/INDEPENDENT-REVIEW-BRIEF-2026-11-16.md) for actual source documents and evaluation rubric.
 
 The reviewer is explicitly free to recommend **moving topics between chapters, renaming, merging, splitting or introducing new chapters** (including a revised chapter count), even though the current **13-chapter structure stays the active approved baseline until the owner decides otherwise**.
 
@@ -46,4 +46,4 @@ The reviewer is explicitly free to recommend **moving topics between chapters, r
 
 ## Reading agents and scope
 
-Read the [current editorial gap analysis](../EDITORIAL-ALIGNMENT-2026-11-15.md), [first four-chapter review](../CHAPTERS-01-04-EDITORIAL-REVIEW.md), [later chapter briefs](../CHAPTER-BRIEFS-05-13-2026-11-15.md), [visualization reference](../../../../docs/v3/ENGINEERING-VISUALIZATION.md), and [research index](../../../../research/INDEX.md) as needed. The dated research's quotation candidates are not verified and are not automatically ready for publication.
+Read the [current editorial gap analysis](../../EDITORIAL-ALIGNMENT-2026-11-15.md), [first four-chapter review](../../CHAPTERS-01-04-EDITORIAL-REVIEW.md), [later chapter briefs](../../CHAPTER-BRIEFS-05-13-2026-11-15.md), [visualization reference](../../../../docs/v3/ENGINEERING-VISUALIZATION.md), and [research index](../../../../research/INDEX.md) as needed. The dated research's quotation candidates are not verified and are not automatically ready for publication.
