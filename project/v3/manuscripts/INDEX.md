@@ -68,3 +68,10 @@ These manuscripts were **editorially reviewed and approved as written**, before 
 7. Preserve the editorial rule: avoid repetitive caveats, provide only meaningful engineering qualifications.
 
 **This is a manual, deterministic agent index, not a semantic search database.** These GitHub files are visible to the public but are not automatically published as Astro website pages.
+
+
+## Complete current-title manuscript drafts — 16 November 2026
+
+All thirteen chapters have **full draft text** under [drafts/INDEX.md](drafts/INDEX.md), following the owner-approved **current** chapter titles and the four-way intersection reference. These are **new unapproved manuscripts** for review, **not** the four earlier approved alternative-title source documents above. No public V3 pages are published by these files.
+
+The independent editorial review is described in [the review brief](../reviews/INDEPENDENT-REVIEW-BRIEF-2026-11-16.md) and tracked by [issue #40](https://github.com/And-Gu/executable-engineering-lab/issues/40). The reviewer may propose moving material, new chapters or a different chapter count, subject to a later owner decision. Do not silently make the proposed changes.
