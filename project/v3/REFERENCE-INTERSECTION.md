@@ -112,3 +112,9 @@ Use stable identifiers, **explicit relation types** (e.g. `constrains`, `impleme
 3. Previous owner-approved alternative-chapter prose remains in [the preserved manuscript archive](manuscripts/INDEX.md), untouched.
 4. Any source fixtures, diagrams, interactive graph or simulation require their own scoped implementation PR, schema/semantics review, tests, accessibility checks and explicit publication decision.
 5. Existing front page, **published condition-monitoring Chapter 01 preview**, original 12 DMS lessons, v2 Engineering Data article and V0 model are not changed by this reference decision.
+
+## Editorial T1 source package and fourteen revised manuscripts — November 2026
+
+A **candidate, source-backed educational T1 fixture** has been prepared under [case-study/](case-study/README.md): twelve fictional typed objects, eight relations, a bounded eight-slot model input, two synthetic arrival scenarios, a sixteen-row calculated trace, data-quality dispositions and an integration acknowledgment discrepancy. It is **editorial teaching data**, not a validated physical controller or approved product source. The [model check](case-study/MODEL-CHECK.md) records its arithmetic/internal consistency and what remains unverified.
+
+The [fourteen complete revised chapter manuscripts](manuscripts/revised/INDEX.md) now use this common reference, including the new full Chapter 09. They remain **draft/unpublished and awaiting independent re-review and owner editorial acceptance**. All original thirteen draft manuscripts and published V0/V2 pages are preserved unchanged. The user's **reference system approval** does not imply approval of the T1 source semantics, generated results as real-world performance, or website publication.
