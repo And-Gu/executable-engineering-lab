@@ -4,6 +4,7 @@ import { resolve } from 'node:path';
 import { calculateCoverage } from '../models/coverage/coverage.js';
 import { evaluateCoverage } from '../models/coverage/evaluate.js';
 import { loadSources, root } from './sources.js';
+import { evidenceDirectory } from './evidence-output.js';
 const { requirement, scenario, manifest } = loadSources();
 const result = calculateCoverage({ area: scenario.area, sensor: scenario.sensor });
 const evaluation = evaluateCoverage(result, requirement.threshold_percent);
@@ -21,7 +22,9 @@ const record = {
     runUrl: process.env.GITHUB_RUN_ID ? `${process.env.GITHUB_SERVER_URL}/${process.env.GITHUB_REPOSITORY}/actions/runs/${process.env.GITHUB_RUN_ID}` : null,
     nodeVersion: process.version },
 };
-mkdirSync(resolve(root, 'artifacts'), { recursive: true });
-writeFileSync(resolve(root, 'artifacts/reference-evidence.json'), JSON.stringify(record, null, 2) + '\n');
-console.log(`REQ-COV-001: ${result.coveragePercent}% → ${record.calculation.status}. Evidence: artifacts/reference-evidence.json`);
+const output = evidenceDirectory(root);
+mkdirSync(output, { recursive: true });
+const file = resolve(output, 'reference-evidence.json');
+writeFileSync(file, JSON.stringify(record, null, 2) + '\n');
+console.log(`REQ-COV-001: ${result.coveragePercent}% → ${record.calculation.status}. Evidence: ${file}`);
 // An engineering FAIL is an expected finding, not an infrastructure failure.

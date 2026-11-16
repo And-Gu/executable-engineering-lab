@@ -3,8 +3,9 @@ import { mkdirSync, writeFileSync, rmSync, existsSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { root } from './sources.js';
 import { loadProposalAnalyses } from './proposal-sources.js';
+import { evidenceDirectory } from './evidence-output.js';
 
-const output = resolve(root, 'artifacts/proposals');
+const output = resolve(evidenceDirectory(root), 'proposals');
 // A failed invocation must not leave old proposal outputs looking like fresh results.
 if (existsSync(output)) rmSync(output, { recursive: true });
 const analyses = loadProposalAnalyses(); // Validate every fixture before writing any report.

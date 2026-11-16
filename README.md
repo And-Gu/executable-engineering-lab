@@ -6,10 +6,11 @@ A practical learning site built around a fictional Distributed Monitoring System
 
 ## Reproduce locally
 
-Use Node.js 22.12 or newer (Node 22 is used in CI) and npm. From a clean checkout:
+Use the Node version pinned in `.nvmrc` (currently 22.23.3) and npm 10. Astro's installed dependency requires at least Node 22.22; the earlier 22.12 minimum was insufficient. Local checks and CI use the same preflight. From the repository root:
 
 ```sh
 npm ci
+npm run preflight
 npm run validate
 npm test
 npm run evidence
@@ -17,11 +18,11 @@ npm run build
 npm run dev
 ```
 
-Open the Local URL printed by Astro, normally `http://localhost:4321/executable-engineering-lab/` (the port can change if occupied). `npm run preview` serves the production build at the same path. `npm run typecheck` checks Astro and TypeScript; `npm run check` runs type checking, all tests, source validation and the static build.
+Open the Local URL printed by Astro, normally `http://localhost:4321/executable-engineering-lab/` (the port can change if occupied). `npm run preview` serves the production build at the same path. `npm run typecheck` checks Astro and TypeScript. `npm run check -- --preview` runs the complete local verification with explicit working-tree status; `npm run check -- --release` requires a clean committed checkout. See the delivery commands below when a delivery owner is active.
 
 The reference scenario returns approximately **38.5% estimated geometric coverage**, so the proposed **50% requirement intentionally FAILS**. The test suite passes when it correctly observes that engineering outcome. Nothing substitutes a hardcoded status for the evaluator.
 
-`npm run evidence` writes ignored `artifacts/reference-evidence.json`. It contains test/requirement/scenario/model IDs, model version, inputs, threshold, method, grid, result, margin, source commit, working-tree status, timestamp and execution context. Run it from a clean committed checkout for revision-bound local evidence. CI produces and retains this file as a workflow artifact for 30 days after successful checks. This is calculation evidence, not a certificate or operational assurance claim.
+Standalone `npm run evidence` writes ignored `artifacts/reference-evidence.json`. Managed `npm run check` executions write it inside their own `artifacts/runs/<run-id>/`, together with proposal analyses, test results and phase timings; no run reuses another run's directory. It contains test/requirement/scenario/model IDs, model version, inputs, threshold, method, grid, result, margin, source commit, working-tree status, timestamp and execution context. Run from a clean committed checkout for revision-bound local evidence. CI retains this file as a workflow artifact for 30 days after successful checks. This is calculation evidence, not a certificate or operational assurance claim.
 
 For reproducibility compare `definition` and `calculation`; `id` and `execution` contain run-dependent metadata. Local execution is labeled `local-cli`, CI `github-actions`. No saved CI result is presented on the site. The lab labels browser what-if runs as temporary; they neither edit YAML nor create retained verification artifacts.
 
@@ -74,9 +75,51 @@ The root-level Astro configuration uses `site/src` as its source directory. This
 
 ## CI and publication
 
-PRs and pushes to `main` run validation, types, tests, static build and evidence generation. PR evidence uses the actual PR head commit rather than labeling a synthetic merge revision as the source. CI should be inspected before merge.
+PRs run the reusable validation workflow: environment/source-revision preflight, type checking, validated build, artifact-revision check, all tooling and engineering tests, and reference/proposal evidence. PR evidence uses the actual PR head commit rather than labeling a synthetic merge revision as the source. CI should be inspected before merge.
 
-Pages deployment runs on pushes to `main` after checks pass and can also be triggered manually. The repository is configured for **GitHub Actions** as its Pages source. After merge, inspect the deployment run, or run **Deploy to GitHub Pages** on `main` to retry. For a fork, configure **Settings → Pages → Build and deployment → Source: GitHub Actions** first. The workflow only deploys `main`. No merge is performed as part of preparing this PR. The foundation is published at [Executable Engineering Lab](https://and-gu.github.io/executable-engineering-lab/). New PR content appears there only after merge and a successful deployment; local/PR verification does not establish that it is already live. Configuration follows the [official Astro GitHub Pages guide](https://docs.astro.build/en/guides/deploy/github/).
+Pages deployment runs on pushes to `main` and can also be triggered manually. It calls that same validation workflow once and deploys its verified `dist/` artifact; a second parallel main-branch workflow no longer repeats the full suite/build. The publication job depends on successful validation. A final job checks the public build revision before and after HTTP checks of Home, Learn, Lab, Reference and the Chapter 1 preview. These checks verify identity and returned pages, not browser interactions or visual accessibility. Keep the relevant browser review for UI changes.
+
+The repository is configured for **GitHub Actions** as its Pages source. After an authorized merge, inspect all deployment jobs, including hosted verification. For a fork, configure **Settings → Pages → Build and deployment → Source: GitHub Actions** first. Only `main` deploys. The foundation is published at [Executable Engineering Lab](https://and-gu.github.io/executable-engineering-lab/); local/PR checks do not establish a new publication. The shared workflow follows GitHub's [reusable-workflow](https://docs.github.com/en/actions/reference/workflows-and-actions/reusing-workflow-configurations) and [Pages artifact/deployment](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages) contracts.
+
+### Delivery commands and ownership
+
+The delivery pattern is adapted from [Document-as-Code Lab's verified delivery work](https://github.com/And-Gu/document-as-code-lab/issues/37). Commands and source rules are maintained here; execution evidence stays under ignored `artifacts/`. No new service, browser-test framework or teaching material is introduced.
+
+Read `npm run delivery -- report` first. If no delivery is active:
+
+```sh
+npm run delivery -- start --owner release-chat
+export DELIVERY_ACTOR=release-chat
+npm run delivery -- assign --task local-preview --worker release-chat --preview \
+  --check typecheck --check build --check unit --check evidence --check proposals
+npm run delivery -- test --task local-preview
+```
+
+One owner edits sources, changes checkout/build state and performs authorized Git/publication actions. Assign independent checks to named workers with repeated `--check` flags. Build and type checking write shared files and belong to the owner; `unit`, `evidence`, `proposals` and `hosted` can be assigned separately. Identical check/revision/stage/target assignments cannot overlap or run again silently. `delivery retry --task <name> --reason "..."` preserves the earlier attempt. `delivery handoff --owner <next-owner> --reason "..."` transfers ownership after active work ends. This coordinates cooperating processes, not arbitrary Git commands.
+
+After an authorized commit, assign a new task at that revision without `--preview`. Release mode rejects dirty or unexpected sources before expensive work, builds once and checks the manifest before the full unit suite. `dist/build-information.json` identifies clean releases; working-tree builds contain a null commit. CI always uses release mode. A moved/dirty checkout fails the final guard. Local checks outside an active delivery default to preview; supply the mode explicitly when recording evidence.
+
+After authorized publication and checkout of its revision:
+
+```sh
+npm run delivery -- assign --task live --worker release-chat --check hosted \
+  --target https://and-gu.github.io/executable-engineering-lab/
+npm run delivery -- test --task live
+```
+
+The Pages workflow already owns the normal hosted check. Inspect and reuse its evidence instead of assigning a duplicate manual run without a failure or changed input to investigate. Outside a managed delivery, the same check is available with `EXPECTED_REVISION=<sha> npm run verify:hosted -- --target=<public-base-url>`; HTTP failures and revision mismatches fail visibly.
+
+`npm run ci:impact -- origin/main` maps engineering sources to model/site/evidence consumers, site changes to site consumers, and archived Markdown to editorial isolation. Unknown files expand to all consumers. The map is currently **advisory**: every mandatory gate remains enabled until later measurements justify narrower scope. The immediate CI saving is removal of the duplicate main-branch suite/build; elapsed savings are not yet measured.
+
+### Evidence and phase timings
+
+Every managed verification creates a new `artifacts/runs/<timestamp-id>/`; `TEST_RUN_ID` may name it but an existing directory is rejected. `run.json` records the checkout, preview/release status, outcome and each phase's start/end/duration. Vitest writes `tests.json` in that run. Reference/proposal records use the same run's `EVIDENCE_DIR`; standalone commands retain their historical paths and should have one writer. Builds use an exclusive `artifacts/build.lock`; inspect its PID before removing a lock after a crash. The build directory and Astro cache still have one writer.
+
+The owner record is `artifacts/delivery.json`. `DELIVERY_RECORD` may specify an absolute shared path for cooperating checkouts. Short writes are atomic and locked; this does not coordinate separate machines. A new delivery archives the previous explicitly finished record. Run `delivery finish` when the delivery is complete; it is not a declaration of publication success.
+
+Time extra commands with `delivery run --phase <name> -- <command> [args]` (repository-root working directory). Use `delivery begin/end --phase <name> --at <ISO timestamp>` for known review/CI/job boundaries and `--evidence <URL>` on begin. Mark observed milestones with `delivery mark --phase requested|ready|authorized|committed|merged|published --at <ISO timestamp>`. Missing times stay unknown; record creation does not imply request time or permission. Reports preserve overlapping intervals without summing them. Keep Actions queue/job timestamps distinct from command execution, and include rework reasons in the relevant PR/retrospective observation.
+
+Canonical engineering authority remains `engineering/` → `schemas/` and `models/` → scripts and Astro views → engineering tests/evidence. `site/src/data/chapters.ts` owns completed-lesson navigation. Editorial sources retain the separate status/approval registers linked in AGENTS.md. A change to the delivery environment grants no editorial or publication approval.
 
 ## Contributing
 

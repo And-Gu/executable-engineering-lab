@@ -4,7 +4,8 @@
   "version": "0.1.0",
   "type": "module",
   "engines": {
-    "node": ">=22.12.0"
+    "node": ">=22.22.0 <23",
+    "npm": ">=10 <11"
   },
   "scripts": {
     "dev": "astro dev",
@@ -13,8 +14,14 @@
     "typecheck": "astro check && tsc --noEmit",
     "test": "vitest run",
     "evidence": "tsx scripts/evidence.ts",
-    "build": "npm run validate && astro build && npm run research:check",
-    "check": "npm run typecheck && npm run test && npm run build",
+    "build": "node scripts/build.mjs",
+    "check": "node scripts/verify.mjs",
+    "predev": "node scripts/preflight.mjs",
+    "preflight": "node scripts/preflight.mjs",
+    "delivery": "node scripts/delivery.mjs",
+    "test:delivery": "node --test scripts/delivery-tests.mjs",
+    "verify:hosted": "node scripts/verify.mjs --release --checks=hosted",
+    "ci:impact": "node scripts/ci-impact.mjs",
     "proposals": "tsx scripts/proposals.ts",
     "research:check": "node scripts/check-research-isolation.mjs"
   },
