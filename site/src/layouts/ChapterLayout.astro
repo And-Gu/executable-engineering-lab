@@ -1,5 +1,6 @@
 ---
 import CourseNavigation from '../components/CourseNavigation.astro';
+import AuthorAttribution from '../components/AuthorAttribution.astro';
 import '../styles/chapter-reading.css';
 interface Props { title: string; description: string; number: number }
 const { title, description, number } = Astro.props;
@@ -40,6 +41,6 @@ const base = import.meta.env.BASE_URL;
         <slot />
       </main>
     </div>
-    <footer class="reading-shell site-footer"><a href={`${base}learn/`}>Explore the learning path</a><span>Executable Engineering Lab · Chapter reader preview</span></footer>
+    <footer class="reading-shell site-footer"><a href={`${base}learn/`}>Explore the learning path</a><span>Executable Engineering Lab · Chapter reader preview</span><span><AuthorAttribution /></span></footer>
   </body>
 </html>
