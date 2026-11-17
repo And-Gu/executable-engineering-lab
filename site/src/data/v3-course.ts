@@ -10,6 +10,6 @@ for (const [part, number, title, summary] of rows) {
   if (!file) throw new Error(`Missing revised manuscript ${number}`);
   parts.at(-1)!.chapters.push({ number, title, summary, url: `${import.meta.env.BASE_URL}learn/v3/${file.slice(0,-3)}/` });
 }
-if (parts.flatMap(part => part.chapters).length !== 14) throw new Error('Expected fourteen approved chapters');
+if (parts.flatMap(part => part.chapters).length !== 15) throw new Error('Expected fifteen course chapters');
 
 export const v3Chapters = parts.flatMap(part => part.chapters);
