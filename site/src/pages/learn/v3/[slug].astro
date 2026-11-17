@@ -6,7 +6,17 @@ import AuthorAttribution from '../../../components/AuthorAttribution.astro';
 import '../../../styles/chapter-reading.css';
 export async function getStaticPaths() {
   const modules = import.meta.glob<MarkdownInstance<{chapter:number;title:string;part:string}>>('../../../../../project/v3/manuscripts/revised/[0-9]*.md', { eager: true });
-  return Object.entries(modules).map(([path, module]) => ({ params: { slug: path.split('/').at(-1)!.slice(0,-3) }, props: { chapter: module } }));
+  // Build pages only for the current course registry. Historical files with
+  // superseded chapter numbers remain available as sources but are not routes.
+  return v3Chapters.map(current => {
+    const slug = current.url.split('/').filter(Boolean).at(-1);
+    const chapter = Object.entries(modules).find(([path]) => path.endsWith(`/${slug}.md`))?.[1];
+    if (!chapter || !slug) throw new Error(`Missing current V3 manuscript for ${current.title}`);
+    if (Number(chapter.frontmatter.chapter) !== Number(current.number) || chapter.frontmatter.title !== current.title) {
+      throw new Error(`V3 source does not match curriculum: ${slug}`);
+    }
+    return { params: { slug }, props: { chapter } };
+  });
 }
 const { chapter } = Astro.props;
 const { Content, frontmatter, getHeadings } = chapter;
