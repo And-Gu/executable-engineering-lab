@@ -1,6 +1,6 @@
 ---
 id: eel-v3-ch03-engineering-knowledge
-chapter: 3
+chapter: 4
 part: "II — Build and Test Knowledge"
 title: "Engineering Knowledge as Code"
 status: draft
