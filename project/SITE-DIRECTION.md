@@ -95,3 +95,20 @@ Keep the site's approved argument, audience, dark reader visual identity, two co
 The owner approved a fourteen-chapter progression (see [curriculum authority](CURRICULUM-MAP.md) and [migration mapping](v3/CHAPTER-MIGRATION-13-TO-14-2026-11-16.md)). New **09 — From Models to an Integrated Product** bridges the conceptual/software model and real product integration. V&V (10) and governance/engineering authority (11) precede detailed continuous engineering/factory operation (12), with reuse (13) and a decision-based capstone (14). This pedagogical sequence must **not** imply that verification, integration, risk or security begin late in an actual project.
 
 The previous thirteen-chapter manuscripts remain preserved **unapproved editorial source drafts**. The new Ch09 has an [approved position and purpose](v3/CHAPTER-09-INTEGRATION-BRIEF-2026-11-16.md) but **no completed full manuscript**. Neither the website, its published V2 curriculum navigation, nor the V0 teaching engine is changed by this planning decision. Course publication needs separate approval.
+
+## Agentic feedback and deterministic models — editorial direction (17 November 2026)
+
+**Value proposition:** Executable engineering is not impressive because a deterministic software calculation returns the same output for the same defined inputs and state. That is normally an expected property, not a product benefit to market. A stochastic model can also be replayed with controlled seeds; some ML inference is deterministic under specified conditions. State the computation and environment precisely when the distinction matters.
+
+**What changes engineering work:** A well-defined model, explicit behavior checks and fast tool feedback let an engineer or an authorized AI agent propose a change, execute it, detect a failed criterion, refine the solution and rerun the checks. The agent can manage a **bounded end-to-end flow**, rather than needing a person to issue every intermediate task. This is feedback for the current work, **not automatic retraining of the underlying AI model**.
+
+**Two connected loops:**
+
+- **Inner / executable feedback:** implementation, model execution, behavioral/invariant/regression checks, failure analysis and correction. Grant bounded agent autonomy where criteria are relevant, sufficiently independent of the proposed change and protected from unreviewed manipulation. Check valid and negative cases; a green build or rewritten expectation is not an engineering result.
+- **Outer / engineering validity:** product intent, stakeholder needs, model fidelity, integration across disciplines, physical and operational evidence, safety/security implications, authority and change eligibility. Humans and suitable experimental/physical evidence resolve questions that the model's tests cannot answer.
+
+**Comparability:** Keep this concept where it is meaningful: Chapter 05's data and experiment-design question asks whether two outputs have compatible metric definitions, units, configurations and conditions. A repeatable algorithm does not establish that two experiments may be interpreted as a controlled comparison.
+
+**Cross-site consistency:** Homepage and Chapters 04, 05, 07 and 12 should lead with this capability/feedback story, not tool-selling phrases such as "comparable and reproducible" used without an actual engineering decision. The V3 **fictional four-way traffic intersection** is the core example; the older published V2 monitoring-device reader pilot remains a separate historical asset. Never imply that a sample agent workflow, physical interface experiment or qualified controller was executed when it was only proposed.
+
+**Editorial guardrail:** Explain determinism once near the executable model. Thereafter show the decisions and capabilities that automated feedback enables. Use evidence boundaries at the claims they affect, without repeating broad AI disclaimers after every paragraph.

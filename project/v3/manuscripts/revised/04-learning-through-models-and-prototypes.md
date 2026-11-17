@@ -43,6 +43,14 @@ The model deliberately excludes turning movements, pedestrians, cycling, failure
 
 The fixed phases are also important: **the controller does not react to the arrival pattern**. Adaptive signal control remains a proposed future design question, not a hidden feature of this experiment.
 
+## Determinism is the starting point
+
+T1 is an ordinary **deterministic software calculation**. Given the same rules, initial queues and arrivals, it produces the same trace in the defined execution environment. That is expected behavior, not a breakthrough delivered by AI or a special modeling platform.
+
+The engineering value comes from **changing something deliberately and evaluating the consequence**. We can vary an arrival pattern, test a proposed model change, inspect the resulting queues and check explicit properties. Automated tests can then give an engineer—or an authorized agent—rapid feedback on whether the modified calculation still meets its defined criteria.
+
+Determinism does not mean that every experiment must use constant inputs. A stochastic simulation can use a controlled pseudorandom seed so the same sample can be replayed; repeated independent seeds can reveal variation. Similarly, ML inference can be deterministic under specified conditions. What matters is stating which factors are controlled, which vary, and which claim the experiment can support.
+
 ## Two arrival patterns, one model
 
 Both invented scenarios contain **two NS vehicles and two EW vehicles**. Scenario A spreads those arrivals over the eight slots. Scenario B clusters two EW vehicles in the first slot and two NS vehicles in the third.
@@ -95,19 +103,21 @@ Scenario A is not therefore a recommended controller strategy. It is one set of 
 
 Model fidelity is not a score that rises automatically as more detail is added. It is a decision about whether the abstraction is sufficient for a question.
 
-If the team's next problem concerns phase transitions and a known invented arrival sequence, the T1 model is understandable and reproducible. If the next problem concerns pedestrian movements or a signal-driving adapter's acknowledgment, adding more queue data will not fix the missing model of that interface.
+If the next question concerns phase transitions under a defined arrival sequence, T1 lets us inspect the relevant behavior and try alternatives. If the question concerns pedestrian movements or a signal-driving adapter's acknowledgment, adding more queue data will not fix the missing model of that interface.
 
 An engineer might then choose an interface mock-up, a bench observation or a physical integration experiment. Each method has a different cost, setup effort, interpretation and evidence boundary.
 
-The **engineering environment** evolves with that decision: new test fixtures, maintained source assumptions and better ways to compare repeated runs. The **product concept** can evolve too—but only when the evidence supports the proposed change.
+The **engineering environment** evolves with that decision: clearer model assumptions, checks that expose failures and new tests or physical observations where needed. The **product concept** can evolve too—but only when the evidence supports the proposed change.
 
-## An executable capability should be maintainable
+## Design the feedback around the engineering question
 
-A useful model does not become reusable simply because someone can run a calculation once. Its inputs, phases, revision, error rules and interpretation must be inspectable.
+For T1, negative or fractional arrival counts, unknown phase labels and missing slots are invalid. A responsible implementation should reject such inputs instead of creating an animation that looks plausible. The existing [editorial model check](../../case-study/MODEL-CHECK.md) examines T1's declared calculations; it does not validate a real controller.
 
-For T1, negative or fractional arrival counts, unknown phase labels and missing slots are invalid. A responsible implementation should reject such inputs instead of creating an animation that looks plausible. Later, if we build the planned browser interaction, it should generate all traces and charts from the same model definition rather than copying numbers into the UI.
+A bounded development loop could now be: propose a change to the model or input handling, run the calculation, evaluate fixed behavioral and invalid-input checks, inspect a failure, and correct the implementation. If those checks are sufficiently independent of the change being made, an agent could work through several iterations without asking a human to direct every step.
 
-Our [editorial model-check record](../../case-study/MODEL-CHECK.md) and the standalone source checker describe the current consistency tests. These do not claim physical validation.
+That does **not** make all green tests a product approval. If the criteria encode the wrong requirements, or if the model leaves out an important physical interaction, the loop may converge on the wrong answer. Engineers therefore also assess whether the model and tests represent the system question—and use other evidence when they do not.
+
+The eventual browser interaction should derive its traces, tables and charts from a single model definition rather than duplicate calculations in presentation code. The ability to close a rapid feedback loop is the opportunity; rerunning an unchanged deterministic model is only its starting condition.
 
 ## The data is now the next engineering problem
 

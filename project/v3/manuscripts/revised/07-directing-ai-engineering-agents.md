@@ -11,13 +11,13 @@ teaching_fixture: "T1 — fictional agent assignment; NO real agent run"
 
 # Directing AI Engineering Agents
 
-*What must an engineer know before delegating work to an agent?*
+*What changes when an agent can carry an engineering outcome through its own feedback loop?*
 
-An engineer wants help improving the quality of our fictional intersection's model inputs. The task seems modest: reject malformed arrivals, preserve the existing T1 comparison and explain the results.
+Our fictional intersection model already produces a defined result for given inputs. The engineering team now wants a better capability: invalid scenarios should be rejected, while valid cases should retain their expected behavior.
 
-A conventional AI assistant could suggest validation rules or draft a test. A predefined script could run a known set of checks. An **AI agent** could be given a bounded objective, inspect relevant sources, choose permitted tools, act on findings and adapt its next steps when something unexpected happens.
+One approach is to ask an AI assistant for suggestions, then manually issue separate instructions for coding, running tests, interpreting errors and fixing failures. Another is to give an **agent the engineering outcome** and let it work through that sequence, within agreed limits.
 
-That may save manual navigation and repetitive effort. But it creates a different engineering question: **How can the engineer understand what the agent actually did and decide whether the result is useful?**
+The advantage is not that the model suddenly becomes reproducible. It is that **executable behavior and automated checks can provide fast feedback on the agent's changes**. The engineer can delegate more than a single task without delegating the authority to decide whether the entire product is correct.
 
 ## Separate the model from the working agent
 
@@ -29,15 +29,30 @@ The distinction is useful, though terminology varies between vendors. A workflow
 
 And this is different from **AI inside a product**. An imagined adaptive traffic controller might contain a predictive component. An engineering agent helping examine its source information is a separate capability with different responsibilities.
 
-## Start with a task that has a clear boundary
+## Delegate a bounded outcome, not a checklist of tasks
 
 Here is a plausible assignment for our case study. It is a **task specification**, not a record of an agent execution:
 
-> Inspect T1 model inputs, source graph and queue trace. Propose validation that rejects negative or fractional arrivals, unknown phases and incomplete scenarios. Preserve the existing A/B results. Use only authorized checks. Do not modify phase semantics, the controller–adapter interface, published legacy material or product decisions. Report proposed changes, actual commands/results if executed, source revisions, unresolved problems and a reviewer handover. Stop if required sources cannot be found.
+> Make the T1 scenario validator reject negative or fractional arrivals, unknown phases and incomplete inputs without emitting a queue trace. Preserve the declared A/B behavior. Inspect the relevant sources, propose a bounded implementation, execute permitted checks, evaluate any failures and revise within scope. Do not modify the reference behavior, protected acceptance checks, controller–adapter interface, legacy sources or product decisions. Stop and escalate if a source is missing, the criteria conflict, a change crosses an unauthorized interface or the iteration budget is exhausted. Report the changes, checks actually executed and remaining issues for review.
 
-The wording makes the requested outcome testable. It identifies exclusions that prevent a local input-quality task from silently becoming a controller redesign.
+This is a **hypothetical assignment**, not a completed agent run. It specifies an outcome and the boundaries within which the agent may choose its own next actions. For example, the engineer might allow three unsuccessful revision attempts before escalation while keeping the independent acceptance checks outside the agent's write permissions. The engineer need not prompt separately for every intermediate correction.
 
-The last sentence matters. An agent unable to resolve a required source should report that fact, not manufacture a plausible value or continue under an assumption that changes the engineering question.
+The acceptance checks must remain trustworthy. An agent may propose additional tests, but it cannot prove success by rewriting the protected expected results to match its implementation. In particular, both **valid T1 behavior and invalid-input rejection** must be checked; a validator that rejects every input is not a solution.
+
+## The inner loop: propose, execute, evaluate, correct
+
+For this bounded software task, a complete agentic work cycle can look like this:
+
+| Agent action | Automated feedback | What happens next |
+|---|---|---|
+| Inspect the T1 source and propose an input-validation change | Are the affected inputs and source contracts identified? | Choose a small, relevant implementation |
+| Implement and run the defined checks | Does the valid A/B case still produce its declared trace? Are negative, fractional and malformed inputs rejected? | Inspect failures before changing the solution |
+| Analyze an unsuccessful check | Which actual rule, input or code path failed? | Revise and execute the checks again, within the authorized scope |
+| Reach the completion or escalation condition | Are the relevant criteria met, or is a source, test or assumption insufficient? | Produce a reviewable result or stop for engineering judgment |
+
+The tests provide feedback **to the current work process**. That does not mean the underlying language model is being retrained after each failure. The agent uses observed results to choose its next action.
+
+When the criteria are clear, well covered and protected from unreviewed alteration, the agent may complete several iterations autonomously. When a requirement is ambiguous or a physical interface is implicated, another code iteration may be the wrong response.
 
 ## Context is an engineering capability
 
@@ -60,13 +75,13 @@ A source map gives the agent an entry point; it does not give it unlimited autho
 
 Standards and conventions such as **MCP** (Model Context Protocol), project instructions and reusable Agent Skills can help package tool connections or repeatable procedures. Their names are less important at this stage than the actual boundary between *information needed*, *action permitted* and *decision owned by a person*.
 
-## Observe actions, not just a persuasive explanation
+## Check the outcome, not the agent's narration
 
 Imagine the agent reports, “The validation is fixed and all tests pass.”
 
 What would you ask for before accepting that statement?
 
-You would need the affected source revisions, the proposed change, the checks actually executed and their results, the invalid-input cases, and any outstanding questions. A generated summary may help you review; it cannot substitute for evidence that a tool ran or a test exercised the stated property.
+You would need to know which source revision was modified, which checks **actually executed**, which behavior they covered and whether the agent changed the criteria used to judge itself. A summary can help the reviewer navigate; it is not a substitute for the test results or an independent acceptance check.
 
 An auditable handover should distinguish:
 
@@ -77,21 +92,21 @@ An auditable handover should distinguish:
 5. **Proposed conclusion:** What the agent believes follows from the observation.
 6. **Human decision:** Which part is accepted, revised, rejected or still open.
 
-This is an illustrative **handover contract**. We do not invent a command log or pretend a Copilot/Codex agent actually performed the example. When a genuine run is later captured, its source revision and tool output should be retained and clearly labeled.
+This is an illustrative **handover contract**. We do not invent a command log or pretend that an agent actually completed this task. When a genuine run is captured, its source revision, executed checks and limitations should be retained. A task completed against the wrong specification is still the wrong result.
 
-## An agent may discover a better question
+## The outer loop: are we solving the right engineering problem?
 
-Suppose the agent finds an input row that appears to use a different model revision. An appropriate response may be to **stop and ask which source is authoritative** rather than updating the expected output to make a test green.
+The **inner loop** asks whether the proposed implementation satisfies defined, executable criteria. The **outer loop** asks whether those criteria, the model's scope and the underlying requirements address the intended product behavior.
 
-That is one reason to give agents access to structured information and clear task authority. The agent can surface conflicting context, but it should not silently decide which engineering requirement or interface revision the team will adopt.
+Suppose the agent encounters an input associated with a different model revision. Another round of code changes will not establish which source should govern. The appropriate action is to **stop and escalate the ambiguity**, rather than changing expected values until the tests pass.
 
-The useful work may be an investigation that produces **no code change**.
+The engineer may then revise the experiment, seek input from an integration specialist or add a physical observation. A deterministic calculation can be internally correct while its representation of the product is inadequate. Even extensive automated tests cannot repair a wrong requirement that they faithfully encode.
 
-For the fictional intersection, the engineer still owns the question of whether the T1 model is appropriate for its intended purpose. Passing input validation makes the model easier to trust within its tiny scope, not suitable for real signal control.
+This is why **agent autonomy should depend on the quality and independence of the feedback available**, not on how persuasive the agent sounds. The useful outcome may be an investigation and an engineering decision that produces no code change.
 
 ## People direct and evaluate the work
 
-Agentic engineering changes how engineers spend effort. They may increasingly define outcomes, inspect evidence, review changes, create stronger reusable context and improve the tools through which work is delegated.
+Agentic engineering changes how engineers spend effort. They can define outcomes and escalation boundaries, invest in trustworthy executable checks, assess evidence from the outer loop and improve the environment in which agents work.
 
 That is not simply “the agent writes the code and the human approves it.” Systems engineers, electronics engineers, test engineers and operational specialists contribute different knowledge and decisions. A useful environment makes that expertise available in forms that agents can find **without implying the agent possesses their authority**.
 
@@ -105,7 +120,7 @@ A validated input-quality improvement is a coherent scope. Rewriting the signal-
 
 The next chapter, **Engineering in Small, Reviewable Increments**, asks how to package changes so their behavior, dependencies and acceptance criteria remain understandable across disciplines.
 
-**Engineering takeaway:** Directing an AI agent is an engineering task in its own right. Give it a meaningful objective, current and authorized context, a bounded action space and an observable handover. Evaluate the work itself rather than treating the agent's narration as evidence.
+**Engineering takeaway:** The opportunity is to delegate a **complete bounded engineering feedback loop**, not merely individual tasks. The stronger and more independent the automated checks, the more iteration an agent can perform without intervention. Engineers still own the questions that those checks cannot answer.
 
 ---
 

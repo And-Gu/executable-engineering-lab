@@ -21,7 +21,7 @@ At a glance the new row appears to describe a much worse result. Should we put a
 
 Not yet. We do not know whether “20” counts vehicles, measures a time, aggregates several queues or refers to another horizon. We do not even know which model or configuration produced it.
 
-The work of engineering data is to turn such records into information that can support a **specific, defensible decision**. That involves more than storage and graphs. It involves quality, meaning, provenance, review and appropriate reuse.
+The work of engineering data is to establish **which comparisons can support a specific decision**. T1 already computes deterministically for fixed inputs; that alone cannot tell us whether a new record uses the same metric, conditions or model. Quality, meaning, provenance and experimental design are the important questions here.
 
 ## Begin with the meaning of a record
 
@@ -65,7 +65,7 @@ Data refinement is easier to review when each stage has a clear purpose.
 
 **Interpretation** then asks what the result means for the question at hand. In T1, clustering changes the remaining queue at this finite horizon. It does not establish real traffic performance or support an operational controller change.
 
-The important idea is to make the movement between these stages explainable and repeatable. A derived value should not become an independently maintained new source of truth.
+The important idea is to preserve the meaning and source of each transformation. A deterministic calculation will produce the same output for fixed inputs; the harder question is whether the resulting records describe comparable conditions and justify the intended conclusion. A derived value should not become an independently maintained new source of truth.
 
 ## An inspectable transformation
 
@@ -94,7 +94,7 @@ A richer model might later add arrival timestamps, individual waiting times or r
 
 The **product** team wants to understand intersection operation. The **engineering environment** must make the relevant observations and calculations usable.
 
-That means source identities and configurations are maintained; collection and validation are repeatable; analyses can be rerun; original and derived data remain distinct; missing information is visible; and a later reviewer can reproduce the same conclusion without reconstructing undocumented assumptions.
+That means source identities, definitions, units, configurations and observation windows remain available. Automated checks can detect invalid inputs or incompatible records before a comparison reaches a decision. A later reviewer should be able to follow **why** a conclusion was supported or withheld—not merely obtain the same calculated number again.
 
 The same principle applies when a product includes AI. Evaluation data must represent conditions relevant to the intended use, and the relationship between model revision, data selection and test result matters. That is a question about **AI in the product**. An engineering agent helping prepare a dataset is a different use of AI and requires its own context and authority.
 
@@ -104,7 +104,7 @@ Reusable, carefully described data is an engineering asset. It can help a second
 
 The T1 A/B comparison is internally consistent for its narrow, invented scope. The legacy-C comparison remains unsupported. Neither observation justifies adopting a new real signal strategy.
 
-A sensible next engineering increment would make the model comparison reliably reproducible, reject malformed inputs and record which questions remain open. That is different from specifying an entire intersection controller before the operating requirements are understood.
+A sensible next engineering increment would make input constraints executable, reject malformed inputs and test that valid scenarios still meet their defined criteria after changes. It should also record which **product** questions remain open. That is different from specifying an entire intersection controller before the operating requirements are understood.
 
 In the next chapter, **Spec-Driven Development Without Waterfall**, we will turn that bounded need into a specification with concrete valid and invalid cases, while keeping broader product alternatives open for learning.
 
