@@ -19,6 +19,8 @@ One approach is to ask an AI assistant for suggestions, then manually issue sepa
 
 Executable models and automated checks allow agents to evaluate proposed changes, respond to failures, and work toward a defined engineering outcome. Engineers establish the acceptance criteria and escalation boundaries, enabling agents to complete multiple iterations without continuous human direction.
 
+Now imagine **several agents** pursuing parts of that outcome at once. One changes input validation, another analyzes model assumptions, and a third reviews relevant checks. The speed of each agent matters less if their sources, changes and conclusions cannot be brought together. Delegation therefore creates a second engineering problem: **coordinating work and decisions across agents and people**.
+
 ## Separate the model from the working agent
 
 Many agents use large language models (LLMs) to interpret task descriptions and select steps. The language model is not, by itself, the complete working system.
@@ -53,6 +55,22 @@ For this bounded software task, a complete agentic work cycle can look like this
 Test results tell the agent which criteria were met and what failed. The agent can use those observations to select its next step, repeat the check, or escalate when the agreed limits are reached.
 
 When the criteria are clear, well covered and protected from unreviewed alteration, the agent may complete several iterations autonomously. When a requirement is ambiguous or a physical interface is implicated, another code iteration may be the wrong response.
+
+## Coordinate several agents around one engineering outcome
+
+Consider the broader fictional T1 objective: *improve confidence in the intersection experiment without changing the agreed phase rules or asserting physical readiness*. Three workstreams could contribute:
+
+| Workstream | Bounded outcome | Dependency and handover |
+|---|---|---|
+| **A — Input validation** | Reject malformed scenarios; preserve valid A/B behavior | Needs the T1 source contract and protected behavioral checks |
+| **B — Model and interface impact review** | Identify assumptions or proposed changes that need engineering review | Reads the same model revision and the proposed controller/adapter definitions; cannot accept physical compatibility |
+| **C — Verification and integration** | Check the proposed outputs against the agreed criteria and identify conflicting revisions | Needs identifiable candidates from A and findings from B; must not replace missing physical evidence with model-test success |
+
+This is a **teaching plan**, not a report that three agents actually ran. A coordinating role—human-led, agent-assisted, or implemented through simple automation—can track the shared objective, select ready work, assign file or source ownership, and decide which outputs may be integrated. It does not need to be a new orchestration product.
+
+Suppose A updates a validator against T1 while B proposes a T2 model revision. Both can appear successful in isolation. C must not combine A's T1 result with B's T2 definition and call the combined baseline verified. The coordinator should notice the revision mismatch, preserve each result's provenance, and either arrange a compatible new evaluation or raise a decision.
+
+The coordinator's responsibility is therefore **more than distributing tasks**. It is maintaining a coherent chain from intent and dependencies through execution and evidence to a reviewable outcome. Work can proceed in parallel when interfaces are stable; conflicting changes to a shared source require an explicit owner and integration order.
 
 ## Context is an engineering capability
 
@@ -104,9 +122,27 @@ The engineer may then revise the experiment, seek input from an integration spec
 
 This is why **agent autonomy should depend on the quality and independence of the feedback available**, not on how persuasive the agent sounds. The useful outcome may be an investigation and an engineering decision that produces no code change.
 
+## Supervise by exception, not by reading every agent message
+
+Multiple agents can generate many changes, logs and explanations. Asking a human to inspect every intermediate action merely moves the bottleneck from coding to attention and coordination.
+
+A useful human-facing handover is a small **outcome-and-exception summary**, derived from source records rather than invented progress percentages:
+
+| Proposed workstream state | What the engineering lead needs to know |
+|---|---|
+| Input validation meets protected T1 criteria | The changed source revision, checks actually run, and whether the result is ready for review |
+| Model/interface impact remains a proposal | The affected source IDs, unresolved claims and responsible engineering owner |
+| Verification detects incompatible T1/T2 assumptions | **Exception:** two results cannot be integrated as one baseline; choose a revision or commission an appropriate check |
+
+The states above are **illustrative**, not observed agent executions. The engineer should be able to open the underlying evidence on demand, but routine successful steps need not each become a meeting or approval request.
+
+Escalate when an agent encounters an incompatible dependency, a missing or untrusted acceptance criterion, a cross-discipline interface, a resource limit, or a decision outside its authority. Where the checks and interfaces are well defined, let agents resolve ordinary failures themselves.
+
+This is **exception-driven supervision**: people manage outcomes, priorities and decisions that need judgment. Agents and automated workflows manage the bounded details. It reduces cognitive load only when the summaries accurately reflect real source and test status.
+
 ## People direct and evaluate the work
 
-Agentic engineering changes how engineers spend effort. They can define outcomes and escalation boundaries, invest in trustworthy executable checks, assess evidence from the outer loop and improve the environment in which agents work.
+Agentic engineering changes how engineers spend effort. They can define outcomes and escalation boundaries, establish shared context and source ownership, assess evidence from the outer loop, and intervene when dependencies or engineering authority demand attention. Agents can choose many intermediate steps while the organization keeps one coherent product objective.
 
 Systems engineers, electronics engineers, test engineers and operational specialists contribute different expertise and decisions. A useful engineering environment makes their constraints and evidence accessible to agents while keeping authority and accountability with the appropriate roles.
 
@@ -114,13 +150,13 @@ An agent can help prepare a model comparison while an integration engineer inves
 
 ## Keep the next change reviewable
 
-Even when an agent can complete a multi-step assignment quickly, the result may be difficult to accept if it changes too many unrelated things at once.
+Even when several agents complete their assigned loops quickly, the integrated result may be difficult to accept if it mixes unrelated changes or incompatible source revisions.
 
 A validated input-quality improvement is a coherent scope. Rewriting the signal-command interface at the same time would introduce a different engineering decision.
 
 The next chapter, **Engineering in Small, Reviewable Increments**, asks how to package changes so their behavior, dependencies and acceptance criteria remain understandable across disciplines.
 
-**Engineering takeaway:** The opportunity is to delegate a **complete bounded engineering feedback loop**, not merely individual tasks. The stronger and more independent the automated checks, the more iteration an agent can perform without intervention. Engineers still own the questions that those checks cannot answer.
+**Engineering takeaway:** Delegate **bounded end-to-end engineering outcomes**, not just isolated tasks. Use automated checks for local iteration and explicit coordination for shared sources, dependencies and integration. Give people a trustworthy view of outcomes and exceptions—not an obligation to supervise every agent action.
 
 ---
 
