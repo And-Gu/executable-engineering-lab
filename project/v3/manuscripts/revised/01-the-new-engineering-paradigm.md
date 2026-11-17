@@ -4,103 +4,82 @@ chapter: 1
 part: "I — Frame the Work"
 title: "The New Engineering Paradigm"
 status: draft
-publication: unpublished
+publication: review-in-pr
 reference_case: four-way-traffic-intersection
-teaching_fixture: "T1 — fictional case introduced; no physical results"
+teaching_fixture: "Conceptual overview; case begins in Chapter 2"
 ---
 
 # The New Engineering Paradigm
 
-*Software and AI change what we build. And how we build it.*
+*Why engineering is changing—and what leaders and teams must change with it.*
 
-A city wants to improve how people move through a busy four-way intersection. Drivers describe long queues when vehicles arrive in bursts. A pedestrian representative asks whether the existing signal sequence leaves people enough opportunity to cross. A maintainer wants to understand how a fault would be diagnosed if the controller and signal equipment disagreed.
+Engineering organizations face a widening gap between how quickly products need to evolve and how slowly many engineering decisions move through fragmented disciplines, documents, tests, approvals and delivery processes. Software and artificial intelligence (AI) offer new capabilities, but neither removes the responsibility to develop safe, useful and trustworthy systems.
 
-Someone suggests adaptive signals. Someone else wants better detection. Another engineer thinks the existing timing could be improved.
+The opportunity is broader than automating old tasks: **engineer the product and the capability to improve it, together.** This chapter sets out the whole picture. The next chapter introduces a fictional four-way intersection used to explore the practical implications throughout the course.
 
-Which solution should the city choose?
+## Expectations are changing
 
-We cannot answer yet. The team has an intended improvement, several different stakeholder needs, and little controlled evidence about the specific system. Choosing a technology before understanding that situation would make the project look more certain than it is.
+Customers increasingly expect products to gain capabilities, respond to feedback and remain useful after delivery. Competitive pressure raises expectations for shorter development cycles, higher quality, more frequent improvements and faster adaptation to new needs. These pressures affect software-intensive systems, electronics, mechanical products and the services surrounding them.
 
-This is where modern systems engineering begins: with a whole-system question and a way to learn.
+They create a demanding combination: **develop faster, release more often where feasible, and increase confidence in what is released**. Faster output alone is not a solution. A team that produces more changes but cannot integrate, test or authorize them has merely moved work into a queue elsewhere.
 
-## Two systems develop together
+Release frequency also differs by product. A web service may deploy repeatedly; embedded software may require controlled integration and qualification; electronics and physical designs involve supplier, manufacturing and test constraints. The objective is not one universal release rhythm. It is to shorten the time between a relevant question, reliable feedback, an informed decision and a useful product improvement.
 
-The first system is the **product**. In our case, it involves the signal-control function, electrical and physical interfaces, visible indications, operating conditions, users and people responsible for keeping it working. A small software model describes only one part of that product.
+## Software-inspired engineering moves beyond software
 
-The second is the **engineering environment** used to investigate and develop it: the team, its methods, source information, models, test fixtures, data, review practices, software tools and AI agents.
+Software development has pioneered practices that other disciplines can adapt: smaller increments, explicit configurations, automated checks, continuous integration, versioned information, simulation and feedback from operation. Their contribution is not that an electrical or mechanical product becomes software. It is that more of the *engineering work* can become connected, reviewable and progressively testable.
 
-These systems influence each other.
+A model of a physical function can be executed before hardware is ready. An interface contract can be checked when either side changes. An engineering decision can retain its rationale and applicable evidence. Automated checks can detect regressions early, while system-level validation still determines whether the complete product meets its intended use.
 
-A decision to compare different signal-control options creates a need for understandable traffic-arrival scenarios. A disagreement about conflicting movements creates a need for clearer system definitions and review methods. Better models and repeatable tests, in turn, make new product alternatives easier to explore.
+For multidisciplinary systems, the challenge is to connect these practices without assuming that every discipline has the same cycle time. Early model learning can prevent expensive physical changes; physical experiments can reveal assumptions the model cannot represent.
 
-That is the meaning of **“We build the machine that builds the machine.”** It is not a claim that engineering is an assembly line or that engineers are replaceable. It is a reminder that the *capability to engineer* deserves attention alongside the product being engineered.
+## AI expands what engineering teams can do
 
-An engineering environment is valuable when it helps answer a real product question. A large collection of new tools is not a result by itself.
+AI assistance can help teams explore alternatives, work with large collections of engineering information, draft and review technical artifacts, write software, prepare experiments and interpret results. Tool-using AI agents may also carry out bounded tasks: propose a change, invoke tools, inspect feedback and revise the work before handing it back for review.
 
-## Follow one finding into a decision
+These capabilities matter most when the environment provides meaningful, sufficiently independent checks. An agent iterating against weak or self-modified acceptance criteria can produce a convincing-looking but invalid result. Engineering judgment is still needed to set objectives, protect constraints, decide what evidence is credible and authorize consequential changes.
 
-Suppose an early discussion of the intersection shows that the team is using “improve flow” to mean several different things. The drivers care about queues. Other road users care about crossing opportunities and predictability. The maintainer needs to know what the equipment is actually indicating.
+**AI used to develop a product is distinct from AI built into that product.** A team may use agents to improve engineering workflows without deploying AI in the delivered system. Conversely, a product may use predictive or adaptive AI that requires its own safety, performance and validation work.
 
-This is a conceptual finding from our teaching case, not an observation at a real location.
+AI is therefore a major accelerator and potentially an enabler of new ways of working—but it is not the original reason engineering needs to evolve.
 
-It changes the **product question**: before choosing adaptive control, the team needs to define which movements and users belong in the intended system behavior and which trade-offs deserve investigation.
+## Two systems must evolve together
 
-It also changes **how we engineer the product**: the team needs a simple shared representation of movements, a small set of defined arrival scenarios and a way to retain assumptions and decisions as they evolve.
+Every engineering organization is developing two related systems.
 
-The next action could be a bounded experiment rather than a controller purchase. Engineers might compare invented arrivals under a deliberately simplified fixed-time sequence to learn what that abstraction can and cannot reveal.
+The **product system** includes software, electronics, physical components, interfaces, operators and the operating environment. It is judged by what it can actually do, under the conditions that matter.
 
-That experiment is not the whole answer. It creates the next evidence and the next question.
+The **engineering system** includes people, methods, engineering knowledge, executable models, development environments, automated tests, integration equipment, decision processes, supply-chain relationships and AI-enabled workflows. It is judged by how well it helps the organization make sound product decisions and deliver improvements.
 
-## What makes engineering executable?
+**“We build the machine that builds the machine.”** This is a reminder that engineering capability itself requires intentional design, investment, operation and improvement. It is not an argument for building a large new tool platform before solving a product problem.
 
-A document can describe an intended signal sequence. A state model can represent the permitted phases. A calculation can test how different arrivals affect an abstract queue. A repeatable check can help detect when a model revision no longer satisfies its stated assumptions.
+The two systems form a feedback relationship. A difficult product question may reveal the need for a new simulation or test fixture. A better engineering capability may make previously expensive options practical to investigate. Improvements to the engineering system should be justified by the product decisions and delivery outcomes they enable.
 
-We use **executable engineering** for the approach in which models, analyses, tests and parts of the engineering workflow can be run, inspected and improved. It is not a standardized claim that every judgment can be automated.
+## From document-driven handoffs to executable feedback
 
-Software-driven workflows can support electronics, mechanical design, manufacturing, integration and verification—not only software development. An electrical engineer may use a simulation or an interface check; a systems engineer may inspect change impact; a test engineer may reproduce a result tied to a known configuration.
+Documents and reviews remain useful; the problem arises when engineering knowledge is disconnected from the models, tests and decisions that give it meaning.
 
-The value is in shortening the path from a meaningful question to relevant, reviewable evidence. The team can attempt more learning cycles without pretending that every experiment is equally representative of reality.
+In this lab, **executable engineering** describes an approach in which suitable models, analyses, checks and workflow steps can be run, evaluated and improved. A requirements definition may connect to a model, an experiment, a verified interface and evidence of system behavior. That does not mean every engineering activity becomes executable. Stakeholder negotiation, model validity, physical integration, safety judgment and release authority still require suitable human and real-world processes.
 
-A failed simulation, a rejected input or a documented uncertainty can be valuable if it makes the next decision clearer.
+Two connected feedback loops are especially important:
 
-## AI helps develop products—and may also be inside them
+- **Fast executable feedback:** make a bounded change, run a model or test, inspect a failure and refine the work. Automation and agents can accelerate this loop when its checks are dependable.
+- **Whole-product feedback:** ask whether the model, checks and change are appropriate for the actual intended use. Bring in physical evidence, integration results, operational constraints and authorized decisions.
 
-There are two different roles for AI here.
+A passing test is evidence about a stated check under specific conditions. It is not automatically evidence that the product is fit for use.
 
-**AI in engineering** can assist with reading source information, drafting explanations, comparing model revisions, preparing bounded experiments or executing permitted tool-based tasks. An AI **agent** goes beyond a single conversational answer when it pursues a defined task using tools, observes results and adapts its next steps. Engineers still need to decide what authority it has and evaluate the work.
+## What this means for engineering leadership
 
-**AI in a product** would contribute to that product's behavior. An adaptive controller might hypothetically use a predictive traffic model. That is a separate design option from an AI agent helping the engineering team. It is not part of our initial fictional fixed-phase demonstration.
+The transformation changes the questions leaders should ask. Beyond measuring tasks completed or documents produced, they should examine what the teams can now demonstrate, which major uncertainties have been resolved, how quality is established and how often useful improvements can be delivered responsibly.
 
-A scripted test is not automatically an agent, even if AI helped write it. And an engineering team can benefit from an agent without putting AI into the product at all.
+That means investing selectively in shared engineering information, simulation and test capability, integration practices, multidisciplinary interfaces and the skills to direct and evaluate AI-supported work. It also means allowing exploration where the design is uncertain and making stronger commitments when the evidence supports them.
 
-We introduce these distinctions now because the rest of the course will show what becomes possible when engineering information, tools and human judgment work together.
+The goal is neither a tool collection nor automation for its own sake. It is **a better engineering system that can learn faster, build with greater confidence and improve products more continuously**.
 
-## Faster feedback does not mean one release clock
+## From the paradigm to a working example
 
-Imagine three activities occurring in parallel.
+The rest of the lab turns this broad argument into concrete engineering choices. We will work with a fictional four-way intersection, starting with uncertain needs rather than an assumed solution. We will follow how planning, engineering knowledge, models, data, specifications, agents, integration, evidence and release decisions build on one another.
 
-The software team revises a candidate source definition and runs a model in minutes. The electronics team needs to clarify a command interface and possibly arrange a bench investigation. The physical installation team has different constraints, resources and verification needs. Meanwhile, people responsible for operations may need to clarify intended use before a product configuration can be accepted.
+**Chapter 2, Introducing the Engineering Challenge**, defines that shared example and its boundaries. The subsequent chapters develop the practices in progressively greater detail.
 
-Those are not competing measures of a single team's speed. They are different feedback loops producing different kinds of knowledge.
-
-A quick software result is useful within its scope. It does not erase physical lead times or turn a model check into operational acceptance. The engineering challenge is to make evidence and decisions flow between disciplines without losing the meaning of what each result establishes.
-
-This changes how leaders evaluate progress. A count of completed tasks or generated lines of code cannot reveal whether the next critical uncertainty has been resolved. Better questions are: **What can the system demonstrate? What remains unknown? Which decision is now possible? What engineering capability will help next?**
-
-## From an uncertain idea to a deliberate investigation
-
-We now have a recognizable situation: a city wants better intersection operation, but neither the right product design nor the right engineering method is settled.
-
-We also have a possible first step: represent the main function and its important boundaries, then investigate a modest fixed-phase traffic model. That work might show that our assumptions are inadequate. It might also create a reusable method for the next concept study.
-
-The decision is not yet to build adaptive signals or deploy new software.
-
-It is to decide **which uncertainty is worth investigating first**, what product capability can responsibly be committed to, and which engineering capability must be developed to support the learning.
-
-That is the work of the next chapter, **Planning Under Uncertainty**.
-
-**Engineering takeaway:** Modern engineering advances both the product and the environment used to develop it. Executable models, software workflows and AI agents matter when they help teams understand a system, test assumptions and make better decisions—not merely when they accelerate activity.
-
----
-
-*Inspect the case as it develops:* [The fictional intersection and system boundary](../../case-study/README.md) · [V3 reference system](../../REFERENCE-INTERSECTION.md). All early findings are instructional; no physical intersection or agent-run evidence is implied.
+**Engineering takeaway:** Market expectations create pressure for speed, release frequency and quality. Software-inspired ways of working provide a foundation, and AI expands the opportunities. The enduring change is to develop the product and the engineering capability that improves it as two connected systems.
