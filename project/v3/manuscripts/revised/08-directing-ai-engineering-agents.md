@@ -1,6 +1,6 @@
 ---
-id: eel-v3-ch07-directing-agents
-chapter: 7
+id: eel-v3-ch08-directing-agents
+chapter: 8
 part: "III — Develop an Integrated Product"
 title: "Directing AI Engineering Agents"
 status: draft

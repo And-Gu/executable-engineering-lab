@@ -1,6 +1,6 @@
 ---
-id: eel-v3-ch06-spec
-chapter: 6
+id: eel-v3-ch07-spec
+chapter: 7
 part: "II — Build and Test Knowledge"
 title: "Spec-Driven Development Without Waterfall"
 status: draft
@@ -60,7 +60,7 @@ Our [T1 case source](../../case-study/README.md) also names the interface and mo
 
 ## Keep two learning loops active
 
-Chapter 2 separated exploration from delivery commitments. This increment demonstrates how the loops can work together.
+Chapter 4 separated exploration from delivery commitments. This increment demonstrates how the loops can work together.
 
 The team is **delivering** a bounded engineering capability: reproducible scenario analysis with input checking. At the same time, it is **exploring** a product question: how meaningful are the results and which model assumptions need improvement?
 

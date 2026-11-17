@@ -1,6 +1,6 @@
 ---
-id: eel-v3-ch14-next-capability
-chapter: 14
+id: eel-v3-ch15-next-capability
+chapter: 15
 part: "IV — Establish Trust and Sustain Change"
 title: "Choosing the Next Engineering Capability"
 status: draft

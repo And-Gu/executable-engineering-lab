@@ -1,6 +1,6 @@
 ---
-id: eel-v3-ch13-knowledge-at-scale
-chapter: 13
+id: eel-v3-ch14-knowledge-at-scale
+chapter: 14
 part: "IV — Establish Trust and Sustain Change"
 title: "Managing Engineering Knowledge at Scale"
 status: draft
@@ -53,7 +53,7 @@ This is one fictional example of a common organizational problem: the same asset
 
 ## Identity, revision and configuration
 
-Chapter 3 introduced stable engineering identities and typed relationships. At scale, we need to distinguish those identities from **the specific versions and configurations** in which they are used.
+Chapter 4 introduced stable engineering identities and typed relationships. At scale, we need to distinguish those identities from **the specific versions and configurations** in which they are used.
 
 An interface can retain a stable object identity while its meaning changes between revisions. A test method can stay the same while the expected behavior or product configuration changes. An older result can be perfectly reproducible and still inapplicable to a new product.
 

@@ -2,9 +2,9 @@
 import { parts } from "../data/v3-course";
 ---
 <section class="course-overview" aria-labelledby="current-course-title">
-  <h2 id="current-course-title">The course · Fourteen chapters</h2>
-  <p>Follow one fictional traffic intersection from uncertain intent to an integrated product and the engineering capabilities needed to sustain it.</p>
-  <p class="course-status">All fourteen chapters are available below following initial author review. The examples are fictional teaching cases; interactive V3 graph and model tools remain in development. Earlier lessons remain available separately.</p>
+  <h2 id="current-course-title">The course · Fifteen chapters</h2>
+  <p>Begin with the changing engineering paradigm, then follow one fictional traffic intersection from uncertain intent to an integrated product and the engineering capabilities needed to sustain it.</p>
+  <p class="course-status">All fifteen chapters are available below following initial author review. The examples are fictional teaching cases; interactive V3 graph and model tools remain in development. Earlier lessons remain available separately.</p>
   {parts.map(part => <section class="course-part" id={`part-${Number(part.chapters[0].number)}`}><h3>{part.title}</h3><ol start={Number(part.chapters[0].number)}>{part.chapters.map(chapter => <li><article><p class="chapter-number">Chapter {chapter.number}</p><h4><a href={chapter.url}>{chapter.title}</a></h4><p>{chapter.summary}</p><a class="manuscript-link" href={chapter.url}>Read chapter →</a></article></li>)}</ol></section>)}
 </section>
 <style>

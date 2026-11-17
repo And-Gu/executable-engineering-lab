@@ -1,6 +1,6 @@
 ---
-id: eel-v3-ch10-verification-evidence
-chapter: 10
+id: eel-v3-ch11-verification-evidence
+chapter: 11
 part: "IV — Establish Trust and Sustain Change"
 title: "Verification, Validation and Engineering Evidence"
 status: draft

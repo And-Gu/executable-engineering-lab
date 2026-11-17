@@ -1,6 +1,6 @@
 ---
-id: eel-v3-ch11-governance-authority
-chapter: 11
+id: eel-v3-ch12-governance-authority
+chapter: 12
 part: "IV — Establish Trust and Sustain Change"
 title: "Governance and Engineering Authority"
 status: draft
@@ -113,7 +113,7 @@ We have now made the technical and decision boundaries visible. The next challen
 
 Can that be done quickly and repeatedly without flattening every type of product change into one software pipeline?
 
-Chapter 12, **Continuously Integrated Engineering**, answers by examining the engineering factory as both something we **build** and something we **operate**.
+Chapter 13, **Continuously Integrated Engineering**, answers by examining the engineering factory as both something we **build** and something we **operate**.
 
 **Engineering takeaway:** Governance is the explicit connection between authority, risk, controls, evidence and decisions. The right controls help teams move when the necessary claims are supported—and stop when they are not.
 

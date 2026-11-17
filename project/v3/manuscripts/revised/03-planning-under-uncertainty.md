@@ -1,6 +1,6 @@
 ---
-id: eel-v3-ch02-planning
-chapter: 2
+id: eel-v3-ch03-planning
+chapter: 3
 part: "I — Frame the Work"
 title: "Planning Under Uncertainty"
 status: draft
@@ -114,7 +114,7 @@ Once several disciplines are investigating the intersection, assumptions appear 
 
 Our next problem is not how to add more backlog items. It is **how to maintain engineering meaning and relationships** so that the selected investigation and later changes can be understood.
 
-Chapter 3, **Engineering Knowledge as Code**, begins with that need.
+Chapter 4, **Engineering Knowledge as Code**, begins with that need.
 
 **Engineering takeaway:** Good planning under uncertainty distinguishes learning from commitment. It chooses the next important question, makes dependencies and stopping rules visible, and invests in engineering capabilities because they improve product decisions.
 

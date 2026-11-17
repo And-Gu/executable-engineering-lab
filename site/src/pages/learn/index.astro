@@ -6,18 +6,18 @@ const base = import.meta.env.BASE_URL;
 
 ---
 <Layout title="Learning path">
-  <p class="eyebrow">Learn · Fourteen-chapter course</p>
+  <p class="eyebrow">Learn · Fifteen-chapter course</p>
   <h1>Develop the system. Develop how you engineer it.</h1>
   <p class="lead">Explore how executable models, software-driven workflows and AI agents change systems engineering—from an uncertain product idea to useful improvements in operation.</p>
   <CourseOverview />
   <section aria-labelledby="reader-preview-title">
     <h2 id="reader-preview-title">Earlier Chapter 1 preview</h2>
-    <p>This published V2 monitoring example predates the current fourteen-chapter intersection course.</p>
+    <p>This published V2 monitoring example predates the current fifteen-chapter intersection course.</p>
     {chapterPreviews.map(chapter => <p><a href={`${base}learn/${chapter.path}/`}><strong>{chapter.title} →</strong></a><br />{chapter.summary}</p>)}
   </section>
   <section class="course-language" aria-labelledby="course-language-title">
     <h3 id="course-language-title">A shared vocabulary from Chapter 1</h3>
-    <p>The <a href={`${base}learn/v2/01-new-engineering-paradigm/`}>Chapter 1 preview</a> introduces systems engineering, executable engineering, software-driven workflows and AI-assisted engineering. It explains what AI agents do and distinguishes AI used in engineering from AI in products.</p>
+    <p>The <a href={`${base}learn/v3/01-the-new-engineering-paradigm/`}>Chapter 1 overview</a> introduces systems engineering, executable engineering, software-driven workflows and AI-assisted engineering. It explains what AI agents do and distinguishes AI used in engineering from AI in products.</p>
     <p>Chapter 7 will develop agentic engineering through delegated tasks, tool use and evaluation, explaining large language models (LLMs) as part of the underlying technology. Later chapters will apply these terms to models, delivery, physical validation and the engineering environment.</p>
   </section>
   <h2 id="published-v2">Published v2 articles</h2>

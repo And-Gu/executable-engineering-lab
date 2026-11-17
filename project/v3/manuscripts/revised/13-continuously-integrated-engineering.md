@@ -1,6 +1,6 @@
 ---
-id: eel-v3-ch12-continuous-engineering
-chapter: 12
+id: eel-v3-ch13-continuous-engineering
+chapter: 13
 part: "IV — Establish Trust and Sustain Change"
 title: "Continuously Integrated Engineering"
 status: draft
@@ -35,7 +35,7 @@ Consider three fictional proposals:
 
 Even the first row needs review. Calling a change “diagnostic only” is an assertion to check, not a blanket exemption. The team must know which version of the product is affected and what its test environment can genuinely demonstrate.
 
-The interface mismatch from Chapter 9 is particularly useful. The source comparison cannot be fixed by merely putting an ambiguous acknowledgment into a new software release.
+The interface mismatch from Chapter 10 is particularly useful. The source comparison cannot be fixed by merely putting an ambiguous acknowledgment into a new software release.
 
 ## Building the factory is engineering work
 
@@ -136,4 +136,4 @@ That is the next problem for **Managing Engineering Knowledge at Scale**.
 
 ---
 
-*Inspect the case decision:* [Eligibility and blocked-change reasoning](../../case-study/DECISION-CHAIN.md) · [Integration discrepancy](09-from-models-to-an-integrated-product.md) · [DORA continuous delivery](https://dora.dev/capabilities/continuous-delivery/).
+*Inspect the case decision:* [Eligibility and blocked-change reasoning](../../case-study/DECISION-CHAIN.md) · [Integration discrepancy](10-from-models-to-an-integrated-product.md) · [DORA continuous delivery](https://dora.dev/capabilities/continuous-delivery/).

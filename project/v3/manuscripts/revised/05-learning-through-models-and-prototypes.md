@@ -1,6 +1,6 @@
 ---
-id: eel-v3-ch04-models-prototypes
-chapter: 4
+id: eel-v3-ch05-models-prototypes
+chapter: 5
 part: "II — Build and Test Knowledge"
 title: "Learning Through Models and Prototypes"
 status: draft
@@ -21,7 +21,7 @@ For now we will study a much smaller question: **with the same fixed signal sequ
 
 ## Different questions demand different models
 
-Our structured information from Chapter 3 identifies a candidate phase-selection function, a proposed conflict property and a teaching model. Those objects tell us what the team intends to study, but not the behavior of the actual system.
+Our structured information from Chapter 4 identifies a candidate phase-selection function, a proposed conflict property and a teaching model. Those objects tell us what the team intends to study, but not the behavior of the actual system.
 
 Different representations can help with different questions. A functional diagram explains inputs and responsibilities. A state machine can define which abstract phase follows which. A queue calculation can represent what happens when invented vehicles arrive while one direction is allowed to depart. A bench test could later investigate a particular controller–adapter interface. A physical prototype or installation observation would be needed for different kinds of real-world questions.
 
@@ -121,7 +121,7 @@ The eventual browser interaction should derive its traces, tables and charts fro
 
 ## The data is now the next engineering problem
 
-Chapter 3 supplied the information needed to *identify* what is related. This chapter supplied a bounded calculation with visible assumptions and results.
+Chapter 4 supplied the information needed to *identify* what is related. This chapter supplied a bounded calculation with visible assumptions and results.
 
 The next step is not automatically to choose a controller. It is to decide how the resulting data can be trusted, annotated, compared and reused. What if another file reports a “better” result but provides no model version or units?
 

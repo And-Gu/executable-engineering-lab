@@ -1,6 +1,6 @@
 ---
-id: eel-v3-ch09-integrated-product
-chapter: 9
+id: eel-v3-ch10-integrated-product
+chapter: 10
 part: "III — Develop an Integrated Product"
 title: "From Models to an Integrated Product"
 status: draft
