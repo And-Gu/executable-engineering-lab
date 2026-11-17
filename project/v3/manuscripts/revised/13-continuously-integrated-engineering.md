@@ -136,4 +136,4 @@ That is the next problem for **Managing Engineering Knowledge at Scale**.
 
 ---
 
-*Inspect the case decision:* [Eligibility and blocked-change reasoning](../../case-study/DECISION-CHAIN.md) · [Integration discrepancy](09-from-models-to-an-integrated-product.md) · [DORA continuous delivery](https://dora.dev/capabilities/continuous-delivery/).
+*Inspect the case decision:* [Eligibility and blocked-change reasoning](../../case-study/DECISION-CHAIN.md) · [Integration discrepancy](10-from-models-to-an-integrated-product.md) · [DORA continuous delivery](https://dora.dev/capabilities/continuous-delivery/).
