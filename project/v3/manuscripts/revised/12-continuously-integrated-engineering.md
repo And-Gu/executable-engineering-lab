@@ -45,7 +45,7 @@ For the hypothetical rapid-change capability, the team would need several mutual
 
 The **product architecture** must have coherent interfaces, configuration identification, appropriate modularity and recovery behavior. If every software change can alter unrelated physical functions, a short release process will struggle to keep its claims bounded.
 
-The **engineering environment** needs controlled information sources, reproducible models, automated source/test checks, relevant integration fixtures, review procedures, evidence records, documentation and a release/rollback mechanism appropriate to the product.
+The **engineering environment** needs controlled model and input definitions, independent behavioral and regression checks, relevant integration fixtures, review procedures, evidence records, documentation and a release/rollback mechanism appropriate to the product. The capability to detect a wrong change quickly—not simply to rerun an unchanged model—is what makes fast feedback useful.
 
 Some of that infrastructure can be purchased or reused. Some must be created for the product and its disciplines. The right investments follow recurring engineering questions rather than a desire to automate every step.
 
@@ -70,6 +70,21 @@ Follow a hypothetical eligible change through the engineering work:
 A successful automation step advances one part of the process. A blocked result is useful if it shows which product or factory capability is missing.
 
 For example, if an interface-impact check finds that the proposed adapter acknowledgment has no suitable observation, the correct factory response is not to waive it because a build passed. The team needs an integration capability or a different change classification.
+
+## Two feedback loops, two kinds of evidence
+
+The factory is especially valuable when it supports **two connected feedback loops**.
+
+| Loop | What is evaluated? | Who or what can act on feedback? |
+|---|---|---|
+| **Inner: executable engineering** | Does the proposed change satisfy defined model behavior, input constraints, regression tests and relevant automated integration checks? | Within scope, an AI agent can implement, execute, inspect failures and correct its work through several iterations |
+| **Outer: product and engineering judgment** | Are the requirements right, the model useful for the question, the interfaces compatible and the necessary physical/operational evidence available? | Engineers and accountable decision-makers refine the specification, change the verification method, authorize further investigation or block release |
+
+In the inner loop, fast and informative tests allow an agent to work through more of a **complete engineering flow** without needing a human to issue each next task. The checks should include meaningful valid and invalid cases, and their acceptance criteria should not be under the agent's unchecked control. Otherwise the agent can make a weak test suite green while missing the intended behavior.
+
+The outer loop cannot be reduced to running the same tests again. A model can produce identical correct results every time and still omit an important product requirement. Where physical interfaces, operating conditions or system safety matter, the factory must provide suitable observations and human review rather than treating code-level success as acceptance.
+
+This distinction is an **autonomy design decision**: grant more agent iteration where feedback is relevant and trustworthy, and require escalation where criteria or product validity are uncertain. It does not imply that each inner-loop correction retrains the AI model.
 
 ## Continuous integration, delivery and deployment
 
@@ -105,7 +120,7 @@ The immediate product decision is to **defer that change's release eligibility**
 
 The engineering-environment decision may be to improve interface source checks, define a relevant emulator/bench observation, retain configuration evidence or clarify which change classes the fast path can support.
 
-This creates a feedback loop. The product reveals a bottleneck in how it is engineered. The improved factory makes future investigations more repeatable and reviewable.
+That improves the **outer** loop by introducing evidence the former process lacked. In turn, the new checks can provide faster, more actionable feedback for the **inner** loop. The product reveals a bottleneck in how it is engineered; the factory is improved to address it.
 
 That is why we need to **build** the engineering capability and **operate** it, then improve it based on real product questions.
 
@@ -117,7 +132,7 @@ A new supplier adapter or product variant may use the same model/checking patter
 
 That is the next problem for **Managing Engineering Knowledge at Scale**.
 
-**Engineering takeaway:** Rapid, controlled engineering delivery is a system capability, not a coding-speed trick. Its architecture depends on eligible change classes, the right product and engineering interfaces, relevant evidence and a factory that can be both built and operated reliably.
+**Engineering takeaway:** Build an engineering factory that can evaluate changes as they are made. Fast, independent checks enable agents to iterate across a bounded workflow; broader product evidence and accountable decisions determine whether the resulting change should progress. Its value is the quality of the feedback and decisions—not the mere ability to rerun code.
 
 ---
 
