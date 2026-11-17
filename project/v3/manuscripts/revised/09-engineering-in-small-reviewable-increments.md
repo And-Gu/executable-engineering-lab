@@ -17,7 +17,7 @@ Imagine an agent producing a large proposed change to our intersection teaching 
 
 Everything appears to fit together. But a reviewer cannot tell which result comes from which change. The model may behave differently because its rule changed, because a source scenario changed, or because the expected answer was simply rewritten.
 
-Fast implementation has created a slow engineering decision.
+Fast implementation has created a slow engineering decision. When multiple agents produce these changes in parallel, the problem grows: each contribution may be correct on its own, yet their combined sources and assumptions may be incompatible.
 
 A **pull request** (PR) is a proposed set of source changes presented for review before integration. A **diff** shows how the source changed. Neither of those mechanisms, by itself, establishes a useful unit of engineering work.
 
@@ -68,6 +68,24 @@ The same principle extends beyond software. An interface definition has an owner
 
 The purpose of architecture is to make responsibilities and dependencies understandable. It is not to create modules merely for the sake of a neat repository tree.
 
+## Parallel work needs explicit integration contracts
+
+Suppose the fictional T1 team divides one improvement among three workstreams: input validation, a model-impact review, and the related checks and user-facing diagnostic. Each may run in a separate Git branch or worktree to avoid accidental file collisions. That isolation is useful for developing changes; **it does not prove that the changes work together**.
+
+Before parallel work starts, the team should agree on the shared source revision, the permitted edits, the expected integration behavior and who owns changes to common definitions.
+
+| Workstream | Can progress independently? | Must be reconciled before acceptance |
+|---|---|---|
+| Input-validation change | Yes, against an agreed T1 input contract | A malformed scenario cannot yield a plausible-looking queue result |
+| Model-impact investigation | Yes, as a read-only analysis of a proposed T2 variant | Any new phase assumptions require a reviewed source revision; they cannot silently replace T1 |
+| Calculation/check/view changes | Some checks and view work can proceed in parallel | Their expected results must match the integrated source, not each agent's private version |
+
+These are **hypothetical work packages**, not executed multi-agent runs. The important distinction is between parallel *activity* and an integrated *engineering outcome*.
+
+An orchestrator may coordinate ownership, dependencies, readiness and integration using ordinary repository mechanisms—source files, branches, pull requests, automated checks and review records. A separate control-plane product may become useful at greater scale, but it is not a prerequisite and cannot replace the underlying engineering contracts.
+
+If an agent updates a shared source while another is validating against an older revision, the coordinator must surface that dependency. A green local check against T1 does not qualify a combined T2 baseline. The integration decision needs the correct version, relevant checks and accountable ownership.
+
 ## Some changes cannot be isolated as software work
 
 Now consider a different proposal: update the acknowledgment returned when a signal command is sent through the controller interface.
@@ -80,7 +98,7 @@ The two source definitions are **INT-IF-001 revision A** and a fictional adapter
 
 A reviewable increment here must include the relevant interface owners and the evidence needed to judge whether the change is compatible. Splitting the interface definition, firmware expectation and integration observation into separate uncoordinated approvals could conceal the actual product risk.
 
-A good increment boundary follows the engineering claim, not the source-file boundary.
+A good increment boundary follows the engineering claim, not the source-file boundary. Parallel agents may prepare separate parts, but a cross-discipline outcome still needs one coherent integration and evidence decision.
 
 ## Definition of Done is more than a checklist
 
@@ -91,6 +109,16 @@ But every significant engineering change also needs **specific acceptance criter
 A green build is only evidence that the build's checks completed as specified. It may say nothing about an interface that those checks do not exercise.
 
 This is why automated progress assessment can help an engineering lead, but cannot be reduced to “how many tasks are closed.” The agent may compare deliverables with the agreed Definition of Done and flag gaps; the reviewer still needs to decide whether the engineering outcome is supported.
+
+## Make review effort proportional to exceptions
+
+A team does not need a human to read every agent-generated diff or tool trace in chronological order. It needs visibility into **what outcome is ready, which dependencies were resolved, what checks ran against which baseline, and what requires a decision**.
+
+A useful combined handover for the fictional T1 increment might say: “Input validation proposed against T1; original A/B behavior still meets the protected criteria; the interface-impact analysis concerns an unselected revision; physical compatibility is not checked.” Each claim should link to the actual source or check when one exists, and remain visibly proposed when it does not.
+
+The engineering lead would then focus on the unresolved interface dependency or a changed acceptance criterion rather than coordinate every routine implementation task. This is **exception-driven review**, not the elimination of human judgment.
+
+If the repository and its existing review practices can maintain this information clearly, no new orchestration platform is required. If parallel work grows beyond what those mechanisms can make understandable, the need for additional coordination capability should be established from observable delays, conflicts and missed decisions.
 
 ## Integration and iteration are different questions
 
@@ -112,7 +140,7 @@ A reviewable software change does not answer that question.
 
 Chapter 10, **From Models to an Integrated Product**, examines the mismatch between a controller's expectation and an adapter's reported behavior. It shows why physical integration is its own engineering capability, not a final software merge.
 
-**Engineering takeaway:** Make changes as small as the engineering decision allows, not smaller than the dependencies require. A good increment demonstrates one useful outcome with appropriate evidence, while retaining the interfaces and responsibilities needed to understand the whole system.
+**Engineering takeaway:** Make increments coherent around engineering outcomes, even when multiple agents work in parallel. Explicit source ownership, integration dependencies and protected checks keep fast local changes from turning into an opaque system-level review. Humans should resolve meaningful exceptions, not manually coordinate every step.
 
 ---
 
