@@ -35,7 +35,7 @@ Here is a plausible assignment for our case study. It is a **task specification*
 
 > Make the T1 scenario validator reject negative or fractional arrivals, unknown phases and incomplete inputs without emitting a queue trace. Preserve the declared A/B behavior. Inspect the relevant sources, propose a bounded implementation, execute permitted checks, evaluate any failures and revise within scope. Do not modify the reference behavior, protected acceptance checks, controller–adapter interface, legacy sources or product decisions. Stop and escalate if a source is missing, the criteria conflict, a change crosses an unauthorized interface or the iteration budget is exhausted. Report the changes, checks actually executed and remaining issues for review.
 
-This is a **hypothetical assignment**, not a completed agent run. It specifies an outcome and the boundaries within which the agent may choose its own next actions. The engineer need not prompt separately for every intermediate correction.
+This is a **hypothetical assignment**, not a completed agent run. It specifies an outcome and the boundaries within which the agent may choose its own next actions. For example, the engineer might allow three unsuccessful revision attempts before escalation while keeping the independent acceptance checks outside the agent's write permissions. The engineer need not prompt separately for every intermediate correction.
 
 The acceptance checks must remain trustworthy. An agent may propose additional tests, but it cannot prove success by rewriting the protected expected results to match its implementation. In particular, both **valid T1 behavior and invalid-input rejection** must be checked; a validator that rejects every input is not a solution.
 
