@@ -1,26 +1,27 @@
-# Current approved V3 curriculum map — 14 chapters, four parts
-**V3 editorial authority:** The owner approved the **fourteen-chapter** learning sequence and the *From Models to an Integrated Product* bridge on 2026-11-16 after [independent review #42](https://github.com/And-Gu/executable-engineering-lab/pull/42) and [decision #44](https://github.com/And-Gu/executable-engineering-lab/issues/44). The chapter count and the reordered V&V, governance and continuous-engineering topics are now agreed. Complete revised manuscripts, technical fixtures and Astro publication remain **unapproved**.
+# V3 curriculum map — proposed 15-chapter sequence, four parts
+**Editorial update (17 November 2026):** New Chapter 2 introduces the fictional four-way intersection after an executive-level Chapter 1. The former Chapters 2–14 become Chapters 3–15. This change is proposed in a review PR and explicitly requested for publication by the owner.
 
-**Single case:** A fictional four-way traffic intersection across all 14 chapters ([reference](v3/REFERENCE-INTERSECTION.md)). The published V2 Chapter 01 monitoring preview, original DMS V0 lessons and separately published V2 Engineering Data article remain unchanged. **Do not infer that any V3 route exists or that the 14-chapter manuscripts are complete.**
+**Single case:** One fictional four-way traffic intersection, introduced in Chapter 2 and used for the technical progression. Chapter 1 stands alone as the engineering-paradigm overview.
 
 **Title status:** The proposed capstone title *Choosing the Next Engineering Capability* appears in the owner-accepted fourteen-chapter plan. Retain the existing Chapter 06 title *Spec-Driven Development Without Waterfall* for now; the independent review's alternative *Specifying the Next Engineering Increment* remains a separate editorial naming decision. Older 13-chapter text remains preserved as source material and must not be silently renumbered.
 
 | Part | # | Chapter | Distinct learning gain | Primary intersection teaching view |
 |---|---:|---|---|---|
-| I — Frame the Work | 01 | The New Engineering Paradigm | Explain why the product and the engineering environment co-evolve | Uncertain intersection purpose, two-system impact and different learning cadences |
-| I | 02 | Planning Under Uncertainty | Select a meaningful investigation and decide what is ready to commit | Compare investigation choices, dependencies and decision criteria |
-| II — Build and Test Knowledge | 03 | Engineering Knowledge as Code | Explain controlled engineering information, typed relationships and change impact | Source-backed functional/interface views and mandatory interactive knowledge graph |
-| II | 04 | Learning Through Models and Prototypes | Select a model, define assumptions and interpret a bounded experiment | Fixed-phase state model and traceable queue/arrival comparison |
-| II | 05 | Engineering Data: From Measurements to Decisions | Curate, annotate, inspect and reuse engineering observations | Original, checked and derived records from the same teaching model |
-| II | 06 | Spec-Driven Development Without Waterfall | Define a bounded next increment while leaving other uncertainties open | Progressive specification, valid/invalid scenarios and decisions |
-| III — Develop an Integrated Product | 07 | Directing AI Engineering Agents | Bound, observe and review delegated engineering work | Illustrative task context, tool actions and handover |
-| III | 08 | Engineering in Small, Reviewable Increments | Establish useful review boundaries and cross-discipline dependencies | Thin vertical improvement and dependent interface change |
-| III | **09** | **From Models to an Integrated Product** | Bridge model/software work to product interfaces, physical integration and intended use | Interface semantics mismatch, proposed bench/emulator and operator needs |
-| IV — Establish Trust and Sustain Change | 10 | Verification, Validation and Engineering Evidence | Qualify claims against the integrated configuration and intended use | Claim–method–result–applicability and open physical evidence |
-| IV | 11 | Governance and Engineering Authority | Identify controls, authority, technical integrity and residual risks | One deferred/restricted change with evidence gaps |
-| IV | 12 | Continuously Integrated Engineering | Design **and operate** an engineering factory for eligible controlled changes | Qualified change class, blocked release, hypothetical 24-hour capability |
-| IV | 13 | Managing Engineering Knowledge at Scale | Reuse sources, models, tests and working methods while judging applicability | Cross-variant compatibility and shared-asset stewardship |
-| IV | **14** | **Choosing the Next Engineering Capability** | Synthesize a complete two-system story into an informed investment decision | Constrained choice between data, integration tests and expanded delegation |
+| I — Frame the Work | 01 | The New Engineering Paradigm | Explain changing expectations, software-inspired workflows, AI, and two co-evolving systems | Executive overview; no detailed case |
+| I | 02 | Introducing the Engineering Challenge | Understand stakeholders, system boundaries, and the fictional case | Establish the intersection story and its evidence limits |
+| I | 03 | Planning Under Uncertainty | Select a meaningful investigation and decide what is ready to commit | Compare investigation choices, dependencies and decision criteria |
+| II — Build and Test Knowledge | 04 | Engineering Knowledge as Code | Explain controlled engineering information, typed relationships and change impact | Source-backed functional/interface views |
+| II | 05 | Learning Through Models and Prototypes | Select a model, define assumptions and interpret a bounded experiment | Fixed-phase state model and traceable queue/arrival comparison |
+| II | 06 | Engineering Data: From Measurements to Decisions | Curate, annotate, inspect and reuse engineering observations | Original, checked and derived records |
+| II | 07 | Spec-Driven Development Without Waterfall | Define a bounded next increment while leaving other uncertainties open | Progressive specification and decisions |
+| III — Develop an Integrated Product | 08 | Directing AI Engineering Agents | Bound, observe and review delegated engineering work | Illustrative task context, tool actions and handover |
+| III | 09 | Engineering in Small, Reviewable Increments | Establish useful review boundaries and cross-discipline dependencies | Thin vertical improvement and dependent interface change |
+| III | 10 | From Models to an Integrated Product | Bridge model/software work to product interfaces, physical integration and intended use | Interface semantics mismatch and integration questions |
+| IV — Establish Trust and Sustain Change | 11 | Verification, Validation and Engineering Evidence | Qualify claims against the integrated configuration and intended use | Claim, method, result and applicability |
+| IV | 12 | Governance and Engineering Authority | Identify controls, authority, technical integrity and residual risks | One deferred change with evidence gaps |
+| IV | 13 | Continuously Integrated Engineering | Design and operate an engineering factory for controlled changes | Eligibility and blocked-release decision |
+| IV | 14 | Managing Engineering Knowledge at Scale | Reuse sources, models, tests and working methods with judged applicability | Cross-variant compatibility |
+| IV | 15 | Choosing the Next Engineering Capability | Synthesize the two-system story into an investment decision | Choose next engineering capability |
 
 **This is an educational progression, not a waterfall process.** Integration, verification, security, assurance and risk reasoning are relevant from the earliest stages, although their detailed lessons appear later.
 
@@ -48,17 +49,14 @@ The systems scope follows [INCOSE's systems engineering definition](https://www.
 
 ## Content dependency model
 
-- **01→02:** The whole-system and engineering-environment argument leads to selecting meaningful uncertainties and commitments.
-- **02→03:** Planning decisions and open assumptions need durable engineering information and typed relationships.
-- **03→04→05:** One source-backed concept drives a bounded model and inspectable data; Ch03's graph and Ch04's transparent experiment are required teaching roles, not yet implemented features.
-- **05→06:** Data quality decisions drive the next controlled specification and its unresolved questions.
-- **06→07→08:** A bounded specification can guide delegated agent work and a coherent, reviewable increment.
-- **08→09:** Reviewable changes are not an integrated product; interface, electronics, physical/operational and installer/maintainer questions must be addressed concretely.
-- **09→10→11:** Integrated configuration and open operational questions lead to scoped verification/validation evidence and accountable risk/authority decisions.
-- **11→12:** Release eligibility, evidence and authority constrain what engineering-factory delivery automation can legitimately do.
-- **12→13→14:** Reusable engineering capability informs product variants and the decision about what to improve next.
+- **01→02:** The broad engineering paradigm introduces a common fictional challenge.
+- **02→03:** Stakeholders, system boundaries and uncertainty lead to planning the first investigation.
+- **03→04→05→06:** Planning requires connected information; controlled models generate bounded results; data quality determines what conclusions hold.
+- **06→07→08→09:** Evidence informs specifications and agent work, which can produce reviewable changes.
+- **09→10→11→12:** A software increment must reach integrated-product evidence and accountable engineering authority.
+- **12→13→14→15:** Release eligibility, continuous engineering and reuse support a decision about the next engineering capability.
 
-The course shows connections and feedback **in both directions**. A change in operation can reopen Chapters 02–06, while an engineering-environment improvement may enable new product options. Chapter order does not prescribe when real engineering teams must perform verification or integration work.
+The order is educational; real product teams address assurance, safety, integration and security from the start.
 
 ## Narrative controls
 - Planning, spec development, agents and review are core; do not subordinate them to V0 geometric explanation.
