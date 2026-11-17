@@ -25,7 +25,7 @@ Now suppose the engineering lead has funding and capacity to make **one substant
 
 Which should it choose?
 
-## Three credible investments
+## Four credible investments
 
 The candidates are all useful.
 
@@ -33,9 +33,11 @@ The candidates are all useful.
 
 **B — Build an integration-observability capability.** Create a controlled interface comparison method and a relevant emulator or bench-test approach to distinguish message receipt from applied indication. This would help evaluate the unresolved product-level interface claim.
 
-**C — Expand agent delegation.** Give AI agents broader access to relevant sources and more tools to prepare models, run checks and propose engineering changes. This could reduce manual navigation and repetition.
+**C — Expand agent delegation.** Give AI agents access to additional bounded engineering workflows and authorized tools. This may improve implementation and investigation throughput where the team can already evaluate their results.
 
-A superficial roadmap might favor C because it promises a visible increase in automation. Another might favor A because data quality is broadly reusable. But an engineering investment should be judged against a concrete product decision, not its novelty or popularity.
+**D — Improve orchestration and exception handling.** Coordinate parallel agents and human work around shared outcomes, source revisions, dependencies, integration and evidence. Give engineers a concise view of decisions requiring attention rather than a stream of every task and agent message.
+
+A superficial roadmap might favor C because it promises more AI-generated output. Another might favor D because the idea of an AI-native orchestration platform sounds comprehensive. But **more agents or a new control plane are not automatically the next useful investment**. An engineering capability should be chosen because it resolves an observed product or delivery constraint.
 
 ## Decide from what is blocking the product
 
@@ -47,11 +49,12 @@ We have enough information to make an illustrative choice.
 | A fictional legacy spreadsheet row lacks unit and configuration information | The source cannot be compared today; stronger data-quality methods would be valuable when such sources recur |
 | Controller acknowledgment and adapter acknowledgment have different semantics | The product integration claim remains unresolved |
 | No physical applied-indication observation has been run | Source editing or additional agent speed cannot substitute for the missing evidence |
-| Agent delegation is a possible method, not an established throughput bottleneck | Broader agent tooling is not yet the most decision-critical capability |
+| Agent delegation is a possible method, not an established throughput bottleneck | Adding more independent agent work is not yet the most decision-critical capability |
+| Several agents could work on input rules, model changes and checks, but there is no evidence of a recurring coordination backlog in this fictional case | A dedicated orchestration investment is **not yet justified** merely by imagining many agents |
 
 **A reasoned recommendation is B: improve the integration-observability capability first.**
 
-That choice does not declare data quality or agentic engineering unimportant. It responds to the known blocker. An interface discrepancy makes it impossible to accept a claimed physical behavior. A relevant integration method would let the team investigate that specific uncertainty.
+That choice does not declare data quality, agentic engineering or orchestration unimportant. It responds to the **known product-level blocker**, not a generic prediction about where software development is heading. An interface discrepancy makes it impossible to accept a claimed physical behavior. A relevant integration method would let the team investigate that specific uncertainty.
 
 The next action might be to agree a versioned interface contract, define an emulator/bench observation and decide who reviews the result. It is still not permission to deploy a controller or assert traffic safety.
 
@@ -61,7 +64,9 @@ Engineering leadership needs to know not only which option it prefers, but **whi
 
 If the next investigation reveals that the interface meanings are already compatible under a clarified definition, and the main obstacle becomes inconsistent source data from many suppliers, option A may become the best investment.
 
-If a mature integration test exists and multiple reviewable tasks repeatedly wait for manual context collection and tool execution, option C may be worthwhile—provided access and decision authority are well controlled.
+If a mature integration test exists but valuable engineering work repeatedly waits for manual source lookup or tool execution, option **C** may be worthwhile—provided access, verification and decision authority are well controlled.
+
+If many agents already complete local checks quickly while work repeatedly stalls at shared dependencies, incompatible revisions, integration or overloaded human review, option **D** may be the better investment. The team should first examine whether existing source-control, CI and review practices can provide the missing coordination before adopting a new platform.
 
 If the intended use and stakeholder criteria remain unclear, none of the three infrastructure investments may be the right immediate response. The team may need a better product investigation before choosing new tooling.
 
@@ -78,6 +83,27 @@ The relationship is not always symmetric or fast. A model may be revised in hour
 A good engineering organization does not confuse faster activity with better product knowledge. It designs both systems around decisions whose consequences matter.
 
 “We build the machine that builds the machine” is therefore an investment principle, not merely a metaphor.
+
+## When orchestration becomes the constraint
+
+Consider a **later hypothetical stage** of the same intersection program. The team has established a relevant integration test, and several agents work concurrently: one improves the validation module, another investigates model options, and a third prepares checks and change-impact information. Each may be productive in isolation.
+
+Yet the lead engineer keeps finding that two agents used different source revisions, reviewers must reconstruct dependencies from lengthy conversations, and a software change is ready locally but blocked by unresolved product-interface evidence. Faster implementation no longer translates into faster **integrated engineering outcomes**.
+
+At that point, the team should examine its orchestration capability:
+
+| Question for the engineering lead | Meaningful evidence |
+|---|---|
+| Can we tell which outcome each workstream contributes to? | One shared intent, explicit scope, current source revisions and responsible owners |
+| Can work proceed safely in parallel? | Dependencies and change ownership; recorded integration checks against the combined baseline |
+| What needs human attention now? | A small list of **exceptions**: incompatible sources, failed acceptance criteria, missing physical evidence, or authority decisions |
+| Are we actually delivering faster? | Time spent waiting on handoffs, repeat integration failures, and progress to a checked engineering outcome—not the number of agent tasks closed |
+
+These are **hypothetical symptoms and possible observations**, not measured findings about this fictional project.
+
+The solution may be improved conventions in existing Git-based workflows, better source relationships, an orchestration agent, or eventually an AI-native, tool-agnostic control plane. None should be treated as the course's required tool. The requirement is that humans can **manage outcomes and exceptions without losing access to detailed evidence**.
+
+This also reframes cognitive load: a team can avoid asking engineers to read every agent trace while still preserving source-linked decisions and auditability. Hiding problems behind a dashboard is not orchestration; surfacing the right engineering decision at the right time is.
 
 ## Where prompts, agents and visual engineering fit
 
@@ -111,24 +137,24 @@ Our final fictional decision record might say:
 
 **Reason:** The T1 interface mismatch is the most direct known barrier to evaluating the intended integrated product claim.
 
-**Other options:** Improve data infrastructure or expand agent delegation; both remain candidates for later investment.
+**Other options:** Improve data infrastructure, expand bounded agent delegation, or strengthen orchestration and exception management. Each remains a candidate if later evidence shows it addresses the governing bottleneck.
 
 **Evidence available:** Versioned fictional source definitions and a reproducible toy-model calculation.
 
 **Evidence still missing:** Physical integration observation, agreed operational interface semantics and validation of intended use.
 
-**Reconsider when:** An interface experiment resolves the discrepancy, a new product risk is identified or repeated engineering activity reveals a more important bottleneck.
+**Reconsider when:** An interface experiment resolves the discrepancy, another product risk dominates, or recurring agent handoffs, incompatible source revisions and human review queues show that orchestration has become the new constraint.
 
 This is not a universal ranking. It is a **decision whose reasons can be inspected and revised**.
 
 ## The course's final question
 
-Look at an engineering environment you know. Which product uncertainty or recurring delivery obstacle consumes the most attention? What source, model, test or collaborative capability would make the next meaningful decision easier to reach?
+Look at an engineering environment you know. Is the current constraint implementation, verification, physical integration, coordination or human decision-making? What **evidence** tells you where work actually waits, and which engineering capability would let people and agents deliver a better outcome?
 
 Do not begin by naming a favorite tool. Begin with the engineering question and the evidence that would change the answer.
 
-**Engineering takeaway:** The most valuable engineering capability is the one that helps your team make the next important product decision with greater clarity, repeatability and control. Build and operate that capability, learn from its use, and decide again.
+**Engineering takeaway:** Invest in the capability that removes the **current engineering constraint**. As agents accelerate execution, that constraint may move to validation, product integration, orchestration or human cognitive load. Lead the outcomes, dependencies, evidence and exceptions—not the volume of agent activity.
 
 ---
 
-*Inspect the decision package:* [T1 worked investment alternatives and rationale](../../case-study/DECISION-CHAIN.md) · [Case source and evidence boundaries](../../case-study/README.md) · [Current fourteen-chapter curriculum](../../../CURRICULUM-MAP.md).
+*Inspect the decision package:* [T1 worked investment alternatives and rationale](../../case-study/DECISION-CHAIN.md) · [Case source and evidence boundaries](../../case-study/README.md) · [Current course curriculum](../../../CURRICULUM-MAP.md).
