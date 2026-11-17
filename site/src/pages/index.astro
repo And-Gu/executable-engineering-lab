@@ -21,12 +21,12 @@ const featuredChapters = chapters.filter(chapter => featuredPaths.has(chapter.pa
     <div>
       <p class="kicker">New product development · Systems engineering + AI agents</p>
       <h1 id="page-title">Software and AI change what we build. <br /><span>And how we build it.</span></h1>
-      <p class="deck">Software and AI are changing both the systems we develop and the way we develop them. Executable models, AI agents and repeatable workflows let teams explore designs, test assumptions and deliver smaller increments. The engineering challenge is to turn that pace into better systems—across software, electronics and physical design.</p>
+      <p class="deck">Software and AI change both the systems we develop and how we engineer them. Executable models and automated checks let engineers and AI agents propose, run, evaluate and improve solutions through fast feedback. The challenge is to connect that feedback to better product decisions—across software, electronics and physical design.</p>
       <p class="principle">We develop, operate and improve the engineering environment alongside the product.</p>
     </div>
     <aside class="destination" aria-label="The engineering question">
       <p class="label">The engineering question</p>
-      <p>How should our models, workflows and organisation evolve as software and AI agents change what we can build—and how often we can deliver improvements?</p>
+      <p>How can agents work through complete engineering feedback loops while engineers retain control of product intent, model validity and real-world evidence?</p>
     </aside>
   </section>
 
@@ -77,7 +77,7 @@ const featuredChapters = chapters.filter(chapter => featuredPaths.has(chapter.pa
       </div>
       <div class="shared-thread">
         <p class="label">Executable engineering</p>
-        <p>Executable engineering puts models, analyses and checks to work in repeatable workflows. AI agents can carry out tasks within that environment, using tools and responding to results, with engineers directing and evaluating the work.</p>
+        <p>Executable models make behavior testable. Automated checks give AI agents actionable feedback: propose a change, execute it, inspect the result and improve it within agreed boundaries. Engineers determine whether the model and its checks are suitable for the product question.</p>
       </div>
       <figcaption id="approach-caption">We build the machine that builds the machine.</figcaption>
     </figure>
@@ -85,47 +85,47 @@ const featuredChapters = chapters.filter(chapter => featuredPaths.has(chapter.pa
 
   <section class="example" aria-labelledby="example-title">
     <div class="section-heading">
-      <h2 id="example-title">From a product question to the next experiment.</h2>
+      <h2 id="example-title">From a product question to an engineering feedback loop.</h2>
       <span class="small-label">Conceptual workflow</span>
     </div>
-    <p class="example-question">Can an AI-enabled monitoring device recognise faults reliably enough to be useful, within its power and latency limits?</p>
+    <p class="example-question">In a fictional four-way intersection, what can a simple fixed-phase model tell us about signal behavior and vehicle queues?</p>
     <div class="example-thread">
       <div class="example-step">
-        <p class="label">Model + prototype</p>
-        <h3>Turn the question into an experiment.</h3>
-        <p>Engineers define relevant fault scenarios. An AI agent prepares and runs a simulation, inspects the results and revises the analysis; engineers check the assumptions.</p>
+        <p class="label">Define + model</p>
+        <h3>Make the behavior testable.</h3>
+        <p>Engineers define a small signal-phase model, input scenarios and checks. They choose which questions the model can answer—and which parts of the physical system it leaves out.</p>
       </div>
       <div class="example-step observed">
         <span class="step-connector" aria-hidden="true">→</span>
-        <p class="label">Run + compare</p>
-        <h3>Evaluate the product’s AI.</h3>
-        <p>Compare candidate detection models on representative data. Test missed detections, false alarms, latency and power on the target hardware.</p>
+        <p class="label">Execute + evaluate</p>
+        <h3>Let the agent iterate on feedback.</h3>
+        <p>Within an agreed scope, an agent can propose a change, run the model and automated checks, inspect failed criteria and try again. This is an illustrative workflow, not an executed agent run.</p>
       </div>
       <div class="example-step next-work">
         <span class="step-connector" aria-hidden="true">→</span>
-        <p class="label">Learn + release</p>
-        <h3>Make the next change smaller.</h3>
-        <p>Use the results to revise the model, sensing setup or software. When release criteria are met, ship a small software increment and use operating feedback to shape the next experiment.</p>
+        <p class="label">Interpret + decide</p>
+        <h3>Connect the tests to the product.</h3>
+        <p>Engineers judge whether the checks reflect the intent and whether interfaces, physical indications or intended use need other evidence. Only suitable changes advance to integration and release decisions.</p>
       </div>
     </div>
-    <p class="example-caption">The workflow is part of the engineering result. Retain the model, dataset, configuration and evaluation code so the team can rerun the experiment after the next change.</p>
+    <p class="example-caption">Two loops work together: fast automated feedback improves the defined model; broader engineering review tests its assumptions against the product and real-world evidence. Identical outputs for identical inputs are a starting property of a deterministic model, not the innovation.</p>
   </section>
 
   <div class="notes">
     <section class="note" aria-labelledby="collaboration-title">
       <p class="note-number">01 / Modelling and exploration</p>
       <h2 id="collaboration-title">Make ideas<br />executable.</h2>
-      <p>Use code, simulation, data-driven models and physical prototypes to explore behaviour. AI agents can help implement and explore models; engineers choose the abstraction, check predictions and test where the model stops being useful.</p>
+      <p>Use software models, simulations and physical prototypes to examine specific engineering questions. Deterministic calculations have predictable results for defined inputs; experiments reveal what changes when conditions or designs change.</p>
     </section>
     <section class="note" aria-labelledby="progress-title">
       <p class="note-number">02 / Teams and workflows</p>
-      <h2 id="progress-title">Engineer the<br />workflow too.</h2>
-      <p>Give teams responsibility for the models, tools and data they rely on. Automate repeatable analysis, testing and release preparation. Make progress visible through demonstrated behaviour, unresolved questions and dependencies, so engineers and leaders can decide what to improve next.</p>
+      <h2 id="progress-title">Engineer the<br />feedback loop.</h2>
+      <p>Design automated behavioral and integration checks that tell agents what failed and why. Let them refine bounded changes, while preserving independent criteria and making demonstrated behavior—not generated output—the measure of progress.</p>
     </section>
     <section class="note" aria-labelledby="feedback-title">
       <p class="note-number">03 / Release and feedback</p>
-      <h2 id="feedback-title">Release often.<br />Learn from use.</h2>
-      <p>Small software releases keep the feedback loop moving. Automated tests, AI evaluations and operating data help judge quality. Electronics, mechanical changes and physical validation have their own cadences; frequent software delivery must respect those constraints.</p>
+      <h2 id="feedback-title">Check against<br />reality.</h2>
+      <p>Automated tests support fast inner loops. Product validity, physical interfaces, operational conditions and release authority form a broader loop with different evidence and cadences. A green test suite cannot answer every product question.</p>
     </section>
   </div>
 
