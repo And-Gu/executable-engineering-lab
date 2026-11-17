@@ -1,6 +1,6 @@
 ---
 id: eel-v3-ch05-engineering-data
-chapter: 5
+chapter: 6
 part: "II — Build and Test Knowledge"
 title: "Engineering Data: From Measurements to Decisions"
 status: draft
