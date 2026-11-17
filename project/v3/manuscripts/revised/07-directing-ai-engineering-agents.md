@@ -17,7 +17,7 @@ Our fictional intersection model already produces a defined result for given inp
 
 One approach is to ask an AI assistant for suggestions, then manually issue separate instructions for coding, running tests, interpreting errors and fixing failures. Another is to give an **agent the engineering outcome** and let it work through that sequence, within agreed limits.
 
-The advantage is not that the model suddenly becomes reproducible. It is that **executable behavior and automated checks can provide fast feedback on the agent's changes**. The engineer can delegate more than a single task without delegating the authority to decide whether the entire product is correct.
+Executable models and automated checks allow agents to evaluate proposed changes, respond to failures, and work toward a defined engineering outcome. Engineers establish the acceptance criteria and escalation boundaries, enabling agents to complete multiple iterations without continuous human direction.
 
 ## Separate the model from the working agent
 
@@ -50,7 +50,7 @@ For this bounded software task, a complete agentic work cycle can look like this
 | Analyze an unsuccessful check | Which actual rule, input or code path failed? | Revise and execute the checks again, within the authorized scope |
 | Reach the completion or escalation condition | Are the relevant criteria met, or is a source, test or assumption insufficient? | Produce a reviewable result or stop for engineering judgment |
 
-The tests provide feedback **to the current work process**. That does not mean the underlying language model is being retrained after each failure. The agent uses observed results to choose its next action.
+Test results tell the agent which criteria were met and what failed. The agent can use those observations to select its next step, repeat the check, or escalate when the agreed limits are reached.
 
 When the criteria are clear, well covered and protected from unreviewed alteration, the agent may complete several iterations autonomously. When a requirement is ambiguous or a physical interface is implicated, another code iteration may be the wrong response.
 
@@ -92,7 +92,7 @@ An auditable handover should distinguish:
 5. **Proposed conclusion:** What the agent believes follows from the observation.
 6. **Human decision:** Which part is accepted, revised, rejected or still open.
 
-This is an illustrative **handover contract**. We do not invent a command log or pretend that an agent actually completed this task. When a genuine run is captured, its source revision, executed checks and limitations should be retained. A task completed against the wrong specification is still the wrong result.
+The handover describes a **proposed** workflow, not a recorded execution. In actual engineering work, the source revision, commands run, check outcomes and unresolved limitations should be attached to the review. The reviewer also needs to judge whether the acceptance criteria reflect the intended behavior.
 
 ## The outer loop: are we solving the right engineering problem?
 
@@ -108,7 +108,7 @@ This is why **agent autonomy should depend on the quality and independence of th
 
 Agentic engineering changes how engineers spend effort. They can define outcomes and escalation boundaries, invest in trustworthy executable checks, assess evidence from the outer loop and improve the environment in which agents work.
 
-That is not simply “the agent writes the code and the human approves it.” Systems engineers, electronics engineers, test engineers and operational specialists contribute different knowledge and decisions. A useful environment makes that expertise available in forms that agents can find **without implying the agent possesses their authority**.
+Systems engineers, electronics engineers, test engineers and operational specialists contribute different expertise and decisions. A useful engineering environment makes their constraints and evidence accessible to agents while keeping authority and accountability with the appropriate roles.
 
 An agent can help prepare a model comparison while an integration engineer investigates an electrical interface. The tasks may have different tools, evidence needs and stop conditions. Human collaboration and review remain central.
 
