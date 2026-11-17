@@ -14,19 +14,19 @@ const featuredChapters = chapters.filter(chapter => featuredPaths.has(chapter.pa
 ---
 
 <HomeLayout
-  title="Software and AI change what we build. And how we build it"
-  description="Explore how executable models, automated verification and AI agents create fast engineering feedback loops while preserving whole-product judgment."
+  title="The New Engineering Paradigm · Executable Engineering Lab"
+  description="Why engineering is changing: higher expectations, shorter feedback cycles, software-inspired workflows and AI-assisted engineering across disciplines."
 >
   <section class="opening" aria-labelledby="page-title">
     <div>
-      <p class="kicker">New product development · Systems engineering + AI agents</p>
-      <h1 id="page-title">Software and AI change what we build. <br /><span>And how we build it.</span></h1>
-      <p class="deck">Software and AI change both the systems we develop and how we engineer them. Executable models and automated checks let engineers and AI agents propose, run, evaluate and improve solutions through fast feedback. The challenge is to connect that feedback to better product decisions—across software, electronics and physical design.</p>
-      <p class="principle">We develop, operate and improve the engineering environment alongside the product.</p>
+      <p class="kicker">Engineering transformation · Software-driven practices · AI</p>
+      <h1 id="page-title">Engineering must evolve. <br /><span>So must how we engineer.</span></h1>
+      <p class="deck">Markets expect shorter development cycles, more frequent improvements and higher quality. Software-inspired practices are spreading across electronics, physical products and systems engineering; AI introduces new ways to explore, implement and evaluate changes. This lab examines how we can make engineering faster and more dependable without overlooking whole-product evidence.</p>
+      <p class="principle">We build the machine that builds the machine: improve the engineering environment alongside the product.</p>
     </div>
     <aside class="destination" aria-label="The engineering question">
-      <p class="label">The engineering question</p>
-      <p>How can agents work through complete engineering feedback loops while engineers retain control of product intent, model validity and real-world evidence?</p>
+      <p class="label">Two entry points</p>
+      <p>Start with <a href={`${base}learn/v3/01-the-new-engineering-paradigm/`}>Chapter 1</a> for the executive overview, then <a href={`${base}learn/v3/02-introducing-the-engineering-challenge/`}>Chapter 2</a> to meet the fictional intersection case used throughout the course.</p>
     </aside>
   </section>
 
@@ -85,30 +85,30 @@ const featuredChapters = chapters.filter(chapter => featuredPaths.has(chapter.pa
 
   <section class="example" aria-labelledby="example-title">
     <div class="section-heading">
-      <h2 id="example-title">From a product question to an engineering feedback loop.</h2>
+      <h2 id="example-title">The recurring engineering challenge starts in Chapter 2.</h2>
       <span class="small-label">Conceptual workflow</span>
     </div>
-    <p class="example-question">In a fictional four-way intersection, what can a simple fixed-phase model tell us about signal behavior and vehicle queues?</p>
+    <p class="example-question">A fictional city considers improving a four-way intersection. First we establish stakeholders, system boundaries and uncertainty; later we use a bounded fixed-phase model to test one specific question. <a href={`${base}learn/v3/02-introducing-the-engineering-challenge/`}>Read the introduction to the example.</a></p>
     <div class="example-thread">
       <div class="example-step">
         <p class="label">Define + model</p>
-        <h3>Make the behavior testable.</h3>
-        <p>Engineers define a small signal-phase model, input scenarios and checks. They choose which questions the model can answer—and which parts of the physical system it leaves out.</p>
+        <h3>Frame the whole-system problem.</h3>
+        <p>Clarify the needs of drivers, pedestrians, operators and maintainers before selecting a preferred solution or model.</p>
       </div>
       <div class="example-step observed">
         <span class="step-connector" aria-hidden="true">→</span>
         <p class="label">Execute + evaluate</p>
-        <h3>Let the agent iterate on feedback.</h3>
-        <p>Within an agreed scope, an agent can propose a change, run the model and automated checks, inspect failed criteria and try again. This is an illustrative workflow, not an executed agent run.</p>
+        <h3>Investigate with bounded models.</h3>
+        <p>Use controlled scenarios and tests to explore alternatives. AI agents may help refine bounded changes where independent automated checks provide meaningful feedback.</p>
       </div>
       <div class="example-step next-work">
         <span class="step-connector" aria-hidden="true">→</span>
         <p class="label">Interpret + decide</p>
-        <h3>Connect the tests to the product.</h3>
-        <p>Engineers judge whether the checks reflect the intent and whether interfaces, physical indications or intended use need other evidence. Only suitable changes advance to integration and release decisions.</p>
+        <h3>Integrate, verify and release responsibly.</h3>
+        <p>Connect software evidence with electronics, physical interfaces, operational needs and release authority. An executable model is not a qualified controller.</p>
       </div>
     </div>
-    <p class="example-caption">Two loops work together: fast automated feedback improves the defined model; broader engineering review tests its assumptions against the product and real-world evidence. Identical outputs for identical inputs are a starting property of a deterministic model, not the innovation.</p>
+    <p class="example-caption">The example is fictional. Fast automated feedback supports learning and agentic iteration; whole-product evidence determines which results are actually relevant to integration and release.</p>
   </section>
 
   <div class="notes">
