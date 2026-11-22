@@ -6,7 +6,7 @@
 
 1. [The New Engineering Paradigm](01-the-new-engineering-paradigm.md) — See how earlier feedback, modular reuse and AI can change an engineering investment decision.
 2. [Setting Up the Intersection Workshop](02-introducing-the-engineering-challenge.md) — Meet the people who use the four-way intersection and frame a question for a first prototype.
-3. [Planning Under Uncertainty](03-planning-under-uncertainty.md) — Choose learning investments and responsible commitments.
+3. [Planning Under Uncertainty](03-planning-under-uncertainty.md) — Use a prototype observation to revise the next increment and its backlog.
 
 ## Part II — Build and Test Knowledge
 
