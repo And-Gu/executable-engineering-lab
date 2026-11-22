@@ -5,7 +5,7 @@ import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 import assert from 'node:assert/strict';
-import { runQueue } from '../../../models/intersection/queue.mjs';
+import { moveArrival, runQueue } from '../../../models/intersection/queue.mjs';
 
 const root = dirname(fileURLToPath(import.meta.url));
 const read = (name) => readFileSync(join(root, name), 'utf8');
@@ -68,6 +68,27 @@ for (const [scenario, departures, remaining] of [['A',3,1],['B',2,2]]) {
   assert.equal(derived.value, finalQueue, 'Data-quality fixture agrees with calculated trace');
   assert.equal(derived.model_revision, input.revision, 'Revision identity');
 }
+
+const observation = data.scenario_edit_observation;
+const baseline = data.valid_records.find(record => record.id === observation.baseline_result);
+assert.ok(baseline, 'Edited observation names a stored baseline result');
+const scenario = input.scenarios.find(record => record.id === baseline.case);
+assert.ok(scenario, 'Baseline result names an input scenario');
+assert.equal(observation.model_id, input.id);
+assert.equal(observation.model_revision, input.revision);
+assert.ok(graph.edges.some(edge =>
+  edge.from === observation.experiment_id && edge.relation === 'examines_model' &&
+  edge.to === observation.model_id && edge.asserted_in_revision === observation.model_revision
+), 'Recorded experiment examines this model revision');
+assert.equal(observation.horizon, input.horizon_slots);
+assert.equal(observation.metric, baseline.metric);
+assert.equal(observation.unit, baseline.unit);
+const move = observation.arrival_move;
+assert.equal(move.vehicles, 1, 'Browser edit moves one vehicle');
+const edited = moveArrival(scenario.arrivals, move.group, move.from_slot, move.to_slot);
+const finalQueue = runQueue(input, edited).at(-1).queue;
+assert.equal(observation.value, finalQueue.NS + finalQueue.EW, 'Edited observation matches the model result');
+
 assert.equal(data.original_incompatible_record.status, 'withhold_comparison');
 assert.equal(data.original_incompatible_record.unit, null);
 assert.equal(data.original_incompatible_record.model_revision, null);
@@ -75,4 +96,5 @@ assert.equal(data.original_incompatible_record.observation_window, null);
 assert.ok(!input.metrics.mean_wait.includes('DEFINED') || input.metrics.mean_wait.startsWith('NOT DEFINED'));
 
 console.log('V3 fictional fixture PASS: 12 graph nodes, 8 typed edges, 16 trace rows, A=1 pending, B=2 pending, legacy C withheld; invalid inputs rejected.');
+console.log(`Verified ${observation.id}. Queue count (${observation.unit}) after slot ${observation.horizon} = ${observation.value}.`);
 console.log('PASS verifies internal educational consistency only, NOT physical validity, traffic safety, source approvals, or learning outcomes.');
