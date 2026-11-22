@@ -11,111 +11,87 @@ teaching_fixture: "T1 — synthetic editorial source"
 
 # Engineering Knowledge as Code
 
-*What does a recorded engineering relationship actually let us conclude?*
+*If the team changes how signal phases are selected, where should the review begin?*
 
-A city wants to explore whether a four-way intersection could operate more effectively. The engineers have an intended outcome, a candidate signal-selection function, a simple interface idea and several unknowns. A proposed adaptive control strategy could change far more than the timing algorithm: it might affect what detector information is available, how signal commands are represented and which properties need checking.
+The two teams designing the four-way intersection have agreed when an arriving vehicle joins a queue. In each slot, arrivals join first, up to one vehicle departs on green, and the model records the departures and remaining queues. Both teams can cite the `event_order` field in the [T1 model inputs](../../case-study/model-inputs-v1.json).
 
-Systems engineers use model-based systems engineering (MBSE) and modeling languages such as SysML to explore functions, interfaces, behavior and requirements. A change to phase selection gives us a practical question to ask of those sources. What else should the engineer review?
+Systems engineers explore what road users need, which movements may get green together and which part of a controller should select the next phase, all while the design is still open. In model-based systems engineering (MBSE), models help teams develop candidate requirements and compare ways of meeting them. Treating that knowledge as code extends the practice. Engineers can keep model definitions, assumptions and decisions under version control and review a change alongside the sources it affects.
 
-A diagram of connected boxes might be a useful starting point. But the answer depends on what each box means, what each line asserts, and whether the information refers to the same revision of the concept. The useful capability is not drawing a network. It is maintaining engineering information that people and tools can inspect, question and revise.
+An assistant powered by a large language model (LLM) gives engineers another way into those sources. A colleague considering adaptive signal selection can ask which assumptions the fixed-time design makes and where to find them. The response can point to a model to inspect and explain why it matters to the proposal.
 
 ## Documents, engineering information and views
 
-Documents are convenient ways to communicate. They can explain a need, record a decision, or give an overview of a design. The difficulty appears when the same requirement, interface or assumption is copied into several independently maintained files. After a change, each copy may tell a different story.
+Documents are convenient ways to communicate. They can explain a need, record a decision or give an overview of a design. The difficulty appears when the same requirement, interface or assumption is copied into several independently maintained files. After a change, each copy may tell a different story.
 
-An **engineering information model** gives important concepts stable identities and defined meanings. For our small intersection case, we use candidate source objects with IDs rather than relying solely on a paragraph's wording.
+An **engineering information model** gives important concepts stable identities and defined meanings. In the fictional intersection, a reviewer can refer to the same object by ID while the team is still working out the answers.
 
-| Teaching record | Meaning in the fictional T1 concept | What it does not establish |
+| Teaching record | Meaning in the T1 concept | A question it leaves open |
 |---|---|---|
-| INT-NEED-001 | Intent to investigate more useful intersection operation | A settled operational performance target |
-| INT-FUN-001 | Candidate function to select signal phases | A controller that has been built or qualified |
-| INT-REQ-001 | Candidate rule against simultaneous NS/EW permissive greens | Safety in every real operating situation |
-| INT-IF-001 | Proposed controller-side signal command interface | Compatibility with installed electronics |
-| INT-MOD-001 | Simplified phase-state model | The behavior of a physical traffic signal |
-
-Each entry has a stable ID in the [intersection source records](../../case-study/source-graph-v1.json). Engineers can use the ID to find the same object in different views and check its meaning and status.
-
-A **view** is a purposeful representation of those sources. A functional diagram answers what the controller needs to do. An interface view asks which information crosses a system boundary. A requirements view asks which rules constrain behavior. A behavioral model explores change over time.
-
-The views may look quite different. They should not quietly create competing definitions of the same interface.
+| INT-NEED-001 | Intent to investigate intersection flow | Which improvement matters most to road users? |
+| INT-FUN-001 | Candidate function to select signal phases | How should it choose the next phase? |
+| INT-REQ-001 | Candidate rule against simultaneous north-south and east-west permissive greens | How will the team check this property? |
+| INT-IF-001 | Proposed controller-side signal command interface | How will the receiving equipment interpret a command? |
+| INT-MOD-001 | Two-queue model with a fixed phase sequence | What happens to a vehicle arriving just after its green? |
 
 ## One source, several useful perspectives
 
-Consider the candidate phase-selection function.
+A **view** is a purposeful representation of those sources. Consider the candidate phase-selection function. A functional view might show inputs, decisions and commanded states. A structural view might show the controller and a signal-driving interface. A requirements view shows the rule on conflicting greens. A behavior view can show how one phase follows another.
 
-A functional view might show inputs, decisions and commanded states. A structural view might show the controller and a signal-driving interface. A requirement view might show the no-conflicting-permissive rule. A behavior view might point to a phase state machine, which we will investigate in the next chapter.
-
-A SysML model can express structure, behavior and requirements. A team can select the parts of that model that answer a particular engineering question and maintain the definitions under version control.
+A team using the Systems Modeling Language (SysML) can express those requirements, parts, interfaces and behaviors in one model. While exploring an adaptive alternative, an engineer could give an LLM the model definitions and ask it to sketch which detector inputs the controller would need. The interface owner can compare that sketch with the existing definitions and decide which proposed inputs belong in the model. The owner can check a drawing against the textual definition because both forms use the language defined in the [OMG SysML v2 specification](https://www.omg.org/spec/SysML/2.0).
 
 > **Concept**
 >
-> The source gives the phase-selection function its identity. A functional view shows what that function does. A behavioral model can explore how its state changes over time. Each can refer to the same function.
-
-> **Explore further**
->
-> The [OMG SysML v2 specification](https://www.omg.org/spec/SysML/2.0) defines the modeling language and its semantics.
+> The T1 model-input file is the **source** for the order of the phases. The **model**, INT-MOD-001, uses that sequence to calculate what happens to the queues. A **view**, such as a table showing the phase in each slot, lets a colleague see when each group gets a green.
 
 ## Relationships need types, direction and a source
 
-Our small teaching graph includes twelve objects and eight typed relationships. A few are enough to make the issue concrete:
+Our small teaching graph includes twelve objects and eight typed relationships. Four of its links illustrate what a reviewer can learn about phase selection.
 
 | From | Recorded type | To | What a reader may infer |
 |---|---|---|---|
-| INT-REQ-001 | constrains | INT-FUN-001 | The candidate function is described as subject to that model property |
-| INT-MOD-001 | represents | INT-FUN-001 | The teaching model is intended to represent that function |
-| INT-EXP-001 | examines_model | INT-MOD-001 | The defined experiment is intended to examine the teaching model |
-| INT-TST-001 | check_targets | INT-REQ-001 | A *proposed check* addresses a property; **no passing result is asserted** |
+| INT-REQ-001 | constrains | INT-FUN-001 | The candidate rule constrains phase selection. |
+| INT-MOD-001 | represents | INT-FUN-001 | The teaching model is intended to represent that function. |
+| INT-EXP-001 | examines_model | INT-MOD-001 | The arrival-pattern experiment names this model. |
+| INT-TST-001 | check_targets | INT-REQ-001 | A proposed check would examine this property. |
 
-Each relationship records its direction and source revision. To find what was actually checked, follow the link to the relevant test and look for its execution result.
-
-This distinction becomes especially important with automated reasoning. A relationship saying that a test **targets** a requirement is not a result showing that the requirement **passed**. An arrow saying that a model **represents** a function does not tell us whether the model predicts real physical behavior.
-
-If a view hides those differences, it can make incomplete knowledge appear more complete than it is.
-
-## A change-impact question the graph can answer
-
-Now imagine a request to investigate adaptive signal selection, recorded as **INT-CHG-001**. It is a proposed alternative, not an approved design decision.
-
-Which objects should the engineer examine first?
-
-The graph explicitly connects the simplified model to the phase-selection function. That gives the engineer a defensible starting point: **INT-MOD-001 is a model-review candidate** if the function changes. The proposed change also flags the controller interface as a possible impact.
-
-But a *possible impact* is not yet an established changed requirement, a broken interface or an evidence-based conclusion. Someone must investigate the connection and document what was found.
-
-There is a second, easily missed case. Suppose a proposed link points to **INT-IF-UNKNOWN**, which is not an object in the maintained source. A graph interface must show the unresolved reference. It must not draw a convincing-looking line to a similarly named node or conclude that the unrecognized target does not matter.
-
-Try the reverse question: if there is no direct edge from the proposed change to an operator procedure, have we shown the procedure is unaffected?
-
-No. A missing recorded relationship is not proof of independence. It may reveal an information gap.
+Each relationship records its direction and source revision. The last link, E06, has the status `proposed_check_not_run` in T1. A result would identify the revision checked and say what happened when the check ran.
 
 ## Digital threads and knowledge graphs
 
-A **digital thread** connects relevant engineering information across the life of a system: intent, definition, architecture, implementation, verification and later change. It becomes useful when an engineer can follow a particular question to the sources and results that bear on it.
+A **digital thread** connects relevant engineering information across the life of a system, from intent and architecture to implementation, verification and later change. A **knowledge graph** is one way to represent objects and their typed relationships so that those connections can be inspected or queried.
 
-A **knowledge graph** is one way to represent objects and their typed relationships so that those connections can be inspected or queried.
-
-The two ideas are related but not interchangeable. A graph visualization is not the entire digital thread, and a list of traceability links is not automatically sufficient for engineering reasoning. We need object identity, revision, relation meaning, source provenance and a way to distinguish current information from an unselected proposal.
-
-The [intersection source graph](../../case-study/source-graph-v1.json) records the direction, meaning and revision of each link. Looking up an edge there gives reviewers a way to check a diagram or an assistant's suggestion.
+An engineer might ask whether the city has chosen fixed-time control. An assistant can retrieve decision INT-DEC-001, which identifies fixed timing as the provisional teaching baseline. The model inputs give the actual phase sequence. Reading the two together tells the engineer what the team chose to study and which behavior the choice applies to.
 
 ## Greenfield and brownfield need different questions
 
 At the beginning of a new project, much engineering information is provisional. Engineers learn which functions, interfaces and constraints are worth developing further. The T1 records are a small example of that **greenfield** situation.
 
-Later, when a team is changing an established configuration, it must identify what is actually present, which revision was tested, who owns each source and whether older evidence still applies. That is the **brownfield** impact question.
+When changing an established configuration, the team must identify what is actually present, which revision was tested and whether older evidence still applies. That is the **brownfield** impact question. An interface with the same name may have different semantics after a supplier change. If the graph has no link to the operator's procedure, its owner can help determine whether the changed meaning affects it.
 
-A stable identifier helps both situations, but it is never a substitute for knowing the revision and context. An interface with the same name may have different semantics after a supplier change. We will return to exactly that problem when the course reaches physical integration.
+## A change-impact question the graph can answer
 
-## What agents can use—and what still needs judgment
+Consider INT-CHG-001, the proposal to investigate adaptive signal selection. An engineer gives an LLM the T1 graph and asks, “If phase selection changes, which model and interface should we revisit? Identify the links that support your answer.” Suppose the assistant suggests, “Review the queue model and change the controller's command interface.”
 
-Consider a language-model assistant helping an engineer review the proposed change to phase selection. A plausible suggestion is “review the queue model and the signal command interface.” The engineer can check each part against the [maintained relationship records](../../case-study/source-graph-v1.json).
+The engineer follows link E07 from INT-CHG-001 through `may_affect` to the phase-selection function, INT-FUN-001. To find a model of that function, she looks for an **incoming** `represents` link. The recorded T1 link, E03, reads **INT-MOD-001 → represents → INT-FUN-001**. Following it back from its target identifies the model. The engineer opens its T1 inputs and finds the assumption worth examining. The phases follow a fixed sequence even when arrivals change.
 
-The model record `INT-MOD-001` has a `represents` link to the phase-selection function `INT-FUN-001`. That gives the engineer a reason to inspect the model. The change record identifies the interface as a possible impact. Establishing what changes there requires a separate investigation.
+E08 also records `may_affect`, this time from the change to INT-IF-001. Both E07 and E08 have the status `inferred_review_candidate`. The engineer turns “change the interface” into a question for its owner. Could the controller select a different phase using the commands the interface already defines?
 
-Before review, the suggestion is a list in a conversation. After review, the engineering note can say “Review the phase-selection assumptions in INT-MOD-001, revision T1, and investigate the controller interface separately.” A colleague can trace both statements back to their sources.
+The source also includes a suggested link to INT-IF-UNKNOWN. Its target has no matching object. The reviewer rejects the link and keeps a question open for the interface owner. Which source, if any, identifies the intended target?
+
+> **Explore further**
+>
+> The [T1 typed source graph](../../case-study/source-graph-v1.json) lists the endpoints and status of E03, E07 and E08. Its `interpretation.supported` entry preserves the conclusion that the model is a review candidate.
+
+## What the reviewer records<span id="what-agents-can-useand-what-still-needs-judgment"></span>
+
+The model and interface owners can pick up the work from a short, versioned note kept with the proposal.
+
+> **Review note for INT-CHG-001, revision T1.** The model INT-MOD-001 is a review candidate (E07, E03). Ask its owner to examine the fixed phase sequence. The interface owner should check whether any command in INT-IF-001 needs to change (E08). INT-IF-UNKNOWN remains unresolved.
+
+When an owner responds, the reviewer can attach the finding to the model or interface revision examined. An assistant can locate diagrams and reports that cite a changed definition and propose updates to their links. Their authors can check the resulting views against the revised source.
 
 <!-- interactive: chapter-quiz -->
 
 ## From connected knowledge to a useful experiment
 
-The review has identified a model and the function it represents. How will its queues respond if one arrival moves to a different part of the signal cycle? [Chapter 5 runs that experiment](05-learning-through-models-and-prototypes.md).
+The model reviewer can start by examining the fixed-time baseline. Experiment INT-EXP-001 uses INT-MOD-001 with four synthetic arrivals per scenario. What happens to the final queue if one north-south arrival in scenario B moves from slot 3 to slot 2? [Chapter 5 runs that comparison and records the observation](05-learning-through-models-and-prototypes.md).
