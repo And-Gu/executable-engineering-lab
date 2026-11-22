@@ -5,6 +5,7 @@ import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 import assert from 'node:assert/strict';
+import { runQueue } from '../../../models/intersection/queue.mjs';
 
 const root = dirname(fileURLToPath(import.meta.url));
 const read = (name) => readFileSync(join(root, name), 'utf8');
@@ -43,21 +44,9 @@ assert.throws(() => validate({ ...input, scenarios: [{ ...input.scenarios[0], ar
 assert.throws(() => validate({ ...input, scenarios: [{ ...input.scenarios[0], arrivals: input.scenarios[0].arrivals.slice(1) }] }));
 
 function run(scenario) {
-  const queue = { NS: 0, EW: 0 };
-  const rows = [];
-  for (let k = 0; k < input.horizon_slots; k++) {
-    const arrival = scenario.arrivals[k];
-    const phase = input.phase_sequence[k];
-    const capacity = input.service[phase];
-    queue.NS += arrival.NS;
-    queue.EW += arrival.EW;
-    const departNS = Math.min(queue.NS, capacity.NS);
-    const departEW = Math.min(queue.EW, capacity.EW);
-    queue.NS -= departNS;
-    queue.EW -= departEW;
-    rows.push([scenario.id,k+1,phase,arrival.NS,arrival.EW,departNS,departEW,queue.NS,queue.EW]);
-  }
-  return rows;
+  return runQueue(input, scenario.arrivals).map(({ slot, phase, arrival, departures, queue }) => [
+    scenario.id, slot, phase, arrival.NS, arrival.EW, departures.NS, departures.EW, queue.NS, queue.EW,
+  ]);
 }
 const expected = input.scenarios.flatMap(run);
 const csvLines = read('trace-v1.csv').trimEnd().split(/\r?\n/);
