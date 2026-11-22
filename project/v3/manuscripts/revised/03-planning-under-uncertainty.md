@@ -11,21 +11,17 @@ teaching_fixture: "T1 — fictional planning decision"
 
 # Planning Under Uncertainty
 
-*What should a team promise when it still does not know which solution is appropriate?*
+*What should change in the plan when an experiment changes what the team knows?*
 
-The city has asked its engineers to investigate how the four-way intersection could serve road users better. The team can imagine several activities: revise the signal timing, add detectors, study physical movements, or explore adaptive control.
+The city wants to improve its intersection. The team has a question about arrivals and an idea for a small prototype. Signal timing, new detectors and adaptive control remain possible directions. Choosing the next investigation lets the team make progress while those choices are open.
 
-All of those may create work. Only some can responsibly be promised as product outcomes today.
-
-A planning process that converts every idea into a scheduled implementation item would hide an important difference. Some activities are **explorations**, designed to discover whether an assumption holds. Others are **commitments**, whose outcome can be defined and evaluated with sufficient confidence.
-
-We need to keep moving while making that distinction visible.
+A useful first increment produces something colleagues can examine together. Its result can change the next experiment, reveal a dependency or justify a delivery commitment. The plan needs room for each of those outcomes.
 
 ## Begin with the next decision, not a backlog
 
 The initial purpose is broader than any one solution: improve useful intersection operation without losing sight of competing road-user, physical and operational needs.
 
-Before the team chooses the next investment, imagine a fictional concept review in which there is capacity for **one substantial investigation**. Three options are on the table.
+Imagine the team has capacity for **one substantial investigation**. It has three options.
 
 | Candidate investigation | What is uncertain? | Smallest useful result | Dependency or stopping condition |
 |---|---|---|---|
@@ -35,7 +31,7 @@ Before the team chooses the next investment, imagine a fictional concept review 
 
 Option C is not a bad idea. It is simply too early to call it a responsible product commitment in this hypothetical situation. Option A helps define what the system must consider. A bounded part of option B may then test a specific modeling hypothesis.
 
-**The proposed decision:** clarify the conflict boundary and authorize a modest fixed-phase model investigation, while deferring detector procurement and adaptive-control commitments. This is a fictional planning decision, not a measured priority score or a municipal project approval.
+The team proposes to clarify the movement conflicts and investigate a small fixed-phase model. It can revisit detector procurement and adaptive control once it knows what those options would need to achieve.
 
 ## Vision, initiative, increment and backlog are different things
 
@@ -95,9 +91,15 @@ A failed or inconclusive exploration can be progress when it reveals what is not
 
 The plan should therefore track both completed work and **knowledge gained, remaining uncertainties, decision owners and triggers for change**.
 
+Suppose one team counts arriving vehicles just before the signal serves the queue and another counts them just after. Their results can differ even when their input files match. The immediate task is to agree on event order and rerun a small comparison.
+
+> **Explore further**
+>
+> The [model input and event-order rule](../../case-study/model-inputs-v1.json) show where the two teams can check which convention applies.
+
 ## Keep a small decision record
 
-A short planning record for our fictional case could state:
+The team records its decision while the assumptions are fresh.
 
 **Decision:** Use a fixed-phase teaching model as an exploratory reference.  
 **Reason:** It makes one arrival-pattern question inspectable with a limited, understandable source set.  
@@ -106,18 +108,14 @@ A short planning record for our fictional case could state:
 **Review trigger:** A changed system boundary, invalid scenario data or findings that make the model unfit for the question.  
 **Decision status:** Provisional, for learning.
 
-This is more useful than recording “simulation task complete” because it explains what the team has actually learned and what it has not authorized.
+> **Concept**
+>
+> Correcting the order of events changes the next increment and its backlog. If the city decides that pedestrian access is its principal concern, the team has a reason to revisit the initiative itself.
+
+The [case source collection](../../case-study/README.md) gives the investigation a common set of definitions to work from.
+
+<!-- interactive: chapter-quiz -->
 
 ## Why the information must become connected
 
-Once several disciplines are investigating the intersection, assumptions appear in notes, models, interface drafts, diagrams and proposed checks. If two engineers use different versions of those definitions, even well-executed work can produce contradictory conclusions.
-
-Our next problem is not how to add more backlog items. It is **how to maintain engineering meaning and relationships** so that the selected investigation and later changes can be understood.
-
-Chapter 4, **Engineering Knowledge as Code**, begins with that need.
-
-**Engineering takeaway:** Good planning under uncertainty distinguishes learning from commitment. It chooses the next important question, makes dependencies and stopping rules visible, and invests in engineering capabilities because they improve product decisions.
-
----
-
-*Related case:* [T1 source and defined information objects](../../case-study/README.md) · [Proposed model/data plan](../../case-study/model-inputs-v1.json). The planning review is fictional and the model is educational.
+The two teams have agreed when arrivals enter a queue. Where should they record that decision so that a model, a diagram and a later experiment all refer to the same rule? [Chapter 4 follows an engineering decision into its maintained sources](04-engineering-knowledge-as-code.md).

@@ -39,9 +39,15 @@ The experiment has **eight ordered slots**. A slot is **not a second** and carri
 
 In each slot, new vehicles first join the corresponding queue. During an NS-green slot, at most one NS vehicle can depart; during an EW-green slot, at most one EW vehicle can depart. No one departs during amber or all-red. We record both remaining queues **after** that slot's arrivals and departures.
 
+To sketch an executable version, an engineer can give a language-model assistant the phase sequence, the service capacities and one row of arrivals. Consider a draft that serves the queue before adding the vehicles that just arrived. An engineer can check it against the first slot of scenario A by hand. The north–south vehicle arrives on green and should depart in that slot. Putting arrivals first fixes the discrepancy. The full baseline traces then give the team sixteen rows against which to check the implementation.
+
 The model deliberately excludes turning movements, pedestrians, cycling, failures, real signal timing and driver behavior. Those omissions matter for real engineering, but they do not prevent a carefully bounded calculation from teaching a specific relationship.
 
 The fixed phases are also important: **the controller does not react to the arrival pattern**. Adaptive signal control remains a proposed future design question, not a hidden feature of this experiment.
+
+> **Concept**
+>
+> A queue count is taken after arrivals and service in each slot. A vehicle arriving on its group's last green may leave immediately. One arriving a slot later may still be waiting at the observation horizon.
 
 ## Determinism is the starting point
 
@@ -63,6 +69,8 @@ Both invented scenarios contain **two NS vehicles and two EW vehicles**. Scenari
 The values are invented inputs, not observed traffic counts. Because the total arrivals are identical and every model rule is unchanged, we can isolate one question about when those arrivals occur.
 
 Before reading the result, predict what you think will happen to the queues at the end of slot eight. Might the same total demand always produce the same remaining count?
+
+<!-- interactive: intersection-model -->
 
 ## Follow the actual queue updates
 
@@ -87,7 +95,7 @@ The same calculation also reports departures:
 | Departures in the window | 3 | 2 |
 | Vehicles still queued | **1** | **2** |
 
-The source model is identified as **INT-MOD-001, revision T1**. We have independently recomputed the table from its declared synthetic inputs for editorial consistency. The result is a model calculation, **not** an executed Astro user experience or a real signal-controller experiment.
+The two baseline traces identify **INT-MOD-001, revision T1**. In the browser exercise, moving one arrival creates a new scenario for this same model. Compare its rows with the original to find the first slot at which the queues diverge.
 
 ## What does that comparison establish?
 
@@ -111,24 +119,28 @@ The **engineering environment** evolves with that decision: clearer model assump
 
 ## Design the feedback around the engineering question
 
-For T1, negative or fractional arrival counts, unknown phase labels and missing slots are invalid. A responsible implementation should reject such inputs instead of creating an animation that looks plausible. The existing [editorial model check](../../case-study/MODEL-CHECK.md) examines T1's declared calculations; it does not validate a real controller.
+T1 expects a nonnegative integer count for each group in each slot and a known phase. The model rejects an incomplete run or an invalid count before it reports a queue.
 
 A bounded development loop could now be: propose a change to the model or input handling, run the calculation, evaluate fixed behavioral and invalid-input checks, inspect a failure, and correct the implementation. If those checks are sufficiently independent of the change being made, an agent could work through several iterations without asking a human to direct every step.
 
 That does **not** make all green tests a product approval. If the criteria encode the wrong requirements, or if the model leaves out an important physical interaction, the loop may converge on the wrong answer. Engineers therefore also assess whether the model and tests represent the system question—and use other evidence when they do not.
 
-The eventual browser interaction should derive its traces, tables and charts from a single model definition rather than duplicate calculations in presentation code. The ability to close a rapid feedback loop is the opportunity; rerunning an unchanged deterministic model is only its starting condition.
+## Record what the experiment changed
+
+The maintained source identifies `INT-MOD-001`, revision T1, and the published inputs identify the two baseline scenarios. An observation also needs the particular input change and the point at which the queue was counted.
+
+In a worked LLM-assisted review, the engineer starts with a proposed note, “The new pattern improves traffic.” The engineer checks the trace and records a more precise observation.
+
+> In scenario B, moving one north–south arrival from slot 3 to slot 2 leaves one vehicle queued after slot 8, compared with two in the original B. Model INT-MOD-001, revision T1, fixed phases.
+
+The colleague maintaining the experiment can reproduce that observation and ask whether the difference persists over a longer horizon.
+
+> **Explore further**
+>
+> Compare the [complete baseline trace](../../case-study/trace-v1.csv) with the [calculation and its assumptions](../../case-study/MODEL-CHECK.md) when reviewing an observation.
+
+<!-- interactive: chapter-quiz -->
 
 ## The data is now the next engineering problem
 
-Chapter 4 supplied the information needed to *identify* what is related. This chapter supplied a bounded calculation with visible assumptions and results.
-
-The next step is not automatically to choose a controller. It is to decide how the resulting data can be trusted, annotated, compared and reused. What if another file reports a “better” result but provides no model version or units?
-
-That is the investigation in **Engineering Data: From Measurements to Decisions**.
-
-**Engineering takeaway:** Select models for the question at hand, make the rules and calculations inspectable, and interpret only the claims that the model's scope permits. A good model creates an opportunity to learn—and tells the team what it must investigate elsewhere.
-
----
-
-*Inspect the case:* [T1 inputs and rules](../../case-study/model-inputs-v1.json) · [Complete computed trace](../../case-study/trace-v1.csv) · [Calculation and limitations](../../case-study/MODEL-CHECK.md).
+A colleague sends another queue count. Which model revision, input pattern and observation horizon would make it comparable with the one you recorded? [Chapter 6 follows engineering data from measurements to decisions](06-engineering-data-from-measurements-to-decisions.md).

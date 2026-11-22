@@ -1,0 +1,108 @@
+---
+import inputs from '../../../../project/v3/case-study/model-inputs-v1.json';
+---
+<section class="queue-experiment" aria-labelledby="arrival-experiment">
+  <h2 id="arrival-experiment">Move one arrival</h2>
+  <p>In scenario B, two north–south vehicles arrive just after their green ends. Predict what would happen if one arrived during slot 2. You can also test a move of your own.</p>
+  <div class="queue-controls" hidden>
+    <form>
+      <div class="queue-fields">
+        <label>Starting scenario
+          <select name="scenario">{inputs.scenarios.map(s => <option value={s.id} selected={s.id === 'B'}>{s.id} · {s.name}</option>)}</select>
+        </label>
+        <label>Arrival to move <select name="origin" required></select></label>
+        <label>New arrival slot <select name="destination" required></select></label>
+      </div>
+      <div class="learning-actions"><button type="submit">Run comparison</button><button type="reset">Restore baseline</button></div>
+    </form>
+    <p class="queue-result" role="status" aria-atomic="true" tabindex="-1"></p>
+    <div class="queue-table-wrap" role="region" aria-label="Queue comparison table" tabindex="0">
+      <table>
+        <caption>Vehicles waiting after each slot. NS is north–south and EW is east–west.</caption>
+        <colgroup span="2"></colgroup><colgroup span="2"></colgroup><colgroup span="2"></colgroup>
+        <thead>
+          <tr><th scope="col" rowspan="2">Slot</th><th scope="col" rowspan="2">Phase</th><th scope="colgroup" colspan="2">Original</th><th scope="colgroup" colspan="2">Edited</th></tr>
+          <tr><th scope="col">NS</th><th scope="col">EW</th><th scope="col">NS</th><th scope="col">EW</th></tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+  <noscript><p>Enable JavaScript to move an arrival. The tables below show both original scenarios.</p></noscript>
+</section>
+<script>
+  import inputs from '../../../../project/v3/case-study/model-inputs-v1.json';
+  import { moveArrival, runQueue } from '../../../../models/intersection/queue.mjs';
+  const directions = ['NS', 'EW'] as const;
+  const names = { NS: 'North–south', EW: 'East–west' };
+  const phaseLabels: Record<string, string> = {
+    NS_GREEN: 'NS green', EW_GREEN: 'EW green', NS_AMBER: 'NS amber', EW_AMBER: 'EW amber', ALL_RED: 'All red',
+  };
+
+  for (const controls of document.querySelectorAll<HTMLElement>('.queue-controls')) {
+    const form = controls.querySelector('form')!;
+    const scenarioSelect = form.querySelector<HTMLSelectElement>('[name=scenario]')!;
+    const origin = form.querySelector<HTMLSelectElement>('[name=origin]')!;
+    const destination = form.querySelector<HTMLSelectElement>('[name=destination]')!;
+    const body = controls.querySelector('tbody')!;
+    const result = controls.querySelector<HTMLElement>('.queue-result')!;
+    function scenario() { return inputs.scenarios.find(item => item.id === scenarioSelect.value)!; }
+
+    function draw(edited?: ReturnType<typeof runQueue>) {
+      const baseline = runQueue(inputs, scenario().arrivals);
+      const rows = baseline.map((row, index) => {
+        const tr = document.createElement('tr');
+        const slot = document.createElement('th');
+        slot.scope = 'row';
+        slot.textContent = String(row.slot);
+        tr.append(slot);
+        for (const value of [phaseLabels[row.phase], row.queue.NS, row.queue.EW, edited?.[index].queue.NS, edited?.[index].queue.EW]) {
+          const cell = tr.insertCell();
+          cell.textContent = value === undefined ? '—' : String(value);
+        }
+        return tr;
+      });
+      body.replaceChildren(...rows);
+      const last = baseline[baseline.length - 1].queue;
+      const original = last.NS + last.EW;
+      if (edited) {
+        const final = edited[edited.length - 1].queue;
+        result.textContent = `Scenario ${scenario().id}. ${origin.selectedOptions[0].text} moved to slot ${destination.value}. After slot ${baseline.length}, the original queue count is ${original} and the edited count is ${final.NS + final.EW}.`;
+      } else {
+        result.textContent = `Scenario ${scenario().id} baseline. The queue count after slot ${baseline.length} is ${original}. Choose a move and run the comparison.`;
+      }
+    }
+
+    function updateSlots() {
+      const from = Number(origin.value.split('/')[1]);
+      const options = inputs.phase_sequence.flatMap((phase, index) => index + 1 === from
+        ? [] : [new Option(`${index + 1} · ${phaseLabels[phase]}`, String(index + 1))]);
+      destination.replaceChildren(new Option('Choose a slot', ''), ...options);
+      draw();
+    }
+
+    function restore() {
+      const options = directions.flatMap(group => scenario().arrivals.flatMap((arrivals, index) =>
+        arrivals[group] ? [new Option(`${names[group]} arrival in slot ${index + 1}`, `${group}/${index + 1}`)] : []));
+      origin.replaceChildren(...options);
+      updateSlots();
+    }
+
+    scenarioSelect.addEventListener('change', restore);
+    origin.addEventListener('change', updateSlots);
+    destination.addEventListener('change', () => draw());
+    form.addEventListener('reset', event => {
+      event.preventDefault();
+      restore();
+    });
+    form.addEventListener('submit', event => {
+      event.preventDefault();
+      const [group, from] = origin.value.split('/');
+      const arrivals = moveArrival(scenario().arrivals, group as 'NS' | 'EW', Number(from), Number(destination.value));
+      draw(runQueue(inputs, arrivals));
+      result.focus();
+    });
+    restore();
+    controls.hidden = false;
+  }
+</script>

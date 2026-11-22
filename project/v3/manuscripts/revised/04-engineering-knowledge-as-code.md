@@ -15,7 +15,7 @@ teaching_fixture: "T1 — synthetic editorial source"
 
 A city wants to explore whether a four-way intersection could operate more effectively. The engineers have an intended outcome, a candidate signal-selection function, a simple interface idea and several unknowns. A proposed adaptive control strategy could change far more than the timing algorithm: it might affect what detector information is available, how signal commands are represented and which properties need checking.
 
-Someone asks: “What would this change affect?”
+Systems engineers use model-based systems engineering (MBSE) and modeling languages such as SysML to explore functions, interfaces, behavior and requirements. A change to phase selection gives us a practical question to ask of those sources. What else should the engineer review?
 
 A diagram of connected boxes might be a useful starting point. But the answer depends on what each box means, what each line asserts, and whether the information refers to the same revision of the concept. The useful capability is not drawing a network. It is maintaining engineering information that people and tools can inspect, question and revise.
 
@@ -33,7 +33,7 @@ An **engineering information model** gives important concepts stable identities 
 | INT-IF-001 | Proposed controller-side signal command interface | Compatibility with installed electronics |
 | INT-MOD-001 | Simplified phase-state model | The behavior of a physical traffic signal |
 
-These records are from a [single fictional T1 source set](../../case-study/source-graph-v1.json), not actual city project documents. Their IDs make it possible to show the same object in different views while preserving a link to its meaning and status.
+Each entry has a stable ID in the [intersection source records](../../case-study/source-graph-v1.json). Engineers can use the ID to find the same object in different views and check its meaning and status.
 
 A **view** is a purposeful representation of those sources. A functional diagram answers what the controller needs to do. An interface view asks which information crosses a system boundary. A requirements view asks which rules constrain behavior. A behavioral model explores change over time.
 
@@ -45,9 +45,15 @@ Consider the candidate phase-selection function.
 
 A functional view might show inputs, decisions and commanded states. A structural view might show the controller and a signal-driving interface. A requirement view might show the no-conflicting-permissive rule. A behavior view might point to a phase state machine, which we will investigate in the next chapter.
 
-SysML v2 can express various system-modeling concepts formally and provide useful textual or graphical representations. Whether it is the right format depends on the engineering environment and the problem. A drawing styled to resemble a SysML view is not automatically a valid SysML model; formal claims require checking the actual language and semantics. The [OMG SysML v2 specification](https://www.omg.org/spec/SysML/2.0) is the appropriate reference for those details.
+A SysML model can express structure, behavior and requirements. A team can select the parts of that model that answer a particular engineering question and maintain the definitions under version control.
 
-The educational principle here is independent of one tool: **give engineering meaning a maintained source, and derive useful views from it**. The purpose is to make changes and reviews easier to reason about, not to mandate that every engineering discipline store all its work in one database.
+> **Concept**
+>
+> The source gives the phase-selection function its identity. A functional view shows what that function does. A behavioral model can explore how its state changes over time. Each can refer to the same function.
+
+> **Explore further**
+>
+> The [OMG SysML v2 specification](https://www.omg.org/spec/SysML/2.0) defines the modeling language and its semantics.
 
 ## Relationships need types, direction and a source
 
@@ -60,7 +66,7 @@ Our small teaching graph includes twelve objects and eight typed relationships. 
 | INT-EXP-001 | examines_model | INT-MOD-001 | The defined experiment is intended to examine the teaching model |
 | INT-TST-001 | check_targets | INT-REQ-001 | A *proposed check* addresses a property; **no passing result is asserted** |
 
-All four relationships have a direction and an asserted source revision. They exist in the **fictional teaching fixture**. “Recorded” means that someone can find the assertion there; it is not evidence that an actual product has implemented or satisfied it.
+Each relationship records its direction and source revision. To find what was actually checked, follow the link to the relevant test and look for its execution result.
 
 This distinction becomes especially important with automated reasoning. A relationship saying that a test **targets** a requirement is not a result showing that the requirement **passed**. An arrow saying that a model **represents** a function does not tell us whether the model predicts real physical behavior.
 
@@ -90,7 +96,7 @@ A **knowledge graph** is one way to represent objects and their typed relationsh
 
 The two ideas are related but not interchangeable. A graph visualization is not the entire digital thread, and a list of traceability links is not automatically sufficient for engineering reasoning. We need object identity, revision, relation meaning, source provenance and a way to distinguish current information from an unselected proposal.
 
-The planned interactive graph for this chapter should use the T1 source set rather than inventing another dataset for the display. Readers should be able to select a function, inspect an edge, reveal an impact candidate, then return to the original state. The [source records](../../case-study/source-graph-v1.json) and a readable relationship table already support that reasoning without requiring the interactive feature. **The browser graph itself has not yet been implemented.**
+The [intersection source graph](../../case-study/source-graph-v1.json) records the direction, meaning and revision of each link. Looking up an edge there gives reviewers a way to check a diagram or an assistant's suggestion.
 
 ## Greenfield and brownfield need different questions
 
@@ -102,20 +108,14 @@ A stable identifier helps both situations, but it is never a substitute for know
 
 ## What agents can use—and what still needs judgment
 
-An AI agent asked to investigate a proposed change could benefit from structured sources and a typed graph. The relevant context can be selected from the source rather than copied into a very large prompt. Natural language may be the entry point to a question; the controlled engineering definitions must persist beyond a conversation.
+Consider a language-model assistant helping an engineer review the proposed change to phase selection. A plausible suggestion is “review the queue model and the signal command interface.” The engineer can check each part against the [maintained relationship records](../../case-study/source-graph-v1.json).
 
-That does not grant an agent authority to change a product. Reading a source, proposing an update, executing an authorized check and accepting a design change are different operations. Later chapters examine how an agent works within those boundaries.
+The model record `INT-MOD-001` has a `represents` link to the phase-selection function `INT-FUN-001`. That gives the engineer a reason to inspect the model. The change record identifies the interface as a possible impact. Establishing what changes there requires a separate investigation.
 
-The immediate result is simpler: **a reader can tell what was recorded, why a relationship exists, and where the engineering conclusion still stops**.
+Before review, the suggestion is a list in a conversation. After review, the engineering note can say “Review the phase-selection assumptions in INT-MOD-001, revision T1, and investigate the controller interface separately.” A colleague can trace both statements back to their sources.
+
+<!-- interactive: chapter-quiz -->
 
 ## From connected knowledge to a useful experiment
 
-We now know where a candidate signal-selection function and its model sit within the information. What we do not know is how that model behaves under different conditions.
-
-The next chapter, **Learning Through Models and Prototypes**, uses the same identified model, a small fixed phase sequence and explicit arrivals to investigate that question. The record of a relationship becomes the starting point for a **reproducible experiment**, not a substitute for one.
-
-**Engineering takeaway:** Treat meaningful engineering information as maintained, identifiable sources. Give every important relation a type, direction, status and provenance. Then use the resulting views to find *review questions*—without mistaking a graph for verified system behavior.
-
----
-
-*Explore the sources:* [T1 teaching graph](../../case-study/source-graph-v1.json) · [Case study overview](../../case-study/README.md). These are synthetic editorial examples, not authoritative traffic system records.
+The review has identified a model and the function it represents. How will its queues respond if one arrival moves to a different part of the signal cycle? [Chapter 5 runs that experiment](05-learning-through-models-and-prototypes.md).

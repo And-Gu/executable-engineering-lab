@@ -33,7 +33,7 @@ Both have **four** invented arrivals; the fixed phase schedule never changes. On
 
 During preparation, a first JavaScript implementation generated all **16 trace records** from the declared inputs and checked conservation. A second, separately written calculation fetched the saved inputs and CSV through the GitHub connection and independently recomputed **every field in all 16 rows**; it matched exactly. The second check also resolved all eight typed graph edges to twelve existing source objects, confirmed the deliberately missing target is not a real object, rejected negative/fractional arrivals and unknown phase labels, and verified each derived final queue in the data-quality file.
 
-Those are **editorial consistency checks**, not an independent accredited engineering examination, an executed Astro simulation or empirical evidence. The standalone [verify-fixture.mjs](verify-fixture.mjs) preserves a reproducible check for future editors. **It has not been wired into GitHub Actions or the public site**; before promotion, run and record its results in the checked-out repository and review its test coverage.
+Those checks established the internal consistency of the teaching fixture. The [Chapter 5 browser exercise](../manuscripts/revised/05-learning-through-models-and-prototypes.md) and the [standalone checker](verify-fixture.mjs) now use the same [queue calculation](../../../models/intersection/queue.mjs). Its [regression tests](../../../models/intersection/queue.test.ts) compare every original row with the stored trace and check the effect of moving one arrival.
 
 ### Conservation
 
@@ -51,7 +51,7 @@ Every existing edge has a known source and target ID, a declared relation type, 
 
 The allowed editorial conclusion is narrow: **with T1's eight-slot rule and invented arrivals, arrival clustering changes the number still queued**. No real intersection, physical indication, safety or AI-agent performance is assessed.
 
-## Explicit missing work / future checks
+## Follow-ups recorded in the original review on 16 November 2026
 
 - [ ] Owner/editorial review of object vocabulary, system boundary, source revision, model assumptions and whether two-group signal phase is a useful pedagogical simplification.
 - [ ] Run `node project/v3/case-study/verify-fixture.mjs` in the repository environment; retain actual stdout and CLI exit code for the record.

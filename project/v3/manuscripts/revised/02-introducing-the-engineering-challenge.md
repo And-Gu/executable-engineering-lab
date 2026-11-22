@@ -17,11 +17,15 @@ A city wants to improve how people move through a busy four-way intersection. Dr
 
 An adaptive controller sounds appealing. New detectors might help. Perhaps the existing signal sequence could be improved. But the city has not yet established which problem is most important, which movements must be protected or what evidence would justify a change.
 
-This is the recurring **fictional engineering challenge** for the lab. It gives us a product question that is easy to picture but rich enough to connect software, electronics, physical systems, operational needs and engineering decisions. Nothing in the teaching case is an observed result from an actual intersection.
+We will return to this four-way intersection throughout the course. Here it gives us a first question to investigate before the team selects a controller.
 
-## Start with outcomes, not a favored solution
+> **Explore further**
+>
+> The [intersection case description](../../REFERENCE-INTERSECTION.md#the-shared-engineering-question) explains the city's question. The [case source collection](../../case-study/README.md) contains the assumptions, inputs and observations used later.
 
-The city's broad ambition is to make the intersection serve road users better. That statement is not yet a testable requirement. Different stakeholders may mean different things by *better*.
+## Start with engineering intent
+
+The city's engineering intent is to improve traffic flow while protecting people crossing the road. Different stakeholders experience the intersection differently. Their concerns help the team decide what to observe and which requirements it can define with confidence.
 
 | Stakeholder | Example concern | Question that remains open |
 | --- | --- | --- |
@@ -33,7 +37,9 @@ The city's broad ambition is to make the intersection serve road users better. T
 
 These concerns cannot be reduced to one queue metric. Optimizing an abstract model without defining crossing safety, interfaces and intended operation could make the wrong problem easier to solve.
 
-The first decision is therefore not which controller to purchase. It is **what the team must understand before it can make that decision**.
+> **Concept**
+>
+> An intent sets a direction, such as improving pedestrian crossings. A requirement needs a criterion that people can check. Agreeing on whose crossing, under which conditions and what to measure gives the team a way to develop that criterion.
 
 ## Establish a whole-system boundary
 
@@ -41,7 +47,7 @@ The conceptual product includes the control function, signal indications, releva
 
 Our earliest executable model is deliberately smaller. It considers a **simplified fixed-phase signal sequence and invented vehicle arrivals**. It can help us reason about some queue behavior under stated rules. It cannot establish safe crossing times, real traffic performance, controller reliability, hardware timing or compliance with traffic regulations.
 
-Keeping the product boundary and the model boundary separate is essential. The model may answer a narrow engineering question without representing the product well enough to approve a real-world change.
+An engineer can use a language model to sketch this small prototype from the signal sequence and the arrival rule, then check the result by tracing one time slot by hand. That makes an early assumption cheap to change while the team learns which details matter.
 
 ## The first learning question
 
@@ -50,6 +56,8 @@ Imagine two scenarios with the same total number of arriving vehicles but differ
 That is a suitable initial *learning question*, not a promise of improved traffic throughput. The team needs a defined phase sequence, a meaning for arrivals and departures, explicit event-order rules and traceable results. The answer may show something useful about the abstraction—or expose missing assumptions.
 
 We will not solve that question here. Later chapters will introduce the controlled engineering information, executable model and data needed to investigate it properly.
+
+<!-- interactive: chapter-quiz -->
 
 ## Two kinds of work follow from the same question
 
@@ -70,20 +78,6 @@ We will use this same intersection from start to finish, with each chapter addin
 
 The storyline is educational rather than a prescribed project sequence. Real teams must consider integration, verification, safety, security and operational needs from the beginning, even though later chapters examine those topics in greater depth.
 
-## What the example will—and will not—prove
+## From the first question to the next experiment
 
-The lab uses synthetic scenarios and a limited teaching model to make engineering reasoning inspectable. A model output or automated check can support a claim about **that model with those inputs**. It does not demonstrate that an actual intersection controller has been built, connected to signals or qualified for operation.
-
-As the story develops, we will distinguish proposed changes from executed checks, software behavior from physical behavior, and model evidence from operational acceptance. These boundaries are part of the engineering lesson, not obstacles to learning.
-
-## The next decision
-
-The city has multiple plausible improvements, but insufficient grounds to choose one. The team needs to decide which uncertainty matters most, what investigation would reduce it, and what it can responsibly commit to next.
-
-**Chapter 3, Planning Under Uncertainty**, starts there. It asks how to plan meaningful progress without disguising an exploration as a guaranteed product result.
-
-**Engineering takeaway:** A shared example is useful only when its stakeholders, system boundary and evidence limits remain visible. The four-way intersection gives us one coherent product story—not a preselected solution—to carry through the rest of executable engineering.
-
----
-
-*Reference case:* [Fictional intersection scope](../../REFERENCE-INTERSECTION.md) · [T1 educational sources](../../case-study/README.md). The model and any AI-agent workflows in later chapters are bounded teaching examples, not a physical traffic-control validation.
+The team now has an intent, a question about arrival patterns and a small prototype it could build. It must decide what to investigate first and what finding would change that choice. [Chapter 3 develops a plan around that uncertainty](03-planning-under-uncertainty.md).
