@@ -1,0 +1,40 @@
+[
+  {
+    "id": "replan-increment",
+    "prompt": "Two teams count arrivals on different sides of the same service step. What should change in the next increment?",
+    "options": [
+      {
+        "text": "Order detectors to get a larger set of arrival records.",
+        "feedback": "Additional records will still have two interpretations until the event order is agreed."
+      },
+      {
+        "text": "Agree on event order, record the decision and rerun the comparison.",
+        "feedback": "The disagreement affects the meaning of the result. A small, reviewable rerun makes the investigation useful again.",
+        "correct": true
+      },
+      {
+        "text": "Replace the long-term aim for the intersection.",
+        "feedback": "The ambiguity concerns an experiment. It provides grounds to revise the increment while the stakeholder aim still guides planning."
+      }
+    ]
+  },
+  {
+    "id": "planning-horizon",
+    "prompt": "A team wants to keep its direction while learning whether the fixed-phase model is useful. Which entry belongs in its immediate backlog?",
+    "options": [
+      {
+        "text": "Improve how people move through the intersection.",
+        "feedback": "That describes a longer-term outcome. A backlog item identifies a concrete piece of work toward it."
+      },
+      {
+        "text": "Set the full hardware procurement schedule.",
+        "feedback": "Procurement depends on choices that this investigation is meant to inform."
+      },
+      {
+        "text": "Write down how each slot treats arrivals and check one trace together.",
+        "feedback": "The task can be done and reviewed within the next increment. Its result gives the team grounds to keep or revise the plan.",
+        "correct": true
+      }
+    ]
+  }
+]

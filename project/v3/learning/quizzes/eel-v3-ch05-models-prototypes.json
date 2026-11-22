@@ -1,0 +1,40 @@
+[
+  {
+    "id": "bounded-claim",
+    "prompt": "Two scenarios have the same four arrivals and fixed signal phases, yet finish with different queues. What accounts for the difference?",
+    "options": [
+      {
+        "text": "The model has selected a better controller for one scenario.",
+        "feedback": "Both scenarios use the same phase sequence. Look at when each vehicle arrives relative to a green slot."
+      },
+      {
+        "text": "The timing of arrivals changes which vehicles can depart within the eight slots.",
+        "feedback": "The rule serves the active green group after arrivals join its queue. An arrival that misses that group’s green can still be waiting at the end.",
+        "correct": true
+      },
+      {
+        "text": "The smaller final queue establishes a shorter average wait in city traffic.",
+        "feedback": "The trace counts vehicles remaining at one horizon. It contains neither a mean waiting-time measure nor observed city traffic."
+      }
+    ]
+  },
+  {
+    "id": "capture-observation",
+    "prompt": "What should be saved so a colleague can use this experiment in the next investigation?",
+    "options": [
+      {
+        "text": "The model revision, scenario edit, observation horizon, queue result and next question.",
+        "feedback": "These details connect the observation to the exact assumptions and inputs that produced it and make the follow-up reproducible.",
+        "correct": true
+      },
+      {
+        "text": "Only the smallest queue shown by the experiment.",
+        "feedback": "A count on its own omits the arrival pattern, model revision and time at which it was taken."
+      },
+      {
+        "text": "An instruction to use the simulated schedule for the real intersection.",
+        "feedback": "A source-linked observation supports the next investigation. Choosing an operational schedule requires evidence about the real system."
+      }
+    ]
+  }
+]

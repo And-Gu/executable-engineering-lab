@@ -1,0 +1,76 @@
+---
+import type { Quiz } from '../../data/v3-learning';
+interface Props { questions: Quiz }
+const { questions } = Astro.props;
+---
+<section class="chapter-quiz" aria-labelledby="chapter-quiz">
+  <h2 id="chapter-quiz">Check your understanding</h2>
+  <form hidden>
+    {questions.map(({ id, prompt, options }) => (
+      <fieldset aria-describedby={`feedback-${id}`}>
+        <legend>{prompt}</legend>
+        {options.map(answer => (
+          <label>
+            <input type="radio" name={id} required data-correct={answer.correct ? 'yes' : 'no'} data-feedback={answer.feedback} />
+            <span>{answer.text}</span>
+          </label>
+        ))}
+        <p class="answer-feedback" id={`feedback-${id}`} tabindex="-1" hidden></p>
+      </fieldset>
+    ))}
+    <div class="learning-actions">
+      <button type="submit">Check answers</button>
+      <button type="reset">Try again</button>
+    </div>
+    <p class="quiz-result" role="status" aria-atomic="true" tabindex="-1"></p>
+    <a class="review-answer" hidden>Review first incorrect answer</a>
+  </form>
+  <noscript>
+    {questions.map(({ prompt, options }) => {
+      const answer = options.find(option => option.correct)!;
+      return <details><summary>{prompt}</summary><p><strong>{answer.text}</strong> {answer.feedback}</p></details>;
+    })}
+  </noscript>
+</section>
+<script>
+  for (const form of document.querySelectorAll<HTMLFormElement>('.chapter-quiz form')) {
+    const groups = Array.from(form.querySelectorAll('fieldset'));
+    const result = form.querySelector<HTMLElement>('.quiz-result')!;
+    const review = form.querySelector<HTMLAnchorElement>('.review-answer')!;
+    form.hidden = false;
+
+    function clearFeedback() {
+      for (const item of form.querySelectorAll<HTMLElement>('.answer-feedback')) {
+        item.textContent = '';
+        item.hidden = true;
+      }
+      result.textContent = '';
+      review.hidden = true;
+      review.removeAttribute('href');
+    }
+    form.addEventListener('change', clearFeedback);
+    form.addEventListener('reset', () => {
+      clearFeedback();
+      form.querySelector('input')?.focus();
+    });
+    form.addEventListener('submit', event => {
+      event.preventDefault();
+      clearFeedback();
+      let correct = 0;
+      for (const group of groups) {
+        const chosen = group.querySelector<HTMLInputElement>('input:checked')!;
+        const feedback = group.querySelector<HTMLElement>('.answer-feedback')!;
+        const isCorrect = chosen.dataset.correct === 'yes';
+        feedback.textContent = `${isCorrect ? 'Correct.' : 'Try a different answer.'} ${chosen.dataset.feedback}`;
+        feedback.hidden = false;
+        if (isCorrect) correct++;
+        else if (review.hidden) {
+          review.href = '#' + feedback.id;
+          review.hidden = false;
+        }
+      }
+      result.textContent = `${correct} of ${groups.length} correct.`;
+      result.focus();
+    });
+  }
+</script>

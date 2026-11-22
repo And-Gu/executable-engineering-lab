@@ -1,0 +1,40 @@
+[
+  {
+    "id": "follow-a-relation",
+    "prompt": "The phase-selection function may change. The source says the queue model represents that function. What should an engineer do with this link?",
+    "options": [
+      {
+        "text": "Review the model assumptions that depend on phase selection.",
+        "feedback": "The directed link identifies a concrete model to inspect. The engineer can then establish and record the effect of the proposed change.",
+        "correct": true
+      },
+      {
+        "text": "Mark the signal interface as failed.",
+        "feedback": "The link records what the model represents. A failure claim requires an observed result against a criterion."
+      },
+      {
+        "text": "Update every diagram independently.",
+        "feedback": "The views draw on maintained definitions. Checking the shared definition first shows which views actually need updating."
+      }
+    ]
+  },
+  {
+    "id": "unresolved-target",
+    "prompt": "An assistant suggests an interface ID that is missing from the source graph. How should the engineer record it?",
+    "options": [
+      {
+        "text": "Connect it to the nearest-looking interface name.",
+        "feedback": "A similar label provides no evidence of identity. That guessed connection would mislead the next review."
+      },
+      {
+        "text": "Remove the question because the graph has no edge.",
+        "feedback": "A missing edge can identify a gap in the recorded information. Other sources may still show an effect."
+      },
+      {
+        "text": "Keep it as an unresolved review question and check its source.",
+        "feedback": "The uncertainty stays visible and reviewable. A verified identity can later support a recorded relationship.",
+        "correct": true
+      }
+    ]
+  }
+]

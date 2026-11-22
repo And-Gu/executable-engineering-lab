@@ -1,0 +1,40 @@
+[
+  {
+    "id": "first-question",
+    "prompt": "The city wants better flow and safe crossings. Which question fits the first fixed-phase queue prototype?",
+    "options": [
+      {
+        "text": "Which crossing time is suitable for all pedestrians?",
+        "feedback": "The prototype has vehicle arrivals and signal phases. Answering a crossing-time question requires information about pedestrians, geometry and timing."
+      },
+      {
+        "text": "Which detector should the city purchase?",
+        "feedback": "Choosing hardware requires sensing and interface needs that the first queue experiment leaves open."
+      },
+      {
+        "text": "Can different arrival patterns leave different queues under the same phases?",
+        "feedback": "Arrivals, phases and queues are part of the prototype. Varying arrivals while holding the phases fixed isolates a question it can answer.",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "id": "intent-and-criteria",
+    "prompt": "Two groups agree to improve the intersection but give different meanings to “better.” What is the next useful step?",
+    "options": [
+      {
+        "text": "Identify each group’s intended outcome and choose one uncertainty to investigate.",
+        "feedback": "A driver’s queue and a pedestrian’s crossing opportunity call for different observations. Naming both helps turn a shared intent into meaningful criteria.",
+        "correct": true
+      },
+      {
+        "text": "Make the shortest vehicle queue the acceptance criterion for everyone.",
+        "feedback": "Queue length describes one outcome for one group. It leaves the crossing concern unanswered."
+      },
+      {
+        "text": "Choose adaptive control so that everyone can work to one design.",
+        "feedback": "Selecting a controller settles the proposed mechanism before the team has agreed which outcomes it should improve."
+      }
+    ]
+  }
+]

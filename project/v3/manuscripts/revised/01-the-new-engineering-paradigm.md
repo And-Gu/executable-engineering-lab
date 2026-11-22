@@ -11,19 +11,17 @@ teaching_fixture: "Conceptual overview; case begins in Chapter 2"
 
 # The New Engineering Paradigm
 
-*Why engineering is changing—and what leaders and teams must change with it.*
+*What would help a team turn an engineering question into a sound decision sooner?*
 
-Engineering organizations face a widening gap between how quickly products need to evolve and how slowly many engineering decisions move through fragmented disciplines, documents, tests, approvals and delivery processes. Software and artificial intelligence (AI) offer new capabilities, but neither removes the responsibility to develop safe, useful and trustworthy systems.
+When two disciplines discover an interface disagreement during integration, they may have to revisit weeks of design work. A check that exposes the same disagreement as soon as either definition changes gives engineers time to compare options while a change is still affordable.
 
-The opportunity is broader than automating old tasks: **engineer the product and the capability to improve it, together.** This chapter sets out the whole picture. The next chapter introduces a fictional four-way intersection used to explore the practical implications throughout the course.
+Building that check improves how the organization engineers its products. Reusing it on the next variant helps the team support more designs and gives new colleagues a way to understand the interface. The investment pays off when it improves a product decision or reduces avoidable rework.
 
 ## Expectations are changing
 
-Customers increasingly expect products to gain capabilities, respond to feedback and remain useful after delivery. Competitive pressure raises expectations for shorter development cycles, higher quality, more frequent improvements and faster adaptation to new needs. These pressures affect software-intensive systems, electronics, mechanical products and the services surrounding them.
+Competitive pressure can make shorter development cycles, higher quality and frequent improvements valuable. A team that produces changes faster than it can integrate or test them moves work into a queue. A leader can ask where an earlier check would actually change a decision.
 
-They create a demanding combination: **develop faster, release more often where feasible, and increase confidence in what is released**. Faster output alone is not a solution. A team that produces more changes but cannot integrate, test or authorize them has merely moved work into a queue elsewhere.
-
-Release frequency also differs by product. A web service may deploy repeatedly; embedded software may require controlled integration and qualification; electronics and physical designs involve supplier, manufacturing and test constraints. The objective is not one universal release rhythm. It is to shorten the time between a relevant question, reliable feedback, an informed decision and a useful product improvement.
+A web service may deploy repeatedly, embedded software may need controlled integration, and a physical design may depend on suppliers and test equipment. Each team can shorten the path from a question to reliable feedback within its own delivery constraints.
 
 ## Software-inspired engineering moves beyond software
 
@@ -55,6 +53,10 @@ The **engineering system** includes people, methods, engineering knowledge, exec
 
 The two systems form a feedback relationship. A difficult product question may reveal the need for a new simulation or test fixture. A better engineering capability may make previously expensive options practical to investigate. Improvements to the engineering system should be justified by the product decisions and delivery outcomes they enable.
 
+> **Concept**
+>
+> Changing a product interface changes what teams must deliver. Adding a repeatable compatibility check changes how teams can investigate that interface on this product and the next.
+
 ## From document-driven handoffs to executable feedback
 
 Documents and reviews remain useful; the problem arises when engineering knowledge is disconnected from the models, tests and decisions that give it meaning.
@@ -74,12 +76,14 @@ The transformation changes the questions leaders should ask. Beyond measuring ta
 
 That means investing selectively in shared engineering information, simulation and test capability, integration practices, multidisciplinary interfaces and the skills to direct and evaluate AI-supported work. It also means allowing exploration where the design is uncertain and making stronger commitments when the evidence supports them.
 
-The goal is neither a tool collection nor automation for its own sake. It is **a better engineering system that can learn faster, build with greater confidence and improve products more continuously**.
+A useful investment gives teams an earlier signal about a decision that costs time or money to reverse. Leaders can judge its value by looking at which changes a team caught earlier, how much rework it avoided and where uncertainty still affects delivery.
+
+> **Explore further**
+>
+> [Choosing an engineering capability when several investments compete](15-choosing-the-next-engineering-capability.md#decide-from-what-is-blocking-the-product) develops this decision later in the course.
+
+<!-- interactive: chapter-quiz -->
 
 ## From the paradigm to a working example
 
-The rest of the lab turns this broad argument into concrete engineering choices. We will work with a fictional four-way intersection, starting with uncertain needs rather than an assumed solution. We will follow how planning, engineering knowledge, models, data, specifications, agents, integration, evidence and release decisions build on one another.
-
-**Chapter 2, Introducing the Engineering Challenge**, defines that shared example and its boundaries. The subsequent chapters develop the practices in progressively greater detail.
-
-**Engineering takeaway:** Market expectations create pressure for speed, release frequency and quality. Software-inspired ways of working provide a foundation, and AI expands the opportunities. The enduring change is to develop the product and the engineering capability that improves it as two connected systems.
+A city wants people to move through a busy intersection more easily. Before choosing a controller, its engineers need to decide whose experience to improve and what they can learn first. [Chapter 2 introduces the intersection and its stakeholders](02-introducing-the-engineering-challenge.md).

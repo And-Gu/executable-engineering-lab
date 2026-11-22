@@ -1,0 +1,40 @@
+[
+  {
+    "id": "repeatable-feedback",
+    "prompt": "Teams discover the same interface mismatch late in integration. Which investment would shorten the next decision cycle?",
+    "options": [
+      {
+        "text": "Add a second sign-off meeting before integration.",
+        "feedback": "The team would still discover the mismatch at integration. Identify where the two interface definitions first become comparable."
+      },
+      {
+        "text": "Check the two versioned interface definitions whenever either changes.",
+        "feedback": "An early comparison exposes a disagreement while the teams can still change their designs. The reusable check improves the engineering system.",
+        "correct": true
+      },
+      {
+        "text": "Build the next product variant before investigating the mismatch.",
+        "feedback": "A further variant increases the number of configurations the teams must investigate. It does little to locate the existing disagreement."
+      }
+    ]
+  },
+  {
+    "id": "what-a-check-supports",
+    "prompt": "A model check passes for a proposed design change. Which decision can the team now make?",
+    "options": [
+      {
+        "text": "Use the result to decide what to integrate or investigate next.",
+        "feedback": "The check gives timely evidence about the modeled condition. The team can use that evidence to choose its next integration or test step.",
+        "correct": true
+      },
+      {
+        "text": "Release the product in every intended operating condition.",
+        "feedback": "The check covered a particular model and condition. Release also depends on integration and evidence for the intended use."
+      },
+      {
+        "text": "Count the check as a measured reduction in total development cost.",
+        "feedback": "A passing check records a technical result. A cost claim needs a measure of the work or rework it actually saved."
+      }
+    ]
+  }
+]
