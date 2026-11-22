@@ -14,11 +14,11 @@
 5. [Learning Through Models and Prototypes](05-learning-through-models-and-prototypes.md)
 6. [Engineering Data: From Measurements to Decisions](06-engineering-data-from-measurements-to-decisions.md)
 7. [Spec-Driven Development Without Waterfall](07-spec-driven-development-without-waterfall.md)
+8. [Directing AI Engineering Agents](08-directing-ai-engineering-agents.md)
+9. [Planning and Controlling Agents](09-engineering-in-small-reviewable-increments.md)
 
 ## Part III — Develop an Integrated Product
 
-8. [Directing AI Engineering Agents](08-directing-ai-engineering-agents.md)
-9. [Engineering in Small, Reviewable Increments](09-engineering-in-small-reviewable-increments.md)
 10. [From Models to an Integrated Product](10-from-models-to-an-integrated-product.md)
 
 ## Part IV — Establish Trust and Sustain Change

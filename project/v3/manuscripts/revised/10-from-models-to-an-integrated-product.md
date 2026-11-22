@@ -11,124 +11,76 @@ teaching_fixture: "T1 — synthetic editorial source"
 
 # From Models to an Integrated Product
 
-*The model makes a decision. What does it take for a real product to carry it out?*
+*How can the intersection team use what it learned from the prototype to build a product it can deliver?*
 
-In our fictional four-way intersection, a simple controller model chooses which group of vehicle signals may show green. Engineers can follow its state sequence, compare queues under different invented arrival patterns, and check a narrowly defined model property. They can even propose a change to the software in a small, reviewable increment.
+At the intersection workshop, a maintainer asked how to tell what the controller requested and what the signal actually showed. Picture a check mark on a service laptop beside a request for amber. Before the team orders equipment, decide what that mark should mean and how you would check it. [The maintainer’s question in Chapter 2](02-introducing-the-engineering-challenge.md#start-with-engineering-intent).
 
-None of that tells them what will happen at a signal head on the roadside.
-
-Between a model's command and a visible indication lie interfaces, electronics, power, physical equipment, installation conditions, communication behavior, and people who will operate and maintain the result. Integration is where separate definitions and components must begin to work as a system. It is not the final act of connecting already finished parts. It is engineering work that needs its own questions, methods, evidence, and decisions.
+At product kickoff, the team already has a phase sequence to exercise and a way to trace an observation to its inputs, model revision and rationale. An engineer or agent can start there. Less time spent reconstructing earlier decisions means the team can investigate its first product interface sooner. [Chapter 9’s digital thread](09-engineering-in-small-reviewable-increments.md#the-digital-thread) · [Recorded two-cycle run](https://github.com/And-Gu/executable-engineering-lab/blob/973ff66ebb06daafbd2ddaf35682e0e8da2bffd7/project/v3/case-study/two-cycle-run.json).
 
 ## One word, two different interfaces
 
-Consider the interface that connects a signal controller to a fictional signal-driving adapter.
+<span id="establish-the-system-boundary"></span>Follow the amber request out of the controller, through the adapter that drives the lamp, to the head a driver faces. The two proposed interface definitions use the same word at different points along that path.
 
-The controller-side candidate definition, **INT-IF-001 revision A**, expects an acknowledgment that a requested signal state has been *applied*. A fictional adapter definition, **INT-IF-ADAPTER-002 revision B**, instead offers an acknowledgment that the command *message was received*.
+| Proposed interface | What “acknowledged” means |
+| --- | --- |
+| Controller, `INT-IF-001` revision A | The controller expects evidence that the requested indication was applied. |
+| Adapter, `INT-IF-ADAPTER-002` revision B | The adapter reports that it received the command message. |
 
-A diagram might label both messages “acknowledged.” But the two statements have different meanings.
+<figure class="intersection-overview">
 
-| Candidate contract | What an acknowledgment means | What it does not establish |
-|---|---|---|
-| Controller definition, rev A | The design expects confirmation that the commanded indication was applied | That real equipment has been tested or an indication has been observed |
-| Adapter definition, rev B | A command message was received | That the indicated physical state changed as requested |
+![A laptop shows a check mark. The middle amber lamp is lit on a vertical signal, and a camera is aimed at the lamp.](../../illustrations/signal-integration-bench.jpg)
 
-These are deliberately invented, proposed interface definitions. Their difference is the learning example, not a claim about an actual supplier or hardware product.
+<figcaption>Illustration of a proposed integration bench. The laptop could report command receipt. A camera record tied to the same command and head could establish which lamp was visible from that position at that time.</figcaption>
+</figure>
 
-Ask yourself: if the adapter receives a request to change a light, has the controller learned that the light actually changed?
+An adapter could meet revision B exactly and still leave the controller waiting for evidence of the applied indication. The team records the difference in `INT-DISC-001` and defers accepting the two interfaces as compatible. Discovering this while the adapter is still a purchasing choice is the early feedback Chapter 1 described. [Interface discrepancy record](../../case-study/DECISION-CHAIN.md) · [Chapter 1 on earlier feedback](01-the-new-engineering-paradigm.md#where-earlier-feedback-improves-delivery).
 
-It has not. The message could be received while the physical indication remains unknown. A transport-layer acknowledgment is useful, but it does not automatically satisfy a requirement about displayed signal behavior. Neither the software's data structure nor the diagram's arrow can settle that distinction.
+## Define the first product increment
 
-The resulting engineering discrepancy, **INT-DISC-001**, is therefore not merely a naming inconsistency. It is a conflict between what one side needs to know and what the other side claims to report.
+The maintainer supplies the need, T1 supplies an amber step, and the contracts establish what receipt means. The product lead can use these same sources in two ways.
 
-## Establish the system boundary
+**A product specification** could set two verifiable requirements. In the amber step of the bench sequence, the designated head shall show amber at the agreed observation point. For that head and command, the service display shall show “received, indication unknown” when the adapter acknowledges receipt and independent indication feedback is absent. The buyer and supplier would agree on the head, step and viewpoint.
 
-In the earlier chapters, we deliberately modeled only a tiny part of the product: phase selection and abstract vehicle queues. That was sufficient for a bounded experiment about an invented fixed-phase schedule.
+**An agile increment** could start with this intent. Give the maintainer a way to distinguish receipt from a confirmed indication while using the receipt-only adapter. At review, give them two acknowledged requests, one with independent confirmation and one without. They should be able to identify the confirmed indication and say when the state is unknown. The team chooses how to obtain and present feedback in service. The illustrated camera is independent test equipment.
 
-A physically integrated signal system has a larger scope. The controller must issue commands through a defined interface. Other equipment must interpret them. The installed system must provide relevant indications, diagnostics, and failure behavior under its intended operating conditions.
+In Chapter 3, the team chose to follow one arrival to resolve an event-order disagreement. Here, holding the receipt constant and varying the feedback lets the team test whether the maintainer can recognize an unknown indication. [Choosing an investigation in Chapter 3](03-planning-under-uncertainty.md#choose-the-next-investigation).
 
-Road users are part of the operating context, not internal objects in the controller model. A maintainer who diagnoses a fault interacts with the product differently from an engineer studying queue behavior. These distinctions matter when deciding which functions belong where, which interfaces need contracts, and what information different people must be able to inspect.
+## Keep the model as a test reference
 
-The team does not need to build the whole system to identify the current gap. It needs to state the product boundary and make the meaning of the interface explicit.
+<span id="developing-the-product-and-developing-how-we-engineer-it"></span>Suppose the product uses a timer-driven state machine in embedded firmware and a separate adapter to drive the lamp. It need never count vehicles. An engineer could map a test clock to T1’s eight checkpoints and compare the firmware’s phase requests with the saved trace. At checkpoint three, T1 expects north–south amber. A request for green would send the engineer back to the clock mapping and phase logic before taking up bench time. [Phase sequence and slot assumptions](../../case-study/model-inputs-v1.json) · [Reference trace](../../case-study/trace-v1.csv).
 
-In the [teaching source graph](../../case-study/source-graph-v1.json), the candidate function, model, property, and command interface have stable identifiers. That allows the discrepancy to refer to the same interface throughout the course. An identifier does not make a contract correct, but it lets engineers ask whether they are discussing the same revision.
+> **Concept**
+>
+> A **test oracle** supplies the expected result for a check. Here the saved trace gives an independent reference for the fixed phase order. T1’s abstract slots have no duration in seconds. Checking real-time response takes a clock, and checking the light takes an observer.
 
-## From a mismatch to an integration investigation
+## What would count as implemented or verified?
 
-What should happen next? One tempting answer is to make the two interfaces use the same word. That would hide the discrepancy without resolving the engineering question.
+<span id="a-product-configuration-with-open-evidence"></span>Consider a hypothetical configuration, **Bench 1**, with controller build 12, adapter firmware 3, head assembly revision 2 and service display build 4. To mark the display requirement **implemented**, link it to the reviewed decision to track receipt and indication separately and to the change in display build 4 that puts that decision into effect.
 
-A better response begins with a decision: **do not yet accept interface equivalence**.
+Marking it **verified** would also require a test record. Imagine running software test *Receipt without feedback*, revision 1, against display build 4 and an emulator of adapter contract B. The test delivers a receipt for the selected head and withholds indication feedback. If the display reads “received, indication unknown,” the captured text meets the criterion for that software configuration. The record would tie the test revision, actual configuration, inputs and observed text to the requirement.
 
-The controller and adapter owners first clarify what each acknowledgment actually represents. Does the controller need confirmation of message reception, application of a command, observation of a physical indication, or different information for different purposes? Are those states distinguishable, and who is responsible for the difference?
+<span id="from-a-mismatch-to-an-integration-investigation"></span>For the visible-amber requirement, the proposed Bench 1 test would hold the amber request through the observation step, record the reply and capture the head from the agreed viewpoint. The engineer would compare the requested indication with the image for that command. A completed log with a missing image would leave the visible result open. The physical test remains a proposal.
 
-Only then can the team choose an investigation that would answer the right question.
+## Spend test time on the question it can answer
 
-For example, it might propose an emulator or a small bench setup. The experiment would put a known controller-side command into a known adapter configuration, observe which acknowledgment was reported, and—where appropriate—establish separately how an applied indication could be observed. A useful negative case would distinguish “message received, indication not established” from “applied indication confirmed.”
+The phase and receipt checks can run on each software change. For IT security, suppose maintainers may read the history but only operators may change commands. A software check under the maintainer role should allow a history request and deny a command change. Run it when the access policy changes, then exercise the configured roles on the integrated build.
 
-This is a **proposed experiment**, not an executed physical test. We have not specified real electrical pinouts, roadside timing rules, equipment safety behavior or a compliant installation design. Those would require a different technical investigation and the applicable engineering expertise.
+At peak message load, an old confirmation may arrive after a newer request. On a representative controller and adapter, check that each report still names the correct head and command and arrives within the agreed response limit. For endurance, repeat the workload for the period the diagnostic must operate unattended. Track missed reports and memory use to decide whether performance degrades over time.
 
-Nevertheless, the proposal is already concrete enough to review. It states a question, a source revision, a discriminating observation, a responsible engineering interface and the gap that would remain after the experiment.
+<span id="the-operator-and-maintainer-enter-the-story"></span>For usability, give a maintainer the two acknowledged requests and ask what they would tell an operator. If they read “received” as “the lamp is on,” record what they saw and revise the display.
 
-## Developing the product and developing how we engineer it
+## Follow an electronics change into the enclosure
 
-The discrepancy affects two systems.
+<span id="why-small-increments-still-need-systems-integration"></span>Suppose electronics proposes a board with a connector for an optical sensor. A sensor at every head adds parts and alignment labor. A portable instrument requires a site visit for each observation. Ask operations whether confirmation is needed in the control room before comparing the cost of outfitting the heads with the cost of those visits.
 
-For the **product**, the team may need to revise the command/acknowledgment interface, define failure reporting, change the controller's assumptions, or specify an additional observable condition. The right solution is not yet known.
+The electronics engineer can issue a board drawing from the circuit design tool. The mechanical engineer needs the new connector location in the enclosure model to check clearance and the sensor’s view of the lamp. Software needs the revised interface definition to associate feedback with the correct request. Link the board, mounting drawing and firmware revisions to the shared requirement and integration plan. A colleague or agent can then identify the affected assembly. On that combination, the integration lead would repeat the fit check and compare the diagnostic with an independent lamp observation.
 
-For the **engineering environment**, the team needs a way to compare interface definitions, identify incompatible revisions, create and run meaningful integration checks, retain the tested configuration, and explain what the result establishes. It may need an adapter emulator, a bench test, better source relationships, or a shared discrepancy record.
+> **Explore further**
+>
+> Which equipment belongs to the product, and which does the team need to test it? NASA describes how to prepare the integration environment, including its simulators and recording equipment. [NASA’s Systems Engineering Handbook, Product Realization](https://www.nasa.gov/reference/5-0-product-realization/).
 
-This is the practical meaning of developing the machine that builds the machine. The team does not invest in test infrastructure because automation is fashionable. It invests because a product question cannot be resolved using the capabilities currently available.
-
-The integration environment then becomes reusable. A later adapter change can be checked against the agreed semantics. A future software increment may receive earlier feedback from the same interface contract. The team still has to decide whether that feedback applies to the actual configuration under consideration.
-
-## The operator and maintainer enter the story
-
-A system can behave as its internal model predicts and still be difficult to use or maintain.
-
-Suppose an operator sees that a command was issued, but cannot tell whether the commanded indication was established. What information is available? Can the configuration be identified? Who can isolate the discrepancy? What would be recorded for later investigation?
-
-These are questions about intended use and supportability, not optional notes to add after software implementation.
-
-A controller's internal trace might explain which phase it selected. A communication log might explain which message was received. An observation of actual indication would support a different statement. Confusing those records creates false confidence.
-
-For our teaching case, we do not assume a fielded installation or invent an operator report. We use an illustrative maintainer question to expose information and behavior the product definition has not yet addressed.
-
-The team can record that as an open engineering item. Doing so is progress: it makes the boundary of current knowledge visible.
-
-## Why small increments still need systems integration
-
-The previous chapter argued for small, reviewable increments. That remains valuable, but a small change in source code is not necessarily a small change in system meaning.
-
-An input-validation improvement that rejects negative invented traffic arrivals can form a narrow, end-to-end learning increment. A change to the acknowledgment semantics crosses the controller, adapter and physical-observation boundary. It may require several disciplines to agree on one outcome, even if the corresponding software diff is tiny.
-
-Architecture helps the team isolate change where it can. It does not make genuine dependencies disappear.
-
-This is also why integration cannot simply be delegated to an agent that can open a pull request. Agents may help compare definitions, generate proposed test scenarios and prepare a change record. They need correct source revisions and appropriate tools. Their completion of a task is neither an interface agreement nor evidence that an indication was observed.
-
-## A product configuration with open evidence
-
-By the end of this investigation, the team can assemble a **provisional configuration record**:
-
-- The teaching phase model and its T1 assumptions remain identifiable.
-- The controller interface expects applied-state acknowledgment.
-- The fictional adapter offers message-received acknowledgment.
-- The discrepancy has not been resolved.
-- An interface-semantics review and an integration/observability experiment are proposed.
-- No physical compatibility, indication, operator usability or deployment readiness has been established.
-
-This is not failure to integrate a product. It is an honest engineering checkpoint: the team can say precisely what is understood, what was only proposed, and what would need to be demonstrated before making a stronger claim.
-
-The [shared decision chain](../../case-study/DECISION-CHAIN.md) shows the proposed discrepancy alongside its possible evidence and authority consequences. The record is intentionally small enough to inspect without installing a modeling tool.
+<!-- interactive: chapter-quiz -->
 
 ## What does our evidence actually support?
 
-A passing phase-sequence check could establish a property of the simplified model under its declared assumptions. A review of two interface definitions could establish that their meanings differ. A future bench observation might establish something about a specific hardware configuration.
-
-Those are different claims, and they need different evidence.
-
-The next chapter, **Verification, Validation and Engineering Evidence**, examines how to connect each claim to a suitable method, configuration, result and limitation—without turning the fact that a tool completed successfully into an unwarranted statement about an integrated product.
-
-**Engineering takeaway:** An executable model is an invaluable way to investigate behavior. An integrated product must also have consistent interfaces, a relevant physical and operational boundary, and evidence suited to the claims being made. Product integration is where those assumptions meet—and where the engineering environment must be capable of investigating the differences.
-
----
-
-*Further reading:* [NASA — Product Realization](https://www.nasa.gov/reference/5-0-product-realization/) explains why interfaces, integration enabling equipment, sequencing and transition need deliberate engineering work. It is an educational reference, not an applicable traffic-control regulation. For the underlying fictional definitions, inspect the [T1 case-study index](../../case-study/README.md).
+The integration lead can hand over the T1 trace, both proposed interface revisions and the open discrepancy. The contracts establish why receipt leaves the lamp state unknown. The bench and maintainer trials remain planned. Which claims can the reviewer make for this configuration, and what would establish that the product serves its intended users? [Chapter 11, Verification, Validation and Engineering Evidence](11-verification-validation-and-engineering-evidence.md).

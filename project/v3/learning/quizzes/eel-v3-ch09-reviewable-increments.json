@@ -1,0 +1,59 @@
+[
+  {
+    "id": "choose-first-increment",
+    "prompt": "The traffic engineer can review one increment before the full two-cycle comparison is ready. Which assignment would let the engineer decide whether to proceed?",
+    "options": [
+      {
+        "text": "Save the two slot 16 counts and rerun the candidate calculation to see whether it gives the same totals.",
+        "feedback": "That establishes repeatability. An implementation that restarts the queues can reproduce the same cycle-end counts on every run."
+      },
+      {
+        "text": "Check both first cycles against the saved rows, then show B’s starting queues and departures at slot 9.",
+        "feedback": "The reviewer can check that the first cycle still works and that a vehicle left over from slot 8 departs on the next green. The reporting work can follow.",
+        "correct": true
+      },
+      {
+        "text": "Generate a 16-row report for each arrival pattern and check that every row has a phase and two directional counts.",
+        "feedback": "This checks the report’s structure. A reset at slot 9 would still produce 16 labeled rows with counts in both directions."
+      }
+    ]
+  },
+  {
+    "id": "expand-delegation",
+    "prompt": "The lead is considering a day’s assignment with several reviewable changes. Which observation from the smaller assignments gives the lead the strongest basis for delegating it?",
+    "options": [
+      {
+        "text": "The agent predicted the boundary behavior from the brief, and an independent test caught a deliberately introduced reset.",
+        "feedback": "The lead has seen evidence of both the agent’s interpretation and the checker’s ability to detect a mistake. The larger assignment can use those checks and agreed exceptions.",
+        "correct": true
+      },
+      {
+        "text": "The plan lists every file the agent expects to edit and estimates a full working day for the changes.",
+        "feedback": "A file list and an estimate help schedule the work. They leave open whether the agent understands the carry rule and whether the tests could catch a reset."
+      },
+      {
+        "text": "Another agent reran the same implementation and reproduced its final counts for both scenarios.",
+        "feedback": "A second run can expose a reproducibility problem. Both runs would also reproduce a systematic error in how that implementation starts the second cycle."
+      }
+    ]
+  },
+  {
+    "id": "refer-changed-question",
+    "prompt": "During a delegated assignment, the agent finds that its implementation accidentally starts slot 9 empty. A colleague also asks to study two independent windows that both start empty. How should the agent handle these findings?",
+    "options": [
+      {
+        "text": "Adopt the colleague’s interpretation for the comparison and see whether any of the reported cycle-end counts change.",
+        "feedback": "The interpretation changes the experiment even if the end counts happen to agree. The traffic engineer asked what happens to vehicles waiting across the boundary."
+      },
+      {
+        "text": "Pause all work until the traffic engineer personally approves a correction to the initialization code.",
+        "feedback": "The reviewed brief already settles how the continuous run starts slot 9. The delegated assignment allows the agent to repair that implementation error and check its work."
+      },
+      {
+        "text": "Repair the unintended reset and rerun the agreed checks. Refer the request for an independent-window comparison to the engineer.",
+        "feedback": "The first change restores the approved behavior. The second asks a different question and needs its own decision, rationale and results.",
+        "correct": true
+      }
+    ]
+  }
+]

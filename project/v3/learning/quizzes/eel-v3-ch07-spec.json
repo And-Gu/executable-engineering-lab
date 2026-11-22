@@ -1,0 +1,59 @@
+[
+  {
+    "id": "prototype-to-brief",
+    "prompt": "A prototype shows that the traffic engineer needs counts for each direction. Its prompt says only “run twice.” What should happen before the coding agent implements the comparison?",
+    "options": [
+      {
+        "text": "Give the agent the prototype’s screenshots as the reference for how the two cycles should behave.",
+        "feedback": "The screenshots can convey a useful display choice. They leave open whether waiting vehicles should carry into the next cycle."
+      },
+      {
+        "text": "Have the traffic engineer and model owner agree on what repeats, what carries over and which records the reviewer should use.",
+        "feedback": "The traffic engineer resolves the purpose of the comparison. The model owner checks the rules and reference rows. Their brief gives the agent a reproducible assignment.",
+        "correct": true
+      },
+      {
+        "text": "Let the agent choose whichever interpretation best reproduces B’s first eight rows.",
+        "feedback": "Both interpretations can reproduce all eight rows. The disagreement concerns what happens after the last one."
+      }
+    ]
+  },
+  {
+    "id": "review-the-deliverable",
+    "prompt": "The agent returns one combined vehicle count and a screenshot for each scenario. Which request follows from the reviewed brief?",
+    "options": [
+      {
+        "text": "Ask for separate NS and EW counts after slots 8 and 16, with the input revision and run that produced them.",
+        "correct": true,
+        "feedback": "Those records answer the traffic engineer’s directional question and give the reviewer a way to reproduce the comparison."
+      },
+      {
+        "text": "Ask the agent to average the two screenshots so there is one number to compare.",
+        "feedback": "An average would hide which approach accumulated vehicles. It also loses the distinction between the two observation windows."
+      },
+      {
+        "text": "Approve the report if the combined totals match, then ask for per-direction counts only if they grow.",
+        "feedback": "One direction could grow while the other shrinks. The engineer asked for both directions before interpreting whether the queues changed."
+      }
+    ]
+  },
+  {
+    "id": "test-from-spec",
+    "prompt": "Which approach uses test-driven development to implement the reviewed brief?",
+    "options": [
+      {
+        "text": "Write one runnable check for the boundary behavior, see it fail, change the implementation, then refactor with the tests passing.",
+        "feedback": "The expected behavior comes from the reviewed rule. Each small change can be checked alongside the earlier regression cases.",
+        "correct": true
+      },
+      {
+        "text": "Run the new implementation, copy its output into the expected results, then check that a second run matches.",
+        "feedback": "That checks repeatability. A mistaken reset could reproduce the same wrong trace on every run."
+      },
+      {
+        "text": "Build the two-cycle calculation, then ask a reviewer to compare its output against the brief.",
+        "feedback": "Reviewing against the brief can find defects. In TDD, a runnable expectation for one behavior guides the change from the start."
+      }
+    ]
+  }
+]

@@ -1,0 +1,69 @@
+---
+import record from '../../../../project/v3/case-study/two-cycle-run.json';
+
+const snapshot = 'https://github.com/And-Gu/executable-engineering-lab/blob/973ff66ebb06daafbd2ddaf35682e0e8da2bffd7/';
+const base = import.meta.env.BASE_URL;
+const sources = {
+  result: snapshot + 'project/v3/case-study/two-cycle-run.json',
+  inputs: snapshot + record.sources.inputs.path,
+  model: snapshot + record.sources.calculation.path,
+  tests: snapshot + 'models/intersection/queue.test.ts',
+  brief: base + 'learn/v3/07-spec-driven-development-without-waterfall/',
+  harness: base + 'learn/v3/08-directing-ai-engineering-agents/',
+};
+const scenario = record.scenarios.find(s => s.id === 'B')!;
+const forward = [
+  { title: 'Rule and rationale', text: 'A cycle ends an observation window. Waiting vehicles still belong to the next slot.', link: sources.brief, label: 'Reviewed teaching brief' },
+  { title: 'Plan the first increment', text: 'Engineer and agent agree to preserve the first cycle and test the boundary before extending the assignment.' },
+  { title: 'Implement within the harness', text: 'Project instructions and permissions govern what the agent can read, change and run.', link: sources.harness, label: 'Working agreement' },
+  { title: 'Run the affected checks', text: 'Compare the first eight slots with the saved trace, then check the queues and departures in slot 9.', link: sources.tests, label: 'Regression checks' },
+  { title: 'Decide and record why', text: 'The engineer reviews the run, identifies affected decisions and records an accepted rule under a new revision. Prior results keep their original inputs.', link: sources.result, label: 'Existing run record' },
+];
+const backward = [
+  { title: 'Observed departure', text: `Scenario B records ${scenario.first_slot_of_second_cycle.departures.NS} north–south departure in slot 9. Start with the observation the engineer is reviewing.`, link: sources.result, label: 'Recorded boundary row' },
+  { title: 'Run and inputs', text: 'The run identifies the model, input and runner by revision or checksum. In B, both new arrivals in slot 9 are east–west.', link: sources.inputs, label: 'T1 arrival pattern B' },
+  { title: 'Model function and check', text: 'The calculation keeps both queues while the phases repeat. Its first eight slots can be checked against an independent trace.', link: sources.model, label: 'Calculation used by the run' },
+  { title: 'Planned boundary', text: 'The first increment asks whether the queue at the end of slot 8 is present before the next arrivals. Recover the condition the engineer chose to test.' },
+  { title: 'Engineering rationale', text: 'The vehicles are still waiting when the signal cycle restarts. That physical interpretation explains the reviewed carry-over rule.', link: sources.brief, label: 'Rule in the teaching brief' },
+];
+---
+<figure id="digital-thread" aria-labelledby="thread-title">
+  <h3 id="thread-title">Follow the carry-over rule in either direction</h3>
+  <fieldset>
+    <legend>Choose a question to trace.</legend>
+    <div class="directions">
+      <label><input type="radio" name="thread-direction" value="backward" aria-controls="trace-backward" checked /> Where did this result come from?</label>
+      <label><input type="radio" name="thread-direction" value="forward" aria-controls="trace-forward" /> What changes if we revise the rule?</label>
+    </div>
+    {[{ id: 'backward', title: 'From a result to its rule', steps: backward }, { id: 'forward', title: 'From a rule to the next decision', steps: forward }].map(path =>
+      <div class="path" id={'trace-' + path.id}>
+        <h4>{path.title}</h4>
+        <ol role="list">{path.steps.map(step => <li>
+          <strong>{step.title}</strong><span>{step.text} {step.link && <a href={step.link}>{step.label}</a>}</span>
+        </li>)}</ol>
+      </div>)}
+  </fieldset>
+  <figcaption>The run and source links identify the synthetic T1 calculation. The planning and decision steps illustrate how a team can maintain those connections.</figcaption>
+</figure>
+<style>
+  figure { max-width: 70ch; margin: 2rem 0; padding-block: 1.25rem; border-block: 1px solid var(--rule); }
+  h3, h4, ol { margin: 0; }
+  fieldset { border: 0; min-width: 0; margin: .65rem 0; padding: 0; }
+  legend, figcaption { padding: 0; color: var(--muted); font-size: .9rem; }
+  .directions { display: flex; flex-wrap: wrap; gap: .45rem .75rem; margin: .45rem 0 1rem; }
+  label { display: inline-flex; align-items: center; gap: .55rem; padding: .45rem .75rem; border: 1px solid var(--rule); cursor: pointer; }
+  input { margin: 0; accent-color: var(--teal); flex: none; }
+  label:has(:checked) { border-color: var(--teal); font-weight: 600; }
+  label:has(:focus-visible) { outline: 2px solid var(--gold); outline-offset: 2px; }
+  fieldset:has([value="backward"]:checked) #trace-forward,
+  fieldset:has([value="forward"]:checked) #trace-backward { display: none; }
+  h4 { margin-bottom: .75rem; color: var(--teal); }
+  ol { list-style: none; padding: 0; }
+  li { position: relative; display: grid; grid-template-columns: minmax(7rem, 30%) 1fr; gap: .25rem 1rem; align-items: baseline; margin: 0 0 1.1rem; padding: .6rem .9rem; border: 1px solid var(--rule); background: var(--panel); line-height: 1.5; }
+  li:last-child { margin-bottom: .8rem; }
+  li:not(:last-child)::after { content: ''; position: absolute; top: 100%; left: 1.35rem; height: 1rem; border-left: 2px solid var(--teal); }
+  li:not(:last-child)::before { content: ''; position: absolute; top: calc(100% + .52rem); left: 1.16rem; width: .4rem; height: .4rem; transform: rotate(45deg); border: solid var(--teal); border-width: 0 2px 2px 0; }
+  li span { font-size: .93rem; }
+  @media (max-width: 600px) { li { grid-template-columns: minmax(0, 1fr); } }
+  @media (forced-colors: active) { label:has(:checked) { outline: 2px solid Highlight; } }
+</style>

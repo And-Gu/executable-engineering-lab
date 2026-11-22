@@ -3,7 +3,7 @@
 
 **Single case:** One fictional four-way traffic intersection, introduced in Chapter 2 and used for the technical progression. Chapter 1 stands alone as the engineering-paradigm overview.
 
-**Title status:** The proposed capstone title *Choosing the Next Engineering Capability* appears in the owner-accepted fourteen-chapter plan. Retain the existing Chapter 06 title *Spec-Driven Development Without Waterfall* for now; the independent review's alternative *Specifying the Next Engineering Increment* remains a separate editorial naming decision. Older 13-chapter text remains preserved as source material and must not be silently renumbered.
+**Title status:** The proposed capstone title *Choosing the Next Engineering Capability* appears in the owner-accepted fourteen-chapter plan. Retain the existing Chapter 07 title *Spec-Driven Development Without Waterfall* for now; the independent review's alternative *Specifying the Next Engineering Increment* remains a separate editorial naming decision. Older 13-chapter text remains preserved as source material and must not be silently renumbered.
 
 | Part | # | Chapter | Distinct learning gain | Primary intersection teaching view |
 |---|---:|---|---|---|
@@ -12,11 +12,11 @@
 | I | 03 | Planning Under Uncertainty | Revise the next increment when a prototype changes what the team knows | Reconcile two readings of the same queue before requesting arrival data |
 | II — Build and Test Knowledge | 04 | Engineering Knowledge as Code | Use typed relationships to check a proposed change against engineering sources | Trace a phase-selection change to the queue model that represents the function |
 | II | 05 | Learning Through Models and Prototypes | Run an experiment and save what it taught the team about the model | Move one arrival, compare the queue traces and record the result against the model revision |
-| II | 06 | Engineering Data: From Measurements to Decisions | Curate, annotate, inspect and reuse engineering observations | Original, checked and derived records |
-| II | 07 | Spec-Driven Development Without Waterfall | Define a bounded next increment while leaving other uncertainties open | Progressive specification and decisions |
-| III — Develop an Integrated Product | 08 | Directing AI Engineering Agents | Bound, observe and review delegated engineering work | Illustrative task context, tool actions and handover |
-| III | 09 | Engineering in Small, Reviewable Increments | Establish useful review boundaries and cross-discipline dependencies | Thin vertical improvement and dependent interface change |
-| III | 10 | From Models to an Integrated Product | Bridge model/software work to product interfaces, physical integration and intended use | Interface semantics mismatch and integration questions |
+| II | 06 | Engineering Data: From Measurements to Decisions | Decide what the next measurement can settle and keep the model runnable | Follow both queues across a cycle boundary and qualify the result |
+| II | 07 | Spec-Driven Development Without Waterfall | Turn an engineering request into a brief an engineer can approve | Specify the boundary behavior, reference and acceptance outputs |
+| II | 08 | Directing AI Engineering Agents | Choose between task support and a delegated outcome | Give an agent the sources, permissions and independent check for a comparison |
+| II | 09 | Planning and Controlling Agents | Choose a first increment and decide when to expand a delegated plan | Trace the carry-over rule from its rationale to a result and back |
+| III — Develop an Integrated Product | 10 | From Models to an Integrated Product | Turn prototype learning into a product requirement and select evidence for the claim | Compare command receipt with an independently observed signal indication |
 | IV — Establish Trust and Sustain Change | 11 | Verification, Validation and Engineering Evidence | Qualify claims against the integrated configuration and intended use | Claim, method, result and applicability |
 | IV | 12 | Governance and Engineering Authority | Identify controls, authority, technical integrity and residual risks | One deferred change with evidence gaps |
 | IV | 13 | Continuously Integrated Engineering | Design and operate an engineering factory for controlled changes | Eligibility and blocked-release decision |

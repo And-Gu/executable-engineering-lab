@@ -1,0 +1,166 @@
+{
+  "id": "INT-RUN-T1-TWO-CYCLES",
+  "model": "INT-MOD-001",
+  "revision": "T1",
+  "scope": "Synthetic fixed-phase simulation. Each scenario repeats its own arrivals. Queues carry across the boundary.",
+  "unit": "vehicles per direction after service in an abstract slot",
+  "event_order": [
+    "add arrivals to queues",
+    "serve at most one vehicle from the green group's non-empty queue",
+    "record departures and remaining queue"
+  ],
+  "sources": {
+    "inputs": {
+      "path": "project/v3/case-study/model-inputs-v1.json",
+      "sha256": "18e2fe9ead1c8c0c1a30e8593cf43255a0f29696d367e10751315a075ba9997e"
+    },
+    "calculation": {
+      "path": "models/intersection/queue.mjs",
+      "sha256": "1a37be436ede7991ed5d9a1f013e1f49749bfe60bca28aac5796aebf1e8453de"
+    },
+    "reference_cycle": {
+      "path": "project/v3/case-study/trace-v1.csv",
+      "sha256": "f207af5896ddcd8859568ee1e54222ba243c12ec466dc66fb0ad6c76e461a4a7"
+    },
+    "runner": {
+      "path": "project/v3/case-study/run-two-cycles.mjs",
+      "sha256": "253836901181f7dfad2c076452459a91f6645acd3ef2d0e94bb64dfeb6f7a7e0"
+    }
+  },
+  "scenarios": [
+    {
+      "id": "A",
+      "after_first_cycle": {
+        "slot": 8,
+        "phase": "ALL_RED",
+        "opening_queue": {
+          "NS": 1,
+          "EW": 0
+        },
+        "arrival": {
+          "NS": 0,
+          "EW": 0
+        },
+        "departures": {
+          "NS": 0,
+          "EW": 0
+        },
+        "queue": {
+          "NS": 1,
+          "EW": 0
+        }
+      },
+      "before_next_arrivals": {
+        "NS": 1,
+        "EW": 0
+      },
+      "first_slot_of_second_cycle": {
+        "slot": 9,
+        "phase": "NS_GREEN",
+        "opening_queue": {
+          "NS": 1,
+          "EW": 0
+        },
+        "arrival": {
+          "NS": 1,
+          "EW": 0
+        },
+        "departures": {
+          "NS": 1,
+          "EW": 0
+        },
+        "queue": {
+          "NS": 1,
+          "EW": 0
+        }
+      },
+      "after_second_cycle": {
+        "slot": 16,
+        "phase": "ALL_RED",
+        "opening_queue": {
+          "NS": 1,
+          "EW": 0
+        },
+        "arrival": {
+          "NS": 0,
+          "EW": 0
+        },
+        "departures": {
+          "NS": 0,
+          "EW": 0
+        },
+        "queue": {
+          "NS": 1,
+          "EW": 0
+        }
+      }
+    },
+    {
+      "id": "B",
+      "after_first_cycle": {
+        "slot": 8,
+        "phase": "ALL_RED",
+        "opening_queue": {
+          "NS": 2,
+          "EW": 0
+        },
+        "arrival": {
+          "NS": 0,
+          "EW": 0
+        },
+        "departures": {
+          "NS": 0,
+          "EW": 0
+        },
+        "queue": {
+          "NS": 2,
+          "EW": 0
+        }
+      },
+      "before_next_arrivals": {
+        "NS": 2,
+        "EW": 0
+      },
+      "first_slot_of_second_cycle": {
+        "slot": 9,
+        "phase": "NS_GREEN",
+        "opening_queue": {
+          "NS": 2,
+          "EW": 0
+        },
+        "arrival": {
+          "NS": 0,
+          "EW": 2
+        },
+        "departures": {
+          "NS": 1,
+          "EW": 0
+        },
+        "queue": {
+          "NS": 1,
+          "EW": 2
+        }
+      },
+      "after_second_cycle": {
+        "slot": 16,
+        "phase": "ALL_RED",
+        "opening_queue": {
+          "NS": 2,
+          "EW": 0
+        },
+        "arrival": {
+          "NS": 0,
+          "EW": 0
+        },
+        "departures": {
+          "NS": 0,
+          "EW": 0
+        },
+        "queue": {
+          "NS": 2,
+          "EW": 0
+        }
+      }
+    }
+  ]
+}

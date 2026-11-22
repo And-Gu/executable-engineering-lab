@@ -1,0 +1,59 @@
+[
+  {
+    "id": "test-the-boundary",
+    "prompt": "A new implementation gets B’s final count right. Which check would expose an accidental reset between the two cycles?",
+    "options": [
+      {
+        "text": "Count the four NS and four EW arrivals across all 16 slots.",
+        "feedback": "A reset discards waiting vehicles. The incoming traffic can still add up exactly as specified."
+      },
+      {
+        "text": "Look for an NS departure at slot 9, when the only arrivals are EW.",
+        "feedback": "That departure uses one of the two NS vehicles carried from slot 8. A reset would leave nobody to depart on this green, yet B could still finish with two vehicles.",
+        "correct": true
+      },
+      {
+        "text": "Compare the last row of each independent eight-slot B run.",
+        "feedback": "Independent runs each start empty and each end with two NS vehicles. They leave the handoff between the cycles untested."
+      }
+    ]
+  },
+  {
+    "id": "qualify-the-record",
+    "prompt": "The spreadsheet’s author confirms that 20 counts vehicles. Which follow-up would establish whether it belongs beside B’s slot-16 result?",
+    "options": [
+      {
+        "text": "Check whether both files were exported on the day the model was run.",
+        "feedback": "An export date can help locate a source. It cannot identify which queues were counted, under which conditions or when the count was taken."
+      },
+      {
+        "text": "Check whether the model accepts a queue of 20 as a valid whole number.",
+        "feedback": "Twenty is a possible count, but checking the value’s format leaves its meaning and origin unresolved."
+      },
+      {
+        "text": "Recover which queues were counted, when, and under which input conditions and configuration.",
+        "feedback": "With those details and the input conditions, a reviewer can judge whether both records measure the same quantity under comparable conditions.",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "id": "time-the-interface",
+    "prompt": "A requirement limits detector-to-controller delivery time while diagnostics share the physical link. Which run would let the reviewer assess that requirement for the proposed configuration?",
+    "options": [
+      {
+        "text": "Use the intended devices and link under the specified load. Measure from send to receipt.",
+        "feedback": "The measured interval and load match the requirement. Recording the device revisions, link settings and clock basis lets the reviewer relate the result to this configuration.",
+        "correct": true
+      },
+      {
+        "text": "Run the receiver software under the specified load. Measure how long it spends processing each delivered report.",
+        "feedback": "That run could identify a processing bottleneck. Its clock starts after delivery, so it misses the interval the requirement limits."
+      },
+      {
+        "text": "Use the intended devices and link with diagnostics paused. Measure from send to receipt.",
+        "feedback": "This would give an unloaded baseline. The requirement concerns competition for the link, so the reviewer needs a run with the declared diagnostic traffic."
+      }
+    ]
+  }
+]

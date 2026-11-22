@@ -1,0 +1,83 @@
+---
+import inputs from '../../../../project/v3/case-study/model-inputs-v1.json';
+import record from '../../../../project/v3/case-study/two-cycle-run.json';
+const source = 'https://github.com/And-Gu/executable-engineering-lab/blob/973ff66ebb06daafbd2ddaf35682e0e8da2bffd7/project/v3/case-study/two-cycle-run.json';
+---
+<figure id="two-cycle-experiment" class="queue-experiment" aria-labelledby="two-cycle-title">
+  <h3 id="two-cycle-title">Follow a queue into the second cycle</h3>
+  <p>Predict what will be waiting after the first green of cycle two. Each scenario repeats its own eight arrivals and phases.</p>
+  <form hidden>
+    <div class="queue-fields">
+      <label>Arrival pattern
+        <select name="scenario">{inputs.scenarios.map(s => <option value={s.id} selected={s.id === 'B'}>{s.id} · {s.name}</option>)}</select>
+      </label>
+      <div class="learning-actions"><button type="submit">Run two cycles</button></div>
+    </div>
+  </form>
+  <p class="run-status" role="status" aria-atomic="true"></p>
+  <div class="cycle-result" hidden>
+    <table>
+      <caption></caption>
+      <thead><tr><th scope="col">Observation</th><th scope="col">North–south</th><th scope="col">East–west</th></tr></thead>
+      <tbody>{['After slot 8', 'Before slot 9 arrivals', 'After slot 9', 'After slot 16'].map(label =>
+        <tr><th scope="row">{label}</th>{['NS', 'EW'].map(() => <td><span class="count"></span><span class="queue-bar" aria-hidden="true"></span></td>)}</tr>)}</tbody>
+    </table>
+    <p class="slot-detail"></p>
+  </div>
+  <noscript>
+    {record.scenarios.map(s => <details><summary>Inspect the recorded run for scenario {s.id}</summary>
+      <p>After slot 8, {s.after_first_cycle.queue.NS} north–south and {s.after_first_cycle.queue.EW} east–west vehicles carry into slot 9.
+        After service in slot 9 the queues are {s.first_slot_of_second_cycle.queue.NS} north–south and {s.first_slot_of_second_cycle.queue.EW} east–west.
+        After slot 16 they are {s.after_second_cycle.queue.NS} north–south and {s.after_second_cycle.queue.EW} east–west.</p>
+    </details>)}
+  </noscript>
+  <figcaption>A north–south green opens slot 9. Read both sides of that boundary to see which vehicles carried over. <a href={source}>Saved run and source revisions</a></figcaption>
+</figure>
+<script>
+  import inputs from '../../../../project/v3/case-study/model-inputs-v1.json';
+  import { runTwoCycles } from '../../../../models/intersection/queue.mjs';
+
+  const figure = document.querySelector<HTMLElement>('#two-cycle-experiment');
+  if (figure) {
+    const form = figure.querySelector('form')!;
+    const select = form.querySelector('select')!;
+    const result = figure.querySelector<HTMLElement>('.cycle-result')!;
+    const status = figure.querySelector<HTMLElement>('.run-status')!;
+    form.hidden = false;
+    select.addEventListener('change', () => {
+      result.hidden = true;
+      status.textContent = '';
+    });
+    form.addEventListener('submit', event => {
+      event.preventDefault();
+      const scenario = inputs.scenarios.find(s => s.id === select.value)!;
+      const rows = runTwoCycles(inputs, scenario.arrivals);
+      const boundary = inputs.horizon_slots;
+      const last = rows[rows.length - 1];
+      const carried = rows[boundary - 1].queue;
+      const next = rows[boundary];
+      const observations = [carried, next.opening_queue, next.queue, last.queue];
+      result.querySelectorAll('tbody tr').forEach((row, index) => {
+        const counts = observations[index];
+        const cells = row.querySelectorAll('td');
+        for (const [i, count] of [counts.NS, counts.EW].entries()) {
+          cells[i].querySelector('.count')!.textContent = String(count);
+          cells[i].style.setProperty('--vehicles', String(count));
+        }
+      });
+      result.querySelector('caption')!.textContent = 'Scenario ' + scenario.id + ' · vehicles waiting in each direction';
+      result.querySelector('.slot-detail')!.textContent =
+        `In slot ${next.slot}, arrivals were ${next.arrival.NS} north–south and ${next.arrival.EW} east–west. Departures were ${next.departures.NS} north–south and ${next.departures.EW} east–west.`;
+      result.hidden = false;
+      status.textContent = `Scenario ${scenario.id} completed ${last.slot} slots. At the end, ${last.queue.NS} north–south and ${last.queue.EW} east–west vehicles were waiting.`;
+    });
+  }
+</script>
+<style>
+  h3 { margin: 0; }
+  figcaption, .slot-detail { color: var(--muted); font-size: .9rem; }
+  .run-status:empty { margin: 0; }
+  .cycle-result td { font-family: var(--mono); white-space: nowrap; }
+  .queue-bar { display: inline-block; margin-left: .3rem; border-bottom: .42rem solid var(--teal); width: calc(var(--vehicles, 0) * .62rem); }
+  .cycle-result tbody tr:nth-child(2) { border-top: 2px dashed var(--teal); }
+</style>

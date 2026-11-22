@@ -97,4 +97,4 @@ The [saved T1 observation](https://github.com/And-Gu/executable-engineering-lab/
 
 ## The data is now the next engineering problem
 
-Suppose that colleague also finds a spreadsheet entry called `queue_final = 20`. Our saved observation gives a unit, a point in the cycle, a model revision and an input change. Which of those details can we establish for 20 before comparing the two numbers? [Chapter 6 follows the records from measurements to decisions](06-engineering-data-from-measurements-to-decisions.md).
+Two north–south vehicles are still waiting when scenario B reaches the end of slot 8. Where should they appear when the lights begin the next cycle? [Chapter 6 follows both queues across that boundary](06-engineering-data-from-measurements-to-decisions.md).

@@ -1,0 +1,59 @@
+[
+  {
+    "id": "maintainer-intent",
+    "prompt": "The team can try an installed sensor or a portable service instrument. Which brief gives it an agile intent for the maintainer’s increment?",
+    "options": [
+      {
+        "text": "Fit the same sensor to every head and reproduce the prototype’s display layout.",
+        "feedback": "This brief selects the equipment and layout before the team has tried either option with a maintainer. It also leaves the success criterion unstated."
+      },
+      {
+        "text": "Using the receipt-only adapter, let a maintainer distinguish an observed indication from an unknown one. Demonstrate both cases and let the team choose how.",
+        "feedback": "The brief names the outcome, preserves the interface constraint and gives the team a way to judge success while it explores the design.",
+        "correct": true
+      },
+      {
+        "text": "Match every requested phase to the saved T1 trace and accept the service view when the sequence matches.",
+        "feedback": "Matching T1 would check the order of phase requests. The maintainer still needs a way to recognize whether anyone observed the signal head."
+      }
+    ]
+  },
+  {
+    "id": "missing-observation",
+    "prompt": "Imagine a Bench 1 test in which the controller logs an amber request and the adapter acknowledges it. The camera record for that command is missing. What should the reviewer record?",
+    "options": [
+      {
+        "text": "Link the request and receipt to Bench 1 and leave verification of visible amber open.",
+        "feedback": "The log supports receipt for that command. An independent observation of the named head under the test conditions would be needed to decide what it displayed.",
+        "correct": true
+      },
+      {
+        "text": "Mark visible amber verified because the implementation decision and both software records agree.",
+        "feedback": "An implementation link identifies how the design realizes a requirement. The two software records stop at command receipt."
+      },
+      {
+        "text": "Record that the lamp failed to turn amber because the optical check could not return a result.",
+        "feedback": "The missing camera record leaves the physical state unknown. A dark head or a different color would need an observation of its own."
+      }
+    ]
+  },
+  {
+    "id": "changed-feedback-connector",
+    "prompt": "The electronics team moves a proposed sensor connector to the other side of the adapter board. What should travel with the change before the team accepts the revised assembly?",
+    "options": [
+      {
+        "text": "The new board drawing and a passing peak-load test using an emulator of the previous assembly.",
+        "feedback": "The load test exercises the earlier interface assumptions. It leaves clearance, sensor placement and feedback on the revised assembly open."
+      },
+      {
+        "text": "The new board revision and the previous lamp observation, since the signal head itself has the same part number.",
+        "feedback": "The board change can affect mounting and the feedback path even with the same head. The old observation belongs to its original assembly."
+      },
+      {
+        "text": "The shared requirement and affected board, mounting and firmware revisions, with a fit check and independent indication test on that combination.",
+        "feedback": "These links tell each discipline what changed. The checks can establish whether the connector fits and the diagnostic corresponds to the visible lamp on the revised configuration.",
+        "correct": true
+      }
+    ]
+  }
+]
