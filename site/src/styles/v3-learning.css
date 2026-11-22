@@ -7,6 +7,9 @@
 }
 .learning-card { border-inline-start: 3px solid var(--teal); }
 .learning-card.reading { border-inline-start-color: var(--gold); }
+.intersection-overview { max-width: 70ch; margin-block: 1.5rem; }
+.intersection-overview img { display: block; width: 100%; height: auto; }
+.intersection-overview figcaption { color: var(--muted); font-size: .9rem; }
 .chapter-body .learning-card p { margin: .55rem 0; }
 .learning-card p:first-child strong { color: var(--teal); }
 .learning-card.reading p:first-child strong { color: var(--gold); }

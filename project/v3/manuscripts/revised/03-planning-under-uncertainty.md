@@ -11,111 +11,73 @@ teaching_fixture: "T1 — fictional planning decision"
 
 # Planning Under Uncertainty
 
-*What should change in the plan when an experiment changes what the team knows?*
+*How can a first prototype change what the team works on next?*
 
-The city wants to improve its intersection. The team has a question about arrivals and an idea for a small prototype. Signal timing, new detectors and adaptive control remain possible directions. Choosing the next investigation lets the team make progress while those choices are open.
+The city wants traffic to flow more easily through its four-way intersection while people can cross safely. The workshop team can start exploring that intent while the control requirements are still taking shape. Its proposed prototype follows a fixed signal cycle. If the same number of vehicles arrive during that cycle, does the queue at the end depend on when they arrive?
 
-A useful first increment produces something colleagues can examine together. Its result can change the next experiment, reveal a dependency or justify a delivery commitment. The plan needs room for each of those outcomes.
+The answer would shape the team's next request to operations staff. Counts for a whole period might be easy to supply. If arrival timing matters, the engineers have a reason to seek records they can match to the signal phases.
 
-## Begin with the next decision, not a backlog
+<span id="begin-with-the-next-decision-not-a-backlog"></span>
 
-The initial purpose is broader than any one solution: improve useful intersection operation without losing sight of competing road-user, physical and operational needs.
+## Choose the next investigation
 
-Imagine the team has capacity for **one substantial investigation**. It has three options.
+Before the next concept review, the team has time for one substantial investigation. Each option would prepare it for a different decision.
 
-| Candidate investigation | What is uncertain? | Smallest useful result | Dependency or stopping condition |
-|---|---|---|---|
-| **A. Define movement conflicts** | Which intended movements and users must never receive incompatible indications? | A reviewed conceptual movement/constraint map | If the intended scope is unclear, clarify stakeholders and system boundary first |
-| **B. Compare arrival patterns** | Does the proposed fixed-phase abstraction respond differently to invented arrival clustering? | A transparent model and reproducible trace | Requires an agreed simplified function and input meaning; stop if the model cannot answer the question |
-| **C. Commit to new detection equipment** | Will hardware provide the information and behavior needed? | An interface and feasibility hypothesis before procurement | Premature until the intended sensing, command and installation needs are understood |
+| Investigation | What the team could bring to the review | Decision it would inform |
+| --- | --- | --- |
+| Map conflicting movements | A sketch of vehicle and pedestrian movements, reviewed with operators and road users | Which movements would a proposed change to the signal sequence need to protect? |
+| Compare arrival patterns | A prototype that traces two invented patterns through the same fixed phases | How much detail about arrivals does the team need to study queues? |
+| Investigate detector feasibility | An account of what a candidate detector can report and what installation would require | Once the team knows what it needs to observe, could this equipment supply it? |
 
-Option C is not a bad idea. It is simply too early to call it a responsible product commitment in this hypothetical situation. Option A helps define what the system must consider. A bounded part of option B may then test a specific modeling hypothesis.
-
-The team proposes to clarify the movement conflicts and investigate a small fixed-phase model. It can revisit detector procurement and adaptive control once it knows what those options would need to achieve.
+The team chooses the arrival comparison. The north–south and east–west vehicle groups in the workshop sketch are enough to start. Fixed phases give the engineers a reference for a later proposal, such as a controller that adjusts its phases in response to arrivals. Mapping conflicts takes priority before a change to which movements can proceed together.
 
 ## Vision, initiative, increment and backlog are different things
 
-Planning language helps only when each term carries a useful distinction.
+The **vision** describes the lasting outcome the city wants for the people who use the intersection. A **theme**, such as improving signal operation, groups related efforts toward that outcome. Within it, an **initiative** focuses on a problem worth sustained work. The vehicle-queue initiative asks under what arrival conditions a fixed sequence merits further study.
 
-A **vision** describes the intended longer-term outcome for users. A **theme** groups a direction of effort, such as improving confidence in traffic-control alternatives. An **initiative** identifies a problem worth addressing. A **roadmap** makes the intended progression and key dependencies visible. A **delivery increment** is a bounded capability or result that can be evaluated; a **backlog** holds the more detailed work needed to create it.
+The **roadmap** shows how one decision depends on another. First the engineers plan to compare the two arrival patterns. If they can explain the traces at the review, their next increment will be to draw up that request for arrival data with operations staff. A detector study moves up the roadmap if the information they need is missing.
 
-None of these labels makes uncertainty disappear.
+An **increment** is a piece of work with a result the team can evaluate. The first delivers the prototype and its two queue traces. The **backlog** orders the work for this and later increments. Entering the two patterns and tracing the queues over eight abstract time slots are tasks for this review. Further out, uncertainty is expected. A question about what a detector might need to sense is enough to keep that option on the roadmap.
 
-The initiative might be “understand whether different fixed-time concepts warrant further study.” Its first increment could be **a controlled, inspectable model comparison**. That increment does not promise reduced real-world traffic delay.
-
-A different initiative might concern physical installation feasibility. Its first result could be a reviewed interface assumption, not a delivered piece of equipment.
-
-The question is whether each activity earns the commitment implied by its position on the roadmap.
-
-## Exploration and delivery can run together
-
-It is tempting to picture a sequence in which all questions are resolved, then every requirement is specified, then the product is implemented. In an unfamiliar engineering problem, that is often neither practical nor desirable.
-
-A team may investigate a new control concept while implementing a well-understood reporting improvement. It may build an emulator for a risky interface while another group prepares a bounded software change. Exploration and controlled delivery are **concurrent loops**, linked by evidence and decisions.
-
-This is not a license for unrecorded improvisation. It is a reason to distinguish what is **candidate**, **controlled**, **observed** and **approved** at each point.
-
-For our intersection, the fixed-phase model is an exploratory learning baseline. It can help the team ask a sharper question without becoming an approved traffic-control architecture.
-
-## Two roadmaps should influence each other
-
-A product question may require a new engineering capability before it can be answered.
-
-Consider the selected model investigation. The **product-side** question concerns how a control concept behaves with different arrivals. The **engineering-environment** work is to maintain a simple source definition, construct valid input scenarios, compute reproducible outputs and review what those outputs mean.
-
-Those tasks deserve planning attention, but they are not products for their own sake.
-
-The team should ask whether a new fixture, an automated check or a source relation will support one investigation or a broad set of recurring questions. A lightweight script may be enough for one study. A reusable integration test may be justified when similar changes occur frequently or have serious consequences.
-
-“We build the machine that builds the machine” becomes a planning discipline when the team explicitly chooses **which engineering capability is worth investing in now**.
+<span id="two-roadmaps-should-influence-each-other"></span>
 
 ## Plan for more than software
 
-The software and modeling team may iterate on a candidate behavior quickly. New sensors or electrical adapters may need supplier interface agreements, physical samples and installation considerations. Operational evaluation depends on users, conditions and evidence that a simple model cannot supply.
+<span id="exploration-and-delivery-can-run-together"></span>
 
-A useful roadmap displays those different dependencies without pretending they share one cadence. It also reveals when an early model result can change a costly later commitment.
+The product roadmap leaves the choice of controller open, but the team can commit to delivering a trace for the review. Its engineering work depends on how often it expects to run that comparison. For one study, two colleagues might check a short trace by hand. If several designs will use the same model, a check that reruns a known input after each change may be worth building. The [case source collection](../../case-study/README.md) includes inputs and a reference trace for that purpose.
 
-The team should not create fictitious durations to make the roadmap appear precise. It can still identify critical dependencies, which unknowns must be answered first and which commitments would be expensive to reverse.
+The modelers can try a change as soon as the inputs are ready. Assessing a new detector also depends on a supplier's interface definition and access to a sample. An installation trial would need cabinet access and a work window agreed with operators. Electrical and operations staff can identify those dependencies on the roadmap now, then schedule the physical work if the team takes the detector option forward.
 
 ## Define a stopping and replanning rule
 
-A decision to explore is more useful when everyone knows what would make the team change course.
+Before the comparison, the groups agree that if they cannot reproduce one slot by hand from the same inputs, they will pause before interpreting the full traces. Otherwise, a difference caused by how they counted could look like an effect of the arrival pattern.
 
-For the fixed-phase comparison, the question is narrow: *Can the same invented vehicle totals produce different end-of-window queues when arrival placement changes?*
-
-If the team cannot clearly define the arrival units, event order or model scope, it should **stop interpreting results** and repair the source definition before extending the experiment.
-
-If the comparison is reproducible but does not address operational needs, the next action is not necessarily to build an adaptive controller. It may be to improve data, revisit stakeholder criteria or choose a different type of experiment.
-
-A failed or inconclusive exploration can be progress when it reveals what is not yet fit for decision.
-
-The plan should therefore track both completed work and **knowledge gained, remaining uncertainties, decision owners and triggers for change**.
-
-Suppose one team counts arriving vehicles just before the signal serves the queue and another counts them just after. Their results can differ even when their input files match. The immediate task is to agree on event order and rerun a small comparison.
+Suppose this happens at the review. In the first slot of the staggered pattern, the north–south queue starts empty. The signal is green for that group and one vehicle arrives. The modelers add the vehicle before serving the queue, so it leaves on green. In the operations group's sketch, service comes first. The group serves an empty queue, adds the arrival and records one vehicle waiting. What would you schedule ahead of the planned data request? Which level of the plan would that change?
 
 > **Explore further**
 >
-> The [model input and event-order rule](../../case-study/model-inputs-v1.json) show where the two teams can check which convention applies.
+> In each slot the model adds arrivals, serves at most one vehicle from the green group and records the remaining queues. Check the first slot of scenario A against the [event-order rule and scenario inputs](../../case-study/model-inputs-v1.json).
 
 ## Keep a small decision record
 
-The team records its decision while the assumptions are fresh.
+The systems lead records why the next increment has changed and what would make the team ready to move on.
 
-**Decision:** Use a fixed-phase teaching model as an exploratory reference.  
-**Reason:** It makes one arrival-pattern question inspectable with a limited, understandable source set.  
-**Not decided:** Adaptive control, real signal timing, detector procurement, physical interface selection or operational readiness.  
-**Needed engineering capability:** Versioned model assumptions, scenario inputs and a transparent result trace.  
-**Review trigger:** A changed system boundary, invalid scenario data or findings that make the model unfit for the question.  
-**Decision status:** Provisional, for learning.
+| Planning decision | Entry for the concept review |
+| --- | --- |
+| Provisional choice and reason | Keep fixed phases as the working baseline. The first-slot disagreement concerns when a vehicle can leave, and the prototype already defines that rule. |
+| Revised increment | Postpone the request for arrival data. Deliver a comparison of the two existing patterns that both groups can reproduce. |
+| First backlog items | Correct the operations sketch, check the first slot together and rerun both patterns using the recorded rule. |
+| Review trigger | When the modeler and operations engineer can account for the same queues slot by slot, return to the data request. Ask which available records could place an arrival within a signal phase. |
 
 > **Concept**
 >
-> Correcting the order of events changes the next increment and its backlog. If the city decides that pedestrian access is its principal concern, the team has a reason to revisit the initiative itself.
-
-The [case source collection](../../case-study/README.md) gives the investigation a common set of definitions to work from.
+> The disagreement about one slot changes the increment and its backlog. If the city makes pedestrian crossings its immediate priority, the team would revisit the vehicle-queue initiative and bring the movement-conflict investigation forward. Both choices serve the city's long-term intent.
 
 <!-- interactive: chapter-quiz -->
 
-## Why the information must become connected
+<span id="why-the-information-must-become-connected"></span>
 
-The two teams have agreed when arrivals enter a queue. Where should they record that decision so that a model, a diagram and a later experiment all refer to the same rule? [Chapter 4 follows an engineering decision into its maintained sources](04-engineering-knowledge-as-code.md).
+## From a planning decision to shared knowledge
+
+The decision record explains why the work changed. Where should the event-order rule live so both teams use the same version as the prototype evolves? [Chapter 4 shows how teams connect shared definitions to the models that use them](04-engineering-knowledge-as-code.md).

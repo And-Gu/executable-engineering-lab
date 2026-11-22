@@ -11,136 +11,90 @@ teaching_fixture: "T1 — synthetic editorial inputs and calculated trace"
 
 # Learning Through Models and Prototypes
 
-*How much can a simple model teach us before we commit to a design?*
+*Four vehicles arrive at a four-way intersection. If the lights follow the same sequence, can moving one arrival leave fewer vehicles waiting at the end?*
 
-An engineer looking at our fictional four-way intersection might propose a more sophisticated signal controller to reduce queues. Another might suggest observing arrival patterns first. Both ideas could be reasonable. Neither can be evaluated merely by drawing the controller's intended states.
-
-Models help teams answer questions before committing to an expensive physical configuration. But useful engineering does not begin by choosing the most impressive model. It begins by identifying which uncertainty needs to be reduced, then choosing the simplest investigation that can address it.
-
-For now we will study a much smaller question: **with the same fixed signal sequence and the same total arrivals, can changing the arrival pattern leave a different number of vehicles waiting?**
+The city wants traffic to flow while people can cross safely. In the Chapter 2 workshop, the team asked how queues would change if vehicles arrived at different times under fixed signal phases. Chapter 3 exposed a disagreement that could spoil the comparison. When one vehicle arrives at an empty queue on green, can it leave in that same slot? The team agreed to add arrivals before serving the queue. We can now turn that decision into a working prototype. [Intersection workshop](02-introducing-the-engineering-challenge.md) · [Planning under uncertainty](03-planning-under-uncertainty.md).
 
 ## Different questions demand different models
 
-Our structured information from Chapter 4 identifies a candidate phase-selection function, a proposed conflict property and a teaching model. Those objects tell us what the team intends to study, but not the behavior of the actual system.
+In Chapter 4, an engineer reviewed the proposed adaptive strategy `INT-CHG-001`. It could affect the phase-selection function, `INT-FUN-001`. The two-queue model `INT-MOD-001` *represents* that function, so the engineer selected it for review. The graph also says which experiment examines the model and which data it uses. Its separate check for conflicting greens is still proposed. [Chapter 4 review](04-engineering-knowledge-as-code.md) · [T1 source relationships](../../case-study/source-graph-v1.json).
 
-Different representations can help with different questions. A functional diagram explains inputs and responsibilities. A state machine can define which abstract phase follows which. A queue calculation can represent what happens when invented vehicles arrive while one direction is allowed to depart. A bench test could later investigate a particular controller–adapter interface. A physical prototype or installation observation would be needed for different kinds of real-world questions.
-
-No one method is universally cheaper or better. For a question about a short queue comparison under an invented phase schedule, the bounded calculation below is sufficient. For an electrical acknowledgment, it would not be.
+A Word document can explain the event-order decision, a spreadsheet can hold the counts, and a modeling tool can show the phase sequence. When people maintain them independently, someone has to reconcile the three before changing the calculation. Here the engineer can give a large language model (LLM) assistant those records together. A colleague reviewing its draft can go straight to the rule and the revision it should implement. A state diagram would show which light comes next. To answer the workshop question, the prototype also needs to keep count of who is waiting.
 
 ## Define the experiment before interpreting its output
 
-The [T1 model input](../../case-study/model-inputs-v1.json) uses two abstract vehicle groups, north–south (NS) and east–west (EW). Both queues start empty.
-
-The experiment has **eight ordered slots**. A slot is **not a second** and carries no calibrated physical duration. The phase schedule is fixed:
-
-| Slot | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 |
-|---:|---|---|---|---|---|---|---|---|
-| Phase | NS green | NS green | NS amber | All-red | EW green | EW green | EW amber | All-red |
-
-In each slot, new vehicles first join the corresponding queue. During an NS-green slot, at most one NS vehicle can depart; during an EW-green slot, at most one EW vehicle can depart. No one departs during amber or all-red. We record both remaining queues **after** that slot's arrivals and departures.
-
-To sketch an executable version, an engineer can give a language-model assistant the phase sequence, the service capacities and one row of arrivals. Consider a draft that serves the queue before adding the vehicles that just arrived. An engineer can check it against the first slot of scenario A by hand. The north–south vehicle arrives on green and should depart in that slot. Putting arrivals first fixes the discrepancy. The full baseline traces then give the team sixteen rows against which to check the implementation.
-
-The model deliberately excludes turning movements, pedestrians, cycling, failures, real signal timing and driver behavior. Those omissions matter for real engineering, but they do not prevent a carefully bounded calculation from teaching a specific relationship.
-
-The fixed phases are also important: **the controller does not react to the arrival pattern**. Adaptive signal control remains a proposed future design question, not a hidden feature of this experiment.
+The arrival-pattern experiment, `INT-EXP-001`, uses the invented arrivals in `INT-DAT-001` and model `INT-MOD-001`, revision **T1**. Both the north–south (NS) and east–west (EW) queues start empty. The model covers eight ordered slots with no assigned duration in seconds. On green, at most one vehicle from that group can leave. During amber and all-red both groups wait. The schedule stays fixed throughout the comparison.
 
 > **Concept**
 >
-> A queue count is taken after arrivals and service in each slot. A vehicle arriving on its group's last green may leave immediately. One arriving a slot later may still be waiting at the observation horizon.
+> Read a queue count as a snapshot *after* arrivals and service in that slot. A count of zero can mean that a vehicle came and went in the same slot.
 
-## Determinism is the starting point
+<span id="determinism-is-the-starting-point"></span>
+<span id="design-the-feedback-around-the-engineering-question"></span>
 
-T1 is an ordinary **deterministic software calculation**. Given the same rules, initial queues and arrivals, it produces the same trace in the defined execution environment. That is expected behavior, not a breakthrough delivered by AI or a special modeling platform.
+## Turn the agreed rule into a queue update
 
-The engineering value comes from **changing something deliberately and evaluating the consequence**. We can vary an arrival pattern, test a proposed model change, inspect the resulting queues and check explicit properties. Automated tests can then give an engineer—or an authorized agent—rapid feedback on whether the modified calculation still meets its defined criteria.
+In this worked example, the engineer gives an LLM assistant T1’s phase capacities, event-order rule and the first row of scenario A and asks, “Draft one slot of the model. Return departures and the queue remaining for each direction.” A plausible draft limits departures to the vehicles waiting *at the start* of the slot, then adds new arrivals.
 
-Determinism does not mean that every experiment must use constant inputs. A stochastic simulation can use a controlled pseudorandom seed so the same sample can be replayed; repeated independent seeds can reveal variation. Similarly, ML inference can be deterministic under specified conditions. What matters is stating which factors are controlled, which vary, and which claim the experiment can support.
+The engineer checks A’s first NS green by hand. Zero vehicles are waiting, one arrives and there is capacity for one departure. The draft serves zero and leaves one. The agreed rule gives **0 waiting + 1 arrival − 1 departure = 0 waiting**. The engineer asks for one correction. Compute the available vehicles as the previous queue plus arrivals, then serve the smaller of that number and the phase capacity. This gives one departure and an empty queue, exactly what the first reference row records.
+
+The browser uses this rule in its queue calculation. It is deterministic, so the same inputs give the same rows.
+
+> **Explore further**
+>
+> Follow one slot through the [T1 queue calculation](https://github.com/And-Gu/executable-engineering-lab/blob/c4205b3a5b960d8224b6ba72bcf165342ef7322b/models/intersection/queue.mjs). The [regression tests for that revision](https://github.com/And-Gu/executable-engineering-lab/blob/c4205b3a5b960d8224b6ba72bcf165342ef7322b/models/intersection/queue.test.ts) compare both baselines with all **16 rows** of the saved trace, including arrivals, departures and queues. They also check that an unknown phase, a missing slot or an invalid arrival count is rejected.
 
 ## Two arrival patterns, one model
 
-Both invented scenarios contain **two NS vehicles and two EW vehicles**. Scenario A spreads those arrivals over the eight slots. Scenario B clusters two EW vehicles in the first slot and two NS vehicles in the third.
+Each scenario has two NS and two EW arrivals. Only their placement differs. A dash means zero arrivals in either direction.
 
-| Scenario | NS arrivals by slot | EW arrivals by slot |
-|---|---|---|
-| **A — staggered** | 1, 0, 1, 0, 0, 0, 0, 0 | 0, 1, 0, 0, 0, 1, 0, 0 |
-| **B — clustered** | 0, 0, 2, 0, 0, 0, 0, 0 | 2, 0, 0, 0, 0, 0, 0, 0 |
+| Slot | Fixed phase | A · staggered arrivals | B · clustered arrivals |
+|---:|---|---|---|
+| 1 | NS green | 1 NS | 2 EW |
+| 2 | NS green | 1 EW | — |
+| 3 | NS amber | 1 NS | 2 NS |
+| 4 | All-red | — | — |
+| 5 | EW green | — | — |
+| 6 | EW green | 1 EW | — |
+| 7 | EW amber | — | — |
+| 8 | All-red | — | — |
 
-The values are invented inputs, not observed traffic counts. Because the total arrivals are identical and every model rule is unchanged, we can isolate one question about when those arrivals occur.
-
-Before reading the result, predict what you think will happen to the queues at the end of slot eight. Might the same total demand always produce the same remaining count?
+Start with **B**. Predict how many vehicles will remain after slot 8 if one NS vehicle arrives in slot 2 instead of slot 3. Choose that move, then **Run comparison**. The browser calculates eight rows for your edit alongside the original. **Restore baseline** returns to the selected starting scenario. [T1 inputs and service rules](../../case-study/model-inputs-v1.json).
 
 <!-- interactive: intersection-model -->
 
 ## Follow the actual queue updates
 
-A little arithmetic is enough to inspect the result. In scenario A, one NS vehicle arrives in slot 1 during NS green and departs immediately. A second NS vehicle arrives in slot 3, during amber; it cannot depart in that slot or during the later EW phases. The EW vehicles arrive in slots 2 and 6; both can depart when EW green becomes available.
+These selected rows come from the **saved A and B baselines**. Each pair is the number waiting in NS and EW order. [Complete 16-row baseline trace](../../case-study/trace-v1.csv).
 
-In scenario B, the two EW vehicles arrive during the first NS-green slot. They wait until EW green in slots 5 and 6, then depart. Both NS vehicles arrive in slot 3, *after* the two NS-green slots have ended, and remain queued for the rest of the horizon.
+| After slot | A (NS, EW) | B (NS, EW) |
+|---:|---|---|
+| 1 | 0, 0 | 0, 2 |
+| 3 | 1, 1 | 2, 2 |
+| 5 | 1, 0 | 2, 1 |
+| 8 | **1, 0** | **2, 0** |
 
-You can inspect a compact selection from the [full sixteen-row trace](../../case-study/trace-v1.csv):
+In A, one NS vehicle arrives on green and leaves immediately. The other arrives on amber and is still waiting at slot 8. In B, both NS vehicles miss their green. Both EW vehicles leave in slots 5 and 6. Of four arrivals, A has three departures and B has two.
 
-| After slot | A: NS queue | A: EW queue | B: NS queue | B: EW queue |
-|---:|---:|---:|---:|---:|
-| 1 | 0 | 0 | 0 | 2 |
-| 3 | 1 | 1 | 2 | 2 |
-| 5 | 1 | 0 | 2 | 1 |
-| 8 | **1** | **0** | **2** | **0** |
+Look at the edited B in the browser. The NS vehicle moved to slot 2 leaves on that green, so the original and edited **queues still match after slot 2**. The first queue difference appears in slot 3. Just one NS vehicle now arrives on amber. It waits through slot 8, when the EW queue is empty. The edit accounts for all four vehicles as **three departures and one still waiting**, compared with two departures and two waiting in the original B. [Calculation and baseline checks](../../case-study/MODEL-CHECK.md).
 
-The same calculation also reports departures:
-
-| After eight slots | Scenario A | Scenario B |
-|---|---:|---:|
-| Total invented arrivals | 4 | 4 |
-| Departures in the window | 3 | 2 |
-| Vehicles still queued | **1** | **2** |
-
-The two baseline traces identify **INT-MOD-001, revision T1**. In the browser exercise, moving one arrival creates a new scenario for this same model. Compare its rows with the original to find the first slot at which the queues diverge.
+<span id="when-should-fidelity-increase"></span>
 
 ## What does that comparison establish?
 
-Within this narrow, fixed-rule illustration, *arrival placement changes end-of-window queue counts*. Total arrivals alone did not determine the result.
-
-That is an informative conclusion. But notice what it does **not** establish.
-
-We have not calculated mean waiting time. A vehicle still queued at the end has an incomplete wait, and excluding that unfinished wait could distort a careless summary. We also have not modeled real green times, turning conflicts, hardware constraints, safety behavior or the city's operational criteria.
-
-Scenario A is not therefore a recommended controller strategy. It is one set of invented arrivals under the same controller schedule. The output gives the team a useful next question: **How would we decide whether a model/data comparison is fit for the decision we want to make?**
-
-## When should fidelity increase?
-
-Model fidelity is not a score that rises automatically as more detail is added. It is a decision about whether the abstraction is sufficient for a question.
-
-If the next question concerns phase transitions under a defined arrival sequence, T1 lets us inspect the relevant behavior and try alternatives. If the question concerns pedestrian movements or a signal-driving adapter's acknowledgment, adding more queue data will not fix the missing model of that interface.
-
-An engineer might then choose an interface mock-up, a bench observation or a physical integration experiment. Each method has a different cost, setup effort, interpretation and evidence boundary.
-
-The **engineering environment** evolves with that decision: clearer model assumptions, checks that expose failures and new tests or physical observations where needed. The **product concept** can evolve too—but only when the evidence supports the proposed change.
-
-## Design the feedback around the engineering question
-
-T1 expects a nonnegative integer count for each group in each slot and a known phase. The model rejects an incomplete run or an invalid count before it reports a queue.
-
-A bounded development loop could now be: propose a change to the model or input handling, run the calculation, evaluate fixed behavioral and invalid-input checks, inspect a failure, and correct the implementation. If those checks are sufficiently independent of the change being made, an agent could work through several iterations without asking a human to direct every step.
-
-That does **not** make all green tests a product approval. If the criteria encode the wrong requirements, or if the model leaves out an important physical interaction, the loop may converge on the wrong answer. Engineers therefore also assess whether the model and tests represent the system question—and use other evidence when they do not.
+Moving one arrival across the end of its green changed the number waiting at this horizon. That is an answer to the workshop question. Mean waiting time would require following individual waits, including those still in progress at slot 8. A question about whether an actual signal shows the commanded indication would call for a bench test or physical observation. Choose the model or prototype to match the decision it will inform.
 
 ## Record what the experiment changed
 
-The maintained source identifies `INT-MOD-001`, revision T1, and the published inputs identify the two baseline scenarios. An observation also needs the particular input change and the point at which the queue was counted.
+Before the edit, the two baseline traces told the team how A and B behaved. A colleague looking up B would find two vehicles waiting. To preserve what the edit taught us, an assistant can draft an observation from the comparison. If it writes “traffic improved,” the engineer can replace that claim with the following entry and check it against the rows.
 
-In a worked LLM-assisted review, the engineer starts with a proposed note, “The new pattern improves traffic.” The engineer checks the trace and records a more precise observation.
+- **Computed observation.** `RESULT-B-NS-3-TO-2` belongs to `INT-EXP-001`, model `INT-MOD-001` revision T1. Start from B and move one NS arrival from slot 3 to slot 2. After arrivals and service in slot 8, one vehicle is queued. The original B has two.
+- **Proposed next investigation.** If the same phases and each scenario’s own arrivals repeat for a second cycle, how many vehicles remain after slot 16?
 
-> In scenario B, moving one north–south arrival from slot 3 to slot 2 leaves one vehicle queued after slot 8, compared with two in the original B. Model INT-MOD-001, revision T1, fixed phases.
-
-The colleague maintaining the experiment can reproduce that observation and ask whether the difference persists over a longer horizon.
-
-> **Explore further**
->
-> Compare the [complete baseline trace](../../case-study/trace-v1.csv) with the [calculation and its assumptions](../../case-study/MODEL-CHECK.md) when reviewing an observation.
+The [saved T1 observation](https://github.com/And-Gu/executable-engineering-lab/blob/a1e4f49c2d3ef53e0fc895cdd197f659218a4d4f/project/v3/case-study/data-quality-v1.json#L31-L50) sits beside the original results in the maintained record. A colleague can now reconstruct the edit from its baseline and use the open question to specify a longer experiment. That experiment would need its own observation window.
 
 <!-- interactive: chapter-quiz -->
 
 ## The data is now the next engineering problem
 
-A colleague sends another queue count. Which model revision, input pattern and observation horizon would make it comparable with the one you recorded? [Chapter 6 follows engineering data from measurements to decisions](06-engineering-data-from-measurements-to-decisions.md).
+Suppose that colleague also finds a spreadsheet entry called `queue_final = 20`. Our saved observation gives a unit, a point in the cycle, a model revision and an input change. Which of those details can we establish for 20 before comparing the two numbers? [Chapter 6 follows the records from measurements to decisions](06-engineering-data-from-measurements-to-decisions.md).

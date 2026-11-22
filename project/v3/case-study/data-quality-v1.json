@@ -28,6 +28,26 @@
       "status": "computed_from_synthetic_inputs"
     }
   ],
+  "scenario_edit_observation": {
+    "id": "RESULT-B-NS-3-TO-2",
+    "experiment_id": "INT-EXP-001",
+    "model_id": "INT-MOD-001",
+    "model_revision": "T1",
+    "baseline_result": "RESULT-B",
+    "arrival_move": {
+      "group": "NS",
+      "from_slot": 3,
+      "to_slot": 2,
+      "vehicles": 1
+    },
+    "metric": "pending_at_horizon",
+    "value": 1,
+    "unit": "vehicles",
+    "horizon": 8,
+    "sample_point": "after arrivals and service",
+    "status": "computed_from_synthetic_inputs",
+    "proposed_follow_up": "If the same phases and each scenario’s own arrivals repeat for a second cycle, how many vehicles remain after slot 16?"
+  },
   "original_incompatible_record": {
     "id": "LEGACY-C",
     "raw_field": "queue_final",

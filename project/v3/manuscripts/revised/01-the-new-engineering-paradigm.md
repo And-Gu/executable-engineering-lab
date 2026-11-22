@@ -17,29 +17,31 @@ When two disciplines discover an interface disagreement during integration, they
 
 Building that check improves how the organization engineers its products. Reusing it on the next variant helps the team support more designs and gives new colleagues a way to understand the interface. The investment pays off when it improves a product decision or reduces avoidable rework.
 
-## Expectations are changing
+<span id="expectations-are-changing"></span>
 
-Competitive pressure can make shorter development cycles, higher quality and frequent improvements valuable. A team that produces changes faster than it can integrate or test them moves work into a queue. A leader can ask where an earlier check would actually change a decision.
+## Where earlier feedback improves delivery
 
-A web service may deploy repeatedly, embedded software may need controlled integration, and a physical design may depend on suppliers and test equipment. Each team can shorten the path from a question to reliable feedback within its own delivery constraints.
+For a business competing on the quality and frequency of product improvements, the delivery objective is to get a useful change into service sooner, with evidence that it works. A team that produces changes faster than it can integrate or test them moves work into a queue.
+
+In a software-intensive program, an interface mismatch found at the end of that queue can send several teams back to trace dependencies, revise designs and repeat tests. That rework can take more engineering time than the original change, and a missed integration date can delay the release.
+
+A web service may deploy repeatedly, embedded software may need controlled integration, and a physical design may depend on an expensive component order or a scarce slot on a test rig. Each team can shorten the path from a question to reliable feedback within its own delivery constraints.
 
 ## Software-inspired engineering moves beyond software
 
-Software development has pioneered practices that other disciplines can adapt: smaller increments, explicit configurations, automated checks, continuous integration, versioned information, simulation and feedback from operation. Their contribution is not that an electrical or mechanical product becomes software. It is that more of the *engineering work* can become connected, reviewable and progressively testable.
+Software development offers practices that other disciplines can adapt, including smaller increments, explicit configurations, versioned information and continuous integration. For multidisciplinary systems, the challenge is to connect these practices without assuming that every discipline has the same cycle time.
 
-A model of a physical function can be executed before hardware is ready. An interface contract can be checked when either side changes. An engineering decision can retain its rationale and applicable evidence. Automated checks can detect regressions early, while system-level validation still determines whether the complete product meets its intended use.
+A model of a physical function can be executed before hardware is ready. An interface contract can be checked when either side changes. If several product variants use the same module, recording which revision each uses tells the integration lead which teams a change affects.
 
-For multidisciplinary systems, the challenge is to connect these practices without assuming that every discipline has the same cycle time. Early model learning can prevent expensive physical changes; physical experiments can reveal assumptions the model cannot represent.
+An engineering decision can retain its rationale and applicable evidence. A new engineer joining the next variant can read why the team chose an interface limit and rerun its check without tracking down the original designer. Sharing modules, decisions and checks across compatible designs gives the business a way to support more variants without a proportional increase in engineering staff.
 
 ## AI expands what engineering teams can do
 
-AI assistance can help teams explore alternatives, work with large collections of engineering information, draft and review technical artifacts, write software, prepare experiments and interpret results. Tool-using AI agents may also carry out bounded tasks: propose a change, invoke tools, inspect feedback and revise the work before handing it back for review.
+AI assistance can help teams explore alternatives, draft and review technical artifacts, prepare experiments and interpret results. An engineer might describe an interface rule in plain language and give a tool-using AI agent a bounded task. The agent could draft a small model of the rule, run the agreed checks and revise it after a failure before handing it back for review.
 
-These capabilities matter most when the environment provides meaningful, sufficiently independent checks. An agent iterating against weak or self-modified acceptance criteria can produce a convincing-looking but invalid result. Engineering judgment is still needed to set objectives, protect constraints, decide what evidence is credible and authorize consequential changes.
+These capabilities matter most when the environment provides meaningful, sufficiently independent checks. If the agent's language model confuses seconds with milliseconds, a test it writes from the same interpretation may agree with a faulty change. Engineering judgment is still needed to set objectives, protect constraints, decide what evidence is credible and authorize consequential changes.
 
-**AI used to develop a product is distinct from AI built into that product.** A team may use agents to improve engineering workflows without deploying AI in the delivered system. Conversely, a product may use predictive or adaptive AI that requires its own safety, performance and validation work.
-
-AI is therefore a major accelerator and potentially an enabler of new ways of working—but it is not the original reason engineering needs to evolve.
+Giving an agent access to current definitions, maintaining independent checks and reviewing exceptions all take engineering time. Those costs belong in the case for using AI in development, alongside any time saved on recurring investigations. An AI function built into the product would change its behavior in use and would need its own performance evidence.
 
 ## Two systems must evolve together
 
@@ -47,43 +49,35 @@ Every engineering organization is developing two related systems.
 
 The **product system** includes software, electronics, physical components, interfaces, operators and the operating environment. It is judged by what it can actually do, under the conditions that matter.
 
-The **engineering system** includes people, methods, engineering knowledge, executable models, development environments, automated tests, integration equipment, decision processes, supply-chain relationships and AI-enabled workflows. It is judged by how well it helps the organization make sound product decisions and deliver improvements.
+The **engineering system** includes the people, methods, engineering knowledge, executable models, automated tests and integration equipment used to design, build and validate the product. It is judged by how well it helps the organization make sound product decisions and deliver improvements.
 
-**“We build the machine that builds the machine.”** This is a reminder that engineering capability itself requires intentional design, investment, operation and improvement. It is not an argument for building a large new tool platform before solving a product problem.
+A Word specification can explain an interface decision, an Excel workbook can hold its limits, and a specialist design tool can show how the circuit uses them. When those sources travel separately, reviewers have to establish which revisions belong together. The team can keep those tools, agree where to maintain a structured interface definition and connect it to the models and tests that use it.
 
-The two systems form a feedback relationship. A difficult product question may reveal the need for a new simulation or test fixture. A better engineering capability may make previously expensive options practical to investigate. Improvements to the engineering system should be justified by the product decisions and delivery outcomes they enable.
+**“We build the machine that builds the machine.”** A difficult product question may reveal the need for a new simulation or test fixture. A better engineering capability may make previously expensive options practical to investigate. Managers can fund a check that removes a recurring delay and keep a handoff manual when the cost of automating it outweighs the benefit.
 
 > **Concept**
 >
-> Changing a product interface changes what teams must deliver. Adding a repeatable compatibility check changes how teams can investigate that interface on this product and the next.
+> Changing a module to report elapsed time in milliseconds changes the product. A repeatable check that compares the units declared by sender and receiver improves the engineering system. Teams can run it on the next variant before the hardware is ready.
 
 ## From document-driven handoffs to executable feedback
 
-Documents and reviews remain useful; the problem arises when engineering knowledge is disconnected from the models, tests and decisions that give it meaning.
+In this lab, **executable engineering** describes an approach in which suitable models, analyses, checks and workflow steps can be run, evaluated and improved. A passing test is evidence about a stated check under specific conditions. Two connected feedback loops guide what the team does with that evidence.
 
-In this lab, **executable engineering** describes an approach in which suitable models, analyses, checks and workflow steps can be run, evaluated and improved. A requirements definition may connect to a model, an experiment, a verified interface and evidence of system behavior. That does not mean every engineering activity becomes executable. Stakeholder negotiation, model validity, physical integration, safety judgment and release authority still require suitable human and real-world processes.
-
-Two connected feedback loops are especially important:
-
-- **Fast executable feedback:** make a bounded change, run a model or test, inspect a failure and refine the work. Automation and agents can accelerate this loop when its checks are dependable.
-- **Whole-product feedback:** ask whether the model, checks and change are appropriate for the actual intended use. Bring in physical evidence, integration results, operational constraints and authorized decisions.
-
-A passing test is evidence about a stated check under specific conditions. It is not automatically evidence that the product is fit for use.
+- With **fast executable feedback**, engineers make a bounded change, run a model or test, inspect a failure and refine the work. If the units agree, the team can choose those revisions for integration.
+- With **whole-product feedback**, engineers ask whether the integrated product meets its intended use. Even when the declared units agree, a physical test may reveal that the receiver gets a value too late under load. Reviewing the consequence with an operator can change both the interface definition and the next automated check.
 
 ## What this means for engineering leadership
 
-The transformation changes the questions leaders should ask. Beyond measuring tasks completed or documents produced, they should examine what the teams can now demonstrate, which major uncertainties have been resolved, how quality is established and how often useful improvements can be delivered responsibly.
+A useful investment gives teams an earlier signal about a decision that costs time or money to reverse. Before funding the interface check, a leader can look at recent integrations. When did each mismatch surface, how many teams had to revisit their work, and what delivery commitment was affected? Those cases give the team a baseline for judging whether earlier detection on subsequent changes saves enough rework to justify maintaining the check.
 
-That means investing selectively in shared engineering information, simulation and test capability, integration practices, multidisciplinary interfaces and the skills to direct and evaluate AI-supported work. It also means allowing exploration where the design is uncertain and making stronger commitments when the evidence supports them.
-
-A useful investment gives teams an earlier signal about a decision that costs time or money to reverse. Leaders can judge its value by looking at which changes a team caught earlier, how much rework it avoided and where uncertainty still affects delivery.
+If mismatches now surface early but the release still depends on timing under load, the next investment might be time on the test rig. A team might use a risk burndown chart to track its estimated exposure over successive integrations. A leader can then see which risks have fallen and which still affect a delivery commitment.
 
 > **Explore further**
 >
-> [Choosing an engineering capability when several investments compete](15-choosing-the-next-engineering-capability.md#decide-from-what-is-blocking-the-product) develops this decision later in the course.
+> In Chapter 15, [compare four investments against the product decision they would support](15-choosing-the-next-engineering-capability.md#decide-from-what-is-blocking-the-product).
 
 <!-- interactive: chapter-quiz -->
 
 ## From the paradigm to a working example
 
-A city wants people to move through a busy intersection more easily. Before choosing a controller, its engineers need to decide whose experience to improve and what they can learn first. [Chapter 2 introduces the intersection and its stakeholders](02-introducing-the-engineering-challenge.md).
+A fictional city brings a question to the [intersection workshop in Chapter 2](02-introducing-the-engineering-challenge.md). How could we improve traffic flow at our busy four-way intersection while keeping crossings safe and the signals easy to understand and maintain?

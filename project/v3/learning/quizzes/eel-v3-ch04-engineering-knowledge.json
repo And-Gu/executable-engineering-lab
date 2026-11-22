@@ -1,39 +1,58 @@
 [
   {
     "id": "follow-a-relation",
-    "prompt": "The phase-selection function may change. The source says the queue model represents that function. What should an engineer do with this link?",
+    "prompt": "Starting at the phase-selection function, the engineer follows an incoming ‘represents’ link back to INT-MOD-001. What belongs in the change review?",
     "options": [
       {
-        "text": "Review the model assumptions that depend on phase selection.",
-        "feedback": "The directed link identifies a concrete model to inspect. The engineer can then establish and record the effect of the proposed change.",
+        "text": "Record the model as a candidate for review of its fixed phase sequence.",
+        "feedback": "E03 points from the model to the function it represents. Following that link backward identifies the model whose assumptions the reviewer should inspect.",
         "correct": true
       },
       {
-        "text": "Mark the signal interface as failed.",
-        "feedback": "The link records what the model represents. A failure claim requires an observed result against a criterion."
+        "text": "Record a new link saying the function represents the model.",
+        "feedback": "The search began at the target of E03. Its recorded direction still runs from the model to the function."
       },
       {
-        "text": "Update every diagram independently.",
-        "feedback": "The views draw on maintained definitions. Checking the shared definition first shows which views actually need updating."
+        "text": "Record a finding that the adaptive proposal invalidates the model.",
+        "feedback": "A finding of incompatibility requires comparing the proposed behavior with the model assumptions. E03 gives the engineer a reason to start that review."
       }
     ]
   },
   {
     "id": "unresolved-target",
-    "prompt": "An assistant suggests an interface ID that is missing from the source graph. How should the engineer record it?",
+    "prompt": "The graph lists INT-IF-001 as a possible impact. A suggested second link names INT-IF-UNKNOWN. How should the engineer handle that second link?",
     "options": [
       {
-        "text": "Connect it to the nearest-looking interface name.",
-        "feedback": "A similar label provides no evidence of identity. That guessed connection would mislead the next review."
+        "text": "Use INT-IF-001 as the target because its name is similar.",
+        "feedback": "E08 already identifies INT-IF-001. Resolving the second ID requires a source that establishes which interface it denotes."
       },
       {
-        "text": "Remove the question because the graph has no edge.",
-        "feedback": "A missing edge can identify a gap in the recorded information. Other sources may still show an effect."
+        "text": "Mark the interface question as settled because no object has that ID.",
+        "feedback": "A failed lookup identifies a gap in the records. The interface owner may know which definition or correction is needed."
       },
       {
-        "text": "Keep it as an unresolved review question and check its source.",
-        "feedback": "The uncertainty stays visible and reviewable. A verified identity can later support a recorded relationship.",
+        "text": "Keep the question open and ask for the defining source before adding the link.",
+        "feedback": "The source flags INT-IF-UNKNOWN as unresolved. When the interface owner identifies the target, the reviewer can decide whether to record the link.",
         "correct": true
+      }
+    ]
+  },
+  {
+    "id": "proposed-check",
+    "prompt": "INT-TST-001 targets the rule against simultaneous greens. Which statement does that link support?",
+    "options": [
+      {
+        "text": "The fixed-phase model passed the check in T1.",
+        "feedback": "A pass needs a recorded execution with the model revision, the criterion and the observed outcome. The link records only the check's purpose."
+      },
+      {
+        "text": "The proposed check addresses the rule. Its outcome is still open.",
+        "feedback": "E06 records the target property and marks the check as proposed and unrun. A later result could be linked to the exact revision examined.",
+        "correct": true
+      },
+      {
+        "text": "The check covers the behavior of the proposed adaptive controller.",
+        "feedback": "The target is one property. To claim coverage for another strategy, the reviewer would need its behavior definition and the conditions the check examines."
       }
     ]
   }

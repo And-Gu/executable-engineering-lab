@@ -7,11 +7,11 @@
 
 | Part | # | Chapter | Distinct learning gain | Primary intersection teaching view |
 |---|---:|---|---|---|
-| I — Frame the Work | 01 | The New Engineering Paradigm | Explain changing expectations, software-inspired workflows, AI, and two co-evolving systems | Executive overview; no detailed case |
-| I | 02 | Introducing the Engineering Challenge | Understand stakeholders, system boundaries, and the fictional case | Establish the intersection story and its evidence limits |
-| I | 03 | Planning Under Uncertainty | Select a meaningful investigation and decide what is ready to commit | Compare investigation choices, dependencies and decision criteria |
-| II — Build and Test Knowledge | 04 | Engineering Knowledge as Code | Explain controlled engineering information, typed relationships and change impact | Source-backed functional/interface views |
-| II | 05 | Learning Through Models and Prototypes | Select a model, define assumptions and interpret a bounded experiment | Fixed-phase state model and traceable queue/arrival comparison |
+| I — Frame the Work | 01 | The New Engineering Paradigm | Decide where earlier feedback could save engineering time and reduce rework | Compare a product change with the repeatable check that helps teams integrate it |
+| I | 02 | Setting Up the Intersection Workshop | Turn a road user's concern into a question a first prototype can investigate | Explore the four-way intersection, who uses it and what a vehicle-queue model can represent |
+| I | 03 | Planning Under Uncertainty | Revise the next increment when a prototype changes what the team knows | Reconcile two readings of the same queue before requesting arrival data |
+| II — Build and Test Knowledge | 04 | Engineering Knowledge as Code | Use typed relationships to check a proposed change against engineering sources | Trace a phase-selection change to the queue model that represents the function |
+| II | 05 | Learning Through Models and Prototypes | Run an experiment and save what it taught the team about the model | Move one arrival, compare the queue traces and record the result against the model revision |
 | II | 06 | Engineering Data: From Measurements to Decisions | Curate, annotate, inspect and reuse engineering observations | Original, checked and derived records |
 | II | 07 | Spec-Driven Development Without Waterfall | Define a bounded next increment while leaving other uncertainties open | Progressive specification and decisions |
 | III — Develop an Integrated Product | 08 | Directing AI Engineering Agents | Bound, observe and review delegated engineering work | Illustrative task context, tool actions and handover |

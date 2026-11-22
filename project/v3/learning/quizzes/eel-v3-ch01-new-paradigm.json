@@ -1,35 +1,35 @@
 [
   {
     "id": "repeatable-feedback",
-    "prompt": "Teams discover the same interface mismatch late in integration. Which investment would shorten the next decision cycle?",
+    "prompt": "Teams first compare their interface definitions when the assembled modules reach the test rig. Which investment would expose disagreements before the modules are built?",
     "options": [
       {
-        "text": "Add a second sign-off meeting before integration.",
-        "feedback": "The team would still discover the mismatch at integration. Identify where the two interface definitions first become comparable."
+        "text": "Reserve a second test-rig slot for the assembled modules.",
+        "feedback": "Another slot can help when teams are waiting for equipment. They would still discover the disagreement after building the modules, when several teams may have to repeat design and integration work."
       },
       {
         "text": "Check the two versioned interface definitions whenever either changes.",
-        "feedback": "An early comparison exposes a disagreement while the teams can still change their designs. The reusable check improves the engineering system.",
+        "feedback": "The teams can settle the disagreement while both designs are still open. The reusable check improves the engineering system and can spare the next variant the same late rework.",
         "correct": true
       },
       {
-        "text": "Build the next product variant before investigating the mismatch.",
-        "feedback": "A further variant increases the number of configurations the teams must investigate. It does little to locate the existing disagreement."
+        "text": "Automate distribution of the integration report after each rig test.",
+        "feedback": "Faster reporting helps teams act on a finding once they have it. The first comparison of the definitions would still come after assembly."
       }
     ]
   },
   {
     "id": "what-a-check-supports",
-    "prompt": "A model check passes for a proposed design change. Which decision can the team now make?",
+    "prompt": "An automated check finds that both modules declare the same unit. Which decision does that result support?",
     "options": [
       {
-        "text": "Use the result to decide what to integrate or investigate next.",
-        "feedback": "The check gives timely evidence about the modeled condition. The team can use that evidence to choose its next integration or test step.",
+        "text": "Take those revisions to integration and investigate timing under load.",
+        "feedback": "The definitions agree on the unit. A test of the integrated modules can address the separate question of whether the value arrives in time.",
         "correct": true
       },
       {
         "text": "Release the product in every intended operating condition.",
-        "feedback": "The check covered a particular model and condition. Release also depends on integration and evidence for the intended use."
+        "feedback": "The check compared the declared units. Release also depends on how the integrated product behaves under its intended operating conditions."
       },
       {
         "text": "Count the check as a measured reduction in total development cost.",

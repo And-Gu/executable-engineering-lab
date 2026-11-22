@@ -1,39 +1,39 @@
 [
   {
     "id": "bounded-claim",
-    "prompt": "Two scenarios have the same four arrivals and fixed signal phases, yet finish with different queues. What accounts for the difference?",
+    "prompt": "Moving one north–south arrival in B from slot 3 to slot 2 changes the final queue from two vehicles to one. Which claim do the rows support?",
     "options": [
       {
-        "text": "The model has selected a better controller for one scenario.",
-        "feedback": "Both scenarios use the same phase sequence. Look at when each vehicle arrives relative to a green slot."
+        "text": "The smaller queue came from an extra north–south green slot.",
+        "feedback": "Both runs use the same phases. Inspect slot 2 to see how the edited run uses the green already there."
       },
       {
-        "text": "The timing of arrivals changes which vehicles can depart within the eight slots.",
-        "feedback": "The rule serves the active green group after arrivals join its queue. An arrival that misses that group’s green can still be waiting at the end.",
+        "text": "One vehicle could leave on the last north–south green because it arrived a slot earlier.",
+        "feedback": "In the edited run that vehicle arrives and leaves in slot 2. Only one north–south vehicle then joins the queue in slot 3, and it is still there after slot 8.",
         "correct": true
       },
       {
-        "text": "The smaller final queue establishes a shorter average wait in city traffic.",
-        "feedback": "The trace counts vehicles remaining at one horizon. It contains neither a mean waiting-time measure nor observed city traffic."
+        "text": "The edit reduced the average wait by one slot per vehicle.",
+        "feedback": "The difference is one vehicle waiting at the horizon. Estimating an average wait would require following each vehicle, including the one still queued."
       }
     ]
   },
   {
     "id": "capture-observation",
-    "prompt": "What should be saved so a colleague can use this experiment in the next investigation?",
+    "prompt": "A colleague wants to reproduce the edited B observation and investigate a second cycle. Which record gives them the provenance they need?",
     "options": [
       {
-        "text": "The model revision, scenario edit, observation horizon, queue result and next question.",
-        "feedback": "These details connect the observation to the exact assumptions and inputs that produced it and make the follow-up reproducible.",
+        "text": "Link the experiment, model revision and original B, specify the move, give the queue in vehicles after service at slot 8, and label the second cycle as a proposed investigation.",
+        "feedback": "That record identifies the original inputs and rules, describes exactly how to replay the edit, and distinguishes the computed result from a question that remains open.",
         "correct": true
       },
       {
-        "text": "Only the smallest queue shown by the experiment.",
-        "feedback": "A count on its own omits the arrival pattern, model revision and time at which it was taken."
+        "text": "Save the baseline trace and label its B result “one vehicle queued after slot 8.”",
+        "feedback": "The stored B baseline has two vehicles queued. A separate observation needs to identify the input edit that produced one."
       },
       {
-        "text": "An instruction to use the simulated schedule for the real intersection.",
-        "feedback": "A source-linked observation supports the next investigation. Choosing an operational schedule requires evidence about the real system."
+        "text": "Save the two final counts under T1 and use them as the expected second-cycle results.",
+        "feedback": "Both counts belong to the eight-slot window. A second cycle needs a defined arrival pattern, a longer horizon and its own result."
       }
     ]
   }
