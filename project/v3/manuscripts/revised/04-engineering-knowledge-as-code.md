@@ -72,6 +72,8 @@ When changing an established configuration, the team must identify what is actua
 
 Consider INT-CHG-001, the proposal to investigate adaptive signal selection. An engineer gives an LLM the T1 graph and asks, “If phase selection changes, which model and interface should we revisit? Identify the links that support your answer.” Suppose the assistant suggests, “Review the queue model and change the controller's command interface.”
 
+<!-- interactive: change-impact-figure -->
+
 The engineer follows link E07 from INT-CHG-001 through `may_affect` to the phase-selection function, INT-FUN-001. To find a model of that function, she looks for an **incoming** `represents` link. The recorded T1 link, E03, reads **INT-MOD-001 → represents → INT-FUN-001**. Following it back from its target identifies the model. The engineer opens its T1 inputs and finds the assumption worth examining. The phases follow a fixed sequence even when arrivals change.
 
 E08 also records `may_affect`, this time from the change to INT-IF-001. Both E07 and E08 have the status `inferred_review_candidate`. The engineer turns “change the interface” into a question for its owner. Could the controller select a different phase using the commands the interface already defines?

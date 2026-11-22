@@ -1,0 +1,126 @@
+---
+import graph from '../../../../project/v3/case-study/source-graph-v1.json';
+
+const sourceUrl = 'https://github.com/And-Gu/executable-engineering-lab/blob/main/project/v3/case-study/source-graph-v1.json';
+const titles = {
+  proposal: 'Adaptive strategy proposal', function: 'Phase selection',
+  model: 'Two-queue model', interface: 'Command interface',
+};
+const statusNames: Record<string, string> = {
+  inferred_review_candidate: 'Inferred review candidate',
+  recorded_in_fictional_fixture: 'Recorded in the teaching graph',
+};
+const layout = [
+  { id: 'E07', axis: 'across', from: 'proposal', relation: 'may_affect', to: 'function' },
+  { id: 'E03', axis: 'up', from: 'model', relation: 'represents', to: 'function' },
+  { id: 'E08', axis: 'down', from: 'proposal', relation: 'may_affect', to: 'interface' },
+] as const;
+const records = new Map(graph.nodes.map(node => [node.id, node]));
+const links = layout.map(slot => {
+  const edge = graph.edges.find(edge => edge.id === slot.id);
+  const from = edge && records.get(edge.from);
+  const to = edge && records.get(edge.to);
+  if (!edge || !from || !to || from.kind !== slot.from || to.kind !== slot.to ||
+      edge.relation !== slot.relation || !statusNames[edge.relation_status]) {
+    throw new Error(`T1 relationship ${slot.id} no longer matches the Chapter 4 figure`);
+  }
+  return { edge, from, to, slot, label: edge.relation.replaceAll('_', ' ') };
+});
+const nodes = [...new Set(links.flatMap(link => [link.from, link.to]))];
+if (nodes.length !== 4) throw new Error('The Chapter 4 relationships must share one proposal and one function');
+---
+<figure class="impact-figure" id="change-impact-figure" aria-labelledby="impact-title">
+  <h3 id="impact-title">Tracing the adaptive strategy proposal</h3>
+  <div class="impact-key" aria-hidden="true">
+    <span><i class="sample possible"></i>Possible impact</span>
+    <span><i class="sample"></i>Recorded relationship</span>
+  </div>
+  <fieldset>
+    <legend>Select a relationship to inspect its record.</legend>
+    <div class="impact-layout">
+      {nodes.map(node => <div class="impact-node" style={`grid-area:${node.kind}`} data-node={node.id}>
+        <strong>{titles[node.kind as keyof typeof titles]}</strong>
+        <code>{node.id}</code>
+      </div>)}
+      {links.map(({ edge, from, to, slot, label }) => <div class="impact-relation">
+        <div class:list={['connector', slot.axis]} data-status={edge.relation_status}>
+          <span class="wire" aria-hidden="true"></span>
+          <label class="edge-choice">
+            <span class="edge-id">
+              <input type="radio" name="impact-relation" value={edge.id} checked={edge.id === 'E03'}
+                aria-label={`${edge.id}. ${titles[slot.from]} ${label} ${titles[slot.to]}.`}
+                aria-controls={`record-${edge.id}`} aria-describedby={`record-${edge.id}`} />
+              <span aria-hidden="true">{edge.id}</span>
+            </span>
+            <span class="edge-type" aria-hidden="true">{label}</span>
+          </label>
+        </div>
+        <div class="source-record" id={`record-${edge.id}`}>
+          <div class="record-meta">{edge.id} · {edge.asserted_in_revision} · {statusNames[edge.relation_status]}</div>
+          <div class="record-statement"><code>{from.id}</code> <b>{edge.relation}</b> <code>{to.id}</code></div>
+        </div>
+      </div>)}
+    </div>
+  </fieldset>
+  <figcaption>Follow the incoming <i>represents</i> arrow back to the model to review its fixed phases. The interface owner can check whether the existing commands support the proposed strategy. <a href={sourceUrl}>{graph.revision} source graph</a></figcaption>
+</figure>
+
+<style>
+  .impact-figure { max-width: 70ch; margin: 2rem 0; padding: 1.25rem 0; border-block: 1px solid var(--rule); }
+  .impact-figure h3 { margin: 0; }
+  .impact-key { display: flex; flex-wrap: wrap; gap: .3rem 1.4rem; margin: .55rem 0 1.2rem; color: var(--muted); font-size: .85rem; }
+  .impact-key span { display: inline-flex; align-items: center; gap: .45rem; }
+  .sample { width: 1.65rem; border-top: 2px solid currentColor; }
+  .sample.possible { border-top-style: dashed; }
+  fieldset { min-width: 0; margin: 0; padding: 0; border: 0; }
+  legend { padding: 0; margin-block-end: .8rem; color: var(--muted); font-size: .875rem; }
+  .impact-layout {
+    display: grid; grid-template-columns: minmax(0, 1fr) clamp(5.2rem, 24%, 9rem) minmax(0, 1fr);
+    grid-template-areas: 'proposal across function' 'down . up' 'interface . model';
+  }
+  .impact-node {
+    display: grid; align-content: center; gap: .25rem; min-width: 0; padding: .8rem;
+    background: var(--panel); border: 1px solid var(--rule); text-align: center; line-height: 1.3;
+  }
+  .impact-node strong { font-size: 1rem; }
+  .impact-node code, .edge-id, .record-meta, .record-statement { font-family: var(--mono); }
+  .impact-node code { color: var(--muted); font-size: .75rem; }
+  .impact-relation { display: contents; }
+  .connector { position: relative; display: grid; place-items: center; color: var(--muted); }
+  .across { grid-area: across; grid-template-rows: 1fr 1fr; min-height: 6rem; }
+  .across .edge-choice { grid-row: 1; align-self: end; margin-bottom: .2rem; }
+  .up { grid-area: up; }
+  .down { grid-area: down; }
+  .up, .down { min-height: 6.5rem; }
+  .wire { position: absolute; }
+  [data-status="inferred_review_candidate"] { --stroke: dashed; }
+  .across .wire { top: 50%; width: 100%; border-top: 2px var(--stroke, solid) currentColor; }
+  .up .wire, .down .wire { height: 100%; border-left: 2px var(--stroke, solid) currentColor; }
+  .wire::after {
+    content: ''; position: absolute; width: .46rem; height: .46rem;
+    border-top: 2px solid currentColor; border-right: 2px solid currentColor;
+  }
+  .across .wire::after { right: 2px; top: -1px; transform: translateY(-50%) rotate(45deg); }
+  .up .wire::after { top: 2px; left: -1px; transform: translateX(-50%) rotate(-45deg); }
+  .down .wire::after { bottom: 2px; left: -1px; transform: translateX(-50%) rotate(135deg); }
+  .edge-choice {
+    position: relative; display: grid; justify-items: center; gap: .15rem; cursor: pointer;
+    background: var(--bg); color: var(--text); min-height: 2.75rem; align-content: center; padding: .3rem .4rem; line-height: 1.2;
+  }
+  .edge-id { display: flex; align-items: center; gap: .32rem; color: var(--muted); font-size: .75rem; }
+  .edge-id input { width: .85rem; height: .85rem; margin: 0; accent-color: var(--teal); cursor: pointer; }
+  .edge-type { font-size: .875rem; }
+  .edge-choice:hover .edge-type, .edge-choice:has(:checked) .edge-type { color: var(--teal); }
+  .edge-choice:has(:focus-visible) { outline: 2px solid var(--gold); outline-offset: 2px; }
+  .source-record { grid-column: 1 / -1; margin: 1.1rem 0 0; padding: .65rem .85rem; border-inline-start: 2px solid var(--teal); background: var(--panel); }
+  .impact-relation:has(input:not(:checked)) .source-record { display: none; }
+  .record-meta { color: var(--muted); font-size: .75rem; }
+  .record-statement { display: flex; flex-wrap: wrap; align-items: baseline; gap: .15rem .6rem; font-size: .875rem; }
+  .record-statement b { font-weight: 500; color: var(--teal); }
+  figcaption { margin: .85rem 0 0; color: var(--muted); font-size: .9rem; line-height: 1.55; }
+  @media (max-width: 450px) {
+    .impact-node { padding: .65rem .25rem; }
+    .impact-node strong { font-size: .875rem; }
+    .edge-choice { padding-inline: .2rem; }
+  }
+</style>
