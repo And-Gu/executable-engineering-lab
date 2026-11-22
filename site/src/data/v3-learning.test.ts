@@ -5,12 +5,14 @@ import { chapterQuizzes, chapterSections, quizSchema } from './v3-learning';
 
 describe('V3 chapter activities', () => {
   it('binds the five published manuscripts to their own questions and slots', () => {
+    const figures: Record<string, string> = { '04': 'change-impact-figure', '05': 'intersection-model' };
     for (const chapter of v3Chapters.slice(0, 5)) {
       const slug = chapter.url.split('/').filter(Boolean).at(-1);
       const source = readFileSync(new URL(`../../../project/v3/manuscripts/revised/${slug}.md`, import.meta.url), 'utf8');
       const id = source.match(/^id: (.+)$/m)![1];
       expect(chapterQuizzes.get(id)?.length).toBeGreaterThanOrEqual(2);
-      const activities = chapter.number === '05' ? ['intersection-model', 'chapter-quiz'] : ['chapter-quiz'];
+      const figure = figures[chapter.number];
+      const activities = figure ? [figure, 'chapter-quiz'] : ['chapter-quiz'];
       expect(chapterSections(source, activities).filter(part => part.kind === 'activity').map(part => part.content)).toEqual(activities);
     }
   });
