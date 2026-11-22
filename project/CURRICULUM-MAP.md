@@ -7,7 +7,7 @@
 
 | Part | # | Chapter | Distinct learning gain | Primary intersection teaching view |
 |---|---:|---|---|---|
-| I — Frame the Work | 01 | The New Engineering Paradigm | Explain changing expectations, software-inspired workflows, AI, and two co-evolving systems | Executive overview; no detailed case |
+| I — Frame the Work | 01 | The New Engineering Paradigm | Decide where earlier feedback could save engineering time and reduce rework | Compare a product change with the repeatable check that helps teams integrate it |
 | I | 02 | Introducing the Engineering Challenge | Understand stakeholders, system boundaries, and the fictional case | Establish the intersection story and its evidence limits |
 | I | 03 | Planning Under Uncertainty | Select a meaningful investigation and decide what is ready to commit | Compare investigation choices, dependencies and decision criteria |
 | II — Build and Test Knowledge | 04 | Engineering Knowledge as Code | Explain controlled engineering information, typed relationships and change impact | Source-backed functional/interface views |
