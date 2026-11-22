@@ -8,7 +8,7 @@
 | Part | # | Chapter | Distinct learning gain | Primary intersection teaching view |
 |---|---:|---|---|---|
 | I — Frame the Work | 01 | The New Engineering Paradigm | Decide where earlier feedback could save engineering time and reduce rework | Compare a product change with the repeatable check that helps teams integrate it |
-| I | 02 | Introducing the Engineering Challenge | Understand stakeholders, system boundaries, and the fictional case | Establish the intersection story and its evidence limits |
+| I | 02 | Setting Up the Intersection Workshop | Turn a road user's concern into a question a first prototype can investigate | Explore the four-way intersection, who uses it and what a vehicle-queue model can represent |
 | I | 03 | Planning Under Uncertainty | Select a meaningful investigation and decide what is ready to commit | Compare investigation choices, dependencies and decision criteria |
 | II — Build and Test Knowledge | 04 | Engineering Knowledge as Code | Explain controlled engineering information, typed relationships and change impact | Source-backed functional/interface views |
 | II | 05 | Learning Through Models and Prototypes | Select a model, define assumptions and interpret a bounded experiment | Fixed-phase state model and traceable queue/arrival comparison |

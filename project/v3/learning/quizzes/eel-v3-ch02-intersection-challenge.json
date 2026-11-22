@@ -1,39 +1,39 @@
 [
   {
     "id": "first-question",
-    "prompt": "The city wants better flow and safe crossings. Which question fits the first fixed-phase queue prototype?",
+    "prompt": "The team keeps the signal sequence and the total arrivals on each road fixed. Which question can its first prototype investigate?",
     "options": [
       {
-        "text": "Which crossing time is suitable for all pedestrians?",
-        "feedback": "The prototype has vehicle arrivals and signal phases. Answering a crossing-time question requires information about pedestrians, geometry and timing."
+        "text": "Can a person at the curb see the crossing indication clearly?",
+        "feedback": "The prototype represents vehicle phases. Visibility depends on the installed signal and the view from the curb."
       },
       {
-        "text": "Which detector should the city purchase?",
-        "feedback": "Choosing hardware requires sensing and interface needs that the first queue experiment leaves open."
+        "text": "Would a detector on the busiest approach make the signal respond sooner?",
+        "feedback": "The signal follows a fixed sequence in the model. A detector comparison would need readings and a rule for responding to them."
       },
       {
-        "text": "Can different arrival patterns leave different queues under the same phases?",
-        "feedback": "Arrivals, phases and queues are part of the prototype. Varying arrivals while holding the phases fixed isolates a question it can answer.",
+        "text": "Can moving the same arrivals to different steps change how many vehicles are still waiting at the end?",
+        "feedback": "The model records arrivals, departures and queues at each step. The team can vary the placement of the arrivals and compare the final counts.",
         "correct": true
       }
     ]
   },
   {
     "id": "intent-and-criteria",
-    "prompt": "Two groups agree to improve the intersection but give different meanings to “better.” What is the next useful step?",
+    "prompt": "A pedestrian asks whether someone can reach the far curb before a conflicting turn is permitted. What evidence would help the team answer?",
     "options": [
       {
-        "text": "Identify each group’s intended outcome and choose one uncertainty to investigate.",
-        "feedback": "A driver’s queue and a pedestrian’s crossing opportunity call for different observations. Naming both helps turn a shared intent into meaningful criteria.",
+        "text": "The crossing distance, observations of people crossing and the indications shown to pedestrians and turning drivers.",
+        "feedback": "These observations connect the time people need with the permissions they encounter on that crossing. The first prototype represents vehicles moving in two groups.",
         "correct": true
       },
       {
-        "text": "Make the shortest vehicle queue the acceptance criterion for everyone.",
-        "feedback": "Queue length describes one outcome for one group. It leaves the crossing concern unanswered."
+        "text": "The longest queue observed when the team tries more arrival patterns in the prototype.",
+        "feedback": "A longer queue tells the team more vehicles are waiting. It contains no record of a person reaching the far curb or of a turning vehicle's permission."
       },
       {
-        "text": "Choose adaptive control so that everyone can work to one design.",
-        "feedback": "Selecting a controller settles the proposed mechanism before the team has agreed which outcomes it should improve."
+        "text": "The number of model steps for which one vehicle group has a green signal.",
+        "feedback": "The steps describe the order of vehicle phases. Converting them into time available to cross would require physical durations and pedestrian indications."
       }
     ]
   }
