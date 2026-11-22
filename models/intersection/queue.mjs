@@ -17,11 +17,12 @@ export function runQueue(model, arrivals) {
     const arrival = arrivals[index];
     const capacity = model.service[phase];
     if (!validCounts(arrival) || !validCounts(capacity)) throw new Error(`Invalid arrivals or phase at slot ${index + 1}.`);
-    const waitingNS = queue.NS + arrival.NS;
-    const waitingEW = queue.EW + arrival.EW;
+    const opening_queue = queue;
+    const waitingNS = opening_queue.NS + arrival.NS;
+    const waitingEW = opening_queue.EW + arrival.EW;
     const departures = { NS: Math.min(waitingNS, capacity.NS), EW: Math.min(waitingEW, capacity.EW) };
     queue = { NS: waitingNS - departures.NS, EW: waitingEW - departures.EW };
-    return { slot: index + 1, phase, arrival, departures, queue };
+    return { slot: index + 1, phase, opening_queue, arrival, departures, queue };
   });
 }
 

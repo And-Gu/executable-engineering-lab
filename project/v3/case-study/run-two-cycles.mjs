@@ -26,7 +26,7 @@ const record = {
     const boundary = model.horizon_slots;
     return {
       id, after_first_cycle: rows[boundary - 1],
-      before_next_arrivals: rows[boundary - 1].queue,
+      before_next_arrivals: rows[boundary].opening_queue,
       first_slot_of_second_cycle: rows[boundary], after_second_cycle: rows.at(-1),
     };
   }),

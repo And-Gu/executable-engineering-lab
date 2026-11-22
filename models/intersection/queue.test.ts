@@ -25,6 +25,8 @@ describe('fixed-phase intersection experiment', () => {
         firstCycle.push([scenario.id, slot, phase, arrival.NS, arrival.EW, departures.NS, departures.EW, queue.NS, queue.EW].join(','));
       }
       expect(rows).toHaveLength(16);
+      expect(rows[8].opening_queue).toEqual(rows[7].queue);
+      expect(rows[8].opening_queue).toEqual({ NS: scenario.id === 'A' ? 1 : 2, EW: 0 });
       expect(rows[8].departures).toEqual({ NS: 1, EW: 0 });
       expect(rows[8].queue).toEqual({ NS: 1, EW: scenario.id === 'A' ? 0 : 2 });
       expect(rows[15].queue).toEqual({ NS: scenario.id === 'A' ? 1 : 2, EW: 0 });
@@ -33,7 +35,9 @@ describe('fixed-phase intersection experiment', () => {
     // Both published scenarios clear EW by slot 8. Leave EW waiting to test its carry too.
     const lateEW = clustered.map(row => ({ ...row }));
     lateEW[7].EW = 3;
-    expect(runTwoCycles(inputs, lateEW)[8].queue).toEqual({ NS: 1, EW: 5 });
+    const ninth = runTwoCycles(inputs, lateEW)[8];
+    expect(ninth.opening_queue).toEqual({ NS: 2, EW: 3 });
+    expect(ninth.queue).toEqual({ NS: 1, EW: 5 });
   });
 
   it('reproduces the published two-cycle record from its identified sources', () => {

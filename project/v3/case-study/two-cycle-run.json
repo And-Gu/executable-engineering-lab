@@ -16,7 +16,7 @@
     },
     "calculation": {
       "path": "models/intersection/queue.mjs",
-      "sha256": "2315efd095e7f5fabdad9edeb0338bb2ce674daaaf6b04a41c6fa183a37562d5"
+      "sha256": "1a37be436ede7991ed5d9a1f013e1f49749bfe60bca28aac5796aebf1e8453de"
     },
     "reference_cycle": {
       "path": "project/v3/case-study/trace-v1.csv",
@@ -24,7 +24,7 @@
     },
     "runner": {
       "path": "project/v3/case-study/run-two-cycles.mjs",
-      "sha256": "21b1406ff84c2f43f9143a5c2c0a1bf36e9406090d5474f589c4ac32b2fd2420"
+      "sha256": "253836901181f7dfad2c076452459a91f6645acd3ef2d0e94bb64dfeb6f7a7e0"
     }
   },
   "scenarios": [
@@ -33,6 +33,10 @@
       "after_first_cycle": {
         "slot": 8,
         "phase": "ALL_RED",
+        "opening_queue": {
+          "NS": 1,
+          "EW": 0
+        },
         "arrival": {
           "NS": 0,
           "EW": 0
@@ -53,6 +57,10 @@
       "first_slot_of_second_cycle": {
         "slot": 9,
         "phase": "NS_GREEN",
+        "opening_queue": {
+          "NS": 1,
+          "EW": 0
+        },
         "arrival": {
           "NS": 1,
           "EW": 0
@@ -69,6 +77,10 @@
       "after_second_cycle": {
         "slot": 16,
         "phase": "ALL_RED",
+        "opening_queue": {
+          "NS": 1,
+          "EW": 0
+        },
         "arrival": {
           "NS": 0,
           "EW": 0
@@ -88,6 +100,10 @@
       "after_first_cycle": {
         "slot": 8,
         "phase": "ALL_RED",
+        "opening_queue": {
+          "NS": 2,
+          "EW": 0
+        },
         "arrival": {
           "NS": 0,
           "EW": 0
@@ -108,6 +124,10 @@
       "first_slot_of_second_cycle": {
         "slot": 9,
         "phase": "NS_GREEN",
+        "opening_queue": {
+          "NS": 2,
+          "EW": 0
+        },
         "arrival": {
           "NS": 0,
           "EW": 2
@@ -124,6 +144,10 @@
       "after_second_cycle": {
         "slot": 16,
         "phase": "ALL_RED",
+        "opening_queue": {
+          "NS": 2,
+          "EW": 0
+        },
         "arrival": {
           "NS": 0,
           "EW": 0
