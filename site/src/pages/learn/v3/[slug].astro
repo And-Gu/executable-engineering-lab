@@ -4,6 +4,8 @@ import { v3Chapters } from '../../../data/v3-course';
 import { chapterQuizzes, chapterSections } from '../../../data/v3-learning';
 import ChapterQuiz from '../../../components/learning/ChapterQuiz.astro';
 import ChangeImpactFigure from '../../../components/learning/ChangeImpactFigure.astro';
+import TwoCycleExperiment from '../../../components/learning/TwoCycleExperiment.astro';
+import DigitalThread from '../../../components/learning/DigitalThread.astro';
 import QueueExperiment from '../../../components/learning/QueueExperiment.astro';
 import SocialLinks from '../../../components/SocialLinks.astro';
 import AuthorAttribution from '../../../components/AuthorAttribution.astro';
@@ -30,14 +32,22 @@ const current = v3Chapters[index];
 if (!current || current.title !== frontmatter.title) throw new Error('Manuscript and curriculum title mismatch');
 const previous = v3Chapters[index - 1], next = v3Chapters[index + 1];
 const base = import.meta.env.BASE_URL;
-const headings = getHeadings().filter((h: {depth:number}) => h.depth === 2);
+type Heading = { depth: number; slug: string; text: string };
+const headings: Heading[] = getHeadings().filter((h: Heading) => h.depth === 2);
 const questions = chapterQuizzes.get(frontmatter.id);
 const activities = ['chapter-quiz'];
 if (frontmatter.id === 'eel-v3-ch04-engineering-knowledge') activities.push('change-impact-figure');
 if (frontmatter.id === 'eel-v3-ch05-models-prototypes') activities.push('intersection-model');
+if (frontmatter.id === 'eel-v3-ch06-engineering-data') activities.push('two-cycle-experiment');
+if (frontmatter.id === 'eel-v3-ch09-reviewable-increments') activities.push('digital-thread');
 const sections = questions
   ? chapterSections(await chapter.compiledContent(), activities)
   : [];
+const contents = questions ? sections.flatMap(section => {
+  if (section.kind === 'prose') return headings.filter(h => section.content.includes(`<h2 id="${h.slug}"`));
+  if (section.content === 'intersection-model') return [{ depth: 2, slug: 'arrival-experiment', text: 'Move one arrival' }];
+  return section.content === 'chapter-quiz' ? [{ depth: 2, slug: 'chapter-quiz', text: 'Check your understanding' }] : [];
+}) : headings;
 const sourceUrl = `https://github.com/And-Gu/executable-engineering-lab/blob/main/project/v3/manuscripts/revised/${Astro.params.slug}.md`;
 ---
 <!doctype html>
@@ -46,7 +56,7 @@ const sourceUrl = `https://github.com/And-Gu/executable-engineering-lab/blob/mai
 <a class="skip" href="#main">Skip to chapter</a>
 <header class="reading-shell site-header"><a class="brand" href={base}>Executable Engineering Lab</a><nav aria-label="Main navigation"><a href={base + 'learn/'}>Learn</a><a href={base + 'lab/'}>Lab</a><a href={base + 'reference/'}>Reference</a></nav><SocialLinks /></header>
 <div class="reading-shell reading-grid">
-<aside class="course-sidebar"><nav aria-label="Course chapters"><a href={base + 'learn/'}>All fifteen chapters</a><ol>{v3Chapters.map(c => <li><a href={c.url} aria-current={c === current ? 'page' : undefined}>{c.title}</a></li>)}</ol></nav><nav class="on-this-page" aria-label="In this chapter"><p class="eyebrow">In this chapter</p>{headings.map((h: {slug:string;text:string}) => <a href={'#'+h.slug}>{h.text}</a>)}{questions && <a href="#chapter-quiz">Check your understanding</a>}</nav></aside>
+<aside class="course-sidebar"><nav aria-label="Course chapters"><a href={base + 'learn/'}>All fifteen chapters</a><ol>{v3Chapters.map(c => <li><a href={c.url} aria-current={c === current ? 'page' : undefined}>{c.title}</a></li>)}</ol></nav><nav class="on-this-page" aria-label="In this chapter"><p class="eyebrow">In this chapter</p>{contents.map(h => <a href={'#'+h.slug}>{h.text}</a>)}</nav></aside>
 <main id="main" tabindex="-1">
   <p class="eyebrow">{frontmatter.part} · Chapter {current.number}</p>
   <details class="mobile-course"><summary>All fifteen chapters</summary><ol>{v3Chapters.map(c => <li><a href={c.url} aria-current={c === current ? 'page' : undefined}>{c.title}</a></li>)}</ol></details>
@@ -55,6 +65,8 @@ const sourceUrl = `https://github.com/And-Gu/executable-engineering-lab/blob/mai
       if (section.kind === 'prose') return <Fragment set:html={section.content} />;
       if (section.content === 'change-impact-figure') return <ChangeImpactFigure />;
       if (section.content === 'intersection-model') return <QueueExperiment />;
+      if (section.content === 'two-cycle-experiment') return <TwoCycleExperiment />;
+      if (section.content === 'digital-thread') return <DigitalThread />;
       return <ChapterQuiz questions={questions} />;
     }) : <Content />}
   </article>

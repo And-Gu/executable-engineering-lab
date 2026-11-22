@@ -11,105 +11,64 @@ teaching_fixture: "T1 — synthetic source, computed outputs, editorial quality 
 
 # Engineering Data: From Measurements to Decisions
 
-*Two results look different. Are they actually comparable?*
+*The first signal cycle ended with one vehicle waiting in scenario A and two in B. If the same traffic arrives again, how many vehicles will be waiting at the end of the second cycle?*
 
-The previous chapter examined two invented traffic-arrival patterns using the same fixed-phase model. With identical directional arrival totals, scenario A ended the eight-slot window with one vehicle queued; scenario B ended with two.
+Software teams keep a working build ready to test from the first increment. For the intersection team, the fixed-phase model from Chapter 5 serves that purpose. A colleague can run a longer experiment today and check its first eight slots against the behavior the team already reviewed. [Chapter 5’s recorded observation and follow-up question](05-learning-through-models-and-prototypes.md#record-what-the-experiment-changed).
 
-Those values may be useful when thinking about the next model experiment. But then a colleague finds a third spreadsheet row labeled **queue_final = 20**.
+For a physical product, a simulation of one function can give the team its first working version. Its digital engineering environment keeps each runnable version connected to the requirements, risks, assumptions and design decisions it addresses. A reviewer can recover why the team chose a rule, change an assumption and inspect the consequence. That opportunity to test the design as it evolves is a reason to fund the engineering tools from the outset. [Chapter 1 on the product and the environment that builds it](01-the-new-engineering-paradigm.md#two-systems-must-evolve-together).
 
-At a glance the new row appears to describe a much worse result. Should we put all three values into a chart and conclude that scenario C is ten times worse than B?
+<span id="an-inspectable-transformation"></span>
 
-Not yet. We do not know whether “20” counts vehicles, measures a time, aggregates several queues or refers to another horizon. We do not even know which model or configuration produced it.
+## Carry the queues through a second cycle
 
-The work of engineering data is to establish **which comparisons can support a specific decision**. T1 already computes deterministically for fixed inputs; that alone cannot tell us whether a new record uses the same metric, conditions or model. Quality, meaning, provenance and experimental design are the important questions here.
+Run each original scenario from empty queues. In the first eight slots, both A and B receive two north–south (NS) and two east–west (EW) vehicles at different times. Revision T1 adds arrivals before serving at most one vehicle from the group with a green light. Repeat each scenario’s own arrivals and phases for slots 9 through 16, carrying both queues forward. [Arrival sequences, phases and service rules](../../case-study/model-inputs-v1.json).
 
-## Begin with the meaning of a record
+Make a prediction for A and B, then try each arrival pattern below.
 
-Here are the small teaching records used in our fictional intersection case. They can be inspected in the [T1 data-quality source](../../case-study/data-quality-v1.json).
+<!-- interactive: two-cycle-experiment -->
 
-| Source record | Reported value | Meaning and unit | Revision and window | Editorial decision |
-|---|---:|---|---|---|
-| Scenario A | 1 | Vehicles still queued | Model T1, after slot 8 | Retain |
-| Scenario B | 2 | Vehicles still queued | Model T1, after slot 8 | Retain |
-| Legacy spreadsheet C | 20 | **Unknown** — field called queue_final | **Unknown** | **Withhold comparison** |
+The simulation leaves **one NS vehicle in A and two NS vehicles in B after slot 16**. Both EW queues are empty. Those are also the counts after slot 8. To check what carried over, look at B in slot 9. It enters with two NS vehicles waiting. Its two new arrivals are EW. One waiting NS vehicle leaves on green, so the row ends with **one NS and two EW**. Had the model discarded the queue between cycles, there would have been nobody to take that green. Two fresh NS arrivals at slot 11 would still have produced the expected final count.
 
-The first two results belong to the same simple model. They describe an end-of-window queue count with a defined unit, rule and observation horizon. A and B also share two NS arrivals and two EW arrivals; their difference is the *placement* of those arrivals.
+> **Concept**
+>
+> An observation window sets when you start and stop counting. Vehicles waiting at the end of one interval form the opening queue for the next. Starting a new run with empty queues changes the experiment.
 
-The legacy row has none of that interpretive context. It remains part of the original record set, but it cannot contribute to this comparison.
+> **Explore further**
+>
+> To reproduce `INT-RUN-T1-TWO-CYCLES`, run `node project/v3/case-study/run-two-cycles.mjs` from the repository root. The record identifies the exact inputs, calculation, baseline trace and run script by their file hashes. [Script that produces the record](https://github.com/And-Gu/executable-engineering-lab/blob/973ff66ebb06daafbd2ddaf35682e0e8da2bffd7/project/v3/case-study/run-two-cycles.mjs) · [Recorded simulation result](https://github.com/And-Gu/executable-engineering-lab/blob/973ff66ebb06daafbd2ddaf35682e0e8da2bffd7/project/v3/case-study/two-cycle-run.json).
 
-This distinction matters in any engineering discipline. Two apparently identical values can represent different test conditions, model configurations, sensor calibration states, software revisions or physical installations.
+<span id="what-the-models-outputs-do-not-say"></span>
+
+B’s previous NS queue clears on the two greens, then another pair arrives on amber. That makes a different phase plan worth testing in simulation. Keep the arrival sequences and the 16-slot window fixed, vary the plan, and inspect the effect on **both** directions. Estimating mean wait would call for following individual vehicles, including those still waiting at slot 16.
+
+<span id="why-this-changes-the-engineering-environment"></span>
+
+## Keep a tested version available
+
+With **docs as code**, an AI assistant can use the same versioned requirement and design rationale to update the experiment description and generate the code that runs the second cycle. A reviewer can exercise the change and compare B’s slot 9 with the agreed carry-over behavior. The regression tests compare every first-cycle row of the longer run with the original, including arrivals, departures and the queues left waiting. [Regression tests](https://github.com/And-Gu/executable-engineering-lab/blob/973ff66ebb06daafbd2ddaf35682e0e8da2bffd7/models/intersection/queue.test.ts) · [Original traces](../../case-study/trace-v1.csv) · [How those traces were checked](../../case-study/MODEL-CHECK.md).
+
+**Continuous integration** runs automated checks on each change as the team brings its work together. With **continuous deployment**, the tested simulation becomes available automatically in the shared environment. Colleagues can exercise the latest version under the same conditions as an earlier observation.
+
+## What would it take to measure an interface under load?
+
+Suppose an interface reviewer asks whether a detector report reaches the controller within its time budget while diagnostic traffic shares the link. In one setup, the limit lives in a requirements tool, the system description in Word and the product definition in a product data management (PDM) system. The checklist confirms that someone specified the timing. The reviewer still has to find the matching revisions and arrange a timing measurement.
+
+In an integrated environment, the reviewer can select a known sender, receiver and link configuration, apply the specified diagnostic load, and measure the interval from sending to receipt against a common clock. The result links back to the timing requirement and the architecture decision that allocated part of the controller’s update period to communication. An overrun would give the team a reason to revisit the allocation or how the two kinds of traffic share the link. A result within the budget could reduce the estimated timing risk for that configuration, one entry in the team’s risk burndown. This is a proposed product measurement. T1’s queue simulation uses abstract slots without a duration in milliseconds.
+
+Choose the setup to match the decision. Software-in-the-loop can exercise the real software against a simulated link. If controller hardware could introduce the delay, connect it to simulated equipment in a hardware-in-the-loop test. A rig with both devices and the actual link, or an instrumented working product, can expose timing across the physical interface. A different customer question, such as whether a technician can recognize a stale detector report, calls for watching a technician attempt that task on a prototype.
+
+<span id="begin-with-the-meaning-of-a-record"></span>
 
 ## Data quality begins before drawing a chart
 
-Imagine a graph with bars of height 1, 2 and 20. The picture is easy to read, but the meaning is false or at least unsubstantiated: it implies the three observations belong to the same comparison.
+Now put the two-cycle result beside the old spreadsheet entry `queue_final = 20`. In A, a field called `queue_final` would read 1 for either window. A reader would have to look elsewhere to tell whether the run ended after eight slots or sixteen. For the spreadsheet we have neither the unit nor the observation window. Even if its author confirms that 20 means vehicles, it could be the largest queue in a day or the count in just one direction. [Original spreadsheet row and curation decisions](../../case-study/data-quality-v1.json).
 
-A useful data check asks questions before presentation. Do we know the units? Were the results measured or calculated? Which population and time window do they summarize? What input and model revision created them? Are missing fields absent because the source never recorded them, or because a transformation discarded them?
+<span id="original-curated-annotated-and-derived"></span>
 
-The T1 case answers those questions for A and B. Both are **calculated from invented inputs**, not measurements from an intersection. The full [trace](../../case-study/trace-v1.csv) retains the arrival and departure counts that produced the two numbers.
+Keep the original row as supplied. Annotate it to say which details are missing, including the metric definition, unit, model or configuration, and window. Withhold it from the comparison unless those details can be recovered. For A and B we can **curate** the inputs by checking their identities, the number of slots and whether each arrival count is a nonnegative integer. The queues are **derived** records. A colleague can trace them back through departures to the original arrivals, phase rules and model revision. That history is their **provenance**. It lets another team judge whether it can reuse the observation for its own decision.
 
-The third row cannot pass the same check. We should preserve the row as originally received, annotate the uncertainty and withhold the comparison. An invented conversion from “20” to a unit we prefer would make the data tidier while making the engineering conclusion less reliable.
-
-A missing unit is sometimes recoverable from a trustworthy source. A missing model revision might require a different investigation or a new run. These are not the same kind of defect.
-
-## Original, curated, annotated and derived
-
-Data refinement is easier to review when each stage has a clear purpose.
-
-**Original records** preserve what was actually supplied. The T1 arrivals and the unqualified spreadsheet row should remain available as distinct sources.
-
-**Curated records** have been checked for fundamental consistency: identity, revision, field meanings, values, units and expected structure. For the T1 model, negative or fractional vehicle arrivals are invalid. Eight slots are required. Those rules prevent impossible inputs from being silently accepted by the toy calculation.
-
-**Annotations** add context that a raw value does not carry. “Scenario B uses model T1, an eight-slot horizon and clustered arrivals” is useful. So is “legacy C lacks a known unit and cannot currently support comparison.” An annotation is not a license to replace an unknown source fact with a guess.
-
-**Derived records** state how an output was calculated and from which inputs. For our comparison, final queued vehicles are derived from the same eight-slot transition rule. The output can be checked against the original arrivals, departed counts and remaining queues.
-
-**Interpretation** then asks what the result means for the question at hand. In T1, clustering changes the remaining queue at this finite horizon. It does not establish real traffic performance or support an operational controller change.
-
-The important idea is to preserve the meaning and source of each transformation. A deterministic calculation will produce the same output for fixed inputs; the harder question is whether the resulting records describe comparable conditions and justify the intended conclusion. A derived value should not become an independently maintained new source of truth.
-
-## An inspectable transformation
-
-The transformation in this small case is deliberately simple:
-
-1. Preserve the original A/B arrival sequences and the spreadsheet-C row.
-2. Read the model revision, eight-slot horizon and event-order rules from the T1 definition.
-3. Recompute the departures and remaining queues, keeping every step accessible in a table.
-4. Confirm that A and B have equivalent definitions and totals for the stated comparison.
-5. Flag the missing unit and configuration for C; **withhold** it rather than converting an unknown value.
-6. Present the comparison of A and B with its source links, and state which conclusion remains unsupported.
-
-The steps are small enough to follow manually. A linked chart would add value if selecting a result revealed its underlying arrival pattern, model inputs and derivation. A decorative dashboard would add little.
-
-There is no need to construct a large data-management application to teach this judgment. The educational interaction should make the consequence of the **data-quality decision** visible.
-
-## What the model's outputs do not say
-
-One subtle risk deserves attention. A summary can report how many vehicles departed during a short observation, yet tell us little about the experience of vehicles still waiting when the window ends.
-
-In scenario A one vehicle remains; in B two remain. We did **not** define mean waiting time, and therefore should not calculate a delay average from only the departures while silently excluding unfinished waits. Doing so could produce an attractive numerical comparison with a hidden denominator problem.
-
-A richer model might later add arrival timestamps, individual waiting times or repeated seeded runs. Those additions would have to define their meaning, event ordering, missing observations and uncertainty. More precise-looking numbers do not automatically mean a more credible engineering decision.
-
-## Why this changes the engineering environment
-
-The **product** team wants to understand intersection operation. The **engineering environment** must make the relevant observations and calculations usable.
-
-That means source identities, definitions, units, configurations and observation windows remain available. Automated checks can detect invalid inputs or incompatible records before a comparison reaches a decision. A later reviewer should be able to follow **why** a conclusion was supported or withheld—not merely obtain the same calculated number again.
-
-The same principle applies when a product includes AI. Evaluation data must represent conditions relevant to the intended use, and the relationship between model revision, data selection and test result matters. That is a question about **AI in the product**. An engineering agent helping prepare a dataset is a different use of AI and requires its own context and authority.
-
-Reusable, carefully described data is an engineering asset. It can help a second team, a later prototype or another model investigation—provided those users can judge its applicability rather than just access a file.
+<!-- interactive: chapter-quiz -->
 
 ## What should the team do next?
 
-The T1 A/B comparison is internally consistent for its narrow, invented scope. The legacy-C comparison remains unsupported. Neither observation justifies adopting a new real signal strategy.
-
-A sensible next engineering increment would make input constraints executable, reject malformed inputs and test that valid scenarios still meet their defined criteria after changes. It should also record which **product** questions remain open. That is different from specifying an entire intersection controller before the operating requirements are understood.
-
-In the next chapter, **Spec-Driven Development Without Waterfall**, we will turn that bounded need into a specification with concrete valid and invalid cases, while keeping broader product alternatives open for learning.
-
-**Engineering takeaway:** Data become useful when their meaning, quality, origin and transformations are inspectable. A chart can reveal a pattern, but the engineering value comes from knowing which comparisons are justified—and being willing to withhold one that is not.
-
----
-
-*Inspect the sources:* [Original model inputs](../../case-study/model-inputs-v1.json) · [Calculated trace](../../case-study/trace-v1.csv) · [Curation record and invalid row](../../case-study/data-quality-v1.json) · [Model-check note](../../case-study/MODEL-CHECK.md).
+We now have a baseline against which to try a different phase plan. Before commissioning that experiment, consider what another engineer would have needed to reproduce this one. Which decisions had to be in the brief before anyone knew the count at slot 16? Chapter 7 reconstructs the specification for the two-cycle run. [Spec-Driven Development Without Waterfall](07-spec-driven-development-without-waterfall.md).

@@ -35,3 +35,6 @@
 .chapter-body .queue-experiment table { display: table; width: 100%; margin: .75rem 0; font-variant-numeric: tabular-nums; }
 .queue-experiment caption { text-align: start; color: var(--muted); margin-bottom: .5rem; }
 .chapter-body .queue-experiment :is(th, td) { min-width: 0; padding: .4rem; text-align: start; }
+
+.worked-answer { max-width: 70ch; margin: 1.5rem 0; padding: .35rem 1rem; border-inline-start: 3px solid var(--teal); background: var(--panel); }
+.worked-answer summary { padding-block: .55rem; font-weight: 600; }

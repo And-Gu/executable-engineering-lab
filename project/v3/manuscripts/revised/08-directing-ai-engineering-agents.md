@@ -1,163 +1,93 @@
 ---
 id: eel-v3-ch08-directing-agents
 chapter: 8
-part: "III — Develop an Integrated Product"
+part: "II — Build and Test Knowledge"
 title: "Directing AI Engineering Agents"
 status: draft
 publication: unpublished
 reference_case: four-way-traffic-intersection
-teaching_fixture: "T1 — fictional agent assignment; NO real agent run"
+teaching_fixture: "T1 — simulated queues and illustrative agent assignments"
 ---
 
 # Directing AI Engineering Agents
 
-*What changes when an agent can carry an engineering outcome through its own feedback loop?*
+The traffic engineer has a reviewed brief for comparing two signal cycles. Who should choose the next step when a result looks wrong? That depends on what the engineer delegates. [Chapter 7’s reviewed specification](07-spec-driven-development-without-waterfall.md).
 
-Our fictional intersection model already produces a defined result for given inputs. The engineering team now wants a better capability: invalid scenarios should be rejected, while valid cases should retain their expected behavior.
+## Two ways to work with an engineering agent
 
-One approach is to ask an AI assistant for suggestions, then manually issue separate instructions for coding, running tests, interpreting errors and fixing failures. Another is to give an **agent the engineering outcome** and let it work through that sequence, within agreed limits.
+**“Help me draft a use case for comparing queues over two signal cycles.”** The agent might draft a few sentences about the traffic engineer, the decision ahead and what to observe. If the draft says “see whether traffic improves,” the engineer can sharpen it to “compare the number waiting in each direction after the first and second cycles.” The engineer reviews the wording and chooses the next step.
 
-Executable models and automated checks allow agents to evaluate proposed changes, respond to failures, and work toward a defined engineering outcome. Engineers establish the acceptance criteria and escalation boundaries, enabling agents to complete multiple iterations without continuous human direction.
+<span id="delegate-a-bounded-outcome-not-a-checklist-of-tasks"></span>
 
-Now imagine **several agents** pursuing parts of that outcome at once. One changes input validation, another analyzes model assumptions, and a third reviews relevant checks. The speed of each agent matters less if their sources, changes and conclusions cannot be brought together. Delegation therefore creates a second engineering problem: **coordinating work and decisions across agents and people**.
+**“Simulate that use case and show whether the queues grow during the second cycle.”** Here the engineer delegates an outcome. The approved brief specifies the scenarios, the observations and the rules to preserve. Within those limits, the agent can plan the run, compare the first cycle with the saved trace, investigate a difference and try again. It returns evidence for the engineer to judge. A proposal to give one road a longer green goes back to the engineer.
 
-## Separate the model from the working agent
-
-Many agents use large language models (LLMs) to interpret task descriptions and select steps. The language model is not, by itself, the complete working system.
-
-The agent also depends on accessible context, tool interfaces, permissions, state and a mechanism for observing results. Some activities are scripted and deterministic; others allow the agent to choose among authorized actions based on feedback.
-
-The distinction is useful, though terminology varies between vendors. A workflow does not become agentic merely because AI was used to generate it.
-
-And this is different from **AI inside a product**. An imagined adaptive traffic controller might contain a predictive component. An engineering agent helping examine its source information is a separate capability with different responsibilities.
-
-## Delegate a bounded outcome, not a checklist of tasks
-
-Here is a plausible assignment for our case study. It is a **task specification**, not a record of an agent execution:
-
-> Make the T1 scenario validator reject negative or fractional arrivals, unknown phases and incomplete inputs without emitting a queue trace. Preserve the declared A/B behavior. Inspect the relevant sources, propose a bounded implementation, execute permitted checks, evaluate any failures and revise within scope. Do not modify the reference behavior, protected acceptance checks, controller–adapter interface, legacy sources or product decisions. Stop and escalate if a source is missing, the criteria conflict, a change crosses an unauthorized interface or the iteration budget is exhausted. Report the changes, checks actually executed and remaining issues for review.
-
-This is a **hypothetical assignment**, not a completed agent run. It specifies an outcome and the boundaries within which the agent may choose its own next actions. For example, the engineer might allow three unsuccessful revision attempts before escalation while keeping the independent acceptance checks outside the agent's write permissions. The engineer need not prompt separately for every intermediate correction.
-
-The acceptance checks must remain trustworthy. An agent may propose additional tests, but it cannot prove success by rewriting the protected expected results to match its implementation. In particular, both **valid T1 behavior and invalid-input rejection** must be checked; a validator that rejects every input is not a solution.
-
-## The inner loop: propose, execute, evaluate, correct
-
-For this bounded software task, a complete agentic work cycle can look like this:
-
-| Agent action | Automated feedback | What happens next |
-|---|---|---|
-| Inspect the T1 source and propose an input-validation change | Are the affected inputs and source contracts identified? | Choose a small, relevant implementation |
-| Implement and run the defined checks | Does the valid A/B case still produce its declared trace? Are negative, fractional and malformed inputs rejected? | Inspect failures before changing the solution |
-| Analyze an unsuccessful check | Which actual rule, input or code path failed? | Revise and execute the checks again, within the authorized scope |
-| Reach the completion or escalation condition | Are the relevant criteria met, or is a source, test or assumption insufficient? | Produce a reviewable result or stop for engineering judgment |
-
-Test results tell the agent which criteria were met and what failed. The agent can use those observations to select its next step, repeat the check, or escalate when the agreed limits are reached.
-
-When the criteria are clear, well covered and protected from unreviewed alteration, the agent may complete several iterations autonomously. When a requirement is ambiguous or a physical interface is implicated, another code iteration may be the wrong response.
-
-## Coordinate several agents around one engineering outcome
-
-Consider the broader fictional T1 objective: *improve confidence in the intersection experiment without changing the agreed phase rules or asserting physical readiness*. Three workstreams could contribute:
-
-| Workstream | Bounded outcome | Dependency and handover |
-|---|---|---|
-| **A — Input validation** | Reject malformed scenarios; preserve valid A/B behavior | Needs the T1 source contract and protected behavioral checks |
-| **B — Model and interface impact review** | Identify assumptions or proposed changes that need engineering review | Reads the same model revision and the proposed controller/adapter definitions; cannot accept physical compatibility |
-| **C — Verification and integration** | Check the proposed outputs against the agreed criteria and identify conflicting revisions | Needs identifiable candidates from A and findings from B; must not replace missing physical evidence with model-test success |
-
-This is a **teaching plan**, not a report that three agents actually ran. A coordinating role—human-led, agent-assisted, or implemented through simple automation—can track the shared objective, select ready work, assign file or source ownership, and decide which outputs may be integrated. It does not need to be a new orchestration product.
-
-Suppose A updates a validator against T1 while B proposes a T2 model revision. Both can appear successful in isolation. C must not combine A's T1 result with B's T2 definition and call the combined baseline verified. The coordinator should notice the revision mismatch, preserve each result's provenance, and either arrange a compatible new evaluation or raise a decision.
-
-The coordinator's responsibility is therefore **more than distributing tasks**. It is maintaining a coherent chain from intent and dependencies through execution and evidence to a reviewable outcome. Work can proceed in parallel when interfaces are stable; conflicting changes to a shared source require an explicit owner and integration order.
+Both assignments are illustrative. A team could split the second one among three agents. One prepares test cases, another runs the simulation and a third checks the first cycle against an independent reference. This is **multi-agent orchestration**. A coordinator gives them the same model revision, arranges the handoffs and brings unresolved discrepancies to the engineer.
 
 ## Context is an engineering capability
 
-A good task description cannot compensate for the wrong source revision.
+Drafting the use case takes the stakeholder’s goal and the decision the comparison will inform. Simulating it also takes model revision **T1**, its fixed eight-slot phase sequence and the original arrival patterns for A and B. The brief names the arrival-before-service rule, which inputs repeat and which queues carry over. The agent also needs the independent first-cycle trace to tell whether its change preserved earlier behavior. [T1 model and inputs](../../case-study/model-inputs-v1.json).
 
-Our hypothetical agent needs to know where the applicable source lives and which items are relevant:
+<span id="separate-the-model-from-the-working-agent"></span>
 
-| Needed context | Why it matters | Example permission |
+> **Concept**
+>
+> The **large language model (LLM)** interprets the task and proposes a next step, such as comparing two files. The **agent harness** is the software around it. It supplies the relevant context, sends permitted requests to tools and returns their results. A row that differs can then guide the model’s next step. [How a turn works in an agent harness](https://code.visualstudio.com/docs/agents/concepts/agent-harnesses#_follow-a-turn-through-an-agent-harness).
+
+“Simulate two cycles” is the task for today. A standing instruction in `AGENTS.md` could say, “Compare the first eight slots of each scenario with the saved trace. Report the first row that differs.” The engineer can give the agent permission to run the model and write a new report while making the reference read-only. Changing that reference requires an engineering decision. [Project instructions](../../../../AGENTS.md) · [The AGENTS.md convention](https://agents.md/).
+
+Which earlier checks still apply? Extending the run preserves the first cycle’s starting queues, inputs and service rule, so all eight rows for each scenario should still match. Suppose a later proposal changes the order to serve *before* arrivals. In A’s first slot, a north–south vehicle arrives on green and leaves immediately under T1. The proposed rule would leave it waiting. The engineer can use that row to review the change, keep the original trace with T1, and approve new expectations for a new revision if warranted. [Saved first-cycle trace](../../case-study/trace-v1.csv).
+
+## Coordinate several agents around one engineering outcome
+
+<span id="the-inner-loop-propose-execute-evaluate-correct"></span>
+
+In the three-agent assignment, the test author works from the approved brief and specifies two checks. One compares the first cycle row by row. The other inspects the queue at the cycle boundary. The runner gives the checker the model revision, exact inputs, command used and resulting rows. The engineer can then review any exception with the relevant evidence in hand.
+
+<span id="supervise-by-exception-not-by-reading-every-agent-message"></span>
+
+Suppose the runner picks the edited B from Chapter 5. In the original B, no north–south vehicle arrives in slot 2. In the edit, one arrives and immediately departs on green. The queues *after that slot* agree. The checker can point to the arrival and departure fields in slot 2 to explain the discrepancy. The coordinator can have the runner select the original B and rerun the comparison. If the group still disagrees about whether that vehicle may depart on arrival, the coordinator takes the row and the competing interpretations to the engineer. [Chapter 5’s one-vehicle edit](05-learning-through-models-and-prototypes.md#follow-the-actual-queue-updates).
+
+<span id="check-the-outcome-not-the-agents-narration"></span>
+
+## Try the assignment and inspect an assumption
+
+Give yourself five minutes. With an agent that can read the T1 sources and run the model, try “Repeat the original B for two cycles and tell me whether the north–south queue grew.” You can also do the exercise here using this illustrative reply.
+
+> “There were two north–south vehicles waiting after slot 8 and two after slot 16. The queue was the same length at both observations.”
+
+1. Write down what the reply tells you about B and what it leaves open. Could someone get those same numbers by running the original eight slots twice from empty queues?
+2. Add one sentence to the assignment asking for an observation that would distinguish those runs. Name the queues and the moment you want to inspect.
+3. Try your revised instruction or compare it with the simulation below. Could another engineer use the evidence you requested to tell whether the queue carried over?
+
+<details class="worked-answer">
+<summary>Compare your instruction with a worked answer</summary>
+
+One possible addition is “For B, show both queues after slot 8 and at the start of slot 9 before any arrivals or service, then show how many depart in each direction during slot 9.” Each pair below gives the north–south count first and the east–west count second. The continuous run uses the invented T1 arrivals. The reset column is a prediction from replaying B’s original first cycle.
+
+| Observation in B | Recorded continuous run | Predicted with a reset |
 |---|---|---|
-| [T1 graph source](../../case-study/source-graph-v1.json) | Identify the model, candidate property and related objects | Read |
-| [T1 model inputs](../../case-study/model-inputs-v1.json) | Establish the phase schedule and valid input meaning | Read |
-| [T1 trace](../../case-study/trace-v1.csv) | Preserve the intended result while testing changes | Read |
-| [Data-quality record](../../case-study/data-quality-v1.json) | Keep the third incompatible source out of valid A/B comparison | Read |
-| Proposed isolated validation change | Add a reviewed technical improvement | Propose in a bounded working branch |
-| Published V0 and V2 sources | Outside this task | No write authorization |
+| After slot 8 | 2, 0 | 2, 0 |
+| Before arrivals in slot 9 | **2, 0** | **0, 0** |
+| After service in slot 9 | 1, 2 | 0, 2 |
+| After slot 16 | 2, 0 | 2, 0 |
 
-These are real files in the **educational editorial repository**, but the proposed agent task has not been run. A reader can already inspect them and judge whether the proposed context would be sufficient.
+In B’s slot 9, two east–west vehicles arrive while north–south has green. No north–south vehicles arrive, yet one departs. The waiting queue supplied that vehicle. A ends both cycles with one north–south vehicle and none east–west. The end-of-cycle counts therefore stay the same for both directions in both scenarios. The original CSV ends at slot 8 in each scenario. The separate two-cycle report contains the boundary and second-cycle observations. [Eight-slot reference](../../case-study/trace-v1.csv) · [Two-cycle report](https://github.com/And-Gu/executable-engineering-lab/blob/973ff66ebb06daafbd2ddaf35682e0e8da2bffd7/project/v3/case-study/two-cycle-run.json).
 
-A source map gives the agent an entry point; it does not give it unlimited authority. The engineer or workspace configuration must separately decide which tools can read, change or execute which resources.
+</details>
 
-Standards and conventions such as **MCP** (Model Context Protocol), project instructions and reusable Agent Skills can help package tool connections or repeatable procedures. Their names are less important at this stage than the actual boundary between *information needed*, *action permitted* and *decision owned by a person*.
+> **Explore further**
+>
+> Would these two scenarios catch a runner that silently clears just the east–west queue? Both reach slot 8 with that queue empty. One regression test adds three east–west arrivals in B’s last slot and checks what carries into the next cycle. [Model regression tests](https://github.com/And-Gu/executable-engineering-lab/blob/973ff66ebb06daafbd2ddaf35682e0e8da2bffd7/models/intersection/queue.test.ts).
 
-## Check the outcome, not the agent's narration
+<span id="the-outer-loop-are-we-solving-the-right-engineering-problem"></span>
+<span id="people-direct-and-evaluate-the-work"></span>
 
-Imagine the agent reports, “The validation is fixed and all tests pass.”
+In Chapter 1, a test and an implementation can agree because both confuse seconds with milliseconds. Here a second calculation independently checked the original T1 rows. Those rows help catch a repeated mistake in the first cycle. The engineer still decides whether the experiment answers the traffic question. If the concern is a queue forming *within* a cycle, the two east–west vehicles waiting after slot 9 matter even though that queue is empty at both cycle ends. [Chapter 1’s example](01-the-new-engineering-paradigm.md#ai-expands-what-engineering-teams-can-do) · [How the first-cycle trace was checked](../../case-study/MODEL-CHECK.md#independent-editorial-cross-check-already-performed).
 
-What would you ask for before accepting that statement?
+<!-- interactive: chapter-quiz -->
 
-You would need to know which source revision was modified, which checks **actually executed**, which behavior they covered and whether the agent changed the criteria used to judge itself. A summary can help the reviewer navigate; it is not a substitute for the test results or an independent acceptance check.
+<span id="keep-the-next-change-reviewable"></span>
 
-An auditable handover should distinguish:
+## Give the next investigation a head start
 
-1. **Task objective:** Reject invalid scenarios without changing the fixed-phase model.
-2. **Selected sources:** T1 source/trace identity and why each was relevant.
-3. **Action:** The change or check that was actually attempted, if any.
-4. **Observation:** Tool output or explicit reason for stopping, with status and revision.
-5. **Proposed conclusion:** What the agent believes follows from the observation.
-6. **Human decision:** Which part is accepted, revised, rejected or still open.
-
-The handover describes a **proposed** workflow, not a recorded execution. In actual engineering work, the source revision, commands run, check outcomes and unresolved limitations should be attached to the review. The reviewer also needs to judge whether the acceptance criteria reflect the intended behavior.
-
-## The outer loop: are we solving the right engineering problem?
-
-The **inner loop** asks whether the proposed implementation satisfies defined, executable criteria. The **outer loop** asks whether those criteria, the model's scope and the underlying requirements address the intended product behavior.
-
-Suppose the agent encounters an input associated with a different model revision. Another round of code changes will not establish which source should govern. The appropriate action is to **stop and escalate the ambiguity**, rather than changing expected values until the tests pass.
-
-The engineer may then revise the experiment, seek input from an integration specialist or add a physical observation. A deterministic calculation can be internally correct while its representation of the product is inadequate. Even extensive automated tests cannot repair a wrong requirement that they faithfully encode.
-
-This is why **agent autonomy should depend on the quality and independence of the feedback available**, not on how persuasive the agent sounds. The useful outcome may be an investigation and an engineering decision that produces no code change.
-
-## Supervise by exception, not by reading every agent message
-
-Multiple agents can generate many changes, logs and explanations. Asking a human to inspect every intermediate action merely moves the bottleneck from coding to attention and coordination.
-
-A useful human-facing handover is a small **outcome-and-exception summary**, derived from source records rather than invented progress percentages:
-
-| Proposed workstream state | What the engineering lead needs to know |
-|---|---|
-| Input validation meets protected T1 criteria | The changed source revision, checks actually run, and whether the result is ready for review |
-| Model/interface impact remains a proposal | The affected source IDs, unresolved claims and responsible engineering owner |
-| Verification detects incompatible T1/T2 assumptions | **Exception:** two results cannot be integrated as one baseline; choose a revision or commission an appropriate check |
-
-The states above are **illustrative**, not observed agent executions. The engineer should be able to open the underlying evidence on demand, but routine successful steps need not each become a meeting or approval request.
-
-Escalate when an agent encounters an incompatible dependency, a missing or untrusted acceptance criterion, a cross-discipline interface, a resource limit, or a decision outside its authority. Where the checks and interfaces are well defined, let agents resolve ordinary failures themselves.
-
-This is **exception-driven supervision**: people manage outcomes, priorities and decisions that need judgment. Agents and automated workflows manage the bounded details. It reduces cognitive load only when the summaries accurately reflect real source and test status.
-
-## People direct and evaluate the work
-
-Agentic engineering changes how engineers spend effort. They can define outcomes and escalation boundaries, establish shared context and source ownership, assess evidence from the outer loop, and intervene when dependencies or engineering authority demand attention. Agents can choose many intermediate steps while the organization keeps one coherent product objective.
-
-Systems engineers, electronics engineers, test engineers and operational specialists contribute different expertise and decisions. A useful engineering environment makes their constraints and evidence accessible to agents while keeping authority and accountability with the appropriate roles.
-
-An agent can help prepare a model comparison while an integration engineer investigates an electrical interface. The tasks may have different tools, evidence needs and stop conditions. Human collaboration and review remain central.
-
-## Keep the next change reviewable
-
-Even when several agents complete their assigned loops quickly, the integrated result may be difficult to accept if it mixes unrelated changes or incompatible source revisions.
-
-A validated input-quality improvement is a coherent scope. Rewriting the signal-command interface at the same time would introduce a different engineering decision.
-
-The next chapter, **Engineering in Small, Reviewable Increments**, asks how to package changes so their behavior, dependencies and acceptance criteria remain understandable across disciplines.
-
-**Engineering takeaway:** Delegate **bounded end-to-end engineering outcomes**, not just isolated tasks. Use automated checks for local iteration and explicit coordination for shared sources, dependencies and integration. Give people a trustworthy view of outcomes and exceptions—not an obligation to supervise every agent action.
-
----
-
-*Inspect the proposed handover:* [Cross-chapter decision records](../../case-study/DECISION-CHAIN.md) · [T1 model inputs](../../case-study/model-inputs-v1.json). For broader agent/workflow terminology, see [Anthropic's practitioner discussion](https://www.anthropic.com/research/building-effective-agents).
+“We build the machine that builds the machine.” By making the scenario runnable and turning the boundary observation into a repeatable check, systems engineers and concept teams improve their own development environment. When a colleague brings a third arrival pattern, the team can run A and B as regression checks, then inspect the new pattern at the same boundary. Which part of that capability should the team build first, and when can it delegate more of the work? [The two systems on the homepage](https://and-gu.github.io/executable-engineering-lab/#approach) · [Chapter 9, Planning and Controlling Agents](09-engineering-in-small-reviewable-increments.md).

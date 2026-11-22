@@ -11,6 +11,7 @@
 | [source-graph-v1.json](source-graph-v1.json) | Stable teaching IDs, typed relations, source semantics, status and proposed impact | Fictional source assertions; no physical confirmation |
 | [model-inputs-v1.json](model-inputs-v1.json) | Fixed eight-slot teaching model, event order, A/B arrival sequences, invalid input rules | Invented model and input assumptions |
 | [trace-v1.csv](trace-v1.csv) | Sixteen computed state records, eight per scenario | Recomputed deterministic **toy-model calculation**, not a deployed V3 simulation or field measurement |
+| [two-cycle-run.json](two-cycle-run.json) | Both scenarios across the cycle boundary with source checksums | Computed by running `node project/v3/case-study/run-two-cycles.mjs` from the repository root |
 | [data-quality-v1.json](data-quality-v1.json) | Legitimate derived comparison and the deliberately inapplicable legacy C row | Editorial data-quality decisions |
 | [DECISION-CHAIN.md](DECISION-CHAIN.md) | Controlled next increment, agent task, reviewable slice, integration mismatch, evidence, governance, release, reuse and capstone | Proposed engineering decisions, not executed project actions |
 | [MODEL-CHECK.md](MODEL-CHECK.md) | Exact model formula, checks and limitations for a future implementer/editor | Independent editorial recomputation record; not software/system qualification |

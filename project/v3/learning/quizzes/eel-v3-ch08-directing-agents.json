@@ -1,0 +1,59 @@
+[
+  {
+    "id": "coordinate-the-rerun",
+    "prompt": "The checker expects two north–south vehicles after B’s slot 8 and receives one. The reference and the run both name T1. What should the coordinator ask for first?",
+    "options": [
+      {
+        "text": "Check whether the total number of arrivals is four, then accept the result if the model revision also matches.",
+        "feedback": "The original and edited B both have four arrivals. Moving one vehicle to an earlier green can change the final queue while preserving that total."
+      },
+      {
+        "text": "Identify the exact arrivals used and the first differing row. If the runner picked the edited B, rerun with the original.",
+        "feedback": "The comparison can locate an input mix-up before anyone proposes a rule change. Selecting the scenario named in the brief is within the coordinator’s authority.",
+        "correct": true
+      },
+      {
+        "text": "Ask the engineer to approve a replacement reference for B before the runner investigates.",
+        "feedback": "The mismatch alone gives no reason to replace the reference. Checking the inputs and earliest difference can establish whether the runner used the intended scenario."
+      }
+    ]
+  },
+  {
+    "id": "protect-the-reference",
+    "prompt": "An agent must run a simulation, investigate discrepancies and return a report. Which permissions preserve an independent check?",
+    "options": [
+      {
+        "text": "Allow the agent to replace the saved reference whenever a run is repeatable.",
+        "feedback": "Repeatability shows that a result can be reproduced. Replacing the reference would also remove the independent record that reveals a change."
+      },
+      {
+        "text": "Let the agent read the brief and original trace, run the model, and write its findings to a separate report.",
+        "correct": true,
+        "feedback": "The agent can complete the comparison and investigate differences. The engineer retains the decision about changing an agreed baseline."
+      },
+      {
+        "text": "Give the checker only the runner’s summary and ask whether the final totals agree.",
+        "feedback": "Without the reference and individual rows, the checker cannot tell where behavior diverged or which input the runner used."
+      }
+    ]
+  },
+  {
+    "id": "review-a-rule-change",
+    "prompt": "A colleague believes a vehicle arriving on green should wait until a later slot. An agent can make its model and its own tests agree with either event order. How should the engineer handle the proposal?",
+    "options": [
+      {
+        "text": "Use T1’s first slot in A to show the difference, then decide whether to approve a revised rule with its own expected results.",
+        "feedback": "In A, a vehicle arrives at an empty queue on green and leaves in that slot under T1. Reviewing that consequence gives the engineer a basis for the rule decision and keeps the old result tied to T1.",
+        "correct": true
+      },
+      {
+        "text": "Keep the T1 label if a second agent independently writes tests using the proposed order.",
+        "feedback": "Both agents could implement the proposed order correctly. That agreement still leaves the engineer to decide whether to replace the agreed T1 rule."
+      },
+      {
+        "text": "Let the runner choose the event order that leaves fewer vehicles waiting after the second cycle.",
+        "feedback": "The assignment asks what happens under the agreed rule. Choosing a rule by its queue result would turn that comparison into a different investigation."
+      }
+    ]
+  }
+]
