@@ -1,7 +1,9 @@
+import { execFileSync } from 'node:child_process';
+import { fileURLToPath } from 'node:url';
 import { readFileSync } from 'node:fs';
 import { describe, expect, it } from 'vitest';
 import inputs from '../../project/v3/case-study/model-inputs-v1.json';
-import { moveArrival, runQueue } from './queue.mjs';
+import { moveArrival, runQueue, runTwoCycles } from './queue.mjs';
 
 const trace = readFileSync(new URL('../../project/v3/case-study/trace-v1.csv', import.meta.url), 'utf8')
   .trim().split(/\r?\n/).slice(1);
@@ -13,6 +15,31 @@ describe('fixed-phase intersection experiment', () => {
       .map(({ slot, phase, arrival, departures, queue }) =>
         [scenario.id, slot, phase, arrival.NS, arrival.EW, departures.NS, departures.EW, queue.NS, queue.EW].join(',')));
     expect(calculated).toEqual(trace);
+  });
+
+  it('preserves the reference cycle and carries both queues through the second cycle', () => {
+    const firstCycle: string[] = [];
+    for (const scenario of inputs.scenarios) {
+      const rows = runTwoCycles(inputs, scenario.arrivals);
+      for (const { slot, phase, arrival, departures, queue } of rows.slice(0, 8)) {
+        firstCycle.push([scenario.id, slot, phase, arrival.NS, arrival.EW, departures.NS, departures.EW, queue.NS, queue.EW].join(','));
+      }
+      expect(rows).toHaveLength(16);
+      expect(rows[8].departures).toEqual({ NS: 1, EW: 0 });
+      expect(rows[8].queue).toEqual({ NS: 1, EW: scenario.id === 'A' ? 0 : 2 });
+      expect(rows[15].queue).toEqual({ NS: scenario.id === 'A' ? 1 : 2, EW: 0 });
+    }
+    expect(firstCycle).toEqual(trace);
+    // Both published scenarios clear EW by slot 8. Leave EW waiting to test its carry too.
+    const lateEW = clustered.map(row => ({ ...row }));
+    lateEW[7].EW = 3;
+    expect(runTwoCycles(inputs, lateEW)[8].queue).toEqual({ NS: 1, EW: 5 });
+  });
+
+  it('reproduces the published two-cycle record from its identified sources', () => {
+    const runner = new URL('../../project/v3/case-study/run-two-cycles.mjs', import.meta.url);
+    const saved = new URL('../../project/v3/case-study/two-cycle-run.json', import.meta.url);
+    expect(execFileSync(process.execPath, [fileURLToPath(runner)], { encoding: 'utf8' })).toBe(readFileSync(saved, 'utf8'));
   });
 
   it('moves one NS arrival to the last NS green and preserves the baseline', () => {

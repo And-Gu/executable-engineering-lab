@@ -37,3 +37,13 @@ export function moveArrival(arrivals, group, from, to) {
   edited[to - 1][group]++;
   return edited;
 }
+
+/** Repeat one scenario's phases and arrivals without reinitializing its queues.
+ * @param {QueueModel} model @param {Counts[]} arrivals */
+export function runTwoCycles(model, arrivals) {
+  return runQueue({
+    ...model,
+    horizon_slots: model.horizon_slots * 2,
+    phase_sequence: [...model.phase_sequence, ...model.phase_sequence],
+  }, [...arrivals, ...arrivals]);
+}
