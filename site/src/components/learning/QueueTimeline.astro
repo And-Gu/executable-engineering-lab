@@ -1,0 +1,67 @@
+---
+import type { Timeline } from './queue-timeline';
+interface Props { view: Timeline; id?: string }
+const { view, id } = Astro.props;
+---
+<figure class="queue-timeline" id={id} style={`--queue-scale:${view.scale}; --slots:${view.lanes[0].cells.length}`}>
+  <h3>{view.title}</h3>
+  <div class="timeline-key" aria-hidden="true">
+    <span><b class="arrival-key">↓</b> Arrivals</span>
+    <span><i class="bar-key"></i> Waiting after service</span>
+  </div>
+  <div class="timeline-axis" aria-hidden="true">
+    <span class="axis-label">Slot</span>
+    <div class="timeline-columns">
+      {view.lanes[0].cells.map(cell => <span class="timeline-tick">{cell.slot}</span>)}
+    </div>
+    <div class="timeline-signals">
+      {view.greenBands.map(band => <span style={`grid-column:${band.start} / span ${band.length}`}>Green</span>)}
+    </div>
+  </div>
+  {view.lanes.map(lane => <div class="timeline-lane" hidden={!lane.visible}>
+    <div class="lane-label" aria-hidden="true">{lane.label}</div>
+    <ol class="timeline-columns" role="list" aria-label={`${lane.label} timeline`}>
+      {lane.cells.map(cell => <li style={`--waiting:${cell.waiting}`} data-first-difference={cell.firstDifference || undefined}>
+        <span class="timeline-description">{cell.description}</span>
+        <span class="timeline-arrival" aria-hidden="true">{cell.arrivalMark}</span>
+        <span class="timeline-track" aria-hidden="true"><span class="timeline-bar"></span></span>
+        <span class="timeline-count" aria-hidden="true">{cell.waiting}</span>
+      </li>)}
+    </ol>
+  </div>)}
+  <figcaption>{view.caption}</figcaption>
+</figure>
+
+<style>
+  .queue-timeline {
+    margin: 1.5rem 0;
+    padding: 1.2rem 0;
+    border-block: 1px solid var(--rule);
+    color: var(--text);
+    font-variant-numeric: tabular-nums;
+  }
+  .queue-timeline h3 { margin: 0; font-size: 1.1rem; }
+  .timeline-key { display: flex; flex-wrap: wrap; gap: .25rem 1.2rem; margin: .4rem 0 1rem; color: var(--muted); font-size: .85rem; }
+  .timeline-key span { display: inline-flex; align-items: center; gap: .35rem; }
+  .arrival-key { color: var(--text); font-size: 1.1em; }
+  .bar-key { width: .75rem; height: .55rem; background: var(--teal); }
+  .timeline-columns { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); margin: 0; padding: 0; list-style: none; text-align: center; }
+  .axis-label, .lane-label { display: block; margin: 0 0 .25rem; font-size: .85rem; font-weight: 600; }
+  .timeline-tick { font-size: .85rem; }
+  .timeline-signals { display: grid; grid-template-columns: repeat(var(--slots), minmax(0, 1fr)); min-height: 1.3rem; text-align: center; }
+  .timeline-signals > :global(span) { border-block-end: 2px solid currentColor; color: var(--teal); background: var(--bg); font-size: .8rem; font-weight: 600; line-height: 1.3rem; }
+  .timeline-lane { margin-top: .8rem; }
+  .timeline-columns li { position: relative; min-width: 0; margin: 0; border-inline-start: 1px solid var(--rule); }
+  .timeline-columns li:last-child { border-inline-end: 1px solid var(--rule); }
+  .timeline-columns li[data-first-difference] { outline: 1px dashed var(--text); outline-offset: -1px; }
+  .timeline-arrival, .timeline-count { display: block; line-height: 1.35rem; font-size: .85rem; }
+  .timeline-arrival { min-height: 1.35rem; font-weight: 600; }
+  .timeline-track { height: 2.15rem; display: flex; align-items: end; justify-content: center; border-bottom: 1px solid var(--muted); }
+  .timeline-bar { width: 55%; max-width: 2rem; height: calc(100% * var(--waiting) / var(--queue-scale)); background: var(--teal); }
+  .timeline-count { color: var(--muted); }
+  .queue-timeline figcaption { margin: 1rem 0 0; font-size: .9rem; color: var(--muted); line-height: 1.5; }
+  .timeline-description { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+  @media (forced-colors: active) {
+    .bar-key, .timeline-bar { background: CanvasText; forced-color-adjust: none; }
+  }
+</style>

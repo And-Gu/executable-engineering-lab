@@ -14,6 +14,8 @@ Read `npm run delivery -- report` before delivery work. Preserve an active owner
 
 When completing a new lesson, register its path, title and summary in site/src/data/chapters.ts. Home chapter cards and the Learn index share this list; keep it in reading order and include only complete lessons present in the build. Verify both surfaces and base-path links before handoff.
 
+When a change spans adjacent V3 chapters, the delivery owner uses the [Editor role](agents/EDITOR.md) to read and edit the revised chapters in sequence before the final preview. Move examples and trim repeated setup where this helps the reader understand the next engineering decision.
+
 ## V2 transition (Stage 0–1 draft)
 
 For the proposed future learning design, read project/TUTORIAL-SPEC.md, project/CURRICULUM-MAP.md, project/ENGINEERING-WORKFLOW.md, project/DEMONSTRATOR-LEARNING-PLAN.md, project/EDITORIAL-GUIDE.md and project/INFORMATION-ARCHITECTURE.md, then the relevant chapters/ brief. See docs/v2/ADOPTION-STATUS.md for scope, conflicts and verification. These are proposed educational targets, not evidence of implemented capabilities or authorization for later stages.

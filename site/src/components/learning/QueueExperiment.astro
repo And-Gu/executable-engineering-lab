@@ -1,5 +1,18 @@
 ---
 import inputs from '../../../../project/v3/case-study/model-inputs-v1.json';
+import observations from '../../../../project/v3/case-study/data-quality-v1.json';
+import { moveArrival, runQueue } from '../../../../models/intersection/queue.mjs';
+import QueueTimeline from './QueueTimeline.astro';
+import { makeTimeline, type Direction } from './queue-timeline';
+
+const observation = observations.scenario_edit_observation;
+const originalResult = observations.valid_records.find(result => result.id === observation.baseline_result)!;
+const worked = inputs.scenarios.find(scenario => scenario.id === originalResult.case)!;
+const move = observation.arrival_move;
+const group = move.group as Direction;
+const original = runQueue(inputs, worked.arrivals);
+const edited = runQueue(inputs, moveArrival(worked.arrivals, group, move.from_slot, move.to_slot));
+const workedView = makeTimeline(worked.id, group, original, { rows: edited, from: move.from_slot, to: move.to_slot });
 ---
 <section class="queue-experiment" aria-labelledby="arrival-experiment">
   <h2 id="arrival-experiment">Move one arrival</h2>
@@ -8,7 +21,7 @@ import inputs from '../../../../project/v3/case-study/model-inputs-v1.json';
     <form>
       <div class="queue-fields">
         <label>Starting scenario
-          <select name="scenario">{inputs.scenarios.map(s => <option value={s.id} selected={s.id === 'B'}>{s.id} · {s.name}</option>)}</select>
+          <select name="scenario">{inputs.scenarios.map(s => <option value={s.id} selected={s.id === worked.id}>{s.id} · {s.name}</option>)}</select>
         </label>
         <label>Arrival to move <select name="origin" required></select></label>
         <label>New arrival slot <select name="destination" required></select></label>
@@ -16,6 +29,7 @@ import inputs from '../../../../project/v3/case-study/model-inputs-v1.json';
       <div class="learning-actions"><button type="submit">Run comparison</button><button type="reset">Restore baseline</button></div>
     </form>
     <p class="queue-result" role="status" aria-atomic="true" tabindex="-1"></p>
+    <QueueTimeline id="queue-timeline" view={makeTimeline(worked.id, group, original)} />
     <div class="queue-table-wrap" role="region" aria-label="Queue comparison table" tabindex="0">
       <table>
         <caption>Vehicles waiting after each slot. NS is north–south and EW is east–west.</caption>
@@ -28,16 +42,19 @@ import inputs from '../../../../project/v3/case-study/model-inputs-v1.json';
       </table>
     </div>
   </div>
-  <noscript><p>Enable JavaScript to move an arrival. The tables below show both original scenarios.</p></noscript>
+  <noscript>
+    <p>Enable JavaScript to move an arrival. The tables below show both original scenarios.</p>
+    <details>
+      <summary>See the worked comparison for scenario {worked.id}</summary>
+      <QueueTimeline view={workedView} />
+    </details>
+  </noscript>
 </section>
 <script>
   import inputs from '../../../../project/v3/case-study/model-inputs-v1.json';
   import { moveArrival, runQueue } from '../../../../models/intersection/queue.mjs';
+  import { directionNames, makeTimeline, phaseLabels, updateTimeline, type Comparison, type Direction } from './queue-timeline';
   const directions = ['NS', 'EW'] as const;
-  const names = { NS: 'North–south', EW: 'East–west' };
-  const phaseLabels: Record<string, string> = {
-    NS_GREEN: 'NS green', EW_GREEN: 'EW green', NS_AMBER: 'NS amber', EW_AMBER: 'EW amber', ALL_RED: 'All red',
-  };
 
   for (const controls of document.querySelectorAll<HTMLElement>('.queue-controls')) {
     const form = controls.querySelector('form')!;
@@ -46,10 +63,14 @@ import inputs from '../../../../project/v3/case-study/model-inputs-v1.json';
     const destination = form.querySelector<HTMLSelectElement>('[name=destination]')!;
     const body = controls.querySelector('tbody')!;
     const result = controls.querySelector<HTMLElement>('.queue-result')!;
+    const timeline = controls.querySelector<HTMLElement>('.queue-timeline')!;
     function scenario() { return inputs.scenarios.find(item => item.id === scenarioSelect.value)!; }
 
-    function draw(edited?: ReturnType<typeof runQueue>) {
+    function draw(edit?: Comparison) {
       const baseline = runQueue(inputs, scenario().arrivals);
+      const edited = edit?.rows;
+      const group = origin.value.split('/')[0] as Direction;
+      updateTimeline(timeline, makeTimeline(scenario().id, group, baseline, edit));
       const rows = baseline.map((row, index) => {
         const tr = document.createElement('tr');
         const slot = document.createElement('th');
@@ -83,7 +104,7 @@ import inputs from '../../../../project/v3/case-study/model-inputs-v1.json';
 
     function restore() {
       const options = directions.flatMap(group => scenario().arrivals.flatMap((arrivals, index) =>
-        arrivals[group] ? [new Option(`${names[group]} arrival in slot ${index + 1}`, `${group}/${index + 1}`)] : []));
+        arrivals[group] ? [new Option(`${directionNames[group]} arrival in slot ${index + 1}`, `${group}/${index + 1}`)] : []));
       origin.replaceChildren(...options);
       updateSlots();
     }
@@ -98,8 +119,9 @@ import inputs from '../../../../project/v3/case-study/model-inputs-v1.json';
     form.addEventListener('submit', event => {
       event.preventDefault();
       const [group, from] = origin.value.split('/');
-      const arrivals = moveArrival(scenario().arrivals, group as 'NS' | 'EW', Number(from), Number(destination.value));
-      draw(runQueue(inputs, arrivals));
+      const fromSlot = Number(from), toSlot = Number(destination.value);
+      const arrivals = moveArrival(scenario().arrivals, group as Direction, fromSlot, toSlot);
+      draw({ rows: runQueue(inputs, arrivals), from: fromSlot, to: toSlot });
       result.focus();
     });
     restore();
