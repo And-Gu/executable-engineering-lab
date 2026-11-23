@@ -1,116 +1,100 @@
 ---
 id: eel-v3-ch11-verification-evidence
 chapter: 11
-part: "IV — Establish Trust and Sustain Change"
-title: "Verification, Validation and Engineering Evidence"
-status: draft
-publication: unpublished
+part: "III — Develop an Integrated Product"
+title: "Reviewing an Integrated Product Change"
+status: reviewed
+publication: published
 reference_case: four-way-traffic-intersection
-teaching_fixture: "T1 — fictional integrated configuration and evidence register"
+teaching_fixture: "T1 — recorded interface comparison and deferred decision, with illustrative product changes"
 ---
 
-# Verification, Validation and Engineering Evidence
+# Reviewing an Integrated Product Change
 
-*Which statement can we actually support—and for which configuration?*
+<span id="verification-validation-and-engineering-evidence"></span>
 
-The previous chapter introduced a problem that a model of our fictional intersection could not answer. The proposed controller interface expects acknowledgment that an indicated state was applied. A fictional adapter contract only acknowledges that a message was received.
+Would you approve a service display that says “amber confirmed” the moment the adapter acknowledges an amber request? You can inspect the line of code that sets the label. The maintainer reading it has to tell an operator what happened at the lamp.
 
-Both definitions are readable. The mismatch is real **within our illustrative source records**. But no physical device has been tested, and no operational intersection has been installed.
+In Chapter 10’s hypothetical team, changes from 20 agents could arrive for review at once. Your job is to choose which revisions belong together, follow the change from intent to test, and decide what the evidence supports.
 
-An engineer reviewing the product asks a deceptively simple question: “Which parts of this configuration are ready?”
+## Give the agents one product question
 
-The answer cannot responsibly be one percentage or one green symbol. It depends on the **claim** we want to make and the **evidence** relevant to that claim.
+<span id="begin-with-the-claim-not-the-test-report"></span>
 
-## Begin with the claim, not the test report
+The maintainer needs to distinguish a request for amber from an observation of amber at the head. In the fictional T1 case, the integration lead can already inspect two proposed definitions. Controller `INT-IF-001` revision A expects evidence that the requested indication was applied. Adapter `INT-IF-ADAPTER-002` revision B promises to acknowledge receipt of the message. Their comparison, recorded in `INT-DISC-001`, found a difference in meaning. The physical indication remains unobserved. [The two contract definitions and comparison at T1](https://github.com/And-Gu/executable-engineering-lab/blob/05b071d8d5a08aec9017146175e0ac17b38f8dd3/project/v3/case-study/DECISION-CHAIN.md?plain=1#L50-L68).
 
-Suppose an automated checker finishes successfully. We learn that its specified checks ran and gave their recorded outcomes. We do not automatically learn that the intersection is safe, useful, physically integrated or ready for service.
+<!-- interactive: integrated-change -->
 
-A claim should name the behavior, the model or product configuration, the conditions and the applicable evidence.
+The team proposes keeping two records. One identifies the receipt. The other, when available, gives the independently observed color. Both identify the head and command. This design yields a requirement a reviewer can check. After receipt, if there is no independent observation for that head and command, the display shall read **“received, indication unknown.”** The team still has to choose how the maintainer would obtain independent feedback in service. [The maintainer’s intent and proposed increment](10-from-models-to-an-integrated-product.md#define-the-first-product-increment).
 
-In the T1 case, the team can formulate several different claims. Compare the sources and what each would justify:
+## Choose a combination to integrate
 
-| Candidate claim | Available record | Current evidence status | Decision |
-|---|---|---|---|
-| The fixed T1 **toy schedule** never includes NS and EW green at the same slot | Declared eight-slot phase sequence | **Inspected synthetic source definition** | Support only the narrow statement about the listed sequence |
-| The T1 A/B **queue totals** follow its stated calculation | Source inputs and sixteen-row computed trace | **Editorially recomputed toy result** | Support only the eight-slot numerical result |
-| Controller rev A and adapter rev B have the **same acknowledgment meaning** | Two fictional interface definitions | **Mismatch** | Do not accept compatibility |
-| A physical signal visibly reached the commanded state | Proposed bench/physical observation | **Not run** | No supported applied-state claim |
-| The system is suitable for the city's intended use | Stakeholder and operating-condition evaluation | **Not run** | No operational validation claim |
+<span id="a-configuration-is-part-of-the-evidence"></span>
 
-A result may be technically correct and still be **irrelevant to the claim** someone wants to make. The first two rows do not resolve the last three.
+The integration lead assigns the controller engineer the change that records the reply and the service engineer the display change. A test engineer derives the expected text from the requirement. Their agents can inspect the same interface definitions and production source, make changes in their assigned areas, and get test feedback on the revisions they propose. [Orchestration in Chapter 8](08-directing-ai-engineering-agents.md#coordinate-several-agents-around-one-engineering-outcome) · [The digital thread in Chapter 9](09-engineering-in-small-reviewable-increments.md#the-digital-thread).
 
-The [worked evidence record](../../case-study/DECISION-CHAIN.md) retains these distinctions and source references. They are examples for reasoning, not a completed product certification package.
+Suppose controller build 12 produces separate receipt and observation records. Display build 4 reads both. Another display candidate still treats a single acknowledgment flag as confirmation. The coordinator selects build 4 to test with controller build 12 because the two use the same record meanings. The single-flag candidate goes back to the service engineer with the requirement it would violate.
 
-## Verification and validation answer different questions
+The software pair can go to the emulator while the mechanical owner checks that the revised connector and plug fit inside the enclosure. The physical check depends on the board drawing and the enclosure revision used for that fit check. [The connector and enclosure change](10-from-models-to-an-integrated-product.md#follow-an-electronics-change-into-the-enclosure).
 
-**Verification** asks whether specified requirements or properties are met for the relevant configuration. Appropriate methods can include testing, analysis, inspection and demonstration. A requirement about interface semantics may be examined using a controlled document comparison before hardware exists; a behavior claim may require an executed check or test.
+If all 20 agents send separate reports, the lead has to reconstruct those dependencies before reviewing a single change. The coordinator can send one review with the matching revisions, links to the code and drawings, checks already run, and evidence still needed. The reviewer can open a disputed line from there. Unrelated changes go to their own reviewers.
 
-**Validation** asks whether the system is suitable for its intended use in its relevant environment, including the needs of users and operators.
+## Inspect the display change and its check
 
-The two questions interact. A system might conform to a narrow specification while the specification fails to address an operator's actual need. Conversely, a promising demonstration may reveal value while leaving important requirements unverified.
+<span id="product-readiness-has-several-dimensions"></span>
 
-For our intersection, a finite toy phase sequence is useful for teaching model behavior. It does not exercise the physical controller, real signal indications, turning movements, pedestrian needs or fault conditions.
+Here is an illustrative excerpt of the display code that runs after receipt. Try reading it with the right color but the wrong command number.
 
-The source-defined property that the two abstract green phases never overlap is **not proof of operational safety**. To make a stronger statement, the team would need to define the relevant requirements, configuration and evidence methods for that purpose.
+```python
+def label_after_receipt(head, command, observation):
+    if (
+        observation is not None
+        and observation.head == head
+        and observation.command == command
+    ):
+        return f"observed {observation.color}"
+    return "received, indication unknown"
 
-## A configuration is part of the evidence
+text = label_after_receipt("north", 42, None)
+assert text == "received, indication unknown"
+```
 
-A result cannot be interpreted without knowing **what** it applies to.
+Running this function as printed with Python 3.9.6, head “north,” command 42 and no observation returned “received, indication unknown.” That result covers the excerpt. A proposed product test would send the receipt through the message handler and capture the text on the display. It could then supply an amber observation for command 41. The display should keep the indication unknown for 42.
 
-Our teaching calculation identifies model **INT-MOD-001, revision T1**, two declared scenarios and an eight-slot observation horizon. The evidence about the queue result is meaningful only within those assumptions.
+Chapter 10’s proposed test *Receipt without feedback*, revision 1, pairs display build 4 with an emulator of adapter contract B. To exercise the combined software, the team would include controller build 12. The proposed physical configuration, **Bench 1**, adds adapter firmware 3 and head assembly revision 2 to those controller and display builds. Each result would name the versions actually used. These product tests remain unrun. [Chapter 10’s Bench 1 configuration](10-from-models-to-an-integrated-product.md#what-would-count-as-implemented-or-verified).
 
-The interface discrepancy uses a different scope: controller-side **INT-IF-001 rev A** and proposed adapter **INT-IF-ADAPTER-002 rev B**. It is not a model outcome, and it is not evidence that physical hardware behaved one way or another.
+<span id="a-green-tool-result-can-coexist-with-an-open-engineering-result"></span>
 
-A later interface revision could change the technical question. Older data might still be useful as history but not automatically applicable as acceptance evidence for a new configuration.
+One existing result helps the reviewer plan the bench test. In scenario A, slot 3 of the saved T1 trace contains north–south amber. An independent calculation reproduced the trace. The reviewer can use that row to specify the expected request, then choose an instrument to observe the lamp. [Executable row comparison](https://github.com/And-Gu/executable-engineering-lab/blob/973ff66ebb06daafbd2ddaf35682e0e8da2bffd7/models/intersection/queue.test.ts#L5-L18) · [The recorded third slot](https://github.com/And-Gu/executable-engineering-lab/blob/973ff66ebb06daafbd2ddaf35682e0e8da2bffd7/project/v3/case-study/trace-v1.csv?plain=1#L4) · [Independent comparison](https://github.com/And-Gu/executable-engineering-lab/blob/973ff66ebb06daafbd2ddaf35682e0e8da2bffd7/project/v3/case-study/MODEL-CHECK.md?plain=1#L32-L36).
 
-This is why the source, method, observed result and applicability must travel together. A test title alone is not enough.
+## Verify the requirement and validate the task
 
-## Product readiness has several dimensions
+<span id="verification-and-validation-answer-different-questions"></span>
 
-A complete engineering handover may involve system and interface definitions, software, electronics, physical installation, operational procedures, maintenance considerations, verification records, validation results and applicable decisions.
+> **Concept**
+>
+> **Verification** asks whether an identified configuration meets a specified requirement. Inspection can expose a mismatch between two interface definitions. A test can establish what text appears on a display. **Validation** asks whether the product serves its intended users under representative conditions. Here that means observing what a maintainer can do with the information.
 
-Those are not universal document names or a fixed checklist for every product. The appropriate deliverables depend on the system, its risks and the organization responsible.
+For the visible-amber requirement, the integration engineer proposes holding an amber request through the agreed observation step. Record its head, command and reply. Capture the head with an independent camera at the agreed viewpoint and match the image to that request. The camera could see amber while the service display correctly reports “received, indication unknown.” The camera is bench equipment. The product needs its own feedback to confirm the color in service.
 
-For our fictional integrated configuration, consider three questions:
+For validation, give a maintainer a realistic service call with two acknowledged requests. Only one has independent confirmation. Ask what they would report to the operator for each head and what they would check next. If they report a lamp failure when the indication is unknown, record where that interpretation arose. Even a screen that displays its specified text exactly could leave the crew acting on the wrong diagnosis. The maintainer trial is still proposed.
 
-**Interface:** Do both sides agree on what an acknowledgment establishes?
+## Record the human decision
 
-**Integration:** Is there a proposed observation or test that can distinguish a received message from an applied physical indication?
+<span id="evidence-influences-decisions-before-release"></span>
 
-**Use:** Would an operator or maintainer have enough information to recognize, diagnose and respond to a failure?
+What would you ask the team to bring back? For the display candidate that confirms on receipt, the service engineer can point to the requirement that the code would violate. For the two contracts, the accountable product decision-maker in T1 **defers compatibility acceptance**. The interface owner must reconcile what each side promises when feedback is missing or late. The integration reviewer asks for an independent observation tied to the named head, command and configuration before anyone claims that the lamp changed. [T1 evidence and accountable decision](https://github.com/And-Gu/executable-engineering-lab/blob/05b071d8d5a08aec9017146175e0ac17b38f8dd3/project/v3/case-study/DECISION-CHAIN.md?plain=1#L70-L89).
 
-Today, the interface question is unresolved, the physical observation is not run, and the operational-use question has not been validated. A product readiness score that collapses those states into “mostly complete” would conceal the important differences.
+> **Explore further**
+>
+> NASA’s systems engineering handbook describes what a verification report preserves about the product version, equipment and results, and how validation involves users in a representative environment. [Product verification](https://www.nasa.gov/reference/5-3-product-verification/) · [Product validation](https://www.nasa.gov/reference/5-4-product-validation/).
 
-## A green tool result can coexist with an open engineering result
+<!-- interactive: chapter-quiz -->
 
-A developer may run all available source and model tests and see them pass. That is valuable information about the **checks that actually ran**.
+## What can the coordinator delegate next?
 
-The engineering question may nevertheless remain unanswered. A toy calculation can balance its queues while the required physical observation has never been attempted. An interface definition may be syntactically valid while the two parties disagree about meaning.
+<span id="who-can-accept-the-remaining-risk"></span>
 
-We should therefore report tool execution, criterion result and engineering conclusion separately. In a well-designed engineering environment, the reader can inspect each step and understand what was supported.
+“Building the machine that builds the machine” has a concrete payoff here. When the adapter definition changes again, the team can retrieve the earlier comparison, locate the affected display and test revisions, and give the reviewer the new evidence alongside the earlier decision. Chapter 13 follows the people who operate that environment, and the final chapter considers which capability to invest in next. [Operating the engineering environment](13-continuously-integrated-engineering.md#building-the-factory-is-engineering-work) · [Choosing the next engineering capability](15-choosing-the-next-engineering-capability.md).
 
-This practice also makes improvement easier. If an important interface claim lacks a relevant test, the team can invest in a better emulator or integration observation rather than rerunning unrelated software checks.
-
-## Evidence influences decisions before release
-
-The right response to the current interface discrepancy is not to mark every activity as failed. It is to **limit the claim** and identify the next needed investigation.
-
-The team can continue exploring the traffic model and improving input validation while deferring acceptance of the controller/adapter interface. It can define a bench investigation, review its planned configuration and identify which roles must assess the resulting observation.
-
-Evidence gathering is not something to add only when development is finished. It shapes design, architecture, task division and the engineering environment from the beginning.
-
-For the broader concepts, [NASA's Product Verification guidance](https://www.nasa.gov/reference/5-3-product-verification/) and [Product Validation guidance](https://www.nasa.gov/reference/5-4-product-validation/) provide useful examples of method and intended-use distinctions. They are **not** applicable traffic regulations or validation of this fictional intersection.
-
-## Who can accept the remaining risk?
-
-We now have enough information to make an important distinction: some narrow claims are supported, some are explicitly contradicted by the proposed sources, and some have no relevant observation.
-
-The next decision is not only technical. It is also about authority, responsibility and risk. Who can allow continued exploration? Who can accept a change affecting a physical signal? What should a tool be permitted to do automatically, and which decisions require accountable review?
-
-That is the question for **Governance and Engineering Authority**.
-
-**Engineering takeaway:** Verification and validation are reasoning about claims in context. A useful evidence record identifies the claim, configuration, method, outcome and limits. Passing a tool check cannot establish a property the check never examined.
-
----
-
-*Inspect the evidence and open gaps:* [T1 source/trace](../../case-study/README.md) · [Worked claim and integration record](../../case-study/DECISION-CHAIN.md) · [Editorial model-check note](../../case-study/MODEL-CHECK.md).
+Could an agent retrieve the new definitions, repeat a check and retry an interrupted run on its own? Who gives it that authority, and whose decision is required before the team can accept the interface? [Chapter 12, Governance and Engineering Authority](12-governance-and-engineering-authority.md).

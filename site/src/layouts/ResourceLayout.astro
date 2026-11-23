@@ -1,0 +1,32 @@
+---
+import HomeLayout from './HomeLayout.astro';
+interface Props { title: string; description: string; section: string; heading?: string }
+const { title, description, section, heading } = Astro.props;
+---
+<HomeLayout title={title} description={description}>
+  <div class="resource-page">
+    <header class="resource-intro">
+      <p class="section-name">{section}</p>
+      {heading && <><h1>{heading}</h1><p class="standfirst">{description}</p></>}
+    </header>
+    <div class="resource-content"><slot /></div>
+  </div>
+</HomeLayout>
+<style is:global>
+  .resource-page { padding-block: clamp(2.3rem,5vw,4.5rem) 5rem; }
+  .resource-intro { max-width: 74ch; margin-bottom: 2.25rem; }
+  .resource-intro .section-name { margin: 0 0 .9rem; color: var(--home-teal); font: .75rem/1.6 var(--home-mono); letter-spacing: .08em; text-transform: uppercase; }
+  .resource-page h1 { max-width: 22ch; line-height: 1.07; font-size: clamp(2.25rem,5.4vw,4rem); letter-spacing: -.045em; text-wrap: balance; }
+  .resource-page .standfirst { margin-block: 1rem 0; color: var(--home-muted); font-size: clamp(1.05rem,2vw,1.25rem); max-width: 62ch; }
+  .resource-content :is(h2,h3) { line-height: 1.25; letter-spacing: -.025em; }
+  .resource-content h2 { margin: 2.2rem 0 1rem; font-size: clamp(1.5rem,3vw,2.15rem); }
+  .resource-content h3 { margin: 1.35rem 0 .6rem; font-size: 1.2rem; }
+  .resource-content p { max-width: 72ch; margin-block: .75rem; }
+  .resource-content a { text-decoration: underline; text-underline-offset: .22em; }
+  .resource-content :is(section,details,pre) { scroll-margin-top: 1.25rem; }
+  .resource-content summary { cursor: pointer; padding-block: .65rem; font-weight: 600; }
+  .resource-content code { font-family: var(--home-mono); overflow-wrap: anywhere; font-size: .92em; }
+  .resource-content pre { max-width: 100%; overflow: auto; padding: 1rem; background: var(--home-panel); border: 1px solid var(--home-rule); }
+  .resource-content pre code { overflow-wrap: normal; }
+  .resource-content .status { border-left: 3px solid var(--home-teal); padding: .8rem 1rem; margin: 1rem 0; background: var(--home-panel); }
+</style>

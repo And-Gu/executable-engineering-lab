@@ -1,0 +1,59 @@
+[
+  {
+    "id": "one-supported-language",
+    "prompt": "The candidate runs on the integration rig. A service instruction for one supported language still points to the old diagnostic, although its file passed the publication checks. What should the release lead record?",
+    "options": [
+      {
+        "text": "Mark the software build ready and record the whole product as releasable on the same date.",
+        "feedback": "The build record can support the software claim. A technician using that language would still receive the wrong service instruction."
+      },
+      {
+        "text": "Hold the whole release until the corrected edition is reviewed, packaged and checked against this candidate.",
+        "correct": true,
+        "feedback": "The translation is part of the agreed release. Testing the link from the candidate and reviewing the wording establish that the technician can reach the right instruction and interpret it."
+      },
+      {
+        "text": "Accept the current edition and use the deployment window as the deadline for its review.",
+        "feedback": "This would move required work past the point at which the team claimed readiness. Operations needs a complete package before it chooses a deployment window."
+      }
+    ]
+  },
+  {
+    "id": "eligibility-after-scope-change",
+    "prompt": "During the diagnostic review someone asks to change the message from “Indication unknown” to “Amber confirmed” whenever the adapter returns a receipt. How should the coordinator handle the request?",
+    "options": [
+      {
+        "text": "Use the expedited wording review because the event code and screen location stay the same.",
+        "feedback": "The new words make a different claim about the lamp. A review of the wording cannot establish that the indicated color was observed."
+      },
+      {
+        "text": "Run the peak-load check and accept the new meaning if every receipt arrives before the response limit.",
+        "feedback": "A timely receipt establishes when a message arrived. It leaves the lamp state undetermined for that head and command."
+      },
+      {
+        "text": "Refer the new claim to the interface owner and require evidence of the displayed indication before authorizing it.",
+        "correct": true,
+        "feedback": "The change crosses the agreed boundary for a diagnostic wording update. The responsible owner must resolve the contract and the reviewer needs independent evidence tied to the configuration."
+      }
+    ]
+  },
+  {
+    "id": "next-iteration-investment",
+    "prompt": "The service-language review repeatedly starts after the software is ready. Which investment would directly address that wait on the next change?",
+    "options": [
+      {
+        "text": "Route changes to each affected language reviewer at request acceptance and flag editions tied to old wording.",
+        "correct": true,
+        "feedback": "Review can begin during implementation, and a version check can expose outstanding editions before the release decision. Each reviewer still judges meaning in context."
+      },
+      {
+        "text": "Add agent capacity to the controller build and measure time from compilation to the first successful software check.",
+        "feedback": "The software already finishes first. This measure stops before the service review that determines whole-product readiness."
+      },
+      {
+        "text": "Reuse the previous release’s language approvals whenever the diagnostic code stays the same.",
+        "feedback": "A stable identifier helps locate the right reviewer. An approval belongs to the wording and product revision that person actually reviewed."
+      }
+    ]
+  }
+]

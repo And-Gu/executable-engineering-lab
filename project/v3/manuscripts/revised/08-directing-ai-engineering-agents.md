@@ -37,6 +37,8 @@ Drafting the use case takes the stakeholder’s goal and the decision the compar
 
 Which earlier checks still apply? Extending the run preserves the first cycle’s starting queues, inputs and service rule, so all eight rows for each scenario should still match. Suppose a later proposal changes the order to serve *before* arrivals. In A’s first slot, a north–south vehicle arrives on green and leaves immediately under T1. The proposed rule would leave it waiting. The engineer can use that row to review the change, keep the original trace with T1, and approve new expectations for a new revision if warranted. [Saved first-cycle trace](../../case-study/trace-v1.csv).
 
+The companion article shows how one software team built recurring review feedback into tools its agents could run. [Lauren Tan’s framework example](/executable-engineering-lab/bonus/building-the-machine-that-builds-the-machine/#what-an-agent-can-do-with-those-connections).
+
 ## Coordinate several agents around one engineering outcome
 
 <span id="the-inner-loop-propose-execute-evaluate-correct"></span>

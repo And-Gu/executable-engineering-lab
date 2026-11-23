@@ -53,7 +53,7 @@ The **engineering system** includes the people, methods, engineering knowledge, 
 
 A Word specification can explain an interface decision, an Excel workbook can hold its limits, and a specialist design tool can show how the circuit uses them. When those sources travel separately, reviewers have to establish which revisions belong together. The team can keep those tools, agree where to maintain a structured interface definition and connect it to the models and tests that use it.
 
-**“We build the machine that builds the machine.”** A difficult product question may reveal the need for a new simulation or test fixture. A better engineering capability may make previously expensive options practical to investigate. Managers can fund a check that removes a recurring delay and keep a handoff manual when the cost of automating it outweighs the benefit.
+**“We build the machine that builds the machine.”** A difficult product question may reveal the need for a new simulation or test fixture. A better engineering capability may make previously expensive options practical to investigate. Managers can fund a check that removes a recurring delay and keep a handoff manual when the cost of automating it outweighs the benefit. The bonus article follows that investment in a small documentation team. [Building the Machine That Builds the Machine](/executable-engineering-lab/bonus/building-the-machine-that-builds-the-machine/).
 
 > **Concept**
 >

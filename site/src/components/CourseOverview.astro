@@ -4,9 +4,10 @@ import { parts } from "../data/v3-course";
 <section class="course-overview" aria-labelledby="current-course-title">
   <h2 id="current-course-title">The course · Fifteen chapters</h2>
   <p>Begin with the changing engineering paradigm, then follow one fictional traffic intersection from uncertain intent to an integrated product and the engineering capabilities needed to sustain it.</p>
-  <p class="course-status">Chapters 1–10 include short knowledge checks. Change one vehicle’s arrival in Chapter 5, then carry both queues into a second cycle in Chapter 6. Earlier lessons are available separately.</p>
+  <p class="course-status">Chapters 1–13 include short knowledge checks. Change one vehicle’s arrival in Chapter 5, then carry both queues into a second cycle in Chapter 6.</p>
   {parts.map(part => <section class="course-part" id={`part-${Number(part.chapters[0].number)}`}>
     {part.chapters[0].number === '10' && <span id="part-8" aria-hidden="true"></span>}
+    {part.chapters[0].number === '12' && <span id="part-11" aria-hidden="true"></span>}
     <h3>{part.title}</h3>
     <ol start={Number(part.chapters[0].number)}>{part.chapters.map(chapter => <li><article>
       <p class="chapter-number">Chapter {chapter.number}</p>

@@ -71,9 +71,11 @@ At peak message load, an old confirmation may arrive after a newer request. On a
 
 ## Follow an electronics change into the enclosure
 
-<span id="why-small-increments-still-need-systems-integration"></span>Suppose electronics proposes a board with a connector for an optical sensor. A sensor at every head adds parts and alignment labor. A portable instrument requires a site visit for each observation. Ask operations whether confirmation is needed in the control room before comparing the cost of outfitting the heads with the cost of those visits.
+<span id="why-small-increments-still-need-systems-integration"></span>Suppose electronics proposes a board with a connector for an optical sensor. A sensor at every head adds parts and alignment labor. A portable instrument requires a site visit for each observation. Ask operations whether confirmation is needed in the control room before comparing the [cost of outfitting the heads with the cost of those visits](/executable-engineering-lab/bonus/building-the-machine-that-builds-the-machine/#when-does-building-it-pay-off).
 
-The electronics engineer can issue a board drawing from the circuit design tool. The mechanical engineer needs the new connector location in the enclosure model to check clearance and the sensor’s view of the lamp. Software needs the revised interface definition to associate feedback with the correct request. Link the board, mounting drawing and firmware revisions to the shared requirement and integration plan. A colleague or agent can then identify the affected assembly. On that combination, the integration lead would repeat the fit check and compare the diagnostic with an independent lamp observation.
+Moving the connector to the edge of the board might make it easier to assemble. Will the plug and cable still fit with the enclosure closed? The electronics engineer supplies the revised board drawing from the circuit design tool. The mechanical engineer uses it to check clearance and the sensor’s view of the lamp in the enclosure model. If the board change also moves the sensor to another input, the firmware engineer must update the mapping from that input to the signal head. A check using the old mapping could report an observation against the wrong head.
+
+The integration lead links the board drawing, enclosure revision and production firmware to the requirement for the designated head. The test engineer can now plan a fit check on the revised assembly and compare the diagnostic with an independent observation of that head. If another engineer changes the drawing, the lead can see which checks need to be revisited.
 
 > **Explore further**
 >
@@ -81,6 +83,8 @@ The electronics engineer can issue a board drawing from the circuit design tool.
 
 <!-- interactive: chapter-quiz -->
 
-## What does our evidence actually support?
+## Which changes belong in the same review?
 
-The integration lead can hand over the T1 trace, both proposed interface revisions and the open discrepancy. The contracts establish why receipt leaves the lamp state unknown. The bench and maintainer trials remain planned. Which claims can the reviewer make for this configuration, and what would establish that the product serves its intended users? [Chapter 11, Verification, Validation and Engineering Evidence](11-verification-validation-and-engineering-evidence.md).
+<span id="what-does-our-evidence-actually-support"></span>
+
+Imagine 20 agents developing production code in parallel for these engineers. By the time the new board drawing arrives, there could be several proposals for the controller, the service display and their tests. The reviewer needs to know which revisions work together, what the team has actually checked and which decision still needs a person. The two interface definitions and their open discrepancy give that review a place to start. [Chapter 11, Reviewing an Integrated Product Change](11-verification-validation-and-engineering-evidence.md).

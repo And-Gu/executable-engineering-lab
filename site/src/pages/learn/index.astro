@@ -1,38 +1,35 @@
 ---
-import Layout from '../../layouts/Layout.astro';
+import Layout from '../../layouts/ResourceLayout.astro';
 import { chapters, v2Chapters, chapterPreviews } from '../../data/chapters';
 import CourseOverview from '../../components/CourseOverview.astro';
 const base = import.meta.env.BASE_URL;
-
 ---
-<Layout title="Learning path">
-  <p class="eyebrow">Learn · Fifteen-chapter course</p>
-  <h1>Develop the system. Develop how you engineer it.</h1>
-  <p class="lead">Explore how executable models, software-driven workflows and AI agents change systems engineering—from an uncertain product idea to useful improvements in operation.</p>
+<Layout title="Learning path" section="Learn" heading="Follow the intersection from intent to release"
+  description="Start with what road users need, run an experiment, and follow the evidence a product team uses to make an engineering decision.">
   <CourseOverview />
-  <section aria-labelledby="reader-preview-title">
-    <h2 id="reader-preview-title">Earlier Chapter 1 preview</h2>
-    <p>This published V2 monitoring example predates the current fifteen-chapter intersection course.</p>
-    {chapterPreviews.map(chapter => <p><a href={`${base}learn/${chapter.path}/`}><strong>{chapter.title} →</strong></a><br />{chapter.summary}</p>)}
+  <section class="bonus-reading" id="bonus-reading" aria-labelledby="bonus-title">
+    <h2 id="bonus-title">Bonus reading</h2>
+    <h3><a href={base + 'bonus/building-the-machine-that-builds-the-machine/'}>Building the Machine That Builds the Machine</a></h3>
+    <p>When does it pay to invest in the environment you use to engineer a product? Start with a small documentation project and follow the decision into an engineering team.</p>
   </section>
-  <section class="course-language" aria-labelledby="course-language-title">
-    <h3 id="course-language-title">A shared vocabulary from Chapter 1</h3>
-    <p>The <a href={`${base}learn/v3/01-the-new-engineering-paradigm/`}>Chapter 1 overview</a> introduces systems engineering, executable engineering, software-driven workflows and AI-assisted engineering. It explains what AI agents do and distinguishes AI used in engineering from AI in products.</p>
-    <p>Chapter 7 will develop agentic engineering through delegated tasks, tool use and evaluation, explaining large language models (LLMs) as part of the underlying technology. Later chapters will apply these terms to models, delivery, physical validation and the engineering environment.</p>
+  <section aria-labelledby="course-language-title">
+    <h2 id="course-language-title">The course vocabulary</h2>
+    <p><a href={base + 'learn/v3/01-the-new-engineering-paradigm/'}>Chapter 1</a> introduces systems engineering, software-driven work and AI assistance. <a href={base + 'learn/v3/08-directing-ai-engineering-agents/'}>Chapter 8</a> shows how people direct agents that can use tools and check a result.</p>
   </section>
-  <h2 id="published-v2">Published v2 articles</h2>
-  <div class="cards">{v2Chapters.map(chapter => <article class="card"><p class="eyebrow">V2 · Chapter {chapter.number}</p><h3><a href={`${base}learn/${chapter.path}/`}>{chapter.title}</a></h3><p>{chapter.summary}</p></article>)}</div>
-  <h2 id="published-lessons">Published lessons — original course</h2>
-  <p>The original twelve lessons and URLs are preserved during migration. The V0 demonstrator remains intentionally limited to one ideal circular sensor.</p>
-  <ol class="current" aria-label="Published lessons">{chapters.map(chapter => <li><h3><a href={`${base}learn/${chapter.path}/`}>{chapter.title}</a></h3><p>{chapter.summary}</p></li>)}</ol>
-  <p><a href={`${base}lab/`}>Open the existing lab →</a></p>
+  <section class="earlier" aria-labelledby="earlier-title">
+    <h2 id="earlier-title">Earlier courses and experiments</h2>
+    <h3 id="reader-preview-title">Chapter 1 preview</h3>
+    {chapterPreviews.map(c => <p><a href={base + 'learn/' + c.path + '/'}>{c.title}</a> · {c.summary}</p>)}
+    <h3 id="published-v2">V2 articles</h3>
+    {v2Chapters.map(c => <p><a href={base + 'learn/' + c.path + '/'}>{c.title}</a> · {c.summary}</p>)}
+    <h3 id="published-lessons">Original single-sensor course</h3>
+    <p>Use the <a href={base + 'lab/'}>coverage lab</a> to try the twelve lessons on the original monitoring model.</p>
+    <ol aria-label="Published lessons">{chapters.map(c => <li><a href={base + 'learn/' + c.path + '/'}>{c.title}</a></li>)}</ol>
+  </section>
 </Layout>
 <style>
-  .parts{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,21rem),1fr));gap:1rem;margin-bottom:3rem}
-  .parts h3{margin-top:0}
-  .parts li{margin:.35rem 0}
-  .course-language{margin-bottom:3rem}
-  .current{padding-left:1.5rem}
-  .current>li{margin:1.5rem 0}
-  .current h3{margin:0}
+  .earlier, .bonus-reading { border-top: 1px solid var(--home-rule); margin-block: 3.25rem; }
+  .bonus-reading h3 a { color: var(--home-teal); }
+  .earlier ol { columns: 2 18rem; padding-inline-start: 1.5rem; max-width: 58rem; }
+  .earlier li { padding: .3rem .5rem; break-inside: avoid; }
 </style>

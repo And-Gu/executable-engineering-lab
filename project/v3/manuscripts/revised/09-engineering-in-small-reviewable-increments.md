@@ -59,7 +59,7 @@ Now suppose the traffic engineer wants to study two independent windows, each st
 
 > **Explore further**
 >
-> The carry-over assumption appears in both the brief and the report. Chapter 4’s companion lab shows how several documents can draw on one reviewed source. [Document-as-Code Lab](https://and-gu.github.io/document-as-code-lab/).
+> The carry-over assumption appears in both the brief and the report. Chapter 4’s companion lab shows how several documents can draw on one reviewed source. [Document-as-Code Lab](https://and-gu.github.io/document-as-code-lab/). [Follow one procedure into the handbook and training materials](/executable-engineering-lab/bonus/building-the-machine-that-builds-the-machine/#a-small-project-that-publishes-from-its-own-sources).
 
 <span id="some-changes-cannot-be-isolated-as-software-work"></span><span id="integration-and-iteration-are-different-questions"></span><span id="the-next-boundary-is-the-real-product"></span>
 

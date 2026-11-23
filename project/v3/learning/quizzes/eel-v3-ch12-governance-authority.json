@@ -1,0 +1,59 @@
+[
+  {
+    "id": "delegate-source-comparison",
+    "prompt": "Maya authorizes the coordinator to run the emulator check and to delegate source reading. A helper needs the controller and adapter definitions to compare their wording. Which handoff fits the grant?",
+    "options": [
+      {
+        "text": "Lend the helper the coordinator’s credentials for the time needed to finish the comparison.",
+        "feedback": "The borrowed credentials also allow test execution. A later reviewer would see the coordinator’s identity on reads made by the helper."
+      },
+      {
+        "text": "Give the helper its own identity and read access to the two specified revisions. Link the handoff to Maya’s grant.",
+        "feedback": "The helper has the access it needs, and Maya can trace which agent read which definitions under her authorization.",
+        "correct": true
+      },
+      {
+        "text": "Let the helper edit either definition when the two owners have used different words for the same field.",
+        "feedback": "Rewriting a definition could change the meaning of acknowledgment. The interface owners need to review that proposed change."
+      }
+    ]
+  },
+  {
+    "id": "retry-or-return-finding",
+    "prompt": "Suppose the runner stops before the software check starts. The allowed retry then reports “indication confirmed” for an amber request with only a receipt. What should the coordinator do next?",
+    "options": [
+      {
+        "text": "Keep the interrupted attempt and the completed retry. Return the unexpected display text with the command, inputs, test revision and configuration.",
+        "feedback": "The first attempt produced no test result. The retry exposed a discrepancy against the agreed display criterion. The owners can now inspect it on the same configuration.",
+        "correct": true
+      },
+      {
+        "text": "Keep retrying until the runner reports “indication unknown,” then hand over the most recent result.",
+        "feedback": "The grant covers one retry after a runner failure. A completed check that reports unexpected behavior gives the team an engineering finding worth retaining."
+      },
+      {
+        "text": "Update the expected text to “indication confirmed,” since revision B promises an acknowledgment for that request.",
+        "feedback": "Revision B promises receipt. Using that promise as the expected indication would repeat the assumption the test was intended to challenge."
+      }
+    ]
+  },
+  {
+    "id": "accept-a-specific-pair",
+    "prompt": "The team is considering a later adapter revision C that changes when it sends confirmation. Maya has the deferred A/B decision and the planned bench procedure. What would let her assess compatibility for A/C?",
+    "options": [
+      {
+        "text": "Reuse the A/B disposition because the controller is still revision A and the same person owns the decision.",
+        "feedback": "The decision owner and controller are unchanged, but the adapter now asserts something different. The A/B record explains the earlier decision and the evidence it lacked."
+      },
+      {
+        "text": "Accept A/C when a properly authorized reviewer checks that the evaluation log conforms to the expected schema.",
+        "feedback": "The reviewer could establish that the log has the required structure. Maya would still need the meaning of C’s confirmation and evidence of what the head displayed."
+      },
+      {
+        "text": "Have the owners agree on C’s confirmation and fault behavior, run the independent observation on the identified A/C configuration, and take those records to Maya.",
+        "feedback": "This gives Maya the proposed contract and relevant observations for the new pair. She can decide what the evidence supports and record any remaining limits.",
+        "correct": true
+      }
+    ]
+  }
+]
