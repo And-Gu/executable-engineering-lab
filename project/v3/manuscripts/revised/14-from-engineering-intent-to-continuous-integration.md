@@ -53,7 +53,7 @@ AI agents add a new operating capability when they can work with this environmen
 
 An agent can receive an engineering question or a bounded outcome, inspect the relevant sources, use tools, run checks, investigate a failure and refine a proposal before handing it back. That is different from generating another isolated document. The agent works through part of the engineering flow.
 
-Early in the work, that flow can be deliberately exploratory. A team may “vibe code” a disposable software interface—steering generated behavior by trying it—while agents draft small models or simulations for selected questions. These artifacts are valuable for the questions they sharpen, not for their readiness for delivery.
+Early in the work, that flow can be deliberately exploratory. A team may “vibe code” a disposable software interface, steering generated behavior by trying it, while agents draft small models or simulations for selected questions. These artifacts are valuable for the questions they sharpen, not for their readiness for delivery.
 
 When a finding needs to survive the experiment, the interaction must leave maintained sources behind. In software, a spec-to-code workflow can use agreed behavior and acceptance criteria to guide code and checks. For a multidisciplinary product, the broader move is spec-to-engineering: connect intent, assumptions, interfaces, configurations, evidence and release dependencies while keeping unresolved questions explicit.
 
@@ -89,7 +89,7 @@ The intersection illustrates the relationship: a software-visible receipt establ
 
 More code, faster analysis or quicker document generation can all help. They do not improve release speed when integration, review or support material becomes the next queue.
 
-Not every exploratory artifact should become a delivery asset. Some prototypes have done their job once they expose an assumption or eliminate an option. For selected results, the learning—not necessarily the prototype—needs to mature. The governing information becomes versioned, the relevant model or implementation gets an explicit configuration, checks become repeatable and the relationship to the release becomes visible. The organization gains speed when it can preserve the learning without carrying every experiment into production.
+Not every exploratory artifact should become a delivery asset. Some prototypes have done their job once they expose an assumption or eliminate an option. For selected results, the learning needs to mature. The prototype can remain disposable. The governing information becomes versioned, the relevant model or implementation gets an explicit configuration, checks become repeatable and the relationship to the release becomes visible. The organization gains speed when it can preserve the learning without carrying every experiment into production.
 
 Connected information reduces time spent finding and reconciling sources. Executable checks shorten the path to technical feedback. Agents can absorb bounded investigation and correction work. Explicit configurations reduce the work of assembling evidence for review. Bringing service, training and operational material into the same change exposes release dependencies early enough to address them in parallel.
 

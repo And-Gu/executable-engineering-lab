@@ -3,6 +3,8 @@
 ## Voice
 American English, confident but measured, practical and readable. Engineer-to-engineer, not marketing. Avoid anthropomorphizing tools (prefer 'the agent requires access to ...' or 'the workflow provides ...' over 'AI wants ...'). Start with a meaningful decision or tension. Keep one purpose per paragraph.
 
+Use commas or full stops instead of double hyphens or dashes to set off clauses in reader-facing prose. Preserve technical syntax, numeric ranges, directional pairs and structural labels.
+
 ## Terminology
 Follow the [curriculum terminology and introduction sequence](CURRICULUM-MAP.md#terminology-and-introduction-sequence). Systems engineering establishes the scope; executable engineering describes the tutorial's approach; AI agents are a capability within it. Explain terms at first use. Prefer “AI agents” in introductory copy and use “agentic engineering” for delegated work with tools and feedback. Keep AI-assisted engineering, agentic work, AI in products and large language models distinct. Describe software-driven workflows across engineering disciplines without implying that the subject is software development alone.
 
