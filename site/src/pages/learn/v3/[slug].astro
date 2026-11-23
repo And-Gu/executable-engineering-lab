@@ -2,6 +2,8 @@
 import type { MarkdownInstance } from 'astro';
 import { v3Chapters } from '../../../data/v3-course';
 import { chapterQuizzes, chapterSections } from '../../../data/v3-learning';
+import IntegratedChange from '../../../components/learning/IntegratedChange.astro';
+import ReleaseReadiness from '../../../components/learning/ReleaseReadiness.astro';
 import ChapterQuiz from '../../../components/learning/ChapterQuiz.astro';
 import ChangeImpactFigure from '../../../components/learning/ChangeImpactFigure.astro';
 import TwoCycleExperiment from '../../../components/learning/TwoCycleExperiment.astro';
@@ -40,6 +42,8 @@ if (frontmatter.id === 'eel-v3-ch04-engineering-knowledge') activities.push('cha
 if (frontmatter.id === 'eel-v3-ch05-models-prototypes') activities.push('intersection-model');
 if (frontmatter.id === 'eel-v3-ch06-engineering-data') activities.push('two-cycle-experiment');
 if (frontmatter.id === 'eel-v3-ch09-reviewable-increments') activities.push('digital-thread');
+if (frontmatter.id === 'eel-v3-ch11-verification-evidence') activities.push('integrated-change');
+if (frontmatter.id === 'eel-v3-ch13-continuous-engineering') activities.push('release-readiness');
 const sections = questions
   ? chapterSections(await chapter.compiledContent(), activities)
   : [];
@@ -67,6 +71,8 @@ const sourceUrl = `https://github.com/And-Gu/executable-engineering-lab/blob/mai
       if (section.content === 'intersection-model') return <QueueExperiment />;
       if (section.content === 'two-cycle-experiment') return <TwoCycleExperiment />;
       if (section.content === 'digital-thread') return <DigitalThread />;
+      if (section.content === 'integrated-change') return <IntegratedChange />;
+      if (section.content === 'release-readiness') return <ReleaseReadiness />;
       return <ChapterQuiz questions={questions} />;
     }) : <Content />}
   </article>

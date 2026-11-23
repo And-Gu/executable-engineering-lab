@@ -1,0 +1,59 @@
+[
+  {
+    "id": "choose-the-software-pair",
+    "prompt": "A controller candidate emits separate receipt and observation records. One display candidate reads both. A newer display candidate treats every receipt as confirmation. Each display has passed its own unit tests. What should the integration lead submit for review?",
+    "options": [
+      {
+        "text": "The newest controller and display revisions, with both sets of unit-test results.",
+        "feedback": "The newest display would confirm a lamp from a receipt alone. Its own tests can pass while preserving that interpretation."
+      },
+      {
+        "text": "The controller and two-record display, with their shared requirement and a check on the combined revisions.",
+        "feedback": "This pairing preserves the meanings of both records. The reviewer can inspect how the selected display handles a receipt when its controller has no matching observation.",
+        "correct": true
+      },
+      {
+        "text": "The two-record display on its own, using its unit-test report to accept the combined behavior.",
+        "feedback": "The display is a promising candidate. A test of it alone leaves open whether the selected controller supplies the head, command and record meanings it expects."
+      }
+    ]
+  },
+  {
+    "id": "match-the-observation",
+    "prompt": "In a hypothetical bench run, the same head receives successive amber requests 41 and 42. There is an independent image for 41 and an adapter receipt for 42. What can the reviewer record about request 42?",
+    "options": [
+      {
+        "text": "Amber was visible for 42 because both requests named the same head and color.",
+        "feedback": "The image establishes a visible color at the observation for 41. Repeating the requested color gives no new observation for 42."
+      },
+      {
+        "text": "The head failed to show amber for 42 because that request has no image.",
+        "feedback": "A missing image leaves several physical outcomes possible. A claim that the lamp failed would also need evidence."
+      },
+      {
+        "text": "Receipt is recorded for 42. The indication for that request remains unknown.",
+        "feedback": "The receipt identifies 42. Deciding what was visible requires an independent observation tied to that head and request during the agreed observation step.",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "id": "judge-the-maintainer-trial",
+    "prompt": "Suppose a display test captures the required words “received, indication unknown.” In a realistic service trial, a maintainer reads those words and reports a lamp failure. How should the reviewer use the two results?",
+    "options": [
+      {
+        "text": "Keep the verification result for the tested build and investigate the maintainer’s interpretation before accepting the diagnostic for use.",
+        "feedback": "The captured text answers the wording requirement. The service trial exposes a problem with the intended task. The team can examine the display and procedure, then repeat the trial.",
+        "correct": true
+      },
+      {
+        "text": "Mark the wording requirement failed and replace the software test result with the maintainer’s report.",
+        "feedback": "The software test recorded the required text on that build. The maintainer’s interpretation is separate evidence about diagnosing the condition in use."
+      },
+      {
+        "text": "Accept the diagnostic for service because the display met its wording requirement.",
+        "feedback": "That decision leaves out the service trial. Sending a crew to replace a lamp and investigating a loss of feedback are different responses."
+      }
+    ]
+  }
+]

@@ -1,0 +1,29 @@
+---
+const record = 'https://github.com/And-Gu/executable-engineering-lab/blob/05b071d8d5a08aec9017146175e0ac17b38f8dd3/project/v3/case-study/DECISION-CHAIN.md';
+---
+<figure class="decision-figure" id="integrated-change" aria-labelledby="change-title">
+  <h3 id="change-title">What does the acknowledgment establish?</h3>
+  <div class="contracts">
+    <div><strong>Controller expects</strong><code>INT-IF-001 · rev A</code><p>Evidence that the requested indication was applied.</p></div>
+    <div><strong>Adapter promises</strong><code>INT-IF-ADAPTER-002 · rev B</code><p>Confirmation that it received the command message.</p></div>
+  </div>
+  <details><summary>Inspect the source comparison</summary>
+    <p>The two proposed contracts use one word for different events. A reviewer can establish that discrepancy by reading the definitions. <a href={record+'?plain=1#L50-L68'}>Compared definitions and discrepancy</a></p>
+  </details>
+  <details><summary>Inspect the proposed lamp observation</summary>
+    <p>Identify the command, head, configuration and viewpoint. Match the request to an independent observation of what the lamp displayed. The T1 record contains the test proposal and an open result. <a href={record+'?plain=1#L72-L79'}>Evidence available for each claim</a></p>
+  </details>
+  <p class="decision"><strong>Product decision</strong> Defer compatibility until the interface owners agree on the meaning and integration can substantiate the displayed state. <a href={record+'?plain=1#L84-L89'}>Decision owners</a></p>
+  <figcaption>Comparing the contracts reveals the disagreement. The physical indication remains an open question.</figcaption>
+</figure>
+<style>
+  .contracts { display: grid; grid-template-columns: 1fr 1fr; gap: .75rem; margin: .8rem 0 1rem; }
+  .contracts > div { min-width: 0; border-top: 3px solid var(--teal); background: var(--panel); padding: .8rem; }
+  .contracts > div + div { border-top-color: var(--gold); }
+  .contracts strong, code { display: block; }
+  code { color: var(--muted); font: .77rem/1.5 var(--mono); margin-block: .2rem .4rem; }
+  .contracts p { margin: 0; }
+  details { border-top: 1px solid var(--rule); }
+  summary { padding-block: .55rem; }
+  @media (max-width: 520px) { .contracts { grid-template-columns: minmax(0,1fr); } }
+</style>

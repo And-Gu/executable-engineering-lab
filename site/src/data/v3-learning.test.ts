@@ -4,14 +4,16 @@ import { parts, v3Chapters } from './v3-course';
 import { chapterQuizzes, chapterSections, quizSchema } from './v3-learning';
 
 describe('V3 chapter activities', () => {
-  it('binds the first ten manuscripts to their own questions and slots', () => {
+  it('binds the first thirteen manuscripts to their own questions and slots', () => {
     const slots: Record<string, string[]> = {
       '04': ['change-impact-figure', 'chapter-quiz'],
       '05': ['intersection-model', 'chapter-quiz'],
       '06': ['two-cycle-experiment', 'chapter-quiz'],
       '09': ['chapter-quiz', 'digital-thread'],
+      '11': ['integrated-change', 'chapter-quiz'],
+      '13': ['release-readiness', 'chapter-quiz'],
     };
-    for (const chapter of v3Chapters.slice(0, 10)) {
+    for (const chapter of v3Chapters.slice(0, 13)) {
       const slug = chapter.url.split('/').filter(Boolean).at(-1);
       const source = readFileSync(new URL(`../../../project/v3/manuscripts/revised/${slug}.md`, import.meta.url), 'utf8');
       const id = source.match(/^id: (.+)$/m)![1];
@@ -22,7 +24,7 @@ describe('V3 chapter activities', () => {
   });
 
   it('keeps the digital thread in Part II and starts Part III at product integration', () => {
-    expect(parts.map(part => part.chapters[0].number)).toEqual(['01', '04', '10', '11']);
+    expect(parts.map(part => part.chapters[0].number)).toEqual(['01', '04', '10', '12']);
     expect(parts[1].chapters.at(-1)?.title).toBe('Planning and Controlling Agents');
     expect(parts[1].chapters.at(-1)?.url).toContain('09-engineering-in-small-reviewable-increments/');
     for (const part of parts) {

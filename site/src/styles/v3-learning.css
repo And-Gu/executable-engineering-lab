@@ -38,3 +38,8 @@
 
 .worked-answer { max-width: 70ch; margin: 1.5rem 0; padding: .35rem 1rem; border-inline-start: 3px solid var(--teal); background: var(--panel); }
 .worked-answer summary { padding-block: .55rem; font-weight: 600; }
+
+.decision-figure { max-width: 70ch; margin: 2rem 0; border-block: 1px solid var(--rule); padding-block: 1.15rem; }
+.decision-figure h3 { margin: 0; }
+.decision-figure .decision { border-inline-start: 3px solid var(--gold); background: var(--panel); padding: .7rem .9rem; }
+.decision-figure figcaption { color: var(--muted); font-size: .9rem; line-height: 1.55; margin: .75rem 0 0; }

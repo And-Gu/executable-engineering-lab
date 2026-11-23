@@ -1,6 +1,6 @@
 # V3 revised full manuscripts — fifteen chapters
 
-**Status:** Updated course manuscripts on the editorial review branch, proposed for publication by the owner on 17 November 2026. The initial fourteen-chapter version is preserved in Git history.
+**Status:** The fifteen-chapter edition added the workshop introduction in November 2026. Chapters 10 and 11 now share Part III. Part IV begins with governance. The initial fourteen-chapter edition is preserved in Git history.
 
 ## Part I — Frame the Work
 
@@ -20,10 +20,10 @@
 ## Part III — Develop an Integrated Product
 
 10. [From Models to an Integrated Product](10-from-models-to-an-integrated-product.md)
+11. [Reviewing an Integrated Product Change](11-verification-validation-and-engineering-evidence.md)
 
 ## Part IV — Establish Trust and Sustain Change
 
-11. [Verification, Validation and Engineering Evidence](11-verification-validation-and-engineering-evidence.md)
 12. [Governance and Engineering Authority](12-governance-and-engineering-authority.md)
 13. [Continuously Integrated Engineering](13-continuously-integrated-engineering.md)
 14. [Managing Engineering Knowledge at Scale](14-managing-engineering-knowledge-at-scale.md)

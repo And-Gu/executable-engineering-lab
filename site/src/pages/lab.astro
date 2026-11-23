@@ -1,12 +1,17 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from '../layouts/ResourceLayout.astro';
 import CoverageLab from '../components/CoverageLab.astro';
+const base = import.meta.env.BASE_URL;
 ---
-<Layout title="Single-sensor coverage lab">
-  <p class="eyebrow">Lab / DMS V0</p>
-  <h1>What counts as sufficient coverage?</h1>
-  <p class="lead">Explore how sensor position and an assumed circular radius change the estimated fraction of a bounded area that is geometrically covered.</p>
-  <p><a href={`${import.meta.env.BASE_URL}learn/01-engineering-intent/#exercise`}>Follow the Chapter 1 experiment</a>: predict a change, record the reference, find a passing configuration, then move it toward a corner with the radius unchanged.</p>
-  <CoverageLab />
-  <p><a href={`${import.meta.env.BASE_URL}learn/01-engineering-intent/#evidence`}>Interpret your results in Chapter 1 →</a> · <a href={`${import.meta.env.BASE_URL}reference/`}>Inspect the sources</a></p>
+<Layout title="Single-sensor coverage lab" section="Lab · Single-sensor model" heading="What counts as sufficient coverage?"
+  description="Move a sensor or change its radius. Compare the fraction of a bounded area covered by its circular footprint with a specified threshold.">
+  <p><a href={base + 'learn/01-engineering-intent/#exercise'}>Follow the original Chapter 1 experiment</a> to predict a change, record the reference and try a different configuration.</p>
+  <div class="coverage-workspace"><CoverageLab /></div>
+  <p><a href={base + 'learn/01-engineering-intent/#evidence'}>Interpret your results</a> · <a href={base + 'reference/'}>Inspect the sources and evidence</a></p>
 </Layout>
+<style>
+  .coverage-workspace { --surface: var(--home-bg); --surface-muted: var(--home-panel); --sage-olive: #6d897f; --deep-olive: var(--home-teal); --autumn-orange: var(--home-gold); --dusty-violet: var(--home-gold); }
+  .coverage-workspace :global(fieldset) { min-width: 0; }
+  .coverage-workspace :global(input) { color: var(--home-text); }
+  .coverage-workspace :global([data-sensor]) { fill: var(--home-bg); stroke: var(--home-text); }
+</style>

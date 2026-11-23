@@ -1,0 +1,34 @@
+---
+const deliverables = [
+  ['Running candidate', 'Controller and service display use the same event meaning.'],
+  ['Operator and service manuals', 'The operator and service procedures explain the diagnostic in every supported language.'],
+  ['Logistics', 'Parts lookup identifies a compatible portable observation kit.'],
+  ['Training', 'The exercise and training app use the diagnostic seen in service.'],
+];
+---
+<figure class="decision-figure" id="release-readiness" aria-labelledby="release-title">
+  <h3 id="release-title">When can the complete package be released?</h3>
+  <p>In this scheduling example, follow one proposed diagnostic change across four deliveries for the same candidate.</p>
+  <dl class="deliveries">{deliverables.map(([name, meaning]) => <div><dt>{name}</dt><dd>{meaning}</dd></div>)}</dl>
+  <fieldset>
+    <legend>Change the status of the last required translation.</legend>
+    <label><input type="radio" name="service-translation" value="pending" checked aria-controls="release-hold" /> Awaiting review today</label>
+    <label><input type="radio" name="service-translation" value="reviewed" aria-controls="release-eligible" /> Reviewed and packaged next week</label>
+    <p class="decision" id="release-hold"><strong>Hold the candidate.</strong> A technician using that language would receive new software with old service instructions.</p>
+    <p class="decision" id="release-eligible"><strong>Eligible for a release decision.</strong> With the translation reviewed and linked to this candidate, the release lead can assess the complete package. Operations chooses when to deploy.</p>
+  </fieldset>
+  <figcaption>The dates illustrate a dependency. A 24-hour target depends on getting the support material ready alongside the running product.</figcaption>
+</figure>
+<style>
+  .deliveries { margin: 1rem 0; padding-left: .85rem; border-left: 2px solid var(--teal); }
+  .deliveries > div { display: grid; grid-template-columns: minmax(7.5rem,30%) 1fr; gap: .25rem .7rem; padding: .55rem .7rem; border-bottom: 1px solid var(--rule); }
+  dt { font-weight: 600; } dd { margin: 0; }
+  fieldset { min-width: 0; padding: 0; margin: 1.2rem 0 0; border: 0; }
+  legend { margin-bottom: .5rem; padding: 0; }
+  label { display: inline-flex; align-items: baseline; gap: .45rem; padding: .5rem .6rem; margin: 0 .3rem .3rem 0; border: 1px solid var(--rule); cursor: pointer; }
+  input { accent-color: var(--teal); margin: 0; }
+  label:has(:checked) { border-color: var(--teal); font-weight: 600; }
+  label:has(:focus-visible) { outline: 2px solid var(--gold); outline-offset: 2px; }
+  fieldset:has([value="pending"]:checked) #release-eligible, fieldset:has([value="reviewed"]:checked) #release-hold { display: none; }
+  @media(max-width: 520px) { .deliveries > div { grid-template-columns: minmax(0,1fr); } }
+</style>

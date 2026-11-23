@@ -17,9 +17,9 @@
 | II | 08 | Directing AI Engineering Agents | Choose between task support and a delegated outcome | Give an agent the sources, permissions and independent check for a comparison |
 | II | 09 | Planning and Controlling Agents | Choose a first increment and decide when to expand a delegated plan | Trace the carry-over rule from its rationale to a result and back |
 | III — Develop an Integrated Product | 10 | From Models to an Integrated Product | Turn prototype learning into a product requirement and select evidence for the claim | Compare command receipt with an independently observed signal indication |
-| IV — Establish Trust and Sustain Change | 11 | Verification, Validation and Engineering Evidence | Qualify claims against the integrated configuration and intended use | Claim, method, result and applicability |
-| IV | 12 | Governance and Engineering Authority | Identify controls, authority, technical integrity and residual risks | One deferred change with evidence gaps |
-| IV | 13 | Continuously Integrated Engineering | Design and operate an engineering factory for controlled changes | Eligibility and blocked-release decision |
+| III | 11 | Reviewing an Integrated Product Change | Review compatible changes and decide which claims the available evidence supports | Follow a connector change across disciplines and inspect the two proposed interface revisions |
+| IV — Establish Trust and Sustain Change | 12 | Governance and Engineering Authority | Allocate authority for routine work and identify the product decision a human must own | Trace a delegated investigation to a decision on controller and adapter compatibility |
+| IV | 13 | Continuously Integrated Engineering | Decide when an integrated product and its service material can be released together | Follow a diagnostic change through software, translations, logistics and training |
 | IV | 14 | Managing Engineering Knowledge at Scale | Reuse sources, models, tests and working methods with judged applicability | Cross-variant compatibility |
 | IV | 15 | Choosing the Next Engineering Capability | Synthesize the two-system story into an investment decision | Choose next engineering capability |
 
