@@ -4,17 +4,11 @@ import HomeLayout from '../layouts/HomeLayout.astro';
 import { chapters, chapterPreviews, v2Chapters } from '../data/chapters';
 
 const base = import.meta.env.BASE_URL;
-const featuredPaths: ReadonlySet<string> = new Set([
-  '04-executable-models',
-  '05-experimentation',
-  '07-agentic-engineering',
-  '09-continuous-engineering',
-]);
-const featuredChapters = chapters.filter(chapter => featuredPaths.has(chapter.path));
+const archivedPageCount = chapters.length + chapterPreviews.length + v2Chapters.length;
 ---
 
 <HomeLayout
-  title="The New Engineering Paradigm · Executable Engineering Lab"
+  title="The New Engineering Paradigm"
   description="Why engineering is changing: higher expectations, shorter feedback cycles, software-inspired workflows and AI-assisted engineering across disciplines."
 >
   <section class="opening" aria-labelledby="page-title">
@@ -131,35 +125,40 @@ const featuredChapters = chapters.filter(chapter => featuredPaths.has(chapter.pa
 
   <CourseOverview />
 
-  <section class="reading" aria-labelledby="reading-title">
-    <h2 id="reading-title">Earlier published lessons</h2>
-    <div class="reading-content">
-      {chapterPreviews.map(chapter => (
-        <div class="chapter-preview">
-          <p class="label">V2 · Chapter {chapter.number} · Earlier preview</p>
-          <a href={`${base}learn/${chapter.path}/`}>Start with {chapter.title} <span aria-hidden="true">→</span></a>
-        </div>
-      ))}
-      <ul class="reading-routes">
-        {featuredChapters.map(chapter => (
-          <li><a href={`${base}learn/${chapter.path}/`}>{chapter.title} <span aria-hidden="true">↗</span></a></li>
-        ))}
+  <section class="more-reading" aria-labelledby="resources-title">
+    <header>
+      <p class="label">Go further</p>
+      <h2 id="resources-title">Explore the lab.</h2>
+    </header>
+    <div class="resource-links">
+      <article class="companion-reading">
+        <p class="label">Bonus reading</p>
+        <h3><a href={`${base}bonus/building-the-machine-that-builds-the-machine/`}>Building the Machine That Builds the Machine <span aria-hidden="true">→</span></a></h3>
+        <p>When does it pay to invest in the environment you use to engineer a product? Follow the decision from a small documentation project to an engineering team.</p>
+      </article>
+      <ul class="resource-routes">
+        <li><a href={`${base}lab/`}><span class="label">Lab</span><span class="resource-title">Try the coverage model <span aria-hidden="true">→</span></span><span class="resource-description">Move the sensor or change its radius, then compare the calculated coverage.</span></a></li>
+        <li><a href={`${base}reference/`}><span class="label">Reference</span><span class="resource-title">Explore the engineering sources <span aria-hidden="true">→</span></span><span class="resource-description">Find definitions, model assumptions and the evidence behind the examples.</span></a></li>
       </ul>
-      <details class="course-directory" id="published-lessons">
-        <summary>All published lessons</summary>
-        <div class="directory-content">
-          <h3 id="published-v2">Published v2 articles</h3>
-          <ul class="article-list">
-            {v2Chapters.map(chapter => <li><a href={`${base}learn/${chapter.path}/`}>{chapter.title}</a></li>)}
-          </ul>
-          <h3>Original course</h3>
-          <ol id="learning-path" class="lesson-list">
-            {chapters.map(chapter => <li><a href={`${base}learn/${chapter.path}/`}>{chapter.title}</a></li>)}
-          </ol>
-          <a class="learning-path-link" href={`${base}learn/`}>Explore the full learning path <span aria-hidden="true">→</span></a>
-        </div>
-      </details>
     </div>
+  </section>
+
+  <section class="archive" aria-labelledby="reading-title">
+    <details class="course-directory" id="published-lessons">
+      <summary id="reading-title"><span class="label">Archive</span>{' '}Earlier courses and experiments <span class="archive-count">{archivedPageCount} pages</span></summary>
+      <div class="directory-content">
+        <h3 id="published-v2">Earlier previews and articles</h3>
+        <ul class="article-list">
+          {chapterPreviews.map(chapter => <li><a href={`${base}learn/${chapter.path}/`}>{chapter.title} <span class="archive-kind">V2 reader preview</span></a></li>)}
+          {v2Chapters.map(chapter => <li><a href={`${base}learn/${chapter.path}/`}>{chapter.title} <span class="archive-kind">V2 article</span></a></li>)}
+        </ul>
+        <h3>Original single-sensor course</h3>
+        <ol id="learning-path" class="lesson-list">
+          {chapters.map(chapter => <li><a href={`${base}learn/${chapter.path}/`}>{chapter.title}</a></li>)}
+        </ol>
+        <a class="learning-path-link" href={`${base}learn/`}>Return to the current learning path <span aria-hidden="true">→</span></a>
+      </div>
+    </details>
   </section>
 </HomeLayout>
 
@@ -229,21 +228,35 @@ const featuredChapters = chapters.filter(chapter => featuredPaths.has(chapter.pa
   .note-number { letter-spacing: .025rem; margin-bottom: .75rem; }
   .note h2 { font-size: 1.375rem; font-weight: 600; line-height: 1.25; letter-spacing: -.0375rem; }
   .note > p:last-child { font-size: .8125rem; line-height: 1.75; color: var(--home-muted); margin-top: .9375rem; }
-  .reading { display: grid; grid-template-columns: 1fr 2.1fr; gap: 1.5625rem; padding-block: 1.5625rem 1.75rem; border-top: 1px solid var(--home-rule); }
-  .reading h2 { font-size: 1.3125rem; line-height: 1.35; font-weight: 600; letter-spacing: -.025rem; }
-  .chapter-preview { padding-bottom: 1.125rem; margin-bottom: 1.125rem; border-bottom: 1px solid var(--home-rule); }
-  .chapter-preview .label { color: var(--home-teal); margin-bottom: .375rem; }
-  .chapter-preview a { display: inline-block; padding-block: .25rem; font-size: .9375rem; line-height: 1.5; }
-  .reading-routes { display: grid; grid-template-columns: 1fr 1fr; gap: .75rem 1.375rem; font-size: .75rem; list-style: none; margin: 0; padding: 0; }
-  .reading-routes a { display: block; border-bottom: 1px solid var(--home-rule); padding-bottom: .5625rem; }
-  .course-directory { margin-top: 1.125rem; color: var(--home-muted); font-size: .75rem; }
-  summary { cursor: pointer; width: fit-content; padding-block: .375rem; }
-  summary:hover { color: var(--home-gold); }
-  .directory-content { margin-top: 1rem; padding: 1rem 1.125rem; border: 1px solid var(--home-rule); }
-  .directory-content h3 { font-size: .8125rem; color: var(--home-text); }
-  .article-list, .lesson-list { padding-left: 1.375rem; margin-block: .625rem 1.25rem; }
-  .directory-content li { padding-block: .25rem; }
-  .learning-path-link { color: var(--home-gold); }
+  .more-reading { display: grid; grid-template-columns: 1fr 2.1fr; gap: 2rem; padding-block: 2rem; border-top: 1px solid var(--home-rule); }
+  .more-reading > header > .label { color: var(--home-teal); margin-bottom: .625rem; }
+  .more-reading h2 { font-size: 1.75rem; line-height: 1.25; font-weight: 500; letter-spacing: -.035em; }
+  .companion-reading { padding-left: 1.25rem; border-left: 2px solid var(--home-gold); }
+  .companion-reading > .label { color: var(--home-gold); }
+  .companion-reading h3 { margin-top: .5rem; font-size: 1.1875rem; line-height: 1.45; font-weight: 500; letter-spacing: -.02em; }
+  .companion-reading h3 a > span { color: var(--home-gold); }
+  .companion-reading > p:last-child { margin-top: .75rem; color: var(--home-muted); font-size: .875rem; line-height: 1.75; }
+  .resource-routes { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; list-style: none; margin: 1.75rem 0 0; padding: 0; }
+  .resource-routes a { display: flex; flex-direction: column; height: 100%; border-top: 1px solid var(--home-rule); padding-block: 1rem .5rem; text-decoration: none; }
+  .resource-routes .label { color: var(--home-teal); }
+  .resource-title { margin-top: .5rem; font-size: .9375rem; line-height: 1.5; }
+  .resource-title > span { color: var(--home-teal); }
+  .resource-description { margin-top: .5rem; color: var(--home-muted); font-size: .8125rem; line-height: 1.7; }
+  .resource-routes a:hover .resource-title { color: var(--home-gold); text-decoration: underline; text-underline-offset: .3em; }
+  .archive { border-top: 1px solid var(--home-rule); padding-block: 1.25rem; }
+  .course-directory { color: var(--home-muted); font-size: .875rem; }
+  .course-directory summary { cursor: pointer; width: fit-content; padding-block: .5rem; color: var(--home-text); }
+  .course-directory summary:hover { color: var(--home-gold); }
+  .course-directory summary > .label { color: var(--home-teal); margin-inline: .5rem .75rem; }
+  .archive-count { color: var(--home-muted); margin-left: .75rem; font: .6875rem/1.5 var(--home-mono); white-space: nowrap; }
+  .directory-content { margin-top: 1rem; padding: 1.25rem; border: 1px solid var(--home-rule); background: var(--home-panel); }
+  .directory-content h3 { font-size: 1rem; font-weight: 500; color: var(--home-text); }
+  .article-list, .lesson-list { padding-left: 1.375rem; margin-block: .75rem 1.5rem; }
+  .lesson-list { columns: 2 16rem; column-gap: 2rem; }
+  .directory-content li { padding-block: .3rem; break-inside: avoid; }
+  .directory-content li a { text-decoration: underline; text-underline-offset: .25em; }
+  .archive-kind { display: inline-block; color: var(--home-muted); margin-left: .5rem; font: .6875rem/1.5 var(--home-mono); }
+  .learning-path-link { color: var(--home-teal); }
 
   @media (max-width: 900px) {
     .opening { grid-template-columns: 1fr; gap: 1.625rem; }
@@ -268,7 +281,7 @@ const featuredChapters = chapters.filter(chapter => featuredPaths.has(chapter.pa
     .note-number { grid-column: 1; margin-bottom: 0; }
     .note h2 { grid-column: 1; }
     .note > p:last-child { grid-column: 2; grid-row: 1 / 3; margin-top: 0; }
-    .reading { grid-template-columns: 1fr 2fr; }
+    .more-reading { grid-template-columns: 1fr; gap: 1.5rem; }
   }
   @media (max-width: 500px) {
     .opening { padding-block: 2rem; }
@@ -282,9 +295,10 @@ const featuredChapters = chapters.filter(chapter => featuredPaths.has(chapter.pa
     .approach { padding-top: 1.5rem; }
     .example { padding: 1.25rem 1.125rem; }
     figcaption { text-align: left; font-size: .8125rem; }
-    .note, .reading { display: block; }
+    .note { display: block; }
     .note-number { margin-bottom: .75rem; }
     .note > p:last-child { margin-top: .9375rem; }
-    .reading-routes { grid-template-columns: 1fr; margin-top: 1.25rem; }
+    .resource-routes { grid-template-columns: 1fr; gap: 1rem; }
+    .archive-count { display: block; margin: .5rem 0 0 1.5rem; }
   }
 </style>
