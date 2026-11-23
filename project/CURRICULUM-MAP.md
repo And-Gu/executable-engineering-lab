@@ -20,6 +20,18 @@ The four-part course follows the intersection team from an engineering question 
 | IV | 13 | Continuously Integrated Engineering | Decide when an integrated product and its service material can be released together | Follow a diagnostic change through software, translations, logistics and training |
 | IV | 14 | From Engineering Question to Useful Release | Decide which engineering capability can turn early learning into a complete, releasable change | Connect provisional information, agent work, independent feedback and whole-product release |
 
+## Editorial through-lines
+
+These through-lines help a chapter author select continuity without turning every chapter into a recap. A chapter brief names only the threads it materially advances and states how it receives, develops and hands each one forward.
+
+| Through-line | Introduced | Developed | Brought together |
+|---|---|---|---|
+| Earlier feedback changes the economics of engineering decisions | Chapter 01 | Chapters 02–06 and 10–13 | Chapter 14 connects early learning to release capability |
+| The product and the engineering environment evolve together | Chapter 01 | Chapters 04–09 and 12–13 | Chapter 14 frames the engineering environment as a product investment |
+| Connected information preserves the ability to act | Chapters 01 and 04 | Chapters 05–13 | Chapter 14 connects partial intent, maintained definitions, evidence and decisions |
+| Agentic support expands capacity within explicit limits | Chapters 01 and 07 | Chapters 08–09 and 12 | Chapter 14 connects bounded agent work to organizational capability |
+| Speed is the performance of the whole delivery system | Chapter 01 | Chapters 03–13 | Chapter 14 connects exploration, integration, support material and release |
+
 **This is an educational progression, not a waterfall process.** Integration, verification, security, assurance and risk reasoning are relevant from the earliest stages, although their detailed lessons appear later.
 
 **Migration and status:** The [active manuscript index](v3/manuscripts/revised/INDEX.md) identifies the two retired manuscripts. For earlier editorial decisions, see the [chapter migration map](v3/CHAPTER-MIGRATION-13-TO-14-2026-11-16.md), [editorial manuscript index](v3/manuscripts/INDEX.md), [independent assessment](v3/reviews/INDEPENDENT-FULL-COURSE-REVIEW-2026-11-16.md), and [P0 worked-case package](v3/reviews/WORKED-CASE-REVISION-PACKAGE-2026-11-16.md).
@@ -51,7 +63,7 @@ The systems scope follows [INCOSE's systems engineering definition](https://www.
 - **03→04→05→06:** Planning requires connected information; controlled models generate bounded results; data quality determines what conclusions hold.
 - **06→07→08→09:** Evidence informs specifications and agent work, which can produce reviewable changes.
 - **09→10→11→12:** A software increment must reach integrated-product evidence and accountable engineering authority.
-- **12→13→14.** The release lead assesses the whole product. The wrap-up follows the evidence behind that decision and asks what the next project can reuse.
+- **12→13→14.** Accountable authority and whole-product release expose the capability around the product. Chapter 14 asks which reusable engineering capability can turn incomplete intent into early learning and carry selected learning into a complete release.
 
 The order is educational; real product teams address assurance, safety, integration and security from the start.
 

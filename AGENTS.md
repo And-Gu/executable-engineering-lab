@@ -1,5 +1,19 @@
 # Contributor and agent guidance
 
+## Current V3 editorial state — read first
+
+The public V3 course contains fourteen numbered chapters and ends with **From Engineering Question to Useful Release**. For current V3 chapter numbers, titles, status and editorial direction, use these sources in order:
+
+1. [Current curriculum map](project/CURRICULUM-MAP.md) — course sequence, distinct learning gains, dependencies and recurring through-lines.
+2. [Active revised-manuscript index](project/v3/manuscripts/revised/INDEX.md) — maintained manuscript paths and publication status.
+3. [Site direction](project/SITE-DIRECTION.md) — audience, purpose and strategic argument.
+4. [Editorial guide](project/EDITORIAL-GUIDE.md) — copy contract, concept gate, voice and composition.
+5. The task-specific chapter issue or brief — approved scope, sources and acceptance criteria.
+
+Before drafting a full chapter, complete the editorial guide's copy contract and concept gate. The [Editor role](agents/EDITOR.md) performs an early structure pass and a later prose-and-alignment pass. Lock the final copy direction before treating illustrations and quizzes as complete.
+
+The dated V2 and earlier V3 sections below retain decision history and source boundaries. They do not override the current curriculum map, active manuscript index or task-specific brief for present numbering, status or copy direction. Historical authorization still does not grant new scope.
+
 Read SITE_SPEC.md, DEMONSTRATOR_SPEC.md and MILESTONE_01.md as authoritative planning inputs. Their descriptions of future capabilities do not authorize extra scope.
 
 Keep operational intent, engineering definition and execution evidence distinct. Canonical engineering data lives in engineering/, schemas in schemas/, and pure calculations in models/. Astro presents these sources; never maintain a second model formula or handwritten PASS value in UI code.
@@ -14,7 +28,7 @@ Read `npm run delivery -- report` before delivery work. Preserve an active owner
 
 When completing a new lesson, register its path, title and summary in site/src/data/chapters.ts. Home chapter cards and the Learn index share this list; keep it in reading order and include only complete lessons present in the build. Verify both surfaces and base-path links before handoff.
 
-When a change spans adjacent V3 chapters, the delivery owner uses the [Editor role](agents/EDITOR.md) to read and edit the revised chapters in sequence before the final preview. Move examples and trim repeated setup where this helps the reader understand the next engineering decision.
+For every new or substantially revised V3 chapter, the delivery owner uses the [Editor role](agents/EDITOR.md). When a change spans adjacent chapters, read and edit them in sequence before the final preview. Move examples and trim repeated setup where this helps the reader understand the next engineering decision.
 
 ## V2 transition (Stage 0–1 draft)
 
@@ -39,11 +53,11 @@ The pilot uses a concrete opening, explanatory graphics and optional interaction
 
 After checking in the reviewed work, the owner explicitly requested publication on 15 November 2026. That authorization covers the revised front page, Learn navigation and the v2 Chapter 1 reader preview in this branch. Keep the reader-preview label because editorial review continues. It does not authorize migration of other chapters, publication of the separate v3 manuscripts or changes to the engineering engine.
 
-## V3 approved fourteen-chapter curriculum — READ FIRST
+## Historical V3 curriculum decision — superseded for current numbering and status
 
-**Owner decision (2026-11-16): The V3 curriculum now has FOURTEEN chapters**, with the new **09 — From Models to an Integrated Product**, followed by 10 V&V, 11 Governance, **12 Continuously Integrated Engineering**, 13 Engineering Knowledge at Scale and 14 Choosing the Next Engineering Capability. The **sole course/numbering authority** is [project/CURRICULUM-MAP.md](project/CURRICULUM-MAP.md). Do not use the old thirteen-draft manuscript filenames, older 13-chapter briefs, or V2 site navigation to determine current V3 numbers.
+This section records the 16 November 2026 transition from thirteen to fourteen chapters. Its then-current chapter positions, titles and publication status were superseded by later editorial and publication decisions. Use [Current V3 editorial state](#current-v3-editorial-state--read-first) and the [current curriculum map](project/CURRICULUM-MAP.md) for present work. Do not use the old thirteen-draft manuscript filenames, older 13-chapter briefs or V2 site navigation to determine current V3 numbers.
 
-Before any V3 chapter writing, review or visualization work, follow this order:
+For work that reconstructs or maintains that historical migration, the recorded reading order was:
 
 1. Read the [approved 14-chapter map](project/CURRICULUM-MAP.md), [exact 13-source→14 mapping](project/v3/CHAPTER-MIGRATION-13-TO-14-2026-11-16.md) and [manuscript status index](project/v3/manuscripts/INDEX.md).
 2. Read [site direction](project/SITE-DIRECTION.md), [chapter style guide](project/CHAPTER-STYLE-GUIDE.md) and the **single fictional four-way intersection** [reference contract](project/v3/REFERENCE-INTERSECTION.md).
