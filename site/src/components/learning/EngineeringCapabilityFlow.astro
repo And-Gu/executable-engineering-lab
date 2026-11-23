@@ -1,0 +1,48 @@
+<figure class="decision-figure capability-flow" id="engineering-capability-flow" aria-labelledby="capability-flow-title">
+  <h3 id="capability-flow-title">Exploration and delivery strengthen each other</h3>
+  <p class="figure-intro">Begin with enough information to investigate the next question. Promote only the learning that needs to guide later work.</p>
+
+  <section class="flow-loop" aria-labelledby="exploration-loop-title">
+    <h4 id="exploration-loop-title">Explore the next question</h4>
+    <ol>
+      <li><strong>Partial intent</strong><span>Needs, constraints and open questions</span></li>
+      <li><strong>Agent-supported model or prototype</strong><span>A disposable artifact for a selected question</span></li>
+      <li><strong>Feedback sharpens the question</strong><span>Expose assumptions and decide what deserves deeper engineering</span></li>
+    </ol>
+  </section>
+
+  <p class="promotion"><strong>Promote selected learning — not every prototype</strong></p>
+
+  <section class="flow-loop delivery-loop" aria-labelledby="delivery-loop-title">
+    <h4 id="delivery-loop-title">Make the change deliverable</h4>
+    <ol>
+      <li><strong>Versioned definitions</strong><span>Intent, interfaces and acceptance criteria</span></li>
+      <li><strong>Bounded agent work</strong><span>Permitted tools, independent checks and review</span></li>
+      <li><strong>Integrated release candidate</strong><span>The identified product and support material that belong together</span></li>
+    </ol>
+  </section>
+
+  <p class="return-path"><strong>Integration and use create new questions</strong> that can return the team to exploration.</p>
+  <figcaption>Exploration and delivery are concurrent feedback loops. Early artifacts expose uncertainty; selected learning becomes maintained engineering information, checks and release capability.</figcaption>
+</figure>
+
+<style>
+  .figure-intro { max-width: 60ch; margin: .55rem 0 1.25rem; color: var(--muted); }
+  .flow-loop { margin-block: 1rem; }
+  .flow-loop h4 { margin: 0 0 .65rem; font: 650 .78rem/1.5 var(--mono); letter-spacing: .04em; text-transform: uppercase; color: var(--teal); }
+  .flow-loop ol { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.45rem; list-style: none; padding: 0; margin: 0; }
+  .flow-loop li { position: relative; min-width: 0; padding: .8rem .85rem; border: 1px solid var(--rule); background: var(--panel); line-height: 1.45; }
+  .flow-loop li:not(:last-child)::after { content: '→'; position: absolute; inset-inline-end: -1.08rem; top: 50%; translate: 0 -50%; color: var(--muted); }
+  .flow-loop strong, .flow-loop span { display: block; }
+  .flow-loop strong { font-size: .9rem; }
+  .flow-loop span { margin-top: .25rem; color: var(--muted); font-size: .78rem; }
+  .delivery-loop h4 { color: var(--gold); }
+  .promotion { margin: 1.2rem 0; padding: .7rem .9rem; border-inline-start: 3px solid var(--gold); background: var(--panel); }
+  .return-path { margin: .9rem 0 0; padding-inline-start: .9rem; border-inline-start: 3px solid var(--teal); color: var(--muted); }
+  .return-path strong { color: var(--text); }
+
+  @media (max-width: 620px) {
+    .flow-loop ol { grid-template-columns: 1fr; gap: 1.45rem; }
+    .flow-loop li:not(:last-child)::after { content: '↓'; inset-inline-end: auto; inset-block-start: auto; inset-block-end: -1.2rem; inset-inline-start: 50%; translate: -50% 0; }
+  }
+</style>

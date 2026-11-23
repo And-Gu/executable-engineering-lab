@@ -18,7 +18,7 @@ The four-part course follows the intersection team from an engineering question 
 | III | 11 | Reviewing an Integrated Product Change | Review compatible changes and decide which claims the available evidence supports | Follow a connector change across disciplines and inspect the two proposed interface revisions |
 | IV — Establish Trust and Sustain Change | 12 | Governance and Engineering Authority | Allocate authority for routine work and identify the product decision a human must own | Trace a delegated investigation to a decision on controller and adapter compatibility |
 | IV | 13 | Continuously Integrated Engineering | Decide when an integrated product and its service material can be released together | Follow a diagnostic change through software, translations, logistics and training |
-| IV | 14 | From Engineering Intent to Continuous Integration | Use the course’s decisions to plan the evidence a new change will need | Follow the queue model, the command acknowledgment and the service instruction into one whole-product decision |
+| IV | 14 | From Engineering Question to Useful Release | Decide which engineering capability can turn early learning into a complete, releasable change | Connect provisional information, agent work, independent feedback and whole-product release |
 
 **This is an educational progression, not a waterfall process.** Integration, verification, security, assurance and risk reasoning are relevant from the earliest stages, although their detailed lessons appear later.
 

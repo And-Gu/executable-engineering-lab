@@ -26,7 +26,7 @@ The active course ends with the wrap-up below. The [companion article](../../bon
 
 12. [Governance and Engineering Authority](12-governance-and-engineering-authority.md)
 13. [Continuously Integrated Engineering](13-continuously-integrated-engineering.md)
-14. [From Engineering Intent to Continuous Integration](14-from-engineering-intent-to-continuous-integration.md)
+14. [From Engineering Question to Useful Release](14-from-engineering-intent-to-continuous-integration.md)
 
 The example is fictional and uses a deliberately bounded teaching model. No physical intersection controller or operational safety validation is claimed. The legacy V0/V2 material remains distinct.
 

@@ -12,7 +12,7 @@ describe('V3 chapter activities', () => {
       '09': ['chapter-quiz', 'digital-thread'],
       '11': ['integrated-change', 'chapter-quiz'],
       '13': ['release-readiness', 'chapter-quiz'],
-      '14': ['evidence-handoffs', 'chapter-quiz'],
+      '14': ['engineering-capability-flow', 'evidence-handoffs', 'chapter-quiz'],
     };
     expect(v3Chapters.map(chapter => Number(chapter.number))).toEqual(Array.from({ length: 14 }, (_, i) => i + 1));
     expect(v3Chapters.at(-1)?.url).toContain('/14-from-engineering-intent-to-continuous-integration/');

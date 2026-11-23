@@ -2,73 +2,125 @@
 id: eel-v3-ch14-course-wrap-up
 chapter: 14
 part: "IV — Establish Trust and Sustain Change"
-title: "From Engineering Intent to Continuous Integration"
-status: draft
-publication: unpublished
+title: "From Engineering Question to Useful Release"
+status: reviewed
+publication: published
 reference_case: four-way-traffic-intersection
 teaching_fixture: "T1 — recorded queue simulations and interface decision, with a proposed product investigation and an illustrative release"
 ---
 
-# From Engineering Intent to Continuous Integration
+# From Engineering Question to Useful Release
 
-Picture a maintainer filling out a service report for the lab’s fictional four-way intersection. The controller requested amber for the north signal head. The adapter acknowledged the command. The last field asks what the head displayed. Would you enter “amber”? A driver approaching the intersection has to act on the light they can see.
+Once a release decision is made, the next question is what the organization can reuse for the change after it.
 
-## The journey through Chapters 1–13
+Every product organization is developing two systems, whether it manages them that way or not.
 
-### Choose a question the workshop can answer
+The first is the product customers and operators use. The second is the system that allows the organization to change that product: its people, engineering information, models, tools, checks, integration environments and ways of making decisions.
 
-Chapter 1 asks where earlier feedback could save a team from an expensive change. Comparing two interface definitions while the team can still choose its equipment is one opportunity. Chapter 2 brings the people who use the intersection into that decision. Drivers want shorter queues after bursts of traffic. Pedestrians want to know when they can cross safely. The maintainer wants to distinguish what the controller asked for from what the lamp showed. The team picks a question it can explore on paper. Could the same number of arrivals leave different queues under the same signal sequence? [The New Engineering Paradigm](01-the-new-engineering-paradigm.md#where-earlier-feedback-improves-delivery) · [Setting Up the Intersection Workshop](02-introducing-the-engineering-challenge.md#a-prototype-for-the-first-question).
+When investment plans describe the first system in detail but leave the second spread across project budgets, specialist tools and local working methods, teams feel the consequence. They have to reconstruct why a decision was made, establish which revisions belong together or repeat an integration investigation for the next product variant.
 
-Two sketches of the first green give different answers. One serves the empty queue before adding the arriving car. The other lets that car leave on green. In Chapter 3, the team postpones its request for traffic records until both groups can reproduce the same step. Chapter 4 puts the agreed order in a versioned source. A link labeled *represents* identifies the model to revisit if the team changes how it selects phases. An engineer can now find both the model to run and the assumption to inspect. [Planning Under Uncertainty](03-planning-under-uncertainty.md#keep-a-small-decision-record) · [Engineering Knowledge as Code](04-engineering-knowledge-as-code.md#a-change-impact-question-the-graph-can-answer).
+The opportunity now is to engineer that second system deliberately. Connected information, executable feedback and AI agents make it possible to turn more of the path from an engineering question to a release decision into a maintained organizational capability.
 
-### Save the observation someone else will need
+That opportunity begins before the product definition is complete. A question, a few provisional assumptions and a boundary can be enough for people and agents to build something executable, expose uncertainty and decide what deserves deeper engineering.
 
-The team can now run the two-queue model with invented arrivals. In the clustered pattern, scenario B, two north–south vehicles arrive on amber. Move one into the preceding green and it can leave immediately. After eight abstract slots, one vehicle is still waiting, down from two. The team saves the original input, the single edit, model revision T1 and the point at which it counted the queues. A colleague can repeat the experiment or use it to ask a different question. [Learning Through Models and Prototypes](05-learning-through-models-and-prototypes.md#record-what-the-experiment-changed) · [Saved change and observation](https://github.com/And-Gu/executable-engineering-lab/blob/9b8d57b0a18846ec22d927bd76447855b68ce886/project/v3/case-study/data-quality-v1.json?plain=1#L31-L50).
+Here, speed means shortening the path from an important question to a decision the organization can act on, and from an accepted change to a complete release candidate. It is a property of the whole flow, not the output rate of one activity.
 
-Chapter 6 follows the original patterns through a second cycle. The clustered pattern ends both cycles with two vehicles waiting. Did the model carry the queues forward, or could it have started over and arrived at the same total? Look at the first green of cycle two. One north–south vehicle departs even though only east–west vehicles arrive in that slot. It came from the queue already there. That departure gives the next engineer a way to check the handoff between cycles. [Engineering Data: From Measurements to Decisions](06-engineering-data-from-measurements-to-decisions.md#carry-the-queues-through-a-second-cycle) · [The recorded departure in slot 9](https://github.com/And-Gu/executable-engineering-lab/blob/9b8d57b0a18846ec22d927bd76447855b68ce886/project/v3/case-study/two-cycle-run.json?plain=1#L120-L143).
+This is what it means to build the machine that builds the machine.
 
-### Agree on the work an agent can take on
+## A new kind of engineering asset
 
-A colleague who wants to repeat that run needs a specification. The traffic engineer and model owner settle what “run it twice” means. Use each original pattern, preserve both queues between cycles, and compare each first-cycle row with the independently checked reference. With that agreement in place, they can give an agent the objective, a model it may run and a reference it may read. If it selects the edited arrival pattern by mistake, it can trace the first difference to an input and rerun the comparison. [Spec-Driven Development Without Waterfall](07-spec-driven-development-without-waterfall.md#the-agent-brief) · [Directing AI Engineering Agents](08-directing-ai-engineering-agents.md#coordinate-several-agents-around-one-engineering-outcome).
+### Connected information preserves the ability to act
 
-Before delegating a larger assignment, the engineers choose a change small enough to review. Ask the agent to implement just the carry-over and try a deliberate queue reset against an independently written test. Once the engineer sees that the change preserves the queues and that the test catches the reset, they can delegate both full runs and the comparison report. If a vehicle disappears at the boundary, trace where it went. If two sources disagree about whether it should carry over, take that assumption back to the model owner. [Planning and Controlling Agents](09-engineering-in-small-reviewable-increments.md#delegate-a-days-work-with-room-for-exceptions).
+Engineering organizations already hold large amounts of information. The constraint is often the work required to make it usable in a decision.
 
-### Follow the command from the controller into service
+At that early stage, the information does not need to be complete. During early concept work, a few needs, constraints, examples and open questions can give people and agents enough context to draft, inspect and challenge a small model or prototype. The first relationships may be provisional. Their purpose is to expose assumptions, preserve what the team learns and make the next question easier to ask.
 
-Return to the maintainer’s report. Chapter 10 turns their question into a proposed product requirement. When a receipt arrives without independent feedback for that head and command, the display should say “received, indication unknown.” The model still has something to contribute. Its third slot gives the firmware engineer a reference for the expected north–south amber request. Checking what the head displays calls for an observation at the lamp. [From Models to an Integrated Product](10-from-models-to-an-integrated-product.md#define-the-first-product-increment).
+This returns to Chapter 1's central delivery argument: a model can provide feedback before hardware is ready, and an interface can be checked before final integration. The advantage is not early certainty. It is an earlier signal while alternatives remain easier to change. [Where earlier feedback improves delivery](01-the-new-engineering-paradigm.md#where-earlier-feedback-improves-delivery).
 
-Chapter 11 shows how engineers and their agents could bring compatible changes to one review. A coordinator can pair the controller with the display candidate that keeps receipt and observation separate. A candidate that confirms amber on receipt goes back to its engineer. If the electronics team moves a sensor connector, the coordinator also needs the board and enclosure revisions from the mechanical fit review. The proposed contracts explain why. Controller revision A expects confirmation that the indication was applied. Adapter revision B promises receipt of the message. [Reviewing an Integrated Product Change](11-verification-validation-and-engineering-evidence.md#choose-a-combination-to-integrate) · [Recorded contract comparison](https://github.com/And-Gu/executable-engineering-lab/blob/9b8d57b0a18846ec22d927bd76447855b68ce886/project/v3/case-study/DECISION-CHAIN.md?plain=1#L50-L68).
+A requirement may sit in one system, an interface decision in another and test evidence in a third. A drawing, software build and service instruction may each be correct on their own while referring to different product revisions. When those relationships live mainly in people’s memories, every change creates coordination work.
 
-In Chapter 12, Maya Chen, the accountable product decision-maker, defers acceptance of that pair. The interface owners have to agree on the meaning of the reply, including what happens when feedback is missing. The integration reviewer proposes a bench test that would match an independent camera image to the head, command and configuration. That test has yet to run. The maintainer can record receipt and leave the displayed color unknown. [Governance and Engineering Authority](12-governance-and-engineering-authority.md#record-a-decision-then-improve-the-capability-to-make-it).
+A connected information environment does more than make documents searchable. It gives important objects stable identities, records the revisions used together and preserves the relationships between intent, definition, implementation, evidence and decision. Specialist tools can remain where they are. The engineering system maintains enough structure to tell a reviewer what belongs to the current change and where to inspect the source.
+
+That creates leverage in three ways.
+
+First, a new engineer can recover the reasoning behind a decision without locating everyone who took part in it. Second, a changed definition can reveal which products, checks and decisions may be affected. Third, knowledge from one variant can become a starting point for the next without treating the earlier conclusion as universally valid.
+
+The value is the ability to act on the information, not the number of connections.
+
+### Agents turn that information into capacity
+
+AI agents add a new operating capability when they can work with this environment.
+
+An agent can receive an engineering question or a bounded outcome, inspect the relevant sources, use tools, run checks, investigate a failure and refine a proposal before handing it back. That is different from generating another isolated document. The agent works through part of the engineering flow.
+
+Early in the work, that flow can be deliberately exploratory. A team may “vibe code” a disposable software interface—steering generated behavior by trying it—while agents draft small models or simulations for selected questions. These artifacts are valuable for the questions they sharpen, not for their readiness for delivery.
+
+When a finding needs to survive the experiment, the interaction must leave maintained sources behind. In software, a spec-to-code workflow can use agreed behavior and acceptance criteria to guide code and checks. For a multidisciplinary product, the broader move is spec-to-engineering: connect intent, assumptions, interfaces, configurations, evidence and release dependencies while keeping unresolved questions explicit.
+
+This is not a one-way maturity ladder. Exploration continues beside delivery. As commitment grows, selected information and models gain identified revisions, owners, independent checks and configuration links; a later finding can still send the team back to a prototype.
+
+<!-- interactive: engineering-capability-flow -->
+
+The quality of that work depends on the machine around it. The question or objective must be clear enough to define the next useful check. The agent needs current definitions and the permissions required for the task. Checks must provide feedback that is meaningful and sufficiently independent of the proposal. Exceptions need an owner, and consequential product decisions remain with people who hold the relevant authority.
+
+Maintaining source connections, permissions, independent checks and review capacity belongs in the investment case. Agentic support creates leverage only while the engineering environment remains trustworthy enough to direct and evaluate the work.
+
+This shifts the leadership question. The issue is no longer only where an assistant can save time. It is which recurring engineering flows can be made explicit enough for people and agents to execute, review and improve together.
 
 > **Concept**
 >
-> To test two explanations, look where they predict different observations. The continuous run ends with two vehicles waiting in scenario B. Starting over with an empty queue would predict two as well. The departure at the first green of cycle two distinguishes them. At the signal head, a receipt could accompany either an amber lamp or a dark one. An independent observation could distinguish those outcomes for that command.
+> Agentic engineering creates leverage when an agent can pursue a defined outcome, respond to tool feedback and return evidence within agreed limits. The organization gains capacity by improving the environment around the work, while people retain responsibility for intent, exceptions and product decisions.
 
-For Chapter 13’s release exercise, assume the current configuration is authorized to report an unknown indication. The service team requests clearer wording for its existing diagnostic, `IND-UNKNOWN`. In the proposed rehearsal, a technician would read the running display, follow the localized instruction and find the right observation kit. The release therefore includes the operator manual, service editions, logistics entry and training exercise. One required translation still awaits review in the example. The release lead holds the candidate. After approval, the team checks that the display opens the revised instruction in the assembled package. If the other evidence still applies, the lead can record that the configuration is releasable. Operations chooses when to deploy it. [Continuously Integrated Engineering](13-continuously-integrated-engineering.md#make-the-whole-product-decision).
+### Feedback makes the capability improve
 
-## Three practices to take to your next project
+The engineering system needs two connected feedback loops.
 
-### Software-driven product development
+The fast loop works inside a change. Engineers and agents update a definition or implementation, run a model or check, inspect the result and correct the work. This loop can remove waiting between an idea and an initial technical finding.
 
-Software-driven product development uses versioned sources, short iterations and executable checks to bring changes across the product together frequently. Firmware engineers can check an input mapping each time it changes. Their mechanical colleague can check plug clearance on the drawing while waiting for the board to arrive for a fit check. A release manifest identifies the revisions that belong together. The late translation suggests an improvement to the engineering environment itself. Use the diagnostic code to open the affected language reviews when the change is requested, while the other disciplines still have time to act on their feedback. [The connector and enclosure](10-from-models-to-an-integrated-product.md#follow-an-electronics-change-into-the-enclosure) · [The release manifest](13-continuously-integrated-engineering.md#follow-the-diagnostic-into-service).
+The whole-product loop asks whether the integrated change works for its intended use. It includes physical behavior, operational conditions, cybersecurity, service information, manufacturing or logistics dependencies and release authority. Its evidence may arrive on different cadences from software checks.
 
-### Agentic engineering
+The loops support each other. A physical or operational finding can improve the next automated check. A fast check can keep known errors away from scarce integration equipment. The result is a system that learns from product work and carries that learning into the next change.
 
-An engineer practicing agentic engineering gives an agent an outcome, tools, feedback it can act on and limits on its authority. For the two-cycle simulation, the agent can plan a run, investigate a failed row, correct an indexing error and return the changed calculation with the results of its checks. The model owner judges whether the run answers the traffic engineer’s question. Asking for individual waiting times would change what the model measures, a decision for those engineers. The same division of work lets Maya delegate a display check and retain the product compatibility decision. [Chapter 9’s review by exception](09-engineering-in-small-reviewable-increments.md#delegate-a-days-work-with-room-for-exceptions) · [Maya’s proposed assignment](12-governance-and-engineering-authority.md#give-the-coordinator-a-task-it-can-finish).
+The intersection illustrates the relationship: a software-visible receipt established that a command arrived, not what the lamp displayed. The same pattern appears whenever digital evidence accelerates a decision without replacing the physical or operational evidence the product still requires.
 
-### Context engineering
+## Invest in flow, not isolated automation
 
-Context engineering means selecting, connecting and keeping current the information someone needs for a particular task. To investigate the adapter, gather the maintainer’s need, the two interface revisions and the test condition that separates receipt from confirmation. The emulator would acknowledge receipt and withhold indication feedback. Link the discrepancy the reviewers found in the contracts and identify the independent lamp observation still to be collected. Those connections form a **digital thread**. A reviewer can trace Maya’s decision back to its reasons. Starting from a revised adapter definition, the same reviewer can locate the display requirement and checks to revisit, keeping the earlier decision with the revisions Maya reviewed. [Chapter 9’s digital thread](09-engineering-in-small-reviewable-increments.md#the-digital-thread) · [Chapter 11’s verification and validation plan](11-verification-validation-and-engineering-evidence.md#verify-the-requirement-and-validate-the-task).
+### Speed is the performance of the whole system
 
-Suppose a colleague picks up the next revision. Which part of the earlier work can they use, and which observation do they owe the next reviewer?
+More code, faster analysis or quicker document generation can all help. They do not improve release speed when integration, review or support material becomes the next queue.
+
+Not every exploratory artifact should become a delivery asset. Some prototypes have done their job once they expose an assumption or eliminate an option. For selected results, the learning—not necessarily the prototype—needs to mature. The governing information becomes versioned, the relevant model or implementation gets an explicit configuration, checks become repeatable and the relationship to the release becomes visible. The organization gains speed when it can preserve the learning without carrying every experiment into production.
+
+Connected information reduces time spent finding and reconciling sources. Executable checks shorten the path to technical feedback. Agents can absorb bounded investigation and correction work. Explicit configurations reduce the work of assembling evidence for review. Bringing service, training and operational material into the same change exposes release dependencies early enough to address them in parallel.
+
+This does not force every discipline into the same cadence. Electronics, mechanics, software, physical testing and service preparation retain different constraints. The engineering system connects their feedback and shows which dependency controls the next decision.
+
+Continuous integration makes divergence across those disciplines visible while the change is still being assembled. Continuous delivery keeps an identified, complete package ready for release. Deployment remains an authorized operational decision.
+
+### Fund the bottleneck that keeps recurring
+
+Building the machine is continuous engineering work. It needs owners, time and funding.
+
+The right investment follows the delay or uncertainty that repeatedly affects product decisions. If teams discover interface disagreements during final integration, maintain the interface definition and add a check that runs when either side changes. If a test rig is the constraint, improve the way planned configurations, observations and results are prepared around scarce rig time. If service content determines release readiness, connect its owners and language reviews to the change when the diagnostic is defined. If agents produce more proposals than people can assess, improve independent feedback, exception handling and review capacity before increasing delegation.
+
+Each improvement should earn its place. Leaders can examine recent product changes, identify where decisions waited or work had to be repeated and judge whether a reusable capability would change that flow. The investment case includes the cost of maintaining the capability, not only the time saved on its first use.
+
+### Reuse capability while renewing evidence
+
+The strongest engineering assets become more valuable across products and over time. A maintained interface definition, comparison method, test procedure or release workflow can give the next team a better starting point.
+
+The associated conclusion remains tied to the configuration that produced it. Reuse the method and relationships. Re-establish the evidence that depends on the new product version.
 
 <!-- interactive: evidence-handoffs -->
 
+This distinction is what allows reuse to scale without turning history into assumption. It also gives agents a safe place to contribute. They can retrieve earlier reasoning, identify affected checks and prepare the next investigation while the responsible engineer judges applicability and owns the decision.
+
 > **Explore further**
 >
-> Follow one instruction into a handbook, a training guide and a website in the companion course. Then consider what it costs a small team to keep that work repeatable in the lab’s unnumbered bonus article. [Document-as-Code Lab, Bringing It Together](https://and-gu.github.io/document-as-code-lab/chapters/13-course-summary/) · [Building the Machine That Builds the Machine](/executable-engineering-lab/bonus/building-the-machine-that-builds-the-machine/).
+> The companion article follows the same investment logic from a small documentation workflow to a reusable engineering environment. [Building the Machine That Builds the Machine](/executable-engineering-lab/bonus/building-the-machine-that-builds-the-machine/) · [The New Engineering Paradigm](01-the-new-engineering-paradigm.md#two-systems-must-evolve-together).
 
 <!-- interactive: chapter-quiz -->
 
-Choose a change on your own desk. What would someone using the product be able to do afterward? Identify an observation that could change your mind, the version it would cover and the person who can make the decision. Leave the next engineer enough of the reasoning to see why you made that choice.
+The strategic question is not how much engineering work can be automated. It is which engineering capability would help the organization turn incomplete intent into early learning, turn selected learning into maintained definitions and checks, and carry a useful change into release with less reconstruction.
+
+That capability is part of the product investment. Build it, operate it and improve it with the same intent applied to the product itself.

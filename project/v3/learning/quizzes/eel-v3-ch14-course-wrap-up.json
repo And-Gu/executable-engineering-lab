@@ -1,58 +1,58 @@
 [
   {
-    "id": "approve-the-next-model-assignment",
-    "prompt": "An agent’s new calculation reproduces the final queues for both original patterns. A version that deliberately resets the queues between cycles passes the agent’s test too. What should the model owner ask for before delegating a larger comparison?",
+    "id": "promote-learning-into-delivery",
+    "prompt": "A team uses an agent to create a disposable software interface while the product definition is still open. The prototype exposes a behavior that matters. What should happen before that learning governs delivery?",
     "options": [
       {
-        "text": "Compare every first-cycle row with the saved trace and authorize the larger task if all those rows agree.",
-        "feedback": "Those rows can establish that the original cycle still works. The reset happens after the last row they cover."
+        "text": "Promote the generated interface directly after stakeholders agree that the demonstration looks useful.",
+        "feedback": "The demonstration can reveal a useful question, but appearance alone does not establish the governing behavior, configuration or evidence for delivery."
       },
       {
-        "text": "Use the saved queue and the first green of cycle two to check a departure, then show that the reset version fails.",
+        "text": "Record the agreed behavior, assumptions and interfaces in versioned sources, identify the configuration and add an independent check.",
         "correct": true,
-        "feedback": "Two north–south vehicles wait at the end of the clustered pattern. One must depart on the next green even though no new north–south vehicle arrives. This check can catch a lost queue before the engineer expands the assignment."
+        "feedback": "The prototype can remain disposable. The selected learning becomes durable through maintained definitions, explicit configuration and feedback that can expose a mismatch."
       },
       {
-        "text": "Repeat the calculation several times and authorize the larger task if each run returns the same final queues.",
-        "feedback": "A model that restarts each cycle can produce the same final queues on every run. Repetition leaves the question about continuity open."
+        "text": "Stop using prototypes until the team can write a complete specification for the whole product.",
+        "feedback": "The team can start learning with partial intent. It needs enough context for the next useful question, not complete information before any exploration."
       }
     ]
   },
   {
-    "id": "review-a-revised-adapter",
-    "prompt": "A supplier proposes a revised adapter. Its response is still labeled “acknowledged.” Maya asks an agent to prepare a compatibility review. What should she ask it to bring back?",
+    "id": "expand-an-agentic-flow",
+    "prompt": "An agent can revise an interface definition and make a check it wrote from the same interpretation pass. What would justify expanding the delegated flow?",
     "options": [
       {
-        "text": "The new adapter definition alongside the controller’s expectation, with independent indication evidence for this configuration or a record of what is missing.",
+        "text": "A larger set of generated changes, because producing more accepted output shows that the agent understands the product.",
+        "feedback": "More output can move the bottleneck into review and integration. It does not provide an independent basis for judging the interpretation."
+      },
+      {
+        "text": "Current governing sources, a sufficiently independent check, explicit permissions and an escalation path to the responsible decision-maker.",
         "correct": true,
-        "feedback": "The definitions tell Maya what each side promises. An observation matched to the head, command and configuration would tell her what the head displayed in that test. She can judge the pair using the evidence available."
+        "feedback": "Those conditions let the agent adapt within a bounded task while people retain authority over exceptions, evidence quality and consequential product decisions."
       },
       {
-        "text": "The earlier A/B comparison alongside a check that the revised adapter still returns the acknowledgment for the requested command.",
-        "feedback": "Matching the reply to a command establishes which message the adapter received. The new revision may define a different meaning, and the lamp observation still needs its own evidence."
-      },
-      {
-        "text": "The service display text alongside an editor’s confirmation that it accurately repeats the adapter’s acknowledgment for the requested head.",
-        "feedback": "A wording review can establish what the screen tells a maintainer. Even a faithful rendering of a receipt leaves the visible indication open."
+        "text": "A successful run of the agent's own check, provided the agent can explain why each change was necessary.",
+        "feedback": "An explanation and a check derived from the same mistaken interpretation may agree with each other. The flow needs independent feedback and clear authority boundaries."
       }
     ]
   },
   {
-    "id": "follow-a-changed-service-kit",
-    "prompt": "During a future diagnostic iteration, a revised head assembly needs a different portable observation kit. The diagnostic code and display wording stay the same. How should the release lead decide what to recheck?",
+    "id": "improve-whole-product-release",
+    "prompt": "Software and electronics checks have passed, but a required service translation for the same change is still awaiting review. Which response supports faster whole-product release?",
     "options": [
       {
-        "text": "Rerun the working display with the original kit entry and use the unchanged diagnostic text to carry the service approvals forward.",
-        "feedback": "The display could show the correct words while the procedure sends the technician to a kit that no longer fits. The assembly change reaches past the screen."
+        "text": "Release the technical artifacts now and attach the reviewed translation in a later service update.",
+        "feedback": "If users or technicians depend on the translation, the released configuration would be incomplete even though local technical checks passed."
       },
       {
-        "text": "Confirm that the new kit fits and update its catalog entry. Schedule changes to instructions and training after the next installation.",
-        "feedback": "Fit and availability support the equipment choice. The agreed release also includes the procedure and training a technician uses to find that equipment."
-      },
-      {
-        "text": "Trace the assembly revision through the fit check, catalog, service instruction and training. Review their applicability together on the release candidate.",
+        "text": "Hold the incomplete candidate, then bring language review into the next change early enough to proceed alongside implementation and integration.",
         "correct": true,
-        "feedback": "The lead can keep evidence that still applies, request fresh checks where dependencies changed, and verify that a technician following this candidate’s instructions reaches the compatible kit."
+        "feedback": "The current release still needs its complete package. Exposing the dependency earlier on the next change reduces waiting across the whole flow rather than optimizing one discipline."
+      },
+      {
+        "text": "Treat approval of the source-language instruction as evidence that every required edition is ready.",
+        "feedback": "The source review may be reusable input, but it does not establish that each required edition preserves the meaning for its users."
       }
     ]
   }
