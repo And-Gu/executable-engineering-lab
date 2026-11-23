@@ -1,6 +1,7 @@
-# V3 Editorial Manuscript Index — Current Approved Curriculum
+# V3 editorial manuscript index — November 2026 planning archive
 
-**Status:** Index and editorial review routing; no new V3 site pages published by this index  
+The [active manuscript index](revised/INDEX.md) and [curriculum map](../../CURRICULUM-MAP.md) give the current reading order. This page preserves the earlier editorial assignments.
+
 **Date:** 2026-11-15  
 **Tracking issue:** [#32 — V3 master plan](https://github.com/And-Gu/executable-engineering-lab/issues/32)
 

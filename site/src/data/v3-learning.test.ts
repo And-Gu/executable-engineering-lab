@@ -4,7 +4,7 @@ import { parts, v3Chapters } from './v3-course';
 import { chapterQuizzes, chapterSections, quizSchema } from './v3-learning';
 
 describe('V3 chapter activities', () => {
-  it('binds the first thirteen manuscripts to their own questions and slots', () => {
+  it('binds all active manuscripts to their own questions and slots', () => {
     const slots: Record<string, string[]> = {
       '04': ['change-impact-figure', 'chapter-quiz'],
       '05': ['intersection-model', 'chapter-quiz'],
@@ -12,8 +12,11 @@ describe('V3 chapter activities', () => {
       '09': ['chapter-quiz', 'digital-thread'],
       '11': ['integrated-change', 'chapter-quiz'],
       '13': ['release-readiness', 'chapter-quiz'],
+      '14': ['engineering-capability-flow', 'evidence-handoffs', 'chapter-quiz'],
     };
-    for (const chapter of v3Chapters.slice(0, 13)) {
+    expect(v3Chapters.map(chapter => Number(chapter.number))).toEqual(Array.from({ length: 14 }, (_, i) => i + 1));
+    expect(v3Chapters.at(-1)?.url).toContain('/14-from-engineering-intent-to-continuous-integration/');
+    for (const chapter of v3Chapters) {
       const slug = chapter.url.split('/').filter(Boolean).at(-1);
       const source = readFileSync(new URL(`../../../project/v3/manuscripts/revised/${slug}.md`, import.meta.url), 'utf8');
       const id = source.match(/^id: (.+)$/m)![1];

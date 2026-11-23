@@ -2,6 +2,8 @@
 import type { MarkdownInstance } from 'astro';
 import { v3Chapters } from '../../../data/v3-course';
 import { chapterQuizzes, chapterSections } from '../../../data/v3-learning';
+import EngineeringCapabilityFlow from '../../../components/learning/EngineeringCapabilityFlow.astro';
+import EvidenceHandoffs from '../../../components/learning/EvidenceHandoffs.astro';
 import IntegratedChange from '../../../components/learning/IntegratedChange.astro';
 import ReleaseReadiness from '../../../components/learning/ReleaseReadiness.astro';
 import ChapterQuiz from '../../../components/learning/ChapterQuiz.astro';
@@ -44,6 +46,7 @@ if (frontmatter.id === 'eel-v3-ch06-engineering-data') activities.push('two-cycl
 if (frontmatter.id === 'eel-v3-ch09-reviewable-increments') activities.push('digital-thread');
 if (frontmatter.id === 'eel-v3-ch11-verification-evidence') activities.push('integrated-change');
 if (frontmatter.id === 'eel-v3-ch13-continuous-engineering') activities.push('release-readiness');
+if (frontmatter.id === 'eel-v3-ch14-course-wrap-up') activities.push('engineering-capability-flow', 'evidence-handoffs');
 const sections = questions
   ? chapterSections(await chapter.compiledContent(), activities)
   : [];
@@ -60,10 +63,10 @@ const sourceUrl = `https://github.com/And-Gu/executable-engineering-lab/blob/mai
 <a class="skip" href="#main">Skip to chapter</a>
 <header class="reading-shell site-header"><a class="brand" href={base}>Executable Engineering Lab</a><nav aria-label="Main navigation"><a href={base + 'learn/'}>Learn</a><a href={base + 'lab/'}>Lab</a><a href={base + 'reference/'}>Reference</a></nav><SocialLinks /></header>
 <div class="reading-shell reading-grid">
-<aside class="course-sidebar"><nav aria-label="Course chapters"><a href={base + 'learn/'}>All fifteen chapters</a><ol>{v3Chapters.map(c => <li><a href={c.url} aria-current={c === current ? 'page' : undefined}>{c.title}</a></li>)}</ol></nav><nav class="on-this-page" aria-label="In this chapter"><p class="eyebrow">In this chapter</p>{contents.map(h => <a href={'#'+h.slug}>{h.text}</a>)}</nav></aside>
+<aside class="course-sidebar"><nav aria-label="Course chapters"><a href={base + 'learn/'}>All {v3Chapters.length} chapters</a><ol>{v3Chapters.map(c => <li><a href={c.url} aria-current={c === current ? 'page' : undefined}>{c.title}</a></li>)}</ol></nav><nav class="on-this-page" aria-label="In this chapter"><p class="eyebrow">In this chapter</p>{contents.map(h => <a href={'#'+h.slug}>{h.text}</a>)}</nav></aside>
 <main id="main" tabindex="-1">
   <p class="eyebrow">{frontmatter.part} · Chapter {current.number}</p>
-  <details class="mobile-course"><summary>All fifteen chapters</summary><ol>{v3Chapters.map(c => <li><a href={c.url} aria-current={c === current ? 'page' : undefined}>{c.title}</a></li>)}</ol></details>
+  <details class="mobile-course"><summary>All {v3Chapters.length} chapters</summary><ol>{v3Chapters.map(c => <li><a href={c.url} aria-current={c === current ? 'page' : undefined}>{c.title}</a></li>)}</ol></details>
   <article class="chapter-body">
     {questions ? sections.map(section => {
       if (section.kind === 'prose') return <Fragment set:html={section.content} />;
@@ -73,6 +76,8 @@ const sourceUrl = `https://github.com/And-Gu/executable-engineering-lab/blob/mai
       if (section.content === 'digital-thread') return <DigitalThread />;
       if (section.content === 'integrated-change') return <IntegratedChange />;
       if (section.content === 'release-readiness') return <ReleaseReadiness />;
+      if (section.content === 'engineering-capability-flow') return <EngineeringCapabilityFlow />;
+      if (section.content === 'evidence-handoffs') return <EvidenceHandoffs />;
       return <ChapterQuiz questions={questions} />;
     }) : <Content />}
   </article>
