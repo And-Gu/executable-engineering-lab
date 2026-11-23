@@ -2,30 +2,60 @@
 import { parts, v3Chapters } from "../data/v3-course";
 ---
 <section class="course-overview" aria-labelledby="current-course-title">
-  <h2 id="current-course-title">The course · {v3Chapters.length} chapters</h2>
-  <p>Begin with the changing engineering paradigm, then follow one fictional traffic intersection from uncertain intent to an integrated product and the engineering capabilities needed to sustain it.</p>
-  <p class="course-status">Every chapter includes a short knowledge check. Change one vehicle’s arrival in Chapter 5, then carry both queues into a second cycle in Chapter 6.</p>
-  {parts.map(part => <section class="course-part" id={`part-${Number(part.chapters[0].number)}`}>
+  <header class="overview-heading">
+    <h2 id="current-course-title">The course <span>· {v3Chapters.length} chapters</span></h2>
+    <a class="course-start" href={v3Chapters[0].url}>Start with Chapter 1 <span aria-hidden="true">→</span></a>
+  </header>
+  <p class="course-intro">Begin with the changing engineering paradigm, then follow one fictional traffic intersection from uncertain intent to an integrated product and the engineering capabilities needed to sustain it.</p>
+  {parts.map(part => <section class="course-part" id={`part-${Number(part.chapters[0].number)}`} aria-labelledby={`course-part-${part.chapters[0].number}-title`}>
     {part.chapters[0].number === '10' && <span id="part-8" aria-hidden="true"></span>}
     {part.chapters[0].number === '12' && <span id="part-11" aria-hidden="true"></span>}
-    <h3>{part.title}</h3>
-    <ol start={Number(part.chapters[0].number)}>{part.chapters.map(chapter => <li><article>
-      <p class="chapter-number">Chapter {chapter.number}</p>
-      <h4><a href={chapter.url}>{chapter.title}</a></h4><p>{chapter.summary}</p>
-      <a class="manuscript-link" href={chapter.url}>Read chapter →</a>
+    <header class="part-heading">
+      <h3 id={`course-part-${part.chapters[0].number}-title`}><span class="part-number">Part {part.title.split(' — ')[0]}</span>{' '}{part.title.split(' — ')[1]}</h3>
+      <p class="part-range">Chapters {part.chapters[0].number}–{part.chapters.at(-1)!.number}</p>
+    </header>
+    <ol start={Number(part.chapters[0].number)}>{part.chapters.map(chapter => <li><article class="chapter-card">
+      <a class="chapter-link" href={chapter.url} aria-labelledby={`course-chapter-${chapter.number}-title`} aria-describedby={`course-chapter-${chapter.number}-summary`}>
+        <p class="chapter-number">Chapter {chapter.number}</p>
+        <h4 id={`course-chapter-${chapter.number}-title`}>{chapter.title}</h4>
+        <p class="chapter-summary" id={`course-chapter-${chapter.number}-summary`}>{chapter.summary}</p>
+        <span class="chapter-action" aria-hidden="true">Read chapter <span>→</span></span>
+      </a>
     </article></li>)}</ol>
   </section>)}
 </section>
 <style>
-.course-overview{margin:3rem 0;color:inherit}
-.course-overview>p{max-width:75ch}
-.course-status{border-left:3px solid currentColor;padding-left:1rem;font-size:.9rem;opacity:.85}
-.course-part{margin:2rem 0}
-.course-part ol{list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,17rem),1fr));gap:1rem;padding:0}
-.course-part li{border:1px solid color-mix(in srgb,currentColor 35%,transparent);border-radius:.5rem;padding:1.2rem}
-h4{font-size:1.1rem;line-height:1.4;margin:.5rem 0}
-a{color:inherit;text-underline-offset:.2em}
-a:focus-visible{outline:3px solid currentColor;outline-offset:4px}
-.chapter-number,.manuscript-link{font-size:.8rem}
-article>p{line-height:1.6}
+  .course-overview { margin-block: 2rem 3rem; padding-top: 2rem; border-top: 1px solid var(--home-rule); color: var(--home-text); }
+  .overview-heading { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: .75rem 1.5rem; }
+  .overview-heading h2 { margin: 0; font-size: clamp(1.5rem, 3vw, 1.75rem); line-height: 1.25; letter-spacing: -.035em; font-weight: 500; }
+  .overview-heading h2 span { color: var(--home-gold); }
+  .course-start { color: var(--home-teal); font: .75rem/1.5 var(--home-mono); text-underline-offset: .3em; }
+  .course-start:hover { color: var(--home-gold); }
+  .course-intro { max-width: 75ch; margin: 1rem 0 0; color: var(--home-muted); font-size: .9375rem; line-height: 1.75; }
+  .course-part { margin-top: 2rem; scroll-margin-top: 1.5rem; }
+  .part-heading { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: .5rem 1rem; padding-bottom: .875rem; border-bottom: 1px solid var(--home-rule); }
+  .part-heading h3 { display: flex; align-items: baseline; flex-wrap: wrap; gap: .5rem 1rem; margin: 0; font-size: 1.125rem; line-height: 1.4; font-weight: 500; letter-spacing: -.02em; }
+  .part-number { color: var(--home-gold); font: .6875rem/1.6 var(--home-mono); letter-spacing: .04em; text-transform: uppercase; }
+  .part-range { margin: 0; color: var(--home-muted); font: .6875rem/1.6 var(--home-mono); }
+  .course-part ol { list-style: none; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; margin: 1rem 0 0; padding: 0; }
+  .course-part li { min-width: 0; }
+  .chapter-card { height: 100%; }
+  .chapter-link { display: flex; flex-direction: column; height: 100%; padding: 1.25rem; border: 1px solid var(--home-rule); background: var(--home-panel); color: var(--home-text); text-decoration: none; }
+  .chapter-link:hover { border-color: var(--home-teal); text-decoration: none; }
+  .chapter-link:hover h4 { color: var(--home-gold); }
+  .chapter-link:focus-visible, .course-start:focus-visible { outline: 2px solid var(--home-gold); outline-offset: 4px; }
+  .chapter-number { margin: 0; color: var(--home-teal); font: .6875rem/1.6 var(--home-mono); letter-spacing: .04em; text-transform: uppercase; }
+  .chapter-link h4 { margin: .625rem 0 .75rem; color: var(--home-text); font-size: 1.0625rem; line-height: 1.4; font-weight: 600; letter-spacing: -.02em; }
+  .chapter-summary { margin: 0; color: var(--home-muted); font-size: .875rem; line-height: 1.7; }
+  .chapter-action { display: flex; justify-content: space-between; gap: 1rem; margin-top: auto; padding-top: 1.125rem; color: var(--home-teal); font: .6875rem/1.5 var(--home-mono); }
+  .chapter-action > span { font-size: 1rem; line-height: 1; }
+  @media (max-width: 900px) {
+    .course-part ol { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+  @media (max-width: 600px) {
+    .course-overview { padding-top: 1.5rem; }
+    .course-part ol { grid-template-columns: 1fr; }
+    .chapter-summary { font-size: .9375rem; }
+    .part-heading h3 { flex-basis: 100%; }
+  }
 </style>
