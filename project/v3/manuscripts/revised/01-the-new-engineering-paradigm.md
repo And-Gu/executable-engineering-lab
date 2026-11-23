@@ -74,7 +74,7 @@ If mismatches now surface early but the release still depends on timing under lo
 
 > **Explore further**
 >
-> In Chapter 15, [compare four investments against the product decision they would support](15-choosing-the-next-engineering-capability.md#decide-from-what-is-blocking-the-product).
+> [Revisit this investment in the final chapter](14-from-engineering-intent-to-continuous-integration.md). Which part of a check can another project reuse, and which observation must its team make again?
 
 <!-- interactive: chapter-quiz -->
 

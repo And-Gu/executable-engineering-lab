@@ -1,0 +1,58 @@
+---
+const base = import.meta.env.BASE_URL + 'learn/v3/';
+const trace = 'https://github.com/And-Gu/executable-engineering-lab/blob/9b8d57b0a18846ec22d927bd76447855b68ce886/project/v3/case-study/trace-v1.csv?plain=1#L4';
+const examples = [
+  {
+    name: 'The model trace',
+    reusable: 'Slot 3 of the saved T1 run gives an expected north–south amber phase.',
+    next: 'Capture the request from the new controller and compare it with that row.',
+    label: 'Read slot 3 in the trace', href: trace,
+  },
+  {
+    name: 'The signal head',
+    reusable: 'The proposed bench procedure explains how to observe the head independently.',
+    next: 'Match a fresh observation to the same head and command on the identified assembly.',
+    label: 'Inspect the proposed observation', href: base + '11-verification-validation-and-engineering-evidence/#verify-the-requirement-and-validate-the-task',
+  },
+  {
+    name: 'The service instruction',
+    reusable: 'The diagnostic code IND-UNKNOWN connects the display, manuals and training.',
+    next: 'Open the reviewed instruction in each required language from this release candidate.',
+    label: 'Follow the release decision', href: base + '13-continuously-integrated-engineering/#make-the-whole-product-decision',
+  },
+];
+---
+<figure class="decision-figure handoffs" id="evidence-handoffs" aria-labelledby="handoffs-title">
+  <h3 id="handoffs-title">What carries over when the product changes?</h3>
+  <div class="paired-headings" aria-hidden="true"><span>Reuse from the earlier work</span><span>Check on the new version</span></div>
+  <ul role="list">
+    {examples.map(example => <li>
+      <strong>{example.name}</strong>
+      <dl>
+        <div><dt>Reuse from the earlier work</dt><dd>{example.reusable}</dd></div>
+        <div><dt>Check on the new version</dt><dd>{example.next}</dd></div>
+      </dl>
+      <a href={example.href}>{example.label}</a>
+    </li>)}
+  </ul>
+  <figcaption>The saved trace is a model result. The bench observation is proposed, and the release is a planning example. Each source shows what the team could establish for that configuration.</figcaption>
+</figure>
+<style>
+  .paired-headings, dl { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 1.4rem; }
+  .paired-headings { margin-top: 1rem; font-weight: 650; color: var(--teal); }
+  .paired-headings span + span { color: var(--gold); }
+  ul { list-style: none; padding: 0; margin: .3rem 0 1rem; }
+  li { padding: .8rem 0; border-top: 1px solid var(--rule); }
+  dl { margin: .3rem 0; }
+  dl > div + div { border-inline-start: 2px solid var(--gold); padding-inline-start: .65rem; }
+  dd { margin: 0; }
+  dt { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+  li a { display: inline-block; padding-block: .2rem; }
+  @media(max-width: 560px) {
+    .paired-headings { display: none; }
+    dl { display: grid; grid-template-columns: 1fr; gap: .55rem; }
+    dl > div { border-inline-start: 2px solid var(--teal); padding-inline-start: .65rem; }
+    dt { position: static; width: auto; height: auto; clip-path: none; font-size: .83rem; font-weight: 650; color: var(--teal); }
+    dl > div + div dt { color: var(--gold); }
+  }
+</style>

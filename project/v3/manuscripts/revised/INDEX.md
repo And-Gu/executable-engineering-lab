@@ -1,6 +1,6 @@
-# V3 revised full manuscripts — fifteen chapters
+# V3 revised manuscripts — fourteen numbered chapters
 
-**Status:** The fifteen-chapter edition added the workshop introduction in November 2026. Chapters 10 and 11 now share Part III. Part IV begins with governance. The initial fourteen-chapter edition is preserved in Git history.
+The active course ends with the wrap-up below. The [companion article](../../bonus/building-the-machine-that-builds-the-machine.md) is unnumbered.
 
 ## Part I — Frame the Work
 
@@ -26,7 +26,11 @@
 
 12. [Governance and Engineering Authority](12-governance-and-engineering-authority.md)
 13. [Continuously Integrated Engineering](13-continuously-integrated-engineering.md)
-14. [Managing Engineering Knowledge at Scale](14-managing-engineering-knowledge-at-scale.md)
-15. [Choosing the Next Engineering Capability](15-choosing-the-next-engineering-capability.md)
+14. [From Engineering Intent to Continuous Integration](14-from-engineering-intent-to-continuous-integration.md)
 
 The example is fictional and uses a deliberately bounded teaching model. No physical intersection controller or operational safety validation is claimed. The legacy V0/V2 material remains distinct.
+
+## Preserved manuscripts
+
+- **Obsolete for now** · Former Chapter 14, [Managing Engineering Knowledge at Scale](14-managing-engineering-knowledge-at-scale.md).
+- **Obsolete for now** · Former Chapter 15, [Choosing the Next Engineering Capability](15-choosing-the-next-engineering-capability.md).

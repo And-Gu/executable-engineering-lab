@@ -75,3 +75,5 @@ For a closer look at when building and maintaining that environment pays off, re
 ## Make the whole-product decision
 
 **Today the release lead holds the candidate.** Next week, if the language reviewer approves the service instruction, the team builds that edition into the package and checks that the display opens it for the right diagnostic. With the other evidence still applicable, the lead can record that the identified whole-product configuration is releasable. Operations can then select a deployment date. In this example the last required service instruction sets the earliest release date, and the missed one-day target tells the team exactly where to improve its next iteration.
+
+On the next change, which parts of this work can the team reuse, and what does it have to observe again? [Follow the decisions through the course in Chapter 14](14-from-engineering-intent-to-continuous-integration.md).

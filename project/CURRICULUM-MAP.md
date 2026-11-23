@@ -1,9 +1,7 @@
-# V3 curriculum map — proposed 15-chapter sequence, four parts
-**Editorial update (17 November 2026):** New Chapter 2 introduces the fictional four-way intersection after an executive-level Chapter 1. The former Chapters 2–14 become Chapters 3–15. This change is proposed in a review PR and explicitly requested for publication by the owner.
+# V3 curriculum map — fourteen chapters in four parts
+The four-part course follows the intersection team from an engineering question to an integrated product and its release decision. Chapter 14 brings those decisions together.
 
 **Single case:** One fictional four-way traffic intersection, introduced in Chapter 2 and used for the technical progression. Chapter 1 stands alone as the engineering-paradigm overview.
-
-**Title status:** The proposed capstone title *Choosing the Next Engineering Capability* appears in the owner-accepted fourteen-chapter plan. Retain the existing Chapter 07 title *Spec-Driven Development Without Waterfall* for now; the independent review's alternative *Specifying the Next Engineering Increment* remains a separate editorial naming decision. Older 13-chapter text remains preserved as source material and must not be silently renumbered.
 
 | Part | # | Chapter | Distinct learning gain | Primary intersection teaching view |
 |---|---:|---|---|---|
@@ -20,16 +18,15 @@
 | III | 11 | Reviewing an Integrated Product Change | Review compatible changes and decide which claims the available evidence supports | Follow a connector change across disciplines and inspect the two proposed interface revisions |
 | IV — Establish Trust and Sustain Change | 12 | Governance and Engineering Authority | Allocate authority for routine work and identify the product decision a human must own | Trace a delegated investigation to a decision on controller and adapter compatibility |
 | IV | 13 | Continuously Integrated Engineering | Decide when an integrated product and its service material can be released together | Follow a diagnostic change through software, translations, logistics and training |
-| IV | 14 | Managing Engineering Knowledge at Scale | Reuse sources, models, tests and working methods with judged applicability | Cross-variant compatibility |
-| IV | 15 | Choosing the Next Engineering Capability | Synthesize the two-system story into an investment decision | Choose next engineering capability |
+| IV | 14 | From Engineering Intent to Continuous Integration | Use the course’s decisions to plan the evidence a new change will need | Follow the queue model, the command acknowledgment and the service instruction into one whole-product decision |
 
 **This is an educational progression, not a waterfall process.** Integration, verification, security, assurance and risk reasoning are relevant from the earliest stages, although their detailed lessons appear later.
 
-**Migration and status:** See [chapter migration map](v3/CHAPTER-MIGRATION-13-TO-14-2026-11-16.md), [editorial manuscript index](v3/manuscripts/INDEX.md), [independent assessment](v3/reviews/INDEPENDENT-FULL-COURSE-REVIEW-2026-11-16.md), and [P0 worked-case package](v3/reviews/WORKED-CASE-REVISION-PACKAGE-2026-11-16.md).
+**Migration and status:** The [active manuscript index](v3/manuscripts/revised/INDEX.md) identifies the two retired manuscripts. For earlier editorial decisions, see the [chapter migration map](v3/CHAPTER-MIGRATION-13-TO-14-2026-11-16.md), [editorial manuscript index](v3/manuscripts/INDEX.md), [independent assessment](v3/reviews/INDEPENDENT-FULL-COURSE-REVIEW-2026-11-16.md), and [P0 worked-case package](v3/reviews/WORKED-CASE-REVISION-PACKAGE-2026-11-16.md).
 
 ## Terminology and introduction sequence
 
-The owner approved this terminology direction on 15 November 2026 during the front-page review. These are editorial definitions for the tutorial; the chapter sequence and future demonstrations remain planned. Systems engineering establishes the scope, executable engineering describes the approach, and AI agents are one capability within it.
+The owner approved this terminology direction on 15 November 2026 during the front-page review. These editorial definitions guide the course and its proposed demonstrations. Systems engineering establishes the scope, executable engineering describes the approach, and AI agents are one capability within it.
 
 | Term | Meaning and usage in this tutorial | Introduce and develop |
 |---|---|---|
@@ -54,7 +51,7 @@ The systems scope follows [INCOSE's systems engineering definition](https://www.
 - **03→04→05→06:** Planning requires connected information; controlled models generate bounded results; data quality determines what conclusions hold.
 - **06→07→08→09:** Evidence informs specifications and agent work, which can produce reviewable changes.
 - **09→10→11→12:** A software increment must reach integrated-product evidence and accountable engineering authority.
-- **12→13→14→15:** Release eligibility, continuous engineering and reuse support a decision about the next engineering capability.
+- **12→13→14.** The release lead assesses the whole product. The wrap-up follows the evidence behind that decision and asks what the next project can reuse.
 
 The order is educational; real product teams address assurance, safety, integration and security from the start.
 

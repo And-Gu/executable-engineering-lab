@@ -3,7 +3,7 @@ id: eel-v3-ch14-knowledge-at-scale
 chapter: 14
 part: "IV — Establish Trust and Sustain Change"
 title: "Managing Engineering Knowledge at Scale"
-status: draft
+status: obsolete
 publication: unpublished
 reference_case: four-way-traffic-intersection
 teaching_fixture: "T1 — hypothetical second variant and shared-asset change"

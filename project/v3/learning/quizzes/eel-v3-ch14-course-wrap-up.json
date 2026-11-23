@@ -1,0 +1,59 @@
+[
+  {
+    "id": "approve-the-next-model-assignment",
+    "prompt": "An agent’s new calculation reproduces the final queues for both original patterns. A version that deliberately resets the queues between cycles passes the agent’s test too. What should the model owner ask for before delegating a larger comparison?",
+    "options": [
+      {
+        "text": "Compare every first-cycle row with the saved trace and authorize the larger task if all those rows agree.",
+        "feedback": "Those rows can establish that the original cycle still works. The reset happens after the last row they cover."
+      },
+      {
+        "text": "Use the saved queue and the first green of cycle two to check a departure, then show that the reset version fails.",
+        "correct": true,
+        "feedback": "Two north–south vehicles wait at the end of the clustered pattern. One must depart on the next green even though no new north–south vehicle arrives. This check can catch a lost queue before the engineer expands the assignment."
+      },
+      {
+        "text": "Repeat the calculation several times and authorize the larger task if each run returns the same final queues.",
+        "feedback": "A model that restarts each cycle can produce the same final queues on every run. Repetition leaves the question about continuity open."
+      }
+    ]
+  },
+  {
+    "id": "review-a-revised-adapter",
+    "prompt": "A supplier proposes a revised adapter. Its response is still labeled “acknowledged.” Maya asks an agent to prepare a compatibility review. What should she ask it to bring back?",
+    "options": [
+      {
+        "text": "The new adapter definition alongside the controller’s expectation, with independent indication evidence for this configuration or a record of what is missing.",
+        "correct": true,
+        "feedback": "The definitions tell Maya what each side promises. An observation matched to the head, command and configuration would tell her what the head displayed in that test. She can judge the pair using the evidence available."
+      },
+      {
+        "text": "The earlier A/B comparison alongside a check that the revised adapter still returns the acknowledgment for the requested command.",
+        "feedback": "Matching the reply to a command establishes which message the adapter received. The new revision may define a different meaning, and the lamp observation still needs its own evidence."
+      },
+      {
+        "text": "The service display text alongside an editor’s confirmation that it accurately repeats the adapter’s acknowledgment for the requested head.",
+        "feedback": "A wording review can establish what the screen tells a maintainer. Even a faithful rendering of a receipt leaves the visible indication open."
+      }
+    ]
+  },
+  {
+    "id": "follow-a-changed-service-kit",
+    "prompt": "During a future diagnostic iteration, a revised head assembly needs a different portable observation kit. The diagnostic code and display wording stay the same. How should the release lead decide what to recheck?",
+    "options": [
+      {
+        "text": "Rerun the working display with the original kit entry and use the unchanged diagnostic text to carry the service approvals forward.",
+        "feedback": "The display could show the correct words while the procedure sends the technician to a kit that no longer fits. The assembly change reaches past the screen."
+      },
+      {
+        "text": "Confirm that the new kit fits and update its catalog entry. Schedule changes to instructions and training after the next installation.",
+        "feedback": "Fit and availability support the equipment choice. The agreed release also includes the procedure and training a technician uses to find that equipment."
+      },
+      {
+        "text": "Trace the assembly revision through the fit check, catalog, service instruction and training. Review their applicability together on the release candidate.",
+        "correct": true,
+        "feedback": "The lead can keep evidence that still applies, request fresh checks where dependencies changed, and verify that a technician following this candidate’s instructions reaches the compatible kit."
+      }
+    ]
+  }
+]
