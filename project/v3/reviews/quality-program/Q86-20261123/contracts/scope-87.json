@@ -1,0 +1,11 @@
+[
+  "project/v3/manuscripts/revised/01-the-new-engineering-paradigm.md",
+  "project/v3/manuscripts/revised/09-engineering-in-small-reviewable-increments.md",
+  "project/v3/manuscripts/revised/13-continuously-integrated-engineering.md",
+  "project/v3/manuscripts/revised/14-from-engineering-intent-to-continuous-integration.md",
+  "project/v3/bonus/building-the-machine-that-builds-the-machine.md",
+  "site/src/components/learning/DigitalThread.astro",
+  "site/src/components/learning/InvestmentFeedback.astro",
+  "site/src/pages/learn/v3/[slug].astro",
+  "site/src/data/v3-learning.test.ts"
+]

@@ -30,9 +30,9 @@ NIST publication record and abstract on a graph method linking lifecycle informa
 
 **Scope and placement.** A prototype and manufacturing case. Its projected broader opportunity does not measure the benefit or feasibility of this course's example. Ch. 4 and the connected-source passage in Ch. 14.
 
-## R04 • NASA Systems Engineering Handbook, Rev. 2, 2016. Online Product Realization chapter. Institutional guidance.
+## R04 • NASA Systems Engineering Handbook, Rev. 2, report NASA/SP-2016-6105. NTRS records publication on February 17, 2017. Online Product Realization chapter, institutional guidance.
 
-Chapter 5, especially 5.2 product integration, 5.3 verification, 5.4 validation and 5.5 transition. Read the warning on evidence for reused products. [Primary source](https://www.nasa.gov/reference/5-0-product-realization/)
+[NTRS edition record](https://ntrs.nasa.gov/citations/20170001761). Chapter 5, especially 5.2 product integration, 5.3 verification, 5.4 validation and 5.5 transition. Read the warning on evidence for reused products. [Primary source](https://www.nasa.gov/reference/5-0-product-realization/)
 
 **Supported use.** System requirements, intended use and the transition of a configured product call for different evidence.
 
@@ -56,7 +56,7 @@ Chapter 5, especially 5.2 product integration, 5.3 verification, 5.4 validation 
 
 ## R07 • Anthropic, January 9, 2026. Provider evaluation practice.
 
-Steps 2–3 on unambiguous tasks, reference solutions, graders and alternative valid behaviors. The discussion explicitly identifies grader faults and unclear tasks. [Primary source](https://www.anthropic.com/research/demystifying-evals-for-ai-agents)
+Step 2 on unambiguous tasks and reference solutions, and step 5 on grader design and alternative valid behaviors. The discussion explicitly identifies grader faults and unclear tasks. [Primary source](https://www.anthropic.com/research/demystifying-evals-for-ai-agents)
 
 **Supported use.** An apparent agent failure can originate in the assignment, evaluation or environment. A maintained check can grow from a recurring observed failure.
 
