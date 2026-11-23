@@ -1,0 +1,115 @@
+[
+  {
+    "task_id": "EEL-Q-ORCHESTRATOR",
+    "attempt_id": "EEL-Q-ORCHESTRATOR-A01",
+    "agent_role": "orchestrator_editor",
+    "model": "gpt-6.2-astra",
+    "reasoning_effort": "max",
+    "objective": "Coordinate #86 from published corpus to PR and maintenance handoff, adjudicate retained and changed work; delegate to explicit settings.",
+    "permitted_writes": "All stages and artifacts; bounded repo edits only after Stage 4. Sole delivery and build owner, issues and PRs as authorized.",
+    "acceptance": "RUN, decisions, proposal tracker, dispatch and gate evidence; stage exits per #86.",
+    "inputs": [
+      "issue #86, #87",
+      "And-Gu/executable-engineering-lab @ 64931d4de37694f98e7590a02086ce43ec5ebbf2",
+      "public Learn path plus checks 45269778476, 45270151323"
+    ],
+    "dependencies": [
+      "Target public URL; initial revision identity."
+    ],
+    "accepted": {
+      "model": "gpt-6.2-astra",
+      "reasoning_effort": "max",
+      "evidence": "Current session turn_context collaboration settings, chat 01a20a55-78d8-7d33-97b2-1aaf2c069968"
+    },
+    "observed": {
+      "model": "gpt-6.2-astra",
+      "effort": "max",
+      "evidence": "turn_context model and effort (runtime-reported, no independent per-token attestation)"
+    },
+    "state": "running"
+  },
+  {
+    "task_id": "EEL-Q-S1-BASELINE",
+    "attempt_id": "EEL-Q-S1-BASELINE-A01",
+    "agent_role": "publication_baseline_investigator",
+    "model": "gpt-6.2-astra",
+    "reasoning_effort": "max",
+    "objective": "Capture public inventory and reconcile source paths, hashes and revision per #86 §5.1. Check hosted educational surfaces and observation levels.",
+    "permitted_writes": "Write published-baseline.json, baseline-notes.md and private scratch under own capture/ only.",
+    "acceptance": "Exact Home/Learn/all 14/bonus/Lab/Reference, hashes, source resolver including quiz/data/model, legacy and withdrawn, live identity twice, no unsupported observation.",
+    "inputs": [
+      "issue #86, #87",
+      "And-Gu/executable-engineering-lab @ 64931d4de37694f98e7590a02086ce43ec5ebbf2",
+      "public Learn path plus checks 45269778476, 45270151323"
+    ],
+    "dependencies": [
+      "Target public URL; initial revision identity."
+    ],
+    "accepted": {
+      "runner": "collaboration.spawn_agent",
+      "fork_turns": "none",
+      "model": "gpt-6.2-astra",
+      "reasoning_effort": "max",
+      "receipt": "/root/baseline",
+      "evidence": "Successful explicit start in chat 01a20a55-78d8-7d33-97b2-1aaf2c069968"
+    },
+    "observed": "unreported",
+    "state": "accepted"
+  },
+  {
+    "task_id": "EEL-Q-S1-HISTORY",
+    "attempt_id": "EEL-Q-S1-HISTORY-A01",
+    "agent_role": "historical_reconciliation_reviewer",
+    "model": "gpt-6.2-astra",
+    "reasoning_effort": "max",
+    "objective": "Read original 13 full drafts, four approved alternatives, briefs, migration, important reviews and current course. Build concept-to-current crosswalk under #86 §5.2–5.3.",
+    "permitted_writes": "Only history-reconciliation.md and scratch under own history/; no decisions or changes.",
+    "acceptance": "Edition/precise earlier intent+authority, current passage/link, loss vs deliberate retirement or equivalent, confidence, consequence and alternatives, coverage. Include whole relevant originals.",
+    "inputs": [
+      "issue #86, #87",
+      "And-Gu/executable-engineering-lab @ 64931d4de37694f98e7590a02086ce43ec5ebbf2",
+      "public Learn path plus checks 45269778476, 45270151323"
+    ],
+    "dependencies": [
+      "Orchestrator inspected live build information, Learn list (14 and companion), live Chapter 14, deployment and matching source revision."
+    ],
+    "accepted": {
+      "runner": "collaboration.spawn_agent",
+      "fork_turns": "none",
+      "model": "gpt-6.2-astra",
+      "reasoning_effort": "max",
+      "receipt": "/root/history",
+      "evidence": "Successful explicit start in chat 01a20a55-78d8-7d33-97b2-1aaf2c069968"
+    },
+    "observed": "unreported",
+    "state": "accepted"
+  },
+  {
+    "task_id": "EEL-Q-S1-DECISIONS",
+    "attempt_id": "EEL-Q-S1-DECISIONS-A01",
+    "agent_role": "decision_provenance_reviewer",
+    "model": "gpt-6.2-astra",
+    "reasoning_effort": "max",
+    "objective": "Reconcile decisions, comments, issues and merges in #86 §1, §5.2, including #78, #82, #83, #85, #87, #88 and new guide; tie prior intent to current source.",
+    "permitted_writes": "Only decision-provenance.md and private scratch in own provenance/. No issue writes, decisions or content edits.",
+    "acceptance": "Authority, source/issue/comment/PR refs, disposition and omission/overlap vs open project; distinguish old assignment/QA vs actual evidence.",
+    "inputs": [
+      "issue #86, #87",
+      "And-Gu/executable-engineering-lab @ 64931d4de37694f98e7590a02086ce43ec5ebbf2",
+      "public Learn path plus checks 45269778476, 45270151323"
+    ],
+    "dependencies": [
+      "Orchestrator inspected live build information, Learn list (14 and companion), live Chapter 14, deployment and matching source revision."
+    ],
+    "accepted": {
+      "runner": "collaboration.spawn_agent",
+      "fork_turns": "none",
+      "model": "gpt-6.2-astra",
+      "reasoning_effort": "max",
+      "receipt": "/root/provenance",
+      "evidence": "Successful explicit start in chat 01a20a55-78d8-7d33-97b2-1aaf2c069968"
+    },
+    "observed": "unreported",
+    "state": "accepted"
+  }
+]
