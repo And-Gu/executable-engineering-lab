@@ -33,7 +33,7 @@ The team chooses the arrival comparison. The north–south and east–west vehic
 
 ## Trace the plan to intent
 
-With traditional waterfall planning, an agreed requirement can be allocated to disciplines and traced down to their work and back to the check that demonstrates fulfillment. Suppose the city has agreed an illustrative requirement to compare the queue on a named approach against a reference plan under specified conditions. The controls team defines the candidate phase plan, the modeler prepares the specified scenario, and the verification team compares the results. The requirement explains why each task belongs. If it changes, the team can identify those dependents and review the check as well.
+With traditional waterfall planning, an agreed requirement can be allocated to disciplines and traced down to their work and back to the check that demonstrates fulfillment. Suppose, for this hypothetical comparison, the city has agreed that a candidate plan must leave fewer vehicles on the north approach than the reference plan under the specified burst and counting conditions. The controls team defines the candidate phase plan, the modeler prepares the specified scenario, and the verification team checks whether the candidate meets that criterion. The requirement explains why each task belongs. If it changes, the team can identify those dependents and review the check as well.
 
 In agile planning the team can start before that requirement is agreed. Three levels of intent make its changing choices traceable:
 
@@ -43,7 +43,7 @@ In agile planning the team can start before that requirement is agreed. Three le
 | **Initiative** — the problem in focus now | Understand how arrival timing affects vehicle queues under the fixed signal sequence. |
 | **Increment** — the next result and decision | Produce two reproducible queue traces so the team can decide what arrival records to request from operations. |
 
-The **backlog** orders the tasks needed for the increment: enter the two patterns, check the rule and compare the eight-slot traces. A roadmap can show dependencies on later work, such as a detector study. A task traces upward to its increment, initiative and vision; a decision record lets the team follow a change back through the same chain.
+The **backlog** orders the tasks needed for the increment: enter the two patterns, check the rule and compare the eight-slot traces. If the review accepts those traces, the planned next increment is a phase-aligned data request to operations. A roadmap can show dependencies on later work, such as a detector study. A task traces upward to its increment, initiative and vision; a decision record lets the team follow a change back through the same chain.
 
 ## Three possible initiatives
 
@@ -88,7 +88,7 @@ The systems lead records why the next increment has changed and what would make 
 | Planning decision | Entry for the concept review |
 | --- | --- |
 | Provisional choice and reason | Keep fixed phases as the working baseline. The first-slot disagreement concerns when a vehicle can leave, and the prototype already defines that rule. |
-| Revised increment | Postpone the request for arrival data. Deliver a comparison of the two existing patterns that both groups can reproduce. |
+| Revised increment | Postpone the planned data request. Reconcile the counting convention together and deliver an agreed comparison of the two existing patterns that both groups can reproduce. |
 | First backlog items | Correct the operations sketch, check the first slot together and rerun both patterns using the recorded rule. |
 | Review trigger | When the modeler and operations engineer can account for the same queues slot by slot, return to the data request. Ask which available records could place an arrival within a signal phase. |
 

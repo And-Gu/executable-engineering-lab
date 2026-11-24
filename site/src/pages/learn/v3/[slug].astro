@@ -13,10 +13,12 @@ import TwoCycleExperiment from '../../../components/learning/TwoCycleExperiment.
 import DigitalThread from '../../../components/learning/DigitalThread.astro';
 import QueueExperiment from '../../../components/learning/QueueExperiment.astro';
 import ArrivalPatterns from '../../../components/learning/ArrivalPatterns.astro';
+import IntersectionStructure from '../../../components/learning/IntersectionStructure.astro';
 import SocialLinks from '../../../components/SocialLinks.astro';
 import AuthorAttribution from '../../../components/AuthorAttribution.astro';
 import '../../../styles/chapter-reading.css';
 import '../../../styles/v3-learning.css';
+import { checkout } from '../../../../../scripts/delivery-environment.mjs';
 export async function getStaticPaths() {
   const modules = import.meta.glob<MarkdownInstance<{id:string;chapter:number;title:string;part:string}>>('../../../../../project/v3/manuscripts/revised/[0-9]*.md', { eager: true });
   // Build pages only for the current course registry. Historical files with
@@ -44,7 +46,7 @@ const questions = chapterQuizzes.get(frontmatter.id);
 const activities = ['chapter-quiz'];
 if (frontmatter.id === 'eel-v3-ch01-new-paradigm') activities.push('investment-feedback');
 if (frontmatter.id === 'eel-v3-ch02-intersection-challenge') activities.push('arrival-patterns');
-if (frontmatter.id === 'eel-v3-ch04-engineering-knowledge') activities.push('change-impact-figure');
+if (frontmatter.id === 'eel-v3-ch04-engineering-knowledge') activities.push('intersection-structure', 'change-impact-figure');
 if (frontmatter.id === 'eel-v3-ch05-models-prototypes') activities.push('intersection-model');
 if (frontmatter.id === 'eel-v3-ch06-engineering-data') activities.push('two-cycle-experiment');
 if (frontmatter.id === 'eel-v3-ch09-reviewable-increments') activities.push('digital-thread');
@@ -59,7 +61,8 @@ const contents = questions ? sections.flatMap(section => {
   if (section.content === 'intersection-model') return [{ depth: 2, slug: 'arrival-experiment', text: 'Move one arrival' }];
   return section.content === 'chapter-quiz' ? [{ depth: 2, slug: 'chapter-quiz', text: 'Check your understanding' }] : [];
 }) : headings;
-const sourceUrl = `https://github.com/And-Gu/executable-engineering-lab/blob/main/project/v3/manuscripts/revised/${Astro.params.slug}.md`;
+const sourceState = checkout();
+const sourceUrl = `https://github.com/And-Gu/executable-engineering-lab/blob/${sourceState.dirty ? 'main' : sourceState.revision}/project/v3/manuscripts/revised/${Astro.params.slug}.md`;
 ---
 <!doctype html>
 <html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><meta name="description" content={current.summary}/><title>{current.title} · Executable Engineering Lab</title></head>
@@ -78,6 +81,7 @@ const sourceUrl = `https://github.com/And-Gu/executable-engineering-lab/blob/mai
       if (section.content === 'change-impact-figure') return <ChangeImpactFigure />;
       if (section.content === 'intersection-model') return <QueueExperiment />;
       if (section.content === 'arrival-patterns') return <ArrivalPatterns />;
+      if (section.content === 'intersection-structure') return <IntersectionStructure />;
       if (section.content === 'two-cycle-experiment') return <TwoCycleExperiment />;
       if (section.content === 'digital-thread') return <DigitalThread />;
       if (section.content === 'integrated-change') return <IntegratedChange />;
@@ -90,7 +94,7 @@ const sourceUrl = `https://github.com/And-Gu/executable-engineering-lab/blob/mai
   <nav class="chapter-paging" aria-label="Previous and next chapters">{previous && <a rel="prev" href={previous.url}>← {previous.title}</a>}{next && <a rel="next" href={next.url}>{next.title} →</a>}</nav>
   <p class="publication-note">
     {!questions && 'Published after initial author review. This fictional teaching case is not physical validation. Interactive V3 tools remain in development. '}
-    <a href={sourceUrl}>Chapter source</a>
+    <a href={sourceUrl}>Chapter source{sourceState.dirty ? ' on main (preview changes are not included)' : ` at ${sourceState.revision.slice(0, 7)}`}</a>
   </p>
 </main>
 </div><footer class="reading-shell site-footer"><a href={base+'learn/'}>Learning path</a><AuthorAttribution /></footer>

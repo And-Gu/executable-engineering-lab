@@ -8,7 +8,7 @@ describe('V3 chapter activities', () => {
     const slots: Record<string, string[]> = {
       '01': ['investment-feedback', 'chapter-quiz'],
       '02': ['arrival-patterns', 'chapter-quiz'],
-      '04': ['change-impact-figure', 'chapter-quiz'],
+      '04': ['intersection-structure', 'change-impact-figure', 'chapter-quiz'],
       '05': ['intersection-model', 'chapter-quiz'],
       '06': ['two-cycle-experiment', 'chapter-quiz'],
       '09': ['chapter-quiz', 'digital-thread'],

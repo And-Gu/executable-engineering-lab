@@ -13,7 +13,7 @@ teaching_fixture: "Conceptual overview; case begins in Chapter 2"
 
 *What would help a team turn an engineering question into a sound decision sooner?*
 
-Four currents are changing how teams approach that question. **Software-driven engineering** applies practices such as versioned information and automated checks across disciplines. In an integrated working environment, an electrical engineer and a software engineer can find the same interface definition, see its history and review which revision each design uses. Treating documents as code makes decisions reviewable and traceable as they change.
+Four currents are changing how teams approach that question. **Software-driven engineering** applies practices such as versioned information and automated checks across disciplines. In an integrated working environment, an electrical engineer and a software engineer can find the same interface definition, see its history and review the revision each design records using. Treating documents as code makes decisions reviewable; recording those references connects them to the designs that use them.
 
 **Agile development** works in small increments so a team can test an assumption while a design can still change. Traditional waterfall handoffs can make this harder when each discipline holds its information in a separate silo: before testing a change, colleagues must reconcile which versions belong together. Different disciplines still have different physical and delivery constraints.
 

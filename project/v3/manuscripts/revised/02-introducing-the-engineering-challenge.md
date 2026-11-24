@@ -92,12 +92,12 @@ sequenceDiagram
     Controller->>Signal: Request north-south amber
 ```
 
-The flowchart focuses on the vehicle queue in one slot. Arrivals join first. If the group's phase is green and the queue is nonempty, at most one vehicle leaves; otherwise no vehicle departs. The remaining queue is recorded before the next slot. It does not represent the crossing shown in the sequence.
+The flowchart focuses on the vehicle queue in one slot. Arrivals join first. If the group's phase is green and the queue is nonempty, one vehicle leaves; otherwise no vehicle departs. The remaining queue is recorded before the next slot. It does not represent the crossing shown in the sequence.
 
 ```mermaid
 flowchart TD
     A[Add arrivals to the group queue] --> B{Green and queue nonempty?}
-    B -- Yes --> C[Serve at most one vehicle]
+    B -- Yes --> C[Serve one vehicle]
     B -- No --> D[No vehicle departs]
     C --> E[Record remaining queue]
     D --> E

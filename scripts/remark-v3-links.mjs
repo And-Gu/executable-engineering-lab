@@ -1,7 +1,12 @@
 import path from 'node:path';
 import { existsSync } from 'node:fs';
+import { checkout } from './delivery-environment.mjs';
 const cardTypes = new Map([['Concept', 'concept'], ['Explore further', 'reading']]);
 export default function v3Links() {
+  const state = checkout();
+  // Uncommitted preview edits have no GitHub revision. The reader layout
+  // labels those builds; clean builds link to the exact source commit.
+  const sourceRef = state.dirty ? 'main' : state.revision;
   return (tree, file) => {
     const name = String(file.path).replaceAll('\\', '/');
     const marker = '/project/v3/manuscripts/revised/';
@@ -29,7 +34,7 @@ export default function v3Links() {
         const relative = path.relative(root, resolved).replaceAll('\\', '/');
         node.url = (resolved.includes(marker) && /^\d\d-/.test(path.basename(resolved)))
           ? `/executable-engineering-lab/learn/v3/${path.basename(resolved, '.md')}/`
-          : `https://github.com/And-Gu/executable-engineering-lab/blob/main/${relative}`;
+          : `https://github.com/And-Gu/executable-engineering-lab/blob/${sourceRef}/${relative}`;
         if (fragment) node.url += '#' + fragment;
       }
       for (const child of node.children || []) visit(child);
