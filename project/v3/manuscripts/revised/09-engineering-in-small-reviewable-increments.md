@@ -45,7 +45,7 @@ The engineer can check a proposed test against the agreed carry rule and the fir
 
 <span id="make-review-effort-proportional-to-exceptions"></span><span id="parallel-work-needs-explicit-integration-contracts"></span>
 
-In Chapter 8, the engineer could ask for help with one task or delegate an outcome. Before handing over a larger outcome, ask the agent to predict B’s first departure in cycle two from the brief. Try a deliberate reset and see whether the check catches it. If it does, the engineer can delegate further runs with the same carry rule and ask to see the first disputed row whenever a case falls outside it. [Chapter 8’s boundary exercise](08-directing-ai-engineering-agents.md#try-the-assignment-and-inspect-an-assumption).
+In Chapter 8, the engineer could ask for help with one task or delegate an outcome. Before handing over a larger outcome, ask the agent to predict B’s first departure in cycle two from the brief. Try a deliberate reset and see whether the check catches it. If the agent correctly predicts one north–south departure in slot 9 and an independent check catches the reset, the engineer can delegate further runs with the same carry rule and ask to see the first disputed row whenever a case falls outside it. [Chapter 8’s boundary exercise](08-directing-ai-engineering-agents.md#try-the-assignment-and-inspect-an-assumption).
 
 For a package that might span a working day, the engineer and agent could agree on three separately reviewable changes.
 
