@@ -94,6 +94,35 @@ const sourceUrl = `https://github.com/And-Gu/executable-engineering-lab/blob/mai
   </p>
 </main>
 </div><footer class="reading-shell site-footer"><a href={base+'learn/'}>Learning path</a><AuthorAttribution /></footer>
+<script>
+  const sources = document.querySelectorAll<HTMLPreElement>('pre[data-language="mermaid"]');
+  if (sources.length) {
+    const { default: mermaid } = await import('mermaid');
+    mermaid.initialize({ startOnLoad: false, securityLevel: 'strict', theme: 'dark' });
+    await document.fonts.ready;
+    for (const source of sources) {
+      const diagram = document.createElement('div');
+      diagram.className = 'mermaid-view';
+      const isSequence = source.textContent?.trim().startsWith('sequenceDiagram');
+      if (isSequence) diagram.classList.add('sequence-view');
+      diagram.setAttribute('role', 'img');
+      diagram.setAttribute('aria-label', isSequence ? 'Sequence diagram. The preceding paragraph describes the events.' : 'Flowchart. The preceding paragraph describes the steps.');
+      diagram.tabIndex = 0;
+      diagram.textContent = source.textContent;
+      source.before(diagram);
+      try {
+        await mermaid.run({ nodes: [diagram] });
+        const details = document.createElement('details');
+        const summary = document.createElement('summary');
+        summary.textContent = 'View diagram source';
+        source.before(details);
+        details.append(summary, source);
+      } catch {
+        diagram.remove(); // The readable source remains if rendering fails.
+      }
+    }
+  }
+</script>
 </body></html>
 <style is:global>
 .chapter-body h1{font-size:clamp(2rem,4vw,3rem);line-height:1.15;margin:1rem 0 2rem;overflow-wrap:anywhere}
@@ -101,6 +130,8 @@ const sourceUrl = `https://github.com/And-Gu/executable-engineering-lab/blob/mai
 .chapter-body table{display:block;overflow-x:auto;max-width:100%;border-collapse:collapse;font-size:.9rem;margin:1.5rem 0}
 .chapter-body th,.chapter-body td{border:1px solid var(--rule);padding:.7rem;text-align:left;min-width:8rem}
 .chapter-body code{overflow-wrap:anywhere}.chapter-body pre{overflow-x:auto}
+.mermaid-view{overflow-x:auto;margin:1.5rem 0}.mermaid-view svg{display:block;max-width:100%;height:auto;margin:auto}
+.mermaid-view.sequence-view svg{min-width:42rem}
 .chapter-paging{display:flex;flex-wrap:wrap;gap:1.5rem;justify-content:space-between;margin:3rem 0}
 .publication-note{font-size:.8rem;color:var(--muted)}
 .course-sidebar li{margin:.6rem 0}.course-sidebar [aria-current=page]{color:var(--gold)}

@@ -17,7 +17,7 @@ Four currents are changing how teams approach that question. **Software-driven e
 
 **Agile development** works in small increments so a team can test an assumption while a design can still change. Traditional waterfall handoffs can make this harder when each discipline holds its information in a separate silo: before testing a change, colleagues must reconcile which versions belong together. Different disciplines still have different physical and delivery constraints.
 
-**Model-based systems engineering (MBSE)** is an established approach that uses system models to describe relationships and explore designs. Chapter 2 introduces a traditional SysML description of the intersection; Chapter 4 connects SysML views to shared text, and Chapter 5 uses an executable model to investigate a question.
+**Model-based systems engineering (MBSE)** is an established approach that uses system models to describe relationships and explore designs. The Systems Modeling Language (SysML) can describe the intersection's controller and signals in Chapter 2. Chapter 4 connects a view to its shared text, and Chapter 5 uses an executable model to investigate the fixed phases the controller selects.
 
 **AI-native engineering** brings agentic support into that workflow. Given the shared definitions and a bounded task, an AI agent can help draft an executable model, rerun an agreed check after a definition changes, and propose an update to the text from simulation findings. Engineers review its contributions and make the decisions. The combination can shorten the path from a question to feedback, provided the team maintains the information and checks on which it depends.
 
@@ -31,7 +31,7 @@ A team that produces changes faster than it can integrate or test them moves wor
 
 A model of a physical function can be executed before hardware is ready. An interface contract can be checked when either side changes. If several product variants use the same module, recording which revision each uses tells the integration lead which teams a change affects.
 
-An engineering decision can retain its rationale and applicable evidence. A new engineer joining the next variant can read why the team chose an interface limit and rerun its check without tracking down the original designer. Sharing modules, decisions and checks across compatible designs gives the business a way to support more variants without a proportional increase in engineering staff.
+An engineering decision can retain its rationale and applicable evidence. A new engineer joining the next variant can read why the team chose an interface limit and rerun its check without tracking down the original designer. Reusing the check can avoid repeating the same investigation, provided maintaining it costs less than the work it saves.
 
 ## AI expands what engineering teams can do
 
