@@ -775,15 +775,28 @@
     "objective": "Independently verify or identify a blocking correction. One coherent early package. Ch1 accessible investment figure after the two definitions, numbered chapters 9/13/14 and existing companion. Use exact economic and evidence limits in D10/D12/RT. Wire the static figure and its activity test. Retain the Ch14 figures/quiz, correct the false receipt in its body and add at most one conditional return. Actual paid useful outcomes on customer branch. Saved wrong revision vs missed behavior vs newly changed question in 9. Read existing #87 and source register. Correct misleading forward trace control to what it displays.",
     "inputs": [
       "Stage 4 D20 and activated slice for #87. Scope in scope-87.json, relevant Stage 2 and pilot reports, B2 sources, calibrated rubric, current editorial guide and source dossiers.",
-      "Exact implementation or integrated candidate revision supplied at dispatch. Compare against parent and tested claims. Read adjacent handoffs and inspect content, sources, figures and quiz."
+      "Exact implementation or integrated candidate revision supplied at dispatch. Compare against parent and tested claims. Read adjacent handoffs and inspect content, sources, figures and quiz.",
+      "Exact source revision at dispatch: 5e64d802ef3cbab50f5e462bf7e22d11101514a0"
     ],
     "dependencies": "A committed implementation for the assigned slice; the verifier is independent of the editor.",
     "permitted_writes": "Only verification/check-87.md. No course edits, builds or GitHub writes.",
     "output": "verification/check-87.md",
     "acceptance": "Report pinned revision, independent discriminating checks against slice criteria, preserved meanings, concrete discrepancies, release-blocker status and remaining observation limits. US English.",
-    "dispatch": null,
-    "observed_effective_settings": "unreported",
-    "state": "ready",
+    "dispatch": {
+      "runner": "collaboration.spawn_agent",
+      "fork_turns": "none",
+      "model": "gpt-6.2-astra",
+      "reasoning_effort": "max",
+      "receipt": "/root/check87",
+      "evidence": "Explicit invocation tied to successful receipt in the program chat"
+    },
+    "observed_effective_settings": {
+      "model": "gpt-6.2-astra",
+      "reasoning_effort": "max",
+      "evidence": "Runner turn_context model and effort for this accepted agent path. This is runtime metadata, not independent backend attestation."
+    },
+    "state": "running",
+    "assignment_revision": "5e64d802ef3cbab50f5e462bf7e22d11101514a0",
     "maintained_output": "project/v3/reviews/quality-program/Q86-20261123/verification/check-87.md"
   },
   {
@@ -819,15 +832,29 @@
     "objective": "Independently verify or identify a blocking correction. Ch5 and Ch6 plus only the average-wait feedback in Ch5 question bounded-claim. Use the saved patterns, 21 versus 15 vehicle-slots after service for original/edited B; scope the horizon, eventual cohort mean and one individual's wait. Return to Ch3's requested phase-aligned field records without claiming collection. Preserve slot 9, reset and unknown 20. Do not alter the separate capture-observation item.",
     "inputs": [
       "Stage 4 D20 and activated slice for #90. Scope in scope-90.json, relevant Stage 2 and pilot reports, B2 sources, calibrated rubric, current editorial guide and source dossiers.",
-      "Exact implementation or integrated candidate revision supplied at dispatch. Compare against parent and tested claims. Read adjacent handoffs and inspect content, sources, figures and quiz."
+      "Exact implementation or integrated candidate revision supplied at dispatch. Compare against parent and tested claims. Read adjacent handoffs and inspect content, sources, figures and quiz.",
+      "Exact source revision at dispatch: 4f80f75294949d98a7aeb00f225f73b8a6ace0b6"
     ],
     "dependencies": "A committed implementation for the assigned slice; the verifier is independent of the editor.",
     "permitted_writes": "Only verification/check-90.md. No course edits, builds or GitHub writes.",
     "output": "verification/check-90.md",
     "acceptance": "Report pinned revision, independent discriminating checks against slice criteria, preserved meanings, concrete discrepancies, release-blocker status and remaining observation limits. US English.",
-    "dispatch": null,
-    "observed_effective_settings": "unreported",
-    "state": "ready",
+    "dispatch": {
+      "runner": "collaboration.spawn_agent",
+      "fork_turns": "none",
+      "model": "gpt-6.2-astra",
+      "reasoning_effort": "max",
+      "receipt": "/root/check90",
+      "evidence": "Explicit invocation tied to successful receipt in the program chat"
+    },
+    "observed_effective_settings": {
+      "model": "gpt-6.2-astra",
+      "reasoning_effort": "max",
+      "evidence": "Runner turn_context model and effort for this accepted agent path. This is runtime metadata, not independent backend attestation."
+    },
+    "state": "accepted",
+    "assignment_revision": "4f80f75294949d98a7aeb00f225f73b8a6ace0b6",
+    "adjudication": "Output reviewed by the orchestrating editor. See decisions.md, the chapter disposition table and verification/integration.md for the applicable decision and observation limits.",
     "maintained_output": "project/v3/reviews/quality-program/Q86-20261123/verification/check-90.md"
   },
   {
@@ -863,7 +890,8 @@
     "objective": "Independently verify or identify a blocking correction. Rewrite only the existing Ch5 capture-observation question, options and their feedback as a decision between realistic records of comparable specificity. Common assumptions in the stem, retain one correct response and decisive feedback, include edit/horizon/proposed future distinction, scope on original B vs edited B. Preserve the bounded-claim question (separate #90).",
     "inputs": [
       "Stage 4 D20 and activated slice for #93. Scope in scope-93.json, relevant Stage 2 and pilot reports, B2 sources, calibrated rubric, current editorial guide and source dossiers.",
-      "Exact implementation or integrated candidate revision supplied at dispatch. Compare against parent and tested claims. Read adjacent handoffs and inspect content, sources, figures and quiz."
+      "Exact implementation or integrated candidate revision supplied at dispatch. Compare against parent and tested claims. Read adjacent handoffs and inspect content, sources, figures and quiz.",
+      "Exact source revision at dispatch: 274e585d7b908f719cdb818e8808160f732c8e8b"
     ],
     "dependencies": "A committed implementation for the assigned slice; the verifier is independent of the editor.",
     "permitted_writes": "Only verification/check-93.md. No course edits, builds or GitHub writes.",
@@ -872,6 +900,7 @@
     "dispatch": null,
     "observed_effective_settings": "unreported",
     "state": "ready",
+    "assignment_revision": "274e585d7b908f719cdb818e8808160f732c8e8b",
     "maintained_output": "project/v3/reviews/quality-program/Q86-20261123/verification/check-93.md"
   },
   {
@@ -885,7 +914,8 @@
     "objective": "Independently verify or identify a blocking correction. Add exactly two clear contextual links from the current Lab page to the Ch5 arrival experiment and Ch6 two-cycle experiment using native base-aware routes and actual anchors. Preserve the historical coverage learning activity and controls.",
     "inputs": [
       "Stage 4 D20 and activated slice for #94. Scope in scope-94.json, relevant Stage 2 and pilot reports, B2 sources, calibrated rubric, current editorial guide and source dossiers.",
-      "Exact implementation or integrated candidate revision supplied at dispatch. Compare against parent and tested claims. Read adjacent handoffs and inspect content, sources, figures and quiz."
+      "Exact implementation or integrated candidate revision supplied at dispatch. Compare against parent and tested claims. Read adjacent handoffs and inspect content, sources, figures and quiz.",
+      "Exact source revision at dispatch: e90027461167cbc6591538c60afb5a2bcd68ca2d"
     ],
     "dependencies": "A committed implementation for the assigned slice; the verifier is independent of the editor.",
     "permitted_writes": "Only verification/check-94.md. No course edits, builds or GitHub writes.",
@@ -894,6 +924,7 @@
     "dispatch": null,
     "observed_effective_settings": "unreported",
     "state": "ready",
+    "assignment_revision": "e90027461167cbc6591538c60afb5a2bcd68ca2d",
     "maintained_output": "project/v3/reviews/quality-program/Q86-20261123/verification/check-94.md"
   },
   {
@@ -926,7 +957,44 @@
       "reasoning_effort": "max",
       "evidence": "Runner turn_context model and effort for this accepted agent path. This is runtime metadata, not independent backend attestation."
     },
-    "state": "running",
+    "state": "retry-needed",
+    "runner_termination": "The accepted runner later reported an account usage limit. Work already written in the private stage was inspected on resume on 2026-11-24.",
+    "maintained_output": "project/v3/reviews/quality-program/Q86-20261123/verification/edit-87.md"
+  },
+  {
+    "run_id": "Q86-20261123",
+    "task_id": "EEL-Q-S4-EDIT-87-P1",
+    "attempt_id": "EEL-Q-S4-EDIT-87-P1-A02",
+    "agent_role": "chapter_editor",
+    "model": "gpt-6.2-astra",
+    "reasoning_effort": "max",
+    "baseline": "3d752d994ab5c47f865140ca0a005e13e6aa7f82",
+    "objective": "Implement. One coherent early package. Ch1 accessible investment figure after the two definitions, numbered chapters 9/13/14 and existing companion. Use exact economic and evidence limits in D10/D12/RT. Wire the static figure and its activity test. Retain the Ch14 figures/quiz, correct the false receipt in its body and add at most one conditional return. Actual paid useful outcomes on customer branch. Saved wrong revision vs missed behavior vs newly changed question in 9. Read existing #87 and source register. Correct misleading forward trace control to what it displays.",
+    "inputs": [
+      "Stage 4 D20 and activated slice for #87. Scope in scope-87.json, relevant Stage 2 and pilot reports, B2 sources, calibrated rubric, current editorial guide and source dossiers.",
+      "Latest assigned private snapshot, supplied at dispatch. Coordinator integrates the approved diff.",
+      "Existing eight staged changes by A01; preserve their work subject to local correction and complete the bonus and report."
+    ],
+    "dependencies": "Gate D20. Apply only after activation and snapshot assignment; exact parent SHA recorded at handoff.",
+    "permitted_writes": "Only the assigned paths under the private edit-87 directory, listed in scope-87.json, plus verification/edit-87.md. Coordinator owns actual worktree and runs.",
+    "output": "verification/edit-87.md",
+    "acceptance": "Approved action only, US English. Show original problem and specific correction, affected handoffs, alternatives/costs, source limits and actual static checks. Protect extant tests, IDs and owner decisions.",
+    "dispatch": {
+      "runner": "collaboration.spawn_agent",
+      "fork_turns": "none",
+      "model": "gpt-6.2-astra",
+      "reasoning_effort": "max",
+      "receipt": "/root/edit87finish",
+      "evidence": "Explicit invocation tied to successful receipt in the program chat"
+    },
+    "observed_effective_settings": {
+      "model": "gpt-6.2-astra",
+      "reasoning_effort": "max",
+      "evidence": "Runner turn_context model and effort for this accepted agent path. This is runtime metadata, not independent backend attestation."
+    },
+    "state": "accepted",
+    "retry_reason": "A01 was interrupted by the runner quota after eight of nine allowed paths. Preserve the existing edits, finish the companion and return the edit report. The source and public baseline still match B2.",
+    "adjudication": "Output reviewed by the orchestrating editor. See decisions.md, the chapter disposition table and verification/integration.md for the applicable decision and observation limits.",
     "maintained_output": "project/v3/reviews/quality-program/Q86-20261123/verification/edit-87.md"
   },
   {
@@ -968,9 +1036,22 @@
     "permitted_writes": "Only the assigned paths under the private edit-90 directory, listed in scope-90.json, plus verification/edit-90.md. Coordinator owns actual worktree and runs.",
     "output": "verification/edit-90.md",
     "acceptance": "Approved action only, US English. Show original problem and specific correction, affected handoffs, alternatives/costs, source limits and actual static checks. Protect extant tests, IDs and owner decisions.",
-    "dispatch": null,
-    "observed_effective_settings": "unreported",
-    "state": "ready",
+    "dispatch": {
+      "runner": "collaboration.spawn_agent",
+      "fork_turns": "none",
+      "model": "gpt-6.2-astra",
+      "reasoning_effort": "max",
+      "receipt": "/root/edit90",
+      "evidence": "Explicit invocation tied to successful receipt in the program chat"
+    },
+    "observed_effective_settings": {
+      "model": "gpt-6.2-astra",
+      "reasoning_effort": "max",
+      "evidence": "Runner turn_context model and effort for this accepted agent path. This is runtime metadata, not independent backend attestation."
+    },
+    "state": "accepted",
+    "runner_termination": "The accepted runner later reported an account usage limit. Work already written in the private stage was inspected on resume on 2026-11-24.",
+    "adjudication": "Output reviewed by the orchestrating editor. See decisions.md, the chapter disposition table and verification/integration.md for the applicable decision and observation limits.",
     "maintained_output": "project/v3/reviews/quality-program/Q86-20261123/verification/edit-90.md"
   },
   {
@@ -984,15 +1065,28 @@
     "objective": "Implement. Apply ENG/CF/LD authority and evidence corrections in Ch7/9/10/11/12, Ch13 quiz and existing Ch14 figure row per D12. Make a command-matched state distinct from an observed dark-to-green transition; Ch11 is an investigation proposal. Keep contractual comparison distinct from a run, schedule/clock applicability of the phase reference, reviewer requests evidence, accountable person defers, reviewed accessible instructions vs technician understanding. Use smallest necessary changes and preserve the neighboring decisions. The Ch7 acceptance table covers only an NS carry; keep the Ch8 discovery. In Ch4 correct only the sentence implying a generated sketch is necessarily a formal SysML view. Context and file owner assigned under D16.",
     "inputs": [
       "Stage 4 D20 and activated slice for #91. Scope in scope-91.json, relevant Stage 2 and pilot reports, B2 sources, calibrated rubric, current editorial guide and source dossiers.",
-      "Latest assigned private snapshot, supplied at dispatch. Coordinator integrates the approved diff."
+      "Latest assigned private snapshot, supplied at dispatch. Coordinator integrates the approved diff.",
+      "Exact source revision at dispatch: c3100189ce41b28c6dd1b0252eaeffb65a900343"
     ],
     "dependencies": "Gate D20. Apply only after activation and snapshot assignment; exact parent SHA recorded at handoff.",
     "permitted_writes": "Only the assigned paths under the private edit-91 directory, listed in scope-91.json, plus verification/edit-91.md. Coordinator owns actual worktree and runs.",
     "output": "verification/edit-91.md",
     "acceptance": "Approved action only, US English. Show original problem and specific correction, affected handoffs, alternatives/costs, source limits and actual static checks. Protect extant tests, IDs and owner decisions.",
-    "dispatch": null,
-    "observed_effective_settings": "unreported",
-    "state": "ready",
+    "dispatch": {
+      "runner": "collaboration.spawn_agent",
+      "fork_turns": "none",
+      "model": "gpt-6.2-astra",
+      "reasoning_effort": "max",
+      "receipt": "/root/edit91",
+      "evidence": "Explicit invocation tied to successful receipt in the program chat"
+    },
+    "observed_effective_settings": {
+      "model": "gpt-6.2-astra",
+      "reasoning_effort": "max",
+      "evidence": "Runner turn_context model and effort for this accepted agent path. This is runtime metadata, not independent backend attestation."
+    },
+    "state": "running",
+    "assignment_revision": "c3100189ce41b28c6dd1b0252eaeffb65a900343",
     "maintained_output": "project/v3/reviews/quality-program/Q86-20261123/verification/edit-91.md"
   },
   {
@@ -1006,15 +1100,29 @@
     "objective": "Implement. Rewrite only the existing Ch5 capture-observation question, options and their feedback as a decision between realistic records of comparable specificity. Common assumptions in the stem, retain one correct response and decisive feedback, include edit/horizon/proposed future distinction, scope on original B vs edited B. Preserve the bounded-claim question (separate #90).",
     "inputs": [
       "Stage 4 D20 and activated slice for #93. Scope in scope-93.json, relevant Stage 2 and pilot reports, B2 sources, calibrated rubric, current editorial guide and source dossiers.",
-      "Latest assigned private snapshot, supplied at dispatch. Coordinator integrates the approved diff."
+      "Latest assigned private snapshot, supplied at dispatch. Coordinator integrates the approved diff.",
+      "Exact source revision at dispatch: 4f80f75294949d98a7aeb00f225f73b8a6ace0b6"
     ],
     "dependencies": "Gate D20. Apply only after activation and snapshot assignment; exact parent SHA recorded at handoff.",
     "permitted_writes": "Only the assigned paths under the private edit-93 directory, listed in scope-93.json, plus verification/edit-93.md. Coordinator owns actual worktree and runs.",
     "output": "verification/edit-93.md",
     "acceptance": "Approved action only, US English. Show original problem and specific correction, affected handoffs, alternatives/costs, source limits and actual static checks. Protect extant tests, IDs and owner decisions.",
-    "dispatch": null,
-    "observed_effective_settings": "unreported",
-    "state": "ready",
+    "dispatch": {
+      "runner": "collaboration.spawn_agent",
+      "fork_turns": "none",
+      "model": "gpt-6.2-astra",
+      "reasoning_effort": "max",
+      "receipt": "/root/edit93",
+      "evidence": "Explicit invocation tied to successful receipt in the program chat"
+    },
+    "observed_effective_settings": {
+      "model": "gpt-6.2-astra",
+      "reasoning_effort": "max",
+      "evidence": "Runner turn_context model and effort for this accepted agent path. This is runtime metadata, not independent backend attestation."
+    },
+    "state": "accepted",
+    "assignment_revision": "4f80f75294949d98a7aeb00f225f73b8a6ace0b6",
+    "adjudication": "Output reviewed by the orchestrating editor. See decisions.md, the chapter disposition table and verification/integration.md for the applicable decision and observation limits.",
     "maintained_output": "project/v3/reviews/quality-program/Q86-20261123/verification/edit-93.md"
   },
   {
@@ -1034,10 +1142,53 @@
     "permitted_writes": "Only the assigned paths under the private edit-94 directory, listed in scope-94.json, plus verification/edit-94.md. Coordinator owns actual worktree and runs.",
     "output": "verification/edit-94.md",
     "acceptance": "Approved action only, US English. Show original problem and specific correction, affected handoffs, alternatives/costs, source limits and actual static checks. Protect extant tests, IDs and owner decisions.",
-    "dispatch": null,
-    "observed_effective_settings": "unreported",
-    "state": "ready",
+    "dispatch": {
+      "runner": "collaboration.spawn_agent",
+      "fork_turns": "none",
+      "model": "gpt-6.2-astra",
+      "reasoning_effort": "max",
+      "receipt": "/root/edit94",
+      "evidence": "Explicit invocation tied to successful receipt in the program chat"
+    },
+    "observed_effective_settings": {
+      "model": "gpt-6.2-astra",
+      "reasoning_effort": "max",
+      "evidence": "Runner turn_context model and effort for this accepted agent path. This is runtime metadata, not independent backend attestation."
+    },
+    "state": "accepted",
+    "adjudication": "Output reviewed by the orchestrating editor. See decisions.md, the chapter disposition table and verification/integration.md for the applicable decision and observation limits.",
     "maintained_output": "project/v3/reviews/quality-program/Q86-20261123/verification/edit-94.md"
+  },
+  {
+    "run_id": "Q86-20261123",
+    "task_id": "EEL-Q-S4-INTEGRATE",
+    "attempt_id": "EEL-Q-S4-INTEGRATE-A01",
+    "agent_role": "reviewer_integrator",
+    "model": "gpt-6.2-astra",
+    "reasoning_effort": "max",
+    "baseline": "3d752d994ab5c47f865140ca0a005e13e6aa7f82",
+    "objective": "Own the shared worktree and build, evaluate independent reports, integrate approved slices into traceable commits in dependency order and freeze the candidate.",
+    "inputs": [
+      "D20, allowlists, staged snapshots, calibrated chapter reports, independent checks and release protocols."
+    ],
+    "dependencies": "Stage 4 activated. An approved staged diff is required per slice. The final freeze follows independent check and disposition for each active slice.",
+    "permitted_writes": "Scoped course worktree under delivery actor q86-delivery, Git commits and review PRs, build artifacts and program verification records. Owner merge and publication require separate authority.",
+    "output": "verification/integration.md",
+    "acceptance": "Trace decisions to issues, commits, checks, known limits and preview; check overlap and final published baseline. Freeze an exact candidate without introducing course work outside D20 or recorded follow-up decisions.",
+    "dispatch": {
+      "runner": "Explicit task assignment to the running orchestrator as named delivery owner",
+      "model": "gpt-6.2-astra",
+      "reasoning_effort": "max",
+      "receipt": "/root",
+      "evidence": "Existing session selected and independently identified in its turn_context before this assignment. No new backend negotiation."
+    },
+    "observed_effective_settings": {
+      "model": "gpt-6.2-astra",
+      "reasoning_effort": "max",
+      "evidence": "Runner turn_context model and effort for this accepted agent path. This is runtime metadata, not independent backend attestation."
+    },
+    "state": "reported",
+    "maintained_output": "project/v3/reviews/quality-program/Q86-20261123/verification/integration.md"
   },
   {
     "run_id": "Q86-20261123",
@@ -1069,7 +1220,8 @@
       "reasoning_effort": "max",
       "evidence": "Runner turn_context model and effort for this accepted agent path. This is runtime metadata, not independent backend attestation."
     },
-    "state": "running",
+    "state": "accepted",
+    "adjudication": "Output reviewed by the orchestrating editor. See decisions.md, the chapter disposition table and verification/integration.md for the applicable decision and observation limits.",
     "maintained_output": "project/v3/reviews/quality-program/Q86-20261123/chapter-reviews/01.md"
   },
   {
@@ -1102,7 +1254,8 @@
       "reasoning_effort": "max",
       "evidence": "Runner turn_context model and effort for this accepted agent path. This is runtime metadata, not independent backend attestation."
     },
-    "state": "running",
+    "state": "accepted",
+    "adjudication": "Output reviewed by the orchestrating editor. See decisions.md, the chapter disposition table and verification/integration.md for the applicable decision and observation limits.",
     "maintained_output": "project/v3/reviews/quality-program/Q86-20261123/chapter-reviews/02.md"
   },
   {
@@ -1122,9 +1275,21 @@
     "permitted_writes": "Only chapter-reviews/03.md. Recommendations, no source/GitHub/build changes.",
     "output": "chapter-reviews/03.md",
     "acceptance": "Independent application of rubric v2. Trace actual decision with one precise excerpt/anchor and quiz/figure or outcome; evaluate handoffs, preservation, any counterexample and fix or no-change reason, severity vs confidence, alternative, implementation issue or explicit new issue question, and observable check. 220–360 words in American English. On a pilot, re-test the revised criterion rather than copying the pilot.",
-    "dispatch": null,
-    "observed_effective_settings": "unreported",
-    "state": "ready",
+    "dispatch": {
+      "runner": "collaboration.spawn_agent",
+      "fork_turns": "none",
+      "model": "gpt-6.2-astra",
+      "reasoning_effort": "max",
+      "receipt": "/root/review03",
+      "evidence": "Explicit invocation tied to successful receipt in the program chat"
+    },
+    "observed_effective_settings": {
+      "model": "gpt-6.2-astra",
+      "reasoning_effort": "max",
+      "evidence": "Runner turn_context model and effort for this accepted agent path. This is runtime metadata, not independent backend attestation."
+    },
+    "state": "accepted",
+    "adjudication": "Output reviewed by the orchestrating editor. See decisions.md, the chapter disposition table and verification/integration.md for the applicable decision and observation limits.",
     "maintained_output": "project/v3/reviews/quality-program/Q86-20261123/chapter-reviews/03.md"
   },
   {
@@ -1144,9 +1309,22 @@
     "permitted_writes": "Only chapter-reviews/04.md. Recommendations, no source/GitHub/build changes.",
     "output": "chapter-reviews/04.md",
     "acceptance": "Independent application of rubric v2. Trace actual decision with one precise excerpt/anchor and quiz/figure or outcome; evaluate handoffs, preservation, any counterexample and fix or no-change reason, severity vs confidence, alternative, implementation issue or explicit new issue question, and observable check. 220–360 words in American English. On a pilot, re-test the revised criterion rather than copying the pilot.",
-    "dispatch": null,
-    "observed_effective_settings": "unreported",
-    "state": "ready",
+    "dispatch": {
+      "runner": "collaboration.spawn_agent",
+      "fork_turns": "none",
+      "model": "gpt-6.2-astra",
+      "reasoning_effort": "max",
+      "receipt": "/root/review04",
+      "evidence": "Explicit invocation tied to successful receipt in the program chat"
+    },
+    "observed_effective_settings": {
+      "model": "gpt-6.2-astra",
+      "reasoning_effort": "max",
+      "evidence": "Runner turn_context model and effort for this accepted agent path. This is runtime metadata, not independent backend attestation."
+    },
+    "state": "accepted",
+    "runner_termination": "The accepted runner later reported an account usage limit. Work already written in the private stage was inspected on resume on 2026-11-24.",
+    "adjudication": "Output reviewed by the orchestrating editor. See decisions.md, the chapter disposition table and verification/integration.md for the applicable decision and observation limits.",
     "maintained_output": "project/v3/reviews/quality-program/Q86-20261123/chapter-reviews/04.md"
   },
   {
@@ -1166,9 +1344,21 @@
     "permitted_writes": "Only chapter-reviews/05.md. Recommendations, no source/GitHub/build changes.",
     "output": "chapter-reviews/05.md",
     "acceptance": "Independent application of rubric v2. Trace actual decision with one precise excerpt/anchor and quiz/figure or outcome; evaluate handoffs, preservation, any counterexample and fix or no-change reason, severity vs confidence, alternative, implementation issue or explicit new issue question, and observable check. 220–360 words in American English. On a pilot, re-test the revised criterion rather than copying the pilot.",
-    "dispatch": null,
-    "observed_effective_settings": "unreported",
-    "state": "ready",
+    "dispatch": {
+      "runner": "collaboration.spawn_agent",
+      "fork_turns": "none",
+      "model": "gpt-6.2-astra",
+      "reasoning_effort": "max",
+      "receipt": "/root/review05",
+      "evidence": "Explicit invocation tied to successful receipt in the program chat"
+    },
+    "observed_effective_settings": {
+      "model": "gpt-6.2-astra",
+      "reasoning_effort": "max",
+      "evidence": "Runner turn_context model and effort for this accepted agent path. This is runtime metadata, not independent backend attestation."
+    },
+    "state": "accepted",
+    "adjudication": "Output reviewed by the orchestrating editor. See decisions.md, the chapter disposition table and verification/integration.md for the applicable decision and observation limits.",
     "maintained_output": "project/v3/reviews/quality-program/Q86-20261123/chapter-reviews/05.md"
   },
   {
@@ -1188,9 +1378,21 @@
     "permitted_writes": "Only chapter-reviews/06.md. Recommendations, no source/GitHub/build changes.",
     "output": "chapter-reviews/06.md",
     "acceptance": "Independent application of rubric v2. Trace actual decision with one precise excerpt/anchor and quiz/figure or outcome; evaluate handoffs, preservation, any counterexample and fix or no-change reason, severity vs confidence, alternative, implementation issue or explicit new issue question, and observable check. 220–360 words in American English. On a pilot, re-test the revised criterion rather than copying the pilot.",
-    "dispatch": null,
-    "observed_effective_settings": "unreported",
-    "state": "ready",
+    "dispatch": {
+      "runner": "collaboration.spawn_agent",
+      "fork_turns": "none",
+      "model": "gpt-6.2-astra",
+      "reasoning_effort": "max",
+      "receipt": "/root/review06",
+      "evidence": "Explicit invocation tied to successful receipt in the program chat"
+    },
+    "observed_effective_settings": {
+      "model": "gpt-6.2-astra",
+      "reasoning_effort": "max",
+      "evidence": "Runner turn_context model and effort for this accepted agent path. This is runtime metadata, not independent backend attestation."
+    },
+    "state": "accepted",
+    "adjudication": "Output reviewed by the orchestrating editor. See decisions.md, the chapter disposition table and verification/integration.md for the applicable decision and observation limits.",
     "maintained_output": "project/v3/reviews/quality-program/Q86-20261123/chapter-reviews/06.md"
   },
   {
@@ -1210,9 +1412,21 @@
     "permitted_writes": "Only chapter-reviews/07.md. Recommendations, no source/GitHub/build changes.",
     "output": "chapter-reviews/07.md",
     "acceptance": "Independent application of rubric v2. Trace actual decision with one precise excerpt/anchor and quiz/figure or outcome; evaluate handoffs, preservation, any counterexample and fix or no-change reason, severity vs confidence, alternative, implementation issue or explicit new issue question, and observable check. 220–360 words in American English. On a pilot, re-test the revised criterion rather than copying the pilot.",
-    "dispatch": null,
-    "observed_effective_settings": "unreported",
-    "state": "ready",
+    "dispatch": {
+      "runner": "collaboration.spawn_agent",
+      "fork_turns": "none",
+      "model": "gpt-6.2-astra",
+      "reasoning_effort": "max",
+      "receipt": "/root/review07",
+      "evidence": "Explicit invocation tied to successful receipt in the program chat"
+    },
+    "observed_effective_settings": {
+      "model": "gpt-6.2-astra",
+      "reasoning_effort": "max",
+      "evidence": "Runner turn_context model and effort for this accepted agent path. This is runtime metadata, not independent backend attestation."
+    },
+    "state": "accepted",
+    "adjudication": "Output reviewed by the orchestrating editor. See decisions.md, the chapter disposition table and verification/integration.md for the applicable decision and observation limits.",
     "maintained_output": "project/v3/reviews/quality-program/Q86-20261123/chapter-reviews/07.md"
   },
   {
@@ -1232,9 +1446,21 @@
     "permitted_writes": "Only chapter-reviews/08.md. Recommendations, no source/GitHub/build changes.",
     "output": "chapter-reviews/08.md",
     "acceptance": "Independent application of rubric v2. Trace actual decision with one precise excerpt/anchor and quiz/figure or outcome; evaluate handoffs, preservation, any counterexample and fix or no-change reason, severity vs confidence, alternative, implementation issue or explicit new issue question, and observable check. 220–360 words in American English. On a pilot, re-test the revised criterion rather than copying the pilot.",
-    "dispatch": null,
-    "observed_effective_settings": "unreported",
-    "state": "ready",
+    "dispatch": {
+      "runner": "collaboration.spawn_agent",
+      "fork_turns": "none",
+      "model": "gpt-6.2-astra",
+      "reasoning_effort": "max",
+      "receipt": "/root/review08",
+      "evidence": "Explicit invocation tied to successful receipt in the program chat"
+    },
+    "observed_effective_settings": {
+      "model": "gpt-6.2-astra",
+      "reasoning_effort": "max",
+      "evidence": "Runner turn_context model and effort for this accepted agent path. This is runtime metadata, not independent backend attestation."
+    },
+    "state": "accepted",
+    "adjudication": "Output reviewed by the orchestrating editor. See decisions.md, the chapter disposition table and verification/integration.md for the applicable decision and observation limits.",
     "maintained_output": "project/v3/reviews/quality-program/Q86-20261123/chapter-reviews/08.md"
   },
   {
@@ -1254,9 +1480,20 @@
     "permitted_writes": "Only chapter-reviews/09.md. Recommendations, no source/GitHub/build changes.",
     "output": "chapter-reviews/09.md",
     "acceptance": "Independent application of rubric v2. Trace actual decision with one precise excerpt/anchor and quiz/figure or outcome; evaluate handoffs, preservation, any counterexample and fix or no-change reason, severity vs confidence, alternative, implementation issue or explicit new issue question, and observable check. 220–360 words in American English. On a pilot, re-test the revised criterion rather than copying the pilot.",
-    "dispatch": null,
-    "observed_effective_settings": "unreported",
-    "state": "ready",
+    "dispatch": {
+      "runner": "collaboration.spawn_agent",
+      "fork_turns": "none",
+      "model": "gpt-6.2-astra",
+      "reasoning_effort": "max",
+      "receipt": "/root/review09",
+      "evidence": "Explicit invocation tied to successful receipt in the program chat"
+    },
+    "observed_effective_settings": {
+      "model": "gpt-6.2-astra",
+      "reasoning_effort": "max",
+      "evidence": "Runner turn_context model and effort for this accepted agent path. This is runtime metadata, not independent backend attestation."
+    },
+    "state": "running",
     "maintained_output": "project/v3/reviews/quality-program/Q86-20261123/chapter-reviews/09.md"
   },
   {
@@ -1368,5 +1605,93 @@
     "observed_effective_settings": "unreported",
     "state": "ready",
     "maintained_output": "project/v3/reviews/quality-program/Q86-20261123/chapter-reviews/14.md"
+  },
+  {
+    "run_id": "Q86-20261123",
+    "task_id": "EEL-Q-S5-COURSE",
+    "attempt_id": "EEL-Q-S5-COURSE-A01",
+    "agent_role": "independent_course_verifier",
+    "model": "gpt-6.2-astra",
+    "reasoning_effort": "max",
+    "baseline": "3d752d994ab5c47f865140ca0a005e13e6aa7f82",
+    "objective": "Read the complete resulting course in published order and check whether the approved problems are resolved, whether the reader promise is fulfilled and whether changes introduce new gaps or duplication.",
+    "inputs": [
+      "Program decisions, baselines, calibrated reviews, exact assigned candidate, accumulated check evidence, and active curriculum index.",
+      "Exact identified candidate added to this task before dispatch."
+    ],
+    "dependencies": "Frozen Stage 4 candidate and applicable stage decision. Stage 6 additionally requires the Stage 5 disposition.",
+    "permitted_writes": "Only verification/whole-course.md. No course source edits, GitHub actions or shared builds.",
+    "output": "verification/whole-course.md",
+    "acceptance": "Review all fourteen chapters, companion, Home/Learn/Lab/Reference, text, pertinent visual/interaction and quiz feedback. Include a 14-row handoff check, actual residuals with severity and precise scope, human outcomes unobserved. Identify any correction requiring return to Stage 4.",
+    "dispatch": null,
+    "observed_effective_settings": "unreported",
+    "state": "ready",
+    "maintained_output": "project/v3/reviews/quality-program/Q86-20261123/verification/whole-course.md"
+  },
+  {
+    "run_id": "Q86-20261123",
+    "task_id": "EEL-Q-S5-READERS",
+    "attempt_id": "EEL-Q-S5-READERS-A01",
+    "agent_role": "reader_study_designer",
+    "model": "gpt-6.2-astra",
+    "reasoning_effort": "max",
+    "baseline": "3d752d994ab5c47f865140ca0a005e13e6aa7f82",
+    "objective": "Assess and complete the coordinator’s proposed neutral session kit on the final candidate against the Document-as-Code protocol. Check instructions, neutral tasks, permissible conclusions, transfer to a different discipline and recordable outcomes.",
+    "inputs": [
+      "Program decisions, baselines, calibrated reviews, exact assigned candidate, accumulated check evidence, and active curriculum index.",
+      "Exact identified candidate added to this task before dispatch."
+    ],
+    "dependencies": "Frozen Stage 4 candidate and applicable stage decision. Stage 6 additionally requires the Stage 5 disposition.",
+    "permitted_writes": "Only verification/reader-kit.md and reader-study/protocol.md and reader-study/observations.md. No course source edits, GitHub actions or shared builds.",
+    "output": "verification/reader-kit.md",
+    "acceptance": "Produce a ready-to-run kit and blank worksheet with neutral prompts, procedure, observable criteria and four completion statuses. Distinguish human sessions actually observed from study planning. Do not recruit anyone.",
+    "dispatch": null,
+    "observed_effective_settings": "unreported",
+    "state": "ready",
+    "maintained_output": "project/v3/reviews/quality-program/Q86-20261123/verification/reader-kit.md"
+  },
+  {
+    "run_id": "Q86-20261123",
+    "task_id": "EEL-Q-S5-TECH",
+    "attempt_id": "EEL-Q-S5-TECH-A01",
+    "agent_role": "executable_example_verifier",
+    "model": "gpt-6.2-astra",
+    "reasoning_effort": "max",
+    "baseline": "3d752d994ab5c47f865140ca0a005e13e6aa7f82",
+    "objective": "Independently test the queue examples, evidence status, relevant input validation and applicability of sources, figures, quiz answers and release claims on the exact combined revision.",
+    "inputs": [
+      "Program decisions, baselines, calibrated reviews, exact assigned candidate, accumulated check evidence, and active curriculum index.",
+      "Exact identified candidate added to this task before dispatch."
+    ],
+    "dependencies": "Frozen Stage 4 candidate and applicable stage decision. Stage 6 additionally requires the Stage 5 disposition.",
+    "permitted_writes": "Only verification/technical.md. No course source edits, GitHub actions or shared builds.",
+    "output": "verification/technical.md",
+    "acceptance": "Recompute independently and document commands/exit status and exact rows including slot 9, vehicle-slots, invalid input and conservation. Inspect links and relevant rendered behavior from recorded owner check, distinguish directly executed from reused evidence. No conversion to field or human outcomes.",
+    "dispatch": null,
+    "observed_effective_settings": "unreported",
+    "state": "ready",
+    "maintained_output": "project/v3/reviews/quality-program/Q86-20261123/verification/technical.md"
+  },
+  {
+    "run_id": "Q86-20261123",
+    "task_id": "EEL-Q-S6-MAINTAIN",
+    "attempt_id": "EEL-Q-S6-MAINTAIN-A01",
+    "agent_role": "maintenance_review_coordinator",
+    "model": "gpt-6.2-astra",
+    "reasoning_effort": "max",
+    "baseline": "3d752d994ab5c47f865140ca0a005e13e6aa7f82",
+    "objective": "Specify the change-triggered ownership and review routine, allocate residual findings, source freshness, historical issues and a lightweight recovery path, for the verified candidate.",
+    "inputs": [
+      "Program decisions, baselines, calibrated reviews, exact assigned candidate, accumulated check evidence, and active curriculum index.",
+      "Exact identified candidate added to this task before dispatch."
+    ],
+    "dependencies": "Frozen Stage 4 candidate and applicable stage decision. Stage 6 additionally requires the Stage 5 disposition.",
+    "permitted_writes": "Only maintenance.md. No course source edits, GitHub actions or shared builds.",
+    "output": "maintenance.md",
+    "acceptance": "Name roles, triggers, source refresh priorities, triage tests, publication checks and study follow-up. Keep historical owners distinct, avoid inventing people or scheduled external actions.",
+    "dispatch": null,
+    "observed_effective_settings": "unreported",
+    "state": "ready",
+    "maintained_output": "project/v3/reviews/quality-program/Q86-20261123/maintenance.md"
   }
 ]

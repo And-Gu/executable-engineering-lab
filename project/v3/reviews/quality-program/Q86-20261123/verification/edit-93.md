@@ -1,0 +1,21 @@
+# Recording the Chapter 5 arrival edit
+
+Q86-20261123 · EEL-Q-S4-EDIT-93-P1 · attempt EEL-Q-S4-EDIT-93-P1-A01 · chapter editor. D14 and D20 authorized the `capture-observation` edit for issue 93. The published baseline was `3d752d994ab5c47f865140ca0a005e13e6aa7f82`. The assigned revision was `4f80f75294949d98a7aeb00f225f73b8a6ace0b6`, which includes issue 90’s `bounded-claim` feedback. The dispatch specified `gpt-6.2-astra` with maximum reasoning effort. The editor did not have a per-response settings readout. The coordinator later matched the dispatch to runner turn metadata for this attempt, recorded in the [task ledger](../tasks.json). [Edit contract](../tasks.json) · [Decisions](../decisions.md)
+
+## The choice facing the reader
+
+The original key listed everything a record should contain. At 30 words it was twice the length of either distractor. The new stem supplies the experiment, model revision, original inputs, units and sampling point. The entries give a colleague three concrete ways to file the comparison. Shortening the original checklist alone would have left the reader to recognize advice without inspecting a record. [Learning review LD-06](../reviews/learning.md#ld-06--remove-an-answer-length-cue-where-it-masks-a-decision-about-evidence) · [Red-team review RT-05](../reviews/red-team.md)
+
+I compared the entries in a different order, displaying only their text. Counts use visible characters and whitespace-delimited words.
+
+| Entry | What the colleague could recover | Before, chars / words | After, chars / words |
+| --- | --- | ---: | ---: |
+| Carry both counts forward | The move and both slot 8 counts are accurate. Entering them as slot 16 results claims a run beyond the saved window. | 85 / 15 | 164 / 32 |
+| Revise the original B trace | The two north–south arrivals still occur in slot 3. Replacing two waiting with one assigns the edit’s result to the original inputs. | 81 / 15 | 180 / 33 |
+| Save the edit and plan another run | The one-arrival move from slot 3 to 2 reproduces the eight-slot result. The entry records two waiting in original B and one in the edit, then proposes repeating original A and B through slot 16. | 177 / 30 | 167 / 33 |
+
+## Source and scope checks
+
+I recomputed all eight original B rows from the T1 inputs. The arrivals, departures and queue counts matched the saved CSV in both directions at every slot. The edited run used the same fixed phases and still admitted two vehicles in each direction. Its final north–south and east–west counts were `(1, 0)`, compared with `(2, 0)` in original B. The saved `RESULT-B-NS-3-TO-2` links to `RESULT-B` and records slot 16 as a proposed investigation. Chapter 6’s separate `INT-RUN-T1-TWO-CYCLES` contains the two original patterns. The model inputs, CSV, saved edit, two-cycle record and source graph matched B2 and the assigned snapshot byte for byte. [T1 inputs](https://github.com/And-Gu/executable-engineering-lab/blob/3d752d994ab5c47f865140ca0a005e13e6aa7f82/project/v3/case-study/model-inputs-v1.json) · [Trace](https://github.com/And-Gu/executable-engineering-lab/blob/3d752d994ab5c47f865140ca0a005e13e6aa7f82/project/v3/case-study/trace-v1.csv) · [Saved edit](https://github.com/And-Gu/executable-engineering-lab/blob/3d752d994ab5c47f865140ca0a005e13e6aa7f82/project/v3/case-study/data-quality-v1.json#L20-L50) · [Two-cycle record](https://github.com/And-Gu/executable-engineering-lab/blob/3d752d994ab5c47f865140ca0a005e13e6aa7f82/project/v3/case-study/two-cycle-run.json)
+
+A byte comparison covered all 272 tracked files in the private snapshot. Only the assigned quiz differed. Restoring the stem and three option texts reproduced the original file exactly, including both question IDs, every key and feedback string, and issue 90’s entire question. Each of the 38 questions in 14 files retained one key and distinct choices. Across 114 options, the number of uniquely longest keys moved from 32 to 31 by character count and from 27 to 26 by word count. Reader use of the length cue and transfer to a new case remain unmeasured. The independent verifier and delivery owner have the integrated-revision and rendered-feedback checks. [B2 counts](quiz-B2.json) · [Chapter 5 handoff](../chapter-reviews/05.md) · [Chapter 6 pilot](../chapter-reviews/pilot-06.md)

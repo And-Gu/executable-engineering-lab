@@ -1,0 +1,14 @@
+# Chapter-by-chapter editorial decisions
+
+The calibrated reviewers assessed frozen B2, regardless of concurrent work in the candidate. Each linked report gives its own evidence, alternatives and tested or proposed counterexample. The coordinating editor decided the disposition below. Candidate verification is recorded independently.
+
+| Chapter | Decision on calibrated findings | Scope and observable acceptance |
+| --- | --- | --- |
+| [1](chapter-reviews/01.md) | D21. Accept C01-01 and C01-02 under #87. Retain the original quiz. | Connect funding and upkeep to observed use and qualify the return to demand. Name systems engineering in the receiver example. A constrained rig and an idle rig awaiting inputs can justify different investments. |
+| [2](chapter-reviews/02.md) | D22. Keep the road-user decisions, illustration and quiz. Accept C02-01 under #89. | Put the current edition key at the exact linked scope fragment as well as the case guide entrance. Keep crossing conflict outside the first queue model. |
+| [3](chapter-reviews/03.md) | D23. Retain the stopping rule and replan question. Accept C03-01 in the receiving chapters under #90. | Original B alone cannot discriminate the two event orders. A’s first green can. Return from the worked comparison to the operations data question. |
+| [4](chapter-reviews/04.md) | D24. Accept C04-01 under #91. Keep E03 and the existing checks. | A formal view and an exploratory generated sketch have different origins. The owner can check each suggested input against the model revision, and identify a proposed addition. |
+| [5](chapter-reviews/05.md) | D25. Accept C05-01/02 under #90 and the bounded recording-item revision under #93. | Compare original B with the one-arrival edit, distinguish the end count from accrued waiting, and preserve the question about operations’ records. Do not require individual tracking to derive a cohort mean. |
+| [6](chapter-reviews/06.md) | D26. Keep the slot-9 departure and the unresolved spreadsheet value. Accept the measurement and handoff refinements under #90. | Identical final queue lengths can conceal a lost boundary departure. Attribute the two-cycle run to original inputs and state how incomplete waits can be completed for a defined cohort. |
+| [7](chapter-reviews/07.md) | D27. Accept C07-01 as a narrow note in #91. Keep the worked brief and the Chapter 8 discovery. | Explain exactly which direction the named acceptance row exercises. A nonempty EW queue can expose an EW-only reset even when the NS departure passes. |
+| [8](chapter-reviews/08.md) | D28. Accept C08-01 under the authority chain in #91, cross-referenced to #87. The text still attributes source edits to Chapter 8 after the first #87 commit. | Correct only the Chapter 9 Digital Thread attribution. Chapter 8 permits execution and report writing against the protected trace. Chapter 9 separately authorizes implementing the carry rule. |
