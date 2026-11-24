@@ -1,0 +1,657 @@
+{
+  "revision": "206828b6f93c673cd09d688a0dc2204d05fd4b13",
+  "files": 14,
+  "items": 38,
+  "options": 114,
+  "uniquely_longest_characters": 31,
+  "uniquely_longest_words": 26,
+  "method": "Counts use the visible option text in the fourteen quiz files. Words are whitespace-delimited. A tied maximum does not qualify. This measures an item-writing cue; human use of it was not observed.",
+  "details": [
+    {
+      "file": "eel-v3-ch01-new-paradigm.json",
+      "id": "repeatable-feedback",
+      "characters": [
+        57,
+        70,
+        68
+      ],
+      "words": [
+        9,
+        9,
+        10
+      ],
+      "key_index": 1,
+      "uniquely_longest_characters": true,
+      "uniquely_longest_words": false
+    },
+    {
+      "file": "eel-v3-ch01-new-paradigm.json",
+      "id": "what-a-check-supports",
+      "characters": [
+        70,
+        58,
+        66
+      ],
+      "words": [
+        10,
+        8,
+        11
+      ],
+      "key_index": 0,
+      "uniquely_longest_characters": true,
+      "uniquely_longest_words": false
+    },
+    {
+      "file": "eel-v3-ch02-intersection-challenge.json",
+      "id": "first-question",
+      "characters": [
+        61,
+        72,
+        102
+      ],
+      "words": [
+        11,
+        12,
+        18
+      ],
+      "key_index": 2,
+      "uniquely_longest_characters": true,
+      "uniquely_longest_words": true
+    },
+    {
+      "file": "eel-v3-ch02-intersection-challenge.json",
+      "id": "intent-and-criteria",
+      "characters": [
+        116,
+        86,
+        73
+      ],
+      "words": [
+        16,
+        14,
+        14
+      ],
+      "key_index": 0,
+      "uniquely_longest_characters": true,
+      "uniquely_longest_words": true
+    },
+    {
+      "file": "eel-v3-ch03-planning.json",
+      "id": "replan-increment",
+      "characters": [
+        59,
+        85,
+        67
+      ],
+      "words": [
+        8,
+        13,
+        10
+      ],
+      "key_index": 1,
+      "uniquely_longest_characters": true,
+      "uniquely_longest_words": true
+    },
+    {
+      "file": "eel-v3-ch03-planning.json",
+      "id": "planning-horizon",
+      "characters": [
+        57,
+        57,
+        83
+      ],
+      "words": [
+        9,
+        9,
+        10
+      ],
+      "key_index": 2,
+      "uniquely_longest_characters": true,
+      "uniquely_longest_words": true
+    },
+    {
+      "file": "eel-v3-ch04-engineering-knowledge.json",
+      "id": "follow-a-relation",
+      "characters": [
+        71,
+        59,
+        66
+      ],
+      "words": [
+        13,
+        10,
+        10
+      ],
+      "key_index": 0,
+      "uniquely_longest_characters": true,
+      "uniquely_longest_words": true
+    },
+    {
+      "file": "eel-v3-ch04-engineering-knowledge.json",
+      "id": "unresolved-target",
+      "characters": [
+        57,
+        69,
+        78
+      ],
+      "words": [
+        10,
+        12,
+        14
+      ],
+      "key_index": 2,
+      "uniquely_longest_characters": true,
+      "uniquely_longest_words": true
+    },
+    {
+      "file": "eel-v3-ch04-engineering-knowledge.json",
+      "id": "proposed-check",
+      "characters": [
+        45,
+        65,
+        66
+      ],
+      "words": [
+        8,
+        11,
+        10
+      ],
+      "key_index": 1,
+      "uniquely_longest_characters": false,
+      "uniquely_longest_words": true
+    },
+    {
+      "file": "eel-v3-ch05-models-prototypes.json",
+      "id": "bounded-claim",
+      "characters": [
+        60,
+        88,
+        58
+      ],
+      "words": [
+        10,
+        15,
+        11
+      ],
+      "key_index": 1,
+      "uniquely_longest_characters": true,
+      "uniquely_longest_words": true
+    },
+    {
+      "file": "eel-v3-ch05-models-prototypes.json",
+      "id": "capture-observation",
+      "characters": [
+        167,
+        180,
+        164
+      ],
+      "words": [
+        33,
+        33,
+        32
+      ],
+      "key_index": 0,
+      "uniquely_longest_characters": false,
+      "uniquely_longest_words": false
+    },
+    {
+      "file": "eel-v3-ch06-engineering-data.json",
+      "id": "test-the-boundary",
+      "characters": [
+        59,
+        66,
+        58
+      ],
+      "words": [
+        12,
+        14,
+        10
+      ],
+      "key_index": 1,
+      "uniquely_longest_characters": true,
+      "uniquely_longest_words": true
+    },
+    {
+      "file": "eel-v3-ch06-engineering-data.json",
+      "id": "qualify-the-record",
+      "characters": [
+        68,
+        70,
+        92
+      ],
+      "words": [
+        13,
+        14,
+        13
+      ],
+      "key_index": 2,
+      "uniquely_longest_characters": true,
+      "uniquely_longest_words": false
+    },
+    {
+      "file": "eel-v3-ch06-engineering-data.json",
+      "id": "time-the-interface",
+      "characters": [
+        89,
+        112,
+        88
+      ],
+      "words": [
+        15,
+        17,
+        14
+      ],
+      "key_index": 0,
+      "uniquely_longest_characters": false,
+      "uniquely_longest_words": false
+    },
+    {
+      "file": "eel-v3-ch07-spec.json",
+      "id": "prototype-to-brief",
+      "characters": [
+        97,
+        125,
+        83
+      ],
+      "words": [
+        16,
+        21,
+        12
+      ],
+      "key_index": 1,
+      "uniquely_longest_characters": true,
+      "uniquely_longest_words": true
+    },
+    {
+      "file": "eel-v3-ch07-spec.json",
+      "id": "review-the-deliverable",
+      "characters": [
+        107,
+        79,
+        101
+      ],
+      "words": [
+        21,
+        15,
+        17
+      ],
+      "key_index": 0,
+      "uniquely_longest_characters": true,
+      "uniquely_longest_words": true
+    },
+    {
+      "file": "eel-v3-ch07-spec.json",
+      "id": "test-from-spec",
+      "characters": [
+        129,
+        108,
+        93
+      ],
+      "words": [
+        20,
+        18,
+        15
+      ],
+      "key_index": 0,
+      "uniquely_longest_characters": true,
+      "uniquely_longest_words": true
+    },
+    {
+      "file": "eel-v3-ch08-directing-agents.json",
+      "id": "coordinate-the-rerun",
+      "characters": [
+        110,
+        121,
+        89
+      ],
+      "words": [
+        19,
+        21,
+        14
+      ],
+      "key_index": 1,
+      "uniquely_longest_characters": true,
+      "uniquely_longest_words": true
+    },
+    {
+      "file": "eel-v3-ch08-directing-agents.json",
+      "id": "protect-the-reference",
+      "characters": [
+        76,
+        108,
+        82
+      ],
+      "words": [
+        13,
+        20,
+        14
+      ],
+      "key_index": 1,
+      "uniquely_longest_characters": true,
+      "uniquely_longest_words": true
+    },
+    {
+      "file": "eel-v3-ch08-directing-agents.json",
+      "id": "review-a-rule-change",
+      "characters": [
+        125,
+        88,
+        96
+      ],
+      "words": [
+        23,
+        15,
+        16
+      ],
+      "key_index": 0,
+      "uniquely_longest_characters": true,
+      "uniquely_longest_words": true
+    },
+    {
+      "file": "eel-v3-ch09-reviewable-increments.json",
+      "id": "choose-first-increment",
+      "characters": [
+        104,
+        103,
+        114
+      ],
+      "words": [
+        19,
+        18,
+        20
+      ],
+      "key_index": 1,
+      "uniquely_longest_characters": false,
+      "uniquely_longest_words": false
+    },
+    {
+      "file": "eel-v3-ch09-reviewable-increments.json",
+      "id": "expand-delegation",
+      "characters": [
+        121,
+        101,
+        95
+      ],
+      "words": [
+        18,
+        19,
+        14
+      ],
+      "key_index": 0,
+      "uniquely_longest_characters": true,
+      "uniquely_longest_words": false
+    },
+    {
+      "file": "eel-v3-ch09-reviewable-increments.json",
+      "id": "refer-changed-question",
+      "characters": [
+        116,
+        102,
+        128
+      ],
+      "words": [
+        17,
+        15,
+        19
+      ],
+      "key_index": 2,
+      "uniquely_longest_characters": true,
+      "uniquely_longest_words": true
+    },
+    {
+      "file": "eel-v3-ch10-integrated-product.json",
+      "id": "maintainer-intent",
+      "characters": [
+        79,
+        156,
+        104
+      ],
+      "words": [
+        13,
+        24,
+        18
+      ],
+      "key_index": 1,
+      "uniquely_longest_characters": true,
+      "uniquely_longest_words": true
+    },
+    {
+      "file": "eel-v3-ch10-integrated-product.json",
+      "id": "missing-observation",
+      "characters": [
+        85,
+        96,
+        94
+      ],
+      "words": [
+        15,
+        13,
+        17
+      ],
+      "key_index": 0,
+      "uniquely_longest_characters": false,
+      "uniquely_longest_words": false
+    },
+    {
+      "file": "eel-v3-ch10-integrated-product.json",
+      "id": "changed-feedback-connector",
+      "characters": [
+        94,
+        112,
+        145
+      ],
+      "words": [
+        16,
+        19,
+        21
+      ],
+      "key_index": 2,
+      "uniquely_longest_characters": true,
+      "uniquely_longest_words": true
+    },
+    {
+      "file": "eel-v3-ch11-verification-evidence.json",
+      "id": "choose-the-software-pair",
+      "characters": [
+        81,
+        107,
+        94
+      ],
+      "words": [
+        12,
+        16,
+        15
+      ],
+      "key_index": 1,
+      "uniquely_longest_characters": true,
+      "uniquely_longest_words": true
+    },
+    {
+      "file": "eel-v3-ch11-verification-evidence.json",
+      "id": "match-the-observation",
+      "characters": [
+        77,
+        71,
+        76
+      ],
+      "words": [
+        14,
+        14,
+        12
+      ],
+      "key_index": 2,
+      "uniquely_longest_characters": false,
+      "uniquely_longest_words": false
+    },
+    {
+      "file": "eel-v3-ch11-verification-evidence.json",
+      "id": "judge-the-maintainer-trial",
+      "characters": [
+        138,
+        102,
+        82
+      ],
+      "words": [
+        19,
+        15,
+        12
+      ],
+      "key_index": 0,
+      "uniquely_longest_characters": true,
+      "uniquely_longest_words": true
+    },
+    {
+      "file": "eel-v3-ch12-governance-authority.json",
+      "id": "delegate-source-comparison",
+      "characters": [
+        91,
+        114,
+        103
+      ],
+      "words": [
+        14,
+        20,
+        18
+      ],
+      "key_index": 1,
+      "uniquely_longest_characters": true,
+      "uniquely_longest_words": true
+    },
+    {
+      "file": "eel-v3-ch12-governance-authority.json",
+      "id": "retry-or-return-finding",
+      "characters": [
+        147,
+        99,
+        113
+      ],
+      "words": [
+        21,
+        15,
+        16
+      ],
+      "key_index": 0,
+      "uniquely_longest_characters": true,
+      "uniquely_longest_words": true
+    },
+    {
+      "file": "eel-v3-ch12-governance-authority.json",
+      "id": "accept-a-specific-pair",
+      "characters": [
+        107,
+        110,
+        162
+      ],
+      "words": [
+        18,
+        17,
+        25
+      ],
+      "key_index": 2,
+      "uniquely_longest_characters": true,
+      "uniquely_longest_words": true
+    },
+    {
+      "file": "eel-v3-ch13-continuous-engineering.json",
+      "id": "one-supported-language",
+      "characters": [
+        90,
+        108,
+        88
+      ],
+      "words": [
+        16,
+        16,
+        15
+      ],
+      "key_index": 1,
+      "uniquely_longest_characters": true,
+      "uniquely_longest_words": false
+    },
+    {
+      "file": "eel-v3-ch13-continuous-engineering.json",
+      "id": "eligibility-after-scope-change",
+      "characters": [
+        90,
+        102,
+        114
+      ],
+      "words": [
+        15,
+        17,
+        18
+      ],
+      "key_index": 2,
+      "uniquely_longest_characters": true,
+      "uniquely_longest_words": true
+    },
+    {
+      "file": "eel-v3-ch13-continuous-engineering.json",
+      "id": "next-iteration-investment",
+      "characters": [
+        109,
+        116,
+        92
+      ],
+      "words": [
+        17,
+        18,
+        13
+      ],
+      "key_index": 0,
+      "uniquely_longest_characters": false,
+      "uniquely_longest_words": false
+    },
+    {
+      "file": "eel-v3-ch14-course-wrap-up.json",
+      "id": "promote-learning-into-delivery",
+      "characters": [
+        102,
+        133,
+        94
+      ],
+      "words": [
+        13,
+        18,
+        15
+      ],
+      "key_index": 1,
+      "uniquely_longest_characters": true,
+      "uniquely_longest_words": true
+    },
+    {
+      "file": "eel-v3-ch14-course-wrap-up.json",
+      "id": "expand-an-agentic-flow",
+      "characters": [
+        119,
+        139,
+        104
+      ],
+      "words": [
+        18,
+        17,
+        18
+      ],
+      "key_index": 1,
+      "uniquely_longest_characters": true,
+      "uniquely_longest_words": false
+    },
+    {
+      "file": "eel-v3-ch14-course-wrap-up.json",
+      "id": "improve-whole-product-release",
+      "characters": [
+        98,
+        144,
+        99
+      ],
+      "words": [
+        15,
+        20,
+        14
+      ],
+      "key_index": 1,
+      "uniquely_longest_characters": true,
+      "uniquely_longest_words": true
+    }
+  ]
+}

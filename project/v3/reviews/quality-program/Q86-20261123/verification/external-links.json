@@ -1,0 +1,991 @@
+{
+  "revision": "206828b6f93c673cd09d688a0dc2204d05fd4b13",
+  "scope": "All distinct external hrefs on the 19 core pages; excludes scripts and image assets. HTTP or Git object checks establish accessibility, not validation of every claim or external fragment. See the source register for the material actually inspected.",
+  "destinations": 109,
+  "results": [
+    {
+      "url": "https://aaif.io/blog/aaifs-first-quarter-success-story-new-members-technical-wins-and-open-governance",
+      "on": [
+        "ch12"
+      ],
+      "method": "HTTP GET following redirects",
+      "http": "200",
+      "curl_exit": 0
+    },
+    {
+      "url": "https://aaif.io/working-groups/governance-risk-regulatory-alignment",
+      "on": [
+        "ch12"
+      ],
+      "method": "HTTP GET following redirects",
+      "http": "200",
+      "curl_exit": 0
+    },
+    {
+      "url": "https://aaif.io/working-groups/identity-trust",
+      "on": [
+        "ch12"
+      ],
+      "method": "HTTP GET following redirects",
+      "http": "200",
+      "curl_exit": 0
+    },
+    {
+      "url": "https://agents.md/",
+      "on": [
+        "ch08"
+      ],
+      "method": "HTTP GET following redirects",
+      "http": "200",
+      "curl_exit": 0
+    },
+    {
+      "url": "https://ai.engineer/code/2026/talks/lauren-tan",
+      "on": [
+        "bonus"
+      ],
+      "method": "previously checked HTTP endpoint, destination unchanged",
+      "http": "200"
+    },
+    {
+      "url": "https://air-governance-framework.finos.org/mitigations/mi-24_human-in-the-loop-action-approval-gate.html",
+      "on": [
+        "ch12"
+      ],
+      "method": "HTTP GET following redirects",
+      "http": "200",
+      "curl_exit": 0
+    },
+    {
+      "url": "https://airc.nist.gov/airmf-resources/playbook/govern/",
+      "on": [
+        "ch12"
+      ],
+      "method": "HTTP GET following redirects",
+      "http": "200",
+      "curl_exit": 0
+    },
+    {
+      "url": "https://and-gu.github.io/document-as-code-lab/",
+      "on": [
+        "bonus",
+        "ch04",
+        "ch09"
+      ],
+      "method": "HTTP GET following redirects",
+      "http": "200",
+      "curl_exit": 0
+    },
+    {
+      "url": "https://and-gu.github.io/document-as-code-lab/chapters/13-course-summary/",
+      "on": [
+        "bonus"
+      ],
+      "method": "HTTP GET following redirects",
+      "http": "200",
+      "curl_exit": 0
+    },
+    {
+      "url": "https://and-gu.github.io/document-as-code-lab/dashboard/",
+      "on": [
+        "bonus"
+      ],
+      "method": "HTTP GET following redirects",
+      "http": "200",
+      "curl_exit": 0
+    },
+    {
+      "url": "https://code.visualstudio.com/docs/agents/concepts/agent-harnesses#_follow-a-turn-through-an-agent-harness",
+      "on": [
+        "ch08"
+      ],
+      "method": "HTTP GET following redirects",
+      "http": "200",
+      "curl_exit": 0
+    },
+    {
+      "url": "https://code.visualstudio.com/docs/agents/run/planning",
+      "on": [
+        "ch09"
+      ],
+      "method": "HTTP GET following redirects",
+      "http": "200",
+      "curl_exit": 0
+    },
+    {
+      "url": "https://docs.kernel.org/7.2/process/coding-assistants.html",
+      "on": [
+        "ch12"
+      ],
+      "method": "HTTP GET following redirects",
+      "http": "200",
+      "curl_exit": 0
+    },
+    {
+      "url": "https://dora.dev/capabilities/continuous-delivery/",
+      "on": [
+        "ch13"
+      ],
+      "method": "previously checked HTTP endpoint, destination unchanged",
+      "http": "200"
+    },
+    {
+      "url": "https://dora.dev/guides/dora-metrics/",
+      "on": [
+        "ch13"
+      ],
+      "method": "HTTP GET following redirects",
+      "http": "200",
+      "curl_exit": 0
+    },
+    {
+      "url": "https://gemara.openssf.org/schema/",
+      "on": [
+        "ch12"
+      ],
+      "method": "HTTP GET following redirects",
+      "http": "200",
+      "curl_exit": 0
+    },
+    {
+      "url": "https://github.blog/changelog/2026-10-28-github-agentic-workflows-generally-available/",
+      "on": [
+        "bonus"
+      ],
+      "method": "HTTP GET following redirects",
+      "http": "200",
+      "curl_exit": 0
+    },
+    {
+      "url": "https://github.blog/news-insights/octoverse/octoverse-commits-pushes-reach-new-highs-in-2026-as-developers-build-with-agents/#h-developers-are-reshaping-their-workflow",
+      "on": [
+        "bonus"
+      ],
+      "method": "HTTP GET following redirects",
+      "http": "200",
+      "curl_exit": 0
+    },
+    {
+      "url": "https://github.blog/news-insights/octoverse/octoverse-commits-pushes-reach-new-highs-in-2026-as-developers-build-with-agents/#h-the-year-developers-set-a-new-pace",
+      "on": [
+        "bonus"
+      ],
+      "method": "HTTP GET following redirects",
+      "http": "200",
+      "curl_exit": 0
+    },
+    {
+      "url": "https://github.com/And-Gu/document-as-code-lab",
+      "on": [
+        "bonus"
+      ],
+      "method": "HTTP GET following redirects",
+      "http": "200",
+      "curl_exit": 0
+    },
+    {
+      "url": "https://github.com/And-Gu/document-as-code-lab/blob/3444d6f738fe1304efcca7e4e2261d5e87747103/.github/workflows/astro-pr-check.yml",
+      "on": [
+        "bonus"
+      ],
+      "method": "HTTP GET following redirects",
+      "http": "200",
+      "curl_exit": 0
+    },
+    {
+      "url": "https://github.com/And-Gu/document-as-code-lab/blob/3444d6f738fe1304efcca7e4e2261d5e87747103/.github/workflows/deploy-pages.yml",
+      "on": [
+        "bonus"
+      ],
+      "method": "HTTP GET following redirects",
+      "http": "200",
+      "curl_exit": 0
+    },
+    {
+      "url": "https://github.com/And-Gu/document-as-code-lab/blob/3444d6f738fe1304efcca7e4e2261d5e87747103/reference/ai-context-and-agents.md#follow-a-bounded-maintenance-task",
+      "on": [
+        "bonus"
+      ],
+      "method": "HTTP GET following redirects",
+      "http": "200",
+      "curl_exit": 0
+    },
+    {
+      "url": "https://github.com/And-Gu/document-as-code-lab/blob/3444d6f738fe1304efcca7e4e2261d5e87747103/reference/editorial-approval.md",
+      "on": [
+        "bonus"
+      ],
+      "method": "HTTP GET following redirects",
+      "http": "200",
+      "curl_exit": 0
+    },
+    {
+      "url": "https://github.com/And-Gu/document-as-code-lab/blob/3444d6f738fe1304efcca7e4e2261d5e87747103/scripts/build_onboarding_showcase.py",
+      "on": [
+        "bonus"
+      ],
+      "method": "HTTP GET following redirects",
+      "http": "200",
+      "curl_exit": 0
+    },
+    {
+      "url": "https://github.com/And-Gu/document-as-code-lab/tree/3444d6f738fe1304efcca7e4e2261d5e87747103/examples/onboarding-showcase",
+      "on": [
+        "bonus"
+      ],
+      "method": "HTTP GET following redirects",
+      "http": "200",
+      "curl_exit": 0
+    },
+    {
+      "url": "https://github.com/And-Gu/executable-engineering-lab",
+      "on": [
+        "bonus",
+        "ch01",
+        "ch02",
+        "ch03",
+        "ch04",
+        "ch05",
+        "ch06",
+        "ch07",
+        "ch08",
+        "ch09",
+        "ch10",
+        "ch11",
+        "ch12",
+        "ch13",
+        "ch14",
+        "home",
+        "lab",
+        "learn",
+        "reference"
+      ],
+      "method": "configured repository remote",
+      "object_exists": true
+    },
+    {
+      "url": "https://github.com/And-Gu/executable-engineering-lab/actions/workflows/validate.yml",
+      "on": [
+        "reference"
+      ],
+      "method": "HTTP GET following redirects",
+      "http": "200",
+      "curl_exit": 0
+    },
+    {
+      "url": "https://github.com/And-Gu/executable-engineering-lab/actions/workflows/validate.yml?query=branch%3Amain",
+      "on": [
+        "reference"
+      ],
+      "method": "HTTP GET following redirects",
+      "http": "200",
+      "curl_exit": 0
+    },
+    {
+      "url": "https://github.com/And-Gu/executable-engineering-lab/blob/05b071d8d5a08aec9017146175e0ac17b38f8dd3/project/v3/case-study/DECISION-CHAIN.md#ch09-a-product-interface-discrepancy--the-missing-bridge",
+      "on": [
+        "ch12",
+        "ch13"
+      ],
+      "method": "repository object, candidate for a main-branch link and named object for an immutable link",
+      "object_exists": true
+    },
+    {
+      "url": "https://github.com/And-Gu/executable-engineering-lab/blob/05b071d8d5a08aec9017146175e0ac17b38f8dd3/project/v3/case-study/DECISION-CHAIN.md#ch11-authority-and-assurance--explicitly-defer-an-unsupportable-acceptance",
+      "on": [
+        "ch12"
+      ],
+      "method": "repository object, candidate for a main-branch link and named object for an immutable link",
+      "object_exists": true
+    },
+    {
+      "url": "https://github.com/And-Gu/executable-engineering-lab/blob/05b071d8d5a08aec9017146175e0ac17b38f8dd3/project/v3/case-study/DECISION-CHAIN.md?plain=1#L50-L68",
+      "on": [
+        "ch11"
+      ],
+      "method": "repository object, candidate for a main-branch link and named object for an immutable link",
+      "object_exists": true
+    },
+    {
+      "url": "https://github.com/And-Gu/executable-engineering-lab/blob/05b071d8d5a08aec9017146175e0ac17b38f8dd3/project/v3/case-study/DECISION-CHAIN.md?plain=1#L70-L89",
+      "on": [
+        "ch11"
+      ],
+      "method": "repository object, candidate for a main-branch link and named object for an immutable link",
+      "object_exists": true
+    },
+    {
+      "url": "https://github.com/And-Gu/executable-engineering-lab/blob/05b071d8d5a08aec9017146175e0ac17b38f8dd3/project/v3/case-study/DECISION-CHAIN.md?plain=1#L72-L79",
+      "on": [
+        "ch11"
+      ],
+      "method": "repository object, candidate for a main-branch link and named object for an immutable link",
+      "object_exists": true
+    },
+    {
+      "url": "https://github.com/And-Gu/executable-engineering-lab/blob/05b071d8d5a08aec9017146175e0ac17b38f8dd3/project/v3/case-study/DECISION-CHAIN.md?plain=1#L84-L89",
+      "on": [
+        "ch11"
+      ],
+      "method": "repository object, candidate for a main-branch link and named object for an immutable link",
+      "object_exists": true
+    },
+    {
+      "url": "https://github.com/And-Gu/executable-engineering-lab/blob/973ff66ebb06daafbd2ddaf35682e0e8da2bffd7/models/intersection/queue.mjs",
+      "on": [
+        "ch09"
+      ],
+      "method": "repository object, candidate for a main-branch link and named object for an immutable link",
+      "object_exists": true
+    },
+    {
+      "url": "https://github.com/And-Gu/executable-engineering-lab/blob/973ff66ebb06daafbd2ddaf35682e0e8da2bffd7/models/intersection/queue.test.ts",
+      "on": [
+        "ch06",
+        "ch07",
+        "ch08",
+        "ch09"
+      ],
+      "method": "repository object, candidate for a main-branch link and named object for an immutable link",
+      "object_exists": true
+    },
+    {
+      "url": "https://github.com/And-Gu/executable-engineering-lab/blob/973ff66ebb06daafbd2ddaf35682e0e8da2bffd7/models/intersection/queue.test.ts#L5-L18",
+      "on": [
+        "ch11"
+      ],
+      "method": "repository object, candidate for a main-branch link and named object for an immutable link",
+      "object_exists": true
+    },
+    {
+      "url": "https://github.com/And-Gu/executable-engineering-lab/blob/973ff66ebb06daafbd2ddaf35682e0e8da2bffd7/project/v3/case-study/MODEL-CHECK.md?plain=1#L32-L36",
+      "on": [
+        "ch11"
+      ],
+      "method": "repository object, candidate for a main-branch link and named object for an immutable link",
+      "object_exists": true
+    },
+    {
+      "url": "https://github.com/And-Gu/executable-engineering-lab/blob/973ff66ebb06daafbd2ddaf35682e0e8da2bffd7/project/v3/case-study/model-inputs-v1.json",
+      "on": [
+        "ch09"
+      ],
+      "method": "repository object, candidate for a main-branch link and named object for an immutable link",
+      "object_exists": true
+    },
+    {
+      "url": "https://github.com/And-Gu/executable-engineering-lab/blob/973ff66ebb06daafbd2ddaf35682e0e8da2bffd7/project/v3/case-study/run-two-cycles.mjs",
+      "on": [
+        "ch06"
+      ],
+      "method": "repository object, candidate for a main-branch link and named object for an immutable link",
+      "object_exists": true
+    },
+    {
+      "url": "https://github.com/And-Gu/executable-engineering-lab/blob/973ff66ebb06daafbd2ddaf35682e0e8da2bffd7/project/v3/case-study/trace-v1.csv?plain=1#L4",
+      "on": [
+        "ch11"
+      ],
+      "method": "repository object, candidate for a main-branch link and named object for an immutable link",
+      "object_exists": true
+    },
+    {
+      "url": "https://github.com/And-Gu/executable-engineering-lab/blob/973ff66ebb06daafbd2ddaf35682e0e8da2bffd7/project/v3/case-study/two-cycle-run.json",
+      "on": [
+        "ch06",
+        "ch07",
+        "ch08",
+        "ch09",
+        "ch10"
+      ],
+      "method": "repository object, candidate for a main-branch link and named object for an immutable link",
+      "object_exists": true
+    },
+    {
+      "url": "https://github.com/And-Gu/executable-engineering-lab/blob/9b8d57b0a18846ec22d927bd76447855b68ce886/project/v3/case-study/trace-v1.csv?plain=1#L4",
+      "on": [
+        "ch14"
+      ],
+      "method": "repository object, candidate for a main-branch link and named object for an immutable link",
+      "object_exists": true
+    },
+    {
+      "url": "https://github.com/And-Gu/executable-engineering-lab/blob/a1e4f49c2d3ef53e0fc895cdd197f659218a4d4f/project/v3/case-study/data-quality-v1.json#L31-L50",
+      "on": [
+        "ch05"
+      ],
+      "method": "repository object, candidate for a main-branch link and named object for an immutable link",
+      "object_exists": true
+    },
+    {
+      "url": "https://github.com/And-Gu/executable-engineering-lab/blob/c4205b3a5b960d8224b6ba72bcf165342ef7322b/models/intersection/queue.mjs",
+      "on": [
+        "ch05"
+      ],
+      "method": "repository object, candidate for a main-branch link and named object for an immutable link",
+      "object_exists": true
+    },
+    {
+      "url": "https://github.com/And-Gu/executable-engineering-lab/blob/c4205b3a5b960d8224b6ba72bcf165342ef7322b/models/intersection/queue.test.ts",
+      "on": [
+        "ch05"
+      ],
+      "method": "repository object, candidate for a main-branch link and named object for an immutable link",
+      "object_exists": true
+    },
+    {
+      "url": "https://github.com/And-Gu/executable-engineering-lab/blob/main/AGENTS.md",
+      "on": [
+        "ch08"
+      ],
+      "method": "repository object, candidate for a main-branch link and named object for an immutable link",
+      "object_exists": true
+    },
+    {
+      "url": "https://github.com/And-Gu/executable-engineering-lab/blob/main/docs/02-proposal-exercise.md",
+      "on": [
+        "reference"
+      ],
+      "method": "repository object, candidate for a main-branch link and named object for an immutable link",
+      "object_exists": true
+    },
+    {
+      "url": "https://github.com/And-Gu/executable-engineering-lab/blob/main/docs/06-evidence-review.md",
+      "on": [
+        "reference"
+      ],
+      "method": "repository object, candidate for a main-branch link and named object for an immutable link",
+      "object_exists": true
+    },
+    {
+      "url": "https://github.com/And-Gu/executable-engineering-lab/blob/main/engineering/needs/NEED-001.yaml",
+      "on": [
+        "reference"
+      ],
+      "method": "repository object, candidate for a main-branch link and named object for an immutable link",
+      "object_exists": true
+    },
+    {
+      "url": "https://github.com/And-Gu/executable-engineering-lab/blob/main/engineering/requirements/REQ-COV-001.yaml",
+      "on": [
+        "reference"
+      ],
+      "method": "repository object, candidate for a main-branch link and named object for an immutable link",
+      "object_exists": true
+    },
+    {
+      "url": "https://github.com/And-Gu/executable-engineering-lab/blob/main/engineering/scenarios/SCN-001.yaml",
+      "on": [
+        "reference"
+      ],
+      "method": "repository object, candidate for a main-branch link and named object for an immutable link",
+      "object_exists": true
+    },
+    {
+      "url": "https://github.com/And-Gu/executable-engineering-lab/blob/main/models/coverage/coverage.ts",
+      "on": [
+        "reference"
+      ],
+      "method": "repository object, candidate for a main-branch link and named object for an immutable link",
+      "object_exists": true
+    },
+    {
+      "url": "https://github.com/And-Gu/executable-engineering-lab/blob/main/models/coverage/verification.test.ts",
+      "on": [
+        "reference"
+      ],
+      "method": "repository object, candidate for a main-branch link and named object for an immutable link",
+      "object_exists": true
+    },
+    {
+      "url": "https://github.com/And-Gu/executable-engineering-lab/blob/main/project/v3/REFERENCE-INTERSECTION.md#the-shared-engineering-question",
+      "on": [
+        "ch02"
+      ],
+      "method": "repository object, candidate for a main-branch link and named object for an immutable link",
+      "object_exists": true
+    },
+    {
+      "url": "https://github.com/And-Gu/executable-engineering-lab/blob/main/project/v3/case-study/DECISION-CHAIN.md",
+      "on": [
+        "ch10",
+        "reference"
+      ],
+      "method": "repository object, candidate for a main-branch link and named object for an immutable link",
+      "object_exists": true
+    },
+    {
+      "url": "https://github.com/And-Gu/executable-engineering-lab/blob/main/project/v3/case-study/MODEL-CHECK.md",
+      "on": [
+        "ch05",
+        "ch06"
+      ],
+      "method": "repository object, candidate for a main-branch link and named object for an immutable link",
+      "object_exists": true
+    },
+    {
+      "url": "https://github.com/And-Gu/executable-engineering-lab/blob/main/project/v3/case-study/MODEL-CHECK.md#independent-editorial-cross-check-already-performed",
+      "on": [
+        "ch08",
+        "ch09"
+      ],
+      "method": "repository object, candidate for a main-branch link and named object for an immutable link",
+      "object_exists": true
+    },
+    {
+      "url": "https://github.com/And-Gu/executable-engineering-lab/blob/main/project/v3/case-study/README.md",
+      "on": [
+        "ch02",
+        "ch03"
+      ],
+      "method": "repository object, candidate for a main-branch link and named object for an immutable link",
+      "object_exists": true
+    },
+    {
+      "url": "https://github.com/And-Gu/executable-engineering-lab/blob/main/project/v3/case-study/data-quality-v1.json",
+      "on": [
+        "ch06"
+      ],
+      "method": "repository object, candidate for a main-branch link and named object for an immutable link",
+      "object_exists": true
+    },
+    {
+      "url": "https://github.com/And-Gu/executable-engineering-lab/blob/main/project/v3/case-study/model-inputs-v1.json",
+      "on": [
+        "ch03",
+        "ch04",
+        "ch05",
+        "ch06",
+        "ch07",
+        "ch08",
+        "ch10",
+        "reference"
+      ],
+      "method": "repository object, candidate for a main-branch link and named object for an immutable link",
+      "object_exists": true
+    },
+    {
+      "url": "https://github.com/And-Gu/executable-engineering-lab/blob/main/project/v3/case-study/source-graph-v1.json",
+      "on": [
+        "ch04",
+        "ch05"
+      ],
+      "method": "repository object, candidate for a main-branch link and named object for an immutable link",
+      "object_exists": true
+    },
+    {
+      "url": "https://github.com/And-Gu/executable-engineering-lab/blob/main/project/v3/case-study/trace-v1.csv",
+      "on": [
+        "ch05",
+        "ch06",
+        "ch07",
+        "ch08",
+        "ch09",
+        "ch10",
+        "reference"
+      ],
+      "method": "repository object, candidate for a main-branch link and named object for an immutable link",
+      "object_exists": true
+    },
+    {
+      "url": "https://github.com/And-Gu/executable-engineering-lab/blob/main/project/v3/case-study/two-cycle-run.json",
+      "on": [
+        "reference"
+      ],
+      "method": "repository object, candidate for a main-branch link and named object for an immutable link",
+      "object_exists": true
+    },
+    {
+      "url": "https://github.com/And-Gu/executable-engineering-lab/blob/main/project/v3/manuscripts/revised/01-the-new-engineering-paradigm.md",
+      "on": [
+        "ch01"
+      ],
+      "method": "repository object, candidate for a main-branch link and named object for an immutable link",
+      "object_exists": true
+    },
+    {
+      "url": "https://github.com/And-Gu/executable-engineering-lab/blob/main/project/v3/manuscripts/revised/02-introducing-the-engineering-challenge.md",
+      "on": [
+        "ch02"
+      ],
+      "method": "repository object, candidate for a main-branch link and named object for an immutable link",
+      "object_exists": true
+    },
+    {
+      "url": "https://github.com/And-Gu/executable-engineering-lab/blob/main/project/v3/manuscripts/revised/03-planning-under-uncertainty.md",
+      "on": [
+        "ch03"
+      ],
+      "method": "repository object, candidate for a main-branch link and named object for an immutable link",
+      "object_exists": true
+    },
+    {
+      "url": "https://github.com/And-Gu/executable-engineering-lab/blob/main/project/v3/manuscripts/revised/04-engineering-knowledge-as-code.md",
+      "on": [
+        "ch04"
+      ],
+      "method": "repository object, candidate for a main-branch link and named object for an immutable link",
+      "object_exists": true
+    },
+    {
+      "url": "https://github.com/And-Gu/executable-engineering-lab/blob/main/project/v3/manuscripts/revised/05-learning-through-models-and-prototypes.md",
+      "on": [
+        "ch05"
+      ],
+      "method": "repository object, candidate for a main-branch link and named object for an immutable link",
+      "object_exists": true
+    },
+    {
+      "url": "https://github.com/And-Gu/executable-engineering-lab/blob/main/project/v3/manuscripts/revised/06-engineering-data-from-measurements-to-decisions.md",
+      "on": [
+        "ch06"
+      ],
+      "method": "repository object, candidate for a main-branch link and named object for an immutable link",
+      "object_exists": true
+    },
+    {
+      "url": "https://github.com/And-Gu/executable-engineering-lab/blob/main/project/v3/manuscripts/revised/07-spec-driven-development-without-waterfall.md",
+      "on": [
+        "ch07"
+      ],
+      "method": "repository object, candidate for a main-branch link and named object for an immutable link",
+      "object_exists": true
+    },
+    {
+      "url": "https://github.com/And-Gu/executable-engineering-lab/blob/main/project/v3/manuscripts/revised/08-directing-ai-engineering-agents.md",
+      "on": [
+        "ch08"
+      ],
+      "method": "repository object, candidate for a main-branch link and named object for an immutable link",
+      "object_exists": true
+    },
+    {
+      "url": "https://github.com/And-Gu/executable-engineering-lab/blob/main/project/v3/manuscripts/revised/09-engineering-in-small-reviewable-increments.md",
+      "on": [
+        "ch09"
+      ],
+      "method": "repository object, candidate for a main-branch link and named object for an immutable link",
+      "object_exists": true
+    },
+    {
+      "url": "https://github.com/And-Gu/executable-engineering-lab/blob/main/project/v3/manuscripts/revised/10-from-models-to-an-integrated-product.md",
+      "on": [
+        "ch10"
+      ],
+      "method": "repository object, candidate for a main-branch link and named object for an immutable link",
+      "object_exists": true
+    },
+    {
+      "url": "https://github.com/And-Gu/executable-engineering-lab/blob/main/project/v3/manuscripts/revised/11-verification-validation-and-engineering-evidence.md",
+      "on": [
+        "ch11"
+      ],
+      "method": "repository object, candidate for a main-branch link and named object for an immutable link",
+      "object_exists": true
+    },
+    {
+      "url": "https://github.com/And-Gu/executable-engineering-lab/blob/main/project/v3/manuscripts/revised/12-governance-and-engineering-authority.md",
+      "on": [
+        "ch12"
+      ],
+      "method": "repository object, candidate for a main-branch link and named object for an immutable link",
+      "object_exists": true
+    },
+    {
+      "url": "https://github.com/And-Gu/executable-engineering-lab/blob/main/project/v3/manuscripts/revised/13-continuously-integrated-engineering.md",
+      "on": [
+        "ch13"
+      ],
+      "method": "repository object, candidate for a main-branch link and named object for an immutable link",
+      "object_exists": true
+    },
+    {
+      "url": "https://github.com/And-Gu/executable-engineering-lab/blob/main/project/v3/manuscripts/revised/14-from-engineering-intent-to-continuous-integration.md",
+      "on": [
+        "ch14"
+      ],
+      "method": "repository object, candidate for a main-branch link and named object for an immutable link",
+      "object_exists": true
+    },
+    {
+      "url": "https://github.com/finos/ai-governance-framework/blob/8cad9f2c3f39d7170f24fc609dae808b96aa417f/docs/_mitigations/mi-24_human-in-the-loop-action-approval-gate.md",
+      "on": [
+        "ch12"
+      ],
+      "method": "HTTP GET following redirects",
+      "http": "200",
+      "curl_exit": 0
+    },
+    {
+      "url": "https://github.com/gemaraproj/gemara/releases/tag/v1.6.0",
+      "on": [
+        "ch12"
+      ],
+      "method": "HTTP GET following redirects",
+      "http": "200",
+      "curl_exit": 0
+    },
+    {
+      "url": "https://github.com/gregkh/linux/blob/v7.3.6/Documentation/process/coding-assistants.rst",
+      "on": [
+        "ch12"
+      ],
+      "method": "HTTP GET following redirects",
+      "http": "200",
+      "curl_exit": 0
+    },
+    {
+      "url": "https://github.com/torvalds/linux/blob/v7.4-rc4/Documentation/process/coding-assistants.rst",
+      "on": [
+        "ch12"
+      ],
+      "method": "HTTP GET following redirects",
+      "http": "200",
+      "curl_exit": 0
+    },
+    {
+      "url": "https://github.github.com/spec-kit/quickstart",
+      "on": [
+        "ch07"
+      ],
+      "method": "HTTP GET following redirects",
+      "http": "200",
+      "curl_exit": 0
+    },
+    {
+      "url": "https://lowrisc.org/news/how-we-run-ci-for-our-open-source-silicon-projects/",
+      "on": [
+        "ch14"
+      ],
+      "method": "previously checked HTTP endpoint, destination unchanged",
+      "http": "200"
+    },
+    {
+      "url": "https://newsletter.kentbeck.com/p/canon-tdd",
+      "on": [
+        "ch07"
+      ],
+      "method": "HTTP GET following redirects",
+      "http": "200",
+      "curl_exit": 0
+    },
+    {
+      "url": "https://openai.com/index/harness-engineering/",
+      "on": [
+        "ch01"
+      ],
+      "method": "previously checked HTTP endpoint, destination unchanged",
+      "http": "200"
+    },
+    {
+      "url": "https://openssf.org/blog/2026/03/09/introducing-the-gemara-model/",
+      "on": [
+        "ch12"
+      ],
+      "method": "HTTP GET following redirects",
+      "http": "200",
+      "curl_exit": 0
+    },
+    {
+      "url": "https://research.tudelft.nl/en/publications/change-propagation-analysis-in-complex-technical-systems/",
+      "on": [
+        "ch01"
+      ],
+      "method": "previously checked HTTP endpoint, destination unchanged",
+      "http": "200"
+    },
+    {
+      "url": "https://services.google.com/fh/files/misc/2025_state_of_ai_assisted_software_development.pdf#page=103",
+      "on": [
+        "bonus"
+      ],
+      "method": "HTTP GET following redirects",
+      "http": "200",
+      "curl_exit": 0
+    },
+    {
+      "url": "https://services.google.com/fh/files/misc/2025_state_of_ai_assisted_software_development.pdf#page=67",
+      "on": [
+        "bonus"
+      ],
+      "method": "HTTP GET following redirects",
+      "http": "200",
+      "curl_exit": 0
+    },
+    {
+      "url": "https://www.anthropic.com/research/building-effective-agents",
+      "on": [
+        "ch14"
+      ],
+      "method": "previously checked HTTP endpoint, destination unchanged",
+      "http": "200"
+    },
+    {
+      "url": "https://www.anthropic.com/research/demystifying-evals-for-ai-agents",
+      "on": [
+        "ch09"
+      ],
+      "method": "previously checked HTTP endpoint, destination unchanged",
+      "http": "200"
+    },
+    {
+      "url": "https://www.gov.uk/government/publications/transforming-infrastructure-performance-roadmap-to-2030/transforming-infrastructure-performance-roadmap-to-2030#annex-b-information-management-mandate",
+      "on": [
+        "bonus"
+      ],
+      "method": "previously checked HTTP endpoint, destination unchanged",
+      "http": "200"
+    },
+    {
+      "url": "https://www.iso.org/standard/42001",
+      "on": [
+        "ch12"
+      ],
+      "method": "HTTP GET following redirects",
+      "http": "403",
+      "curl_exit": 0,
+      "alternate_observation": "The official page opened through the web reader. Confirmed ISO/IEC 42001:2023, first edition, December 2023."
+    },
+    {
+      "url": "https://www.linkedin.com/in/anders-gustafsson-359438/",
+      "on": [
+        "bonus",
+        "ch01",
+        "ch02",
+        "ch03",
+        "ch04",
+        "ch05",
+        "ch06",
+        "ch07",
+        "ch08",
+        "ch09",
+        "ch10",
+        "ch11",
+        "ch12",
+        "ch13",
+        "ch14",
+        "home",
+        "lab",
+        "learn",
+        "reference"
+      ],
+      "method": "HTTP GET following redirects",
+      "http": "999",
+      "curl_exit": 0,
+      "alternate_observation": "Both direct HTTP and the web reader returned 999. The author-profile destination was not independently verified. It is unrelated to an engineering claim."
+    },
+    {
+      "url": "https://www.mckinsey.com/features/mckinsey-center-for-future-mobility/our-insights/mapping-the-automotive-software-and-electronics-landscape",
+      "on": [
+        "bonus"
+      ],
+      "method": "HTTP GET following redirects",
+      "http": "000",
+      "curl_exit": 92,
+      "alternate_observation": "The primary article opened through the web reader. Exhibit 3, current trajectory for light vehicles, identifies 11.4% and 9.7% as projected 2025\u20132035 CAGRs for different segments."
+    },
+    {
+      "url": "https://www.nasa.gov/reference/5-0-product-realization/",
+      "on": [
+        "ch10",
+        "ch14"
+      ],
+      "method": "previously checked HTTP endpoint, destination unchanged",
+      "http": "200"
+    },
+    {
+      "url": "https://www.nasa.gov/reference/5-3-product-verification/",
+      "on": [
+        "ch11"
+      ],
+      "method": "HTTP GET following redirects",
+      "http": "200",
+      "curl_exit": 0
+    },
+    {
+      "url": "https://www.nasa.gov/reference/5-4-product-validation/",
+      "on": [
+        "ch11"
+      ],
+      "method": "HTTP GET following redirects",
+      "http": "200",
+      "curl_exit": 0
+    },
+    {
+      "url": "https://www.nber.org/papers/w35275",
+      "on": [
+        "bonus"
+      ],
+      "method": "previously checked HTTP endpoint, destination unchanged",
+      "http": "200"
+    },
+    {
+      "url": "https://www.nist.gov/blogs/cybersecurity-insights/design-tenets-agent-identity-management-systems",
+      "on": [
+        "ch12"
+      ],
+      "method": "HTTP GET following redirects",
+      "http": "200",
+      "curl_exit": 0
+    },
+    {
+      "url": "https://www.nist.gov/publications/using-graphs-link-data-across-product-lifecycle-enabling-smart-manufacturing-digital",
+      "on": [
+        "ch14"
+      ],
+      "method": "previously checked HTTP endpoint, destination unchanged",
+      "http": "200"
+    },
+    {
+      "url": "https://www.omg.org/spec/SysML/2.0/Language/PDF#page=181",
+      "on": [
+        "ch04"
+      ],
+      "method": "previously checked HTTP endpoint, destination unchanged",
+      "http": "200"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=O_zcc6Xl12g",
+      "on": [
+        "bonus"
+      ],
+      "method": "previously checked HTTP endpoint, destination unchanged",
+      "http": "200"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=O_zcc6Xl12g&t=300s",
+      "on": [
+        "bonus"
+      ],
+      "method": "previously checked HTTP endpoint, destination unchanged",
+      "http": "200"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=O_zcc6Xl12g&t=580s",
+      "on": [
+        "bonus"
+      ],
+      "method": "previously checked HTTP endpoint, destination unchanged",
+      "http": "200"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=O_zcc6Xl12g&t=711s",
+      "on": [
+        "bonus"
+      ],
+      "method": "previously checked HTTP endpoint, destination unchanged",
+      "http": "200"
+    },
+    {
+      "url": "https://x.com/karpathy/status/1886192184808149383",
+      "on": [
+        "ch07"
+      ],
+      "method": "HTTP GET following redirects",
+      "http": "200",
+      "curl_exit": 0
+    }
+  ],
+  "http_or_git_unconfirmed": 3,
+  "unconfirmed_after_fallback": 1
+}

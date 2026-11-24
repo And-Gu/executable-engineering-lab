@@ -1,0 +1,13 @@
+{
+  "revision": "206828b6f93c673cd09d688a0dc2204d05fd4b13",
+  "checked_core_routes": 19,
+  "generated_pages_indexed": 35,
+  "internal_link_occurrences": 827,
+  "fragment_occurrences": 192,
+  "distinct_external_destinations": 109,
+  "unresolved": [],
+  "companion_embeds": [
+    "https://www.youtube-nocookie.com/embed/O_zcc6Xl12g"
+  ],
+  "method": "Parsed generated HTML for every active chapter, Home, Learn, Lab, Reference and the companion. Compared internal paths and decoded fragments with the combined build. External destinations are inventoried separately."
+}

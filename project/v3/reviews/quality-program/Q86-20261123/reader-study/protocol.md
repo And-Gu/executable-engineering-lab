@@ -1,24 +1,99 @@
 # First reader sessions
 
-**Human learning outcomes: not observed.** This kit is ready for a facilitator. Use the build and exact revision listed in the final verification report. Record the URL the participant actually used. The starting point is the course Home or Learn directory. Use fictional examples throughout. The session format adapts the [Document-as-Code Lab reader-study protocol](https://github.com/And-Gu/document-as-code-lab/blob/3444d6f/spec/tutorial/working-methods-upgrade/verification/reader-study-protocol.md).
+**Human learning outcomes on the D40 candidate are not observed.** This kit is for a facilitator running a 35–45 minute session with a real reader. A first round could include four to six people across product leadership, integration, service and small engineering teams, with different levels of familiarity. That range is a planning choice. Readers need no traffic-control, coding or agent experience.
 
-## Set up a session
+## Before the session
 
-Allow 35–45 minutes. As a first qualitative round, invite four to six people who make or support different engineering decisions, such as a product or discipline lead, integration engineer, maintainer and someone from a small cross-functional team. Participation is voluntary. Explain who will see any notes and obtain consent before taking them. Record a pseudonymous session ID, broad role, relevant experience, revision, device, browser, assistive technology if volunteered and the chosen tasks. Keep identifiable notes outside Git. A facilitator can work alone or with a note-taker.
+1. Use the course at revision `206828b6f93c673cd09d688a0dc2204d05fd4b13`. On the review machine, open the local Home link and check that the manifest’s `source_commit` matches. For a remote session use a reachable copy of this build and check its manifest. Record the actual study URL with any access token removed, plus the revision. The source index identifies the manuscripts if the preview moves. A session on another revision needs its own record. [Local Home](http://127.0.0.1:4390/executable-engineering-lab/) · [Local manifest](http://127.0.0.1:4390/executable-engineering-lab/build-information.json) · [Frozen source index](https://github.com/And-Gu/executable-engineering-lab/blob/206828b6f93c673cd09d688a0dc2204d05fd4b13/project/v3/manuscripts/revised/INDEX.md)
+2. Select three cards from A–E before meeting the reader. Rotate the selection across the round so every card is offered. Finish each session with F. Record the order, starting page and prior exposure to this course. Allow roughly five minutes for the opening, six or seven per selected card, seven for F and four for closing discussion. Let the reader skip or stop.
+3. Copy the [blank worksheet](observations.md) to access-controlled storage outside Git. Agree who can see the notes, the deletion date and a way to withdraw them. Take notes only with consent. Use notes by default. Obtain separate explicit agreement for any recording and for sharing any quotation. Use fictional examples, a session code, broad role and prior familiarity. Keep names, employers, contact details, private URLs and company material out of the worksheet. The facilitator can also take notes.
 
-Start with “What would you expect to be able to do after taking this course?” Let the reader find a starting page. Choose three of tasks A–E in advance and finish with F. Allow reading and silence. “What are you looking for now?” is a neutral prompt. If the reader asks for help, first record their stopping point. Then offer a route or offer to skip. Record exactly what help you provided and when. A linked starting page supplied as help changes the discovery outcome.
+## Introduction and participant cards
 
-| Task | Give the reader this prompt | Observe or score after they answer |
-| --- | --- | --- |
-| A. Decide what to measure | Stop original arrival pattern B after slot 5. Operations wants to know how this group will fare. What does this trace already tell you, and what would you need next? | Can they find the original source and state the event order? The endpoint has two NS and one EW waiting. The after-service sum to this point is 15 vehicle-slots. Four arrivals include three unfinished waits. Ask what a new observation would settle. Separate the final mean for this group from one vehicle's wait and from real traffic. |
-| B. Trace an observed discrepancy | Your colleague's B run first differs at slot 2. Show the fastest way to learn whether you are comparing the same case. What would you ask an agent to do next? | Watch for original versus edited inputs, revision and first differing row. Ask who can authorize a new question, a new phase order or removal of a protected criterion. A second agent running the same faulty logic is weak evidence about the same failure. |
-| C. Decide whether an old check applies | You receive a green request in the third sample. What would make that a discrepancy? What would establish what a driver could see? | Give, one at a time, an unchanged schedule and clock, an intentionally changed third phase, then an offset where sample three maps to slot two. A controller request and an independent observation matched to the head, time, command and configuration answer different questions. A transition also needs the earlier state. |
-| D. Locate the next product constraint | The display change and link work, but the release-language review is pending. Who can decide what happens next? What would you measure across the next few requests? | Can the reader find the authorized releasability record, identify the whole candidate and explain which support items apply? Compare similar eligible changes from acceptance to the recorded candidate decision. Watch for double-counted overlapping waits or confusion between eligibility and actual delivery/use. |
-| E. Judge an investment away from the intersection | A pump service team catches unit errors by hand. An integration rig has a two-week queue. You have one engineer-week to spend. How would you choose what to try? | Credit a decision with its assumptions, upkeep, manual alternative, and the next observation that could change it. If the constraint moves to multilingual instructions, does the reader revisit the choice? Ask what would show that a released change helped a user and what else might explain a later tender. |
-| F. Transfer to a different team | Choose a setting outside traffic control. What engineering decision could this method improve? What source, observation and owner would you need? | Listen for a bounded question, usable reference, admissible independent check and human authority. Record a plausible lighter alternative. Do not supply a tool or mandate a particular architecture. |
+Read the opening aloud. Show only the quoted text for the current card. Give each follow-up after the reader has answered the preceding question. Every reader offered that card receives its printed follow-ups. Keep the scoring key, source links below it and the worksheet off the shared screen.
 
-## Record and interpret
+> We’re trying out the course material. You can use the course, a calculator and your usual reading tools. Please tell me what you’re looking for and what you think the evidence means. Use invented examples. You may skip anything or stop at any time. What would you expect to be able to do with this course?
 
-For each task record **independent**, **with help**, **not completed**, or **not attempted**. Keep the reader's reasoning, first misinterpretation, chosen evidence, navigation and prompts alongside the outcome. Capture a brief consented quotation only when needed. Ask what they would try next and whether any term, figure, quiz choice or handoff made the decision harder. Thank them and offer to remove an observation they prefer to withdraw.
+Start at Home and let the reader find their route. The opening question is unscored.
 
-Use the [blank session and synthesis form](observations.md). Report the denominator for each attempted task. Review repeated difficulties alongside material single errors such as accepting a product on inapplicable evidence. Link a proposed change to the observed passage and a testable correction. A first small round supplies qualitative observations. An improvement claim requires an appropriate comparison.
+### A
+
+> In the course’s original arrival pattern B, stop just after slot 5. Operations wants to know how much waiting the vehicles that have arrived have experienced so far, and what their eventual average wait will be. What can you report from those rows? Show how you got it. If you need more information, what would you do next?
+
+### B
+
+> A colleague’s B run shows one north–south arrival and one north–south departure in slot 2. They say the queues at the end of that slot agree with the original. Show how you would investigate. What would you ask an agent to do with what you found?
+>
+> The colleague now wants each of the two windows to start empty. What would you do with that request, and who can decide?
+
+### C
+
+> A bench log shows a north–south green request at sample three. For each of these separate cases, what would you report about the request, and why?
+
+Give each fact separately. Each case starts afresh.
+
+> 1. The approved schedule follows the original model. Sample three corresponds to slot three.
+> 2. The approved plan deliberately changed its third phase. The new phase is unspecified here. Sample three corresponds to the third step of that plan.
+> 3. The original schedule applies. A clock offset places sample three at slot two.
+>
+> The log also shows a receipt for the command. A maintainer asks what color was visible at the head at that moment, and whether it changed from dark to green. What evidence would let you answer each question?
+
+### D
+
+> A diagnostic wording change has been accepted. The display and link work in the reviewed editions. One required service translation still awaits review and the other deliverables are ready. What decision can the team take today? Who makes it, and what would let the team take its next decision?
+>
+> How would you measure the time this work takes across the next few comparable requests?
+
+### E
+
+> A pump service team catches unit errors by hand. Its shared integration rig has a two-week queue. You have one engineer-week to spend. What would you try first, and what information could change that choice?
+>
+> On later, comparable changes, the rig is available and the service-language review finishes last. Would you spend the week the same way? Why?
+>
+> A buyer asks for a shorter turnaround after receiving the latest update. What would you look for before connecting those events?
+
+### F
+
+> Pick a fictional change in a different engineering setting from the ones we have discussed. What decision does the team face? What, if anything, would you take from the course? Walk me through the first step, what evidence would change your mind and who would act on it.
+
+Offer the choice of their own fictional setting or the following brief before the reader starts F. The same questions about the decision, evidence and person responsible apply in either version. Record the choice.
+
+> A print shop changes paper stock for a folded leaflet. The previous batch folded cleanly. How would the team decide whether to use the old setting on the new stock?
+
+## Facilitation and scoring key
+
+During silence give the reader time. If they ask for help, record what they had already found and where they stopped. Offer a hint or a chance to skip. Classify each intervention and record its wording and timing.
+
+- **Neutral support** includes rereading the prompt, “What are you looking for now?” and reader-directed access support. Record any effect on navigation.
+- **Navigation help** identifies a chapter, source, figure or control the reader had yet to find. Capture the discovery outcome before giving the location.
+- **Reasoning help** supplies a clue, interpretation or comparison. Record which parts the reader subsequently explained. Flag help carried over from an earlier card when it supplies a later answer or route.
+- **Answer supplied** means the facilitator explains the result. Log that separately from the reader’s attempt and leave debriefing until the end.
+
+Independently choosing to inspect a worked answer or quiz is ordinary course use. Record it and listen for how the reader applies it to this case.
+
+Use these four outcomes per card. Record which of the required parts below the reader demonstrated before and after any help. Reasoned alternatives and ordinary language count.
+
+| Outcome | Decision rule |
+| --- | --- |
+| Independent | The reader demonstrates all required parts. The printed scenario, standard follow-ups, neutral prompts and access support that conveys no answer or route are allowed. |
+| Completed with help | The reader demonstrates all required parts after a route or content hint. Capture their own explanation and the help that made it possible. |
+| Not completed | The reader starts but leaves a required part unresolved, stops, or only repeats an answer the facilitator supplied. Preserve partial reasoning and the first difficulty. |
+| Not attempted | The reader never starts the card. Mark whether it was unselected, time ran out before it was offered, or it was offered and skipped. |
+
+**A · Closure of the waiting-time calculation.** Require three parts. (1) For the original B the counts **after arrivals and service** at slot 5 are two north–south and one east–west. Four have arrived and one has departed. (2) The sums of the two end-of-slot queues are 2, 2, 4, 4 and 3. Their sum is **15 vehicle-slots through slot 5**. The same number occurs over eight slots in the *edited* B, so check which rows the reader used. (3) Three waits are still open. One valid way to obtain the eventual mean is to continue the phases with no further arrivals, count through clearance, then divide the whole waiting total by four. Complete matched waits for those same four vehicles are also sufficient. The five-row total divided by four gives waiting accrued so far per arrival. An individual wait needs that vehicle’s arrival and departure. Field delay needs field observations. [Original T1 input and event order](https://github.com/And-Gu/executable-engineering-lab/blob/206828b6f93c673cd09d688a0dc2204d05fd4b13/project/v3/case-study/model-inputs-v1.json) · [Original trace](https://github.com/And-Gu/executable-engineering-lab/blob/206828b6f93c673cd09d688a0dc2204d05fd4b13/project/v3/case-study/trace-v1.csv) · [Chapter 6 measurement method](https://github.com/And-Gu/executable-engineering-lab/blob/206828b6f93c673cd09d688a0dc2204d05fd4b13/project/v3/manuscripts/revised/06-engineering-data-from-measurements-to-decisions.md#carry-the-queues-through-a-second-cycle)
+
+**B · What the agent may investigate.** Require a trace to the original T1 inputs and reference row, a bounded next action and the authority decision. Original B has zero north–south arrivals and departures in slot 2. In Chapter 5’s edit one arrives and departs there and the queues agree at (0, 2). The first queue difference is at slot 3. The row suggests the edit. The agent can check the actual input revision, select original B and rerun against the saved reference. A persistent discrepancy needs the disputed row and rule. Chapter 8 permits running the model and writing a report. Chapter 9 adds specific permission to implement and test carry-over. The traffic engineer decides whether to authorize independent windows, records a new brief and preserves the original run and protected checks. Repeating the changed calculation with another agent offers little independent evidence. [Chapter 8 investigation](https://github.com/And-Gu/executable-engineering-lab/blob/206828b6f93c673cd09d688a0dc2204d05fd4b13/project/v3/manuscripts/revised/08-directing-ai-engineering-agents.md#coordinate-several-agents-around-one-engineering-outcome) · [Chapter 9 permission and change of question](https://github.com/And-Gu/executable-engineering-lab/blob/206828b6f93c673cd09d688a0dc2204d05fd4b13/project/v3/manuscripts/revised/09-engineering-in-small-reviewable-increments.md#the-digital-thread)
+
+**C · Request, indication and transition.** Require the three case judgments and an observation plan for both physical claims. (1) Slot 3 calls for north–south amber. Green is a request discrepancy to investigate. (2) Consult the new approved phase. Its expected value is open in the card. (3) Slot 2 calls for north–south green, consistent with the mapped request. Receipt shows message arrival. A separate observation at the agreed viewpoint must match the head, command, time and configuration to establish visible color. A dark-to-green transition needs the same head observed dark before and green after the command. A missing image leaves the outcome open. The illustrated bench and maintainer trial are proposals. [Chapter 10 schedule and clock](https://github.com/And-Gu/executable-engineering-lab/blob/206828b6f93c673cd09d688a0dc2204d05fd4b13/project/v3/manuscripts/revised/10-from-models-to-an-integrated-product.md#keep-the-model-as-a-test-reference) · [Chapter 11 evidence and decision](https://github.com/And-Gu/executable-engineering-lab/blob/206828b6f93c673cd09d688a0dc2204d05fd4b13/project/v3/manuscripts/revised/11-verification-validation-and-engineering-evidence.md#record-the-human-decision)
+
+**D · The whole-product decision and its clock.** Require both the disposition and the comparison. The authorized release lead holds this illustrative candidate. After the reviewer approves the translation, the team packages it, checks that the correct diagnostic opens it and confirms the other evidence still applies to this configuration. The lead can then record releasability. The manifest ties the running product, applicable operator/service editions, logistics and training to their reviews. Operations selects deployment. The reader may point to the release example or figure and describe the record the lead would make. For each similarly scoped, eligible request the clock starts at acceptance and ends when the lead records that the whole candidate is releasable. A hold leaves the clock running. Record open requests with elapsed time and pending work, overlaps once, and quality or rework alongside lead time. The less-than-24-hour figure is a fictional target. [Chapter 13 clock, evidence and decision](https://github.com/And-Gu/executable-engineering-lab/blob/206828b6f93c673cd09d688a0dc2204d05fd4b13/project/v3/manuscripts/revised/13-continuously-integrated-engineering.md) · [Release-readiness figure](https://github.com/And-Gu/executable-engineering-lab/blob/206828b6f93c673cd09d688a0dc2204d05fd4b13/site/src/components/learning/ReleaseReadiness.astro)
+
+**E · Where the investment earns its keep.** Require a reasoned choice, response to the new constraint and a way to investigate the buyer claim. Accept a manual review, rig scheduling, a maintained check or a small measurement trial. Look for a cheaper alternative, how often an error or wait costs time or rework, who would own any upkeep and what result would change the choice. A two-week rig queue alone does not show this request waited two weeks. When language review finishes last, compare actual waits, overlap and quality. A lighter response might be contacting reviewers earlier. For the buyer claim, seek an observation of benefit in use tied to the delivered version, comparable later requests, and the buyer’s reason or a competing explanation such as a policy change. Credit uncertainty when facts do not justify a particular investment. [Investment figure](https://github.com/And-Gu/executable-engineering-lab/blob/206828b6f93c673cd09d688a0dc2204d05fd4b13/site/src/components/learning/InvestmentFeedback.astro) · [Companion on investment and later demand](https://github.com/And-Gu/executable-engineering-lab/blob/206828b6f93c673cd09d688a0dc2204d05fd4b13/project/v3/bonus/building-the-machine-that-builds-the-machine.md#when-does-building-it-pay-off)
+
+**F · Transfer beyond the intersection.** Require a bounded decision, a usable existing source or procedure, a fresh observation able to challenge the proposal under the changed conditions, and a person accountable for acting on it. In the alternate brief a reader could recover the prior stock, setting and fold criterion, try the new stock, inspect the crease and have the production lead decide whether to use the setting. A manual trial is sufficient. Accept another defensible method or a reason to decline a more elaborate one. Mark self-chosen and supplied scenarios separately and retain the reader’s own rationale. [Chapter 14 on reuse and renewed evidence](https://github.com/And-Gu/executable-engineering-lab/blob/206828b6f93c673cd09d688a0dc2204d05fd4b13/site/src/components/learning/EvidenceHandoffs.astro)
+
+## Close and interpret
+
+Ask what the reader would try next and which term, figure, quiz response or handoff made the decision harder. After recording their response, correct any consequential unsupported conclusion. Label that explanation as debriefing. Confirm withdrawal and deletion arrangements.
+
+Report counts against the attempted denominator for each card, with skipped and unoffered tasks visible. A single material error, such as treating receipt as confirmation of a lamp, deserves review. Give the editor the passage, observed consequence and a proposed retest. Publish only reviewed aggregates and separately permitted, non-identifying excerpts. A first qualitative round can show what these readers did on this build. Any claim of improvement needs a comparable earlier observation. [Blank findings form](observations.md) · [Document-as-Code study design](https://github.com/And-Gu/document-as-code-lab/blob/3444d6f738fe1304efcca7e4e2261d5e87747103/spec/tutorial/working-methods-upgrade/verification/reader-study-protocol.md)
