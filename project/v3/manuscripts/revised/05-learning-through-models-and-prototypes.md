@@ -82,7 +82,11 @@ Look at the edited B in the browser. The NS vehicle moved to slot 2 leaves on th
 
 ## What does that comparison establish?
 
-Moving one arrival across the end of its green changed the number waiting at this horizon. That is an answer to the workshop question. Mean waiting time would require following individual waits, including those still in progress at slot 8. A question about whether an actual signal shows the commanded indication would call for a bench test or physical observation. Choose the model or prototype to match the decision it will inform.
+To count the waiting that accrued over all eight slots, add both queues after service in every row. Each vehicle still waiting contributes one vehicle-slot. A vehicle that arrives and leaves in the same slot contributes zero. The edit leaves one fewer NS vehicle waiting in each of slots 3 through 8, bringing the total from **21 vehicle-slots in the original B pattern to 15 in the edit**. For the mean wait of all four arrivals, we would also need to know how much waiting accrues before the remaining vehicles leave.
+
+A total of four arrivals for the cycle fits either pattern. Which records could operations use to see when vehicles on each approach arrived relative to the end of green? [Chapter 3’s data request](03-planning-under-uncertainty.md#keep-a-small-decision-record).
+
+A question about whether an actual signal shows the commanded indication would call for a bench test or physical observation. Choose the model or prototype to match the decision it will inform.
 
 ## Record what the experiment changed
 
@@ -97,4 +101,4 @@ The [saved T1 observation](https://github.com/And-Gu/executable-engineering-lab/
 
 ## The data is now the next engineering problem
 
-Two north–south vehicles are still waiting when scenario B reaches the end of slot 8. Where should they appear when the lights begin the next cycle? [Chapter 6 follows both queues across that boundary](06-engineering-data-from-measurements-to-decisions.md).
+The original B pattern ends slot 8 with two north–south vehicles still waiting. Where should they appear when the lights begin the next cycle? [Chapter 6 follows both queues across that boundary](06-engineering-data-from-measurements-to-decisions.md).

@@ -21,7 +21,7 @@ For a physical product, a simulation of one function can give the team its first
 
 ## Carry the queues through a second cycle
 
-Run each original scenario from empty queues. In the first eight slots, both A and B receive two north–south (NS) and two east–west (EW) vehicles at different times. Revision T1 adds arrivals before serving at most one vehicle from the group with a green light. Repeat each scenario’s own arrivals and phases for slots 9 through 16, carrying both queues forward. [Arrival sequences, phases and service rules](../../case-study/model-inputs-v1.json).
+Run each original scenario from empty queues. In the first eight slots, both A and B receive two north–south (NS) and two east–west (EW) vehicles. In B, both NS vehicles arrive in slot 3. Revision T1 adds arrivals before serving at most one vehicle from the group with a green light. Repeat each scenario’s own arrivals and phases for slots 9 through 16, carrying both queues forward. [Arrival sequences, phases and service rules](../../case-study/model-inputs-v1.json).
 
 Make a prediction for A and B, then try each arrival pattern below.
 
@@ -39,7 +39,9 @@ The simulation leaves **one NS vehicle in A and two NS vehicles in B after slot 
 
 <span id="what-the-models-outputs-do-not-say"></span>
 
-B’s previous NS queue clears on the two greens, then another pair arrives on amber. That makes a different phase plan worth testing in simulation. Keep the arrival sequences and the 16-slot window fixed, vary the plan, and inspect the effect on **both** directions. Estimating mean wait would call for following individual vehicles, including those still waiting at slot 16.
+B’s previous NS queue clears on the two greens, then another pair arrives on amber. That makes a different phase plan worth testing in simulation. Keep the arrival sequences and the 16-slot window fixed, vary the plan, and inspect the effect on **both** directions.
+
+Suppose the traffic engineer wants the mean wait for the eight vehicles that arrived in B during slots 1 through 16. In a separate run, repeat B through slot 16, then keep the phases cycling without new arrivals until both queues empty. Sum the two queue lengths after service in every slot, starting at slot 1. Divide that total in vehicle-slots by eight to get the mean wait in slots. For one vehicle’s wait, match its arrival slot to its departure slot.
 
 <span id="why-this-changes-the-engineering-environment"></span>
 
@@ -71,4 +73,6 @@ Keep the original row as supplied. Annotate it to say which details are missing,
 
 ## What should the team do next?
 
-We now have a baseline against which to try a different phase plan. Before commissioning that experiment, consider what another engineer would have needed to reproduce this one. Which decisions had to be in the brief before anyone knew the count at slot 16? Chapter 7 reconstructs the specification for the two-cycle run. [Spec-Driven Development Without Waterfall](07-spec-driven-development-without-waterfall.md).
+The team can try another phase plan on the same invented arrivals. To find out how often vehicles at the intersection just miss their green, ask operations which arrival records identify the approach and can be matched to the signal’s phase history. [Chapter 3’s planning decision](03-planning-under-uncertainty.md#keep-a-small-decision-record).
+
+To reproduce the two-cycle run, what did another engineer need to know before anyone had seen the count at slot 16? Chapter 7 reconstructs the brief. [Spec-Driven Development Without Waterfall](07-spec-driven-development-without-waterfall.md).

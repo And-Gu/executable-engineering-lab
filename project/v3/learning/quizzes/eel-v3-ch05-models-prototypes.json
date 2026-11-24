@@ -14,7 +14,7 @@
       },
       {
         "text": "The edit reduced the average wait by one slot per vehicle.",
-        "feedback": "The difference is one vehicle waiting at the horizon. Estimating an average wait would require following each vehicle, including the one still queued."
+        "feedback": "One fewer vehicle is waiting after slot 8. The eight rows show six fewer vehicle-slots of waiting in the edit. For the mean wait of all four arrivals, keep the phases cycling without new arrivals until both queues empty, then divide each run’s total vehicle-slots by four."
       }
     ]
   },
