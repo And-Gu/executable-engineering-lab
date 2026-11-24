@@ -96,6 +96,8 @@ The systems lead records why the next increment has changed and what would make 
 >
 > The disagreement about one slot changes the next increment and its backlog; the queue initiative and city vision still make sense. If the city makes pedestrian conflicts its immediate priority, the team would revisit the initiative and bring the movement-conflict investigation forward. Both choices serve the city's long-term vision, and the decision record explains why the plan changed.
 
+For the next worked example, suppose the modeler and operations engineer check the first row together and agree to use the documented arrival-before-service convention. They can then compare both traces before requesting field records.
+
 <!-- interactive: chapter-quiz -->
 
 <span id="why-the-information-must-become-connected"></span>

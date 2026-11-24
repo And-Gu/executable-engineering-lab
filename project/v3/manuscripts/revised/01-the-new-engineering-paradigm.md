@@ -29,7 +29,7 @@ Software development offers practices that other disciplines can adapt, includin
 
 A team that produces changes faster than it can integrate or test them moves work into a queue. A web service may deploy repeatedly, while physical design can depend on a component order or a scarce test-rig slot. Each discipline can seek earlier feedback within its own constraints.
 
-A model of a physical function can be executed before hardware is ready. An interface contract can be checked when either side changes. If several product variants use the same module, recording which revision each uses tells the integration lead which teams a change affects.
+A model of a physical function can be executed before hardware is ready. An interface contract can be checked when either side changes. If several product variants use the same module, recorded revision references identify the variants whose owners should assess a change; ownership and compatibility information determine who needs to act.
 
 An engineering decision can retain its rationale and applicable evidence. A new engineer joining the next variant can read why the team chose an interface limit and rerun its check without tracking down the original designer. Reusing the check can avoid repeating the same investigation, provided maintaining it costs less than the work it saves.
 
