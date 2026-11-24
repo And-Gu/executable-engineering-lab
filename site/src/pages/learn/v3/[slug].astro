@@ -8,6 +8,7 @@ import IntegratedChange from '../../../components/learning/IntegratedChange.astr
 import ReleaseReadiness from '../../../components/learning/ReleaseReadiness.astro';
 import ChapterQuiz from '../../../components/learning/ChapterQuiz.astro';
 import ChangeImpactFigure from '../../../components/learning/ChangeImpactFigure.astro';
+import InvestmentFeedback from '../../../components/learning/InvestmentFeedback.astro';
 import TwoCycleExperiment from '../../../components/learning/TwoCycleExperiment.astro';
 import DigitalThread from '../../../components/learning/DigitalThread.astro';
 import QueueExperiment from '../../../components/learning/QueueExperiment.astro';
@@ -40,6 +41,7 @@ type Heading = { depth: number; slug: string; text: string };
 const headings: Heading[] = getHeadings().filter((h: Heading) => h.depth === 2);
 const questions = chapterQuizzes.get(frontmatter.id);
 const activities = ['chapter-quiz'];
+if (frontmatter.id === 'eel-v3-ch01-new-paradigm') activities.push('investment-feedback');
 if (frontmatter.id === 'eel-v3-ch04-engineering-knowledge') activities.push('change-impact-figure');
 if (frontmatter.id === 'eel-v3-ch05-models-prototypes') activities.push('intersection-model');
 if (frontmatter.id === 'eel-v3-ch06-engineering-data') activities.push('two-cycle-experiment');
@@ -70,6 +72,7 @@ const sourceUrl = `https://github.com/And-Gu/executable-engineering-lab/blob/mai
   <article class="chapter-body">
     {questions ? sections.map(section => {
       if (section.kind === 'prose') return <Fragment set:html={section.content} />;
+      if (section.content === 'investment-feedback') return <InvestmentFeedback />;
       if (section.content === 'change-impact-figure') return <ChangeImpactFigure />;
       if (section.content === 'intersection-model') return <QueueExperiment />;
       if (section.content === 'two-cycle-experiment') return <TwoCycleExperiment />;

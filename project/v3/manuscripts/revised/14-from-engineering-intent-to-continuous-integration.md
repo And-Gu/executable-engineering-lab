@@ -39,7 +39,7 @@ This returns to Chapter 1's central delivery argument: a model can provide feedb
 
 A requirement may sit in one system, an interface decision in another and test evidence in a third. A drawing, software build and service instruction may each be correct on their own while referring to different product revisions. When those relationships live mainly in people’s memories, every change creates coordination work.
 
-A connected information environment does more than make documents searchable. It gives important objects stable identities, records the revisions used together and preserves the relationships between intent, definition, implementation, evidence and decision. Specialist tools can remain where they are. The engineering system maintains enough structure to tell a reviewer what belongs to the current change and where to inspect the source.
+A connected information environment gives important objects stable identities and records which revisions belong together. A reviewer can trace a changed definition to the evidence for a decision while the sources stay in their specialist tools. In one manufacturing case, researchers used a graph to connect design, manufacturing and quality records this way. [Hedberg and colleagues’ manufacturing study](https://www.nist.gov/publications/using-graphs-link-data-across-product-lifecycle-enabling-smart-manufacturing-digital).
 
 That creates leverage in three ways.
 
@@ -51,7 +51,7 @@ The value is the ability to act on the information, not the number of connection
 
 AI agents add a new operating capability when they can work with this environment.
 
-An agent can receive an engineering question or a bounded outcome, inspect the relevant sources, use tools, run checks, investigate a failure and refine a proposal before handing it back. That is different from generating another isolated document. The agent works through part of the engineering flow.
+An agent can receive a bounded engineering question, inspect the relevant sources, run a check and use its result to decide what to try next. An engineer can then review the proposal and the evidence the agent returns. Anthropic describes this use of tool results to guide an agent’s next action in its engineering guidance. [How agents work with tool feedback](https://www.anthropic.com/research/building-effective-agents).
 
 Early in the work, that flow can be deliberately exploratory. A team may “vibe code” a disposable software interface—steering generated behavior by trying it—while agents draft small models or simulations for selected questions. These artifacts are valuable for the questions they sharpen, not for their readiness for delivery.
 
@@ -61,7 +61,7 @@ This is not a one-way maturity ladder. Exploration continues beside delivery. As
 
 <!-- interactive: engineering-capability-flow -->
 
-The quality of that work depends on the machine around it. The question or objective must be clear enough to define the next useful check. The agent needs current definitions and the permissions required for the task. Checks must provide feedback that is meaningful and sufficiently independent of the proposal. Exceptions need an owner, and consequential product decisions remain with people who hold the relevant authority.
+The quality of that work depends on the machine around it. The question or objective must be clear enough to define the next useful check. The agent needs current definitions and the permissions required for the task. Checks must provide feedback that is meaningful and sufficiently independent of the proposal. Exceptions need an owner, and consequential product decisions remain with people who hold the relevant authority. [The reviewed brief](07-spec-driven-development-without-waterfall.md#the-agent-brief) · [The agent’s working context](08-directing-ai-engineering-agents.md#context-is-an-engineering-capability) · [Who can accept the interface](12-governance-and-engineering-authority.md#what-would-let-maya-accept-the-interface).
 
 Maintaining source connections, permissions, independent checks and review capacity belongs in the investment case. Agentic support creates leverage only while the engineering environment remains trustworthy enough to direct and evaluate the work.
 
@@ -77,11 +77,13 @@ The engineering system needs two connected feedback loops.
 
 The fast loop works inside a change. Engineers and agents update a definition or implementation, run a model or check, inspect the result and correct the work. This loop can remove waiting between an idea and an initial technical finding.
 
-The whole-product loop asks whether the integrated change works for its intended use. It includes physical behavior, operational conditions, cybersecurity, service information, manufacturing or logistics dependencies and release authority. Its evidence may arrive on different cadences from software checks.
+The whole-product loop asks whether the integrated change works for its intended use. It includes physical behavior, operational conditions, cybersecurity, service information, manufacturing or logistics dependencies and release authority. Its evidence may arrive on different cadences from software checks. NASA’s engineering handbook, for example, distinguishes verifying a product against its requirements from validating it in its intended use. [NASA’s guidance on product realization](https://www.nasa.gov/reference/5-0-product-realization/).
 
 The loops support each other. A physical or operational finding can improve the next automated check. A fast check can keep known errors away from scarce integration equipment. The result is a system that learns from product work and carries that learning into the next change.
 
-The intersection illustrates the relationship: a software-visible receipt established that a command arrived, not what the lamp displayed. The same pattern appears whenever digital evidence accelerates a decision without replacing the physical or operational evidence the product still requires.
+At the intersection, the engineers inspected two proposed contracts. Under the adapter contract, a receipt would confirm that a command arrived. Establishing which lamp was visible would still require an independent observation matched to the head, command and configuration. The bench observation is proposed. [The two interface definitions](10-from-models-to-an-integrated-product.md#one-word-two-different-interfaces).
+
+If the service update later reaches a technician who orders a kit that does not fit, an agent could propose a check against the head-to-kit mapping agreed by service and logistics. The service lead could review the check and watch a technician try the revised instruction before deciding whether to fund its upkeep. [Chapter 1’s investment decision](01-the-new-engineering-paradigm.md#investment-feedback).
 
 ## Invest in flow, not isolated automation
 
@@ -91,9 +93,9 @@ More code, faster analysis or quicker document generation can all help. They do 
 
 Not every exploratory artifact should become a delivery asset. Some prototypes have done their job once they expose an assumption or eliminate an option. For selected results, the learning—not necessarily the prototype—needs to mature. The governing information becomes versioned, the relevant model or implementation gets an explicit configuration, checks become repeatable and the relationship to the release becomes visible. The organization gains speed when it can preserve the learning without carrying every experiment into production.
 
-Connected information reduces time spent finding and reconciling sources. Executable checks shorten the path to technical feedback. Agents can absorb bounded investigation and correction work. Explicit configurations reduce the work of assembling evidence for review. Bringing service, training and operational material into the same change exposes release dependencies early enough to address them in parallel.
+Connected information can save a reviewer time finding and reconciling sources when their owners keep the links and revision records current. Executable checks shorten the path to technical feedback. Agents can absorb bounded investigation and correction work. Explicit configurations reduce the work of assembling evidence for review. Bringing service, training and operational material into the same change exposes release dependencies early enough to address them in parallel.
 
-This does not force every discipline into the same cadence. Electronics, mechanics, software, physical testing and service preparation retain different constraints. The engineering system connects their feedback and shows which dependency controls the next decision.
+Electronics, mechanics, software, physical testing and service preparation retain different constraints. On the OpenTitan silicon project, for example, a proposed change receives selected simulation and board tests. A broader suite runs overnight. The engineering decision determines which result the team needs to wait for. [lowRISC’s account of the OpenTitan test pipelines](https://lowrisc.org/news/how-we-run-ci-for-our-open-source-silicon-projects/).
 
 Continuous integration makes divergence across those disciplines visible while the change is still being assembled. Continuous delivery keeps an identified, complete package ready for release. Deployment remains an authorized operational decision.
 
@@ -117,7 +119,7 @@ This distinction is what allows reuse to scale without turning history into assu
 
 > **Explore further**
 >
-> The companion article follows the same investment logic from a small documentation workflow to a reusable engineering environment. [Building the Machine That Builds the Machine](/executable-engineering-lab/bonus/building-the-machine-that-builds-the-machine/) · [The New Engineering Paradigm](01-the-new-engineering-paradigm.md#two-systems-must-evolve-together).
+> The companion article compares the cost of a manual handoff with a reusable check on a similar update. [Measure one change of your own](/executable-engineering-lab/bonus/building-the-machine-that-builds-the-machine/#measure-one-change-of-your-own).
 
 <!-- interactive: chapter-quiz -->
 
