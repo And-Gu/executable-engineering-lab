@@ -115,12 +115,17 @@ const sourceUrl = `https://github.com/And-Gu/executable-engineering-lab/blob/${s
       const isSequence = source.textContent?.trim().startsWith('sequenceDiagram');
       if (isSequence) diagram.classList.add('sequence-view');
       diagram.setAttribute('role', 'img');
-      diagram.setAttribute('aria-label', isSequence ? 'Sequence diagram. The preceding paragraph describes the events.' : 'Flowchart. The preceding paragraph describes the steps.');
+      diagram.setAttribute('aria-label', isSequence ? 'Sequence diagram, scroll horizontally. The preceding paragraph describes the events.' : 'Flowchart. The preceding paragraph describes the steps.');
       diagram.tabIndex = 0;
       diagram.textContent = source.textContent;
       source.before(diagram);
       try {
         await mermaid.run({ nodes: [diagram] });
+        const graphic = diagram.querySelector('svg');
+        if (isSequence && graphic?.viewBox.baseVal.width) {
+          // Keep Mermaid's native text scale; the focusable container scrolls.
+          graphic.style.minWidth = `${graphic.viewBox.baseVal.width}px`;
+        }
         const details = document.createElement('details');
         const summary = document.createElement('summary');
         summary.textContent = 'View diagram source';
@@ -140,7 +145,6 @@ const sourceUrl = `https://github.com/And-Gu/executable-engineering-lab/blob/${s
 .chapter-body th,.chapter-body td{border:1px solid var(--rule);padding:.7rem;text-align:left;min-width:8rem}
 .chapter-body code{overflow-wrap:anywhere}.chapter-body pre{overflow-x:auto}
 .mermaid-view{overflow-x:auto;margin:1.5rem 0}.mermaid-view svg{display:block;max-width:100%;height:auto;margin:auto}
-.mermaid-view.sequence-view svg{min-width:42rem}
 .chapter-paging{display:flex;flex-wrap:wrap;gap:1.5rem;justify-content:space-between;margin:3rem 0}
 .publication-note{font-size:.8rem;color:var(--muted)}
 .course-sidebar li{margin:.6rem 0}.course-sidebar [aria-current=page]{color:var(--gold)}

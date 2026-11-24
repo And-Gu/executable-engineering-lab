@@ -85,7 +85,7 @@ A total of four arrivals for the cycle fits either pattern. Which records could 
 
 A question about whether an actual signal shows the commanded indication would call for a bench test or physical observation. Choose the model or prototype to match the decision it will inform.
 
-Suppose the city moves a crossing or changes its priority to pedestrian conflicts. The team would update the shared layout and question. An agent could propose a different model using crossing distances, indications, turning paths and pedestrian movement information; the engineer would compare its proposed behavior with those sources and identify observations still needed from people using the crossing. The two-queue model cannot answer that safety question, and no crossing simulation has been run here.
+Suppose the city moves a crossing or changes its priority to pedestrian conflicts. The team would update the shared layout and question. An agent could propose a different model using crossing distances, indications, turning paths and pedestrian movement information; the engineer would compare its proposed behavior with those sources and identify observations still needed from people using the crossing. In a proposed comparison, the team could vary the crossing layout while holding assumed walking and signal conditions fixed, then compare the modeled time a person occupies a turning path with the interval when the turn is permitted. The two-queue model cannot answer that safety question, and no crossing simulation has been run here.
 
 ## Record what the experiment changed
 
@@ -102,7 +102,7 @@ The result gives the team a reason to sharpen the broad timing question in the [
 
 <!-- interactive: initiative-after -->
 
-The next field increment would ask operations for north- and south-arm arrivals with timestamps or phase-binned counts and the matching signal history. Those records would help the team determine whether the timing pattern occurs in practice. The separate proposed two-cycle calculation remains a model question, and the original scenario B remains intact.
+The next field increment would ask operations for north- and south-arm arrivals and matching signal history. The team would establish the available timestamp precision or count-bin width around the end of north–south green and whether it can distinguish the patterns in question. A whole-green total can conceal differences within that green. Those records could help determine whether the timing pattern occurs in practice. The separate proposed two-cycle calculation remains a model question, and the original scenario B remains intact.
 
 <!-- interactive: chapter-quiz -->
 

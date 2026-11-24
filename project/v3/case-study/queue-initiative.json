@@ -5,10 +5,10 @@
     "initiative": "Understand how arrival timing affects vehicle queues under the fixed signal sequence."
   },
   "proposed_after": {
-    "initiative": "Identify which arrival patterns just before and after the last green leave vehicles waiting, and under what conditions.",
+    "initiative": "Identify which arrival patterns just before and after the end of north-south green leave vehicles waiting, and under what conditions.",
     "basis": "RESULT-B-NS-3-TO-2",
     "reason": "Moving one arrival relative to green changed the eight-slot queue while the number of arrivals stayed the same.",
-    "next_increment": "Ask operations for north- and south-arm arrival records aligned to signal phase history; check whether suitable timestamps or phase-binned counts exist.",
+    "next_increment": "Ask operations for north- and south-arm arrivals and signal phase history; establish the available timestamp precision or count-bin width around the end of north-south green and whether it can answer the question.",
     "status": "proposed after engineer check; team review pending"
   }
 }

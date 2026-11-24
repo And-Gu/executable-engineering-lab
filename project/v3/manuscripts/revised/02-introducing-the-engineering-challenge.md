@@ -75,7 +75,7 @@ For the first illustrative comparison, the team groups traffic north–south (NS
 
 ## Two views maintained as text
 
-The following sequence shows one illustrative ordering of controller, signal and road-user interactions. The controller requests north–south green, the vehicle signal shows it, and a driver arrives and proceeds if permitted. A pedestrian asks what crossing indication is available. The controller then requests amber. The displayed vehicle indication and driver response are assumptions for this discussion; the queue model does not simulate a signal head or a pedestrian crossing. It has no rule for when a pedestrian may cross or a turning vehicle may proceed.
+The following sequence shows one illustrative ordering of controller, signal and road-user interactions. The controller requests north–south green, the vehicle signal shows it, and a driver arrives and proceeds if permitted. A pedestrian asks what crossing indication is available. The controller then requests amber. The displayed vehicle indication and driver response are assumptions for this discussion; the queue model does not simulate a signal head or a pedestrian crossing. It has no rule for when a pedestrian may cross or a turning vehicle may proceed. Scroll the diagram horizontally to read the full sequence.
 
 ```mermaid
 sequenceDiagram

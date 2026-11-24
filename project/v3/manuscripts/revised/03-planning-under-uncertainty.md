@@ -43,7 +43,7 @@ In agile planning the team can start before that requirement is agreed. Three le
 | **Initiative** — the problem in focus now | Understand how arrival timing affects vehicle queues under the fixed signal sequence. |
 | **Increment** — the next result and decision | Produce two reproducible queue traces so the team can decide what arrival records to request from operations. |
 
-The **backlog** orders the tasks needed for the increment: enter the two patterns, check the rule and compare the eight-slot traces. If the review accepts those traces, the planned next increment is a phase-aligned data request to operations. A roadmap can show dependencies on later work, such as a detector study. A task traces upward to its increment, initiative and vision; a decision record lets the team follow a change back through the same chain.
+The **backlog** orders the tasks needed for the increment: enter the two patterns, check the rule and compare the eight-slot traces. If the review accepts the traces and finds a timing effect worth investigating, the planned next increment is a phase-aligned data request to operations. A roadmap can show dependencies on later work, such as a detector study. A task traces upward to its increment, initiative and vision; a decision record lets the team follow a change back through the same chain.
 
 ## Three possible initiatives
 
