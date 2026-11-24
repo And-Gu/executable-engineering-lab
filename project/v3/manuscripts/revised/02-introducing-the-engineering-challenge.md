@@ -92,7 +92,7 @@ sequenceDiagram
     Controller->>Signal: Request north-south amber
 ```
 
-The flowchart focuses on the vehicle queue in one slot. Arrivals join first. If the group's phase is green and the queue is nonempty, one vehicle leaves; otherwise no vehicle departs. The remaining queue is recorded before the next slot. It does not represent the crossing shown in the sequence.
+The flowchart focuses on the vehicle queue in one slot. Arrivals join first. If the group's phase is green and the queue is nonempty, one vehicle leaves; otherwise no vehicle departs. The remaining queue is recorded before the next slot. The pedestrian question raised in the sequence remains open.
 
 ```mermaid
 flowchart TD

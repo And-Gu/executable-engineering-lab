@@ -40,7 +40,7 @@ In agile planning the team can start before that requirement is agreed. Three le
 | Level | Intersection example |
 | --- | --- |
 | **Vision** — lasting outcome and people served | Improve traffic flow while people can cross safely. |
-| **Initiative** — the problem in focus now | Understand how arrival timing affects vehicle queues under the fixed signal sequence. |
+| **Initiative** — the problem in focus now | Investigate arrival timing and queues under fixed phases. See [queue initiative INIT-QUEUE-001](../../case-study/queue-initiative.json). |
 | **Increment** — the next result and decision | Produce two reproducible queue traces so the team can decide what arrival records to request from operations. |
 
 The **backlog** orders the tasks needed for the increment: enter the two patterns, check the rule and compare the eight-slot traces. If the review accepts the traces and finds a timing effect worth investigating, the planned next increment is a phase-aligned data request to operations. A roadmap can show dependencies on later work, such as a detector study. A task traces upward to its increment, initiative and vision; a decision record lets the team follow a change back through the same chain.

@@ -70,7 +70,7 @@ In Executable Engineering, the approach is to make suitable models, analyses, ch
 
 A useful investment gives teams an earlier signal about a decision that costs time or money to reverse. Before funding the interface check, a leader can look at recent integrations. When did each mismatch surface, how many teams had to revisit their work, and what delivery commitment was affected? Those cases give the team a baseline for judging whether earlier detection on subsequent changes saves enough rework to justify maintaining the check.
 
-If mismatches now surface early but the release still depends on timing under load, the next investment might be time on the test rig. A team might use a risk burndown chart to track its estimated exposure over successive integrations. A leader can then see which risks have fallen and which still affect a delivery commitment.
+If mismatches now surface early but the release still depends on timing under load, the next investment might be time on the test rig. A team might use a risk burndown chart to track its estimated exposure over successive integrations. A leader can ask which estimates changed, what evidence prompted the change and which delivery commitments still depend on the open risks.
 
 > **Explore further**
 >

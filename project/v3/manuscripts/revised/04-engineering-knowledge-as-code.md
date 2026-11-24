@@ -41,7 +41,7 @@ An **engineering information model** gives important concepts stable identities 
 
 A **view** is a purposeful representation of those sources. Consider the candidate phase-selection function. A functional view might show inputs, decisions and commanded states. A structural view might show the controller and a signal-driving interface. A requirements view shows the rule on conflicting greens. A behavior view can show how one phase follows another.
 
-The diagram below presents the [SysML text introduced in Chapter 2](02-introducing-the-engineering-challenge.md#a-system-view-in-sysml). The text is the source in this example, and the diagram is a view of what the team intends to build. Its `controller : Controller` element comes from the `part controller : Controller;` definition in that same chapter and build. The view is generated from that maintained excerpt, so a reader can compare the two without relying on a separately edited picture.
+The diagram below presents the [SysML text introduced in Chapter 2](02-introducing-the-engineering-challenge.md#a-system-view-in-sysml). The text is the source in this example, and the diagram is a view of what the team intends to build. Its `controller : Controller` element comes from the `part controller : Controller;` part declaration, typed by `Controller`, in that same chapter and build. The view is generated from that maintained excerpt, so a reader can compare the two without relying on a separately edited picture.
 
 <!-- interactive: intersection-structure -->
 
