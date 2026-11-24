@@ -20,19 +20,19 @@
   },
   {
     "id": "capture-observation",
-    "prompt": "A colleague wants to reproduce the edited B observation and investigate a second cycle. Which record gives them the provenance they need?",
+    "prompt": "The eight-slot log for experiment INT-EXP-001 links to model INT-MOD-001 revision T1 and the original B inputs. It counts vehicles waiting after arrivals and service. Which entry should a colleague save to reproduce the edit and plan a second cycle?",
     "options": [
       {
-        "text": "Link the experiment, model revision and original B, specify the move, give the queue in vehicles after service at slot 8, and label the second cycle as a proposed investigation.",
+        "text": "Moved one north–south arrival from slot 3 to 2. After slot 8, two waited in original B and one in the edit. Next, repeat the original A and B patterns through slot 16.",
         "feedback": "That record identifies the original inputs and rules, describes exactly how to replay the edit, and distinguishes the computed result from a question that remains open.",
         "correct": true
       },
       {
-        "text": "Save the baseline trace and label its B result “one vehicle queued after slot 8.”",
+        "text": "Kept both north–south arrivals in slot 3. Revised the slot 8 count in original B’s saved trace from two vehicles to one. Next, repeat the original A and B patterns through slot 16.",
         "feedback": "The stored B baseline has two vehicles queued. A separate observation needs to identify the input edit that produced one."
       },
       {
-        "text": "Save the two final counts under T1 and use them as the expected second-cycle results.",
+        "text": "Moved one north–south arrival from slot 3 to 2. After slot 8, two waited in original B and one in the edit. Carried those counts forward as the results for slot 16.",
         "feedback": "Both counts belong to the eight-slot window. A second cycle needs a defined arrival pattern, a longer horizon and its own result."
       }
     ]
