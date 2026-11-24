@@ -4,7 +4,7 @@ chapter: 3
 part: "I — Frame the Work"
 title: "Planning Under Uncertainty"
 status: draft
-publication: unpublished
+publication: published
 reference_case: four-way-traffic-intersection
 teaching_fixture: "T1 — fictional planning decision"
 ---

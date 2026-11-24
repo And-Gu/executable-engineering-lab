@@ -1,5 +1,9 @@
 # One inspectable V3 teaching case — the four-way intersection
 
+**Current edition.** The chapter numbers and publication plans below come from the November 2026 proposal. In the published course, you can [inspect three of T1’s eight graph relationships in Chapter 4](https://and-gu.github.io/executable-engineering-lab/learn/v3/04-engineering-knowledge-as-code/#change-impact-figure). Use the [fixed-phase inputs](model-inputs-v1.json) to [move one arrival in Chapter 5](https://and-gu.github.io/executable-engineering-lab/learn/v3/05-learning-through-models-and-prototypes/#arrival-experiment) or [carry both queues into a second cycle in Chapter 6](https://and-gu.github.io/executable-engineering-lab/learn/v3/06-engineering-data-from-measurements-to-decisions/#two-cycle-experiment).
+
+The [interface comparison is in Chapter 10](https://and-gu.github.io/executable-engineering-lab/learn/v3/10-from-models-to-an-integrated-product/#one-word-two-different-interfaces) and the [whole-product release decision is in Chapter 13](https://and-gu.github.io/executable-engineering-lab/learn/v3/13-continuously-integrated-engineering/#make-the-whole-product-decision). The [active sequence](../manuscripts/revised/INDEX.md) ends with Chapter 14, [From Engineering Question to Useful Release](https://and-gu.github.io/executable-engineering-lab/learn/v3/14-from-engineering-intent-to-continuous-integration/).
+
 **Editorial status:** proposed teaching-source contract (revision T1); awaiting owner acceptance and eventual independent review. **Not** an approved traffic engineering design or published Astro experience.
 
 **Purpose:** Give all fourteen chapters the same small set of source objects, model definitions, inspectable outputs, decisions and open questions. The owner-approved [course order](../../CURRICULUM-MAP.md) and the [single traffic-intersection concept](../REFERENCE-INTERSECTION.md) remain authoritative for educational goals.

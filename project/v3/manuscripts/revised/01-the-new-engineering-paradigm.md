@@ -4,7 +4,7 @@ chapter: 1
 part: "I — Frame the Work"
 title: "The New Engineering Paradigm"
 status: draft
-publication: review-in-pr
+publication: published
 reference_case: four-way-traffic-intersection
 teaching_fixture: "Conceptual overview; case begins in Chapter 2"
 ---

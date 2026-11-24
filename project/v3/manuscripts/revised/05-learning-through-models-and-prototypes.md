@@ -4,7 +4,7 @@ chapter: 5
 part: "II — Build and Test Knowledge"
 title: "Learning Through Models and Prototypes"
 status: draft
-publication: unpublished
+publication: published
 reference_case: four-way-traffic-intersection
 teaching_fixture: "T1 — synthetic editorial inputs and calculated trace"
 ---

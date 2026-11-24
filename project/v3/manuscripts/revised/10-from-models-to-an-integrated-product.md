@@ -4,7 +4,7 @@ chapter: 10
 part: "III — Develop an Integrated Product"
 title: "From Models to an Integrated Product"
 status: draft
-publication: unpublished
+publication: published
 reference_case: four-way-traffic-intersection
 teaching_fixture: "T1 — synthetic editorial source"
 ---

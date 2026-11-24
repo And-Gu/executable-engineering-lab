@@ -4,7 +4,7 @@ chapter: 7
 part: "II — Build and Test Knowledge"
 title: "Spec-Driven Development Without Waterfall"
 status: draft
-publication: unpublished
+publication: published
 reference_case: four-way-traffic-intersection
 teaching_fixture: "T1 — worked specification for the two-cycle queue experiment"
 ---

@@ -4,7 +4,7 @@ chapter: 8
 part: "II — Build and Test Knowledge"
 title: "Directing AI Engineering Agents"
 status: draft
-publication: unpublished
+publication: published
 reference_case: four-way-traffic-intersection
 teaching_fixture: "T1 — simulated queues and illustrative agent assignments"
 ---

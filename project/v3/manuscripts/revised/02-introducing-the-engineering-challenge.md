@@ -4,7 +4,7 @@ chapter: 2
 part: "I — Frame the Work"
 title: "Setting Up the Intersection Workshop"
 status: draft
-publication: review-in-pr
+publication: published
 reference_case: four-way-traffic-intersection
 teaching_fixture: "T1 — fictional teaching case, not a qualified controller"
 ---

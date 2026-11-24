@@ -1,5 +1,7 @@
 # V3 reference system — Four-way traffic intersection
 
+**Current edition.** This November 2026 scenario preserves its original chapter numbers and publication plans. The [current manuscript index](manuscripts/revised/INDEX.md) lists the fourteen published chapters. In their front matter, `publication: published` means the chapter is live. The separate `status` field records the manuscript’s editorial stage and can still read `draft`.
+
 **Status:** Owner-confirmed editorial reference scenario · 2026-11-15  
 **Applies to:** The current, owner-approved 14-chapter curriculum in [CURRICULUM-MAP.md](../CURRICULUM-MAP.md)  
 **What is approved:** Use the **four-way traffic intersection** as the **single recurring example** across V3.  
@@ -18,6 +20,8 @@ Follow **one fictional intersection** from uncertain greenfield intent, through 
 > How could a city improve traffic flow through a busy four-way intersection while maintaining safe, understandable and maintainable signal operation?
 
 This is **engineering intent**, not a verified performance target, an authorized traffic engineering project, or an implementation contract.
+
+The earlier plan below calls the graph Chapter 03 and the first model Chapter 04. In the published course, [inspect the graph relationships in Chapter 4](https://and-gu.github.io/executable-engineering-lab/learn/v3/04-engineering-knowledge-as-code/#change-impact-figure) and [move an arrival in the fixed-phase model in Chapter 5](https://and-gu.github.io/executable-engineering-lab/learn/v3/05-learning-through-models-and-prototypes/#arrival-experiment).
 
 We know **neither** the optimum control strategy nor the appropriate sensing/installation design. Start with questions, not a preselected AI solution:
 - Whose travel and waiting conditions matter, including pedestrians and cyclists?

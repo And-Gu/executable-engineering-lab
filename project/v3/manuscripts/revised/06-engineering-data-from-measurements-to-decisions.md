@@ -4,7 +4,7 @@ chapter: 6
 part: "II — Build and Test Knowledge"
 title: "Engineering Data: From Measurements to Decisions"
 status: draft
-publication: unpublished
+publication: published
 reference_case: four-way-traffic-intersection
 teaching_fixture: "T1 — synthetic source, computed outputs, editorial quality decisions"
 ---
