@@ -37,7 +37,7 @@ An **engineering information model** gives important concepts stable identities 
 
 A **view** is a purposeful representation of those sources. Consider the candidate phase-selection function. A functional view might show inputs, decisions and commanded states. A structural view might show the controller and a signal-driving interface. A requirements view shows the rule on conflicting greens. A behavior view can show how one phase follows another.
 
-A team using the Systems Modeling Language (SysML) can express those requirements, parts, interfaces and behaviors in one model. While exploring an adaptive alternative, an engineer could give an LLM the model definitions and ask it to sketch which detector inputs the controller would need. The interface owner can compare that sketch with the existing definitions and decide which proposed inputs belong in the model. The owner can check a drawing against the textual definition because both forms use the language defined in the [OMG SysML v2 specification](https://www.omg.org/spec/SysML/2.0).
+A team using the Systems Modeling Language (SysML) can express those requirements, parts, interfaces and behaviors in one model. While exploring an adaptive alternative, an engineer could give an LLM the model definitions and ask it to sketch which detector inputs the controller would need. The interface owner can compare that sketch with the existing definitions and decide which proposed inputs belong in the model. A SysML diagram and a textual view can show the same model elements. For each input in the sketch, cite its definition in the current revision or record a proposed addition. [OMG SysML v2 specification, section 7.26.1](https://www.omg.org/spec/SysML/2.0/Language/PDF#page=181).
 
 > **Concept**
 >

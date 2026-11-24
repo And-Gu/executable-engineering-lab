@@ -10,7 +10,7 @@
       {
         "text": "Hold the whole release until the corrected edition is reviewed, packaged and checked against this candidate.",
         "correct": true,
-        "feedback": "The translation is part of the agreed release. Testing the link from the candidate and reviewing the wording establish that the technician can reach the right instruction and interpret it."
+        "feedback": "The translation is part of the agreed release. The language reviewer checks that the wording describes the indication as unknown. Opening the link on the candidate shows which edition it serves. A technician’s report during a representative service call would provide evidence of how they interpreted the instruction."
       },
       {
         "text": "Accept the current edition and use the deployment window as the deadline for its review.",

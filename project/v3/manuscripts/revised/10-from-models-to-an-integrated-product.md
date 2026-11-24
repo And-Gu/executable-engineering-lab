@@ -47,7 +47,7 @@ In Chapter 3, the team chose to follow one arrival to resolve an event-order dis
 
 ## Keep the model as a test reference
 
-<span id="developing-the-product-and-developing-how-we-engineer-it"></span>Suppose the product uses a timer-driven state machine in embedded firmware and a separate adapter to drive the lamp. It need never count vehicles. An engineer could map a test clock to T1’s eight checkpoints and compare the firmware’s phase requests with the saved trace. At checkpoint three, T1 expects north–south amber. A request for green would send the engineer back to the clock mapping and phase logic before taking up bench time. [Phase sequence and slot assumptions](../../case-study/model-inputs-v1.json) · [Reference trace](../../case-study/trace-v1.csv).
+<span id="developing-the-product-and-developing-how-we-engineer-it"></span>Suppose the product uses a timer-driven state machine in embedded firmware and a separate adapter to drive the lamp. It need never count vehicles. To compare firmware requests with the saved trace, first check that the approved bench schedule follows T1’s phase order and map the test clock to its eight checkpoints. For a sample at checkpoint three, expect a request for north–south amber. A request for green would send the engineer back to the clock mapping and phase logic before taking up bench time. [Phase sequence and slot assumptions](../../case-study/model-inputs-v1.json) · [Reference trace](../../case-study/trace-v1.csv).
 
 > **Concept**
 >
