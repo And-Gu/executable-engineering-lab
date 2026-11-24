@@ -67,7 +67,7 @@ The text names the `controller` part and its type. A [structural view in Chapter
 
 Traffic-flow information answers a different question: how many vehicles arrive at each approach, and when? The same total can arrive steadily or in a burst. Before combining a count with the system description, someone must identify which modeled approach it describes and the interval it covers.
 
-For example, an invented count might record three arrivals on the north arm from 8:00 to 8:05. To use it with the two-group model, the team would relate that arm to the north–south group, combine it with the corresponding south-arm count for the same interval and establish how the interval aligns with signal phases. The current model cannot recover a north-arm count from its combined group. Its abstract slots are not those five minutes.
+For example, an invented count might record three arrivals on the north arm from 8:00 to 8:05. To use it with the two-group model, the team would relate that arm to the north–south group and combine it with the corresponding south-arm count. If the interval spans a phase change, the total alone cannot show whether the vehicles arrived before or after green ended. The team would need timestamps or counts grouped by phase. The current model cannot recover a north-arm count from its combined group. Its abstract slots are not those five minutes.
 
 For the first illustrative comparison, the team groups traffic north–south (NS) and east–west (EW), starts both queues empty and uses eight abstract slots, not seconds. Its fixed phase sequence, arrival counts and service rules are maintained in the [T1 inputs](../../case-study/model-inputs-v1.json). The table is generated from those inputs: both invented scenarios contain two NS and two EW arrivals, placed at different times.
 
@@ -92,13 +92,13 @@ sequenceDiagram
     Controller->>Signal: Request north-south amber
 ```
 
-The flowchart focuses on the vehicle queue in one slot. Arrivals join first. If the group's phase is green and the queue is nonempty, at most one vehicle leaves; otherwise it waits. The remaining queue is recorded before the next slot. It does not represent the crossing shown in the sequence.
+The flowchart focuses on the vehicle queue in one slot. Arrivals join first. If the group's phase is green and the queue is nonempty, at most one vehicle leaves; otherwise no vehicle departs. The remaining queue is recorded before the next slot. It does not represent the crossing shown in the sequence.
 
 ```mermaid
 flowchart TD
     A[Add arrivals to the group queue] --> B{Green and queue nonempty?}
     B -- Yes --> C[Serve at most one vehicle]
-    B -- No --> D[Vehicles wait]
+    B -- No --> D[No vehicle departs]
     C --> E[Record remaining queue]
     D --> E
     E --> F[Continue to next slot]

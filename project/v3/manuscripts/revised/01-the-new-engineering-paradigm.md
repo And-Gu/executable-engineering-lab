@@ -17,7 +17,7 @@ Four currents are changing how teams approach that question. **Software-driven e
 
 **Agile development** works in small increments so a team can test an assumption while a design can still change. Traditional waterfall handoffs can make this harder when each discipline holds its information in a separate silo: before testing a change, colleagues must reconcile which versions belong together. Different disciplines still have different physical and delivery constraints.
 
-**Model-based systems engineering (MBSE)** is an established approach that uses system models to describe relationships and explore designs. The Systems Modeling Language (SysML) can describe the intersection's controller and signals in Chapter 2. Chapter 4 connects a view to its shared text, and Chapter 5 uses an executable model to investigate the fixed phases the controller selects.
+**Model-based systems engineering (MBSE)** is an established approach that uses system models to describe relationships and explore designs. The Systems Modeling Language (SysML) can describe the intersection's controller and signals in Chapter 2. Chapter 4 connects a view to its shared text, and Chapter 5 uses an executable model to investigate queues under a prescribed phase sequence.
 
 **AI-native engineering** brings agentic support into that workflow. Given the shared definitions and a bounded task, an AI agent can help draft an executable model, rerun an agreed check after a definition changes, and propose an update to the text from simulation findings. Engineers review its contributions and make the decisions. The combination can shorten the path from a question to feedback, provided the team maintains the information and checks on which it depends.
 
@@ -53,7 +53,7 @@ The **engineering system** includes the people, methods, engineering knowledge, 
 
 A Word specification can explain an interface decision, an Excel workbook can hold its limits, and a specialist design tool can show how the circuit uses them. When those sources travel separately, reviewers have to establish which revisions belong together. The team can keep those tools, agree where to maintain a structured interface definition and connect it to the models and tests that use it.
 
-**“We build the machine that builds the machine.”** On one software team at OpenAI, agents helped write tools that flagged dependencies its engineers had ruled out. The next proposed change would encounter the same rule. A team comparing sender and receiver units can start smaller, with an engineer checking the two definitions by hand until the volume of changes justifies maintaining a tool. [How the OpenAI team built its checks](https://openai.com/index/harness-engineering/) · [A small team’s investment decision](/executable-engineering-lab/bonus/building-the-machine-that-builds-the-machine/#when-does-building-it-pay-off).
+The phrase **“we build the machine that builds the machine”** captures the course's framing. On one software team at OpenAI, agents helped write tools that flagged dependencies its engineers had ruled out. The next proposed change would encounter the same rule. A team comparing sender and receiver units can start smaller, with an engineer checking the two definitions by hand until the volume of changes justifies maintaining a tool. [How the OpenAI team built its checks](https://openai.com/index/harness-engineering/) · [A small team’s investment decision](/executable-engineering-lab/bonus/building-the-machine-that-builds-the-machine/#when-does-building-it-pay-off).
 
 > **Concept**
 >

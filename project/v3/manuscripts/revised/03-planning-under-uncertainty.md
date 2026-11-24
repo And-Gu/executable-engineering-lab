@@ -31,13 +31,35 @@ Before the next concept review, the team has time for one substantial investigat
 
 The team chooses the arrival comparison. The north–south and east–west vehicle groups in the workshop sketch are enough to start. Fixed phases give the engineers a reference for a later proposal, such as a controller that adjusts its phases in response to arrivals. Mapping conflicts takes priority before a change to which movements can proceed together.
 
-## Vision, initiative, increment and backlog are different things
+## Trace the plan to intent
 
-The **vision** describes the lasting outcome the city wants for the people who use the intersection. A **theme**, such as improving signal operation, groups related efforts toward that outcome. Within it, an **initiative** focuses on a problem worth sustained work. The vehicle-queue initiative asks under what arrival conditions a fixed sequence merits further study.
+With traditional waterfall planning, an agreed requirement can be allocated to disciplines and traced down to their work and back to the check that demonstrates fulfillment. Suppose the city has agreed an illustrative requirement to compare the queue on a named approach against a reference plan under specified conditions. The controls team defines the candidate phase plan, the modeler prepares the specified scenario, and the verification team compares the results. The requirement explains why each task belongs. If it changes, the team can identify those dependents and review the check as well.
 
-The **roadmap** shows how one decision depends on another. First the engineers plan to compare the two arrival patterns. If they can explain the traces at the review, their next increment will be to draw up that request for arrival data with operations staff. A detector study moves up the roadmap if the information they need is missing.
+In agile planning the team can start before that requirement is agreed. Three levels of intent make its changing choices traceable:
 
-An **increment** is a piece of work with a result the team can evaluate. The first delivers the prototype and its two queue traces. The **backlog** orders the work for this and later increments. Entering the two patterns and tracing the queues over eight abstract time slots are tasks for this review. Further out, uncertainty is expected. A question about what a detector might need to sense is enough to keep that option on the roadmap.
+| Level | Intersection example |
+| --- | --- |
+| **Vision** — lasting outcome and people served | Improve traffic flow while people can cross safely. |
+| **Initiative** — the problem in focus now | Understand how arrival timing affects vehicle queues under the fixed signal sequence. |
+| **Increment** — the next result and decision | Produce two reproducible queue traces so the team can decide what arrival records to request from operations. |
+
+The **backlog** orders the tasks needed for the increment: enter the two patterns, check the rule and compare the eight-slot traces. A roadmap can show dependencies on later work, such as a detector study. A task traces upward to its increment, initiative and vision; a decision record lets the team follow a change back through the same chain.
+
+## Three possible initiatives
+
+### Reduce queues during bursts
+
+The first increment compares two invented arrival patterns under the same fixed phases. It varies arrivals to learn which field records to request. A possible later requirement for an updated signal plan is: **for an agreed burst scenario, fewer vehicles shall remain on the north approach at the end of eight slots than under the reference plan**. The requirement and the following test are illustrative proposals, not an agreed city target or a completed test.
+
+The proposed test, **Compare the candidate and reference plans under the same burst**, starts both plans with the same initial queues and identical arrivals, then counts vehicles waiting on the north approach after service in slot eight. Unlike the first investigation, it holds arrivals fixed and varies the plan. The present T1 model combines north and south approaches, so a test of the north arm alone would need separately represented approaches and suitable inputs before it could support that requirement.
+
+### Protect people crossing a turning path
+
+People crossing, including those with different mobility needs, want a usable crossing without conflict with turning vehicles. Drivers need understandable indications; operators need to know how a change affects movements they manage. An exploratory increment can map crossings and turning paths with those users and ask what is known about indications, crossing distances, how people use the crossing and vehicle movements. Which conflicts need protection, and what evidence would let the team assess them? The queue model does not answer those questions.
+
+### Keep signals understandable and diagnosable
+
+Operators and maintainers need to recognize a wrong or missing indication and know what the controller requested. A possible increment would identify the information available to them and the observations needed to distinguish a command from what a signal actually shows. This investigation supports the same city vision but needs interface and physical evidence beyond the queue traces.
 
 <span id="two-roadmaps-should-influence-each-other"></span>
 
@@ -45,7 +67,7 @@ An **increment** is a piece of work with a result the team can evaluate. The fir
 
 <span id="exploration-and-delivery-can-run-together"></span>
 
-The product roadmap leaves the choice of controller open, but the team can commit to delivering a trace for the review. Its engineering work depends on how often it expects to run that comparison. For one study, two colleagues might check a short trace by hand. If several designs will use the same model, a check that reruns a known input after each change may be worth building. The [case source collection](../../case-study/README.md) includes inputs and a reference trace for that purpose.
+The product roadmap leaves the choice of controller open, but the team can commit to delivering a trace for the review. Choose the least costly investigation that could credibly change the next decision. Two colleagues can check one disputed slot by hand before investing in a model. If they expect to compare many candidate plans, keeping inputs, expected results and the reasons for choices together can make later comparisons cheaper and preserve learning. Compare the cost of building and maintaining that check with repeated manual work, delay and the potential cost of committing to the wrong design. The [case source collection](../../case-study/README.md) includes inputs and a reference trace for that purpose.
 
 The modelers can try a change as soon as the inputs are ready. Assessing a new detector also depends on a supplier's interface definition and access to a sample. An installation trial would need cabinet access and a work window agreed with operators. Electrical and operations staff can identify those dependencies on the roadmap now, then schedule the physical work if the team takes the detector option forward.
 
@@ -72,7 +94,7 @@ The systems lead records why the next increment has changed and what would make 
 
 > **Concept**
 >
-> The disagreement about one slot changes the increment and its backlog. If the city makes pedestrian crossings its immediate priority, the team would revisit the vehicle-queue initiative and bring the movement-conflict investigation forward. Both choices serve the city's long-term intent.
+> The disagreement about one slot changes the next increment and its backlog; the queue initiative and city vision still make sense. If the city makes pedestrian conflicts its immediate priority, the team would revisit the initiative and bring the movement-conflict investigation forward. Both choices serve the city's long-term vision, and the decision record explains why the plan changed.
 
 <!-- interactive: chapter-quiz -->
 
