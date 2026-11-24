@@ -1,0 +1,14 @@
+---
+import inputs from '../../../../project/v3/case-study/model-inputs-v1.json';
+import { phaseLabels } from './queue-timeline';
+
+const arrivals = (row: { NS: number; EW: number }) =>
+  (['NS', 'EW'] as const).filter(group => row[group] > 0).map(group => `${row[group]} ${group}`).join(', ') || '—';
+---
+<figure id="arrival-patterns">
+  <figcaption>Invented arrivals in each abstract slot. A dash means no arrivals.</figcaption>
+  <table tabindex="0">
+    <thead><tr><th scope="col">Slot</th><th scope="col">Fixed phase</th>{inputs.scenarios.map(s => <th scope="col">{s.id} · {s.name}</th>)}</tr></thead>
+    <tbody>{inputs.phase_sequence.map((phase, index) => <tr><th scope="row">{index + 1}</th><td>{phaseLabels[phase]}</td>{inputs.scenarios.map(s => <td>{arrivals(s.arrivals[index])}</td>)}</tr>)}</tbody>
+  </table>
+</figure>

@@ -36,12 +36,25 @@ Imagine joining a city workshop about a busy four-way intersection. Drivers desc
 | --- | --- |
 | Drivers | How many cars are still waiting after a green light? |
 | Pedestrians | When can I start across, and could a turning car cross my path? |
+| People with different mobility needs | Is there enough time and a usable route to reach the far curb? |
 | Operators | How can we keep the intersection usable while a change is in progress? |
 | Maintainers | If a signal looks wrong, can we tell what the controller requested and what the lamp actually showed? |
 
 > **Concept**
 >
 > For drivers, reducing queues is the **intent**. Their **question** is how many cars are still waiting after a burst has had a chance to clear. A future **requirement** could call for fewer vehicles left waiting than under an agreed reference sequence, given the same arrivals and counting period. The city would need to agree on representative conditions and a separate criterion for people crossing.
+
+The city's purpose is broad because the team has not yet agreed on all the conditions or trade-offs. In an agile approach, engineers work with the people affected while investigations and design choices reveal what a useful requirement needs to say. A queue requirement, for example, needs an identified approach, a counting period, reference conditions and a criterion for comparison. These are proposed details to agree with the city, not measurements already obtained.
+
+## Describe the intersection and its traffic
+
+A traditional SysML system description can locate the parts and their relationships before the team simulates behavior. In this illustrative system, the intersection includes a controller and signal heads. The controller sends commands to the heads; drivers and people crossing respond to the indications. Road approaches bring vehicles to the intersection, while crossings identify paths pedestrians use. This compact structural description is a view of the system, not evidence that the equipment is safe or installed.
+
+The traffic-flow description answers a different question: how many vehicles arrive at each approach, and when? The same total can arrive steadily or in a burst. Before combining a count with the system description, someone must identify which modeled approach it describes and the interval it covers. A queue model can then use that information; crossing safety requires additional information about people and conflicting movements.
+
+For the first illustrative comparison, the team groups traffic north–south (NS) and east–west (EW), starts both queues empty and uses eight abstract slots, not seconds. Its fixed phase sequence, arrival counts and service rules are maintained in the [T1 inputs](../../case-study/model-inputs-v1.json). The table is generated from those inputs: both invented scenarios contain two NS and two EW arrivals, placed at different times.
+
+<!-- interactive: arrival-patterns -->
 
 ## A prototype for the first question
 

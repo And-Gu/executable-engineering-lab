@@ -13,23 +13,21 @@ teaching_fixture: "Conceptual overview; case begins in Chapter 2"
 
 *What would help a team turn an engineering question into a sound decision sooner?*
 
-When two disciplines discover an interface disagreement during integration, they may have to revisit weeks of design work. A check that exposes the same disagreement as soon as either definition changes gives engineers time to compare options while a change is still affordable.
+Four currents are changing how teams approach that question. **Software-driven engineering** applies practices such as versioned information and automated checks across disciplines. In an integrated working environment, an electrical engineer and a software engineer can find the same interface definition, see its history and review which revision each design uses. Treating documents as code makes decisions reviewable and traceable as they change.
 
-Building that check improves how the organization engineers its products. Reusing it on the next variant helps the team support more designs and gives new colleagues a way to understand the interface. The investment pays off when it improves a product decision or reduces avoidable rework.
+**Agile development** works in small increments so a team can test an assumption while a design can still change. Traditional waterfall handoffs can make this harder when each discipline holds its information in a separate silo: before testing a change, colleagues must reconcile which versions belong together. Different disciplines still have different physical and delivery constraints.
 
-<span id="expectations-are-changing"></span>
+**Model-based systems engineering (MBSE)** is an established approach that uses system models to describe relationships and explore designs. Chapter 2 introduces a traditional SysML description of the intersection; Chapter 4 connects SysML views to shared text, and Chapter 5 uses an executable model to investigate a question.
 
-## Where earlier feedback improves delivery
+**AI-native engineering** brings agentic support into that workflow. Given the shared definitions and a bounded task, an AI agent can help draft an executable model, rerun an agreed check after a definition changes, and propose an update to the text from simulation findings. Engineers review its contributions and make the decisions. The combination can shorten the path from a question to feedback, provided the team maintains the information and checks on which it depends.
 
-For a business competing on the quality and frequency of product improvements, the delivery objective is to get a useful change into service sooner, with evidence that it works. A team that produces changes faster than it can integrate or test them moves work into a queue.
-
-On one sensor program, researchers traced eight years of change requests and found that a change in one subsystem could trigger work in another. If an interface mismatch surfaces at final assembly, the integration lead has to find those dependencies before the teams know which designs and tests to revisit. [Giffin and colleagues’ study of change propagation](https://research.tudelft.nl/en/publications/change-propagation-analysis-in-complex-technical-systems/).
-
-A web service may deploy repeatedly, embedded software may need controlled integration, and a physical design may depend on an expensive component order or a scarce slot on a test rig. Each team can shorten the path from a question to reliable feedback within its own delivery constraints.
+<span id="expectations-are-changing"></span><span id="where-earlier-feedback-improves-delivery"></span>
 
 ## Software-inspired engineering moves beyond software
 
 Software development offers practices that other disciplines can adapt, including smaller increments, explicit configurations, versioned information and continuous integration. For multidisciplinary systems, the challenge is to connect these practices without assuming that every discipline has the same cycle time.
+
+A team that produces changes faster than it can integrate or test them moves work into a queue. A web service may deploy repeatedly, while physical design can depend on a component order or a scarce test-rig slot. Each discipline can seek earlier feedback within its own constraints.
 
 A model of a physical function can be executed before hardware is ready. An interface contract can be checked when either side changes. If several product variants use the same module, recording which revision each uses tells the integration lead which teams a change affects.
 
@@ -63,7 +61,7 @@ A Word specification can explain an interface decision, an Excel workbook can ho
 
 ## From document-driven handoffs to executable feedback
 
-In this lab, **executable engineering** describes an approach in which suitable models, analyses, checks and workflow steps can be run, evaluated and improved. A passing test is evidence about a stated check under specific conditions. Two connected feedback loops guide what the team does with that evidence.
+In Executable Engineering, the approach is to make suitable models, analyses, checks and workflow steps runnable, evaluable and improvable. A passing test is evidence about a stated check under specific conditions. Two connected feedback loops guide what the team does with that evidence.
 
 - With **fast executable feedback**, engineers make a bounded change, run a model or test, inspect a failure and refine the work. If the units agree, the team can choose those revisions for integration.
 - With **whole-product feedback**, engineers ask whether the integrated product meets its intended use. Even when the declared units agree, a physical test may reveal that the receiver gets a value too late under load. Reviewing the consequence with an operator can change both the interface definition and the next automated check.

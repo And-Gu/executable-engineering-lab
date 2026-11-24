@@ -46,18 +46,7 @@ The browser uses this rule in its queue calculation. It is deterministic, so the
 
 ## Two arrival patterns, one model
 
-Each scenario has two NS and two EW arrivals. Only their placement differs. A dash means zero arrivals in either direction.
-
-| Slot | Fixed phase | A · staggered arrivals | B · clustered arrivals |
-|---:|---|---|---|
-| 1 | NS green | 1 NS | 2 EW |
-| 2 | NS green | 1 EW | — |
-| 3 | NS amber | 1 NS | 2 NS |
-| 4 | All-red | — | — |
-| 5 | EW green | — | — |
-| 6 | EW green | 1 EW | — |
-| 7 | EW amber | — | — |
-| 8 | All-red | — | — |
+The [arrival table in Chapter 2](02-introducing-the-engineering-challenge.md#arrival-patterns) shows both invented patterns and the fixed phase sequence. Each has two NS and two EW arrivals; only their placement differs.
 
 Start with **B**. Predict how many vehicles will remain after slot 8 if one NS vehicle arrives in slot 2 instead of slot 3. Choose that move, then **Run comparison**. The browser calculates eight rows for your edit alongside the original. **Restore baseline** returns to the selected starting scenario. [T1 inputs and service rules](../../case-study/model-inputs-v1.json).
 
