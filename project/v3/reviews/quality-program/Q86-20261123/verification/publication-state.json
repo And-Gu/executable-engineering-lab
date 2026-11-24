@@ -1,0 +1,65 @@
+{
+  "checked_utc": "2026-11-24T06:53:00.871545+00:00",
+  "public_url": "https://and-gu.github.io/executable-engineering-lab/build-information.json",
+  "response_sha256": "65e08a2e91f05cb90dde70d49a0b03e78ef1444cc69c9d451f5dea47efdfc62f",
+  "manifest": {
+    "schema_version": 1,
+    "source_commit": "3d752d994ab5c47f865140ca0a005e13e6aa7f82",
+    "built_at": "2026-11-23T21:57:46.425Z"
+  },
+  "remote_main": "3d752d994ab5c47f865140ca0a005e13e6aa7f82",
+  "pull_requests": [
+    {
+      "pull_request": {
+        "baseRefName": "main",
+        "headRefName": "codex/chapter-prose-punctuation",
+        "headRefOid": "50ffaef45ccb1c03e67d7c9f0cf94ca316938c98",
+        "isDraft": false,
+        "number": 88,
+        "state": "OPEN",
+        "url": "https://github.com/And-Gu/executable-engineering-lab/pull/88"
+      },
+      "checks": {
+        "conclusion": "success",
+        "headSha": "50ffaef45ccb1c03e67d7c9f0cf94ca316938c98",
+        "status": "completed",
+        "url": "https://github.com/And-Gu/executable-engineering-lab/actions/runs/45270151323"
+      }
+    },
+    {
+      "pull_request": {
+        "baseRefName": "main",
+        "headRefName": "codex/q86-course-improvements",
+        "headRefOid": "80e6f526669d34006529550a97438c52db85aae5",
+        "isDraft": false,
+        "number": 96,
+        "state": "OPEN",
+        "url": "https://github.com/And-Gu/executable-engineering-lab/pull/96"
+      },
+      "checks": {
+        "conclusion": "success",
+        "headSha": "80e6f526669d34006529550a97438c52db85aae5",
+        "status": "completed",
+        "url": "https://github.com/And-Gu/executable-engineering-lab/actions/runs/45339640300"
+      }
+    },
+    {
+      "pull_request": {
+        "baseRefName": "codex/q86-course-improvements",
+        "headRefName": "codex/q86-course-followups",
+        "headRefOid": "c2f9cb211de7e204e08920b8cf3d164d7195b866",
+        "isDraft": false,
+        "number": 97,
+        "state": "OPEN",
+        "url": "https://github.com/And-Gu/executable-engineering-lab/pull/97"
+      },
+      "checks": {
+        "conclusion": "success",
+        "headSha": "c2f9cb211de7e204e08920b8cf3d164d7195b866",
+        "status": "completed",
+        "url": "https://github.com/And-Gu/executable-engineering-lab/actions/runs/45342836489"
+      }
+    }
+  ],
+  "scope": "Direct HTTPS manifest, remote branch identity and exact CI revisions for the separate language proposal and the two course candidates. Publication here refers to the Pages source_commit."
+}

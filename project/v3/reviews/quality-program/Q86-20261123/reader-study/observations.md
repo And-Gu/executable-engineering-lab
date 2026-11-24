@@ -1,20 +1,20 @@
 # Reader observations
 
-**Human learning outcomes are not observed.** No session records, quotations or task results have been collected for this study. Copy the private sections into agreed access-controlled storage outside Git before a session. Keep this maintained template blank. Use the [protocol and scoring key](protocol.md) for the chosen candidate.
+**Human learning outcomes are unobserved.** This blank worksheet is for the D42 release candidate at `c2f9cb211de7e204e08920b8cf3d164d7195b866` in PR #97. No sessions, quotations or reader results have been recorded. Before a session, copy the private sections to the agreed access-controlled location outside Git. Keep this maintained template blank. [Protocol and scoring key](protocol.md) · [Course PR #97](https://github.com/And-Gu/executable-engineering-lab/pull/97) · [Frozen course source](https://github.com/And-Gu/executable-engineering-lab/tree/c2f9cb211de7e204e08920b8cf3d164d7195b866)
 
 ## Private session worksheet
 
 | Session detail | Enter privately |
 | --- | --- |
-| Session code and date | |
+| Anonymous session code and date | |
 | Broad role, relevant familiarity and any prior course exposure | |
-| Source commit and actual study URL, with access tokens removed | |
+| Full source commit seen in build-information.json and actual study URL, with access tokens removed | |
 | Starting page, browser and device type, reading support if volunteered | |
 | Facilitator or note-taker responsible for notes and deletion | |
 | Consent to notes, permitted audience, separate permission for recording or quotation if used, agreed deletion date and withdrawal route | |
 | Cards selected in advance and order actually offered | |
 
-For each row mark whether the card was **offered**, then use one of the four outcomes in the protocol. In the reason field distinguish unselected, time ran out before offer, offered then skipped, or stopped after starting. For F record whether the reader supplied the setting or used the printed alternate.
+For each card, mark whether it was **offered** and choose **Independent**, **Completed with help**, **Not completed** or **Not attempted** using the scoring key. In the reason field distinguish unselected, time ran out before offer, offered then skipped, or stopped after starting. For F record whether the reader supplied the setting or used the printed alternate.
 
 | Card | Offered? | Outcome | Parts demonstrated independently | Parts demonstrated after help or still open | Reason or F version |
 | --- | --- | --- | --- | --- | --- |
@@ -26,6 +26,8 @@ For each row mark whether the card was **offered**, then use one of the four out
 | F | | | | | |
 
 Use a separate row for a discovery attempt, a first interpretation, a hint or a changed answer when that sequence matters. Describe what the reader actually did or said. Put the facilitator’s interpretation in its own field. Record exact help with its timing relative to the attempt, including relevant help carried over from an earlier card. Record use of course-provided feedback and any access support. Mark a correction explained during the debrief as such.
+
+For A and B, note the pattern, stopping slot, quantity, units and vehicles the reader counted. For D, note who the reader says can act, what evidence that person needs, and where the reader starts and stops the clock. These are cues for the note-taker.
 
 | Card and point in attempt | Page, source, figure or control | Reader’s action or reasoning | Exact prompt or help, and when | What changed after help | Observer’s interpretation or open question |
 | --- | --- | --- | --- | --- | --- |

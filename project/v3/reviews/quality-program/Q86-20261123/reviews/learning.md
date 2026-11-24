@@ -170,4 +170,3 @@ For a later reader check, give an engineer one changed input and a leader one ch
 [refsc]: https://github.com/And-Gu/executable-engineering-lab/blob/64931d4de37694f98e7590a02086ce43ec5ebbf2/site/src/pages/reference.astro
 [bonussc]: https://github.com/And-Gu/executable-engineering-lab/blob/64931d4de37694f98e7590a02086ce43ec5ebbf2/project/v3/bonus/building-the-machine-that-builds-the-machine.md
 [program]: https://github.com/And-Gu/executable-engineering-lab/issues/86
-

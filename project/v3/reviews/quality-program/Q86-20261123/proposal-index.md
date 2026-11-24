@@ -1,6 +1,6 @@
 # Finding and proposal index
 
-B1 is the deployed course at `64931d4`. After the independent first reads, B2 (`3d752d9`) revised the directory and preserved the byte-identical fourteen chapter pages. Each report retains its own observation date and source edition. The status of a proposal changes only at a recorded stage decision.
+B1 captured the course then deployed at `64931d4`. After the independent first reads, B2 (`3d752d9`) revised the directory and preserved the byte-identical fourteen chapter pages. Each report retains its own observation date and source edition. The status of a proposal changes only at a recorded stage decision.
 
 | Proposal | Contributing findings and scope | Evidence and disposition link |
 | --- | --- | --- |
@@ -11,3 +11,7 @@ B1 is the deployed course at `64931d4`. After the independent first reads, B2 (`
 | [#93](https://github.com/And-Gu/executable-engineering-lab/issues/93) · quiz choices that require the engineering distinction | LD-06; CF-04 and LD-05 supply boundary examples. | Prioritize plausible options and feedback. The 32/38 count is an item-writing indicator; human use of the shortcut is unobserved. |
 | [#94](https://github.com/And-Gu/executable-engineering-lab/issues/94) · Lab navigation to the two intersection experiments | CF-06. | After #92, the Lab main content still has the original coverage exercise but no direct route to either V3 experiment. |
 | [#32](https://github.com/And-Gu/executable-engineering-lab/issues/32), [#45](https://github.com/And-Gu/executable-engineering-lab/issues/45), [#50](https://github.com/And-Gu/executable-engineering-lab/issues/50), [#55](https://github.com/And-Gu/executable-engineering-lab/issues/55), [#78](https://github.com/And-Gu/executable-engineering-lab/issues/78) | HIST-03–04, DP-01–17 and retained historical capabilities. | See the history and provenance reports and D03–05 for independent owners and triggers. #50/#51 do not select the corpus for this review. |
+
+## Integrated proposals
+
+The [issue-by-issue disposition](proposal-states.md) gives the commit and independent verification for each of the six activated proposals. It also identifies the order of the two course PRs and the separate publication decision.

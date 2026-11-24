@@ -16,7 +16,8 @@
     "dependencies": [
       "Target public URL; initial revision identity."
     ],
-    "state": "running",
+    "state": "accepted",
+    "output": "FINAL-REPORT.md",
     "dispatch": {
       "runner": "Codex desktop session",
       "model": "gpt-6.2-astra",
@@ -28,7 +29,8 @@
       "model": "gpt-6.2-astra",
       "reasoning_effort": "max",
       "evidence": "Runner turn_context model and effort for this accepted agent path. This is runtime metadata, not independent backend attestation."
-    }
+    },
+    "maintained_output": "project/v3/reviews/quality-program/Q86-20261123/FINAL-REPORT.md"
   },
   {
     "task_id": "EEL-Q-S1-BASELINE",
@@ -937,8 +939,9 @@
       "reasoning_effort": "max",
       "evidence": "Runner turn_context model and effort for this accepted agent path. This is runtime metadata, not independent backend attestation."
     },
-    "state": "running",
+    "state": "accepted",
     "assignment_revision": "c2f9cb211de7e204e08920b8cf3d164d7195b866",
+    "adjudication": "Output reviewed by the orchestrating editor. See decisions.md, the chapter disposition table and verification/integration.md for the applicable decision and observation limits.",
     "maintained_output": "project/v3/reviews/quality-program/Q86-20261123/verification/check-90b.md"
   },
   {
@@ -1953,11 +1956,23 @@
     "permitted_writes": "Only verification/whole-course-final.md. No builds, source or external edits.",
     "output": "verification/whole-course-final.md",
     "acceptance": "Verify the successor after WC-01. Carry the ordered complete-course read from 206828b across byte-identical content, independently reread the changed page and 5→6→7 transitions, figure, quiz, no-script text, Lab link and any other changed surface. Confirm the final editorial verdict on the exact successor. Distinguish version evidence, live publication and human participation.",
-    "dispatch": null,
-    "observed_effective_settings": "unreported",
-    "state": "ready",
+    "dispatch": {
+      "runner": "collaboration.spawn_agent",
+      "fork_turns": "none",
+      "model": "gpt-6.2-astra",
+      "reasoning_effort": "max",
+      "receipt": "/root/closecourse",
+      "evidence": "Explicit invocation tied to successful receipt in the program chat"
+    },
+    "observed_effective_settings": {
+      "model": "gpt-6.2-astra",
+      "reasoning_effort": "max",
+      "evidence": "Runner turn_context model and effort for this accepted agent path. This is runtime metadata, not independent backend attestation."
+    },
+    "state": "accepted",
     "retry_reason": "The first whole-course read identified a unit/cohort error in the rendered Ch6 prompt. A successor revision needs scoped independent carry-forward; unchanged pages, model, and previous full reads are reused.",
     "assignment_revision": "c2f9cb211de7e204e08920b8cf3d164d7195b866",
+    "adjudication": "Output reviewed by the orchestrating editor. See decisions.md, the chapter disposition table and verification/integration.md for the applicable decision and observation limits.",
     "maintained_output": "project/v3/reviews/quality-program/Q86-20261123/verification/whole-course-final.md"
   },
   {
@@ -2014,11 +2029,23 @@
     "permitted_writes": "Only verification/reader-kit-final.md and the two reader-study files. No builds, source or external edits.",
     "output": "verification/reader-kit-final.md",
     "acceptance": "Repin the neutral participant tasks and facilitator answer key to the final successor. Check changed Ch6/score sheet and confirm the earlier corrections still hold. Keep completion categories and human outcomes unobserved. Distinguish version evidence, live publication and human participation.",
-    "dispatch": null,
-    "observed_effective_settings": "unreported",
-    "state": "ready",
+    "dispatch": {
+      "runner": "collaboration.spawn_agent",
+      "fork_turns": "none",
+      "model": "gpt-6.2-astra",
+      "reasoning_effort": "max",
+      "receipt": "/root/closekit",
+      "evidence": "Explicit invocation tied to successful receipt in the program chat"
+    },
+    "observed_effective_settings": {
+      "model": "gpt-6.2-astra",
+      "reasoning_effort": "max",
+      "evidence": "Runner turn_context model and effort for this accepted agent path. This is runtime metadata, not independent backend attestation."
+    },
+    "state": "accepted",
     "retry_reason": "The first whole-course read identified a unit/cohort error in the rendered Ch6 prompt. A successor revision needs scoped independent carry-forward; unchanged pages, model, and previous full reads are reused.",
     "assignment_revision": "c2f9cb211de7e204e08920b8cf3d164d7195b866",
+    "adjudication": "Output reviewed by the orchestrating editor. See decisions.md, the chapter disposition table and verification/integration.md for the applicable decision and observation limits.",
     "maintained_output": "project/v3/reviews/quality-program/Q86-20261123/verification/reader-kit-final.md"
   },
   {
@@ -2074,11 +2101,23 @@
     "permitted_writes": "Only verification/technical-final.md. No builds, source or external edits.",
     "output": "verification/technical-final.md",
     "acceptance": "Reconcile the full technical read to the exact successor of D41. Independently confirm model inputs, the Ch6 hypothesis and math, output identities and the scope of changed build files, and assess final browser evidence. State which checks are reused by unchanged input and which were repeated. Distinguish version evidence, live publication and human participation.",
-    "dispatch": null,
-    "observed_effective_settings": "unreported",
-    "state": "ready",
+    "dispatch": {
+      "runner": "collaboration.spawn_agent",
+      "fork_turns": "none",
+      "model": "gpt-6.2-astra",
+      "reasoning_effort": "max",
+      "receipt": "/root/closetech",
+      "evidence": "Explicit invocation tied to successful receipt in the program chat"
+    },
+    "observed_effective_settings": {
+      "model": "gpt-6.2-astra",
+      "reasoning_effort": "max",
+      "evidence": "Runner turn_context model and effort for this accepted agent path. This is runtime metadata, not independent backend attestation."
+    },
+    "state": "accepted",
     "retry_reason": "The first whole-course read identified a unit/cohort error in the rendered Ch6 prompt. A successor revision needs scoped independent carry-forward; unchanged pages, model, and previous full reads are reused.",
     "assignment_revision": "c2f9cb211de7e204e08920b8cf3d164d7195b866",
+    "adjudication": "Output reviewed by the orchestrating editor. See decisions.md, the chapter disposition table and verification/integration.md for the applicable decision and observation limits.",
     "maintained_output": "project/v3/reviews/quality-program/Q86-20261123/verification/technical-final.md"
   },
   {
@@ -2092,15 +2131,29 @@
     "objective": "Specify the change-triggered ownership and review routine, allocate residual findings, source freshness, historical issues and a lightweight recovery path, for the verified candidate.",
     "inputs": [
       "Program decisions, baselines, calibrated reviews, exact assigned candidate, accumulated check evidence, and active curriculum index.",
-      "Exact identified candidate added to this task before dispatch."
+      "Exact identified candidate added to this task before dispatch.",
+      "Exact source revision at dispatch: c2f9cb211de7e204e08920b8cf3d164d7195b866"
     ],
     "dependencies": "Frozen Stage 4 candidate and applicable stage decision. Stage 6 additionally requires the Stage 5 disposition.",
     "permitted_writes": "Only maintenance.md. No course source edits, GitHub actions or shared builds.",
     "output": "maintenance.md",
     "acceptance": "Name roles, triggers, source refresh priorities, triage tests, publication checks and study follow-up. Keep historical owners distinct, avoid inventing people or scheduled external actions.",
-    "dispatch": null,
-    "observed_effective_settings": "unreported",
-    "state": "ready",
+    "dispatch": {
+      "runner": "collaboration.spawn_agent",
+      "fork_turns": "none",
+      "model": "gpt-6.2-astra",
+      "reasoning_effort": "max",
+      "receipt": "/root/maintain",
+      "evidence": "Explicit invocation tied to successful receipt in the program chat"
+    },
+    "observed_effective_settings": {
+      "model": "gpt-6.2-astra",
+      "reasoning_effort": "max",
+      "evidence": "Runner turn_context model and effort for this accepted agent path. This is runtime metadata, not independent backend attestation."
+    },
+    "state": "accepted",
+    "assignment_revision": "c2f9cb211de7e204e08920b8cf3d164d7195b866",
+    "adjudication": "Output reviewed by the orchestrating editor. See decisions.md, the chapter disposition table and verification/integration.md for the applicable decision and observation limits.",
     "maintained_output": "project/v3/reviews/quality-program/Q86-20261123/maintenance.md"
   }
 ]
