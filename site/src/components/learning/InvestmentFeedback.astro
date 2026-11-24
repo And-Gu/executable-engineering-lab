@@ -1,0 +1,109 @@
+<figure class="decision-figure" id="investment-feedback" aria-labelledby="investment-feedback-title">
+  <h3 id="investment-feedback-title">When is an interface check worth maintaining?</h3>
+  <div class="paths" role="list" aria-label="From customer requests to the next investment">
+    <div class="station" role="listitem" style="grid-row: 1">
+      <div class="step"><strong>Customer requests</strong>How often would a quicker update help someone using the product?</div>
+    </div>
+    <div class="station" role="listitem" style="grid-row: 2">
+      <div class="step"><strong>Funding decision</strong>The owner compares the cost of another manual review with the cost of building and maintaining a check.</div>
+    </div>
+    <div class="station" role="listitem" style="grid-row: 3">
+      <div class="step"><strong>Maintained tools</strong>If funded, the interface owner keeps the unit definitions, comparison tool and reference cases current.</div>
+    </div>
+    <div class="station" role="listitem" style="grid-row: 4">
+      <div class="step"><strong>Fast feedback on one task</strong>An agent compares the units, corrects a mismatch in its proposal and reruns the check.</div>
+      <div class="returns">
+        <div><strong>Back to the tools</strong>The agent can propose a better check. The interface owner reviews it against the agreed units.</div>
+        <div><strong>Back to the funding decision</strong>Catching a mismatch before assembly can save rework or a second rig visit.</div>
+      </div>
+    </div>
+    <div class="station" role="listitem" style="grid-row: 5">
+      <div class="step"><strong>Whole-product review</strong>Engineers integrate the change and test the receiver under load. After an authorized release, operations can put it into service.</div>
+    </div>
+    <div class="station last" role="listitem" style="grid-row: 6">
+      <div class="step"><strong>Customer outcome in use</strong>A customer paid for this update. Did the reading reach the operator in time to act?</div>
+      <div class="returns">
+        <div><strong>Back to the funding decision</strong>What customers actually gained from the update informs the owner’s next investment.</div>
+        <div class="possible"><strong>Possible return to customer requests</strong>A customer who benefited may ask for the same turnaround on the next order.</div>
+      </div>
+    </div>
+    <span class="rail demand" aria-hidden="true"></span>
+    <span class="rail funding" aria-hidden="true"></span>
+    <span class="rail tools" aria-hidden="true"></span>
+    <span class="saving" aria-hidden="true"></span>
+  </div>
+  <figcaption>Follow one change down the figure. The return paths show what could justify a better tool or another investment across successive changes. The dashed path is a hypothesis about future demand.</figcaption>
+</figure>
+
+<style>
+  .paths {
+    display: grid;
+    grid-template-columns: repeat(3, .8rem) minmax(0, 1fr);
+    margin-block-start: 1rem;
+    font-size: .9rem;
+    line-height: 1.45;
+  }
+  .station {
+    grid-column: 4;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, .9fr);
+    gap: 0 1rem;
+    padding-block-end: 1rem;
+    min-width: 0;
+  }
+  .station.last { padding-block-end: 0; }
+  .step { position: relative; padding: .6rem .8rem; border: 1px solid var(--rule); background: var(--panel); }
+  .step strong, .returns strong { display: block; }
+  .step strong { margin-bottom: .15rem; }
+  .station:not(.last) .step::after {
+    content: '';
+    position: absolute;
+    inset-block-start: 100%;
+    inset-inline-start: 50%;
+    height: .85rem;
+    border-inline-start: 2px solid var(--teal);
+  }
+  .station:not(.last) .step::before, .rail::after {
+    content: '';
+    position: absolute;
+    width: .36rem;
+    height: .36rem;
+    border: solid currentColor;
+    border-width: 0 2px 2px 0;
+  }
+  .station:not(.last) .step::before {
+    inset-block-start: calc(100% + .48rem);
+    inset-inline-start: calc(50% - .12rem);
+    transform: rotate(45deg);
+    color: var(--teal);
+  }
+  .returns { align-self: center; color: var(--muted); font-size: .86rem; }
+  .returns > div { padding-inline-start: .65rem; border-inline-start: 2px solid var(--gold); }
+  .returns > div + div { margin-block-start: .7rem; }
+  .returns .possible { border-inline-start-style: dashed; }
+  .rail { position: relative; pointer-events: none; color: var(--gold); }
+  .rail::before {
+    content: '';
+    position: absolute;
+    inset: var(--offset) 0 calc(0rem - var(--offset));
+    border: 1px solid currentColor;
+    border-inline-end: 0;
+  }
+  .rail::after {
+    inset-block-start: calc(var(--offset) - .17rem);
+    inset-inline-end: .06rem;
+    transform: rotate(-45deg);
+  }
+  .demand { grid-column: 1 / 4; grid-row: 1 / 6; --offset: 1.6rem; }
+  .demand::before { border-style: dashed; }
+  .funding { grid-column: 2 / 4; grid-row: 2 / 6; --offset: 1.1rem; }
+  .tools { grid-column: 3; grid-row: 3 / 4; --offset: .65rem; }
+  .saving { grid-column: 2 / 4; grid-row: 4; align-self: start; margin-block-start: 1.1rem; border-block-start: 1px solid var(--gold); }
+  @media (max-width: 620px) {
+    .paths { grid-template-columns: repeat(3, .55rem) minmax(0, 1fr); }
+    .station { grid-template-columns: minmax(0, 1fr); }
+    .returns { margin: .6rem 0 0 1rem; }
+    .station:has(.returns):not(.last) .step::before,
+    .station:has(.returns):not(.last) .step::after { display: none; }
+  }
+</style>

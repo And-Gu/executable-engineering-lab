@@ -23,7 +23,7 @@ Building that check improves how the organization engineers its products. Reusin
 
 For a business competing on the quality and frequency of product improvements, the delivery objective is to get a useful change into service sooner, with evidence that it works. A team that produces changes faster than it can integrate or test them moves work into a queue.
 
-In a software-intensive program, an interface mismatch found at the end of that queue can send several teams back to trace dependencies, revise designs and repeat tests. That rework can take more engineering time than the original change, and a missed integration date can delay the release.
+On one sensor program, researchers traced eight years of change requests and found that a change in one subsystem could trigger work in another. If an interface mismatch surfaces at final assembly, the integration lead has to find those dependencies before the teams know which designs and tests to revisit. [Giffin and colleagues’ study of change propagation](https://research.tudelft.nl/en/publications/change-propagation-analysis-in-complex-technical-systems/).
 
 A web service may deploy repeatedly, embedded software may need controlled integration, and a physical design may depend on an expensive component order or a scarce slot on a test rig. Each team can shorten the path from a question to reliable feedback within its own delivery constraints.
 
@@ -45,15 +45,17 @@ Giving an agent access to current definitions, maintaining independent checks an
 
 ## Two systems must evolve together
 
-Every engineering organization is developing two related systems.
+Systems engineering asks how the parts work together under the conditions people face. Does the receiver get the reading in time when the system is busy? Answering that question takes work on two systems.
 
 The **product system** includes software, electronics, physical components, interfaces, operators and the operating environment. It is judged by what it can actually do, under the conditions that matter.
 
 The **engineering system** includes the people, methods, engineering knowledge, executable models, automated tests and integration equipment used to design, build and validate the product. It is judged by how well it helps the organization make sound product decisions and deliver improvements.
 
+<!-- interactive: investment-feedback -->
+
 A Word specification can explain an interface decision, an Excel workbook can hold its limits, and a specialist design tool can show how the circuit uses them. When those sources travel separately, reviewers have to establish which revisions belong together. The team can keep those tools, agree where to maintain a structured interface definition and connect it to the models and tests that use it.
 
-**“We build the machine that builds the machine.”** A difficult product question may reveal the need for a new simulation or test fixture. A better engineering capability may make previously expensive options practical to investigate. Managers can fund a check that removes a recurring delay and keep a handoff manual when the cost of automating it outweighs the benefit. The bonus article follows that investment in a small documentation team. [Building the Machine That Builds the Machine](/executable-engineering-lab/bonus/building-the-machine-that-builds-the-machine/).
+**“We build the machine that builds the machine.”** On one software team at OpenAI, agents helped write tools that flagged dependencies its engineers had ruled out. The next proposed change would encounter the same rule. A team comparing sender and receiver units can start smaller, with an engineer checking the two definitions by hand until the volume of changes justifies maintaining a tool. [How the OpenAI team built its checks](https://openai.com/index/harness-engineering/) · [A small team’s investment decision](/executable-engineering-lab/bonus/building-the-machine-that-builds-the-machine/#when-does-building-it-pay-off).
 
 > **Concept**
 >
@@ -74,7 +76,7 @@ If mismatches now surface early but the release still depends on timing under lo
 
 > **Explore further**
 >
-> [Revisit this investment in the final chapter](14-from-engineering-intent-to-continuous-integration.md). Which part of a check can another project reuse, and which observation must its team make again?
+> Which part of a check can another project reuse, and which observation must its team make again? [Revisit this investment in the final chapter](14-from-engineering-intent-to-continuous-integration.md#reuse-capability-while-renewing-evidence).
 
 <!-- interactive: chapter-quiz -->
 
