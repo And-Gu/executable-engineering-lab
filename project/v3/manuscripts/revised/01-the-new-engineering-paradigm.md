@@ -11,21 +11,35 @@ teaching_fixture: "Conceptual overview; case begins in Chapter 2"
 
 # The New Engineering Paradigm
 
-*What would help a team turn an engineering question into a sound decision sooner?*
+*Can we develop new products and improve existing ones, release useful changes faster and more often, and do so at lower cost?*
 
-Four currents are changing how teams approach that question. **Software-driven engineering** applies practices such as versioned information and automated checks across disciplines. In an integrated working environment, an electrical engineer and a software engineer can find the same interface definition, see its history and use recorded references to see which revision each design uses. Treating documents as code makes decisions reviewable; recording those references connects them to the designs that use them.
+These ambitions can appear to conflict. More capability can mean more complexity, while faster delivery can leave less time to discover problems. But the way we engineer a product also affects that equation. If teams can find disagreements earlier, reuse what they have learned and keep the product integrated as it evolves, they may be able to improve several outcomes together.
 
-**Agile development** works in small increments so a team can test an assumption while a design can still change. Traditional waterfall handoffs can make this harder when each discipline holds its information in a separate silo: before testing a change, colleagues must reconcile which versions belong together. Different disciplines still have different physical and delivery constraints.
+Four currents are changing how teams approach that challenge: software-driven engineering, agile development, model-based systems engineering and AI-native engineering.
 
-**Model-based systems engineering (MBSE)** is an established approach that uses system models to describe relationships and explore designs. The Systems Modeling Language (SysML) can describe the intersection's controller and signals in Chapter 2. Chapter 4 connects a view to its shared text, and Chapter 5 uses an executable model to investigate queues under a prescribed phase sequence.
+**Software-driven engineering** brings practices such as versioned information and automated checks across disciplines. Engineers work with product code, requirements, test cases and documentation as connected engineering information. Where appropriate, these are refined, linked and reviewed together through an automated build and feedback chain.
 
-**AI-native engineering** brings agentic support into that workflow. Given the shared definitions and a bounded task, an AI agent can help draft an executable model, rerun an agreed check after a definition changes, and propose an update to the text from simulation findings. Engineers review its contributions and make the decisions. The combination can shorten the path from a question to feedback, provided the team maintains the information and checks on which it depends.
+Teams take responsibility for both the product and the engineering system that develops it: the tools, checks, information and ways of working they depend on. The emphasis shifts toward the product’s functionality, health and value over time, rather than only the artifacts needed to complete a project. A working, integrated product—or an executable representation of it—can make implementation maturity visible and provide an early opportunity to learn what creates value.
+
+As these practices extend beyond software, they can also broaden engineering roles. Systems engineers and software engineers may work in the same environment and, in some cases, combine responsibilities that were previously separate.
+
+**Agile development** organizes work in small increments so that a team can test assumptions and change direction while the design is still taking shape. Cross-functional teams can gather around the most valuable problem, complete a bounded piece of work and use what they learn to decide what comes next. They also improve the process and tools they use.
+
+This challenges a familiar pattern: detailed decisions are made before the team has had a chance to learn, followed by handoffs between separate disciplines. Agile development seeks earlier feedback across those boundaries and makes the team responsible for maintaining a working, integrated baseline as the product evolves.
+
+**Model-based systems engineering (MBSE)** uses system models to describe requirements, structure, interfaces and behavior, and to explore design choices. These models can make relationships easier to examine and provide information that connects engineering work across disciplines and lifecycle stages.
+
+MBSE does not, by itself, prescribe how an organization plans work or arranges its teams. It can improve engineering within existing silos and handoffs, or be combined with iterative, cross-functional development. In this course, we will connect a Systems Modeling Language (SysML) system description to shared text-based information and, later, to an executable model. Chapter 2 introduces that description; Chapters 4 and 5 develop the shared text and executable model.
+
+**AI-native engineering** designs the development environment for people and AI agents to work together. This goes beyond adding an AI assistant to an existing tool or asking it to help with an isolated task. Agents can be given access to relevant engineering information and tools, contribute to bounded tasks across the workflow, and return their work for engineers to examine.
+
+For example, an agent can help turn shared technical information into a runnable model, then use the results of an experiment to draft an update to that information. Engineers check the model and its results, decide what they mean and remain responsible for the decisions.
 
 <span id="expectations-are-changing"></span><span id="where-earlier-feedback-improves-delivery"></span>
 
 ## Software-inspired engineering moves beyond software
 
-Software development offers practices that other disciplines can adapt, including smaller increments, explicit configurations, versioned information and continuous integration. For multidisciplinary systems, the challenge is to connect these practices without assuming that every discipline has the same cycle time.
+To pursue those ambitions across a multidisciplinary product, teams need to connect their practices without assuming that every discipline has the same cycle time.
 
 A team that produces changes faster than it can integrate or test them moves work into a queue. A web service may deploy repeatedly, while physical design can depend on a component order or a scarce test-rig slot. Each discipline can seek earlier feedback within its own constraints.
 
@@ -35,7 +49,7 @@ An engineering decision can retain its rationale and applicable evidence. A new 
 
 ## AI expands what engineering teams can do
 
-AI assistance can help teams explore alternatives, draft and review technical artifacts, prepare experiments and interpret results. An engineer might describe an interface rule in plain language and give a tool-using AI agent a bounded task. The agent could draft a small model of the rule, run the agreed checks and revise it after a failure before handing it back for review.
+AI agents can also help teams explore alternatives, draft and review technical artifacts, prepare experiments and interpret results. An engineer might describe an interface rule in plain language and give a tool-using AI agent a bounded task. The agent could draft a small model of the rule, run the agreed checks and revise it after a failure before handing it back for review.
 
 These capabilities matter most when the environment provides meaningful, sufficiently independent checks. If the agent's language model confuses seconds with milliseconds, a test it writes from the same interpretation may agree with a faulty change. Engineering judgment is still needed to set objectives, protect constraints, decide what evidence is credible and authorize consequential changes.
 
@@ -43,7 +57,7 @@ Giving an agent access to current definitions, maintaining independent checks an
 
 ## Two systems must evolve together
 
-Systems engineering asks how the parts work together under the conditions people face. Does the receiver get the reading in time when the system is busy? Answering that question takes work on two systems.
+Systems engineering helps teams pursue those ambitions by asking how the product's parts work together under the conditions people face. Does the receiver get the reading in time when the system is busy? Answering that question takes work on the two systems introduced above.
 
 The **product system** includes software, electronics, physical components, interfaces, operators and the operating environment. It is judged by what it can actually do, under the conditions that matter.
 
@@ -61,14 +75,14 @@ The phrase **“we build the machine that builds the machine”** captures the c
 
 ## From document-driven handoffs to executable feedback
 
-In Executable Engineering, the approach is to make suitable models, analyses, checks and workflow steps runnable, evaluable and improvable. A passing test is evidence about a stated check under specific conditions. Two connected feedback loops guide what the team does with that evidence.
+In Executable Engineering, the approach is to make suitable models, analyses, checks and workflow steps runnable, evaluable and improvable. A passing test is evidence about a stated check under specific conditions. Two connected feedback loops guide which changes the team can improve and deliver with confidence.
 
 - With **fast executable feedback**, engineers make a bounded change, run a model or test, inspect a failure and refine the work. If the units agree, the team can choose those revisions for integration.
 - With **whole-product feedback**, engineers ask whether the integrated product meets its intended use. Even when the declared units agree, a physical test may reveal that the receiver gets a value too late under load. Reviewing the consequence with an operator can change both the interface definition and the next automated check.
 
 ## What this means for engineering leadership
 
-A useful investment gives teams an earlier signal about a decision that costs time or money to reverse. Before funding the interface check, a leader can look at recent integrations. When did each mismatch surface, how many teams had to revisit their work, and what delivery commitment was affected? Those cases give the team a baseline for judging whether earlier detection on subsequent changes saves enough rework to justify maintaining the check.
+A useful investment gives teams an earlier signal about a decision that costs time or money to reverse. To judge whether it can help deliver useful changes sooner and at lower cost, a leader can look at recent integrations before funding the interface check. When did each mismatch surface, how many teams had to revisit their work, and what delivery commitment was affected? Those cases give the team a baseline for judging whether earlier detection on subsequent changes saves enough rework to justify maintaining the check.
 
 If mismatches now surface early but the release still depends on timing under load, the next investment might be time on the test rig. A team might use a risk burndown chart to track its estimated exposure over successive integrations. A leader can ask which estimates changed, what evidence prompted the change and which delivery commitments still depend on the open risks.
 
@@ -79,5 +93,7 @@ If mismatches now surface early but the release still depends on timing under lo
 <!-- interactive: chapter-quiz -->
 
 ## From the paradigm to a working example
+
+To see how teams might deliver useful improvements sooner and at lower cost, we begin with a concrete engineering question and the people affected by a change.
 
 A fictional city brings a question to the [intersection workshop in Chapter 2](02-introducing-the-engineering-challenge.md). How could we improve traffic flow at our busy four-way intersection while keeping crossings safe and the signals easy to understand and maintain?
