@@ -35,7 +35,7 @@ Engineering organizations already hold large amounts of information. The constra
 
 At that early stage, the information does not need to be complete. During early concept work, a few needs, constraints, examples and open questions can give people and agents enough context to draft, inspect and challenge a small model or prototype. The first relationships may be provisional. Their purpose is to expose assumptions, preserve what the team learns and make the next question easier to ask.
 
-This returns to Chapter 1's central delivery argument: a model can provide feedback before hardware is ready, and an interface can be checked before final integration. The advantage is not early certainty. It is an earlier signal while alternatives remain easier to change. [Where earlier feedback improves delivery](01-the-new-engineering-paradigm.md#where-earlier-feedback-improves-delivery).
+This returns to Chapter 1's central delivery argument: a model can provide feedback before hardware is ready, and an interface can be checked before final integration. The advantage is not early certainty. It is an earlier signal while alternatives remain easier to change. [Executable feedback in Chapter 1](01-the-new-engineering-paradigm.md#from-document-driven-handoffs-to-executable-feedback).
 
 A requirement may sit in one system, an interface decision in another and test evidence in a third. A drawing, software build and service instruction may each be correct on their own while referring to different product revisions. When those relationships live mainly in people’s memories, every change creates coordination work.
 

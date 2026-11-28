@@ -37,7 +37,7 @@ Those checks established the internal consistency of the teaching fixture. The [
 
 ### Conservation
 
-For each direction separately, `arrivals = departures + final queue`, because the initial queue is zero and the model has no losses. For scenario A this is NS: 2 = 1 + 1; EW: 2 = 2 + 0. For scenario B NS: 2 = 0 + 2; EW: 2 = 2 + 0. This detects a missed or double-counted departure in the trace but **does not** establish real-world fidelity.
+For each direction separately, `arrivals = departures + final queue`, because the initial queue is zero and the model has no losses. For scenario A this is NS: 2 = 1 + 1; EW: 2 = 2 + 0. For scenario B NS: 2 = 0 + 2; EW: 2 = 2 + 0. This checks that the accounting balances; a missed departure and the extra vehicle left in the queue can still balance. The independent row comparison checks the stated service behavior. Neither check establishes real-world fidelity.
 
 ### Graph integrity
 
@@ -49,7 +49,7 @@ Every existing edge has a known source and target ID, a declared relation type, 
 
 [The data-quality fixture](data-quality-v1.json) retains original A/B counts and a deliberately incompatible C row. Comparison of C is **withheld** because the unit, model revision, metric meaning and observation horizon are unrecorded. Do not guess conversions or treat “20” as twenty vehicles, queueing seconds or a ratio to A/B.
 
-The allowed editorial conclusion is narrow: **with T1's eight-slot rule and invented arrivals, arrival clustering changes the number still queued**. No real intersection, physical indication, safety or AI-agent performance is assessed.
+The allowed editorial conclusion is narrow: **under T1's fixed eight-slot schedule, these invented arrival patterns leave different numbers still queued**. The patterns differ in placement relative to green as well as clustering. No real intersection, physical indication, safety or AI-agent performance is assessed.
 
 ## Follow-ups recorded in the original review on 16 November 2026
 

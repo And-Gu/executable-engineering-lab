@@ -4,7 +4,7 @@ chapter: 9
 part: "II — Build and Test Knowledge"
 title: "Planning and Controlling Agents"
 status: draft
-publication: unpublished
+publication: published
 reference_case: four-way-traffic-intersection
 teaching_fixture: "T1 — recorded two-cycle calculation and illustrative planning conversation"
 ---
@@ -61,7 +61,7 @@ For a package that might span a working day, the engineer and agent could agree 
 
 ## The Digital Thread
 
-Chapter 1 asked how a new engineer could recover the reason for an interface limit and rerun its check. Chapter 4 gave those connections a name. In the intersection, the traffic engineer supplies the reason for the carry rule. A cycle ends, but vehicles still waiting will need service on a later green. The reviewed brief puts that knowledge beside the model inputs and reference trace. These become the agent’s context for planning, changing the queue function and testing it within the permissions agreed in Chapter 8. [Chapter 1’s interface example](01-the-new-engineering-paradigm.md#software-inspired-engineering-moves-beyond-software) · [Chapter 4’s definition of a digital thread](04-engineering-knowledge-as-code.md#digital-threads-and-knowledge-graphs).
+Chapter 1 asked how a new engineer could recover the reason for an interface limit and rerun its check. Chapter 4 gave those connections a name. In the intersection, the traffic engineer supplies the reason for the carry rule. A cycle ends, but vehicles still waiting will need service on a later green. The reviewed brief puts that knowledge beside the model inputs and reference trace. In Chapter 8, the agent could run the model and write a report using a read-only reference trace. Here the traffic engineer also authorizes the agent to implement and test carry-over in the queue function. [Chapter 1’s interface example](01-the-new-engineering-paradigm.md#software-inspired-engineering-moves-beyond-software) · [Chapter 4’s definition of a digital thread](04-engineering-knowledge-as-code.md#digital-threads-and-knowledge-graphs).
 
 <!-- interactive: digital-thread -->
 
@@ -73,4 +73,4 @@ Now suppose the traffic engineer wants to study two independent windows, each st
 
 <span id="some-changes-cannot-be-isolated-as-software-work"></span><span id="integration-and-iteration-are-different-questions"></span><span id="the-next-boundary-is-the-real-product"></span>
 
-The queue calculation can show which group had green in the model. At the roadside, an adapter might acknowledge a signal command as soon as it receives the message. What observation would tell the engineer that the signal actually changed? That question opens Part III. [Chapter 10, From Models to an Integrated Product](10-from-models-to-an-integrated-product.md).
+The queue calculation can show which group had green in the model. At the roadside, an adapter might acknowledge a signal command as soon as it receives the message. What observation would show which indication was visible at the designated head during that command? That question opens Part III. [Chapter 10, From Models to an Integrated Product](10-from-models-to-an-integrated-product.md).

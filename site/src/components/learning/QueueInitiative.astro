@@ -1,0 +1,29 @@
+---
+import initiative from '../../../../project/v3/case-study/queue-initiative.json';
+import inputs from '../../../../project/v3/case-study/model-inputs-v1.json';
+import results from '../../../../project/v3/case-study/data-quality-v1.json';
+import { checkout } from '../../../../scripts/delivery-environment.mjs';
+
+interface Props { stage: 'before' | 'after' }
+const { stage } = Astro.props;
+if (initiative.proposed_after.basis !== results.scenario_edit_observation.id) {
+  throw new Error('Queue initiative cites a different observation');
+}
+const excerpt = stage === 'before'
+  ? { ...initiative.before, event_order: inputs.event_order }
+  : initiative.proposed_after;
+const sourceState = checkout();
+const sourceRef = sourceState.dirty ? 'main' : sourceState.revision;
+const sourceUrl = `https://github.com/And-Gu/executable-engineering-lab/blob/${sourceRef}/project/v3/case-study/queue-initiative.json`;
+---
+<figure class="initiative-excerpt">
+  <figcaption>{stage === 'before' ? 'Before the simulation: shared planning text and the T1 rule' : 'After the simulation: proposed update for team review'}</figcaption>
+  <pre><code>{JSON.stringify(excerpt, null, 2)}</code></pre>
+  <p><a href={sourceUrl}>{initiative.id} source{sourceState.dirty ? ' on main (preview changes are not included)' : ` at ${sourceRef.slice(0, 7)}`}</a>{stage === 'before' && <> · <a href={`${import.meta.env.BASE_URL}learn/v3/02-introducing-the-engineering-challenge/#describe-traffic-flow`}>T1 inputs and arrival table</a></>}</p>
+</figure>
+<style>
+  .initiative-excerpt{margin:1.5rem 0;padding:1rem;border-inline-start:2px solid var(--teal);background:var(--panel)}
+  .initiative-excerpt figcaption{font-weight:700}
+  .initiative-excerpt pre{white-space:pre-wrap;overflow-wrap:anywhere;font-size:.86rem}
+  .initiative-excerpt p{font-size:.85rem;margin-bottom:0}
+</style>
