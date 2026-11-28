@@ -1,0 +1,29 @@
+---
+import chapter from '../../../../project/v3/manuscripts/revised/02-introducing-the-engineering-challenge.md?raw';
+
+// This small view supports the deliberately limited part declarations in the
+// maintained example. Refuse to render if the excerpt changes shape.
+const excerpt = chapter.match(/```sysml\s+([\s\S]*?)```/)?.[1];
+const definition = excerpt?.match(/part def (\w+)\s*\{([\s\S]*?)\}/);
+if (!definition) throw new Error('Chapter 2 SysML definition is missing');
+const parts = [...definition[2].matchAll(/part\s+(\w+)\s*:\s*(\w+)\s*;/g)];
+const remainder = definition[2].replace(/part\s+\w+\s*:\s*\w+\s*;/g, '').trim();
+if (!parts.length || remainder) throw new Error('Chapter 2 structure view needs review for the revised SysML excerpt');
+const base = import.meta.env.BASE_URL;
+---
+<figure class="structure-view" aria-labelledby="structure-title">
+  <figcaption id="structure-title">SysML structural view of the Chapter 2 definition</figcaption>
+  <div class="structure-box">
+    <div class="structure-name"><small>«part def»</small><strong>{definition[1]}</strong></div>
+    <div class="structure-parts"><span>parts</span><ul>{parts.map(part => <li><code>{part[1]} : {part[2]}</code></li>)}</ul></div>
+  </div>
+  <p><a href={`${base}learn/v3/02-introducing-the-engineering-challenge/#a-system-view-in-sysml`}>Read the source definition in this course build</a></p>
+</figure>
+<style>
+  .structure-view{margin:1.5rem 0;padding:1rem;border-block:1px solid var(--rule)}
+  .structure-box{border:1px solid var(--rule);max-width:26rem;margin:1rem 0;background:var(--panel,transparent)}
+  .structure-name{display:grid;text-align:center;padding:.6rem;border-bottom:1px solid var(--rule)}
+  .structure-name small,.structure-parts span{color:var(--muted)}
+  .structure-parts{padding:.5rem .8rem}.structure-parts ul{list-style:none;padding:0;margin:.3rem 0}
+  .structure-view p{font-size:.9rem}
+</style>

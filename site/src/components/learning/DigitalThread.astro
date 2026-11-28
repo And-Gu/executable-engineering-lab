@@ -17,7 +17,7 @@ const forward = [
   { title: 'Plan the first increment', text: 'Engineer and agent agree to preserve the first cycle and test the boundary before extending the assignment.' },
   { title: 'Implement within the harness', text: 'Project instructions and permissions govern what the agent can read, change and run.', link: sources.harness, label: 'Working agreement' },
   { title: 'Run the affected checks', text: 'Compare the first eight slots with the saved trace, then check the queues and departures in slot 9.', link: sources.tests, label: 'Regression checks' },
-  { title: 'Decide and record why', text: 'The engineer reviews the run, identifies affected decisions and records an accepted rule under a new revision. Prior results keep their original inputs.', link: sources.result, label: 'Existing run record' },
+  { title: 'Read the saved result', text: `In B, slot 9 starts with ${scenario.before_next_arrivals.NS} north–south vehicles still waiting. The saved row records a departure from that queue on green.`, link: sources.result, label: 'Recorded two-cycle calculation' },
 ];
 const backward = [
   { title: 'Observed departure', text: `Scenario B records ${scenario.first_slot_of_second_cycle.departures.NS} north–south departure in slot 9. Start with the observation the engineer is reviewing.`, link: sources.result, label: 'Recorded boundary row' },
@@ -33,9 +33,9 @@ const backward = [
     <legend>Choose a question to trace.</legend>
     <div class="directions">
       <label><input type="radio" name="thread-direction" value="backward" aria-controls="trace-backward" checked /> Where did this result come from?</label>
-      <label><input type="radio" name="thread-direction" value="forward" aria-controls="trace-forward" /> What changes if we revise the rule?</label>
+      <label><input type="radio" name="thread-direction" value="forward" aria-controls="trace-forward" /> How does the carry-over rule lead to this result?</label>
     </div>
-    {[{ id: 'backward', title: 'From a result to its rule', steps: backward }, { id: 'forward', title: 'From a rule to the next decision', steps: forward }].map(path =>
+    {[{ id: 'backward', title: 'From a result to its rule', steps: backward }, { id: 'forward', title: 'From the carry-over rule to the saved run', steps: forward }].map(path =>
       <div class="path" id={'trace-' + path.id}>
         <h4>{path.title}</h4>
         <ol role="list">{path.steps.map(step => <li>

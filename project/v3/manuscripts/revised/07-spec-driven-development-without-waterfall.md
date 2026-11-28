@@ -4,7 +4,7 @@ chapter: 7
 part: "II — Build and Test Knowledge"
 title: "Spec-Driven Development Without Waterfall"
 status: draft
-publication: unpublished
+publication: published
 reference_case: four-way-traffic-intersection
 teaching_fixture: "T1 — worked specification for the two-cycle queue experiment"
 ---
@@ -31,7 +31,7 @@ The traffic engineer chooses the original A and B patterns and confirms that veh
 | **Use case** | Show the traffic engineer whether either directional queue grows between the ends of the two cycles. Compare those points separately for A and B. |
 | **Model and inputs** | Use `INT-MOD-001`, revision T1. Run each original scenario separately from empty north–south (NS) and east–west (EW) queues. Repeat the eight fixed phases and that scenario’s own eight arrival rows once, giving 16 abstract slots. [T1 phases, arrivals and service capacities](../../case-study/model-inputs-v1.json). |
 | **Queue behavior** | Add arrivals first. On green, serve one vehicle if that direction’s queue is nonempty. During amber and all-red, both groups wait. Record departures and remaining queues. Carry both queues from slot 8 into slot 9. In B, two NS vehicles and zero EW vehicles must be waiting before slot 9’s arrivals or service. |
-| **Acceptance checks** | For A and B, match all eight first-cycle rows against their saved traces, including phase, arrivals, departures and both queues. Check that B’s first green in the second cycle serves one of the two NS vehicles carried over. [Saved first-cycle rows](../../case-study/trace-v1.csv) · [Queue regression tests](https://github.com/And-Gu/executable-engineering-lab/blob/973ff66ebb06daafbd2ddaf35682e0e8da2bffd7/models/intersection/queue.test.ts). |
+| **Acceptance checks** | For A and B, match all eight first-cycle rows against their saved traces, including phase, arrivals, departures and both queues. Check that B’s first green in the second cycle serves one of the two NS vehicles carried over. That departure tests carry-over only for a nonempty NS queue. [Saved first-cycle rows](../../case-study/trace-v1.csv) · [Queue regression tests](https://github.com/And-Gu/executable-engineering-lab/blob/973ff66ebb06daafbd2ddaf35682e0e8da2bffd7/models/intersection/queue.test.ts). |
 | **Output** | For each scenario, report vehicles waiting in each direction after service in slots 8 and 16. Link the counts to the model revision, arrival inputs and run. Refer any unresolved conflict in the rules or reference rows to the model owner. |
 
 > **Concept**

@@ -17,11 +17,11 @@ Imagine a technician looking up a new message on the intersection service displa
 
 ## Decide what the request covers
 
-<span id="not-every-small-edit-is-eligible"></span>Chapter 12 left an important decision open. The proposed controller contract, revision A, expects confirmation that the lamp changed. The adapter contract, revision B, establishes receipt of a message. The team deferred accepting the two meanings as equivalent. An independent observation of the lamp on a bench is still proposed. [Fictional interface and decision record](https://github.com/And-Gu/executable-engineering-lab/blob/05b071d8d5a08aec9017146175e0ac17b38f8dd3/project/v3/case-study/DECISION-CHAIN.md#ch09-a-product-interface-discrepancy--the-missing-bridge).
+<span id="not-every-small-edit-is-eligible"></span>Chapter 12 left an important decision open. The proposed controller contract, revision A, calls for confirmation of the requested indication. Under the adapter contract, revision B, an acknowledgment would confirm receipt of the message. The accountable product decision-maker deferred accepting the two meanings as equivalent. An independent observation of the lamp on a bench is still proposed. [Fictional interface and decision record](https://github.com/And-Gu/executable-engineering-lab/blob/05b071d8d5a08aec9017146175e0ac17b38f8dd3/project/v3/case-study/DECISION-CHAIN.md#ch09-a-product-interface-discrepancy--the-missing-bridge).
 
 For this release-planning exercise, assume an existing product configuration authorized to report receipt and an unknown indication. The service team asks for clearer wording and a procedure for its existing diagnostic code, `IND-UNKNOWN`. The operator should be able to name the affected head and command. A technician should be able to find the right instruction and observation equipment. A request to determine what the lamp actually displayed would reopen the interface decision.
 
-<span id="the-24-hour-target-is-a-requirement-to-analyze"></span>The lead accepts the bounded request and starts the clock. For eligible changes like this one, the project aims to have a releasable configuration in **less than 24 hours**. The clock stops when the authorized lead has the running version, the evidence and everything its users need, and records that it is releasable. The lab has no measured delivery time for this example.
+<span id="the-24-hour-target-is-a-requirement-to-analyze"></span>The clock starts when the lead accepts this eligible, bounded request. The fictional project’s target is **less than 24 hours**. The clock stops when the authorized lead records that the identified whole-product candidate is releasable, with its evidence and all the material its users need. The lab has no measured delivery time for this example. [DORA’s distinction between continuous delivery and deployment in software](https://dora.dev/capabilities/continuous-delivery/).
 
 ## Follow the diagnostic into service
 
@@ -48,7 +48,7 @@ The procedure points to a portable observation kit. A technician needs to find t
 
 ## Which dependency sets the release date?
 
-Suppose the running candidate and its checks are ready today. The operator editions, logistics record and training package have cleared review. One required translation of the **service instruction** is due next week. Its file exists, but the service-language reviewer still has to confirm that readers will understand the indication is unknown. Can the lead stop the clock today?
+Suppose the running candidate and its checks are ready today. The operator editions, logistics record and training package have cleared review. One required translation of the **service instruction** is due next week. Its file exists, but the service-language reviewer still has to check that the wording describes the indication as unknown. Watching a technician use that edition in the rehearsal would test how they interpret it. Can the lead stop the clock today?
 
 <!-- interactive: release-readiness -->
 
@@ -62,7 +62,9 @@ Suppose the running candidate and its checks are ready today. The operator editi
 
 “We build the machine that builds the machine.” On each new project, the team has to deliver and operate the engineering environment alongside the product. For this change, the product lead sets aside people, iteration time and funding for the recurring work. The interface owner maintains the diagnostic definition. An integration engineer maintains the rig, automated tests and versioned evidence. Service and training leads maintain the publication workflow, arrange language reviews and budget for the reviewers’ time. When a check stops working, its owner restores it before the lead relies on its result. [The two systems in the introduction](/executable-engineering-lab/#approach).
 
-<span id="what-would-we-improve-after-a-blocked-release"></span><span id="the-factory-becomes-reusable-knowledge"></span>Here the wait gives the team a specific investment to consider. When the next diagnostic change is accepted, its shared identifier could open review requests for the affected manual editions and training material immediately. The release check could flag any edition still tied to the previous wording. If the language reviewers work alongside implementation and all checks clear on the same candidate, the lead could make the whole-product decision within the one-day target. The team can use that routing and check again, with fresh approvals for each new fault message.
+<span id="what-would-we-improve-after-a-blocked-release"></span><span id="the-factory-becomes-reusable-knowledge"></span>Does language review regularly hold up the decision? Compare several eligible diagnostic wording changes with similar review requirements and numbers of editions. For each, record the full time to releasability and when the rig, language reviewers and other required inputs were available. For requests still open, record the time so far and the outstanding work. A day spent waiting for both a rig and a reviewer counts once on the release clock. Also record reviewer hours, rework and any misleading instructions found in the rehearsal.
+
+If a late start on translation repeatedly delays readiness, try inviting the affected reviewers when the lead accepts the request. That takes one message. Compare the next similar changes for elapsed time and instruction quality. If coordinating the editions still takes considerable effort, the diagnostic identifier could route review requests and flag stale wording. Weigh the time saved against the cost of keeping that routing current and reviewing exceptions.
 
 For a closer look at when building and maintaining that environment pays off, read the unnumbered companion. [Building the Machine That Builds the Machine](/executable-engineering-lab/bonus/building-the-machine-that-builds-the-machine/).
 
@@ -74,6 +76,6 @@ For a closer look at when building and maintaining that environment pays off, re
 
 ## Make the whole-product decision
 
-**Today the release lead holds the candidate.** Next week, if the language reviewer approves the service instruction, the team builds that edition into the package and checks that the display opens it for the right diagnostic. With the other evidence still applicable, the lead can record that the identified whole-product configuration is releasable. Operations can then select a deployment date. In this example the last required service instruction sets the earliest release date, and the missed one-day target tells the team exactly where to improve its next iteration.
+**Today the release lead holds the candidate.** Next week, if the language reviewer approves the service instruction, the team builds that edition into the package and checks that the display opens it for the right diagnostic. With the other evidence still applicable, the lead can record that the identified whole-product configuration is releasable. Operations can then select a deployment date. The missing instruction sets the earliest readiness date in this example. This one delay gives the lead a candidate to investigate on the next comparable request.
 
 On the next change, which parts of this work can the team reuse, and what does it have to observe again? [Follow the decisions through the course in Chapter 14](14-from-engineering-intent-to-continuous-integration.md).

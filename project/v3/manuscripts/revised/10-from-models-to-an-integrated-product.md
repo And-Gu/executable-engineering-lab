@@ -4,7 +4,7 @@ chapter: 10
 part: "III — Develop an Integrated Product"
 title: "From Models to an Integrated Product"
 status: draft
-publication: unpublished
+publication: published
 reference_case: four-way-traffic-intersection
 teaching_fixture: "T1 — synthetic editorial source"
 ---
@@ -33,7 +33,7 @@ At product kickoff, the team already has a phase sequence to exercise and a way 
 <figcaption>Illustration of a proposed integration bench. The laptop could report command receipt. A camera record tied to the same command and head could establish which lamp was visible from that position at that time.</figcaption>
 </figure>
 
-An adapter could meet revision B exactly and still leave the controller waiting for evidence of the applied indication. The team records the difference in `INT-DISC-001` and defers accepting the two interfaces as compatible. Discovering this while the adapter is still a purchasing choice is the early feedback Chapter 1 described. [Interface discrepancy record](../../case-study/DECISION-CHAIN.md) · [Chapter 1 on earlier feedback](01-the-new-engineering-paradigm.md#where-earlier-feedback-improves-delivery).
+An adapter could meet revision B exactly and still leave the controller waiting for evidence of the applied indication. The team records the difference in `INT-DISC-001` and defers accepting the two interfaces as compatible. Discovering this while the adapter is still a purchasing choice is the early feedback Chapter 1 described. [Interface discrepancy record](../../case-study/DECISION-CHAIN.md) · [Chapter 1 on executable feedback](01-the-new-engineering-paradigm.md#from-document-driven-handoffs-to-executable-feedback).
 
 ## Define the first product increment
 
@@ -47,7 +47,7 @@ In Chapter 3, the team chose to follow one arrival to resolve an event-order dis
 
 ## Keep the model as a test reference
 
-<span id="developing-the-product-and-developing-how-we-engineer-it"></span>Suppose the product uses a timer-driven state machine in embedded firmware and a separate adapter to drive the lamp. It need never count vehicles. An engineer could map a test clock to T1’s eight checkpoints and compare the firmware’s phase requests with the saved trace. At checkpoint three, T1 expects north–south amber. A request for green would send the engineer back to the clock mapping and phase logic before taking up bench time. [Phase sequence and slot assumptions](../../case-study/model-inputs-v1.json) · [Reference trace](../../case-study/trace-v1.csv).
+<span id="developing-the-product-and-developing-how-we-engineer-it"></span>Suppose the product uses a timer-driven state machine in embedded firmware and a separate adapter to drive the lamp. It need never count vehicles. To compare firmware requests with the saved trace, first check that the approved bench schedule follows T1’s phase order and map the test clock to its eight checkpoints. For a sample at checkpoint three, expect a request for north–south amber. A request for green would send the engineer back to the clock mapping and phase logic before taking up bench time. [Phase sequence and slot assumptions](../../case-study/model-inputs-v1.json) · [Reference trace](../../case-study/trace-v1.csv).
 
 > **Concept**
 >

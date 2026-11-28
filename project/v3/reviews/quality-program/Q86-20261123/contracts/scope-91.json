@@ -1,0 +1,10 @@
+[
+  "project/v3/manuscripts/revised/04-engineering-knowledge-as-code.md",
+  "project/v3/manuscripts/revised/07-spec-driven-development-without-waterfall.md",
+  "project/v3/manuscripts/revised/09-engineering-in-small-reviewable-increments.md",
+  "project/v3/manuscripts/revised/10-from-models-to-an-integrated-product.md",
+  "project/v3/manuscripts/revised/11-verification-validation-and-engineering-evidence.md",
+  "project/v3/manuscripts/revised/12-governance-and-engineering-authority.md",
+  "project/v3/learning/quizzes/eel-v3-ch13-continuous-engineering.json",
+  "site/src/components/learning/EvidenceHandoffs.astro"
+]

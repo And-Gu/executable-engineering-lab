@@ -1,5 +1,7 @@
 # From an inspectable model to an integration and delivery decision
 
+**Current edition.** The headings keep the chapter numbers from the November 2026 T1 proposal. In the published course, [Chapter 10 compares the controller and adapter contracts](https://and-gu.github.io/executable-engineering-lab/learn/v3/10-from-models-to-an-integrated-product/#one-word-two-different-interfaces), [Chapter 12 names the owner of the compatibility decision](https://and-gu.github.io/executable-engineering-lab/learn/v3/12-governance-and-engineering-authority/#authority-is-attached-to-a-role-and-a-decision), and [Chapter 13 follows the whole-product release decision](https://and-gu.github.io/executable-engineering-lab/learn/v3/13-continuously-integrated-engineering/#make-the-whole-product-decision). The [T1 guide](README.md) links to the graph and queue experiments. See the [current manuscript index](../manuscripts/revised/INDEX.md) for the full sequence.
+
 **Editorial record set T1 — proposed, fictional and non-operational.** Companion source material: [graph](source-graph-v1.json), [model inputs](model-inputs-v1.json), [computed trace](trace-v1.csv), [curation decisions](data-quality-v1.json). No physical product, agent execution or deployed system is asserted. This file is **not** a certified engineering dossier, an official change authorization or approved manuscript.
 
 ## Ch06: Specify the next investigation, not an invented fix

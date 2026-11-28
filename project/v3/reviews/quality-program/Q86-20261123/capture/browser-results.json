@@ -1,0 +1,832 @@
+{
+  "browser": "Chrome/158.0.8127.37",
+  "started_utc": "2026-11-23T21:43:03.667Z",
+  "pages": [
+    {
+      "label": "ch01",
+      "requested_url": "https://and-gu.github.io/executable-engineering-lab/learn/v3/01-the-new-engineering-paradigm/",
+      "started_utc": "2026-11-23T21:43:03.668Z",
+      "exceptions": [],
+      "effective_url": "https://and-gu.github.io/executable-engineering-lab/learn/v3/01-the-new-engineering-paradigm/",
+      "h1": "The New Engineering Paradigm",
+      "desktop_document": {
+        "viewport_width": 1280,
+        "scroll_width": 1280,
+        "visible_images": []
+      },
+      "quiz": {
+        "fieldsets": 2,
+        "wrong": {
+          "score": "0 of 2 correct.",
+          "focus_on_score": true,
+          "feedback_visible": 2,
+          "first_feedback": "Try a different answer. Another slot can help when teams are waiting for equipment. They would still discover the disagreement after building the modules, when several teams may have to repeat design and integration work.",
+          "review_target": "#feedback-repeatable-feedback"
+        },
+        "correct": {
+          "score": "2 of 2 correct.",
+          "focus_on_score": true,
+          "feedback_visible": 2,
+          "first_feedback": "Correct. The teams can settle the disagreement while both designs are still open. The reusable check improves the engineering system and can spare the next variant the same late rework.",
+          "review_target": null
+        },
+        "reset": {
+          "checked": 0,
+          "score": "",
+          "feedback_visible": 0,
+          "focus_on_first": true
+        }
+      },
+      "finished_utc": "2026-11-23T21:43:04.180Z"
+    },
+    {
+      "label": "ch02",
+      "requested_url": "https://and-gu.github.io/executable-engineering-lab/learn/v3/02-introducing-the-engineering-challenge/",
+      "started_utc": "2026-11-23T21:43:04.180Z",
+      "exceptions": [],
+      "effective_url": "https://and-gu.github.io/executable-engineering-lab/learn/v3/02-introducing-the-engineering-challenge/",
+      "h1": "Setting Up the Intersection Workshop",
+      "desktop_document": {
+        "viewport_width": 1280,
+        "scroll_width": 1280,
+        "visible_images": [
+          {
+            "alt": "Three cars queue on the near approach to a four-way intersection. A pedestrian crosses the street on the left while others wait at the curb beside traffic lights.",
+            "decoded_width": 0,
+            "decoded_height": 0
+          }
+        ]
+      },
+      "quiz": {
+        "fieldsets": 2,
+        "wrong": {
+          "score": "0 of 2 correct.",
+          "focus_on_score": true,
+          "feedback_visible": 2,
+          "first_feedback": "Try a different answer. The prototype represents vehicle phases. Visibility depends on the installed signal and the view from the curb.",
+          "review_target": "#feedback-first-question"
+        },
+        "correct": {
+          "score": "2 of 2 correct.",
+          "focus_on_score": true,
+          "feedback_visible": 2,
+          "first_feedback": "Correct. The model records arrivals, departures and queues at each step. The team can vary the placement of the arrivals and compare the final counts.",
+          "review_target": null
+        },
+        "reset": {
+          "checked": 0,
+          "score": "",
+          "feedback_visible": 0,
+          "focus_on_first": true
+        }
+      },
+      "finished_utc": "2026-11-23T21:43:04.945Z"
+    },
+    {
+      "label": "ch03",
+      "requested_url": "https://and-gu.github.io/executable-engineering-lab/learn/v3/03-planning-under-uncertainty/",
+      "started_utc": "2026-11-23T21:43:04.945Z",
+      "exceptions": [],
+      "effective_url": "https://and-gu.github.io/executable-engineering-lab/learn/v3/03-planning-under-uncertainty/",
+      "h1": "Planning Under Uncertainty",
+      "desktop_document": {
+        "viewport_width": 1280,
+        "scroll_width": 1280,
+        "visible_images": []
+      },
+      "quiz": {
+        "fieldsets": 2,
+        "wrong": {
+          "score": "0 of 2 correct.",
+          "focus_on_score": true,
+          "feedback_visible": 2,
+          "first_feedback": "Try a different answer. A difference between the groups' traces could come from the arrival pattern or from their counting convention. Adding patterns would leave that ambiguity in place.",
+          "review_target": "#feedback-replan-increment"
+        },
+        "correct": {
+          "score": "2 of 2 correct.",
+          "focus_on_score": true,
+          "feedback_visible": 2,
+          "first_feedback": "Correct. This revises the next increment and its backlog. Once both groups add arrivals before service and reproduce the same traces, they can return to deciding which arrival data to request.",
+          "review_target": null
+        },
+        "reset": {
+          "checked": 0,
+          "score": "",
+          "feedback_visible": 0,
+          "focus_on_first": true
+        }
+      },
+      "finished_utc": "2026-11-23T21:43:05.182Z"
+    },
+    {
+      "label": "ch04",
+      "requested_url": "https://and-gu.github.io/executable-engineering-lab/learn/v3/04-engineering-knowledge-as-code/",
+      "started_utc": "2026-11-23T21:43:05.182Z",
+      "exceptions": [],
+      "effective_url": "https://and-gu.github.io/executable-engineering-lab/learn/v3/04-engineering-knowledge-as-code/",
+      "h1": "Engineering Knowledge as Code",
+      "desktop_document": {
+        "viewport_width": 1280,
+        "scroll_width": 1280,
+        "visible_images": []
+      },
+      "quiz": {
+        "fieldsets": 3,
+        "wrong": {
+          "score": "0 of 3 correct.",
+          "focus_on_score": true,
+          "feedback_visible": 3,
+          "first_feedback": "Try a different answer. The search began at the target of E03. Its recorded direction still runs from the model to the function.",
+          "review_target": "#feedback-follow-a-relation"
+        },
+        "correct": {
+          "score": "3 of 3 correct.",
+          "focus_on_score": true,
+          "feedback_visible": 3,
+          "first_feedback": "Correct. E03 points from the model to the function it represents. Following that link backward identifies the model whose assumptions the reviewer should inspect.",
+          "review_target": null
+        },
+        "reset": {
+          "checked": 0,
+          "score": "",
+          "feedback_visible": 0,
+          "focus_on_first": true
+        }
+      },
+      "graph": [
+        {
+          "value": "E03",
+          "visible": [
+            "#record-E03"
+          ]
+        },
+        {
+          "value": "E07",
+          "visible": [
+            "#record-E07"
+          ]
+        },
+        {
+          "value": "E03",
+          "visible": [
+            "#record-E03"
+          ]
+        },
+        {
+          "value": "E08",
+          "visible": [
+            "#record-E08"
+          ]
+        }
+      ],
+      "finished_utc": "2026-11-23T21:43:05.509Z"
+    },
+    {
+      "label": "ch05",
+      "requested_url": "https://and-gu.github.io/executable-engineering-lab/learn/v3/05-learning-through-models-and-prototypes/",
+      "started_utc": "2026-11-23T21:43:05.509Z",
+      "exceptions": [],
+      "effective_url": "https://and-gu.github.io/executable-engineering-lab/learn/v3/05-learning-through-models-and-prototypes/",
+      "h1": "Learning Through Models and Prototypes",
+      "desktop_document": {
+        "viewport_width": 1280,
+        "scroll_width": 1280,
+        "visible_images": []
+      },
+      "quiz": {
+        "fieldsets": 2,
+        "wrong": {
+          "score": "0 of 2 correct.",
+          "focus_on_score": true,
+          "feedback_visible": 2,
+          "first_feedback": "Try a different answer. Both runs use the same phases. Inspect slot 2 to see how the edited run uses the green already there.",
+          "review_target": "#feedback-bounded-claim"
+        },
+        "correct": {
+          "score": "2 of 2 correct.",
+          "focus_on_score": true,
+          "feedback_visible": 2,
+          "first_feedback": "Correct. In the edited run that vehicle arrives and leaves in slot 2. Only one north–south vehicle then joins the queue in slot 3, and it is still there after slot 8.",
+          "review_target": null
+        },
+        "reset": {
+          "checked": 0,
+          "score": "",
+          "feedback_visible": 0,
+          "focus_on_first": true
+        }
+      },
+      "queue_comparison": {
+        "before": "Scenario B baseline. The queue count after slot 8 is 2. Choose a move and run the comparison.",
+        "after": "Scenario B. North–south arrival in slot 3 moved to slot 2. After slot 8, the original queue count is 2 and the edited count is 1.",
+        "final_row": [
+          "8",
+          "All red",
+          "2",
+          "0",
+          "1",
+          "0"
+        ],
+        "timeline": [
+          "North–south queue · Scenario B",
+          "↓",
+          "Arrivals",
+          "Waiting after service"
+        ],
+        "restored": "Scenario B baseline. The queue count after slot 8 is 2. Choose a move and run the comparison."
+      },
+      "finished_utc": "2026-11-23T21:43:06.022Z"
+    },
+    {
+      "label": "ch06",
+      "requested_url": "https://and-gu.github.io/executable-engineering-lab/learn/v3/06-engineering-data-from-measurements-to-decisions/",
+      "started_utc": "2026-11-23T21:43:06.022Z",
+      "exceptions": [],
+      "effective_url": "https://and-gu.github.io/executable-engineering-lab/learn/v3/06-engineering-data-from-measurements-to-decisions/",
+      "h1": "Engineering Data: From Measurements to Decisions",
+      "desktop_document": {
+        "viewport_width": 1280,
+        "scroll_width": 1280,
+        "visible_images": []
+      },
+      "quiz": {
+        "fieldsets": 3,
+        "wrong": {
+          "score": "0 of 3 correct.",
+          "focus_on_score": true,
+          "feedback_visible": 3,
+          "first_feedback": "Try a different answer. A reset discards waiting vehicles. The incoming traffic can still add up exactly as specified.",
+          "review_target": "#feedback-test-the-boundary"
+        },
+        "correct": {
+          "score": "3 of 3 correct.",
+          "focus_on_score": true,
+          "feedback_visible": 3,
+          "first_feedback": "Correct. That departure uses one of the two NS vehicles carried from slot 8. A reset would leave nobody to depart on this green, yet B could still finish with two vehicles.",
+          "review_target": null
+        },
+        "reset": {
+          "checked": 0,
+          "score": "",
+          "feedback_visible": 0,
+          "focus_on_first": true
+        }
+      },
+      "two_cycles": [
+        {
+          "scenario": "A",
+          "status": "Scenario A completed 16 slots. At the end, 1 north–south and 0 east–west vehicles were waiting.",
+          "rows": [
+            [
+              "After slot 8",
+              "1",
+              "0"
+            ],
+            [
+              "Before slot 9 arrivals",
+              "1",
+              "0"
+            ],
+            [
+              "After slot 9",
+              "1",
+              "0"
+            ],
+            [
+              "After slot 16",
+              "1",
+              "0"
+            ]
+          ],
+          "caption": "Scenario A · vehicles waiting in each direction"
+        },
+        {
+          "scenario": "B",
+          "status": "Scenario B completed 16 slots. At the end, 2 north–south and 0 east–west vehicles were waiting.",
+          "rows": [
+            [
+              "After slot 8",
+              "2",
+              "0"
+            ],
+            [
+              "Before slot 9 arrivals",
+              "2",
+              "0"
+            ],
+            [
+              "After slot 9",
+              "1",
+              "2"
+            ],
+            [
+              "After slot 16",
+              "2",
+              "0"
+            ]
+          ],
+          "caption": "Scenario B · vehicles waiting in each direction"
+        }
+      ],
+      "finished_utc": "2026-11-23T21:43:06.536Z"
+    },
+    {
+      "label": "ch07",
+      "requested_url": "https://and-gu.github.io/executable-engineering-lab/learn/v3/07-spec-driven-development-without-waterfall/",
+      "started_utc": "2026-11-23T21:43:06.536Z",
+      "exceptions": [],
+      "effective_url": "https://and-gu.github.io/executable-engineering-lab/learn/v3/07-spec-driven-development-without-waterfall/",
+      "h1": "Spec-Driven Development Without Waterfall",
+      "desktop_document": {
+        "viewport_width": 1280,
+        "scroll_width": 1280,
+        "visible_images": []
+      },
+      "quiz": {
+        "fieldsets": 3,
+        "wrong": {
+          "score": "0 of 3 correct.",
+          "focus_on_score": true,
+          "feedback_visible": 3,
+          "first_feedback": "Try a different answer. The screenshots can convey a useful display choice. They leave open whether waiting vehicles should carry into the next cycle.",
+          "review_target": "#feedback-prototype-to-brief"
+        },
+        "correct": {
+          "score": "3 of 3 correct.",
+          "focus_on_score": true,
+          "feedback_visible": 3,
+          "first_feedback": "Correct. The traffic engineer resolves the purpose of the comparison. The model owner checks the rules and reference rows. Their brief gives the agent a reproducible assignment.",
+          "review_target": null
+        },
+        "reset": {
+          "checked": 0,
+          "score": "",
+          "feedback_visible": 0,
+          "focus_on_first": true
+        }
+      },
+      "finished_utc": "2026-11-23T21:43:06.778Z"
+    },
+    {
+      "label": "ch08",
+      "requested_url": "https://and-gu.github.io/executable-engineering-lab/learn/v3/08-directing-ai-engineering-agents/",
+      "started_utc": "2026-11-23T21:43:06.778Z",
+      "exceptions": [],
+      "effective_url": "https://and-gu.github.io/executable-engineering-lab/learn/v3/08-directing-ai-engineering-agents/",
+      "h1": "Directing AI Engineering Agents",
+      "desktop_document": {
+        "viewport_width": 1280,
+        "scroll_width": 1280,
+        "visible_images": []
+      },
+      "quiz": {
+        "fieldsets": 3,
+        "wrong": {
+          "score": "0 of 3 correct.",
+          "focus_on_score": true,
+          "feedback_visible": 3,
+          "first_feedback": "Try a different answer. The original and edited B both have four arrivals. Moving one vehicle to an earlier green can change the final queue while preserving that total.",
+          "review_target": "#feedback-coordinate-the-rerun"
+        },
+        "correct": {
+          "score": "3 of 3 correct.",
+          "focus_on_score": true,
+          "feedback_visible": 3,
+          "first_feedback": "Correct. The comparison can locate an input mix-up before anyone proposes a rule change. Selecting the scenario named in the brief is within the coordinator’s authority.",
+          "review_target": null
+        },
+        "reset": {
+          "checked": 0,
+          "score": "",
+          "feedback_visible": 0,
+          "focus_on_first": true
+        }
+      },
+      "worked_answer": {
+        "summary": "Compare your instruction with a worked answer",
+        "before": false,
+        "after": true,
+        "excerpt": "One possible addition is “For B, show both queues after slot 8 and at the start of slot 9 before any arrivals or service, then sho",
+        "closed": true
+      },
+      "finished_utc": "2026-11-23T21:43:07.115Z"
+    },
+    {
+      "label": "ch09",
+      "requested_url": "https://and-gu.github.io/executable-engineering-lab/learn/v3/09-engineering-in-small-reviewable-increments/",
+      "started_utc": "2026-11-23T21:43:07.115Z",
+      "exceptions": [],
+      "effective_url": "https://and-gu.github.io/executable-engineering-lab/learn/v3/09-engineering-in-small-reviewable-increments/",
+      "h1": "Planning and Controlling Agents",
+      "desktop_document": {
+        "viewport_width": 1280,
+        "scroll_width": 1280,
+        "visible_images": []
+      },
+      "quiz": {
+        "fieldsets": 3,
+        "wrong": {
+          "score": "0 of 3 correct.",
+          "focus_on_score": true,
+          "feedback_visible": 3,
+          "first_feedback": "Try a different answer. That establishes repeatability. An implementation that restarts the queues can reproduce the same cycle-end counts on every run.",
+          "review_target": "#feedback-choose-first-increment"
+        },
+        "correct": {
+          "score": "3 of 3 correct.",
+          "focus_on_score": true,
+          "feedback_visible": 3,
+          "first_feedback": "Correct. The reviewer can check that the first cycle still works and that a vehicle left over from slot 8 departs on the next green. The reporting work can follow.",
+          "review_target": null
+        },
+        "reset": {
+          "checked": 0,
+          "score": "",
+          "feedback_visible": 0,
+          "focus_on_first": true
+        }
+      },
+      "paths": [
+        {
+          "value": "backward",
+          "visible": [
+            "#trace-backward"
+          ]
+        },
+        {
+          "value": "backward",
+          "visible": [
+            "#trace-backward"
+          ]
+        },
+        {
+          "value": "forward",
+          "visible": [
+            "#trace-forward"
+          ]
+        }
+      ],
+      "finished_utc": "2026-11-23T21:43:07.334Z"
+    },
+    {
+      "label": "ch10",
+      "requested_url": "https://and-gu.github.io/executable-engineering-lab/learn/v3/10-from-models-to-an-integrated-product/",
+      "started_utc": "2026-11-23T21:43:07.334Z",
+      "exceptions": [],
+      "effective_url": "https://and-gu.github.io/executable-engineering-lab/learn/v3/10-from-models-to-an-integrated-product/",
+      "h1": "From Models to an Integrated Product",
+      "desktop_document": {
+        "viewport_width": 1280,
+        "scroll_width": 1280,
+        "visible_images": [
+          {
+            "alt": "A laptop shows a check mark. The middle amber lamp is lit on a vertical signal, and a camera is aimed at the lamp.",
+            "decoded_width": 0,
+            "decoded_height": 0
+          }
+        ]
+      },
+      "quiz": {
+        "fieldsets": 3,
+        "wrong": {
+          "score": "0 of 3 correct.",
+          "focus_on_score": true,
+          "feedback_visible": 3,
+          "first_feedback": "Try a different answer. This brief selects the equipment and layout before the team has tried either option with a maintainer. It also leaves the success criterion unstated.",
+          "review_target": "#feedback-maintainer-intent"
+        },
+        "correct": {
+          "score": "3 of 3 correct.",
+          "focus_on_score": true,
+          "feedback_visible": 3,
+          "first_feedback": "Correct. The brief names the outcome, preserves the interface constraint and gives the team a way to judge success while it explores the design.",
+          "review_target": null
+        },
+        "reset": {
+          "checked": 0,
+          "score": "",
+          "feedback_visible": 0,
+          "focus_on_first": true
+        }
+      },
+      "finished_utc": "2026-11-23T21:43:07.829Z"
+    },
+    {
+      "label": "ch11",
+      "requested_url": "https://and-gu.github.io/executable-engineering-lab/learn/v3/11-verification-validation-and-engineering-evidence/",
+      "started_utc": "2026-11-23T21:43:07.829Z",
+      "exceptions": [],
+      "effective_url": "https://and-gu.github.io/executable-engineering-lab/learn/v3/11-verification-validation-and-engineering-evidence/",
+      "h1": "Reviewing an Integrated Product Change",
+      "desktop_document": {
+        "viewport_width": 1280,
+        "scroll_width": 1280,
+        "visible_images": []
+      },
+      "quiz": {
+        "fieldsets": 3,
+        "wrong": {
+          "score": "0 of 3 correct.",
+          "focus_on_score": true,
+          "feedback_visible": 3,
+          "first_feedback": "Try a different answer. The newest display would confirm a lamp from a receipt alone. Its own tests can pass while preserving that interpretation.",
+          "review_target": "#feedback-choose-the-software-pair"
+        },
+        "correct": {
+          "score": "3 of 3 correct.",
+          "focus_on_score": true,
+          "feedback_visible": 3,
+          "first_feedback": "Correct. This pairing preserves the meanings of both records. The reviewer can inspect how the selected display handles a receipt when its controller has no matching observation.",
+          "review_target": null
+        },
+        "reset": {
+          "checked": 0,
+          "score": "",
+          "feedback_visible": 0,
+          "focus_on_first": true
+        }
+      },
+      "evidence_disclosures": [
+        {
+          "summary": "Inspect the source comparison",
+          "before": false,
+          "after": true,
+          "visible": true,
+          "sample": "The two proposed contracts use one word for different events. A reviewer can establish that discrepancy by reading the defini",
+          "closed": true
+        },
+        {
+          "summary": "Inspect the proposed lamp observation",
+          "before": false,
+          "after": true,
+          "visible": true,
+          "sample": "Identify the command, head, configuration and viewpoint. Match the request to an independent observation of what the lamp dis",
+          "closed": true
+        }
+      ],
+      "finished_utc": "2026-11-23T21:43:08.111Z"
+    },
+    {
+      "label": "ch12",
+      "requested_url": "https://and-gu.github.io/executable-engineering-lab/learn/v3/12-governance-and-engineering-authority/",
+      "started_utc": "2026-11-23T21:43:08.111Z",
+      "exceptions": [],
+      "effective_url": "https://and-gu.github.io/executable-engineering-lab/learn/v3/12-governance-and-engineering-authority/",
+      "h1": "Governance and Engineering Authority",
+      "desktop_document": {
+        "viewport_width": 1280,
+        "scroll_width": 1280,
+        "visible_images": []
+      },
+      "quiz": {
+        "fieldsets": 3,
+        "wrong": {
+          "score": "0 of 3 correct.",
+          "focus_on_score": true,
+          "feedback_visible": 3,
+          "first_feedback": "Try a different answer. The borrowed credentials also allow test execution. A later reviewer would see the coordinator’s identity on reads made by the helper.",
+          "review_target": "#feedback-delegate-source-comparison"
+        },
+        "correct": {
+          "score": "3 of 3 correct.",
+          "focus_on_score": true,
+          "feedback_visible": 3,
+          "first_feedback": "Correct. The helper has the access it needs, and Maya can trace which agent read which definitions under her authorization.",
+          "review_target": null
+        },
+        "reset": {
+          "checked": 0,
+          "score": "",
+          "feedback_visible": 0,
+          "focus_on_first": true
+        }
+      },
+      "finished_utc": "2026-11-23T21:43:08.350Z"
+    },
+    {
+      "label": "ch13",
+      "requested_url": "https://and-gu.github.io/executable-engineering-lab/learn/v3/13-continuously-integrated-engineering/",
+      "started_utc": "2026-11-23T21:43:08.350Z",
+      "exceptions": [],
+      "effective_url": "https://and-gu.github.io/executable-engineering-lab/learn/v3/13-continuously-integrated-engineering/",
+      "h1": "Continuously Integrated Engineering",
+      "desktop_document": {
+        "viewport_width": 1280,
+        "scroll_width": 1280,
+        "visible_images": []
+      },
+      "quiz": {
+        "fieldsets": 3,
+        "wrong": {
+          "score": "0 of 3 correct.",
+          "focus_on_score": true,
+          "feedback_visible": 3,
+          "first_feedback": "Try a different answer. The build record can support the software claim. A technician using that language would still receive the wrong service instruction.",
+          "review_target": "#feedback-one-supported-language"
+        },
+        "correct": {
+          "score": "3 of 3 correct.",
+          "focus_on_score": true,
+          "feedback_visible": 3,
+          "first_feedback": "Correct. The translation is part of the agreed release. Testing the link from the candidate and reviewing the wording establish that the technician can reach the right instruction and interpret it.",
+          "review_target": null
+        },
+        "reset": {
+          "checked": 0,
+          "score": "",
+          "feedback_visible": 0,
+          "focus_on_first": true
+        }
+      },
+      "translation": [
+        {
+          "value": "pending",
+          "visible": [
+            "#release-hold"
+          ]
+        },
+        {
+          "value": "pending",
+          "visible": [
+            "#release-hold"
+          ]
+        },
+        {
+          "value": "reviewed",
+          "visible": [
+            "#release-eligible"
+          ]
+        }
+      ],
+      "finished_utc": "2026-11-23T21:43:08.637Z"
+    },
+    {
+      "label": "ch14",
+      "requested_url": "https://and-gu.github.io/executable-engineering-lab/learn/v3/14-from-engineering-intent-to-continuous-integration/",
+      "started_utc": "2026-11-23T21:43:08.637Z",
+      "exceptions": [],
+      "effective_url": "https://and-gu.github.io/executable-engineering-lab/learn/v3/14-from-engineering-intent-to-continuous-integration/",
+      "h1": "From Engineering Question to Useful Release",
+      "desktop_document": {
+        "viewport_width": 1280,
+        "scroll_width": 1280,
+        "visible_images": []
+      },
+      "quiz": {
+        "fieldsets": 3,
+        "wrong": {
+          "score": "0 of 3 correct.",
+          "focus_on_score": true,
+          "feedback_visible": 3,
+          "first_feedback": "Try a different answer. The demonstration can reveal a useful question, but appearance alone does not establish the governing behavior, configuration or evidence for delivery.",
+          "review_target": "#feedback-promote-learning-into-delivery"
+        },
+        "correct": {
+          "score": "3 of 3 correct.",
+          "focus_on_score": true,
+          "feedback_visible": 3,
+          "first_feedback": "Correct. The prototype can remain disposable. The selected learning becomes durable through maintained definitions, explicit configuration and feedback that can expose a mismatch.",
+          "review_target": null
+        },
+        "reset": {
+          "checked": 0,
+          "score": "",
+          "feedback_visible": 0,
+          "focus_on_first": true
+        }
+      },
+      "narrow": {
+        "viewport_width": 390,
+        "scroll_width": 390,
+        "rendered_labels": [
+          {
+            "text": "Reuse from the earlier work",
+            "width": 338.609375
+          },
+          {
+            "text": "Check on the new version",
+            "width": 338.609375
+          },
+          {
+            "text": "Reuse from the earlier work",
+            "width": 338.609375
+          },
+          {
+            "text": "Check on the new version",
+            "width": 338.609375
+          },
+          {
+            "text": "Reuse from the earlier work",
+            "width": 338.609375
+          },
+          {
+            "text": "Check on the new version",
+            "width": 338.609375
+          }
+        ],
+        "mobile_course_visible": true
+      },
+      "finished_utc": "2026-11-23T21:43:09.227Z"
+    },
+    {
+      "label": "lab",
+      "requested_url": "https://and-gu.github.io/executable-engineering-lab/lab/",
+      "started_utc": "2026-11-23T21:43:09.227Z",
+      "exceptions": [],
+      "effective_url": "https://and-gu.github.io/executable-engineering-lab/lab/",
+      "h1": "What counts as sufficient coverage?",
+      "desktop_document": {
+        "viewport_width": 1280,
+        "scroll_width": 1280,
+        "visible_images": []
+      },
+      "what_if": {
+        "initial_radius": "35",
+        "before": "FAIL — 38.52% estimated coverage; threshold 50.00%.",
+        "zero_radius": "FAIL — 0.00% estimated coverage; threshold 50.00%.",
+        "recorded": "1 of 4 configurations recorded.",
+        "restored": "FAIL — 38.52% estimated coverage; threshold 50.00%.",
+        "cleared": "No configurations recorded."
+      },
+      "finished_utc": "2026-11-23T21:43:09.794Z"
+    },
+    {
+      "label": "withdrawn14",
+      "requested_url": "https://and-gu.github.io/executable-engineering-lab/learn/v3/14-managing-engineering-knowledge-at-scale/",
+      "started_utc": "2026-11-23T21:43:09.794Z",
+      "exceptions": [],
+      "effective_url": "https://and-gu.github.io/executable-engineering-lab/learn/v3/14-from-engineering-intent-to-continuous-integration/",
+      "h1": "From Engineering Question to Useful Release",
+      "desktop_document": {
+        "viewport_width": 1280,
+        "scroll_width": 1280,
+        "visible_images": []
+      },
+      "finished_utc": "2026-11-23T21:43:10.092Z"
+    },
+    {
+      "label": "withdrawn15",
+      "requested_url": "https://and-gu.github.io/executable-engineering-lab/learn/v3/15-choosing-the-next-engineering-capability/",
+      "started_utc": "2026-11-23T21:43:10.092Z",
+      "exceptions": [],
+      "effective_url": "https://and-gu.github.io/executable-engineering-lab/learn/v3/14-from-engineering-intent-to-continuous-integration/",
+      "h1": "From Engineering Question to Useful Release",
+      "desktop_document": {
+        "viewport_width": 1280,
+        "scroll_width": 1280,
+        "visible_images": []
+      },
+      "finished_utc": "2026-11-23T21:43:10.352Z"
+    },
+    {
+      "label": "ch05-noscript",
+      "requested_url": "https://and-gu.github.io/executable-engineering-lab/learn/v3/05-learning-through-models-and-prototypes/",
+      "started_utc": "2026-11-23T21:43:10.353Z",
+      "exceptions": [],
+      "effective_url": "https://and-gu.github.io/executable-engineering-lab/learn/v3/05-learning-through-models-and-prototypes/",
+      "h1": "Learning Through Models and Prototypes",
+      "desktop_document": {
+        "viewport_width": 1280,
+        "scroll_width": 1280,
+        "visible_images": []
+      },
+      "no_script": {
+        "form_hidden": true,
+        "native_answers": 2,
+        "opened_answer": "Moving one north–south arrival in B from slot 3 to slot 2 changes the final queue from two vehicles to one. Which claim do the rows support?\n\nOne vehicle could leave on the last north–south green because it arrived a slot earlier. In the edited run that vehicle arrives and leaves in slot 2. Only one north–south vehicle then joins the queue in slot 3, and it is still there after slot 8.",
+        "queue_summary": "See the worked comparison for scenario B",
+        "worked_visible": true
+      },
+      "finished_utc": "2026-11-23T21:43:10.473Z"
+    }
+  ],
+  "screenshots": [
+    {
+      "label": "ch02-desktop",
+      "selector": ".intersection-overview",
+      "sha256": "6f8c3761d8ae7c235d79f85cc6b178834c6739f0961edd6ea988dbb00b1f5f0a"
+    },
+    {
+      "label": "ch06-desktop",
+      "selector": "#two-cycle-experiment",
+      "sha256": "b778ace9a8bfaff840742926593223892c50b7de1ea3ed364419feda1803d72a"
+    },
+    {
+      "label": "ch10-desktop",
+      "selector": ".intersection-overview",
+      "sha256": "4af4d0e63837f8dfb7f3ac159c1847d34d2e33b2b87bb6cfd3f9a4a690ca4356"
+    },
+    {
+      "label": "ch14-desktop",
+      "selector": "#engineering-capability-flow",
+      "sha256": "2a30557a9234831d06dfa334a3833a551482d6c6d281fbb95892353900a5244d"
+    },
+    {
+      "label": "ch14-narrow",
+      "selector": "#evidence-handoffs",
+      "sha256": "89538fe5c890c1baf539bae468106b050245122efa7c66316d19da0017d61ff1"
+    }
+  ],
+  "finished_utc": "2026-11-23T21:43:10.474Z"
+}

@@ -6,8 +6,10 @@ import { chapterQuizzes, chapterSections, quizSchema } from './v3-learning';
 describe('V3 chapter activities', () => {
   it('binds all active manuscripts to their own questions and slots', () => {
     const slots: Record<string, string[]> = {
-      '04': ['change-impact-figure', 'chapter-quiz'],
-      '05': ['intersection-model', 'chapter-quiz'],
+      '01': ['investment-feedback', 'chapter-quiz'],
+      '02': ['arrival-patterns', 'chapter-quiz'],
+      '04': ['intersection-structure', 'change-impact-figure', 'chapter-quiz'],
+      '05': ['engineering-loop', 'initiative-before', 'intersection-model', 'initiative-after', 'chapter-quiz'],
       '06': ['two-cycle-experiment', 'chapter-quiz'],
       '09': ['chapter-quiz', 'digital-thread'],
       '11': ['integrated-change', 'chapter-quiz'],

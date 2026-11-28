@@ -1,0 +1,479 @@
+{
+  "id": "Q86-20261123-B2",
+  "previous": "64931d4de37694f98e7590a02086ce43ec5ebbf2",
+  "revision": "3d752d994ab5c47f865140ca0a005e13e6aa7f82",
+  "deployment": "https://github.com/And-Gu/executable-engineering-lab/actions/runs/45274837235",
+  "reason": "Independent homepage PR #92 merged while B1 reviews were in progress. Map B1 judgments onto B2 individually.",
+  "before": {
+    "timestamp": "2026-11-23T21:59:14.413911+00:00",
+    "payload": {
+      "schema_version": 1,
+      "source_commit": "3d752d994ab5c47f865140ca0a005e13e6aa7f82",
+      "built_at": "2026-11-23T21:57:46.425Z"
+    }
+  },
+  "after": {
+    "timestamp": "2026-11-23T21:59:15.492444+00:00",
+    "payload": {
+      "schema_version": 1,
+      "source_commit": "3d752d994ab5c47f865140ca0a005e13e6aa7f82",
+      "built_at": "2026-11-23T21:57:46.425Z"
+    }
+  },
+  "changed_source_files": [
+    "M\tsite/src/components/CourseOverview.astro",
+    "M\tsite/src/layouts/HomeLayout.astro",
+    "M\tsite/src/pages/index.astro",
+    "M\tsite/src/pages/learn/v2/01-new-engineering-paradigm.astro"
+  ],
+  "routes": [
+    {
+      "id": "eel-v3-ch01-new-paradigm",
+      "url": "https://and-gu.github.io/executable-engineering-lab/learn/v3/01-the-new-engineering-paradigm/",
+      "http": 200,
+      "sha256": "a978c374af7a61334c85719f5d4ef3c14e7bee661ffbcdf06eeaf94fba7915b1",
+      "b1_sha256": "a978c374af7a61334c85719f5d4ef3c14e7bee661ffbcdf06eeaf94fba7915b1",
+      "byte_identical": true,
+      "observed_h1": [
+        "The New Engineering Paradigm"
+      ],
+      "retrieved_at": "2026-11-23T21:59:14.523095+00:00"
+    },
+    {
+      "id": "eel-v3-ch02-intersection-challenge",
+      "url": "https://and-gu.github.io/executable-engineering-lab/learn/v3/02-introducing-the-engineering-challenge/",
+      "http": 200,
+      "sha256": "ee980a75fd59be45de20b2c7f81a190c3715ebf0d842d830d4acaf00350291da",
+      "b1_sha256": "ee980a75fd59be45de20b2c7f81a190c3715ebf0d842d830d4acaf00350291da",
+      "byte_identical": true,
+      "observed_h1": [
+        "Setting Up the Intersection Workshop"
+      ],
+      "retrieved_at": "2026-11-23T21:59:14.511095+00:00"
+    },
+    {
+      "id": "eel-v3-ch03-planning",
+      "url": "https://and-gu.github.io/executable-engineering-lab/learn/v3/03-planning-under-uncertainty/",
+      "http": 200,
+      "sha256": "ca6621800578bc556b898bb95abb39aade81d2f75fecd585cdf5e546cad97e20",
+      "b1_sha256": "ca6621800578bc556b898bb95abb39aade81d2f75fecd585cdf5e546cad97e20",
+      "byte_identical": true,
+      "observed_h1": [
+        "Planning Under Uncertainty"
+      ],
+      "retrieved_at": "2026-11-23T21:59:14.518940+00:00"
+    },
+    {
+      "id": "eel-v3-ch04-engineering-knowledge",
+      "url": "https://and-gu.github.io/executable-engineering-lab/learn/v3/04-engineering-knowledge-as-code/",
+      "http": 200,
+      "sha256": "c5198d4c6bbd59d41c0f995cb7d20b39eaf7fea3f3a973cd614864d008c7f749",
+      "b1_sha256": "c5198d4c6bbd59d41c0f995cb7d20b39eaf7fea3f3a973cd614864d008c7f749",
+      "byte_identical": true,
+      "observed_h1": [
+        "Engineering Knowledge as Code"
+      ],
+      "retrieved_at": "2026-11-23T21:59:14.528698+00:00"
+    },
+    {
+      "id": "eel-v3-ch05-models-prototypes",
+      "url": "https://and-gu.github.io/executable-engineering-lab/learn/v3/05-learning-through-models-and-prototypes/",
+      "http": 200,
+      "sha256": "78c8f44b2d2752c289e2ac40a9a81dc0bd403221807865d013bbb622c045773a",
+      "b1_sha256": "78c8f44b2d2752c289e2ac40a9a81dc0bd403221807865d013bbb622c045773a",
+      "byte_identical": true,
+      "observed_h1": [
+        "Learning Through Models and Prototypes"
+      ],
+      "retrieved_at": "2026-11-23T21:59:14.534134+00:00"
+    },
+    {
+      "id": "eel-v3-ch06-engineering-data",
+      "url": "https://and-gu.github.io/executable-engineering-lab/learn/v3/06-engineering-data-from-measurements-to-decisions/",
+      "http": 200,
+      "sha256": "c35d3717e4b713ed6527d68bc3bf0108db1eff3190a38a625d89a0b19a81442f",
+      "b1_sha256": "c35d3717e4b713ed6527d68bc3bf0108db1eff3190a38a625d89a0b19a81442f",
+      "byte_identical": true,
+      "observed_h1": [
+        "Engineering Data: From Measurements to Decisions"
+      ],
+      "retrieved_at": "2026-11-23T21:59:14.538520+00:00"
+    },
+    {
+      "id": "eel-v3-ch07-spec",
+      "url": "https://and-gu.github.io/executable-engineering-lab/learn/v3/07-spec-driven-development-without-waterfall/",
+      "http": 200,
+      "sha256": "f51de9bf4115279ba2fe53f87bde8c030f7f5805ab481690365c556e073791d5",
+      "b1_sha256": "f51de9bf4115279ba2fe53f87bde8c030f7f5805ab481690365c556e073791d5",
+      "byte_identical": true,
+      "observed_h1": [
+        "Spec-Driven Development Without Waterfall"
+      ],
+      "retrieved_at": "2026-11-23T21:59:14.572173+00:00"
+    },
+    {
+      "id": "eel-v3-ch08-directing-agents",
+      "url": "https://and-gu.github.io/executable-engineering-lab/learn/v3/08-directing-ai-engineering-agents/",
+      "http": 200,
+      "sha256": "834783d1afeabcbc16f5ef337f438694f2691ea2cda27dc1bd946f191b9c24ff",
+      "b1_sha256": "834783d1afeabcbc16f5ef337f438694f2691ea2cda27dc1bd946f191b9c24ff",
+      "byte_identical": true,
+      "observed_h1": [
+        "Directing AI Engineering Agents"
+      ],
+      "retrieved_at": "2026-11-23T21:59:14.576411+00:00"
+    },
+    {
+      "id": "eel-v3-ch09-reviewable-increments",
+      "url": "https://and-gu.github.io/executable-engineering-lab/learn/v3/09-engineering-in-small-reviewable-increments/",
+      "http": 200,
+      "sha256": "8604038c7e664fb4c3178c7222e22e13d3f7f798ffdcfb4eb788f23f66526312",
+      "b1_sha256": "8604038c7e664fb4c3178c7222e22e13d3f7f798ffdcfb4eb788f23f66526312",
+      "byte_identical": true,
+      "observed_h1": [
+        "Planning and Controlling Agents"
+      ],
+      "retrieved_at": "2026-11-23T21:59:14.582570+00:00"
+    },
+    {
+      "id": "eel-v3-ch10-integrated-product",
+      "url": "https://and-gu.github.io/executable-engineering-lab/learn/v3/10-from-models-to-an-integrated-product/",
+      "http": 200,
+      "sha256": "a28f5d50cca6c28633b1dbeb6d12e8efa4ab355246e32f4a6c1f30c283a70e23",
+      "b1_sha256": "a28f5d50cca6c28633b1dbeb6d12e8efa4ab355246e32f4a6c1f30c283a70e23",
+      "byte_identical": true,
+      "observed_h1": [
+        "From Models to an Integrated Product"
+      ],
+      "retrieved_at": "2026-11-23T21:59:14.599000+00:00"
+    },
+    {
+      "id": "eel-v3-ch11-verification-evidence",
+      "url": "https://and-gu.github.io/executable-engineering-lab/learn/v3/11-verification-validation-and-engineering-evidence/",
+      "http": 200,
+      "sha256": "792b77b1ff4b4b1301e2b2c1a40bfac9e33a7ecaae22860fa80c3dbb2d664337",
+      "b1_sha256": "792b77b1ff4b4b1301e2b2c1a40bfac9e33a7ecaae22860fa80c3dbb2d664337",
+      "byte_identical": true,
+      "observed_h1": [
+        "Reviewing an Integrated Product Change"
+      ],
+      "retrieved_at": "2026-11-23T21:59:14.594510+00:00"
+    },
+    {
+      "id": "eel-v3-ch12-governance-authority",
+      "url": "https://and-gu.github.io/executable-engineering-lab/learn/v3/12-governance-and-engineering-authority/",
+      "http": 200,
+      "sha256": "686178568978d9fee72a40b5a0772837a2f9166f63aff8f3fcd03fa23eec00ef",
+      "b1_sha256": "686178568978d9fee72a40b5a0772837a2f9166f63aff8f3fcd03fa23eec00ef",
+      "byte_identical": true,
+      "observed_h1": [
+        "Governance and Engineering Authority"
+      ],
+      "retrieved_at": "2026-11-23T21:59:14.591607+00:00"
+    },
+    {
+      "id": "eel-v3-ch13-continuous-engineering",
+      "url": "https://and-gu.github.io/executable-engineering-lab/learn/v3/13-continuously-integrated-engineering/",
+      "http": 200,
+      "sha256": "172ecd9ce9660b2a2438ada7ef7d8bf7f3e1fd503485ed7f2162481295f93b6e",
+      "b1_sha256": "172ecd9ce9660b2a2438ada7ef7d8bf7f3e1fd503485ed7f2162481295f93b6e",
+      "byte_identical": true,
+      "observed_h1": [
+        "Continuously Integrated Engineering"
+      ],
+      "retrieved_at": "2026-11-23T21:59:14.716990+00:00"
+    },
+    {
+      "id": "eel-v3-ch14-course-wrap-up",
+      "url": "https://and-gu.github.io/executable-engineering-lab/learn/v3/14-from-engineering-intent-to-continuous-integration/",
+      "http": 200,
+      "sha256": "17ed4edcdf5813a0a676d4344f4cdfddad5345974615fce1f52eceef34b32c08",
+      "b1_sha256": "17ed4edcdf5813a0a676d4344f4cdfddad5345974615fce1f52eceef34b32c08",
+      "byte_identical": true,
+      "observed_h1": [
+        "From Engineering Question to Useful Release"
+      ],
+      "retrieved_at": "2026-11-23T21:59:14.754101+00:00"
+    },
+    {
+      "id": "route:/",
+      "url": "https://and-gu.github.io/executable-engineering-lab/",
+      "http": 200,
+      "sha256": "1bb8920af9af50260a973c2c5669c1ce05187ab67410906d973443ddb692533b",
+      "b1_sha256": "c2dd94a3a049e04830217b6156ee5ae78d5cbfd002bc66d2318575e64a5aea2a",
+      "byte_identical": false,
+      "observed_h1": [
+        "Engineering must evolve. So must how we engineer."
+      ],
+      "retrieved_at": "2026-11-23T21:59:14.744606+00:00"
+    },
+    {
+      "id": "route:/learn/",
+      "url": "https://and-gu.github.io/executable-engineering-lab/learn/",
+      "http": 200,
+      "sha256": "809d19000ca16845387edbc461534d016b820928b6352f548b867d28109196a5",
+      "b1_sha256": "a5f2e5b573c0fc6de9e0992ac156fd5bf55b93e59fdd4a1e4049f333be25525c",
+      "byte_identical": false,
+      "observed_h1": [
+        "Follow the intersection from intent to release"
+      ],
+      "retrieved_at": "2026-11-23T21:59:14.738526+00:00"
+    },
+    {
+      "id": "route:/bonus/building-the-machine-that-builds-the-machine/",
+      "url": "https://and-gu.github.io/executable-engineering-lab/bonus/building-the-machine-that-builds-the-machine/",
+      "http": 200,
+      "sha256": "399c3524d45573bc8cd5d5cbafa0a43d0aae32d699a21e6cfc5c83b1fc9d75b8",
+      "b1_sha256": "ed364581bc0d6659497d4b2dc8903608aa60e4946f1c87761d6d3e349f404aad",
+      "byte_identical": false,
+      "observed_h1": [
+        "Building the Machine That Builds the Machine"
+      ],
+      "retrieved_at": "2026-11-23T21:59:14.740296+00:00"
+    },
+    {
+      "id": "route:/lab/",
+      "url": "https://and-gu.github.io/executable-engineering-lab/lab/",
+      "http": 200,
+      "sha256": "60e02d1544aa58d0a47975a3f02adaac7ce92ba10d6a2df72a7fad4280695273",
+      "b1_sha256": "6ae71839d019b1d9c3988a6fae53088e10ede28aebf9d5ea34992cb2942fac0d",
+      "byte_identical": false,
+      "observed_h1": [
+        "What counts as sufficient coverage?"
+      ],
+      "retrieved_at": "2026-11-23T21:59:14.732832+00:00"
+    },
+    {
+      "id": "route:/reference/",
+      "url": "https://and-gu.github.io/executable-engineering-lab/reference/",
+      "http": 200,
+      "sha256": "34fa30ee1db6f71771d343c90da97e7ececf1ab2c59f19bbbce2e43cd37a44f8",
+      "b1_sha256": "13d391c3ffa90a17ae30f05d5ffbaa49b1bc3513f72a3bcb5f99eca2ef670f31",
+      "byte_identical": false,
+      "observed_h1": [
+        "Follow the engineering sources"
+      ],
+      "retrieved_at": "2026-11-23T21:59:14.775461+00:00"
+    },
+    {
+      "id": "route:/learn/v2/01-new-engineering-paradigm/",
+      "url": "https://and-gu.github.io/executable-engineering-lab/learn/v2/01-new-engineering-paradigm/",
+      "http": 200,
+      "sha256": "4a4e73ef1c984fccd8ccd6304f1d1f1bf14060c500c083cf6ceff852dd198ea2",
+      "b1_sha256": "694b03bfc8fd64439e635effcdde721211264e7753c39de0d0a307624ce90eec",
+      "byte_identical": false,
+      "observed_h1": [
+        "The New Engineering Paradigm"
+      ],
+      "retrieved_at": "2026-11-23T21:59:14.789841+00:00"
+    },
+    {
+      "id": "route:/learn/v2/05-engineering-data/",
+      "url": "https://and-gu.github.io/executable-engineering-lab/learn/v2/05-engineering-data/",
+      "http": 200,
+      "sha256": "fcd4e646ecd3f58c6fcf76699d0bd51ad24c8913ae09550487a090d3af816b66",
+      "b1_sha256": "fcd4e646ecd3f58c6fcf76699d0bd51ad24c8913ae09550487a090d3af816b66",
+      "byte_identical": true,
+      "observed_h1": [
+        "Engineering Data: From Measurements to Decisions"
+      ],
+      "retrieved_at": "2026-11-23T21:59:14.807864+00:00"
+    },
+    {
+      "id": "route:/learn/01-engineering-intent/",
+      "url": "https://and-gu.github.io/executable-engineering-lab/learn/01-engineering-intent/",
+      "http": 200,
+      "sha256": "78eb47a9bd52b31a56813fd1dd5bae9877ba02d58bd748be675a7564bad43630",
+      "b1_sha256": "78eb47a9bd52b31a56813fd1dd5bae9877ba02d58bd748be675a7564bad43630",
+      "byte_identical": true,
+      "observed_h1": [
+        "From Engineering Intent to Evidence"
+      ],
+      "retrieved_at": "2026-11-23T21:59:14.923574+00:00"
+    },
+    {
+      "id": "route:/learn/02-engineering-information-models/",
+      "url": "https://and-gu.github.io/executable-engineering-lab/learn/02-engineering-information-models/",
+      "http": 200,
+      "sha256": "0a9e814b82fecae94d4f7c64db1e5006ae343333d18076627f5fe573cba57c16",
+      "b1_sha256": "0a9e814b82fecae94d4f7c64db1e5006ae343333d18076627f5fe573cba57c16",
+      "byte_identical": true,
+      "observed_h1": [
+        "Engineering Information Models"
+      ],
+      "retrieved_at": "2026-11-23T21:59:14.942761+00:00"
+    },
+    {
+      "id": "route:/learn/03-digital-threads/",
+      "url": "https://and-gu.github.io/executable-engineering-lab/learn/03-digital-threads/",
+      "http": 200,
+      "sha256": "8c4a932fdef5058539490eb943b55af666f56a25d134132cdb8c468ec5938ef4",
+      "b1_sha256": "8c4a932fdef5058539490eb943b55af666f56a25d134132cdb8c468ec5938ef4",
+      "byte_identical": true,
+      "observed_h1": [
+        "Digital Threads and Knowledge Graphs"
+      ],
+      "retrieved_at": "2026-11-23T21:59:14.955585+00:00"
+    },
+    {
+      "id": "route:/learn/04-executable-models/",
+      "url": "https://and-gu.github.io/executable-engineering-lab/learn/04-executable-models/",
+      "http": 200,
+      "sha256": "def1b76eafdcdf15468dfcac77e22406f524f6675c506188e071578aa3cfb0eb",
+      "b1_sha256": "def1b76eafdcdf15468dfcac77e22406f524f6675c506188e071578aa3cfb0eb",
+      "byte_identical": true,
+      "observed_h1": [
+        "Executable Engineering Models"
+      ],
+      "retrieved_at": "2026-11-23T21:59:14.966455+00:00"
+    },
+    {
+      "id": "route:/learn/05-experimentation/",
+      "url": "https://and-gu.github.io/executable-engineering-lab/learn/05-experimentation/",
+      "http": 200,
+      "sha256": "44f3f4a5d5c61e45df57be50add407f927a0fecda815a5be10333cc571c8aed8",
+      "b1_sha256": "44f3f4a5d5c61e45df57be50add407f927a0fecda815a5be10333cc571c8aed8",
+      "byte_identical": true,
+      "observed_h1": [
+        "Experimentation and Trade-offs"
+      ],
+      "retrieved_at": "2026-11-23T21:59:14.968953+00:00"
+    },
+    {
+      "id": "route:/learn/06-verification-evidence/",
+      "url": "https://and-gu.github.io/executable-engineering-lab/learn/06-verification-evidence/",
+      "http": 200,
+      "sha256": "985aba0732977119e01211f21435938802eb96bfb980d67925fb6b2491a68fcc",
+      "b1_sha256": "985aba0732977119e01211f21435938802eb96bfb980d67925fb6b2491a68fcc",
+      "byte_identical": true,
+      "observed_h1": [
+        "Verification and Engineering Evidence"
+      ],
+      "retrieved_at": "2026-11-23T21:59:14.980713+00:00"
+    },
+    {
+      "id": "route:/learn/07-agentic-engineering/",
+      "url": "https://and-gu.github.io/executable-engineering-lab/learn/07-agentic-engineering/",
+      "http": 200,
+      "sha256": "1d526694918ac1451c95421262cebed06d22fec78a2f8bbfa0a6d2942601185b",
+      "b1_sha256": "1d526694918ac1451c95421262cebed06d22fec78a2f8bbfa0a6d2942601185b",
+      "byte_identical": true,
+      "observed_h1": [
+        "Agentic Engineering"
+      ],
+      "retrieved_at": "2026-11-23T21:59:15.111261+00:00"
+    },
+    {
+      "id": "route:/learn/08-engineering-context/",
+      "url": "https://and-gu.github.io/executable-engineering-lab/learn/08-engineering-context/",
+      "http": 200,
+      "sha256": "91498a37c529fb08875762e445d2c65c47c2a7d9c95d720a4b206f1a68ffe278",
+      "b1_sha256": "91498a37c529fb08875762e445d2c65c47c2a7d9c95d720a4b206f1a68ffe278",
+      "byte_identical": true,
+      "observed_h1": [
+        "Agents and Engineering Context"
+      ],
+      "retrieved_at": "2026-11-23T21:59:15.118871+00:00"
+    },
+    {
+      "id": "route:/learn/09-continuous-engineering/",
+      "url": "https://and-gu.github.io/executable-engineering-lab/learn/09-continuous-engineering/",
+      "http": 200,
+      "sha256": "89059b7a91317bc5c277a780bad7c5afbceb99aa01ba6c63d65c2b7f9bfe3829",
+      "b1_sha256": "89059b7a91317bc5c277a780bad7c5afbceb99aa01ba6c63d65c2b7f9bfe3829",
+      "byte_identical": true,
+      "observed_h1": [
+        "Continuous Engineering"
+      ],
+      "retrieved_at": "2026-11-23T21:59:15.219472+00:00"
+    },
+    {
+      "id": "route:/learn/10-governance-assurance/",
+      "url": "https://and-gu.github.io/executable-engineering-lab/learn/10-governance-assurance/",
+      "http": 200,
+      "sha256": "a4bb789288d3e2d67e02481266c19d75c799967defd43d8e31e2ddbeabde4b52",
+      "b1_sha256": "a4bb789288d3e2d67e02481266c19d75c799967defd43d8e31e2ddbeabde4b52",
+      "byte_identical": true,
+      "observed_h1": [
+        "Governance and Assurance"
+      ],
+      "retrieved_at": "2026-11-23T21:59:15.388839+00:00"
+    },
+    {
+      "id": "route:/learn/11-engineering-knowledge/",
+      "url": "https://and-gu.github.io/executable-engineering-lab/learn/11-engineering-knowledge/",
+      "http": 200,
+      "sha256": "212e009337970a0e82344c638d0bce839a87ef7d04d93f9ba8ef70d172ec5573",
+      "b1_sha256": "212e009337970a0e82344c638d0bce839a87ef7d04d93f9ba8ef70d172ec5573",
+      "byte_identical": true,
+      "observed_h1": [
+        "Engineering Knowledge at Scale"
+      ],
+      "retrieved_at": "2026-11-23T21:59:15.409922+00:00"
+    },
+    {
+      "id": "route:/learn/12-integrated-environment/",
+      "url": "https://and-gu.github.io/executable-engineering-lab/learn/12-integrated-environment/",
+      "http": 200,
+      "sha256": "bc8c62be0b3445c32b2cf6ba6bf41d2a726242de89993b5d8eb5822db5413f39",
+      "b1_sha256": "bc8c62be0b3445c32b2cf6ba6bf41d2a726242de89993b5d8eb5822db5413f39",
+      "byte_identical": true,
+      "observed_h1": [
+        "The Integrated Engineering Environment"
+      ],
+      "retrieved_at": "2026-11-23T21:59:15.438447+00:00"
+    },
+    {
+      "id": "eel-v3-ch14-knowledge-at-scale",
+      "url": "https://and-gu.github.io/executable-engineering-lab/learn/v3/14-managing-engineering-knowledge-at-scale/",
+      "http": 200,
+      "sha256": "f8a78881e192a7f031650b36b8f659dac830cbac46ca1e72c77515974ba9c177",
+      "b1_sha256": "f8a78881e192a7f031650b36b8f659dac830cbac46ca1e72c77515974ba9c177",
+      "byte_identical": true,
+      "observed_h1": [],
+      "retrieved_at": "2026-11-23T21:59:15.367441+00:00"
+    },
+    {
+      "id": "eel-v3-ch15-next-capability",
+      "url": "https://and-gu.github.io/executable-engineering-lab/learn/v3/15-choosing-the-next-engineering-capability/",
+      "http": 200,
+      "sha256": "c10cb71410866412a1bbc62c724b5d12944eabc80ae2d04d34b83d8833082c85",
+      "b1_sha256": "c10cb71410866412a1bbc62c724b5d12944eabc80ae2d04d34b83d8833082c85",
+      "byte_identical": true,
+      "observed_h1": [],
+      "retrieved_at": "2026-11-23T21:59:15.365117+00:00"
+    },
+    {
+      "id": "eel-v3-ch08-reviewable-increments",
+      "url": "https://and-gu.github.io/executable-engineering-lab/learn/v3/08-engineering-in-small-reviewable-increments/",
+      "http": 404,
+      "sha256": "b620507312c5e97566a3c6cfaf99144fefc18a0da7d941401dfa0f5f58fb0368",
+      "b1_sha256": "b620507312c5e97566a3c6cfaf99144fefc18a0da7d941401dfa0f5f58fb0368",
+      "byte_identical": true,
+      "observed_h1": [
+        "404"
+      ],
+      "retrieved_at": "2026-11-23T21:59:15.386315+00:00"
+    }
+  ],
+  "current_directory": {
+    "route:/": {
+      "unique_active_destinations": 14,
+      "companion_link": true,
+      "archive_disclosures": [
+        "Archive Earlier courses and experiments 14 pages"
+      ]
+    },
+    "route:/learn/": {
+      "unique_active_destinations": 14,
+      "companion_link": true,
+      "archive_disclosures": []
+    }
+  },
+  "links": {
+    "occurrences": 833,
+    "fragments": 180
+  },
+  "unresolved": [],
+  "method": "Direct hosted GET, page bytes, rendered headings, navigation hrefs and target fragments. Browser behavior evidence on B1 carries only where relevant behavior and dependencies are unchanged."
+}

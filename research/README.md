@@ -4,7 +4,7 @@
 
 ## Where material lives
 
-- `research/INDEX.md` is the **mandatory entry point for AI agents and editors**. It maps topics and all 13 chapters to archived research documents.
+- `research/INDEX.md` is the **mandatory entry point for AI agents and editors**. It maps current chapter topics to archived research documents.
 - `research/v3/` holds dated v3 research baselines, source notes and working bibliographies.
 - `project/` holds proposed curriculum, editorial and architecture specifications; it is not a public article collection.
 - `site/src/` holds content or components that may be included in the published site. **Do not place background-only research here**.

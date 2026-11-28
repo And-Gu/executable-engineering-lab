@@ -4,7 +4,7 @@ chapter: 5
 part: "II — Build and Test Knowledge"
 title: "Learning Through Models and Prototypes"
 status: draft
-publication: unpublished
+publication: published
 reference_case: four-way-traffic-intersection
 teaching_fixture: "T1 — synthetic editorial inputs and calculated trace"
 ---
@@ -15,11 +15,19 @@ teaching_fixture: "T1 — synthetic editorial inputs and calculated trace"
 
 The city wants traffic to flow while people can cross safely. In the Chapter 2 workshop, the team asked how queues would change if vehicles arrived at different times under fixed signal phases. Chapter 3 exposed a disagreement that could spoil the comparison. When one vehicle arrives at an empty queue on green, can it leave in that same slot? The team agreed to add arrivals before serving the queue. We can now turn that decision into a working prototype. [Intersection workshop](02-introducing-the-engineering-challenge.md) · [Planning under uncertainty](03-planning-under-uncertainty.md).
 
+The loop below follows one proposed way of working. The agent dialogue is illustrative; the queue rows later in the chapter are calculated from the saved synthetic inputs.
+
+<!-- interactive: engineering-loop -->
+
 ## Different questions demand different models
 
 In Chapter 4, an engineer reviewed the proposed adaptive strategy `INT-CHG-001`. It could affect the phase-selection function, `INT-FUN-001`. The two-queue model `INT-MOD-001` *represents* that function, so the engineer selected it for review. The graph also says which experiment examines the model and which data it uses. Its separate check for conflicting greens is still proposed. [Chapter 4 review](04-engineering-knowledge-as-code.md) · [T1 source relationships](../../case-study/source-graph-v1.json).
 
-A Word document can explain the event-order decision, a spreadsheet can hold the counts, and a modeling tool can show the phase sequence. When people maintain them independently, someone has to reconcile the three before changing the calculation. Here the engineer can give a large language model (LLM) assistant those records together. A colleague reviewing its draft can go straight to the rule and the revision it should implement. A state diagram would show which light comes next. To answer the workshop question, the prototype also needs to keep count of who is waiting.
+To investigate the queue question, an engineer can give a large language model (LLM) agent the city intent, intersection layout, pedestrian concerns and the relevant arrival, phase and event-order text. The agent can translate the selected assumptions and data into a runnable draft. A colleague reviewing it can go straight to the rule and revision it should implement. A state diagram would show which light comes next; this question also needs a count of who is waiting.
+
+Below is the queue initiative before the simulation, alongside the event order from the maintained T1 inputs. The excerpt is shared information for the task, not a transcript of an agent run.
+
+<!-- interactive: initiative-before -->
 
 ## Define the experiment before interpreting its output
 
@@ -34,7 +42,7 @@ The arrival-pattern experiment, `INT-EXP-001`, uses the invented arrivals in `IN
 
 ## Turn the agreed rule into a queue update
 
-In this worked example, the engineer gives an LLM assistant T1’s phase capacities, event-order rule and the first row of scenario A and asks, “Draft one slot of the model. Return departures and the queue remaining for each direction.” A plausible draft limits departures to the vehicles waiting *at the start* of the slot, then adds new arrivals.
+In this illustrative exchange, the engineer gives an agent T1’s phase capacities, event-order rule and the first row of scenario A and asks, “Draft one slot of the model. Return departures and the queue remaining for each direction.” A plausible draft limits departures to the vehicles waiting *at the start* of the slot, then adds new arrivals. This dialogue illustrates a review; it is not a recorded agent session.
 
 The engineer checks A’s first NS green by hand. Zero vehicles are waiting, one arrives and there is capacity for one departure. The draft serves zero and leaves one. The agreed rule gives **0 waiting + 1 arrival − 1 departure = 0 waiting**. The engineer asks for one correction. Compute the available vehicles as the previous queue plus arrivals, then serve the smaller of that number and the phase capacity. This gives one departure and an empty queue, exactly what the first reference row records.
 
@@ -46,18 +54,7 @@ The browser uses this rule in its queue calculation. It is deterministic, so the
 
 ## Two arrival patterns, one model
 
-Each scenario has two NS and two EW arrivals. Only their placement differs. A dash means zero arrivals in either direction.
-
-| Slot | Fixed phase | A · staggered arrivals | B · clustered arrivals |
-|---:|---|---|---|
-| 1 | NS green | 1 NS | 2 EW |
-| 2 | NS green | 1 EW | — |
-| 3 | NS amber | 1 NS | 2 NS |
-| 4 | All-red | — | — |
-| 5 | EW green | — | — |
-| 6 | EW green | 1 EW | — |
-| 7 | EW amber | — | — |
-| 8 | All-red | — | — |
+The [arrival table in Chapter 2](02-introducing-the-engineering-challenge.md#arrival-patterns) shows both invented patterns and the fixed phase sequence. Each has two NS and two EW arrivals; only their placement differs.
 
 Start with **B**. Predict how many vehicles will remain after slot 8 if one NS vehicle arrives in slot 2 instead of slot 3. Choose that move, then **Run comparison**. The browser calculates eight rows for your edit alongside the original. **Restore baseline** returns to the selected starting scenario. [T1 inputs and service rules](../../case-study/model-inputs-v1.json).
 
@@ -82,7 +79,13 @@ Look at the edited B in the browser. The NS vehicle moved to slot 2 leaves on th
 
 ## What does that comparison establish?
 
-Moving one arrival across the end of its green changed the number waiting at this horizon. That is an answer to the workshop question. Mean waiting time would require following individual waits, including those still in progress at slot 8. A question about whether an actual signal shows the commanded indication would call for a bench test or physical observation. Choose the model or prototype to match the decision it will inform.
+To count the waiting that accrued over all eight slots, add both queues after service in every row. Each vehicle still waiting contributes one vehicle-slot. A vehicle that arrives and leaves in the same slot contributes zero. The edit leaves one fewer NS vehicle waiting in each of slots 3 through 8, bringing the total from **21 vehicle-slots in the original B pattern to 15 in the edit**. For the mean wait of all four arrivals, we would also need to know how much waiting accrues before the remaining vehicles leave.
+
+A total of four arrivals for the cycle fits either pattern. Which records could operations use to see when vehicles on each approach arrived relative to the end of green? [Chapter 3’s data request](03-planning-under-uncertainty.md#keep-a-small-decision-record).
+
+A question about whether an actual signal shows the commanded indication would call for a bench test or physical observation. Choose the model or prototype to match the decision it will inform.
+
+Suppose the city moves a crossing or changes its priority to pedestrian conflicts. The team would update the shared layout and question. An agent could propose a different model using crossing distances, indications, turning paths and pedestrian movement information; the engineer would compare its proposed behavior with those sources and identify observations still needed from people using the crossing. In a proposed comparison, the team could vary the crossing layout while holding assumed walking and signal conditions fixed, then compare the modeled time a person occupies a turning path with the interval when the turn is permitted. The two-queue model cannot answer that safety question, and no crossing simulation has been run here.
 
 ## Record what the experiment changed
 
@@ -93,8 +96,16 @@ Before the edit, the two baseline traces told the team how A and B behaved. A co
 
 The [saved T1 observation](https://github.com/And-Gu/executable-engineering-lab/blob/a1e4f49c2d3ef53e0fc895cdd197f659218a4d4f/project/v3/case-study/data-quality-v1.json#L31-L50) sits beside the original results in the maintained record. A colleague can now reconstruct the edit from its baseline and use the open question to specify a longer experiment. That experiment would need its own observation window.
 
+In the illustrative workflow, an engineer could ask in ordinary language, “Move one north–south arrival from slot 3 to slot 2 and compare the rows.” An agent can run the model and draft an update to the technical sources. Suppose the engineer checks its account against the baseline, edited rows and saved observation, accepts that account of the calculation and decides to propose a narrower initiative for team review.
+
+The result gives the team a reason to sharpen the broad timing question in the [queue initiative from Chapter 3](03-planning-under-uncertainty.md#reduce-queues-during-bursts) toward arrivals just before and after the last green. The following maintained example records the proposed wording, its reason and the next field question. It is an illustrative proposal for review, not a record that the city or an agent actually made the decision.
+
+<!-- interactive: initiative-after -->
+
+The next field increment would ask operations for north- and south-arm arrivals and matching signal history. The team would establish the available timestamp precision or count-bin width around the end of north–south green and whether it can distinguish the patterns in question. A whole-green total can conceal differences within that green. Those records could help determine whether the timing pattern occurs in practice. The separate proposed two-cycle calculation remains a model question, and the original scenario B remains intact.
+
 <!-- interactive: chapter-quiz -->
 
 ## The data is now the next engineering problem
 
-Two north–south vehicles are still waiting when scenario B reaches the end of slot 8. Where should they appear when the lights begin the next cycle? [Chapter 6 follows both queues across that boundary](06-engineering-data-from-measurements-to-decisions.md).
+The original B pattern ends slot 8 with two north–south vehicles still waiting. Where should they appear when the lights begin the next cycle? [Chapter 6 follows both queues across that boundary](06-engineering-data-from-measurements-to-decisions.md).

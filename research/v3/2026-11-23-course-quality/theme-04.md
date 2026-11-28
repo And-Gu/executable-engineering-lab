@@ -1,0 +1,17 @@
+# Which questions still need the physical assembly?
+
+<!-- EEL_RESEARCH_NOT_FOR_PUBLICATION -->
+
+Research note EEL-R-Q86-04. Publication status `background-only`. See the research index for topic, chapter mapping and source status.
+
+EEL-Q-S2-RESEARCH-04-A01 · B1 `64931d4` · Sources inspected November 23, 2026.
+
+In Chapter 10, moving the sensor connector to the edge of the board changes what three engineers need to check. The mechanical engineer can use the revised drawing to inspect cable clearance in the enclosure model. If the input changes, the firmware engineer must update which head it identifies. The test engineer still needs to check fit on the revised assembly and observe the designated lamp for the same command. Chapter 13 asks a narrower question. Its proposed rehearsal supplies a receipt and withholds independent feedback to check whether the display reports the indication as unknown. [Chapter 10 connector change](https://and-gu.github.io/executable-engineering-lab/learn/v3/10-from-models-to-an-integrated-product/#follow-an-electronics-change-into-the-enclosure) · [Chapter 13 rehearsal](https://and-gu.github.io/executable-engineering-lab/learn/v3/13-continuously-integrated-engineering/#run-the-candidate-and-check-the-response).
+
+The lowRISC team’s December 10, 2025, project account (R15) identifies the coverage it trades for earlier feedback. Under “Pull request pipeline,” it describes simulation smoke tests and one configuration per field-programmable gate array (FPGA) test by default. The nightly pipeline runs the full simulation and FPGA suites. Under “Silicon validation tests,” the team explains why it reruns the same tests on engineering samples. The FPGA can run at a different clock speed. [lowRISC engineering account](https://lowrisc.org/news/how-we-run-ci-for-our-open-source-silicon-projects/).
+
+OpenTitan’s living `master` documentation (R16, “Overview” and “Merge Queue”) describes the same implementation. Jobs requiring FPGA hardware run on boards connected to a lowRISC machine. Changes that need new FPGA builds can extend the merge queue, a concrete limit on inferring shorter delivery from earlier feedback. [OpenTitan maintainer documentation](https://opentitan.org/book/doc/contributing/ci/index.html).
+
+The Mars 2020 mission team provides an independent case (R17). Its March 5, 2022, preprint abstract describes running a subset of flight software on commercial Linux computers with simulated or hardware backends. The authors report increased testing and explicitly retain integrated tests with flight-like avionics. The abstract gives no release-time comparison. Direct retrieval timed out, so the source inspected was the indexed NTRS abstract and publication record. [NASA/JPL mission-team abstract](https://ntrs.nasa.gov/citations/20230006938).
+
+Keep the Chapter 10 and 13 exercises. Change Chapter 14’s “established” to “would establish” to keep the receipt hypothetical. For #78’s placement review, offer R15 after Chapter 13’s rehearsal with the question “Why repeat a passing FPGA test on silicon?” [Chapter 14 feedback passage](https://and-gu.github.io/executable-engineering-lab/learn/v3/14-from-engineering-intent-to-continuous-integration/#feedback-makes-the-capability-improve) · [Research ownership](https://github.com/And-Gu/executable-engineering-lab/issues/78) · [Existing reference register](https://github.com/And-Gu/executable-engineering-lab/issues/87).

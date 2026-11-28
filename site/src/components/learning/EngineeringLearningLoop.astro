@@ -1,0 +1,21 @@
+<figure class="learning-loop" aria-labelledby="loop-title">
+  <figcaption id="loop-title">From city intent to a revised initiative</figcaption>
+  <ol>
+    <li><strong>City intent</strong><span>Improve flow while people can cross safely.</span></li>
+    <li><strong>Shared information</strong><span>Engineers review the layout, arrival data and queue rule.</span></li>
+    <li><strong>Agent-assisted model</strong><span>An agent can draft a model and help run a comparison.</span></li>
+    <li><strong>Review the result</strong><span>Engineers check the rule and simulated rows.</span></li>
+    <li><strong>Revise the initiative</strong><span>Engineers decide what to record and investigate next.</span></li>
+  </ol>
+  <p>↶ The reviewed initiative and its reason become shared information for the next question.</p>
+</figure>
+<style>
+  .learning-loop{margin:2rem 0;padding:1.1rem 0;border-block:1px solid var(--rule)}
+  .learning-loop figcaption{font-weight:700;font-size:1.1rem}
+  .learning-loop ol{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));list-style:none;gap:.5rem;padding:0;margin:1rem 0}
+  .learning-loop li{position:relative;padding:.65rem;border:1px solid var(--rule);background:var(--panel);line-height:1.35}
+  .learning-loop li:not(:last-child)::after{content:'→';position:absolute;right:-.55rem;top:40%;z-index:1;color:var(--teal);background:var(--bg)}
+  .learning-loop strong,.learning-loop span{display:block}.learning-loop strong{font-size:.9rem}.learning-loop span{font-size:.8rem;color:var(--muted);margin-top:.4rem}
+  .learning-loop p{margin:0;color:var(--teal);font-size:.9rem}
+  @media(max-width:700px){.learning-loop ol{grid-template-columns:1fr}.learning-loop li:not(:last-child)::after{content:'↓';top:auto;bottom:-.7rem;right:50%}}
+</style>

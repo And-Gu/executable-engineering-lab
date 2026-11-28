@@ -13,12 +13,12 @@ const chapterSlug = Astro.url.pathname.split('/learn/')[1]?.replace(/\/$/, '') |
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="From engineering intent to working systems. A practical, reproducible engineering learning lab." />
-    <title>{title} · Executable Engineering Lab</title>
+    <title>{title} · Executable Engineering</title>
   </head>
   <body>
     <a class="skip" href="#main">Skip to content</a>
     <header class="site-header">
-      <a class="brand" href={base}>Executable Engineering Lab</a>
+      <a class="brand" href={base}>Executable Engineering</a>
       <nav aria-label="Main navigation"><a href={base}>Home</a><a href={`${base}lab/`}>Lab</a><a href={`${base}reference/`}>Reference</a><a href={`${base}learn/`}>Learn</a></nav>
       <SocialLinks />
     </header>

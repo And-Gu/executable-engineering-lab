@@ -4,7 +4,7 @@ chapter: 2
 part: "I — Frame the Work"
 title: "Setting Up the Intersection Workshop"
 status: draft
-publication: review-in-pr
+publication: published
 reference_case: four-way-traffic-intersection
 teaching_fixture: "T1 — fictional teaching case, not a qualified controller"
 ---
@@ -36,12 +36,75 @@ Imagine joining a city workshop about a busy four-way intersection. Drivers desc
 | --- | --- |
 | Drivers | How many cars are still waiting after a green light? |
 | Pedestrians | When can I start across, and could a turning car cross my path? |
+| People with different mobility needs | Is there enough time and a usable route to reach the far curb? |
 | Operators | How can we keep the intersection usable while a change is in progress? |
 | Maintainers | If a signal looks wrong, can we tell what the controller requested and what the lamp actually showed? |
 
 > **Concept**
 >
 > For drivers, reducing queues is the **intent**. Their **question** is how many cars are still waiting after a burst has had a chance to clear. A future **requirement** could call for fewer vehicles left waiting than under an agreed reference sequence, given the same arrivals and counting period. The city would need to agree on representative conditions and a separate criterion for people crossing.
+
+The city's purpose is broad because the team has not yet agreed on all the conditions or trade-offs. In an agile approach, engineers work with the people affected while investigations and design choices reveal what a useful requirement needs to say. A queue requirement, for example, needs an identified approach, a counting period, reference conditions and a criterion for comparison. These are proposed details to agree with the city, not measurements already obtained.
+
+## A system view in SysML
+
+A traditional Systems Modeling Language (SysML) description can locate the parts before the team simulates behavior. This illustrative structural definition says that an intersection contains a controller, vehicle signals and crossings. The controller sends commands to the signals; drivers and people crossing respond to indications. The definition is a starting point for discussion, not evidence that equipment is installed or safe.
+
+```sysml
+part def Intersection {
+    part controller : Controller;
+    part vehicleSignals : VehicleSignals;
+    part crossings : Crossings;
+}
+part def Controller;
+part def VehicleSignals;
+part def Crossings;
+```
+
+The text names the `controller` part and its type. A [structural view in Chapter 4](04-engineering-knowledge-as-code.md#one-source-several-useful-perspectives) uses the same definition. It does not yet specify crossing indications, turning priority or the physical connections.
+
+## Describe traffic flow
+
+Traffic-flow information answers a different question: how many vehicles arrive at each approach, and when? The same total can arrive steadily or in a burst. Before combining a count with the system description, someone must identify which modeled approach it describes and the interval it covers.
+
+For example, an invented count might record three arrivals on the north arm from 8:00 to 8:05. To use it with the two-group model, the team would relate that arm to the north–south group and combine it with the corresponding south-arm count. If the interval spans a phase change, the total alone cannot show whether the vehicles arrived before or after green ended. The team would need timestamps or counts grouped by phase. The current model cannot recover a north-arm count from its combined group. Its abstract slots are not those five minutes.
+
+For the first illustrative comparison, the team groups traffic north–south (NS) and east–west (EW), starts both queues empty and uses eight abstract slots, not seconds. Its fixed phase sequence, arrival counts and service rules are maintained in the [T1 inputs](../../case-study/model-inputs-v1.json). The table is generated from those inputs: both invented scenarios contain two NS and two EW arrivals, placed at different times.
+
+<!-- interactive: arrival-patterns -->
+
+## Two views maintained as text
+
+The following sequence shows one illustrative ordering of controller, signal and road-user interactions. The controller requests north–south green, the vehicle signal shows it, and a driver arrives and proceeds if permitted. A pedestrian asks what crossing indication is available. The controller then requests amber. The displayed vehicle indication and driver response are assumptions for this discussion; the queue model does not simulate a signal head or a pedestrian crossing. It has no rule for when a pedestrian may cross or a turning vehicle may proceed. Scroll the diagram horizontally to read the full sequence.
+
+```mermaid
+sequenceDiagram
+    actor Driver
+    participant Intersection
+    participant Signal
+    participant Controller
+    actor Pedestrian
+    Controller->>Signal: Request north-south green
+    Signal-->>Driver: Show vehicle green (assumed)
+    Driver->>Intersection: Arrive and proceed if permitted
+    Note over Pedestrian: Which crossing indication is available?
+    Note over Pedestrian: Crossing indication and turning priority remain open
+    Controller->>Signal: Request north-south amber
+```
+
+The flowchart focuses on the vehicle queue in one slot. Arrivals join first. If the group's phase is green and the queue is nonempty, one vehicle leaves; otherwise no vehicle departs. The remaining queue is recorded before the next slot. The pedestrian question raised in the sequence remains open.
+
+```mermaid
+flowchart TD
+    A[Add arrivals to the group queue] --> B{Green and queue nonempty?}
+    B -- Yes --> C[Serve one vehicle]
+    B -- No --> D[No vehicle departs]
+    C --> E[Record remaining queue]
+    D --> E
+    E --> F[Continue to next slot]
+```
+
+A conventional image handoff can make the picture easy to read, but someone must also find the definition and check its revision before changing it. These Mermaid definitions are readable, versioned text rendered as diagrams. An AI agent could read them with the other shared information and propose, for example, a note identifying a newly specified crossing indication. An engineer would compare the proposed text and rendered view with the agreed system description before accepting it. [Chapter 4](04-engineering-knowledge-as-code.md) develops that shared-information practice.
 
 ## A prototype for the first question
 

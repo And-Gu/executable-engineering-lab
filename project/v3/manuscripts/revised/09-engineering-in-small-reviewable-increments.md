@@ -4,7 +4,7 @@ chapter: 9
 part: "II — Build and Test Knowledge"
 title: "Planning and Controlling Agents"
 status: draft
-publication: unpublished
+publication: published
 reference_case: four-way-traffic-intersection
 teaching_fixture: "T1 — recorded two-cycle calculation and illustrative planning conversation"
 ---
@@ -29,13 +29,23 @@ Imagine the traffic engineer opening Chapter 7’s reviewed brief in an agent’
 
 The first checkpoint answers one question. Can the engineer trust the change across the boundary? Compare every first-cycle row for A and B, then inspect B’s first green in cycle two. The recorded run shows a north–south departure before any new north–south vehicle arrives. With those checks in hand, the engineer can authorize the full comparison. [First-cycle reference rows](../../case-study/trace-v1.csv) · [Recorded two-cycle calculation](https://github.com/And-Gu/executable-engineering-lab/blob/973ff66ebb06daafbd2ddaf35682e0e8da2bffd7/project/v3/case-study/two-cycle-run.json).
 
-Suppose B shows zero north–south vehicles at the start of slot 9. The next job is to find where the two vehicles went. Compare the last row of cycle one with the state passed into the next slot. If the calculation initializes the queue twice, the agent can fix that error and rerun the checks. If the calculation carries two vehicles but the report shows zero, inspect which state the report reads. If the agent finds conflicting definitions of what to count, it should bring the first disputed row and the two definitions to the model owner. The answer changes what the experiment measures.
+Before asking the agent to try again, look for the observation that would change your next instruction.
+
+| What needs explaining? | What should the engineer or agent do? |
+| --- | --- |
+| **The request is ambiguous.** “Does the queue grow?” could mean growth between cycle ends or a peak within one cycle. | Ask the traffic engineer which comparison will inform the decision. The two questions call for different rows. |
+| **The runner used the wrong B.** The queue after slot 2 looks right, but a north–south vehicle arrived and departed there. | Check the input revision. In the original B there is no north–south arrival or departure in slot 2. Select the original and rerun B. |
+| **A check could miss an error.** The east–west queue is empty at the first boundary in both original patterns. | Try Chapter 8’s case with east–west vehicles still waiting. A reset of just that queue would now be visible before the next arrivals. |
+| **The report disagrees with the carry rule.** Two north–south vehicles finish slot 8 in B, yet the report shows zero before arrivals in slot 9. | Inspect the state passed to slot 9. If it is empty, repair the handoff. If both vehicles are there, trace which state the report reads. Rerun the boundary check after the fix. |
+| **The engineer wants a different experiment.** The new request is for two independent windows, each starting empty. | Have the engineer approve a revised brief. Keep the original continuous run for decisions that relied on carry-over. |
+
+The engineer can check a proposed test against the agreed carry rule and the first-cycle rows against a separate calculation. Copying expected counts from the changed runner would carry its mistakes into the test. Anthropic’s evaluation guide gives another example. A grader can reject a working script if it expects a file path the task never specified. [How the reference rows were checked](../../case-study/MODEL-CHECK.md#independent-editorial-cross-check-already-performed) · [Anthropic’s guidance on tasks and graders](https://www.anthropic.com/research/demystifying-evals-for-ai-agents).
 
 ## Delegate a day’s work with room for exceptions
 
 <span id="make-review-effort-proportional-to-exceptions"></span><span id="parallel-work-needs-explicit-integration-contracts"></span>
 
-In Chapter 8, the engineer could ask for help with one task or delegate an outcome. Before handing over a larger outcome, ask the agent to predict B’s first departure from the brief. Try a deliberate queue reset and see whether an independently written check catches it. Once the smaller assignments have shown that the agent understands the specification and that the tests catch mistakes, the engineer can put more work between reviews. [Chapter 8’s working agreement](08-directing-ai-engineering-agents.md).
+In Chapter 8, the engineer could ask for help with one task or delegate an outcome. Before handing over a larger outcome, ask the agent to predict B’s first departure in cycle two from the brief. Try a deliberate reset and see whether the check catches it. If the agent correctly predicts one north–south departure in slot 9 and an independent check catches the reset, the engineer can delegate further runs with the same carry rule and ask to see the first disputed row whenever a case falls outside it. [Chapter 8’s boundary exercise](08-directing-ai-engineering-agents.md#try-the-assignment-and-inspect-an-assumption).
 
 For a package that might span a working day, the engineer and agent could agree on three separately reviewable changes.
 
@@ -51,7 +61,7 @@ For a package that might span a working day, the engineer and agent could agree 
 
 ## The Digital Thread
 
-Chapter 1 asked how a new engineer could recover the reason for an interface limit and rerun its check. Chapter 4 gave those connections a name. In the intersection, the traffic engineer supplies the reason for the carry rule. A cycle ends, but vehicles still waiting will need service on a later green. The reviewed brief puts that knowledge beside the model inputs and reference trace. These become the agent’s context for planning, changing the queue function and testing it within the permissions agreed in Chapter 8. [Chapter 1’s interface example](01-the-new-engineering-paradigm.md#software-inspired-engineering-moves-beyond-software) · [Chapter 4’s definition of a digital thread](04-engineering-knowledge-as-code.md#digital-threads-and-knowledge-graphs).
+Chapter 1 asked how a new engineer could recover the reason for an interface limit and rerun its check. Chapter 4 gave those connections a name. In the intersection, the traffic engineer supplies the reason for the carry rule. A cycle ends, but vehicles still waiting will need service on a later green. The reviewed brief puts that knowledge beside the model inputs and reference trace. In Chapter 8, the agent could run the model and write a report using a read-only reference trace. Here the traffic engineer also authorizes the agent to implement and test carry-over in the queue function. [Chapter 1’s interface example](01-the-new-engineering-paradigm.md#software-inspired-engineering-moves-beyond-software) · [Chapter 4’s definition of a digital thread](04-engineering-knowledge-as-code.md#digital-threads-and-knowledge-graphs).
 
 <!-- interactive: digital-thread -->
 
@@ -63,4 +73,4 @@ Now suppose the traffic engineer wants to study two independent windows, each st
 
 <span id="some-changes-cannot-be-isolated-as-software-work"></span><span id="integration-and-iteration-are-different-questions"></span><span id="the-next-boundary-is-the-real-product"></span>
 
-The queue calculation can show which group had green in the model. At the roadside, an adapter might acknowledge a signal command as soon as it receives the message. What observation would tell the engineer that the signal actually changed? That question opens Part III. [Chapter 10, From Models to an Integrated Product](10-from-models-to-an-integrated-product.md).
+The queue calculation can show which group had green in the model. At the roadside, an adapter might acknowledge a signal command as soon as it receives the message. What observation would show which indication was visible at the designated head during that command? That question opens Part III. [Chapter 10, From Models to an Integrated Product](10-from-models-to-an-integrated-product.md).

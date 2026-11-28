@@ -1,7 +1,9 @@
 ---
 import graph from '../../../../project/v3/case-study/source-graph-v1.json';
+import { checkout } from '../../../../scripts/delivery-environment.mjs';
 
-const sourceUrl = 'https://github.com/And-Gu/executable-engineering-lab/blob/main/project/v3/case-study/source-graph-v1.json';
+const sourceState = checkout();
+const sourceUrl = `https://github.com/And-Gu/executable-engineering-lab/blob/${sourceState.dirty ? 'main' : sourceState.revision}/project/v3/case-study/source-graph-v1.json`;
 const titles = {
   proposal: 'Adaptive strategy proposal', function: 'Phase selection',
   model: 'Two-queue model', interface: 'Command interface',
@@ -62,7 +64,7 @@ if (nodes.length !== 4) throw new Error('The Chapter 4 relationships must share 
       </div>)}
     </div>
   </fieldset>
-  <figcaption>Follow the incoming <i>represents</i> arrow back to the model to review its fixed phases. The interface owner can check whether the existing commands support the proposed strategy. <a href={sourceUrl}>{graph.revision} source graph</a></figcaption>
+  <figcaption>Follow the incoming <i>represents</i> arrow back to the model to review its fixed phases. The interface owner can check whether the existing commands support the proposed strategy. <a href={sourceUrl}>{graph.revision} source graph{sourceState.dirty ? ' on main (preview changes are not included)' : ` at ${sourceState.revision.slice(0, 7)}`}</a></figcaption>
 </figure>
 
 <style>
