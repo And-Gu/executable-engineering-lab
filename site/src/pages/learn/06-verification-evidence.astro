@@ -1,6 +1,5 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import ProposalWorkspace from '../../components/ProposalWorkspace.astro';
 const base = import.meta.env.BASE_URL;
 const reference = `${base}reference/`;
 ---
@@ -14,7 +13,7 @@ const reference = `${base}reference/`;
     <nav aria-label="Chapter sections"><a href="#claim">The claim</a><a href="#checks">Different checks</a><a href="#exercise">Experiment</a><a href="#record">Inspect evidence</a><a href="#limits">Limits</a><a href="#quiz">Quiz</a></nav>
     <section id="claim" data-chapter-prose>
       <h2>Start with the claim, not the badge</h2>
-      <p>A reviewer sees successful software checks alongside a failing reference coverage result. Another engineer demonstrates a passing browser configuration. These observations look inconsistent only if their subjects are left unstated. Before accepting a conclusion, identify the criterion, evaluated configuration, method and activity that produced each observation.</p>
+      <p>A reviewer sees successful software checks alongside a failing reference coverage result. A separate proposed configuration can pass. These observations look inconsistent only if their subjects are left unstated. Before accepting a conclusion, identify the criterion, evaluated configuration, method and activity that produced each observation.</p>
       <p>The claim here is narrow: whether the reference configuration satisfies a geometric coverage threshold under V0 assumptions. The operator’s broader monitoring need remains separate. A test badge cannot supply a missing operational basis for that threshold, and a passing idealized configuration cannot establish physical sensing performance. Evidence is useful when its scope is explicit.</p>
       <p>Verification in this lesson means checking specified behavior or a criterion against defined expectations. We make no claim of conformity with a verification standard. Follow <a href={`${reference}#REQ-COV-001`}>the actual requirement</a> and <a href={`${reference}#TEST-COV-001`}>registered test</a> to see what this example checks, rather than inferring authority from their identifiers.</p>
     </section>
@@ -22,19 +21,11 @@ const reference = `${base}reference/`;
       <h2>Ask what each check establishes</h2>
       <p>Source validation checks supported fields, parameter ranges and resolvable relationships. Independent model tests compare known geometries and exercise boundary and invalid-input behavior. The evaluator compares an estimated percentage with a criterion. These activities answer related but different questions; succeeding at one does not automatically establish the others.</p>
       <p>The registered reference test deliberately expects the canonical configuration to fail the coverage criterion. Its assertions check that the estimate lies in the expected neighborhood, the threshold remains unchanged and the evaluation reports failure with a negative margin. A successful test run means those assertions held. It preserves the engineering finding instead of disguising FAIL as PASS.</p>
-      <p>A changed browser radius supplies different inputs to the same model. Its passing outcome does not contradict the reference result, because it is a different evaluated configuration. Nor does the browser execute Vitest. The source scenario and registered test remain unchanged when you manipulate temporary controls. To establish that a test executed, inspect its actual command and logs.</p>
+      <p>A changed radius supplies different inputs to the same model. Its passing outcome does not contradict the reference result, because it is a different evaluated configuration. A proposal calculation does not itself execute Vitest. The source scenario and registered reference test remain distinct from a proposed configuration. To establish that a test executed, inspect its actual command and logs.</p>
     </section>
-    <section id="exercise" aria-labelledby="exercise-heading">
-      <h2 id="exercise-heading">Experiment: reconcile the observations</h2>
-      <ol>
-        <li>Reset proposal. Identify the canonical criterion, inputs and geometric outcome.</li>
-        <li>Try the radius example while keeping the criterion fixed. Explain which definition changed and what the new outcome establishes.</li>
-        <li>Follow <a href={`${reference}#TEST-COV-001`}>TEST-COV-001’s source</a>. Did your browser edit change its canonical inputs or execute its assertions?</li>
-        <li>Reset and explain how a successful software suite, a failing canonical criterion and a passing candidate can all be correct.</li>
-        <li>Suppose an obstruction challenges the ideal footprint. Which conclusion needs review even if the calculation repeats?</li>
-      </ol>
-      <ProposalWorkspace />
-      <details><summary>Compare your review</summary><p>The canonical evaluation and the radius proposal use different scenario inputs under the same criterion. The reference test expects the unchanged canonical result to fail; a successful test therefore agrees with that finding. The browser proposal executes calculation/evaluation, not the reference assertions, and creates no retained CI evidence. An obstruction challenges model applicability; none of these outputs calculates its effect or establishes physical suitability.</p></details>
+    <section id="exercise">
+      <h2>Explore the current intersection example</h2>
+      <p>The interactive example now follows a traffic-light intersection. <a href={`${base}lab/`}>Explore the intersection model</a> to investigate its signal phases and queues.</p>
     </section>
     <section id="record" data-chapter-prose>
       <h2>Inspect the activity behind the record</h2>
@@ -47,7 +38,7 @@ const reference = `${base}reference/`;
     </section>
     <section id="limits" data-chapter-prose>
       <h2>State what remains unjustified</h2>
-      <p>The shared calculation keeps browser and tests from drifting into competing implementations. Independent geometry checks can detect numerical mistakes in selected cases; invalid-input and equality tests check other contracts. These checks strengthen confidence within their scope. They do not establish a universal discretization bound or prove that an ideal circle represents a physical sensor.</p>
+      <p>A shared calculation keeps proposal analyses and tests from drifting into competing implementations. Independent geometry checks can detect numerical mistakes in selected cases; invalid-input and equality tests check other contracts. These checks strengthen confidence within their scope. They do not establish a universal discretization bound or prove that an ideal circle represents a physical sensor.</p>
       <p>An obstruction, directional sensitivity or calibration issue can undermine interpretation without changing the software’s deterministic output. The model does not include those effects, and the teaching threshold has no derived operational basis. Additional model or physical evidence would be needed for those questions. Avoid inventing a correction factor or treating a geometric margin as protection against every omitted effect.</p>
       <p>A useful review conclusion states the checked claim, evaluated definitions, activity and outcome, then names its limits. “The canonical geometric criterion fails as expected by the reference assertions” is different from “the monitoring system is unsuitable in every setting.” Neither a green workflow nor a red criterion answers the broader operational question by itself.</p>
     </section>

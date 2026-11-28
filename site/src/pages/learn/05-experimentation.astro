@@ -1,6 +1,5 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import CoverageLab from '../../components/CoverageLab.astro';
 const base = import.meta.env.BASE_URL;
 const reference = `${base}reference/`;
 ---
@@ -20,24 +19,14 @@ const reference = `${base}reference/`;
     </section>
     <section id="protocol" data-chapter-prose>
       <h2>Control what the experiment means</h2>
-      <p>A factor is an input deliberately varied to answer a question. Controlled inputs stay fixed so that differences in response can be attributed clearly. Our measured responses are estimated coverage and its margin against the criterion. The area, threshold, grid and model remain the same throughout the browser comparison.</p>
+      <p>A factor is an input deliberately varied to answer a question. Controlled inputs stay fixed so that differences in response can be attributed clearly. Our measured responses are estimated coverage and its margin against the criterion. The area, threshold, grid and model remain the same throughout the illustrative comparison.</p>
       <p>First ask about placement. Hold radius and y fixed, and compare the center with a location on the left boundary. Predict how much of the footprint contributes inside the rectangle. Then ask about assumed radius: keep the center fixed and compare two footprints. Separate these questions so that a changed position does not obscure the effect of a changed radius.</p>
       <p>Changing two factors together can still describe a candidate, but it weakens attribution. If the result improves, which change caused it? A useful protocol makes that ambiguity visible. Record exact inputs, not just a memorable label such as “better sensor,” and state what each trial is meant to test before looking at its outcome.</p>
       <p>Keep the criterion fixed when comparing configurations against the same requirement. The <a href={`${base}learn/02-engineering-information-models/#exercise`}>threshold proposal exercise</a> shows why a lower threshold may produce PASS without improving coverage. That is a different engineering question. It must not be mixed into the table as if the design had improved under an unchanged requirement.</p>
     </section>
-    <section id="exercise" aria-labelledby="exercise-heading">
-      <h2 id="exercise-heading">Experiment: four separate configurations</h2>
-      <p>Predict each result before recording it. All coordinates and radii below use model units.</p>
-      <ol>
-        <li>Clear comparison, then reset to SCN-001. Record trial 1: x=50, y=50, radius=35.</li>
-        <li>Change only x to 0. Record trial 2: x=0, y=50, radius=35. Compare these two rows to investigate boundary clipping.</li>
-        <li>Reset, then change radius to 45. Record trial 3: x=50, y=50, radius=45.</li>
-        <li>Change only radius to 50. Record trial 4: x=50, y=50, radius=50. Compare trials 3 and 4 under the same criterion.</li>
-        <li>Identify which rows pass. Write a conditional recommendation: what did you observe, what assumptions support it, and what missing evidence prevents a final choice?</li>
-      </ol>
-      <p>Reset restores current inputs while keeping recorded rows. Clear comparison removes the rows; reloading discards the temporary table. The fifth record is blocked until you clear it.</p>
-      <CoverageLab />
-      <details><summary>Compare your interpretation</summary><p>The placement pair isolates clipping at a fixed radius. The centered footprint pair isolates assumed radius. Read the calculated outcomes in your table rather than substituting an expected PASS. A larger assumed footprint can increase geometric coverage, but the model does not show that such a sensor exists, is affordable or can be installed. These observations support a bounded geometric comparison, not a preferred operational design.</p></details>
+    <section id="exercise">
+      <h2>Explore the current intersection example</h2>
+      <p>The interactive example now follows a traffic-light intersection. <a href={`${base}lab/`}>Explore the intersection model</a> to investigate its signal phases and queues.</p>
     </section>
     <section id="interpret" data-chapter-prose>
       <h2>Feasible under a criterion is not preferred overall</h2>
@@ -48,9 +37,9 @@ const reference = `${base}reference/`;
     </section>
     <section id="reproduce" data-chapter-prose>
       <h2>Make the comparison reproducible</h2>
-      <p>Follow the <a href="https://github.com/And-Gu/executable-engineering-lab/blob/main/docs/05-configuration-experiment.md">repository configuration experiment</a> from an identified checkout. After installation and checks, its executable example calls the same pure coverage function and evaluator for the four stated inputs. Compare its numerical outputs with your browser rows. It prints exploratory calculations; it does not create a retained verification record or execute the registered reference test against the candidates.</p>
-      <p>Canonical YAML remains the source of the area, criterion, reference configuration and model registration. Candidate input copies do not overwrite it. The existing radius proposal fixture reproduces the radius-45 trial, but does not reproduce the boundary-placement trial or every browser edit. Preserve those distinctions when explaining what was executed.</p>
-      <p>For retained reference evidence, use <code>npm run evidence</code> and inspect the actual revision, working-tree status, exact inputs, method and execution context. The <a href={`${reference}#retained-evidence`}>artifact instructions</a> explain reproduction and retention limits. Browser rows and terminal output are useful observations, but neither becomes CI evidence merely because it resembles a saved result.</p>
+      <p>Follow the <a href="https://github.com/And-Gu/executable-engineering-lab/blob/main/docs/05-configuration-experiment.md">repository configuration experiment</a> from an identified checkout. After installation and checks, its executable example calls the same pure coverage function and evaluator for the four stated inputs. It prints exploratory calculations; it does not create a retained verification record or execute the registered reference test against the candidates.</p>
+      <p>Canonical YAML remains the source of the area, criterion, reference configuration and model registration. Candidate input copies do not overwrite it. The existing radius proposal fixture reproduces the radius-45 trial, but does not reproduce the boundary-placement trial or every possible input edit. Preserve those distinctions when explaining what was executed.</p>
+      <p>For retained reference evidence, use <code>npm run evidence</code> and inspect the actual revision, working-tree status, exact inputs, method and execution context. The <a href={`${reference}#retained-evidence`}>artifact instructions</a> explain reproduction and retention limits. Terminal output is a useful observation, but does not become CI evidence merely because it resembles a saved result.</p>
     </section>
     <section id="quiz">
       <h2>Check your reasoning</h2>

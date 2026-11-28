@@ -1,6 +1,5 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import CoverageLab from '../../components/CoverageLab.astro';
 import { loadSources } from '../../../../scripts/sources';
 import { calculateCoverage } from '../../../../models/coverage/coverage';
 const { need, requirement, scenario } = loadSources();
@@ -33,31 +32,23 @@ const reference = `${base}reference/`;
     <section id="model" data-chapter-prose>
       <h2>Make a limited claim executable</h2>
       <p>The model treats the sensor footprint as a perfect disk and every part of the rectangle as equally important. Coverage means the fraction of the rectangle inside that disk. Distances use generic model units; no relationship to a physical sensor’s range has been established.</p>
-      <p><a href={`${reference}#MODEL-COV-001`}>MODEL-COV-001</a> estimates that fraction with a fixed grid of {result.gridWidth} × {result.gridHeight} equal-area cells. It tests each cell’s center against the circular boundary, counts covered centers and converts that count to a percentage. Boundary points count as covered; a zero radius gives zero coverage. The smooth circle in the lab illustrates the ideal footprint, while the number is a sampled estimate with discretization error.</p>
+      <p><a href={`${reference}#MODEL-COV-001`}>MODEL-COV-001</a> estimates that fraction with a fixed grid of {result.gridWidth} × {result.gridHeight} equal-area cells. It tests each cell’s center against the circular boundary, counts covered centers and converts that count to a percentage. Boundary points count as covered; a zero radius gives zero coverage. The ideal footprint is a circle; the number is a sampled estimate with discretization error.</p>
       <p>The model omits terrain, occlusion, directional sensitivity, uncertainty, time, faults and communication effects. These are limits on interpretation, not details to forget once a result appears. A coverage percentage is neither a probability of detecting an object nor a measure of tracking performance.</p>
       <p>The reference configuration produces {result.coveragePercent.toFixed(2)}% estimated coverage, below the {requirement.threshold_percent}% criterion. Its footprint leaves too much of the rectangle uncovered. This intentional failure gives us a concrete discrepancy to investigate.</p>
     </section>
 
-    <section id="exercise" aria-labelledby="exercise-heading">
-      <h2 id="exercise-heading">Experiment: one requirement, several configurations</h2>
-      <p>Predict the effect of each change before running it. Keep the threshold and area fixed throughout.</p>
-      <ol>
-        <li>Record the reference configuration in the comparison table.</li>
-        <li>Change only the radius until the criterion passes. Record that configuration.</li>
-        <li>Keep that radius and move the sensor toward a corner. Record the changed result. Where does some of the footprint go?</li>
-        <li>Find another passing configuration. Compare the inputs, percentage and margin, then explain which conclusion the model supports.</li>
-      </ol>
-      <p>Each row is a separate trial of <strong>one sensor</strong>. The rows are not simultaneous sensors. Reset restores the reference inputs; Clear comparison removes your temporary notes.</p>
-      <CoverageLab />
+    <section id="exercise">
+      <h2>Explore the current intersection example</h2>
+      <p>The interactive example now follows a traffic-light intersection. <a href={`${base}lab/`}>Explore the intersection model</a> to investigate its signal phases and queues.</p>
     </section>
 
     <section id="evidence" data-chapter-prose>
       <h2>Separate the result from the claim</h2>
-      <p>The evaluator compares the unrounded estimate with the same threshold for every trial. Equality passes. A passing altered configuration shows that those inputs satisfy the geometric criterion; it does not replace the retained result for the unchanged reference scenario. Browser edits do not modify the canonical YAML.</p>
+      <p>The evaluator compares the unrounded estimate with the same threshold for every trial. Equality passes. A passing altered configuration shows that those inputs satisfy the geometric criterion; it does not replace the retained result for the unchanged reference scenario. A temporary candidate does not modify the canonical YAML.</p>
       <p>Two configurations can both pass with different margins. That does not identify an optimum. We have defined no cost, power budget, installation constraint or operational objective to optimize. A larger assumed radius may improve this metric, but the model does not establish whether such a sensor exists or is suitable. Ask what additional criteria would be necessary before recommending either configuration.</p>
       <p><strong>Verification</strong> asks whether the specified criterion is met under the defined conditions. <a href={`${reference}#TEST-COV-001`}>TEST-COV-001</a> executes the reference model and evaluates its requirement outcome independently of the website. Other automated tests compare known geometries and exercise invalid inputs and boundaries. A passing software test suite can correctly report a failing engineering configuration.</p>
       <p><strong>Evidence</strong> is the result of a particular execution together with enough context to interpret it. A retained reference record identifies the requirement, scenario, test, model version, inputs, sampling method, threshold and result. It also records the source commit, working-tree status, execution context and timestamp. Without those, an isolated PASS label cannot tell you what was evaluated.</p>
-      <p>To inspect retained evidence, follow the <a href={`${reference}#retained-evidence`}>reference page’s CI artifact instructions</a>. To reproduce it locally, use the repository’s test and evidence commands. Identical definitions and calculation outputs should repeat; timestamps and execution identifiers naturally differ. Temporary browser comparisons are exploratory notes, not retained CI artifacts.</p>
+      <p>To inspect retained evidence, follow the <a href={`${reference}#retained-evidence`}>reference page’s CI artifact instructions</a>. To reproduce it locally, use the repository’s test and evidence commands. Identical definitions and calculation outputs should repeat; timestamps and execution identifiers naturally differ. An exploratory comparison is not a retained CI artifact.</p>
       <p>Successful verification within this model is a narrow conclusion. Real-world suitability would require justified requirements and evidence about effects this model excludes. Keep the chain visible: intent motivates the criterion; definitions make it executable; evidence records what happened; interpretation limits the claim.</p>
     </section>
 
@@ -75,7 +66,7 @@ const reference = `${base}reference/`;
       <p>If the threshold changes, which evaluations need rerunning? If an assumption becomes invalid, which conclusions need review? Those questions require explicit relationships between engineering definitions and their evidence. Follow the <a href={reference}>source-to-test chain</a> to inspect the small set we already maintain. Connected engineering knowledge begins with preserving those meanings and dependencies, before introducing a larger representation.</p>
     </section>
     <p class="lesson-next"><a href={`${base}learn/02-engineering-information-models/`}>Next: Engineering Information Models →</a></p>
-    <p><a href={`${base}lab/`}>Continue experimenting in the standalone lab →</a></p>
+    <p><a href={`${base}lab/`}>Explore the newer intersection model →</a></p>
   </article>
 </Layout>
 <style>

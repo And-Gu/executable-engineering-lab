@@ -1,8 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import ProposalWorkspace from '../../components/ProposalWorkspace.astro';
 import { loadSources } from '../../../../scripts/sources';
-const { requirement, manifest } = loadSources();
+const { manifest } = loadSources();
 const base = import.meta.env.BASE_URL;
 const repo = 'https://github.com/And-Gu/executable-engineering-lab';
 ---
@@ -32,14 +31,8 @@ const repo = 'https://github.com/And-Gu/executable-engineering-lab';
       <p>Publication is another activity. The separate <a href={`${repo}/blob/main/.github/workflows/deploy.yml`}>Pages workflow</a> builds main after a push, or a manual dispatch on main, using its own check command. Its deploy job depends on that build. It has no dependency on the separate validation workflow, which generates the retained analysis records. A successful deployment therefore cannot substitute for inspecting that validation run. This lesson makes no claim about configured branch protection or required approvals.</p>
     </section>
     <section id="exercise">
-      <h2>Compare the feedback before deciding</h2>
-      <ol>
-        <li>Apply the <a href={`${repo}/blob/main/docs/07-task-review.md#written-task-contract`}>radius-only assignment</a>. Inspect the radius proposal, its exact difference and the unchanged {requirement.threshold_percent}% criterion.</li>
-        <li>Reset, then try the threshold proposal. Explain why a valid calculation and PASS do not establish compliance with the assignment.</li>
-        <li>Break a reference. Observe withheld analysis, then restore/reset. Which later claim would be unsupported if validation stopped here?</li>
-        <li>Read both workflow files. Identify where assertions, reference evaluation, proposal analysis, retention and publication occur.</li>
-      </ol>
-      <ProposalWorkspace />
+      <h2>Explore the current intersection example</h2>
+      <p>The interactive example now follows a traffic-light intersection. <a href={`${base}lab/`}>Explore the intersection model</a> to investigate its signal phases and queues.</p>
     </section>
     <section data-chapter-prose>
       <h2>Use differences to choose the next check</h2>

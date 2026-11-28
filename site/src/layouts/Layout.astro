@@ -19,10 +19,10 @@ const chapterSlug = Astro.url.pathname.split('/learn/')[1]?.replace(/\/$/, '') |
     <a class="skip" href="#main">Skip to content</a>
     <header class="site-header">
       <a class="brand" href={base}>Executable Engineering</a>
-      <nav aria-label="Main navigation"><a href={base}>Home</a><a href={`${base}lab/`}>Lab</a><a href={`${base}reference/`}>Reference</a><a href={`${base}learn/`}>Learn</a></nav>
+      <nav aria-label="Main navigation"><a href={base}>Home</a><a href={`${base}lab/`}>Intersection model</a><a href={`${base}reference/`}>Reference</a><a href={`${base}learn/`}>Learn</a></nav>
       <SocialLinks />
     </header>
-    <main id="main">{chapterSlug && <ChapterAtAGlance slug={chapterSlug} />}<slot /></main>
+    <main id="main"><p class="status">Archived material: the former interactive sensor exercises are no longer available. <a href={`${base}lab/`}>Explore the current intersection model</a>.</p>{chapterSlug && <ChapterAtAGlance slug={chapterSlug} />}<slot /></main>
     <footer>Fictional Distributed Monitoring System · V0 teaching model · From intent to evidence<div class="footer-author"><AuthorAttribution /></div></footer>
   </body>
 </html>

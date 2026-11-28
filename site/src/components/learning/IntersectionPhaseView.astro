@@ -1,0 +1,70 @@
+---
+import inputs from '../../../../project/v3/case-study/model-inputs-v1.json';
+import { runQueue } from '../../../../models/intersection/queue.mjs';
+const scenario = inputs.scenarios.find(item => item.id === 'B')!;
+const first = runQueue(inputs, scenario.arrivals)[0];
+---
+<section class="phase-view" aria-labelledby="phase-title">
+  <h2 id="phase-title">Explore the signal cycle</h2>
+  <p>Step through the fixed sequence and see how arrivals and service affect both queues. The comparisons below use the same model, with their own independent controls.</p>
+  <form hidden>
+    <label>Arrival pattern
+      <select name="phase-scenario">{inputs.scenarios.map(s => <option value={s.id} selected={s.id === scenario.id}>{s.id} · {s.name}</option>)}</select>
+    </label>
+    <label>Slot <select name="phase-slot">{inputs.phase_sequence.map((_, i) => <option value={i + 1}>{i + 1}</option>)}</select></label>
+  </form>
+  <div class="signals" aria-live="polite" aria-atomic="true">
+    <p class="phase-name">Slot 1 · NS green</p>
+    <div class="signal-grid">
+      <div class="signal" data-direction="NS"><strong>North–south</strong><span class="lights" data-state="green" aria-hidden="true"><i></i><i></i><i></i></span><span class="signal-state">Green</span><span class="signal-count">Arriving {first.arrival.NS} · leaving {first.departures.NS} · waiting {first.queue.NS}</span></div>
+      <div class="signal" data-direction="EW"><strong>East–west</strong><span class="lights" data-state="red" aria-hidden="true"><i></i><i></i><i></i></span><span class="signal-state">Red</span><span class="signal-count">Arriving {first.arrival.EW} · leaving {first.departures.EW} · waiting {first.queue.EW}</span></div>
+    </div>
+  </div>
+  <noscript><p>The first slot of scenario B is shown above. Enable JavaScript to explore the remaining slots; the complete input sequence is available in the table below.</p></noscript>
+</section>
+<script>
+  import inputs from '../../../../project/v3/case-study/model-inputs-v1.json';
+  import { runQueue } from '../../../../models/intersection/queue.mjs';
+  import { phaseLabels } from './queue-timeline';
+
+  const view = document.querySelector<HTMLElement>('.phase-view');
+  if (view) {
+    const form = view.querySelector('form')!;
+    const scenario = form.querySelector<HTMLSelectElement>('[name=phase-scenario]')!;
+    const slot = form.querySelector<HTMLSelectElement>('[name=phase-slot]')!;
+    const update = () => {
+      const selected = inputs.scenarios.find(item => item.id === scenario.value)!;
+      const row = runQueue(inputs, selected.arrivals)[Number(slot.value) - 1];
+      view.querySelector<HTMLElement>('.phase-name')!.textContent = `Slot ${row.slot} · ${phaseLabels[row.phase]}`;
+      for (const direction of ['NS', 'EW'] as const) {
+        const element = view.querySelector<HTMLElement>(`[data-direction=${direction}]`)!;
+        const state = row.phase === `${direction}_GREEN` ? 'green' : row.phase === `${direction}_AMBER` ? 'amber' : 'red';
+        element.querySelector<HTMLElement>('.lights')!.dataset.state = state;
+        element.querySelector<HTMLElement>('.signal-state')!.textContent = state[0].toUpperCase() + state.slice(1);
+        element.querySelector<HTMLElement>('.signal-count')!.textContent = `Arriving ${row.arrival[direction]} · leaving ${row.departures[direction]} · waiting ${row.queue[direction]}`;
+      }
+    };
+    form.addEventListener('change', update);
+    form.addEventListener('submit', event => event.preventDefault());
+    update();
+    form.hidden = false;
+  }
+</script>
+<style>
+  .phase-view { max-width: 70ch; margin: 2rem 0; padding: 1.25rem clamp(1rem, 3vw, 1.75rem); background: var(--panel); border: 1px solid var(--rule); }
+  .phase-view h2 { margin-top: 0; }
+  form:not([hidden]) { display: flex; flex-wrap: wrap; gap: 1rem; margin-block: 1rem; }
+  label { display: grid; gap: .35rem; font-size: .9rem; }
+  select { font: inherit; color: var(--text); background: var(--bg); border: 1px solid var(--muted); border-radius: .3rem; padding: .6rem .9rem; }
+  .phase-name { font-weight: 700; }
+  .signal-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .75rem; }
+  .signal { display: grid; justify-items: start; gap: .5rem; padding: 1rem; background: var(--bg); border: 1px solid var(--rule); }
+  .lights { display: flex; gap: .35rem; padding: .35rem; border-radius: 1rem; background: #282e30; }
+  .lights i { display: block; width: 1rem; height: 1rem; border-radius: 50%; background: #596062; }
+  .lights[data-state="red"] i:nth-child(1) { background: #ff776c; }
+  .lights[data-state="amber"] i:nth-child(2) { background: #f1d67b; }
+  .lights[data-state="green"] i:nth-child(3) { background: #9ed8cb; }
+  .signal-state { font-weight: 700; }
+  .signal-count { color: var(--muted); font-size: .9rem; }
+  @media (max-width: 440px) { .signal-grid { grid-template-columns: 1fr; } }
+</style>

@@ -23,7 +23,7 @@ const base = import.meta.env.BASE_URL;
     <h3 id="published-v2">V2 articles</h3>
     {v2Chapters.map(c => <p><a href={base + 'learn/' + c.path + '/'}>{c.title}</a> · {c.summary}</p>)}
     <h3 id="published-lessons">Original single-sensor course</h3>
-    <p>Use the <a href={base + 'lab/'}>coverage lab</a> to try the twelve lessons on the original monitoring model.</p>
+    <p>These earlier lessons are retained as historical reading; their sensor-based browser exercises have been retired.</p>
     <ol aria-label="Published lessons">{chapters.map(c => <li><a href={base + 'learn/' + c.path + '/'}>{c.title}</a></li>)}</ol>
   </section>
 </Layout>

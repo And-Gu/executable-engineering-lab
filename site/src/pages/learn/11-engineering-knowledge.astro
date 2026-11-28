@@ -1,6 +1,5 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import ProposalWorkspace from '../../components/ProposalWorkspace.astro';
 import { loadSources } from '../../../../scripts/sources';
 const { need, requirement, scenario, manifest } = loadSources();
 const base = import.meta.env.BASE_URL;
@@ -42,18 +41,12 @@ const repo = 'https://github.com/And-Gu/executable-engineering-lab';
       <p>A dirty checkout adds another qualification: HEAD alone does not identify its uncommitted changes. Generated records report working-tree state and embed evaluated definitions, but that flag is not a complete snapshot of every modified source. Record the actual differences needed for reproduction and do not attribute the whole working tree to the commit alone.</p>
       <p>Coherence also requires meaning, not just matching references. A source bundle can contain resolvable IDs while combining a criterion from one candidate with inputs from another. Validation detects the contracts it implements; it cannot decide that this combination was intended, justified or covered by a historical result.</p>
       <h2>Reuse implementation deliberately</h2>
-      <p>The browser and automated checks reuse one pure coverage function and evaluator. That avoids separately maintained formulas. It does not transfer the outcome of one execution to every consumer of that implementation. A new input still needs its own calculation, and a broader claim still needs evidence that the model can address it.</p>
+      <p>The repository analyses and automated checks reuse one pure coverage function and evaluator. That avoids separately maintained formulas. It does not transfer the outcome of one execution to every consumer of that implementation. A new input still needs its own calculation, and a broader claim still needs evidence that the model can address it.</p>
       <p>Evidence reuse is therefore a separate review question. Compare evaluated inputs, criterion, method, assumptions and intended claim. An unchanged number may have a different meaning after a threshold change. An unchanged criterion may have a different outcome after a geometry change. A shared function supports consistent computation, not universal applicability of its earlier results.</p>
     </section>
     <section id="exercise">
-      <h2>Review a proposed reuse</h2>
-      <ol>
-        <li>Inspect the reference context above. Identify what its build-time source view can tell you and what historical context it cannot supply.</li>
-        <li>Try the radius proposal. Inspect its exact field difference and proposed definition. Reset before trying the threshold proposal.</li>
-        <li>Explain why unchanged coverage in the threshold example does not preserve the evaluation's meaning. Keep both candidates separate.</li>
-        <li>Break a reference, observe withheld analysis, then restore/reset. Explain why passing structural checks would still leave an applicability review.</li>
-      </ol>
-      <ProposalWorkspace />
+      <h2>Explore the current intersection example</h2>
+      <p>The interactive example now follows a traffic-light intersection. <a href={`${base}lab/`}>Explore the intersection model</a> to investigate its signal phases and queues.</p>
     </section>
     <section data-chapter-prose>
       <h2>Make change impact inspectable</h2>
@@ -72,7 +65,7 @@ const repo = 'https://github.com/And-Gu/executable-engineering-lab';
     <section id="reproduce" data-chapter-prose>
       <h2>Inspect actual records before reusing their conclusions</h2>
       <p>Follow the <a href={`${repo}/blob/main/docs/11-reuse-review.md`}>repository reuse review</a> to inspect canonical and proposed definitions, differences, calculations and provenance at an identified checkout. Keep assertion execution, reference evaluation generation and proposal analysis distinct. The written template records reasoning, not an approved baseline or a new engineering evidence format.</p>
-      <p>No historical CI record is loaded here. Browser proposals are temporary; retained artifacts expire after 30 days and may require sign-in. Local reproduction is a new execution. Even a coherent configuration and successful checks cannot establish physical detection, operational suitability or an optimal design under V0's omitted behavior.</p>
+      <p>No historical CI record is loaded here. Retained artifacts expire after 30 days and may require sign-in. Local reproduction is a new execution. Even a coherent configuration and successful checks cannot establish physical detection, operational suitability or an optimal design under V0's omitted behavior.</p>
     </section>
     <section id="quiz">
       <h2>Check your reasoning</h2>
