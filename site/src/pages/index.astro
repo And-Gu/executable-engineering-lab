@@ -105,23 +105,23 @@ const archivedPageCount = chapters.length + chapterPreviews.length + v2Chapters.
     <p class="example-caption">The example is fictional. Fast automated feedback supports learning and agentic iteration; whole-product evidence determines which results are actually relevant to integration and release.</p>
   </section>
 
-  <div class="notes">
-    <section class="note" aria-labelledby="collaboration-title">
-      <p class="note-number">01 / Modelling and exploration</p>
-      <h2 id="collaboration-title">Make ideas<br />executable.</h2>
-      <p>Use software models, simulations and physical prototypes to examine specific engineering questions. Deterministic calculations have predictable results for defined inputs; experiments reveal what changes when conditions or designs change.</p>
-    </section>
-    <section class="note" aria-labelledby="progress-title">
-      <p class="note-number">02 / Teams and workflows</p>
-      <h2 id="progress-title">Engineer the<br />feedback loop.</h2>
-      <p>Design automated behavioral and integration checks that tell agents what failed and why. Let them refine bounded changes, while preserving independent criteria and making demonstrated behavior—not generated output—the measure of progress.</p>
-    </section>
-    <section class="note" aria-labelledby="feedback-title">
-      <p class="note-number">03 / Release and feedback</p>
-      <h2 id="feedback-title">Check against<br />reality.</h2>
-      <p>Automated tests support fast inner loops. Product validity, physical interfaces, operational conditions and release authority form a broader loop with different evidence and cadences. A green test suite cannot answer every product question.</p>
-    </section>
-  </div>
+  <section class="concepts" aria-labelledby="concepts-title">
+    <h2 id="concepts-title">Concepts in this course</h2>
+    <div class="notes">
+      <section class="note" aria-labelledby="collaboration-title">
+        <h3 id="collaboration-title">Make ideas<br />executable.</h3>
+        <p>Use software models, simulations and physical prototypes to examine specific engineering questions. Deterministic calculations have predictable results for defined inputs; experiments reveal what changes when conditions or designs change.</p>
+      </section>
+      <section class="note" aria-labelledby="progress-title">
+        <h3 id="progress-title">Engineer the<br />feedback loop.</h3>
+        <p>Design automated behavioral and integration checks that tell agents what failed and why. Let them refine bounded changes, while preserving independent criteria and making demonstrated behavior—not generated output—the measure of progress.</p>
+      </section>
+      <section class="note" aria-labelledby="feedback-title">
+        <h3 id="feedback-title">Check against<br />reality.</h3>
+        <p>Automated tests support fast inner loops. Product validity, physical interfaces, operational conditions and release authority form a broader loop with different evidence and cadences. A green test suite cannot answer every product question.</p>
+      </section>
+    </div>
+  </section>
 
   <CourseOverview />
 
@@ -174,8 +174,8 @@ const archivedPageCount = chapters.length + chapterPreviews.length + v2Chapters.
     background-size: 3rem 5.19615rem;
     mask-image: radial-gradient(ellipse 80% 85% at 75% 25%, #000, transparent 75%);
   }
-  .kicker, .label, .small-label, .note-number { font-family: var(--home-mono); font-size: .6875rem; line-height: 1.5; }
-  .kicker, .label, .note-number { color: var(--home-gold); text-transform: uppercase; }
+  .kicker, .label, .small-label { font-family: var(--home-mono); font-size: .6875rem; line-height: 1.5; }
+  .kicker, .label { color: var(--home-gold); text-transform: uppercase; }
   .kicker { letter-spacing: .0625rem; margin-bottom: 1.1875rem; color: var(--home-teal); }
   h1 { font-size: clamp(2.125rem, 4.6vw, 3.375rem); font-weight: 600; line-height: 1.08; letter-spacing: -.115rem; text-wrap: balance; }
   h1 span { color: var(--home-gold); }
@@ -223,10 +223,11 @@ const archivedPageCount = chapters.length + chapterPreviews.length + v2Chapters.
   .observed .label { color: var(--home-teal); }
   .step-connector { position: absolute; top: 2.125rem; left: -1.875rem; color: var(--home-muted); font-size: 1.25rem; }
   .example-caption { border-top: 1px solid var(--home-rule); padding-top: 1rem; margin-top: 1.5rem; font-size: .75rem; line-height: 1.7; color: var(--home-muted); }
-  .notes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.75rem; padding-block: 2.125rem 2rem; }
+  .concepts { padding-top: 2.125rem; }
+  .concepts > h2 { font-size: clamp(1.5rem, 3vw, 1.75rem); line-height: 1.25; letter-spacing: -.035em; font-weight: 500; }
+  .notes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.75rem; padding-block: 1.25rem 2rem; }
   .note { border-top: 1px solid var(--home-rule); padding-top: 1.0625rem; }
-  .note-number { letter-spacing: .025rem; margin-bottom: .75rem; }
-  .note h2 { font-size: 1.375rem; font-weight: 600; line-height: 1.25; letter-spacing: -.0375rem; }
+  .note h3 { font-size: 1.375rem; font-weight: 600; line-height: 1.25; letter-spacing: -.0375rem; }
   .note > p:last-child { font-size: .8125rem; line-height: 1.75; color: var(--home-muted); margin-top: .9375rem; }
   .more-reading { display: grid; grid-template-columns: 1fr 2.1fr; gap: 2rem; padding-block: 2rem; border-top: 1px solid var(--home-rule); }
   .more-reading > header > .label { color: var(--home-teal); margin-bottom: .625rem; }
@@ -278,9 +279,8 @@ const archivedPageCount = chapters.length + chapterPreviews.length + v2Chapters.
     .step-connector { display: none; }
     .notes { grid-template-columns: 1fr; gap: 1.375rem; }
     .note { display: grid; grid-template-columns: 1fr 1.5fr; gap: .5rem 1.5rem; }
-    .note-number { grid-column: 1; margin-bottom: 0; }
-    .note h2 { grid-column: 1; }
-    .note > p:last-child { grid-column: 2; grid-row: 1 / 3; margin-top: 0; }
+    .note h3 { grid-column: 1; }
+    .note > p:last-child { grid-column: 2; grid-row: 1; margin-top: 0; }
     .more-reading { grid-template-columns: 1fr; gap: 1.5rem; }
   }
   @media (max-width: 500px) {
@@ -296,7 +296,6 @@ const archivedPageCount = chapters.length + chapterPreviews.length + v2Chapters.
     .example { padding: 1.25rem 1.125rem; }
     figcaption { text-align: left; font-size: .8125rem; }
     .note { display: block; }
-    .note-number { margin-bottom: .75rem; }
     .note > p:last-child { margin-top: .9375rem; }
     .resource-routes { grid-template-columns: 1fr; gap: 1rem; }
     .archive-count { display: block; margin: .5rem 0 0 1.5rem; }
