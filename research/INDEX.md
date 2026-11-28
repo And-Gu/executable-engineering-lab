@@ -39,7 +39,7 @@ Resolve destinations against the [current curriculum](../project/CURRICULUM-MAP.
 | 07 · Spec-Driven Development Without Waterfall | Maintained behavior, working hypotheses and evidence for a change. Consult the original specification sources. |
 | 08 · Directing AI Engineering Agents | Task support, delegation, current inputs, access and agreed criteria. R05, R06 and R08. |
 | 09 · Planning and Controlling Agents | Failure diagnosis, independent checks, task boundaries and escalation. R05–R11. |
-| 10 · From Models to an Integrated Product | Interfaces, integration, verification and intended use. R04 and R17; #78 owns broader industrial research. |
+| 10 · From Models to an Integrated Product | Interfaces, integration, verification and intended use. R04 and R17; the future of the broader industrial research from #78 is a decision in #106. |
 | 11 · Reviewing an Integrated Product Change | Review of claims across configurations, interfaces and user tasks. R04 and the historical verification sources. |
 | 12 · Governance and Engineering Authority | Authority, permissions, accountable decisions and residual risk. Institutional guidance and the dated governance sources. |
 | 13 · Continuously Integrated Engineering | Eligible-request acceptance to recorded whole-product releasability. R04 and R12–R17; keep software-delivery metrics separate. |
