@@ -12,12 +12,12 @@ jobs:
       TEST_RUN_ID: ci-${{ github.run_id }}-${{ github.run_attempt }}
       EXPECTED_REVISION: ${{ github.event.pull_request.head.sha || github.sha }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           ref: ${{ github.event.pull_request.head.sha || github.sha }}
           fetch-depth: 0
           persist-credentials: false
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v7
         with:
           node-version-file: .nvmrc
           cache: npm
@@ -28,13 +28,13 @@ jobs:
         run: npm run ci:impact
       - name: Verify the clean revision and retain phase timings
         run: npm run check -- --release
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: reference-evidence-${{ github.event.pull_request.head.sha || github.sha }}
           path: artifacts/runs/${{ env.TEST_RUN_ID }}/reference-evidence.json
           if-no-files-found: error
           retention-days: 30
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: proposal-analysis-${{ github.event.pull_request.head.sha || github.sha }}
           path: artifacts/runs/${{ env.TEST_RUN_ID }}/proposals/*.json
@@ -42,14 +42,29 @@ jobs:
           retention-days: 30
       - name: Retain verification phases and test results
         if: ${{ !cancelled() }}
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: verification-${{ github.event.pull_request.head.sha || github.sha }}
           path: artifacts/runs/${{ env.TEST_RUN_ID }}/
           if-no-files-found: error
           retention-days: 30
+      # Temporary PR-only exercise of the upgraded Pages artifact action.
+      - name: Prepare Pages artifact compatibility fixture
+        if: github.event_name == 'pull_request'
+        run: |
+          mkdir -p "$RUNNER_TEMP/pages-artifact-check"
+          cp -R dist/. "$RUNNER_TEMP/pages-artifact-check/"
+          printf 'hidden file preservation\n' > "$RUNNER_TEMP/pages-artifact-check/.pages-hidden-fixture"
+      - name: Exercise Pages artifact packaging without deployment
+        if: github.event_name == 'pull_request'
+        uses: actions/upload-pages-artifact@v5
+        with:
+          name: pages-artifact-compatibility
+          path: ${{ runner.temp }}/pages-artifact-check
+          include-hidden-files: true
       - name: Upload the verified site for publication
         if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v5
         with:
           path: dist
+          include-hidden-files: true

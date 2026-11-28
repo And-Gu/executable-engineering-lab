@@ -24,7 +24,7 @@ jobs:
     steps:
       - name: Deploy
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
   verify:
     name: Verify published revision and routes
     needs: deploy
@@ -35,18 +35,18 @@ jobs:
       EXPECTED_REVISION: ${{ github.sha }}
       TEST_RUN_ID: hosted-${{ github.run_id }}-${{ github.run_attempt }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           ref: ${{ github.sha }}
           persist-credentials: false
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v7
         with:
           node-version-file: .nvmrc
       - name: Check public identity before and after route checks
         run: node scripts/verify.mjs --release --checks=hosted --target=https://and-gu.github.io/executable-engineering-lab/
       - name: Retain hosted verification evidence
         if: ${{ !cancelled() }}
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: hosted-verification-${{ github.sha }}
           path: artifacts/runs/${{ env.TEST_RUN_ID }}/
