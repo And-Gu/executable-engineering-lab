@@ -33,7 +33,7 @@ At product kickoff, the team already has a phase sequence to exercise and a way 
 <figcaption>Illustration of a proposed integration bench. The laptop could report command receipt. A camera record tied to the same command and head could establish which lamp was visible from that position at that time.</figcaption>
 </figure>
 
-An adapter could meet revision B exactly and still leave the controller waiting for evidence of the applied indication. The team records the difference in `INT-DISC-001` and defers accepting the two interfaces as compatible. Discovering this while the adapter is still a purchasing choice is the early feedback Chapter 1 described. [Interface discrepancy record](../../case-study/DECISION-CHAIN.md) · [Chapter 1 on earlier feedback](01-the-new-engineering-paradigm.md#where-earlier-feedback-improves-delivery).
+An adapter could meet revision B exactly and still leave the controller waiting for evidence of the applied indication. The team records the difference in `INT-DISC-001` and defers accepting the two interfaces as compatible. Discovering this while the adapter is still a purchasing choice is the early feedback Chapter 1 described. [Interface discrepancy record](../../case-study/DECISION-CHAIN.md) · [Chapter 1 on executable feedback](01-the-new-engineering-paradigm.md#from-document-driven-handoffs-to-executable-feedback).
 
 ## Define the first product increment
 

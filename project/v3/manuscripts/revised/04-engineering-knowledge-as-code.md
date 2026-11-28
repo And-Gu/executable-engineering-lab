@@ -13,9 +13,13 @@ teaching_fixture: "T1 — synthetic editorial source"
 
 *If the team changes how signal phases are selected, where should the review begin?*
 
-The two teams designing the four-way intersection have agreed when an arriving vehicle joins a queue. In each slot, arrivals join first, up to one vehicle departs on green, and the model records the departures and remaining queues. Both teams can cite the `event_order` field in the [T1 model inputs](../../case-study/model-inputs-v1.json).
+**Document as Code** means maintaining information as versioned text that people, ordinary software and AI agents can read and review together. The intersection team can keep its definitions, assumptions and decisions in one shared place and record which revisions its checks use. This is the software-driven approach introduced in Chapter 1. The companion [Document-as-Code Lab](https://and-gu.github.io/document-as-code-lab/) shows a definition maintained once and used in several views.
 
-Systems engineers explore what road users need, which movements may get green together and which part of a controller should select the next phase, all while the design is still open. In model-based systems engineering (MBSE), models help teams develop candidate requirements and compare ways of meeting them. Treating that knowledge as code extends the practice. Engineers can keep model definitions, assumptions and decisions under version control and review a change alongside the sources it affects. The companion [Document-as-Code Lab](https://and-gu.github.io/document-as-code-lab/) shows how to maintain a definition once and publish the views that use it.
+Consider an illustrative rename of a road approach. If traffic records and system definitions live in separate discipline tools without a maintained mapping, their owners must reconcile names and revisions by hand. With a shared, identified definition, a configured generator can update dependent views; a consistency check can flag a reference that still uses the old name and record the revision it checked. An AI assistant could help interpret the flag or propose an update. The owners review the meaning and the proposed change. These are capabilities the team would configure, not claims that the teaching site performs this rename.
+
+The teams have already agreed when an arriving vehicle joins a queue. Arrivals join first, then up to one vehicle departs on green, and the model records the remaining queues. Both teams can cite the `event_order` field in the [T1 model inputs](../../case-study/model-inputs-v1.json). That text documents the rule; changing the description alone does not change the calculation. Engineers compare the model code and expected rows with the agreed rule and update whichever no longer matches.
+
+Systems engineers explore what road users need, which movements may get green together and which part of a controller should select the next phase, all while the design is still open. In model-based systems engineering (MBSE), models help teams develop candidate requirements and compare ways of meeting them. Versioned definitions let engineers review a change alongside the sources it affects.
 
 An assistant powered by a large language model (LLM) gives engineers another way into those sources. A colleague considering adaptive signal selection can ask which assumptions the fixed-time design makes and where to find them. The response can point to a model to inspect and explain why it matters to the proposal.
 
@@ -36,6 +40,10 @@ An **engineering information model** gives important concepts stable identities 
 ## One source, several useful perspectives
 
 A **view** is a purposeful representation of those sources. Consider the candidate phase-selection function. A functional view might show inputs, decisions and commanded states. A structural view might show the controller and a signal-driving interface. A requirements view shows the rule on conflicting greens. A behavior view can show how one phase follows another.
+
+The diagram below presents the [SysML text introduced in Chapter 2](02-introducing-the-engineering-challenge.md#a-system-view-in-sysml). The text is the source in this example, and the diagram is a view of what the team intends to build. Its `controller : Controller` element comes from the `part controller : Controller;` part declaration, typed by `Controller`, in that same chapter and build. The view is generated from that maintained excerpt, so a reader can compare the two without relying on a separately edited picture.
+
+<!-- interactive: intersection-structure -->
 
 A team using the Systems Modeling Language (SysML) can express those requirements, parts, interfaces and behaviors in one model. While exploring an adaptive alternative, an engineer could give an LLM the model definitions and ask it to sketch which detector inputs the controller would need. The interface owner can compare that sketch with the existing definitions and decide which proposed inputs belong in the model. A SysML diagram and a textual view can show the same model elements. For each input in the sketch, cite its definition in the current revision or record a proposed addition. [OMG SysML v2 specification, section 7.26.1](https://www.omg.org/spec/SysML/2.0/Language/PDF#page=181).
 
@@ -78,6 +86,8 @@ The engineer follows link E07 from INT-CHG-001 through `may_affect` to the phase
 
 E08 also records `may_affect`, this time from the change to INT-IF-001. Both E07 and E08 have the status `inferred_review_candidate`. The engineer turns “change the interface” into a question for its owner. Could the controller select a different phase using the commands the interface already defines?
 
+As a system gains more functions, interfaces and versions, following possible effects by hand becomes harder. Recorded links help identify candidates for review: the model owner examines whether the fixed sequence still represents the proposed behavior; the interface owner examines whether existing commands can express it. A link starts that examination. It does not decide that either source must change.
+
 The source also includes a suggested link to INT-IF-UNKNOWN. Its target has no matching object. The reviewer rejects the link and keeps a question open for the interface owner. Which source, if any, identifies the intended target?
 
 > **Explore further**
@@ -96,4 +106,4 @@ When an owner responds, the reviewer can attach the finding to the model or inte
 
 ## From connected knowledge to a useful experiment
 
-The model reviewer can start by examining the fixed-time baseline. Experiment INT-EXP-001 uses INT-MOD-001 with four synthetic arrivals per scenario. What happens to the final queue if one north-south arrival in scenario B moves from slot 3 to slot 2? [Chapter 5 runs that comparison and records the observation](05-learning-through-models-and-prototypes.md).
+Shared text can help before a project reaches that complexity. In the first prototype, an assistant could relate one moved arrival to the documented queue rule and the resulting rows. An engineer can check its account against the inputs and saved results before choosing the next experiment. Experiment INT-EXP-001 uses INT-MOD-001 with four synthetic arrivals per scenario. What happens to the final queue if one north-south arrival in scenario B moves from slot 3 to slot 2? [Chapter 5 runs that comparison and records the observation](05-learning-through-models-and-prototypes.md).
