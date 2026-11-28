@@ -36,5 +36,24 @@
         "correct": true
       }
     ]
+  },
+  {
+    "id": "intent-as-agent-context",
+    "prompt": "Why give an AI agent the relevant initiative as well as the requirement for a proposed change?",
+    "options": [
+      {
+        "text": "The initiative replaces the requirement and lets the agent approve its own change.",
+        "feedback": "Intent explains purpose and priorities; it does not replace an agreed requirement or transfer the decision to the agent."
+      },
+      {
+        "text": "The initiative provides purpose and context for interpreting the task; engineers still review the proposal.",
+        "feedback": "Connecting the requirement to the initiative can help an agent interpret why the work matters and what to investigate. The team still checks its interpretation and decides what to do.",
+        "correct": true
+      },
+      {
+        "text": "The agent can infer all missing constraints reliably from a single requirement.",
+        "feedback": "A requirement may leave the affected people, rationale or unresolved constraints unstated. Supply the relevant context and review the agent's interpretation."
+      }
+    ]
   }
 ]
