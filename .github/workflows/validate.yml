@@ -48,20 +48,6 @@ jobs:
           path: artifacts/runs/${{ env.TEST_RUN_ID }}/
           if-no-files-found: error
           retention-days: 30
-      # Temporary PR-only exercise of the upgraded Pages artifact action.
-      - name: Prepare Pages artifact compatibility fixture
-        if: github.event_name == 'pull_request'
-        run: |
-          mkdir -p "$RUNNER_TEMP/pages-artifact-check"
-          cp -R dist/. "$RUNNER_TEMP/pages-artifact-check/"
-          printf 'hidden file preservation\n' > "$RUNNER_TEMP/pages-artifact-check/.pages-hidden-fixture"
-      - name: Exercise Pages artifact packaging without deployment
-        if: github.event_name == 'pull_request'
-        uses: actions/upload-pages-artifact@v5
-        with:
-          name: pages-artifact-compatibility
-          path: ${{ runner.temp }}/pages-artifact-check
-          include-hidden-files: true
       - name: Upload the verified site for publication
         if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
         uses: actions/upload-pages-artifact@v5
