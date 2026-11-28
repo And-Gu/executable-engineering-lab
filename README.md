@@ -15,7 +15,7 @@ npm ci # if dependencies are missing or the lockfile changed
 npm run dev -- --host 127.0.0.1
 ```
 
-Open the Local URL printed by Astro, normally `http://localhost:4321/executable-engineering-lab/` (the port can change if occupied). Reuse a suitable running preview where possible. For editorial review, confirm the changed page, share its local link with the source revision and working-tree status, and label it as work in progress until its required checks and reviews pass. Keep the server available for review. The site is the default review copy; create a Word document, PDF or page-image copy only when explicitly requested.
+Astro prints the server's host and port. Append `/executable-engineering-lab/` to that address to open the site, for example `http://127.0.0.1:4321/executable-engineering-lab/`; the port can change if occupied. Reuse a suitable running preview where possible. For editorial review, confirm the changed page, share its local link with the source revision and working-tree status, and label it as work in progress until its required checks and reviews pass. Keep the server available for review. The site is the default review copy; create a Word document, PDF or page-image copy only when explicitly requested.
 
 An early working preview does not replace the assigned delivery checks or task-specific reviews. Run the applicable checks before the final handoff. The standard local commands include:
 
