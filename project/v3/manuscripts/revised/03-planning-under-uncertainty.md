@@ -11,15 +11,35 @@ teaching_fixture: "T1 — fictional planning decision"
 
 # Planning Under Uncertainty
 
-*How can a first prototype change what the team works on next?*
+*How can a team plan when learning may change what it should build?*
+
+When the solution is uncertain, a plan must help a team decide both what to deliver and what to learn. Committing too much before a key assumption is understood can make a later change expensive. Deferring every commitment has a cost too: people need a useful next result and a basis for coordinating their work.
+
+An incremental plan makes the next piece of work small enough to review and connects it to a decision. The team weighs the cost of an investigation against the decision it could change, the delay it could avoid and the consequences of choosing wrongly. What the team learns can change the next increment or, when the problem itself changes, the initiative.
+
+<span id="begin-with-the-next-decision-not-a-backlog"></span>
+
+## Trace the plan to intent
+
+A requirements-led waterfall plan can allocate an agreed requirement to disciplines and trace their work to a check of fulfillment. Its requirements can be revised, but a revision also calls for affected work and evidence to be reviewed. Agile planning can begin with an outcome while some requirements are still taking shape, then refine both the plan and the definitions as evidence becomes available.
+
+Three levels of intent keep that evolving plan connected. A **vision** states the lasting outcome and the people it serves. An **initiative** identifies a problem worth pursuing toward that vision. An **increment** names the next bounded result and the decision it will inform. Tasks in a backlog support the increment; their order alone does not explain why the work matters.
+
+Traceability works in both directions. A team can follow an increment back to the initiative and vision it serves, and follow a changed outcome or assumption forward to the work that needs review. A decision record preserves the reason for the change.
+
+## Give AI agents the context behind the plan
+
+A requirement can state a precise condition a solution must meet. On its own, it may not explain the purpose, the people affected, the reasons for a choice or which questions are still open. A well-connected requirement can carry links to that context; intent gives the team a place to express it before every detail is settled.
+
+An AI agent given the relevant vision, initiative, constraints and task can use that context to find supporting information and propose an investigation or a change. Agile planning and an AI-native workflow therefore complement one another when this information is accessible and kept current. Context does not guarantee a correct proposal or authorize the agent to make the decision: engineers still review its interpretation, the evidence and the next action. [Chapter 8 develops how a team supplies context and sets a task boundary](08-directing-ai-engineering-agents.md#context-is-an-engineering-capability).
+
+The intersection introduced in Chapter 2 shows how these principles affect a concrete planning choice in our fictional case.
+
+## Choose the next investigation
 
 The city wants traffic to flow more easily through its four-way intersection while people can cross safely. The workshop team can start exploring that intent while the control requirements are still taking shape. Its proposed prototype follows a fixed signal cycle. If the same number of vehicles arrive during that cycle, does the queue at the end depend on when they arrive?
 
 The answer would shape the team's next request to operations staff. Counts for a whole period might be easy to supply. If arrival timing matters, the engineers have a reason to seek records they can match to the signal phases.
-
-<span id="begin-with-the-next-decision-not-a-backlog"></span>
-
-## Choose the next investigation
 
 Before the next concept review, the team has time for one substantial investigation. Each option would prepare it for a different decision.
 
@@ -31,7 +51,9 @@ Before the next concept review, the team has time for one substantial investigat
 
 The team chooses the arrival comparison. The north–south and east–west vehicle groups in the workshop sketch are enough to start. Fixed phases give the engineers a reference for a later proposal, such as a controller that adjusts its phases in response to arrivals. Mapping conflicts takes priority before a change to which movements can proceed together.
 
-## Trace the plan to intent
+If the team asks an agent to prepare the comparison, the city vision and queue initiative explain why arrival timing matters and why safe crossings remain an open concern. The task could ask the agent to identify relevant input records and assumptions. An engineer would check that proposal; the task does not authorize the agent to change the signals.
+
+## Apply the levels of intent
 
 With traditional waterfall planning, an agreed requirement can be allocated to disciplines and traced down to their work and back to the check that demonstrates fulfillment. Suppose, for this hypothetical comparison, the city has agreed that a candidate plan must leave fewer vehicles on the north approach than the reference plan under the specified burst and counting conditions. The controls team defines the candidate phase plan, the modeler prepares the specified scenario, and the verification team checks whether the candidate meets that criterion. The requirement explains why each task belongs. If it changes, the team can identify those dependents and review the check as well.
 
