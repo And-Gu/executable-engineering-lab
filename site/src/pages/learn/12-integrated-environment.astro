@@ -1,6 +1,5 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import ProposalWorkspace from '../../components/ProposalWorkspace.astro';
 import { loadSources } from '../../../../scripts/sources';
 const { need, requirement, scenario, manifest } = loadSources();
 const base = import.meta.env.BASE_URL;
@@ -37,7 +36,7 @@ const repo = 'https://github.com/And-Gu/executable-engineering-lab';
     </ol>
     <section data-chapter-prose>
       <h2>Keep one change and one claim together</h2>
-      <p>Apply the existing radius-only task. Preserve the criterion and other fixed inputs, inspect the exact radius difference and evaluate that candidate. The shared pure model and evaluator supply the calculation; the presentation supplies controls and explanation. Reusing that implementation keeps browser and automated calculations aligned without making every execution the same evidence.</p>
+      <p>Apply the existing radius-only task. Preserve the criterion and other fixed inputs, inspect the exact radius difference and evaluate that candidate. The shared pure model and evaluator supply the calculation. Reusing that implementation keeps analyses and automated checks aligned without making every execution the same evidence.</p>
       <p>The threshold example asks a different question. It changes the criterion's meaning while retaining the same geometry. Its valid data and possible PASS do not justify the requirement change or fit the radius-only assignment. Keep the candidates separate: combining their definitions would create a configuration whose result neither separate trial establishes.</p>
       <p>Invalid definitions and insufficient justification also need separate responses. A broken reference blocks the current analysis. A valid radius proposal can still lack evidence about terrain, physical detection or operational usefulness. Correcting a structural error enables analysis; it cannot remove the model's omissions or authorize acceptance.</p>
     </section>
@@ -46,20 +45,12 @@ const repo = 'https://github.com/And-Gu/executable-engineering-lab';
       <p>Before completing the exercise, imagine receiving your own report without this page beside it. Could you identify the evaluated candidate, find the actual observation and explain why it supports the stated claim? Could you distinguish an unavailable record from a failed criterion? If either answer requires guessing, revise the handover. Its purpose is to preserve enough meaning for another engineer to inspect and challenge the reasoning, including the decision deliberately left open.</p>
     </section>
     <section id="exercise">
-      <h2>Capstone: inspect, experiment and explain</h2>
-      <ol>
-        <li>Write the operator's question in one sentence. Follow the source route and state the narrower claim V0 can address.</li>
-        <li>Read the <a href={`${repo}/blob/main/docs/07-task-review.md#written-task-contract`}>radius-only contract</a>. Try the radius example below and inspect exact differences and the proposed definition.</li>
-        <li>Write the observed result with its criterion and assumptions. Identify it as a temporary browser calculation, not retained CI evidence.</li>
-        <li>Reset and try the threshold example. Explain the changed claim and why it is outside this task. Break a reference, observe withholding, then restore/reset.</li>
-        <li>Inspect an actual generated record through the repository route. Record revision, working-tree state and commands actually completed.</li>
-        <li>Complete the written handover below before revealing the reasoning guide.</li>
-      </ol>
-      <ProposalWorkspace />
+      <h2>Explore the current intersection example</h2>
+      <p>The interactive example now follows a traffic-light intersection. <a href={`${base}lab/`}>Explore the intersection model</a> to investigate its signal phases and queues.</p>
     </section>
     <section data-chapter-prose>
       <h2>Say what actually executed</h2>
-      <p>Browser exploration changes a temporary copy and runs the shared calculation. Software assertions check expected behavior, including the canonical geometric FAIL. Reference generation calculates and evaluates canonical inputs but does not invoke those assertions. Proposal generation produces separate unapproved analyses and explicitly does not execute the registered reference test against changed inputs.</p>
+      <p>An isolated proposal changes a copy of the inputs and runs the shared calculation. Software assertions check expected behavior, including the canonical geometric FAIL. Reference generation calculates and evaluates canonical inputs but does not invoke those assertions. Proposal generation produces separate unapproved analyses and explicitly does not execute the registered reference test against changed inputs.</p>
       <p>Review is another activity: it connects observations to a bounded claim and names gaps. Publication makes the learning material available; it is not sensor-design acceptance. A successful build or deployed chapter cannot stand in for a missing analysis record, responsible review or physical validation.</p>
       <p>Attach each execution claim to actual logs or records. Check source commit, dirty status, evaluated definitions, method and timestamp. A dirty flag alone does not snapshot every source modification. If an artifact is unavailable, state that limitation. Local reproduction is a new execution, not reconstruction of an original event or approval.</p>
     </section>
@@ -69,17 +60,17 @@ const repo = 'https://github.com/And-Gu/executable-engineering-lab';
       <ol>
         <li>Operational question and bounded modeled claim.</li>
         <li>Task boundary, source revision/working-tree state and evaluated definitions.</li>
-        <li>Actual candidate difference and commands or browser actions completed.</li>
+        <li>Actual candidate difference and commands completed.</li>
         <li>Observed outcome, criterion, method and evidence actually inspected.</li>
         <li>Assumptions, unavailable evidence and counterarguments.</li>
         <li>Responsible next review and unresolved decision.</li>
       </ol>
-      <details><summary>Reasoning guide: what a defensible handover contains</summary><p>This is guidance, not a completed execution report. State the radius-only geometric claim under the unchanged criterion; copy actual values only from your observed calculation or record. Identify canonical versus proposed definitions, and distinguish browser calculation, assertion logs and generated analyses. Name missing operational support and the responsible next review. Leave acceptance unresolved; do not infer it from PASS or fill missing provenance with invented facts.</p></details>
+      <details><summary>Reasoning guide: what a defensible handover contains</summary><p>This is guidance, not a completed execution report. State the radius-only geometric claim under the unchanged criterion; copy actual values only from your observed calculation or record. Identify canonical versus proposed definitions, and distinguish proposal calculation, assertion logs and generated analyses. Name missing operational support and the responsible next review. Leave acceptance unresolved; do not infer it from PASS or fill missing provenance with invented facts.</p></details>
     </section>
     <section id="reproduce" data-chapter-prose>
       <h2>Let another engineer reproduce the reasoning</h2>
       <p>Use the <a href={`${repo}/blob/main/docs/12-integrated-review.md`}>repository capstone instructions</a> from an identified checkout. Run existing checks and record generation, inspect actual outputs and compare them with your written claim. No canonical edits, push or publication are needed. The handover is a review aid separate from generated engineering evidence.</p>
-      <p>No historical CI record is loaded by this lesson. The baseline is calculated at build time, and browser edits disappear on reset or reload. Retained CI artifacts expire after 30 days and may require sign-in. A reader can reproduce the calculation while still being unable to inspect an original artifact; report both facts without treating them as equivalent.</p>
+      <p>No historical CI record is loaded by this lesson. The baseline is calculated at build time. Retained CI artifacts expire after 30 days and may require sign-in. A reader can reproduce the calculation while still being unable to inspect an original artifact; report both facts without treating them as equivalent.</p>
     </section>
     <section id="quiz">
       <h2>Check the whole argument</h2>

@@ -1,6 +1,5 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import CoverageLab from '../../components/CoverageLab.astro';
 const base = import.meta.env.BASE_URL;
 const reference = `${base}reference/`;
 ---
@@ -27,28 +26,20 @@ const reference = `${base}reference/`;
     </section>
     <section data-chapter-prose>
       <h2>Separate calculation from evaluation</h2>
-      <p>The pure coverage function accepts area dimensions, sensor position and radius. It validates these inputs and returns a result without reading the page, writing a file or selecting a requirement. Browser controls restrict inputs for usability; the engineering function also accepts sensor centers outside the rectangle. A control’s allowed range is therefore distinct from the model’s supported domain.</p>
+      <p>The pure coverage function accepts area dimensions, sensor position and radius. It validates these inputs and returns a result without reading the page, writing a file or selecting a requirement. An interface can restrict inputs for usability; the engineering function also accepts sensor centers outside the rectangle. An interface’s allowed range is distinct from the model’s supported domain.</p>
       <p>The evaluator receives the coverage result and a threshold. It calculates a margin and passes equality. It uses the unrounded percentage, not the two-decimal display string. Changing a threshold can change the outcome without changing coverage; the <a href={`${base}learn/02-engineering-information-models/#exercise`}>existing proposal exercise</a> lets you inspect that distinction separately. The threshold’s operational justification remains outside both functions.</p>
-      <p>Read the <a href="https://github.com/And-Gu/executable-engineering-lab/blob/main/models/coverage/coverage.ts">coverage implementation</a> and <a href="https://github.com/And-Gu/executable-engineering-lab/blob/main/models/coverage/evaluate.ts">evaluator</a> to follow that division. The browser and automated tests import these same modules. Sharing an implementation prevents competing formulas from drifting apart, while independent expected geometries and boundary tests provide checks on that implementation.</p>
+      <p>Read the <a href="https://github.com/And-Gu/executable-engineering-lab/blob/main/models/coverage/coverage.ts">coverage implementation</a> and <a href="https://github.com/And-Gu/executable-engineering-lab/blob/main/models/coverage/evaluate.ts">evaluator</a> to follow that division. The former browser tool and the automated tests used these same modules. Sharing an implementation prevents competing formulas from drifting apart, while independent expected geometries and boundary tests provide checks on that implementation.</p>
     </section>
-    <section id="exercise" aria-labelledby="exercise-heading">
-      <h2 id="exercise-heading">Experiment: predict, count, restore</h2>
-      <ol>
-        <li>Reset to SCN-001. Read the covered-cell count, total, percentage and margin. Find the method and grid dimensions under Definition and interpretation.</li>
-        <li>Increase radius by one model unit, then again. Predict the direction of change and inspect the actual count. Do not assume every edit produces the same increment.</li>
-        <li>Reset, then move x toward the left boundary while keeping y and radius unchanged. Explain why footprint outside the rectangle contributes nothing.</li>
-        <li>Restore the exact earlier values or reset. Compare the count and percentage with the original run. Record separate trials if useful; they never combine sensors.</li>
-        <li>Try radius zero, then a blank input. Explain the difference between a valid zero result and a configuration that must not be evaluated.</li>
-      </ol>
-      <CoverageLab />
-      <details><summary>Compare your explanation</summary><p>The numerical estimate counts cell centers, while the circle depicts continuous geometry. With unchanged method and inputs, the numerical output repeats. Boundary clipping can reduce coverage; a zero radius is valid and gives zero coverage. A blank value is invalid, so stale numbers and geometry must be withheld. No trial changes canonical YAML or creates retained verification evidence.</p></details>
+    <section id="exercise">
+      <h2>Explore the current intersection example</h2>
+      <p>The interactive example now follows a traffic-light intersection. <a href={`${base}lab/`}>Explore the intersection model</a> to investigate its signal phases and queues.</p>
     </section>
     <section id="reproduce" data-chapter-prose>
       <h2>Reproduce the execution, not just the screenshot</h2>
       <p>Use an identified repository checkout and run <code>npm ci</code>, <code>npm run check</code> and <code>npm run evidence</code>. Inspect <code>artifacts/reference-evidence.json</code>. Repeat evidence generation and compare its definition and calculation fields. Those numerical fields should agree for identical sources and method. The result identifier and timestamp describe separate executions and need not match.</p>
       <p>Check the source commit, working-tree status, context and runtime recorded with each execution. An uncommitted edit cannot be recovered from the commit alone. Keep dirty status honest, preserve the evaluated inputs and inspect the relevant source differences. A screenshot lacks this execution context and is insufficient as a reproducible verification record.</p>
       <p>The reference test deliberately checks the canonical configuration and its expected engineering failure. Passing software tests means those checks succeeded, not that the reference design met its coverage criterion. Preserve those assertions. Use <code>npm run proposals</code> only for the separate unapproved proposal path; it does not execute the registered reference test against changed definitions.</p>
-      <p>The <a href={`${reference}#retained-evidence`}>retained evidence instructions</a> explain CI artifacts and local reproduction. Artifacts expire after 30 days and may require sign-in. This chapter displays build-time and temporary browser calculations, not a loaded CI record. Reproducing the number checks numerical repeatability; assessing whether an ideal unobstructed circle represents a real sensor still requires other evidence.</p>
+      <p>The <a href={`${reference}#retained-evidence`}>retained evidence instructions</a> explain CI artifacts and local reproduction. Artifacts expire after 30 days and may require sign-in. A calculation reproduced locally is not a loaded CI record. Reproducing the number checks numerical repeatability; assessing whether an ideal unobstructed circle represents a real sensor still requires other evidence.</p>
     </section>
     <section id="quiz">
       <h2>Check your reasoning</h2>

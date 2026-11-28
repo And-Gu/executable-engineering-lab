@@ -1,6 +1,5 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import ProposalWorkspace from '../../components/ProposalWorkspace.astro';
 import { loadSources } from '../../../../scripts/sources';
 import { projectRelationships } from '../../../../exercises/relationships';
 const definitions = loadSources();
@@ -35,19 +34,11 @@ const reference = `${base}reference/`;
       <h2>Connectivity is a starting point</h2>
       <p>A stable identifier lets us discuss a record across revisions. It does not prove that its contents stayed the same. Both proposal trials keep the existing identifiers and relationships while changing a definition. The same table can therefore accompany different numerical evaluations. To decide whether evidence applies, compare the evaluated definition and execution context, not merely the connected IDs.</p>
       <p>Forward tracing identifies candidates for review. It does not imply that every connected calculation must rerun. A threshold feeds the evaluator; the radius feeds the coverage calculation, whose output feeds the evaluator. The motivating need supports interpretation and justification. Treating all arrows as identical would obscure these distinctions and could miss a necessary engineering review.</p>
-      <p>For a threshold-only change, geometry remains unchanged, but the criterion needs fresh evaluation. For a radius change, calculate coverage again and then evaluate it. This workspace deliberately computes both baseline and proposal through the same model on every valid trial; it does not implement selective reuse or caching. The distinction concerns why each check is needed, not an optimization promised by the interface.</p>
+      <p>For a threshold-only change, geometry remains unchanged, but the criterion needs fresh evaluation. For a radius change, calculate coverage again and then evaluate it. The former workspace computed both baseline and proposal through the same model on every valid trial; it did not implement selective reuse or caching. The distinction concerns why each check is needed, not an optimization promised by that former interface.</p>
     </section>
-    <section id="experiment" aria-labelledby="experiment-title">
-      <h2 id="experiment-title">Experiment: explain what must be checked</h2>
-      <ol>
-        <li>Reset. Follow the requirement’s source_need and verification bindings in the table. Predict which connections will change in each trial.</li>
-        <li>Try the threshold example. Inspect the exact differences and validated proposed definition. Explain why the geometry can stay the same.</li>
-        <li>Reset, then try the radius example. Explain why fresh geometric calculation is needed even though the relationship table is unchanged.</li>
-        <li>Break the need reference. Observe the diagnostic and cleared result, then restore it. Does a resolvable need justify the threshold?</li>
-        <li>Suppose a wall blocks part of the area. Without editing a number, identify which assumption and conclusion need review.</li>
-      </ol>
-      <ProposalWorkspace />
-      <details><summary>Compare your impact reasoning</summary><p>The threshold trial changes the requirement criterion, statement and unapproved basis. It needs evaluation against that exact definition; it has not improved coverage. The radius trial changes the scenario and needs calculation plus evaluation. Neither changes the eight relationship roles. A broken reference blocks validation and analysis. A wall challenges the ideal unobstructed footprint assumption: this model cannot calculate the blocked region, so engineering review needs a suitable model or other evidence. Restoring a reference or obtaining PASS supplies neither that evidence nor requirement approval.</p></details>
+    <section id="experiment">
+      <h2>Explore the current intersection example</h2>
+      <p>The interactive example now follows a traffic-light intersection. <a href={`${base}lab/`}>Explore the intersection model</a> to investigate its signal phases and queues.</p>
     </section>
     <section data-chapter-prose>
       <h2>Review assumptions as well as numbers</h2>
@@ -57,14 +48,14 @@ const reference = `${base}reference/`;
     <section id="reproduce" data-chapter-prose>
       <h2>Keep the execution attached to its definitions</h2>
       <p>For a repository trial, follow the <a href="https://github.com/And-Gu/executable-engineering-lab/blob/main/docs/02-proposal-exercise.md">isolated proposal exercise</a> from an identified checkout. Install with <code>npm ci</code>, run <code>npm run check</code>, generate reference evidence with <code>npm run evidence</code>, then analyze the separate fixtures with <code>npm run proposals</code>. Preserve the canonical baseline and its reference assertions.</p>
-      <p>Inspect the generated proposal record’s complete baseline and proposed definitions, differences and calculation. Its metadata records the actual revision and working-tree state. It explicitly does not claim execution of <a href={`${reference}#TEST-COV-001`}>TEST-COV-001</a> against the proposal. The registered reference test continues independently against the canonical configuration. Browser trials remain temporary, unapproved copies with no retained execution artifact.</p>
+      <p>Inspect the generated proposal record’s complete baseline and proposed definitions, differences and calculation. Its metadata records the actual revision and working-tree state. It explicitly does not claim execution of <a href={`${reference}#TEST-COV-001`}>TEST-COV-001</a> against the proposal. The registered reference test continues independently against the canonical configuration. The former browser trials were temporary, unapproved copies with no retained execution artifact.</p>
       <p>CI artifacts are revision-bound, expire after 30 days and may require sign-in. Reproduce at the recorded revision instead of substituting today’s sources for an older execution. A fresh result needs its own context even when its number matches an earlier one. That discipline makes a thread useful for review rather than merely persuasive to look at.</p>
     </section>
     <section id="quiz">
       <h2>Check your reasoning</h2>
       <p>Answer before revealing each explanation.</p>
       <details><summary>1. All eight links are unchanged. Does earlier evidence apply?</summary><p>Not necessarily. IDs and relationship roles can stay fixed while definitions change. Inspect exact evaluated definitions and execution context.</p></details>
-      <details><summary>2. Which check differs between a threshold change and a radius change?</summary><p>A threshold change requires evaluation of a changed criterion with unchanged geometry. A radius change requires fresh coverage calculation and evaluation. The workspace computes both paths rather than caching geometry.</p></details>
+      <details><summary>2. Which check differs between a threshold change and a radius change?</summary><p>A threshold change requires evaluation of a changed criterion with unchanged geometry. A radius change requires fresh coverage calculation and evaluation. The former workspace computed both paths rather than caching geometry.</p></details>
       <details><summary>3. Validation succeeds, but an obstruction is discovered. What now?</summary><p>Review the unobstructed-footprint assumption and the conclusion’s applicability. Structural validity cannot justify a physical assumption. This model supplies no obstruction calculation.</p></details>
       <details><summary>4. Does a path from need to test prove the requirement is verified?</summary><p>No. It shows registered relationships. Verification requires inspecting an actual execution, its definitions, method and outcome; suitability still requires engineering judgment.</p></details>
     </section>

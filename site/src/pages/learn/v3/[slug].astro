@@ -70,7 +70,7 @@ const sourceUrl = `https://github.com/And-Gu/executable-engineering-lab/blob/${s
 <html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><meta name="description" content={current.summary}/><title>{current.title} · Executable Engineering</title></head>
 <body>
 <a class="skip" href="#main">Skip to chapter</a>
-<header class="reading-shell site-header"><a class="brand" href={base}>Executable Engineering</a><nav aria-label="Main navigation"><a href={base + 'learn/'}>Learn</a><a href={base + 'lab/'}>Lab</a><a href={base + 'reference/'}>Reference</a></nav><SocialLinks /></header>
+<header class="reading-shell site-header"><a class="brand" href={base}>Executable Engineering</a><nav aria-label="Main navigation"><a href={base + 'learn/'}>Learn</a><a href={base + 'lab/'}>Intersection model</a><a href={base + 'reference/'}>Reference</a></nav><SocialLinks /></header>
 <div class="reading-shell reading-grid">
 <aside class="course-sidebar"><nav aria-label="Course chapters"><a href={base + 'learn/'}>All {v3Chapters.length} chapters</a><ol>{v3Chapters.map(c => <li><a href={c.url} aria-current={c === current ? 'page' : undefined}>{c.title}</a></li>)}</ol></nav><nav class="on-this-page" aria-label="In this chapter"><p class="eyebrow">In this chapter</p>{contents.map(h => <a href={'#'+h.slug}>{h.text}</a>)}</nav></aside>
 <main id="main" tabindex="-1">

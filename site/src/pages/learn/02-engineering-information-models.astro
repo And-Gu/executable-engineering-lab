@@ -1,6 +1,5 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import ProposalWorkspace from '../../components/ProposalWorkspace.astro';
 import { loadSources } from '../../../../scripts/sources';
 const { requirement, scenario, manifest } = loadSources();
 const base = import.meta.env.BASE_URL;
@@ -27,16 +26,9 @@ const reference = `${base}reference/`;
       <p>Third: <strong>does the definition make engineering sense?</strong> A valid threshold can still lack an operational basis. A resolvable model reference can still point to an idealization unsuitable for a decision. Our {requirement.threshold_percent}% threshold is explicitly a teaching assumption. Schema and reference validation do not convert that assumption into an approved requirement.</p>
       <p>The stable ID <a href={`${reference}#REQ-COV-001`}>{requirement.id}</a> lets us discuss the requirement across revisions. It is not a version identifier. A meaningful comparison needs the changed field values and the source revision or temporary proposal context. Inspect the <a href={`${reference}#relationships`}>actual field relationships</a> before treating two records with the same ID as equivalent evidence targets.</p>
     </section>
-    <section id="exercise" aria-labelledby="exercise-title">
-      <h2 id="exercise-title">Experiment: change the criterion or the configuration</h2>
-      <ol>
-        <li>Begin with Reset proposal. Predict the baseline outcome.</li>
-        <li>Try the lower-threshold example. Compare estimated coverage, outcome, statement and field differences with the unchanged baseline.</li>
-        <li>Reset, then try the larger-radius example. Which definition and numerical output change this time?</li>
-        <li>Break the source_need reference. Explain why no proposal result should remain visible. Restore it and check the result again.</li>
-        <li>Write one sentence explaining what each passing trial establishes, and one additional justification you would need before recommending it.</li>
-      </ol>
-      <ProposalWorkspace />
+    <section id="exercise">
+      <h2>Explore the current intersection example</h2>
+      <p>The interactive example now follows a traffic-light intersection. <a href={`${base}lab/`}>Explore the intersection model</a> to investigate its signal phases and queues.</p>
     </section>
     <section data-chapter-prose>
       <h2>Interpret the difference, not just the label</h2>
@@ -46,8 +38,8 @@ const reference = `${base}reference/`;
     </section>
     <section id="evidence" data-chapter-prose>
       <h2>Bind evidence to what was evaluated</h2>
-      <p>The existing reference test, <a href={`${reference}#TEST-COV-001`}>TEST-COV-001</a>, deliberately checks the unchanged {requirement.threshold_percent}% criterion under <a href={`${reference}#SCN-001`}>{scenario.id}</a>. A passing browser proposal does not replace that reference outcome. The model remains <a href={`${reference}#MODEL-COV-001`}>MODEL-COV-001</a> v{manifest.model.version}; changing a threshold is not a new implementation of the coverage calculation.</p>
-      <p>Both browser proposals and the repository exercise call the same analysis function, which validates definitions and uses the existing coverage function and evaluator. The browser workspace is temporary. It creates neither a versioned source change nor a retained verification artifact, and it does not execute the reference test against its altered definitions.</p>
+      <p>The existing reference test, <a href={`${reference}#TEST-COV-001`}>TEST-COV-001</a>, deliberately checks the unchanged {requirement.threshold_percent}% criterion under <a href={`${reference}#SCN-001`}>{scenario.id}</a>. A passing proposal does not replace that reference outcome. The model remains <a href={`${reference}#MODEL-COV-001`}>MODEL-COV-001</a> v{manifest.model.version}; changing a threshold is not a new implementation of the coverage calculation.</p>
+      <p>The repository exercise calls an analysis function that validates definitions and uses the coverage function and evaluator. A proposal analysis does not execute the reference test against its altered definitions.</p>
       <p>For a reproducible repository trial, follow the <a href="https://github.com/And-Gu/executable-engineering-lab/blob/main/docs/02-proposal-exercise.md">proposal exercise</a> from an identified checkout. Keep the canonical records and reference assertions intact. Add an isolated fixture with a unique proposal ID, inspect the diff, and run validation, tests and proposal analysis. Commit valid source changes before requesting revision-bound evidence; an uncommitted local run must report its dirty working tree honestly.</p>
       <p>A retained proposal analysis records the complete baseline and proposed definitions, their differences, exact inputs, threshold, model version, method, grid and results. Its execution metadata identifies the source commit, working-tree state, timestamp and context. It explicitly says the reference test was not executed against the proposal. The separate reference evidence record retains its original meaning. Inspect both through the <a href={`${reference}#proposal-evidence`}>artifact instructions</a>; an analysis ID or PASS label alone is insufficient.</p>
       <p>For a threshold change, the existing coverage calculation can support reasoning about unchanged geometry, but the old requirement evaluation does not establish the new criterion’s outcome. For a scenario change, rerun both coverage and evaluation. For an invalidated assumption, reconsider interpretation even if a numerical result happens to repeat. These are engineering judgments about specific dependencies, not automatic approval rules.</p>

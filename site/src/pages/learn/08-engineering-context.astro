@@ -1,6 +1,5 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import ProposalWorkspace from '../../components/ProposalWorkspace.astro';
 import { loadSources } from '../../../../scripts/sources';
 const { need, requirement, scenario, manifest } = loadSources();
 const base = import.meta.env.BASE_URL;
@@ -43,17 +42,9 @@ const reference = `${base}reference/`;
       <p>For the radius-only assignment, identify what must stay fixed before reviewing the changed field. The source need explains motivation; the requirement provides the criterion; the scenario supplies geometry; the model explains interpretation. If a reviewer lacks one of these, name the unanswered question rather than guessing a value. Adding an unrelated file does not resolve that gap. A useful context checklist maps each source to the decision it informs and identifies the revision being reviewed, instead of merely listing every document available.</p>
       <p>Missing information is also different from invalid information. A malformed radius or broken reference blocks the existing analysis. A missing operational basis can leave a structurally valid definition insufficiently justified. A hypothetical report that omits its criterion cannot support the same interpretation as an actual record with an explicit threshold, even if both say PASS.</p>
     </section>
-    <section id="exercise" aria-labelledby="exercise-heading">
-      <h2 id="exercise-heading">Review context before interpreting the result</h2>
-      <p><strong>Hypothetical omission:</strong> imagine a report that supplies only a proposed radius and PASS, without its criterion, geometry, method or assumptions. This sentence describes a designed teaching case, not a saved execution.</p>
-      <ol>
-        <li>Use the checklist to name the missing sources and questions. Reveal the explanation after writing your answer.</li>
-        <li>Inspect the actual radius example below. Compare its source-backed definitions and differences with the incomplete hypothetical report.</li>
-        <li>Reset and inspect the threshold example. Explain why an available control and valid calculation do not authorize a changed criterion under the radius-only task.</li>
-        <li>Break a reference, observe withheld analysis, then restore/reset. Distinguish this validation error from missing engineering justification.</li>
-      </ol>
-      <details><summary>What context is missing?</summary><p>Identify the criterion, exact area/position/radius, method/version/resolution, assumptions, allowed edit and actual execution context. A bare PASS neither identifies its evidence target nor proves test execution. Ask for the missing information; do not manufacture a definition or attribute the report to an agent.</p></details>
-      <ProposalWorkspace />
+    <section id="exercise">
+      <h2>Explore the current intersection example</h2>
+      <p>The interactive example now follows a traffic-light intersection. <a href={`${base}lab/`}>Explore the intersection model</a> to investigate its signal phases and queues.</p>
     </section>
     <section id="actions" data-chapter-prose>
       <h2>Source content is not task authority</h2>
@@ -72,7 +63,7 @@ const reference = `${base}reference/`;
       <h2>Keep claims attached to actual execution</h2>
       <p>Follow the <a href="https://github.com/And-Gu/executable-engineering-lab/blob/main/docs/08-context-review.md">repository context review</a> from an identified checkout. Inspect sources, run the existing checks and generate proposal analyses. Build a short source-linked checklist and written action review; no new artifact format or context-management system is required.</p>
       <p>Inspect actual baseline/proposed definitions and differences rather than a selected outcome label. The reference test still checks canonical definitions. Proposal analysis explicitly does not execute that test against changed inputs. Reference evaluation generation is also separate from assertion execution. Use actual command logs to support a claim that a particular activity ran.</p>
-      <p>No historical execution is loaded here: the baseline is calculated during the build, and browser proposals are temporary. Retained CI artifacts have revision-specific context, expire after 30 days and may require sign-in. Local reproduction creates a new execution. A complete-looking context checklist cannot replace those distinctions or establish physical sensor validity.</p>
+      <p>No historical execution is loaded here: the baseline is calculated during the build. Retained CI artifacts have revision-specific context, expire after 30 days and may require sign-in. Local reproduction creates a new execution. A complete-looking context checklist cannot replace those distinctions or establish physical sensor validity.</p>
     </section>
     <section id="quiz">
       <h2>Check your reasoning</h2>

@@ -1,6 +1,5 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import ProposalWorkspace from '../../components/ProposalWorkspace.astro';
 import { loadSources } from '../../../../scripts/sources';
 const { need, requirement, scenario, manifest } = loadSources();
 const base = import.meta.env.BASE_URL;
@@ -44,14 +43,8 @@ const repo = 'https://github.com/And-Gu/executable-engineering-lab';
       <p>Keep the argument reviewable as the proposal evolves. If the evaluated input changes, revisit the associated observation. If the claim broadens, revisit whether the same method can support it. If only a document link changes, confirm that it still identifies the intended definition. These are different review questions; recording them explicitly helps the next engineer avoid carrying an unsupported conclusion into a later decision.</p>
     </section>
     <section id="exercise">
-      <h2>Build a bounded review argument</h2>
-      <ol>
-        <li>Apply the radius-only task. Try the radius proposal and inspect its exact difference. Write the narrow geometric claim, including criterion and assumptions.</li>
-        <li>Reset and try the threshold proposal. Compare changed fields and explain why calculation success does not justify the new criterion under that assignment.</li>
-        <li>Break a reference, then restore/reset. Distinguish invalid definitions from valid definitions with insufficient operational support.</li>
-        <li>Use the review table to name actual evidence needed, remaining gaps and the responsible next review. No decision is saved or approved by this page.</li>
-      </ol>
-      <ProposalWorkspace />
+      <h2>Explore the current intersection example</h2>
+      <p>The interactive example now follows a traffic-light intersection. <a href={`${base}lab/`}>Explore the intersection model</a> to investigate its signal phases and queues.</p>
     </section>
     <section data-chapter-prose>
       <h2>A proposal can pass and still need a decision</h2>
@@ -70,7 +63,7 @@ const repo = 'https://github.com/And-Gu/executable-engineering-lab';
     <section id="reproduce" data-chapter-prose>
       <h2>Record what was actually inspected</h2>
       <p>Follow the <a href={`${repo}/blob/main/docs/10-assurance-review.md`}>repository assurance review</a> to inspect actual definitions and generated records at an identified checkout. Reference generation evaluates canonical inputs; separate test logs establish assertion execution. Proposal analysis explicitly does not execute the registered reference test against changed inputs. Preserve those meanings in your written argument.</p>
-      <p>No historical CI artifact is loaded by this page. Browser proposals are temporary; the baseline is calculated at build time. Retained artifacts expire after 30 days and may require sign-in. Record what you actually inspected, what was unavailable and which claim remains unresolved. This review is an aid to accountable reasoning, not production-system assurance or certification.</p>
+      <p>No historical CI artifact is loaded by this page. The baseline is calculated at build time. Retained artifacts expire after 30 days and may require sign-in. Record what you actually inspected, what was unavailable and which claim remains unresolved. This review is an aid to accountable reasoning, not production-system assurance or certification.</p>
     </section>
     <section id="quiz">
       <h2>Check your reasoning</h2>

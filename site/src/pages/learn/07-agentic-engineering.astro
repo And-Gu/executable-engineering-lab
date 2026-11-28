@@ -1,6 +1,5 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import ProposalWorkspace from '../../components/ProposalWorkspace.astro';
 const base = import.meta.env.BASE_URL;
 const reference = `${base}reference/`;
 ---
@@ -22,35 +21,26 @@ const reference = `${base}reference/`;
     <section id="contract" data-chapter-prose>
       <h2>Write the task contract first</h2>
       <p>For this exercise, the objective is to propose one sensor-radius change against the unchanged geometric criterion. Identify the source revision and inspect the need, requirement, scenario, model assumptions and registered test. Missing or contradictory context is a reason to stop and ask for clarification, not permission to invent a requirement.</p>
-      <p>The allowed edit is one finite nonnegative radius in an isolated, unapproved proposal. Keep the area, center, threshold, requirement wording, source relationships, grid and model version fixed. The existing browser range is a usability boundary for this exercise. It does not establish a physical sensor capability or authorize edits to canonical YAML.</p>
+      <p>The allowed edit is one finite nonnegative radius in an isolated, unapproved proposal. Keep the area, center, threshold, requirement wording, source relationships, grid and model version fixed. An input range does not establish a physical sensor capability or authorize edits to canonical YAML.</p>
       <p>Specify prohibited actions as well as the deliverable. This assignment excludes changing the criterion, weakening assertions, editing model code, merging, publishing and approving a requirement. Require the exact proposed input, rationale, scoped differences, actual commands and results, execution context where recorded, and unresolved limitations. A useful output may include a question for the reviewer rather than a recommendation.</p>
       <p>The <a href="https://github.com/And-Gu/executable-engineering-lab/blob/main/docs/07-task-review.md">written task contract</a> makes those expectations inspectable. It is an instruction and review aid, not enforced permission control. Describing a prohibition does not prevent a tool from violating it. This lesson implements neither sandboxing nor runtime authorization; the reviewer must not confuse a readable contract with a security boundary.</p>
     </section>
-    <section id="exercise" aria-labelledby="exercise-heading">
-      <h2 id="exercise-heading">Review the proposal, not just PASS</h2>
-      <p>Apply the fixed-criterion contract above. The workspace intentionally permits both teaching cases; it does not enforce that contract.</p>
-      <ol>
-        <li>Reset proposal. Predict which field the assignment allows to change.</li>
-        <li>Try the radius example. Inspect the exact differences and validated definition. Does it fit the edit scope? What remains unjustified?</li>
-        <li>Reset, then try the threshold example. Inspect the criterion, statement and basis changes. Explain why a passing outcome cannot authorize them for this task.</li>
-        <li>Break a source reference. Observe withheld analysis, name the stop condition, then restore/reset.</li>
-        <li>Write a brief review distinguishing edit scope, calculated outcome and missing evidence. Compare your reasons with the explanation below.</li>
-      </ol>
-      <ProposalWorkspace />
-      <details><summary>Compare your review</summary><p>The radius proposal fits the permitted numeric edit, but its result is still an unapproved geometric analysis without physical-range justification. The threshold proposal is outside this task’s fixed-criterion scope, even if it calculates PASS. It remains a valid teaching proposal in Chapter 2’s different context. A broken reference blocks analysis and needs correction. None of these observations constitutes approval or an actual agent run.</p></details>
+    <section id="exercise">
+      <h2>Explore the current intersection example</h2>
+      <p>The interactive example now follows a traffic-light intersection. <a href={`${base}lab/`}>Explore the intersection model</a> to investigate its signal phases and queues.</p>
     </section>
     <section data-chapter-prose>
       <h2>Scope and evidence answer different questions</h2>
       <p>The radius example can fit the task’s edit scope without becoming an accepted design. Its assumed footprint still needs physical justification, and the teaching threshold still needs an operational basis. Scope compliance asks whether the proposal changed only what was permitted. Engineering acceptance asks whether the resulting definition and evidence support the intended decision.</p>
       <p>The threshold example is useful precisely because its outcome can look attractive. The model is allowed to evaluate that separate proposal, and Chapter 2 uses it to explain changed criteria. Here the same proposal violates the assignment. Valid structure and a passing calculation cannot silently expand the authority granted to the proposer.</p>
-      <p>A review can therefore conclude that an edit is within scope while evidence is insufficient for acceptance. It can also reject an out-of-scope change without disputing its numerical calculation. State these reasons explicitly rather than collapsing them into one approval score. The browser stores no review decision and offers no approval action.</p>
+      <p>A review can therefore conclude that an edit is within scope while evidence is insufficient for acceptance. It can also reject an out-of-scope change without disputing its numerical calculation. State these reasons explicitly rather than collapsing them into one approval score. This lesson stores no review decision and offers no approval action.</p>
     </section>
     <section id="checks" data-chapter-prose>
       <h2>Execute checks independently of the narrative</h2>
       <p>Use the <a href="https://github.com/And-Gu/executable-engineering-lab/blob/main/docs/07-task-review.md#reproduce-the-review">repository review procedure</a> from an identified checkout. Run validation, the canonical regression suite and the existing proposal analyses. Inspect their exact definitions, differences and numerical outputs. Do not substitute a proposer’s statement that tests passed for the command output showing which checks actually ran.</p>
-      <p>Independent checking here means executing and inspecting the defined checks rather than trusting that narrative. The same deterministic coverage model remains deliberately shared across browser and repository. This is not an alternative numerical implementation or independent physical validation. Known-geometry tests and explicit assumptions retain their separate roles.</p>
+      <p>Independent checking here means executing and inspecting the defined checks rather than trusting that narrative. The same deterministic coverage model is shared by the repository analyses and tests. This is not an alternative numerical implementation or independent physical validation. Known-geometry tests and explicit assumptions retain their separate roles.</p>
       <p>Preserve the canonical reference assertions and their expected geometric FAIL. A passing radius proposal does not execute those assertions against changed inputs. Proposal records explicitly retain that distinction. If reference evidence is generated, remember Chapter 6: its generator calculates and evaluates canonical inputs but does not itself invoke Vitest.</p>
-      <p>Review the actual source commit, dirty status, timestamp and execution context where recorded. Browser trials remain temporary and unapproved; local output must not be relabeled CI evidence. CI artifacts expire after 30 days and can require sign-in. Inspect sources at the recorded revision, because stable identifiers alone do not establish which definitions were evaluated.</p>
+      <p>Review the actual source commit, dirty status, timestamp and execution context where recorded. Local output must not be relabeled CI evidence. CI artifacts expire after 30 days and can require sign-in. Inspect sources at the recorded revision, because stable identifiers alone do not establish which definitions were evaluated.</p>
     </section>
     <section id="quiz">
       <h2>Check your reasoning</h2>
