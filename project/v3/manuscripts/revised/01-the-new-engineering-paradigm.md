@@ -19,7 +19,7 @@ Four currents are changing how teams approach that challenge: software-driven en
 
 **Software-driven engineering** brings practices such as versioned information and automated checks across disciplines. Engineers work with product code, requirements, test cases and documentation as connected engineering information. Where appropriate, these are refined, linked and reviewed together through an automated build and feedback chain.
 
-Teams take responsibility for both the product and the engineering system that develops it: the tools, checks, information and ways of working they depend on. The emphasis shifts toward the product’s functionality, health and value over time, rather than only the artifacts needed to complete a project. A working, integrated product—or an executable representation of it—can make implementation maturity visible and provide an early opportunity to learn what creates value.
+Teams take responsibility for both the product and the engineering system that develops it: the tools, checks, information and ways of working they depend on. The emphasis shifts toward the product’s functionality, health and value over time, rather than only the artifacts needed to complete a project.
 
 As these practices extend beyond software, they can also broaden engineering roles. Systems engineers and software engineers may work in the same environment and, in some cases, combine responsibilities that were previously separate.
 
@@ -34,6 +34,16 @@ MBSE does not, by itself, prescribe how an organization plans work or arranges i
 **AI-native engineering** designs the development environment for people and AI agents to work together. This goes beyond adding an AI assistant to an existing tool or asking it to help with an isolated task. Agents can be given access to relevant engineering information and tools, contribute to bounded tasks across the workflow, and return their work for engineers to examine.
 
 For example, an agent can help turn shared technical information into a runnable model, then use the results of an experiment to draft an update to that information. Engineers check the model and its results, decide what they mean and remain responsible for the decisions.
+
+## Working products and executable models
+
+Teams aim to get something working early and evaluate how it behaves. Wherever practical, they work with an integrated product or subsystem under conditions that reflect its intended use. When the product is not yet available—or when a question can be explored more effectively elsewhere—they use prototypes, simulators and executable models.
+
+Requirements, specifications and other descriptions help the team decide what to build and examine. They evolve as the team learns from the working solution.
+
+The four currents can support a shared way of learning, although each contributes different practices. A team considers its intent and the people affected, then chooses a bounded change or question. It uses shared information and models to clarify the meaning of definitions, assumptions and relationships, and to identify which versions belong together. It examines the question using a working product, subsystem, prototype or suitable model. Engineers interpret the observations, decide what to do next and use the learning to revise the product or its design and improve the engineering system's information, tools, methods or checks.
+
+When a decision calls for evidence closer to actual use, the team might test an integrated subsystem under representative conditions or, after an authorized release, examine how the product performs in use. A working model can answer a bounded question; on its own it does not establish the product's safety or value.
 
 <span id="expectations-are-changing"></span><span id="where-earlier-feedback-improves-delivery"></span>
 
