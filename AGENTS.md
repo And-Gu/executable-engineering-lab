@@ -30,6 +30,14 @@ When completing a new lesson, register its path, title and summary in site/src/d
 
 For every new or substantially revised V3 chapter, the delivery owner uses the [Editor role](agents/EDITOR.md). When a change spans adjacent chapters, read and edit them in sequence before the final preview. Move examples and trim repeated setup where this helps the reader understand the next engineering decision.
 
+## Local editorial review
+
+Use the interactive local site as the default review copy for course and editorial changes. Reuse a suitable running preview and checkout when possible, without disturbing another owner. Verify that the actual page shows the change, then share the local URL, source revision and working-tree status. Keep the preview available for the owner's review. Do not create or update a Word document, PDF or page-image copy unless the user explicitly requests that format; a previous document or a request for a review copy is not authorization to regenerate one.
+
+Share an early site preview as a work in progress, with its incomplete review or check status, while the remaining work proceeds. This progress update is not a final delivery or a reviewed release. Before handing off a final candidate or recommending a revision, complete the assigned preview and clean-release checks and any task-specific independent reviews. A review or test result belongs to the revision and inputs actually checked; do not carry it forward to a changed revision by assumption.
+
+Before creating a follow-up candidate, collect the current review's findings, distinguish material corrections from optional suggestions and group related fixes into one coherent change where practical. Preserve every iteration and exact-revision review explicitly required by the task; findings discovered later may still require another round. Record the request time, time and URL of the first verified site preview, time the reviewed candidate is ready, and the number of corrective revisions after the planned iterations. Use the existing delivery record or review report and keep overlapping phases separate.
+
 ## V2 transition (Stage 0–1 draft)
 
 For the proposed future learning design, read project/TUTORIAL-SPEC.md, project/CURRICULUM-MAP.md, project/ENGINEERING-WORKFLOW.md, project/DEMONSTRATOR-LEARNING-PLAN.md, project/EDITORIAL-GUIDE.md and project/INFORMATION-ARCHITECTURE.md, then the relevant chapters/ brief. See docs/v2/ADOPTION-STATUS.md for scope, conflicts and verification. These are proposed educational targets, not evidence of implemented capabilities or authorization for later stages.
