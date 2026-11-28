@@ -8,19 +8,26 @@ Created by **Anders Gustafsson** · [Connect on LinkedIn](https://www.linkedin.c
 
 ## Reproduce locally
 
-Use the Node version pinned in `.nvmrc` (currently 22.23.3) and npm 10. Astro's installed dependency requires at least Node 22.22; the earlier 22.12 minimum was insufficient. Local checks and CI use the same preflight. From the repository root:
+Use the Node version pinned in `.nvmrc` (currently 22.23.3) and npm 10. Astro's installed dependency requires at least Node 22.22; the earlier 22.12 minimum was insufficient. Local checks and CI use the same preflight. For an early local working preview, run from the repository root:
 
 ```sh
-npm ci
+npm ci # if dependencies are missing or the lockfile changed
+npm run dev -- --host 127.0.0.1
+```
+
+Open the Local URL printed by Astro, normally `http://localhost:4321/executable-engineering-lab/` (the port can change if occupied). Reuse a suitable running preview where possible. For editorial review, confirm the changed page, share its local link with the source revision and working-tree status, and label it as work in progress until its required checks and reviews pass. Keep the server available for review. The site is the default review copy; create a Word document, PDF or page-image copy only when explicitly requested.
+
+An early working preview does not replace the assigned delivery checks or task-specific reviews. Run the applicable checks before the final handoff. The standard local commands include:
+
+```sh
 npm run preflight
 npm run validate
 npm test
 npm run evidence
 npm run build
-npm run dev
 ```
 
-Open the Local URL printed by Astro, normally `http://localhost:4321/executable-engineering-lab/` (the port can change if occupied). `npm run preview` serves the production build at the same path. `npm run typecheck` checks Astro and TypeScript. `npm run check -- --preview` runs the complete local verification with explicit working-tree status; `npm run check -- --release` requires a clean committed checkout. See the delivery commands below when a delivery owner is active.
+`npm run preview` serves the production build at the same path. `npm run typecheck` checks Astro and TypeScript. `npm run check -- --preview` runs the complete local verification with explicit working-tree status; `npm run check -- --release` requires a clean committed checkout. See the delivery commands below when a delivery owner is active.
 
 The reference scenario returns approximately **38.5% estimated geometric coverage**, so the proposed **50% requirement intentionally FAILS**. The test suite passes when it correctly observes that engineering outcome. Nothing substitutes a hardcoded status for the evaluator.
 
@@ -120,6 +127,8 @@ Every managed verification creates a new `artifacts/runs/<timestamp-id>/`; `TEST
 The owner record is `artifacts/delivery.json`. `DELIVERY_RECORD` may specify an absolute shared path for cooperating checkouts. Short writes are atomic and locked; this does not coordinate separate machines. A new delivery archives the previous explicitly finished record. Run `delivery finish` when the delivery is complete; it is not a declaration of publication success.
 
 Time extra commands with `delivery run --phase <name> -- <command> [args]` (repository-root working directory). Use `delivery begin/end --phase <name> --at <ISO timestamp>` for known review/CI/job boundaries and `--evidence <URL>` on begin. Mark observed milestones with `delivery mark --phase requested|ready|authorized|committed|merged|published --at <ISO timestamp>`. Missing times stay unknown; record creation does not imply request time or permission. Reports preserve overlapping intervals without summing them. Keep Actions queue/job timestamps distinct from command execution, and include rework reasons in the relevant PR/retrospective observation.
+
+For editorial work, record when the request arrived, when the first verified local review URL was available, when the reviewed candidate was ready, and how many corrective revisions followed the planned iterations. Record the URL as phase evidence or in the existing review report. Do not mark an early working preview as the final `ready` milestone. Assess the current review's findings together and batch related corrections when practical; rerun the required checks and exact-revision review for the resulting candidate.
 
 Canonical engineering authority remains `engineering/` → `schemas/` and `models/` → scripts and Astro views → engineering tests/evidence. `site/src/data/chapters.ts` owns completed-lesson navigation. Editorial sources retain the separate status/approval registers linked in AGENTS.md. A change to the delivery environment grants no editorial or publication approval.
 
