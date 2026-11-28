@@ -14,7 +14,7 @@ Before drafting a full chapter, complete the editorial guide's copy contract and
 
 The dated V2 and earlier V3 sections below retain decision history and source boundaries. They do not override the current curriculum map, active manuscript index or task-specific brief for present numbering, status or copy direction. Historical authorization still does not grant new scope.
 
-The owner closed historical issues #32, #45, #50, #55 and #78 on 28 November 2026 and consolidated their unresolved decisions in [issue #106](https://github.com/And-Gu/executable-engineering-lab/issues/106). Do not treat an instruction below to keep an older issue open, or the old reviewer profile's chapter order, as current guidance.
+The owner closed historical issues #32, #45, #50, #55 and #78 on 28 November 2026 and consolidated their unresolved decisions in [issue #106](https://github.com/And-Gu/executable-engineering-lab/issues/106). Do not treat an instruction below to keep an older issue open as current guidance.
 
 Read SITE_SPEC.md, DEMONSTRATOR_SPEC.md and MILESTONE_01.md as authoritative planning inputs. Their descriptions of future capabilities do not authorize extra scope.
 
@@ -89,9 +89,9 @@ Before citing an archived claim or chapter quote in published prose, open the au
 
 ## V3 preserved drafts and completed independent review — 2026-11-16
 
-**Thirteen complete original manuscripts**, with their old numbering, remain under [project/v3/manuscripts/drafts/INDEX.md](project/v3/manuscripts/drafts/INDEX.md). They are **source drafts only**, not the fourteen-chapter current manuscript set and not owner-approved/public material. For current positions and content handoffs read the [migration map](project/v3/CHAPTER-MIGRATION-13-TO-14-2026-11-16.md).
+**Thirteen complete original manuscripts**, with their old numbering, remain under [project/v3/manuscripts/drafts/INDEX.md](project/v3/manuscripts/drafts/INDEX.md). They are **source drafts only**, not the fourteen-chapter current manuscript set and not owner-approved/public material. The [migration map](project/v3/CHAPTER-MIGRATION-13-TO-14-2026-11-16.md) records the historical transition; use the current curriculum map and revised index for current positions and handoffs.
 
-The independent review of the **original thirteen manuscripts** was completed and merged in [PR #42](https://github.com/And-Gu/executable-engineering-lab/pull/42); [issue #40](https://github.com/And-Gu/executable-engineering-lab/issues/40) is closed. The owner subsequently accepted the fourteen-chapter sequence, **but the review's other improvements remained proposals at that time**. The former case issue [#45](https://github.com/And-Gu/executable-engineering-lab/issues/45) is closed; remaining case decisions are in [#106](https://github.com/And-Gu/executable-engineering-lab/issues/106). The existing [v3-curriculum-reviewer](.github/agents/v3-curriculum-reviewer.agent.md) profile still points to the old thirteen drafts and needs a current assignment before reuse. Review and publication are separate approval gates.
+The independent review of the **original thirteen manuscripts** was completed and merged in [PR #42](https://github.com/And-Gu/executable-engineering-lab/pull/42); [issue #40](https://github.com/And-Gu/executable-engineering-lab/issues/40) is closed. The owner subsequently accepted the fourteen-chapter sequence, **but the review's other improvements remained proposals at that time**. The former case issue [#45](https://github.com/And-Gu/executable-engineering-lab/issues/45) is closed; remaining case decisions are in [#106](https://github.com/And-Gu/executable-engineering-lab/issues/106). The [v3-curriculum-reviewer](.github/agents/v3-curriculum-reviewer.agent.md) profile follows the current course map and revised index; the profile itself does not constitute a review. Review and publication are separate approval gates.
 
 ## V3 revised full manuscripts and T1 source — pending independent re-review
 
