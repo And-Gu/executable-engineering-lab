@@ -1,0 +1,333 @@
+{
+  "node": "v22.23.3",
+  "npm": "10.9.9",
+  "os": "Darwin arm64",
+  "owner": "q86-delivery",
+  "assignment": "npm run delivery -- assign --task <task> --worker q86-delivery [--preview] --check typecheck --check build --check unit --check evidence --check proposals",
+  "runs": [
+    {
+      "task": "q86-early-preview",
+      "command": "DELIVERY_ACTOR=q86-delivery npm run delivery -- test --task q86-early-preview",
+      "stage": "working tree preview",
+      "checked_repository": "course",
+      "revision": "3d752d994ab5c47f865140ca0a005e13e6aa7f82",
+      "dirty": true,
+      "started_utc": "2026-11-24T06:04:41.257Z",
+      "finished_utc": "2026-11-24T06:04:55.852Z",
+      "result": "passed",
+      "checks": [
+        {
+          "check": "preflight",
+          "result": "passed",
+          "duration_ms": 80
+        },
+        {
+          "check": "typecheck",
+          "result": "passed",
+          "duration_ms": 8454
+        },
+        {
+          "check": "build",
+          "result": "passed",
+          "duration_ms": 3247
+        },
+        {
+          "check": "unit",
+          "result": "passed",
+          "duration_ms": 2087
+        },
+        {
+          "check": "evidence",
+          "result": "passed",
+          "duration_ms": 352
+        },
+        {
+          "check": "proposals",
+          "result": "passed",
+          "duration_ms": 358
+        },
+        {
+          "check": "revision-after",
+          "result": "passed",
+          "duration_ms": 15
+        }
+      ],
+      "unit": {
+        "numPassedTests": 99,
+        "numFailedTests": 0,
+        "numTotalTests": 99
+      },
+      "retained_run": "2026-11-24T06-04-41.240Z-2a8459b8"
+    },
+    {
+      "task": "q86-early-p2-preview",
+      "command": "DELIVERY_ACTOR=q86-delivery npm run delivery -- test --task q86-early-p2-preview",
+      "stage": "working tree preview",
+      "checked_repository": "course",
+      "revision": "5e64d802ef3cbab50f5e462bf7e22d11101514a0",
+      "dirty": true,
+      "started_utc": "2026-11-24T06:19:18.575Z",
+      "finished_utc": "2026-11-24T06:19:29.822Z",
+      "result": "passed",
+      "checks": [
+        {
+          "check": "preflight",
+          "result": "passed",
+          "duration_ms": 84
+        },
+        {
+          "check": "typecheck",
+          "result": "passed",
+          "duration_ms": 6595
+        },
+        {
+          "check": "build",
+          "result": "passed",
+          "duration_ms": 2015
+        },
+        {
+          "check": "unit",
+          "result": "passed",
+          "duration_ms": 1881
+        },
+        {
+          "check": "evidence",
+          "result": "passed",
+          "duration_ms": 329
+        },
+        {
+          "check": "proposals",
+          "result": "passed",
+          "duration_ms": 326
+        },
+        {
+          "check": "revision-after",
+          "result": "passed",
+          "duration_ms": 14
+        }
+      ],
+      "unit": {
+        "numPassedTests": 99,
+        "numFailedTests": 0,
+        "numTotalTests": 99
+      },
+      "retained_run": "2026-11-24T06-19-18.558Z-7e862da8"
+    },
+    {
+      "task": "q86-combined-preview",
+      "command": "DELIVERY_ACTOR=q86-delivery npm run delivery -- test --task q86-combined-preview",
+      "stage": "working tree preview",
+      "checked_repository": "course",
+      "revision": "e8f4b1d82b8fb4b0b5592e29e9acca9a6fcc563c",
+      "dirty": true,
+      "started_utc": "2026-11-24T06:25:33.305Z",
+      "finished_utc": "2026-11-24T06:25:43.912Z",
+      "result": "passed",
+      "checks": [
+        {
+          "check": "preflight",
+          "result": "passed",
+          "duration_ms": 81
+        },
+        {
+          "check": "typecheck",
+          "result": "passed",
+          "duration_ms": 6009
+        },
+        {
+          "check": "build",
+          "result": "passed",
+          "duration_ms": 2000
+        },
+        {
+          "check": "unit",
+          "result": "passed",
+          "duration_ms": 1822
+        },
+        {
+          "check": "evidence",
+          "result": "passed",
+          "duration_ms": 347
+        },
+        {
+          "check": "proposals",
+          "result": "passed",
+          "duration_ms": 332
+        },
+        {
+          "check": "revision-after",
+          "result": "passed",
+          "duration_ms": 14
+        }
+      ],
+      "unit": {
+        "numPassedTests": 99,
+        "numFailedTests": 0,
+        "numTotalTests": 99
+      },
+      "retained_run": "2026-11-24T06-25-33.288Z-36d07eba"
+    },
+    {
+      "task": "q86-combined-release",
+      "command": "DELIVERY_ACTOR=q86-delivery npm run delivery -- test --task q86-combined-release",
+      "stage": "clean committed revision",
+      "checked_repository": "course",
+      "revision": "206828b6f93c673cd09d688a0dc2204d05fd4b13",
+      "dirty": false,
+      "started_utc": "2026-11-24T06:26:15.429Z",
+      "finished_utc": "2026-11-24T06:26:25.893Z",
+      "result": "passed",
+      "checks": [
+        {
+          "check": "preflight",
+          "result": "passed",
+          "duration_ms": 100
+        },
+        {
+          "check": "typecheck",
+          "result": "passed",
+          "duration_ms": 5838
+        },
+        {
+          "check": "build",
+          "result": "passed",
+          "duration_ms": 1952
+        },
+        {
+          "check": "unit",
+          "result": "passed",
+          "duration_ms": 1871
+        },
+        {
+          "check": "evidence",
+          "result": "passed",
+          "duration_ms": 327
+        },
+        {
+          "check": "proposals",
+          "result": "passed",
+          "duration_ms": 328
+        },
+        {
+          "check": "revision-after",
+          "result": "passed",
+          "duration_ms": 46
+        }
+      ],
+      "unit": {
+        "numPassedTests": 99,
+        "numFailedTests": 0,
+        "numTotalTests": 99
+      },
+      "retained_run": "2026-11-24T06-26-15.409Z-755dce64"
+    },
+    {
+      "task": "q86-cohort-preview",
+      "command": "DELIVERY_ACTOR=q86-delivery npm run delivery -- test --task q86-cohort-preview",
+      "stage": "working tree preview",
+      "checked_repository": "course",
+      "revision": "206828b6f93c673cd09d688a0dc2204d05fd4b13",
+      "dirty": true,
+      "started_utc": "2026-11-24T06:45:02.423Z",
+      "finished_utc": "2026-11-24T06:45:13.658Z",
+      "result": "passed",
+      "checks": [
+        {
+          "check": "preflight",
+          "result": "passed",
+          "duration_ms": 83
+        },
+        {
+          "check": "typecheck",
+          "result": "passed",
+          "duration_ms": 6582
+        },
+        {
+          "check": "build",
+          "result": "passed",
+          "duration_ms": 2033
+        },
+        {
+          "check": "unit",
+          "result": "passed",
+          "duration_ms": 1854
+        },
+        {
+          "check": "evidence",
+          "result": "passed",
+          "duration_ms": 331
+        },
+        {
+          "check": "proposals",
+          "result": "passed",
+          "duration_ms": 334
+        },
+        {
+          "check": "revision-after",
+          "result": "passed",
+          "duration_ms": 15
+        }
+      ],
+      "unit": {
+        "numPassedTests": 99,
+        "numFailedTests": 0,
+        "numTotalTests": 99
+      },
+      "retained_run": "2026-11-24T06-45-02.406Z-b93eb538"
+    },
+    {
+      "task": "q86-cohort-release",
+      "command": "DELIVERY_ACTOR=q86-delivery npm run delivery -- test --task q86-cohort-release",
+      "stage": "clean committed revision",
+      "checked_repository": "course",
+      "revision": "c2f9cb211de7e204e08920b8cf3d164d7195b866",
+      "dirty": false,
+      "started_utc": "2026-11-24T06:45:27.801Z",
+      "finished_utc": "2026-11-24T06:45:38.227Z",
+      "result": "passed",
+      "checks": [
+        {
+          "check": "preflight",
+          "result": "passed",
+          "duration_ms": 96
+        },
+        {
+          "check": "typecheck",
+          "result": "passed",
+          "duration_ms": 5825
+        },
+        {
+          "check": "build",
+          "result": "passed",
+          "duration_ms": 1978
+        },
+        {
+          "check": "unit",
+          "result": "passed",
+          "duration_ms": 1809
+        },
+        {
+          "check": "evidence",
+          "result": "passed",
+          "duration_ms": 329
+        },
+        {
+          "check": "proposals",
+          "result": "passed",
+          "duration_ms": 327
+        },
+        {
+          "check": "revision-after",
+          "result": "passed",
+          "duration_ms": 59
+        }
+      ],
+      "unit": {
+        "numPassedTests": 99,
+        "numFailedTests": 0,
+        "numTotalTests": 99
+      },
+      "retained_run": "2026-11-24T06-45-27.784Z-9eeccd9b"
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "base": "3d752d994ab5c47f865140ca0a005e13e6aa7f82",
+  "candidate": "5e64d802ef3cbab50f5e462bf7e22d11101514a0",
+  "scope": "Direct URLs on added learner-facing source lines. HTTP status measures endpoint access from this environment. The separate reference register describes the inspected source content and limitations.",
+  "links": [
+    {
+      "url": "https://ai.engineer/code/2026/talks/lauren-tan",
+      "method": "HTTP GET following redirects",
+      "http": "200",
+      "curl_exit": 0
+    },
+    {
+      "url": "https://dora.dev/capabilities/continuous-delivery/",
+      "method": "HTTP GET following redirects",
+      "http": "200",
+      "curl_exit": 0
+    },
+    {
+      "url": "https://github.com/And-Gu/executable-engineering-lab/blob/05b071d8d5a08aec9017146175e0ac17b38f8dd3/project/v3/case-study/DECISION-CHAIN.md#ch09-a-product-interface-discrepancy--the-missing-bridge",
+      "method": "git object in repository",
+      "resolved": true
+    },
+    {
+      "url": "https://lowrisc.org/news/how-we-run-ci-for-our-open-source-silicon-projects/",
+      "method": "HTTP GET following redirects",
+      "http": "200",
+      "curl_exit": 0
+    },
+    {
+      "url": "https://openai.com/index/harness-engineering/",
+      "method": "HTTP GET following redirects",
+      "http": "200",
+      "curl_exit": 0
+    },
+    {
+      "url": "https://research.tudelft.nl/en/publications/change-propagation-analysis-in-complex-technical-systems/",
+      "method": "HTTP GET following redirects",
+      "http": "200",
+      "curl_exit": 0
+    },
+    {
+      "url": "https://www.anthropic.com/research/building-effective-agents",
+      "method": "HTTP GET following redirects",
+      "http": "200",
+      "curl_exit": 0
+    },
+    {
+      "url": "https://www.anthropic.com/research/demystifying-evals-for-ai-agents",
+      "method": "HTTP GET following redirects",
+      "http": "200",
+      "curl_exit": 0
+    },
+    {
+      "url": "https://www.gov.uk/government/publications/transforming-infrastructure-performance-roadmap-to-2030/transforming-infrastructure-performance-roadmap-to-2030#annex-b-information-management-mandate",
+      "method": "HTTP GET following redirects",
+      "http": "200",
+      "curl_exit": 0
+    },
+    {
+      "url": "https://www.nasa.gov/reference/5-0-product-realization/",
+      "method": "HTTP GET following redirects",
+      "http": "200",
+      "curl_exit": 0
+    },
+    {
+      "url": "https://www.nber.org/papers/w35275",
+      "method": "HTTP GET following redirects",
+      "http": "200",
+      "curl_exit": 0
+    },
+    {
+      "url": "https://www.nist.gov/publications/using-graphs-link-data-across-product-lifecycle-enabling-smart-manufacturing-digital",
+      "method": "HTTP GET following redirects",
+      "http": "200",
+      "curl_exit": 0
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=O_zcc6Xl12g",
+      "method": "HTTP GET following redirects",
+      "http": "200",
+      "curl_exit": 0
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=O_zcc6Xl12g&t=300s",
+      "method": "HTTP GET following redirects",
+      "http": "200",
+      "curl_exit": 0
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=O_zcc6Xl12g&t=580s",
+      "method": "HTTP GET following redirects",
+      "http": "200",
+      "curl_exit": 0
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=O_zcc6Xl12g&t=711s",
+      "method": "HTTP GET following redirects",
+      "http": "200",
+      "curl_exit": 0
+    }
+  ]
+}

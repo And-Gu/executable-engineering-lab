@@ -1,0 +1,21 @@
+{
+  "earlier_revision": "206828b6f93c673cd09d688a0dc2204d05fd4b13",
+  "final_revision": "c2f9cb211de7e204e08920b8cf3d164d7195b866",
+  "prior_files": 47,
+  "final_files": 47,
+  "byte_identical": 45,
+  "html_pages_identical": 34,
+  "differing_files": [
+    {
+      "path": "build-information.json",
+      "prior_sha256": "2d928038ae20f58f84d40765bff2adc9d350ad9448b1e0069d319c481260d737",
+      "final_sha256": "8501d5479f679531ed08323e2a8721964ac1f81de7d669b755074e507150440b"
+    },
+    {
+      "path": "learn/v3/06-engineering-data-from-measurements-to-decisions/index.html",
+      "prior_sha256": "f901594852f2e763b9f2d82f9eb27e75635a8fac1df443088b14ae6b4c533872",
+      "final_sha256": "8204312ab70743f235d8405d9d3253fdcf6d1ebd3a55a8a13d1e7a713ce931f8"
+    }
+  ],
+  "method": "SHA-256 of every generated file before and after D41. A source or bytes comparison establishes applicability of unchanged inspection evidence; the changed instructions are independently reread on the final revision."
+}

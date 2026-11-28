@@ -1,0 +1,43 @@
+{
+  "base": "80e6f526669d34006529550a97438c52db85aae5",
+  "candidate": "206828b6f93c673cd09d688a0dc2204d05fd4b13",
+  "scope": "Direct URLs on added learner-facing source lines. HTTP status measures endpoint access from this environment. The separate reference register describes the inspected source content and limitations.",
+  "links": [
+    {
+      "url": "https://github.com/And-Gu/executable-engineering-lab/blob/05b071d8d5a08aec9017146175e0ac17b38f8dd3/project/v3/case-study/DECISION-CHAIN.md#ch11-authority-and-assurance--explicitly-defer-an-unsupportable-acceptance",
+      "method": "git object in repository",
+      "resolved": true
+    },
+    {
+      "url": "https://github.com/And-Gu/executable-engineering-lab/blob/05b071d8d5a08aec9017146175e0ac17b38f8dd3/project/v3/case-study/DECISION-CHAIN.md?plain=1#L70-L89",
+      "method": "git object in repository",
+      "resolved": true
+    },
+    {
+      "url": "https://github.com/And-Gu/executable-engineering-lab/blob/973ff66ebb06daafbd2ddaf35682e0e8da2bffd7/models/intersection/queue.test.ts",
+      "method": "git object in repository",
+      "resolved": true
+    },
+    {
+      "url": "https://github.com/And-Gu/executable-engineering-lab/blob/973ff66ebb06daafbd2ddaf35682e0e8da2bffd7/models/intersection/queue.test.ts#L5-L18",
+      "method": "git object in repository",
+      "resolved": true
+    },
+    {
+      "url": "https://github.com/And-Gu/executable-engineering-lab/blob/973ff66ebb06daafbd2ddaf35682e0e8da2bffd7/project/v3/case-study/MODEL-CHECK.md?plain=1#L32-L36",
+      "method": "git object in repository",
+      "resolved": true
+    },
+    {
+      "url": "https://github.com/And-Gu/executable-engineering-lab/blob/973ff66ebb06daafbd2ddaf35682e0e8da2bffd7/project/v3/case-study/trace-v1.csv?plain=1#L4",
+      "method": "git object in repository",
+      "resolved": true
+    },
+    {
+      "url": "https://www.omg.org/spec/SysML/2.0/Language/PDF#page=181",
+      "method": "HTTP GET following redirects",
+      "http": "200",
+      "curl_exit": 0
+    }
+  ]
+}
